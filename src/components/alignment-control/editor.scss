@@ -1,0 +1,21 @@
+.pb-block-control__alignment {
+	margin-top: 15px;
+	margin-bottom: 30px !important;
+    .components-base-control__label {
+        margin-bottom: 2px;
+        margin-top: 10px;
+    }
+    .align-btn-group {
+		float: right;
+		.components-button {
+			box-shadow: inset 0 0 0 1px #ccc;
+			svg {
+				height: 15px;
+				width: 15px;
+			}
+			&.is-primary {
+				box-shadow: inset 0 0 0 1px #ddd;
+			}
+		}
+    }
+}

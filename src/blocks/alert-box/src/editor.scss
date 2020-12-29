@@ -1,0 +1,50 @@
+.wp-block-powerful-blocks-alert-box {
+	background-color: #d6efee;
+	color: #094264;
+
+	&.is-style-info {
+		background-color: #d6efee;
+		color: #094264;
+		.ub-alert-box__title {
+			color: #094264 !important;
+		}
+	}
+	&.is-style-success {
+		background-color: #d0eac4;
+		color: #154a28;
+		.ub-alert-box__title {
+			color: #154a28 !important;
+		}
+	}
+	&.is-style-error {
+		background-color: #ffdede;
+		color: #8b343c;
+		.ub-alert-box__title {
+			color: #8b343c !important;
+		}
+	}
+	&.is-style-warning {
+		background-color: #fbe7dd;
+		color: #8a4b30;
+		.ub-alert-box__title {
+			color: #8a4b30 !important;
+		}
+	}
+
+	.ub-alert-box-hide {
+		float: right;
+		cursor: pointer;
+	}
+
+	.ub-alert-box__title {
+		margin: 0 0 5px 0;
+	}
+	.ub-alert-box__content {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.ub-alert-box {
+	padding: 30px;
+}

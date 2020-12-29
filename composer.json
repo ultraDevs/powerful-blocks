@@ -1,0 +1,18 @@
+{
+    "name": "ultradevs/powerful-blocks",
+    "description": "Powerful Blocks for Gutenberg",
+    "authors": [
+        {
+            "name": "mhimon",
+            "email": "mahbubhasanimon@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ultraDevs\\PB\\": "includes/"
+        },
+        "files": [ "includes/functions.php" ]
+    }
+}

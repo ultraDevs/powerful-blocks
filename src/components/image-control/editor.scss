@@ -1,0 +1,23 @@
+.ib-block-control__image {
+	background-repeat: no-repeat;
+    background-position: center;
+	background-size: cover;
+	.components-base-control__field {
+		position: relative;
+	}
+	.components-responsive-wrapper__content {
+		max-width: fit-content;
+	}
+	.ib-block-control__image-actions {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: #fff;
+	}
+	.ib-block-control__image-size {
+		margin-top: 10px;
+		select {
+			text-transform: capitalize;
+		}
+	}
+}
