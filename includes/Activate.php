@@ -25,7 +25,7 @@ class Activate {
 	public function run() {
 
 		$blocks = Helper::block_list();
-		Helper::pb_update_option( 'powerful_blocks_inactive_blocks', $blocks );
+		// Helper::pb_update_option( '__pb_blocks', $blocks );
 		Helper::pb_add_option( 'powerful_blocks_do_activation_redirect', true );
 
 		$this->plugin_data();

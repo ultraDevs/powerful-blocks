@@ -41,6 +41,16 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'click-to-tweet'  => array(
+				'title'  => __( 'Click To Tweet', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
+			'star-rating'  => array(
+				'title'  => __( 'Star Rating', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 			'testimonial'  => array(
 				'title'  => __( 'Testimonial', 'powerful-blocks' ),
 				'is_pro' => false,

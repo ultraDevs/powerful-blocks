@@ -52,6 +52,7 @@ module.exports = function(grunt) {
 				files: {
 					'assets/js/frontend.min.js' : 'assets/js/frontend.js',
 					'assets/js/admin.min.js' : 'assets/js/admin.js',
+					'assets/js/editor.min.js' : 'assets/js/editor.js',
 				}
 			},
 			dev: {
@@ -63,6 +64,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'assets/js/frontend.min.js' : 'assets/js/frontend.js',
+					'assets/js/editor.min.js' : 'assets/js/editor.js',
 					'assets/js/admin.min.js' : 'assets/js/admin.js',
 				}
 			}

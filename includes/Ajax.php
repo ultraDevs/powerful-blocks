@@ -8,7 +8,7 @@
 
 namespace ultraDevs\PB;
 
-use ultraDevs\PB\Helper;
+use ultraDevs\PB\Admin\Dashboard;
 
 /**
  * Manage All Ajax Request
@@ -25,38 +25,34 @@ class Ajax {
 	 */
 	public function __construct() {
 		if ( is_admin() ) {
-			add_action( 'wp_ajax_pb_save_inactive_block', array( $this, 'pb_save_inactive_block' ) );
+			add_action( 'admin_post_pb_save_blocks_o', array( $this, 'pb_save_blocks_o_c' ) );
 		}
 	}
 
 	/**
-	 * Save Inactive Blocks
+	 * Save Blocks Options.
 	 *
 	 * @return void
 	 */
-	public function pb_save_inactive_block( ) {
-		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'pb-save-ib-nonce' ) ) {
-			wp_send_json_error(
-				array(
-					'msg' => __( 'Invalid Nonce', 'powerful-blocks' ),
-				),
-			);
+	public function pb_save_blocks_o_c() {
+
+		if ( isset( $_POST['save-b'] ) ) {
+			if ( ! isset( $_POST['pb_save_ib_nonce'] ) 
+				|| ! wp_verify_nonce( $_POST['pb_save_ib_nonce'], 'pb_save_ib_action' ) 
+			) {
+				echo 'Sorry, your nonce did not verify.';
+				return;
+			}
+
+			$blocks = ! empty( $_POST['blocks'] ) ? $_POST['blocks'] : array();
+
+			$inactive_blocks = array_diff( array_keys( Dashboard::all_blocks() ), $blocks );
+
+			Dashboard::save_inactive_blocks( $inactive_blocks );
+
+			wp_safe_redirect( admin_url( 'admin.php?page=powerful-blocks#blocks' ) );
+
+			exit();
 		}
-
-		$block  = ! empty( $_POST['block'] ) ? sanitize_text_field( wp_unslash( $_POST['block'] ) ) : '';
-		$status = ! empty( $_POST['status'] ) ? wp_unslash( $_POST['status'] ) : true;
-
-		$blocks = Helper::pb_get_option( 'powerful_blocks_inactive_blocks', array() );
-
-		$blocks[ $block ]['status'] = $status;
-
-		Helper::pb_update_option( 'powerful_blocks_inactive_blocks', $blocks );
-
-		wp_send_json_success(
-			array(
-				'success' => __( 'Success', 'powerful-blocks' ),
-			),
-		);
 	}
-
 }

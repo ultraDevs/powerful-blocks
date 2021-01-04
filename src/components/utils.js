@@ -1,4 +1,5 @@
 export const renderStyle = ( css, selectorPrefix ) => {
+	const blockId = selectorPrefix.replace( '#', '' );
 	const breakpoints = {
 		tablet: 992,
 		mobile: 768,
@@ -46,6 +47,10 @@ export const renderStyle = ( css, selectorPrefix ) => {
 			parsedStyle += '} ';
 		}
 	} );
+	
+	// genCSS( selectorPrefix, parsedStyle );
 
-	return <style>{ parsedStyle }</style>;
+	return <style id={ blockId }>{ parsedStyle }</style>;
+	// return null;
+
 };

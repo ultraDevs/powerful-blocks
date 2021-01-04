@@ -1,0 +1,1 @@
+yarn add -D @wordpress/scripts @wordpress/block-editor @wordpress/block-library @wordpress/blocks @wordpress/edit-post autoprefixer css-loader mini-css-extract-plugin node-sass node-sass-glob-importer postcss postcss-loader rtlcss-webpack-plugin sass-loader webpack-fix-style-only-entries classnames postcss-preset-env cssnano

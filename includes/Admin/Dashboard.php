@@ -8,7 +8,6 @@
 
 namespace ultraDevs\PB\Admin;
 
-use ultraDevs\PB\Admin\Blocks_Manager;
 use ultraDevs\PB\Helper;
 
 /**
@@ -91,9 +90,21 @@ class Dashboard {
 	 * @return array
 	 */
 	public static function all_blocks() {
-		$blocks = Helper::pb_get_option( 'powerful_blocks_inactive_blocks', array() );
+		$blocks = Helper::block_list();
 		return $blocks;
 	}
+
+	/**
+	 * Inactive Block List
+	 *
+	 * @return array
+	 */
+	public static function inactive_blocks() {
+		$inactive_blocks = Helper::pb_get_option( '__pb_inactive_blocks', array() );
+		return $inactive_blocks;
+	}
+
+
 	/**
 	 * Save Inactive Blcoks
 	 *
@@ -101,7 +112,7 @@ class Dashboard {
 	 * @return void
 	 */
 	public static function save_inactive_blocks( $blocks ) {
-		Blocks_Manager::save_inactive_blocks( $blocks );
+		Helper::pb_update_option( '__pb_inactive_blocks', $blocks );
 	}
 
 	/**
@@ -137,4 +148,5 @@ class Dashboard {
 			require $temp_file;
 		}
 	}
+
 }

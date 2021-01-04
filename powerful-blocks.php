@@ -26,8 +26,6 @@ define( 'POWERFUL_BLOCKS_VERSION', '1.0.0' );
 define( 'POWERFUL_BLOCKS_NAME', plugin_basename( __FILE__ ) );
 define( 'POWERFUL_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'POWERFUL_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'POWERFUL_BLOCKS_DIST_PATH', POWERFUL_BLOCKS_DIR_PATH . 'dist/' );
-define( 'POWERFUL_BLOCKS_DIST_URL', POWERFUL_BLOCKS_DIR_URL . 'dist/' );
 define( 'POWERFUL_BLOCKS_ASSETS', POWERFUL_BLOCKS_DIR_URL . 'assets/' );
 define( 'POWERFUL_BLOCKS_MENU_SLUG', 'powerful-blocks' );
 
@@ -91,9 +89,8 @@ final class PowerfulBlocks {
 		// Activate.
 		$activate = new ultraDevs\PB\Activate();
 
-		// Blocks Manager.
-		$blocks_manager = new ultraDevs\PB\Admin\Blocks_Manager();
-		$blocks_manager->register_blocks();
+		// Rest API Manager.
+		$rest_api_manager = new ultraDevs\PB\API();
 
 		if ( is_admin() ) {
 
@@ -110,12 +107,16 @@ final class PowerfulBlocks {
 			// Block Editor Assets.
 			add_action( 'enqueue_block_editor_assets', array( $assets_manager, 'block_editor_assets' ) );
 
+			// Block Assets.
+			add_action( 'enqueue_block_assets', array( $assets_manager, 'block_assets' ) );
+
 			// Plugin Action Links.
 			add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
 
 		} else {
 			// Frontend Assets.
 			add_action( 'wp_enqueue_scripts', array( $assets_manager, 'frontend_assets' ) );
+			add_action( 'wp_head', array( $assets_manager, 'get_block_css' ) );
 
 		}
 
@@ -180,15 +181,3 @@ final class PowerfulBlocks {
 	}
 }
 PowerfulBlocks::run();
-
-
-/**
- * Blocks
- */
-
-// require_once POWERFUL_BLOCKS_DIR_PATH . '/blocks/alert-box/alert-box.php';
-require_once POWERFUL_BLOCKS_DIR_PATH . '/src/blocks/testimonial/testimonial.php';
-require_once POWERFUL_BLOCKS_DIR_PATH . '/src/blocks/star-rating/star-rating.php';
-require_once POWERFUL_BLOCKS_DIR_PATH . '/src/blocks/click-to-tweet/click-to-tweet.php';
-require_once POWERFUL_BLOCKS_DIR_PATH . '/src/blocks/countdown/countdown.php';
-require_once POWERFUL_BLOCKS_DIR_PATH . '/src/blocks/test-block/test-block.php';

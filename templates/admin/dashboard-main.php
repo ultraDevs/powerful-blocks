@@ -4,7 +4,8 @@ defined('ABSPATH') || die();
 ?>
 <div class="wrap">
 	<h1 class="screen-reader-text"> <?php _e( 'Ultra Elementor Addons', 'ultra-addons' ); ?></h1>
-	<form action="" class="pb-dashboard-form" method="POST">
+	<form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="pb-dashboard-form" method="POST" enctype="multipart/form-data">
+		<?php wp_nonce_field( 'pb_save_ib_action', 'pb_save_ib_nonce' ); ?>
 		<div class="pb-db-tabs">
 			<ul class="pb-tabs__nav">
 				<?php
@@ -17,9 +18,10 @@ defined('ABSPATH') || die();
 				?>
 			</ul>
 		</div>
-		<!-- <div class="pb-w-s__btn">
+		<div class="pb-w-s__btn">
+			<input type="hidden" name="action" value="pb_save_blocks_o">
 			<input type="submit" name="save-b" id="pb-save-blocks" class="button submit" value="Save Changes"  />
-		</div> -->
+		</div>
 		<div class="pb-tabs__content">
 			<?php
 			$tabs = self::tabs();

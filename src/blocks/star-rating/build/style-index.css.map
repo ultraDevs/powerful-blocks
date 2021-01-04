@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///style.scss"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,WAAW;EACX,qBAAqB,EAAE","file":"style-index.css","sourcesContent":[".pb-star-rating-wrapper .pb-star-rating--icon svg {\n  width: 1em;\n  height: 1em;\n  display: inline-block; }\n"],"sourceRoot":""}
