@@ -1,3 +1,5 @@
+@import 'media';
+
 /** Tab Panel **/
 
 .pb-panel-head--tabs {
@@ -122,5 +124,22 @@
 		float: right;
 	}
 }
-
-
+/** Responsive **/
+.edit-post-visual-editor {
+	.pb-hide-d {
+		opacity: 0.6;
+		display: block !important;
+	}
+	.pb-hide-t {
+		@media #{$tab_device} {
+			opacity: 0.6;
+			display: block !important;
+		}
+	}
+	.pb-hide-m {
+		@media #{$small_mobile} {
+			opacity: 0.6;
+			display: block !important;
+		}
+	}
+}

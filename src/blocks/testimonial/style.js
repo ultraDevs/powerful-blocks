@@ -5,29 +5,59 @@ const Styles = ( props ) => {
 
 	const {
 		blockId,
+
 		backgroundColor,
-		hoverBackgroundColor,
-		padding,
-		margin,
-		shadowColor,
-		shadowHOffset,
-		shadowVOffset,
-		shadowBlur,
-		shadowSpread,
-		shadowType,
-		borderStyle,
-		borderSize,
-		borderColor,
+        hoverBackgroundColor,
+        padding,
+        paddingTablet,
+        paddingMobile,
+        margin,
+        marginTablet,
+        marginMobile,
+        shadowColor,
+        shadowHOffset,
+        shadowVOffset,
+        shadowBlur,
+        shadowSpread,
+        shadowType,
+        borderStyle,
+        borderSize,
+        borderColor,
+        hoverBorderStyle,
+        hoverBorderSize,
+        hoverBorderColor,
+        borderRadius,
+        borderRadiusTablet,
+        borderRadiusMobile,
+        inAnimation,
+        outAnimation,
+        inAnimationDuration,
+        inAnimationDelay,
+        outAnimationDuration,
+        outAnimationDelay,
+        blockWidth,
+        blockCustomWidth,
+        blockCustomWidthTablet,
+        blockCustomWidthMobile,
+        blockzIndex,
+        hideOnDesktop,
+        hideOnTablet,
+        hideOnMobile,
+
 		contentBackgroundColor,
 		hoverContentBackgroundColor,
 		contentColor,
 		contentWidth,
 		contentTextAlign,
 		contentPadding,
+		contentPaddingTablet,
+		contentPaddingMobile,
 		contentFontSize,
 		contentFontSizeTablet,
 		contentFontSizeMobile,
 		contentMargin,
+		contentMarginTablet,
+		contentMarginMobile,
 		contentBorderRadius,
 		contentBorderRadiusTablet,
 		contentBorderRadiusMobile,
@@ -48,27 +78,30 @@ const Styles = ( props ) => {
 		imageShowContent,
 		imagePosition,
 		imageMargin,
+		imageMarginTablet,
+		imageMarginMobile,
 		nameColor,
 		nameTextAlign,
 		nameFontSize,
 		nameFontSizeTablet,
 		nameFontSizeMobile,
 		nameMargin,
+		nameMarginTablet,
+		nameMarginMobile,
 		titleColor,
 		titleTextAlign,
 		titleFontSize,
 		titleFontSizeTablet,
 		titleFontSizeMobile,
 		titleMargin,
+		titleMarginTablet,
+		titleMarginMobile,
 		clientInfoPosition,
 		ratingsAlign,
 		preset,
 	} = attributes;
 
 	const selectorPrefix = `#pb-testimonial-${ blockId }`;
-
-
-
 
 	let rules = {
 		desktop: {
@@ -110,18 +143,36 @@ const Styles = ( props ) => {
 					: undefined,
 				'border-style': borderStyle ? borderStyle : undefined,
 				'border-color': borderColor ? borderColor : undefined,
+				'border-radius':
+					borderRadius.top +
+					' ' +
+					borderRadius.right +
+					' ' +
+					borderRadius.bottom +
+					' ' +
+					borderRadius.left,
 			},
 			'.pb-testimonial-wrapper:hover': {
 				'background-color': hoverBackgroundColor
 					? hoverBackgroundColor
 					: undefined,
+				'border-width': hoverBorderSize
+					? hoverBorderSize + 'px'
+					: undefined,
+				'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
+				'border-color': hoverBorderColor ? hoverBorderColor : undefined,
 			},
 			'.pb-testimonial-image img': {
 				height: imageSize ? imageSize + 'px' : undefined,
 				width: imageSize ? imageSize + 'px' : undefined,
-				'border-radius': imageBorderRadius
-					? imageBorderRadius + 'px'
-					: undefined,
+				'border-radius':
+					imageBorderRadius.top || 0 +
+					' ' +
+					imageBorderRadius.right || 0 +
+					' ' +
+					imageBorderRadius.bottom || 0 +
+					' ' +
+					imageBorderRadius.left || 0,
 				'border-width': imageBorderSize
 					? imageBorderSize + 'px'
 					: undefined,
@@ -187,9 +238,14 @@ const Styles = ( props ) => {
 					contentMargin.bottom +
 					' ' +
 					contentMargin.left,
-				'border-radius': contentBorderRadius
-					? contentBorderRadius + 'px'
-					: undefined,
+				'border-radius':
+					contentBorderRadius.top +
+					' ' +
+					contentBorderRadius.right +
+					' ' +
+					contentBorderRadius.bottom +
+					' ' +
+					contentBorderRadius.left,
 			},
 			'.pb-testimonial--conr:hover': {
 				'background-color': hoverContentBackgroundColor
@@ -214,6 +270,32 @@ const Styles = ( props ) => {
 			},
 		},
 		tablet: {
+			'.pb-testimonial-wrapper': {
+				padding:
+					paddingTablet.top +
+					' ' +
+					paddingTablet.right +
+					' ' +
+					paddingTablet.bottom +
+					' ' +
+					paddingTablet.left,
+				margin:
+					marginTablet.top +
+					' ' +
+					marginTablet.right +
+					' ' +
+					marginTablet.bottom +
+					' ' +
+					marginTablet.left,
+				'border-radius':
+					borderRadiusTablet.top +
+					' ' +
+					borderRadiusTablet.right +
+					' ' +
+					borderRadiusTablet.bottom +
+					' ' +
+					borderRadiusTablet.left,
+			},
 			'.pb-testimonial-image img': {
 				height: imageSizeTablet ? imageSizeTablet + 'px' : undefined,
 				width: imageSizeTablet ? imageSizeTablet + 'px' : undefined,
@@ -225,6 +307,14 @@ const Styles = ( props ) => {
 				'font-size': nameFontSizeTablet
 					? nameFontSizeTablet + 'px'
 					: undefined,
+				margin:
+					nameMarginTablet.top +
+					' ' +
+					nameMarginTablet.right +
+					' ' +
+					nameMarginTablet.bottom +
+					' ' +
+					nameMarginTablet.left,
 			},
 			'.pb-testimonial--content': {
 				'font-size': contentFontSizeTablet
@@ -232,17 +322,72 @@ const Styles = ( props ) => {
 					: undefined,
 			},
 			'.pb-testimonial--conr': {
-				'border-radius': contentBorderRadiusTablet
-					? contentBorderRadiusTablet + 'px'
-					: undefined,
+				padding:
+					contentPaddingTablet.top +
+					' ' +
+					contentPaddingTablet.right +
+					' ' +
+					contentPaddingTablet.bottom +
+					' ' +
+					contentPaddingTablet.left,
+				margin:
+					contentMarginTablet.top +
+					' ' +
+					contentMarginTablet.right +
+					' ' +
+					contentMarginTablet.bottom +
+					' ' +
+					contentMarginTablet.left,
+				'border-radius':
+					contentBorderRadiusTablet.top +
+					' ' +
+					contentBorderRadiusTablet.right +
+					' ' +
+					contentBorderRadiusTablet.bottom +
+					' ' +
+					contentBorderRadiusTablet.left,
 			},
 			'.pb-testimonial-info--title': {
 				'font-size': titleFontSizeTablet
 					? titleFontSizeTablet + 'px'
 					: undefined,
+				margin:
+					titleMarginTablet.top +
+					' ' +
+					titleMarginTablet.right +
+					' ' +
+					titleMarginTablet.bottom +
+					' ' +
+					titleMarginTablet.left,
 			},
 		},
 		mobile: {
+			'.pb-testimonial-wrapper': {
+				padding:
+					paddingMobile.top +
+					' ' +
+					paddingMobile.right +
+					' ' +
+					paddingMobile.bottom +
+					' ' +
+					paddingMobile.left,
+				margin:
+					marginMobile.top +
+					' ' +
+					marginMobile.right +
+					' ' +
+					marginMobile.bottom +
+					' ' +
+					marginMobile.left,
+				'border-radius':
+					borderRadiusMobile.top +
+					' ' +
+					borderRadiusMobile.right +
+					' ' +
+					borderRadiusMobile.bottom +
+					' ' +
+					borderRadiusMobile.left,
+			},
 			'.pb-testimonial-image img': {
 				height: imageSizeMobile ? imageSizeMobile + 'px' : undefined,
 				width: imageSizeMobile ? imageSizeMobile + 'px' : undefined,
@@ -254,6 +399,14 @@ const Styles = ( props ) => {
 				'font-size': nameFontSizeMobile
 					? nameFontSizeMobile + 'px'
 					: undefined,
+				margin:
+					nameMarginMobile.top +
+					' ' +
+					nameMarginMobile.right +
+					' ' +
+					nameMarginMobile.bottom +
+					' ' +
+					nameMarginMobile.left,
 			},
 			'.pb-testimonial--content': {
 				'font-size': contentFontSizeMobile
@@ -261,17 +414,98 @@ const Styles = ( props ) => {
 					: undefined,
 			},
 			'.pb-testimonial--conr': {
-				'border-radius': contentBorderRadiusMobile
-					? contentBorderRadiusMobile + 'px'
-					: undefined,
+				padding:
+					contentPaddingMobile.top +
+					' ' +
+					contentPaddingMobile.right +
+					' ' +
+					contentPaddingMobile.bottom +
+					' ' +
+					contentPaddingMobile.left,
+				margin:
+					contentMarginMobile.top +
+					' ' +
+					contentMarginMobile.right +
+					' ' +
+					contentMarginMobile.bottom +
+					' ' +
+					contentMarginMobile.left,
+				'border-radius':
+					contentBorderRadiusMobile.top +
+					' ' +
+					contentBorderRadiusMobile.right +
+					' ' +
+					contentBorderRadiusMobile.bottom +
+					' ' +
+					contentBorderRadiusMobile.left,
 			},
 			'.pb-testimonial-info--title': {
 				'font-size': titleFontSizeMobile
 					? titleFontSizeMobile + 'px'
 					: undefined,
+				margin:
+					titleMarginMobile.top +
+					' ' +
+					titleMarginMobile.right +
+					' ' +
+					titleMarginMobile.bottom +
+					' ' +
+					titleMarginMobile.left,
 			},
 		},
 	};
+
+	// Responsive.
+	// if ( true === hideOnDesktop ) {
+	// 	rules.desktop[ '.wp-block .pb-testimonial-wrapper' ] = {
+	// 		opacity: '0.6',
+	// 		display: 'block !important',
+	// 	};
+	// 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
+	// 		display: 'none',
+	// 	};
+	// }
+	// if ( true === hideOnTablet ) {
+	// 	rules.tablet[ '.wp-block .pb-testimonial-wrapper' ] = {
+	// 		opacity: '0.6',
+	// 		display: 'block !important',
+	// 	};
+	// 	rules.tablet[ '.pb-testimonial-wrapper' ] = {
+	// 		display: 'none',
+	// 	};
+	// }
+	// if ( true === hideOnMobile ) {
+	// 	rules.mobile[ '.wp-block .pb-testimonial-wrapper' ] = {
+	// 		opacity: '0.6',
+	// 		display: 'block !important',
+	// 	};
+	// 	rules.mobile[ '.pb-testimonial-wrapper' ] = {
+	// 		display: 'none',
+	// 	};
+	// }
+
+	if ( 'inline' === blockWidth ) {
+		rules.desktop[ '.pb-testimonial-wrapper' ] = {
+			display: 'inline-block',
+			margin: 'auto',
+		};
+	}
+
+	if ( 'custom' === blockWidth ) {
+		rules.desktop[ '.pb-testimonial-wrapper' ] = {
+			width: blockCustomWidth + 'px',
+		};
+	}
+	if ( 'custom' === blockWidth ) {
+		rules.tablet[ '.pb-testimonial-wrapper' ] = {
+			width: blockCustomWidthTablet + 'px',
+		};
+	}
+	if ( 'custom' === blockWidth ) {
+		rules.mobile[ '.pb-testimonial-wrapper' ] = {
+			width: blockCustomWidthMobile + 'px',
+		};
+	}
 
 	if ( 'above-content' === clientInfoPosition ) {
 		rules.desktop[ '.pb-testimonial-client-info-position' ] = {
@@ -351,10 +585,10 @@ const Styles = ( props ) => {
 				: '100px',
 			padding:
 				contentPadding.top ||
-				'20px' + ' ' + contentPadding.right ||
-				'20px' + ' ' + contentPadding.bottom ||
-				'20px' + ' ' + contentPadding.left ||
-				'20px',
+				'40px' + ' ' + contentPadding.right ||
+				'40px' + ' ' + contentPadding.bottom ||
+				'40px' + ' ' + contentPadding.left ||
+				'40px',
 		};
 		rules.desktop[ '.design-3 .pb-testimonial--content' ] = {
 			color: contentColor ? contentColor : '#fff',

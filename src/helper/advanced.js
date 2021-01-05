@@ -1,6 +1,5 @@
 const {
 	PanelBody,
-	__experimentalBoxControl,
     SelectControl,
     TextControl,
 	ToggleControl,
@@ -17,6 +16,7 @@ import classnames from 'classnames';
 
 import { ColorPickerControl } from '../components';
 import { ResponsiveRangeControl } from '../components';
+import { ResponsiveBoxControl } from '../components';
 
 
 const Advanced = ( props ) => {
@@ -27,7 +27,11 @@ const Advanced = ( props ) => {
 		backgroundColor,
         hoverBackgroundColor,
         padding,
+        paddingTablet,
+        paddingMobile,
         margin,
+        marginTablet,
+        marginMobile,
         shadowColor,
         shadowHOffset,
         shadowVOffset,
@@ -40,6 +44,9 @@ const Advanced = ( props ) => {
         hoverBorderStyle,
         hoverBorderSize,
         hoverBorderColor,
+        borderRadius,
+        borderRadiusTablet,
+        borderRadiusMobile,
         inAnimation,
         outAnimation,
         inAnimationDuration,
@@ -62,7 +69,10 @@ const Advanced = ( props ) => {
     const [ aBgTab, setABgTab ] = useState( currentABgTab );
     
     let currentABrdrTab = 'normal';
-	const [ aBrdrTab, setABrdrTab ] = useState( currentABrdrTab );
+    const [ aBrdrTab, setABrdrTab ] = useState( currentABrdrTab );
+    
+    let currentaAniTab = 'in';
+	const [ aAniTab, setaAniTab ] = useState( currentaAniTab );
     
     return (
         <>
@@ -97,7 +107,7 @@ const Advanced = ( props ) => {
                         </Button>
                     </ButtonGroup>
                     <div className="pb-panel-inspect--tabs__controls">
-                        { 'normal' === currentABgTab && (
+                        { 'normal' === aBgTab && (
                         <>
                             <ColorPickerControl
                                 label={ __( 'Background Color', 'powerful-blocks' ) }
@@ -108,7 +118,7 @@ const Advanced = ( props ) => {
                             />
                         </>
                         ) }
-                        { 'hover' === currentABgTab && (
+                        { 'hover' === aBgTab && (
                         <>
                             <ColorPickerControl
                                 label={ __( 'Background Color', 'powerful-blocks' ) }
@@ -124,25 +134,48 @@ const Advanced = ( props ) => {
                 
             </PanelBody>
             <PanelBody title={ __( 'Spacing', 'powerful-blocks' ) } initialOpen={ false }>
-                    
-                <__experimentalBoxControl
+                <ResponsiveBoxControl
                     label={ __( 'Padding', 'powerful-blocks' ) }
-                    values={ padding }
-                    onChange={ ( padding ) => {
-                        setAttributes( { padding } );
+                    value={ {
+                        desktop: padding,
+                        tablet: paddingTablet,
+                        mobile: paddingMobile,
+                    } }
+                    onChange={ ( value, device ) => {
+                        if ( 'desktop' === device ) {
+                            setAttributes( { padding: value } );
+                        }
+                        if ( 'tablet' === device ) {
+                            setAttributes( { paddingTablet: value } );
+                        }
+                        if ( 'mobile' === device ) {
+                            setAttributes( { paddingMobile: value } );
+                        }
                     } }
                 />
-                <__experimentalBoxControl
+                <ResponsiveBoxControl
                     label={ __( 'Margin', 'powerful-blocks' ) }
-                    values={ margin }
-                    onChange={ ( margin ) => {
-                        setAttributes( { margin } );
+                    value={ {
+                        desktop: margin,
+                        tablet: marginTablet,
+                        mobile: marginMobile,
+                    } }
+                    onChange={ ( value, device ) => {
+                        if ( 'desktop' === device ) {
+                            setAttributes( { margin: value } );
+                        }
+                        if ( 'tablet' === device ) {
+                            setAttributes( { marginTablet: value } );
+                        }
+                        if ( 'mobile' === device ) {
+                            setAttributes( { marginMobile: value } );
+                        }
                     } }
                 />
             </PanelBody>
 
             <PanelBody title={ __( 'Border', 'powerful-blocks' ) } initialOpen={ false }>
-            <div className="pb-panel-inspect--tabs">
+                <div className="pb-panel-inspect--tabs">
                     <ButtonGroup className="pb-panel-inspect--tabs__wrapper">
                         <Button
                             onClick = { () => {
@@ -172,7 +205,7 @@ const Advanced = ( props ) => {
                         </Button>
                     </ButtonGroup>
                     <div className="pb-panel-inspect--tabs__controls">
-                        { 'normal' === currentABrdrTab && (
+                        { 'normal' === aBrdrTab && (
                         <>
                             <div className="pb-border-control--content">
                                 <SelectControl
@@ -213,9 +246,10 @@ const Advanced = ( props ) => {
                                     } }
                                 />
                             </div>
+                            
                         </>
                         ) }
-                        { 'hover' === currentABrdrTab && (
+                        { 'hover' === aBrdrTab && (
                         <>
                             <div className="pb-border-control--content">
                                 <SelectControl
@@ -260,6 +294,26 @@ const Advanced = ( props ) => {
                         ) }
                     </div>
                 </div>
+                <hr className="pb-hr" />
+                <ResponsiveBoxControl
+                    label={ __( 'Border Radius', 'powerful-blocks' ) }
+                    value={ {
+                        desktop: borderRadius,
+                        tablet: borderRadiusTablet,
+                        mobile: borderRadiusMobile,
+                    } }
+                    onChange={ ( value, device ) => {
+                        if ( 'desktop' === device ) {
+                            setAttributes( { borderRadius: value } );
+                        }
+                        if ( 'tablet' === device ) {
+                            setAttributes( { borderRadiusTablet: value } );
+                        }
+                        if ( 'mobile' === device ) {
+                            setAttributes( { borderRadiusMobile: value } );
+                        }
+                    } }
+                />
                 <hr className="pb-hr" />
                 <BaseControl
                     label={ __( 'Box Shadow', 'powerful-blocks' ) }
@@ -354,7 +408,83 @@ const Advanced = ( props ) => {
                 
             </PanelBody>
 
-            <PanelBody title={ __( 'Animation', 'powerful-blocks' ) } initialOpen={ false }></PanelBody>
+            <PanelBody title={ __( 'Animation', 'powerful-blocks' ) } initialOpen={ false }>
+            <div className="pb-panel-inspect--tabs">
+                    <ButtonGroup className="pb-panel-inspect--tabs__wrapper">
+                        <Button
+                            onClick = { () => {
+                                setaAniTab('in');
+                            }}
+                            className = {
+                                classnames(
+                                    "pb-panel-inspect--tab",
+                                    'in' === aAniTab ? 'pb-pi-tab--active' : '',
+                                )
+                            }
+                        >
+                            { __( 'In', 'powerful-blocks' ) }
+                        </Button>
+                        <Button
+                            onClick = { () => {
+                                setaAniTab('out');
+                            }}
+                            className = {
+                                classnames(
+                                    "pb-panel-inspect--tab",
+                                    'out' === aAniTab ? 'pb-pi-tab--active' : '',
+                                )
+                            }
+                        >
+                            { __( 'Out', 'powerful-blocks' ) }
+                        </Button>
+                    </ButtonGroup>
+                    <div className="pb-panel-inspect--tabs__controls">
+                        { 'in' === aAniTab && (
+                        <>
+                            <div className="pb-border-control--content">
+                                <SelectControl
+                                    label={ __(
+                                        'Border Style',
+                                        'powerful-blocks'
+                                    ) }
+                                    value={ borderStyle }
+                                    onChange={ ( borderStyle ) => {
+                                        setAttributes( { borderStyle } );
+                                    } }
+                                    options={ [
+                                        { value: 'none', label: 'None' },
+                                        { value: 'solid', label: 'Solid' },
+                                        { value: 'dotted', label: 'Dotted' },
+                                        { value: 'dashed', label: 'Dashed' },
+                                        { value: 'double', label: 'Double' },
+                                    ] }
+                                />
+                                <RangeControl
+                                    label={ __(
+                                        'Border Size',
+                                        'powerful-blocks'
+                                    ) }
+                                    value={ borderSize }
+                                    onChange={ ( borderSize ) =>
+                                        setAttributes( { borderSize } )
+                                    }
+                                    min={ 0 }
+                                    step={ 1 }
+                                    max={ 10 }
+                                />
+                            </div>
+                        </>
+                        ) }
+                        { 'out' === aAniTab && (
+                        <>
+                            <div className="pb-border-control--content">
+                                <p>Coming Soon....</p>
+                            </div>
+                        </>
+                        ) }
+                    </div>
+                </div>
+            </PanelBody>
             <PanelBody title={ __( 'Positioning', 'powerful-blocks' ) } initialOpen={ false }>
                 <SelectControl
                     label={ __( 'Width', 'powerful-blocks' ) }
@@ -388,7 +518,7 @@ const Advanced = ( props ) => {
                             }
                         } }
                         min={ 0 }
-                        max={ 500 }
+                        max={ 2000 }
                     />
                 ) }
             </PanelBody>

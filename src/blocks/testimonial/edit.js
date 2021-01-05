@@ -25,6 +25,11 @@ const edit = ( props ) => {
 		showRatings,
 		ratingsPosition,
 		preset,
+		hideOnDesktop,
+        hideOnTablet,
+        hideOnMobile,
+		customClass,
+        customID,
 	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
@@ -44,8 +49,13 @@ const edit = ( props ) => {
 						'pb-testimonial-wrapper',
 						props.className,
 						'pb-testimonial-client-info-position',
-						preset
+						preset,
+						customClass,
+						hideOnDesktop ? 'pb-hide-d' : '',
+						hideOnTablet ? 'pb-hide-t' : '',
+						hideOnMobile ? 'pb-hide-m' : '',
 					) }
+					id = { customID ? customID : '' }
 				>
 					<div className="pb-testimonial--conr">
 						{ true === showRatings &&

@@ -16,9 +16,45 @@ const advancedAttributes = {
 			right: '0px',
 			bottom: '0px',
 		},
+	},
+	paddingTablet: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
+	},
+	paddingMobile: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
     },
     
     margin: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
+	},
+	marginTablet: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
+	},
+	marginMobile: {
 		type: 'object',
 		default: {
 			top: '0px',
@@ -77,6 +113,36 @@ const advancedAttributes = {
 	hoverBorderColor: {
 		type: 'string',
 		default: '#ddd',
+	},
+
+	borderRadius: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
+	},
+
+	borderRadiusTablet: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
+	},
+
+	borderRadiusMobile: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
 	},
 
 	// Animation

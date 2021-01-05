@@ -1,0 +1,77 @@
+const { withState } = wp.compose;
+const { __experimentalBoxControl, BaseControl, Button, ButtonGroup, Icon } = wp.components;
+
+const { __ } = wp.i18n;
+
+import './editor.scss';
+
+const BaseBoxControl = ( props ) => {
+	return (
+		<__experimentalBoxControl
+			label={ props.label }
+			values={ props.value }
+			onChange={ props.onChange }
+		/>
+	);
+};
+
+const ResponsiveBoxControl = ( props ) => {
+
+	const device = props.device;
+	return (
+		<BaseControl className="pb-block-control__responsive-box-control">
+			<ButtonGroup>
+				<Button
+					isPrimary={ 'desktop' === device ? true : false }
+					onClick ={ () => props.setState( { device: 'desktop' } ) }
+				>
+					<Icon icon='desktop'/>
+				</Button>
+				<Button
+					isPrimary={ 'tablet' === device ? true : false }
+					onClick ={ () => props.setState( { device: 'tablet' } ) }
+				>
+					<Icon icon='tablet'/>
+				</Button>
+				<Button
+					isPrimary={ 'mobile' === device ? true : false }
+					onClick ={ () => props.setState( { device: 'mobile' } ) }
+				>
+					<Icon icon='smartphone' />
+				</Button>
+			</ButtonGroup>
+
+			{ 'desktop' === device && (
+				<BaseBoxControl
+					label={ props.label }
+					value={ props.value.desktop }
+					onChange={ ( value ) => {
+						props.onChange( value, device );
+					} }
+				/>
+			) }
+			{ 'tablet' === device && (
+				<BaseBoxControl
+					label={ props.label }
+					value={ props.value.tablet }
+					onChange={ ( value ) => {
+						props.onChange( value, device );
+					} }
+				/>
+			) }
+			{ 'mobile' === device && (
+				<BaseBoxControl
+					label={ props.label }
+					value={ props.value.mobile }
+					onChange={ ( value ) => {
+						props.onChange( value, device );
+					} }
+				/>
+			) }
+		</BaseControl>
+	);
+};
+
+export default withState( {
+	device: 'desktop',
+} )( ResponsiveBoxControl );

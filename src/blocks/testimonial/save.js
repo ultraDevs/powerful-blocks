@@ -18,6 +18,11 @@ const save = ( { attributes, className } ) => {
 		showRatings,
 		ratingsPosition,
 		preset,
+		hideOnDesktop,
+        hideOnTablet,
+        hideOnMobile,
+		customClass,
+        customID,
 	} = attributes;
 
 	return (
@@ -29,8 +34,13 @@ const save = ( { attributes, className } ) => {
 						className,
 						'pb-testimonial-wrapper',
 						'pb-testimonial-client-info-position',
-						preset
+						preset,
+						customClass,
+						hideOnDesktop ? 'pb-hide-d' : '',
+						hideOnTablet ? 'pb-hide-t' : '',
+						hideOnMobile ? 'pb-hide-m' : '',
 					) }
+					id = { customID ? customID : '' }
 				>
 					<div className="pb-testimonial--conr">
 						{ true === showRatings &&

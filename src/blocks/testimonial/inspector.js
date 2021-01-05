@@ -17,6 +17,7 @@ import classnames from 'classnames';
 
 
 import { ResponsiveRangeControl } from '../../components';
+import { ResponsiveBoxControl } from '../../components';
 import { ColorPickerControl } from '../../components';
 import { ImageControl } from '../../components';
 import { AlignmentControl } from '../../components';
@@ -27,24 +28,20 @@ const Inspector = ( props ) => {
 	const { attributes, setAttributes } = props;
 
 	const {
-		backgroundColor,
-		hoverBackgroundColor,
-		padding,
-		shadowColor,
-		shadowHOffset,
-		shadowVOffset,
-		shadowBlur,
-		shadowSpread,
 		contentBackgroundColor,
 		hoverContentBackgroundColor,
 		contentColor,
 		contentTextAlign,
 		contentWidth,
 		contentPadding,
+		contentPaddingTablet,
+		contentPaddingMobile,
 		contentFontSize,
 		contentFontSizeTablet,
 		contentFontSizeMobile,
 		contentMargin,
+		contentMarginTablet,
+		contentMarginMobile,
 		contentBorderRadius,
 		contentBorderRadiusTablet,
 		contentBorderRadiusMobile,
@@ -66,18 +63,24 @@ const Inspector = ( props ) => {
 		imageShowContent,
 		imagePosition,
 		imageMargin,
+		imageMarginTablet,
+		imageMarginMobile,
 		nameColor,
 		nameTextAlign,
 		nameFontSize,
 		nameFontSizeTablet,
 		nameFontSizeMobile,
 		nameMargin,
+		nameMarginTablet,
+		nameMarginMobile,
 		titleColor,
 		titleTextAlign,
 		titleFontSize,
 		titleFontSizeTablet,
 		titleFontSizeMobile,
 		titleMargin,
+		titleMarginTablet,
+		titleMarginMobile,
 		clientInfoPosition,
 		showContent,
 		showImage,
@@ -344,7 +347,7 @@ const Inspector = ( props ) => {
 								/>
 							</BaseControl>
 
-							<ResponsiveRangeControl
+							<ResponsiveBoxControl
 								label={ __( 'Border Radius', 'powerful-blocks' ) }
 								value={ {
 									desktop: imageBorderRadius,
@@ -362,8 +365,6 @@ const Inspector = ( props ) => {
 										setAttributes( { imageBorderRadiusMobile: value } );
 									}
 								} }
-								min={ 0 }
-								max={ 100 }
 							/>
 
 							<BaseControl
@@ -445,11 +446,23 @@ const Inspector = ( props ) => {
 								/>
 							</BaseControl>
 
-							<__experimentalBoxControl
+							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
-								values={ imageMargin.md }
-								onChange={ ( imageMargin ) => {
-									setAttributes( { imageMargin } );
+								value={ {
+									desktop: imageMargin,
+									tablet: imageMarginTablet,
+									mobile: imageMarginMobile,
+								} }
+								onChange={ ( value, device ) => {
+									if ( 'desktop' === device ) {
+										setAttributes( { imageMargin: value } );
+									}
+									if ( 'tablet' === device ) {
+										setAttributes( { imageMarginTablet: value } );
+									}
+									if ( 'mobile' === device ) {
+										setAttributes( { imageMarginMobile: value } );
+									}
 								} }
 							/>
 
@@ -590,7 +603,46 @@ const Inspector = ( props ) => {
 									setAttributes( { contentPadding } );
 								} }
 							/>
-							<ResponsiveRangeControl
+							<ResponsiveBoxControl
+								label={ __( 'Margin', 'powerful-blocks' ) }
+								value={ {
+									desktop: contentMargin,
+									tablet: contentMarginTablet,
+									mobile: contentMarginMobile,
+								} }
+								onChange={ ( value, device ) => {
+									if ( 'desktop' === device ) {
+										setAttributes( { contentMargin: value } );
+									}
+									if ( 'tablet' === device ) {
+										setAttributes( { contentMarginTablet: value } );
+									}
+									if ( 'mobile' === device ) {
+										setAttributes( { contentMarginMobile: value } );
+									}
+								} }
+							/>
+							<ResponsiveBoxControl
+								label={ __( 'Padding', 'powerful-blocks' ) }
+								value={ {
+									desktop: contentPadding,
+									tablet: contentPaddingTablet,
+									mobile: contentPaddingMobile,
+								} }
+								onChange={ ( value, device ) => {
+									if ( 'desktop' === device ) {
+										setAttributes( { contentPadding: value } );
+									}
+									if ( 'tablet' === device ) {
+										setAttributes( { contentPaddingTablet: value } );
+									}
+									if ( 'mobile' === device ) {
+										setAttributes( { contentPaddingMobile: value } );
+									}
+								} }
+							/>
+
+							<ResponsiveBoxControl
 								label={ __( 'Border Radius', 'powerful-blocks' ) }
 								value={ {
 									desktop: contentBorderRadius,
@@ -602,18 +654,12 @@ const Inspector = ( props ) => {
 										setAttributes( { contentBorderRadius: value } );
 									}
 									if ( 'tablet' === device ) {
-										setAttributes( {
-											contentBorderRadiusTablet: value,
-										} );
+										setAttributes( { contentBorderRadiusTablet: value } );
 									}
 									if ( 'mobile' === device ) {
-										setAttributes( {
-											contentBorderRadiusMobile: value,
-										} );
+										setAttributes( { contentBorderRadiusMobile: value } );
 									}
 								} }
-								min={ 0 }
-								max={ 200 }
 							/>
 						</PanelBody>
 						<PanelBody
@@ -654,11 +700,23 @@ const Inspector = ( props ) => {
 									}
 								} }
 							/>
-							<__experimentalBoxControl
+							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
-								values={ nameMargin }
-								onChange={ ( nameMargin ) => {
-									setAttributes( { nameMargin } );
+								value={ {
+									desktop: nameMargin,
+									tablet: nameMarginTablet,
+									mobile: nameMarginMobile,
+								} }
+								onChange={ ( value, device ) => {
+									if ( 'desktop' === device ) {
+										setAttributes( { nameMargin: value } );
+									}
+									if ( 'tablet' === device ) {
+										setAttributes( { nameMarginTablet: value } );
+									}
+									if ( 'mobile' === device ) {
+										setAttributes( { nameMarginMobile: value } );
+									}
 								} }
 							/>
 						</PanelBody>
@@ -700,11 +758,23 @@ const Inspector = ( props ) => {
 									}
 								} }
 							/>
-							<__experimentalBoxControl
+							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
-								values={ titleMargin }
-								onChange={ ( titleMargin ) => {
-									setAttributes( { titleMargin } );
+								value={ {
+									desktop: titleMargin,
+									tablet: titleMarginTablet,
+									mobile: titleMarginMobile,
+								} }
+								onChange={ ( value, device ) => {
+									if ( 'desktop' === device ) {
+										setAttributes( { titleMargin: value } );
+									}
+									if ( 'tablet' === device ) {
+										setAttributes( { titleMarginTablet: value } );
+									}
+									if ( 'mobile' === device ) {
+										setAttributes( { titleMarginMobile: value } );
+									}
 								} }
 							/>
 						</PanelBody>

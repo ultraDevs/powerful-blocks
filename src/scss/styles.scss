@@ -1,1 +1,17 @@
 @import "../blocks/**/style.scss";
+@import 'media';
+
+/** Responsive **/
+.pb-hide-d {
+	display: none !important;
+}
+.pb-hide-t {
+	@media #{$tab_device} {
+		display: none !important;
+	}
+}
+.pb-hide-m {
+	@media #{$small_mobile} {
+		display: none !important;
+	}
+}
