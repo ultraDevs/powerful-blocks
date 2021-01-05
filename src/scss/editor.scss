@@ -48,6 +48,13 @@
 		.component-box-control__input-controls-wrapper {
 
 		}
+		.css-11vcxb9-StyledField {
+			flex-direction: row-reverse;
+			justify-content: space-between;
+		}
+		input[type='text'] {
+			border-color: #ddd;
+		}
 	}
 }
 

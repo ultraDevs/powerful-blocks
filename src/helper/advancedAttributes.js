@@ -65,5 +65,91 @@ const advancedAttributes = {
 		type: 'string',
 		default: '#ddd',
 	},
+
+	hoverBorderStyle: {
+		type: 'string',
+		default: 'none',
+	},
+	hoverBorderSize: {
+		type: 'number',
+		default: 1,
+	},
+	hoverBorderColor: {
+		type: 'string',
+		default: '#ddd',
+	},
+
+	// Animation
+	inAnimation: {
+		type: 'string',
+		default: '',
+	},
+	inAnimationDuration: {
+		type: 'string',
+		default: '',
+	},
+	inAnimationDelay: {
+		type: 'string',
+		default: '',
+	},
+
+	outAnimation: {
+		type: 'string',
+		default: '',
+	},
+	outAnimationDuration: {
+		type: 'string',
+		default: '',
+	},
+	outAnimationDelay: {
+		type: 'string',
+		default: '',
+	},
+
+	// Positioning. 
+	blockWidth: {
+		type: 'string',
+		default: '',
+	},
+	blockCustomWidth: {
+		type: 'number',
+		default: '',
+	},
+	blockCustomWidthTablet: {
+		type: 'number',
+		default: '',
+	},
+	blockCustomWidthMobile: {
+		type: 'number',
+		default: '',
+	},
+	blockzIndex: {
+		type: 'string',
+		default: '',
+	},
+
+	// Visibility
+	hideOnDesktop: {
+		type: 'boolean',
+		default: '',
+	},
+	hideOnTablet: {
+		type: 'boolean',
+		default: '',
+	},
+	hideOnMobile: {
+		type: 'boolean',
+		default: '',
+	},
+
+	// Custom.
+	customClass: {
+		type: 'string',
+		default: '',
+	},
+	customID: {
+		type: 'string',
+		default: '',
+	},
 };
 export default advancedAttributes;

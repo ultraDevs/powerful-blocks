@@ -1,7 +1,9 @@
 .ib-block-control__color-picker {
 	> .components-base-control__field {
 		display: flex;
-    	justify-content: space-between;
+		justify-content: space-between;
+		flex-direction: row !important;
+
 		> .components-base-control__label {
 			margin-right: 0px;
 		}
