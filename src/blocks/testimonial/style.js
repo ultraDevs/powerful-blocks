@@ -47,6 +47,7 @@ const Styles = ( props ) => {
 		contentBackgroundColor,
 		hoverContentBackgroundColor,
 		contentColor,
+		hoverContentColor,
 		contentWidth,
 		contentTextAlign,
 		contentPadding,
@@ -213,10 +214,10 @@ const Styles = ( props ) => {
 
 			'.pb-testimonial--content': {
 				color: contentColor ? contentColor : undefined,
+				'text-align': contentTextAlign ? contentTextAlign : undefined,
 				'font-size': contentFontSize
 					? contentFontSize + 'px'
 					: undefined,
-				'text-align': contentTextAlign ? contentTextAlign : undefined,
 			},
 			'.pb-testimonial--conr': {
 				'background-color': contentBackgroundColor
@@ -250,6 +251,14 @@ const Styles = ( props ) => {
 			'.pb-testimonial--conr:hover': {
 				'background-color': hoverContentBackgroundColor
 					? hoverContentBackgroundColor + '!important'
+					: undefined,
+				color: hoverContentColor
+					? hoverContentColor + '!important'
+					: undefined,
+			},
+			'.pb-testimonial--content:hover': {
+				color: hoverContentColor
+					? hoverContentColor + '!important'
 					: undefined,
 			},
 			'.pb-testimonial-info--title': {
@@ -455,34 +464,6 @@ const Styles = ( props ) => {
 		},
 	};
 
-	// Responsive.
-	// if ( true === hideOnDesktop ) {
-	// 	rules.desktop[ '.wp-block .pb-testimonial-wrapper' ] = {
-	// 		opacity: '0.6',
-	// 		display: 'block !important',
-	// 	};
-	// 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
-	// 		display: 'none',
-	// 	};
-	// }
-	// if ( true === hideOnTablet ) {
-	// 	rules.tablet[ '.wp-block .pb-testimonial-wrapper' ] = {
-	// 		opacity: '0.6',
-	// 		display: 'block !important',
-	// 	};
-	// 	rules.tablet[ '.pb-testimonial-wrapper' ] = {
-	// 		display: 'none',
-	// 	};
-	// }
-	// if ( true === hideOnMobile ) {
-	// 	rules.mobile[ '.wp-block .pb-testimonial-wrapper' ] = {
-	// 		opacity: '0.6',
-	// 		display: 'block !important',
-	// 	};
-	// 	rules.mobile[ '.pb-testimonial-wrapper' ] = {
-	// 		display: 'none',
-	// 	};
-	// }
 
 	if ( 'inline' === blockWidth ) {
 		rules.desktop[ '.pb-testimonial-wrapper' ] = {
@@ -611,8 +592,6 @@ const Styles = ( props ) => {
 		};
 	}
 	const styles = renderStyle( rules, selectorPrefix );
-
-	// let css = styles.props.children;
 
 
 	return styles;

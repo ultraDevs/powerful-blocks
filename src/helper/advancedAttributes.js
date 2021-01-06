@@ -8,6 +8,11 @@ const advancedAttributes = {
 		default: '',
 	},
 
+	gradientValue: {
+		type: 'string',
+		default: '',
+	},
+
 	padding: {
 		type: 'object',
 		default: {

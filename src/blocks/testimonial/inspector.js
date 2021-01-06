@@ -1,14 +1,14 @@
 const { InspectorControls } = wp.blockEditor;
 const {
 	PanelBody,
-	__experimentalBoxControl,
 	SelectControl,
 	ToggleControl,
 	RangeControl,
 	BaseControl,
 	Dropdown,
 	Button,
-	ButtonGroup
+	ButtonGroup,
+	TabPanel
 } = wp.components;
 const { __ } = wp.i18n;
 
@@ -31,6 +31,7 @@ const Inspector = ( props ) => {
 		contentBackgroundColor,
 		hoverContentBackgroundColor,
 		contentColor,
+		hoverContentColor,
 		contentTextAlign,
 		contentWidth,
 		contentPadding,
@@ -484,68 +485,72 @@ const Inspector = ( props ) => {
 							title={ __( 'Content', 'powerful-blocks' ) }
 							initialOpen={ false }
 						>
-							<ColorPickerControl
-								label={ __( 'Color', 'powerful-blocks' ) }
-								value={ contentColor }
-								onChange={ ( contentColor ) => {
-									setAttributes( { contentColor } );
-								} }
-							/>
+							<TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
+								tabs={ [
+									{
+										name: "normal",
+										title: __( 'Normal', 'powerful-blocks' ),
+										className: "pb-panel-inspect--tab",
+									},
+									{
+										name: "hover",
+										title: __( 'Hover', 'powerful-blocks' ),
+										className: "pb-panel-inspect--tab",
+									},
+								] }>
+								{
+									( tab ) => {
+										let tabout
 
-							<div className="pb-panel-inspect--tabs">
-								<ButtonGroup className="pb-panel-inspect--tabs__wrapper">
-									<Button
-										onClick = { () => {
-											setiTab('normal');
-										}}
-										className = {
-											classnames(
-												"pb-panel-inspect--tab",
-												'normal' === iTab ? 'pb-pi-tab--active' : '',
+										if ( "normal" === tab.name ) {
+											tabout = (
+												<>
+													<ColorPickerControl
+														label={ __( 'Background Color', 'powerful-blocks' ) }
+														value={ contentBackgroundColor }
+														onChange={ ( contentBackgroundColor ) => {
+															setAttributes( { contentBackgroundColor } );
+														} }
+													/>
+													<ColorPickerControl
+														label={ __( 'Color', 'powerful-blocks' ) }
+														value={ contentColor }
+														onChange={ ( contentColor ) => {
+															setAttributes( { contentColor } );
+														} }
+													/>
+												</>
+											)
+										} else if ( "hover" === tab.name ) {
+											tabout = (
+												<>
+													<ColorPickerControl
+														label={ __( 'Background Color', 'powerful-blocks' ) }
+														value={ hoverContentBackgroundColor }
+														onChange={ ( hoverContentBackgroundColor ) => {
+															setAttributes( { hoverContentBackgroundColor } );
+														} }
+													/>
+													<ColorPickerControl
+														label={ __( 'Color', 'powerful-blocks' ) }
+														value={ hoverContentColor }
+														onChange={ ( hoverContentColor ) => {
+															setAttributes( { hoverContentColor } );
+														} }
+													/>
+												</>
+											)
+										} else {
+											tabout = (
+												<>
+													<p>Loading..</p>
+												</>
 											)
 										}
-									>
-										{ __( 'Normal', 'powerful-blocks' ) }
-									</Button>
-									<Button
-										onClick = { () => {
-											setiTab('hover');
-										}}
-										className = {
-											classnames(
-												"pb-panel-inspect--tab",
-												'hover' === iTab ? 'pb-pi-tab--active' : '',
-											)
-										}
-									>
-										{ __( 'Hover', 'powerful-blocks' ) }
-									</Button>
-								</ButtonGroup>
-								<div className="pb-panel-inspect--tabs__controls">
-									{ 'normal' === iTab && (
-									<>
-										<ColorPickerControl
-											label={ __( 'Background Color', 'powerful-blocks' ) }
-											value={ contentBackgroundColor }
-											onChange={ ( contentBackgroundColor ) => {
-												setAttributes( { contentBackgroundColor } );
-											} }
-										/>
-									</>
-									) }
-									{ 'hover' === iTab && (
-									<>
-										<ColorPickerControl
-											label={ __( 'Background Color', 'powerful-blocks' ) }
-											value={ hoverContentBackgroundColor }
-											onChange={ ( hoverContentBackgroundColor ) => {
-												setAttributes( { hoverContentBackgroundColor } );
-											} }
-										/>
-									</>
-									) }
-								</div>
-							</div>
+										return <div className="pb-panel-inspect--tabs__controls">{ tabout }</div>
+									}
+								}
+							</TabPanel>
 
 							<AlignmentControl
 								label={ __( 'Alignment', 'powerful-blocks' ) }
@@ -587,20 +592,6 @@ const Inspector = ( props ) => {
 									if ( 'mobile' === device ) {
 										setAttributes( { contentFontSizeMobile: value } );
 									}
-								} }
-							/>
-							<__experimentalBoxControl
-								label={ __( 'Margin', 'powerful-blocks' ) }
-								values={ contentMargin }
-								onChange={ ( contentMargin ) => {
-									setAttributes( { contentMargin } );
-								} }
-							/>
-							<__experimentalBoxControl
-								label={ __( 'Padding', 'powerful-blocks' ) }
-								values={ contentPadding }
-								onChange={ ( contentPadding ) => {
-									setAttributes( { contentPadding } );
 								} }
 							/>
 							<ResponsiveBoxControl

@@ -7,7 +7,8 @@ const {
 	BaseControl,
 	Dropdown,
 	Button,
-	ButtonGroup
+    ButtonGroup,
+    TabPanel,
 } = wp.components;
 const { __ } = wp.i18n;
 
@@ -63,74 +64,66 @@ const Advanced = ( props ) => {
         hideOnMobile,
         customClass,
         customID,
+        gradientValue
     } = attributes;
-    
-    let currentABgTab = 'normal';
-    const [ aBgTab, setABgTab ] = useState( currentABgTab );
-    
-    let currentABrdrTab = 'normal';
-    const [ aBrdrTab, setABrdrTab ] = useState( currentABrdrTab );
-    
-    let currentaAniTab = 'in';
-	const [ aAniTab, setaAniTab ] = useState( currentaAniTab );
     
     return (
         <>
             <PanelBody title={ __( 'Background', 'powerful-blocks' ) }>
-                <div className="pb-panel-inspect--tabs">
-                    <ButtonGroup className="pb-panel-inspect--tabs__wrapper">
-                        <Button
-                            onClick = { () => {
-                                setABgTab('normal');
-                            }}
-                            className = {
-                                classnames(
-                                    "pb-panel-inspect--tab",
-                                    'normal' === aBgTab ? 'pb-pi-tab--active' : '',
-                                )
-                            }
-                        >
-                            { __( 'Normal', 'powerful-blocks' ) }
-                        </Button>
-                        <Button
-                            onClick = { () => {
-                                setABgTab('hover');
-                            }}
-                            className = {
-                                classnames(
-                                    "pb-panel-inspect--tab",
-                                    'hover' === aBgTab ? 'pb-pi-tab--active' : '',
-                                )
-                            }
-                        >
-                            { __( 'Hover', 'powerful-blocks' ) }
-                        </Button>
-                    </ButtonGroup>
-                    <div className="pb-panel-inspect--tabs__controls">
-                        { 'normal' === aBgTab && (
-                        <>
-                            <ColorPickerControl
-                                label={ __( 'Background Color', 'powerful-blocks' ) }
-                                value={ backgroundColor }
-                                onChange={ ( backgroundColor ) => {
-                                    setAttributes( { backgroundColor } );
-                                } }
-                            />
-                        </>
-                        ) }
-                        { 'hover' === aBgTab && (
-                        <>
-                            <ColorPickerControl
-                                label={ __( 'Background Color', 'powerful-blocks' ) }
-                                value={ hoverBackgroundColor }
-                                onChange={ ( hoverBackgroundColor ) => {
-                                    setAttributes( { hoverBackgroundColor } );
-                                } }
-                            />
-                        </>
-                        ) }
-                    </div>
-                </div>
+                
+                <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
+					tabs={ [
+						{
+							name: "normal",
+							title: __( 'Normal', 'powerful-blocks' ),
+							className: "pb-panel-inspect--tab",
+						},
+						{
+							name: "hover",
+							title: __( 'Hover', 'powerful-blocks' ),
+							className: "pb-panel-inspect--tab",
+						},
+					] }>
+					{
+						( tab ) => {
+							let tabout
+
+							if ( "normal" === tab.name ) {
+								tabout = (
+									<>
+                                        <ColorPickerControl
+                                            label={ __( 'Background Color', 'powerful-blocks' ) }
+                                            value={ backgroundColor }
+                                            onChange={ ( backgroundColor ) => {
+                                                setAttributes( { backgroundColor } );
+                                            } }
+                                        />
+                                    </>
+								)
+							} else if ( "hover" === tab.name ) {
+								tabout = (
+									<>
+                                        <ColorPickerControl
+                                            label={ __( 'Background Color', 'powerful-blocks' ) }
+                                            value={ hoverBackgroundColor }
+                                            onChange={ ( hoverBackgroundColor ) => {
+                                                setAttributes( { hoverBackgroundColor } );
+                                            } }
+                                        />
+                                    </>
+								)
+							} else {
+								tabout = (
+									<>
+                                        <p>...</p>
+                                    </>
+								)
+							}
+
+							return <div className="pb-panel-inspect--tabs__controls">{ tabout }</div>
+						}
+					}
+				</TabPanel>
                 
             </PanelBody>
             <PanelBody title={ __( 'Spacing', 'powerful-blocks' ) } initialOpen={ false }>
@@ -175,125 +168,120 @@ const Advanced = ( props ) => {
             </PanelBody>
 
             <PanelBody title={ __( 'Border', 'powerful-blocks' ) } initialOpen={ false }>
-                <div className="pb-panel-inspect--tabs">
-                    <ButtonGroup className="pb-panel-inspect--tabs__wrapper">
-                        <Button
-                            onClick = { () => {
-                                setABrdrTab('normal');
-                            }}
-                            className = {
-                                classnames(
-                                    "pb-panel-inspect--tab",
-                                    'normal' === aBrdrTab ? 'pb-pi-tab--active' : '',
-                                )
-                            }
-                        >
-                            { __( 'Normal', 'powerful-blocks' ) }
-                        </Button>
-                        <Button
-                            onClick = { () => {
-                                setABrdrTab('hover');
-                            }}
-                            className = {
-                                classnames(
-                                    "pb-panel-inspect--tab",
-                                    'hover' === aBrdrTab ? 'pb-pi-tab--active' : '',
-                                )
-                            }
-                        >
-                            { __( 'Hover', 'powerful-blocks' ) }
-                        </Button>
-                    </ButtonGroup>
-                    <div className="pb-panel-inspect--tabs__controls">
-                        { 'normal' === aBrdrTab && (
-                        <>
-                            <div className="pb-border-control--content">
-                                <SelectControl
-                                    label={ __(
-                                        'Border Style',
-                                        'powerful-blocks'
-                                    ) }
-                                    value={ borderStyle }
-                                    onChange={ ( borderStyle ) => {
-                                        setAttributes( { borderStyle } );
-                                    } }
-                                    options={ [
-                                        { value: 'none', label: 'None' },
-                                        { value: 'solid', label: 'Solid' },
-                                        { value: 'dotted', label: 'Dotted' },
-                                        { value: 'dashed', label: 'Dashed' },
-                                        { value: 'double', label: 'Double' },
-                                    ] }
-                                />
-                                <RangeControl
-                                    label={ __(
-                                        'Border Size',
-                                        'powerful-blocks'
-                                    ) }
-                                    value={ borderSize }
-                                    onChange={ ( borderSize ) =>
-                                        setAttributes( { borderSize } )
-                                    }
-                                    min={ 0 }
-                                    step={ 1 }
-                                    max={ 10 }
-                                />
-                                <ColorPickerControl
-                                    label={ __( 'Border Color', 'powerful-blocks' ) }
-                                    value={ borderColor }
-                                    onChange={ ( borderColor ) => {
-                                        setAttributes( { borderColor } );
-                                    } }
-                                />
-                            </div>
-                            
-                        </>
-                        ) }
-                        { 'hover' === aBrdrTab && (
-                        <>
-                            <div className="pb-border-control--content">
-                                <SelectControl
-                                    label={ __(
-                                        'Border Style',
-                                        'powerful-blocks'
-                                    ) }
-                                    value={ hoverBorderStyle }
-                                    onChange={ ( hoverBorderStyle ) => {
-                                        setAttributes( { hoverBorderStyle } );
-                                    } }
-                                    options={ [
-                                        { value: 'none', label: 'None' },
-                                        { value: 'solid', label: 'Solid' },
-                                        { value: 'dotted', label: 'Dotted' },
-                                        { value: 'dashed', label: 'Dashed' },
-                                        { value: 'double', label: 'Double' },
-                                    ] }
-                                />
-                                <RangeControl
-                                    label={ __(
-                                        'Border Size',
-                                        'powerful-blocks'
-                                    ) }
-                                    value={ hoverBorderSize }
-                                    onChange={ ( hoverBorderSize ) =>
-                                        setAttributes( { hoverBorderSize } )
-                                    }
-                                    min={ 0 }
-                                    step={ 1 }
-                                    max={ 10 }
-                                />
-                                <ColorPickerControl
-                                    label={ __( 'Border Color', 'powerful-blocks' ) }
-                                    value={ hoverBorderColor }
-                                    onChange={ ( hoverBorderColor ) => {
-                                        setAttributes( { hoverBorderColor } );
-                                    } }
-                                />
-                            </div>
-                        </>
-                        ) }
-                    </div>
-                </div>
+            <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
+					tabs={ [
+						{
+							name: "normal",
+							title: __( 'Normal', 'powerful-blocks' ),
+							className: "pb-panel-inspect--tab",
+						},
+						{
+							name: "hover",
+							title: __( 'Hover', 'powerful-blocks' ),
+							className: "pb-panel-inspect--tab",
+						},
+					] }>
+					{
+						( tab ) => {
+							let tabout
+
+							if ( "normal" === tab.name ) {
+								tabout = (
+									<>
+                                        <SelectControl
+                                            label={ __(
+                                                'Border Style',
+                                                'powerful-blocks'
+                                            ) }
+                                            value={ borderStyle }
+                                            onChange={ ( borderStyle ) => {
+                                                setAttributes( { borderStyle } );
+                                            } }
+                                            options={ [
+                                                { value: 'none', label: 'None' },
+                                                { value: 'solid', label: 'Solid' },
+                                                { value: 'dotted', label: 'Dotted' },
+                                                { value: 'dashed', label: 'Dashed' },
+                                                { value: 'double', label: 'Double' },
+                                            ] }
+                                        />
+                                        <RangeControl
+                                            label={ __(
+                                                'Border Size',
+                                                'powerful-blocks'
+                                            ) }
+                                            value={ borderSize }
+                                            onChange={ ( borderSize ) =>
+                                                setAttributes( { borderSize } )
+                                            }
+                                            min={ 0 }
+                                            step={ 1 }
+                                            max={ 10 }
+                                        />
+                                        <ColorPickerControl
+                                            label={ __( 'Border Color', 'powerful-blocks' ) }
+                                            value={ borderColor }
+                                            onChange={ ( borderColor ) => {
+                                                setAttributes( { borderColor } );
+                                            } }
+                                        />
+                                    </>
+								)
+							} else if ( "hover" === tab.name ) {
+								tabout = (
+									<>
+                                        <SelectControl
+                                            label={ __(
+                                                'Border Style',
+                                                'powerful-blocks'
+                                            ) }
+                                            value={ hoverBorderStyle }
+                                            onChange={ ( hoverBorderStyle ) => {
+                                                setAttributes( { hoverBorderStyle } );
+                                            } }
+                                            options={ [
+                                                { value: 'none', label: 'None' },
+                                                { value: 'solid', label: 'Solid' },
+                                                { value: 'dotted', label: 'Dotted' },
+                                                { value: 'dashed', label: 'Dashed' },
+                                                { value: 'double', label: 'Double' },
+                                            ] }
+                                        />
+                                        <RangeControl
+                                            label={ __(
+                                                'Border Size',
+                                                'powerful-blocks'
+                                            ) }
+                                            value={ hoverBorderSize }
+                                            onChange={ ( hoverBorderSize ) =>
+                                                setAttributes( { hoverBorderSize } )
+                                            }
+                                            min={ 0 }
+                                            step={ 1 }
+                                            max={ 10 }
+                                        />
+                                        <ColorPickerControl
+                                            label={ __( 'Border Color', 'powerful-blocks' ) }
+                                            value={ hoverBorderColor }
+                                            onChange={ ( hoverBorderColor ) => {
+                                                setAttributes( { hoverBorderColor } );
+                                            } }
+                                        />
+                                    </>
+								)
+							} else {
+								tabout = (
+									<>
+                                        <p>...</p>
+                                    </>
+								)
+							}
+
+							return <div className="pb-panel-inspect--tabs__controls">{ tabout }</div>
+						}
+					}
+				</TabPanel>
+                
                 <hr className="pb-hr" />
                 <ResponsiveBoxControl
                     label={ __( 'Border Radius', 'powerful-blocks' ) }
@@ -409,81 +397,75 @@ const Advanced = ( props ) => {
             </PanelBody>
 
             <PanelBody title={ __( 'Animation', 'powerful-blocks' ) } initialOpen={ false }>
-            <div className="pb-panel-inspect--tabs">
-                    <ButtonGroup className="pb-panel-inspect--tabs__wrapper">
-                        <Button
-                            onClick = { () => {
-                                setaAniTab('in');
-                            }}
-                            className = {
-                                classnames(
-                                    "pb-panel-inspect--tab",
-                                    'in' === aAniTab ? 'pb-pi-tab--active' : '',
-                                )
-                            }
-                        >
-                            { __( 'In', 'powerful-blocks' ) }
-                        </Button>
-                        <Button
-                            onClick = { () => {
-                                setaAniTab('out');
-                            }}
-                            className = {
-                                classnames(
-                                    "pb-panel-inspect--tab",
-                                    'out' === aAniTab ? 'pb-pi-tab--active' : '',
-                                )
-                            }
-                        >
-                            { __( 'Out', 'powerful-blocks' ) }
-                        </Button>
-                    </ButtonGroup>
-                    <div className="pb-panel-inspect--tabs__controls">
-                        { 'in' === aAniTab && (
-                        <>
-                            <div className="pb-border-control--content">
-                                <SelectControl
-                                    label={ __(
-                                        'Border Style',
-                                        'powerful-blocks'
-                                    ) }
-                                    value={ borderStyle }
-                                    onChange={ ( borderStyle ) => {
-                                        setAttributes( { borderStyle } );
-                                    } }
-                                    options={ [
-                                        { value: 'none', label: 'None' },
-                                        { value: 'solid', label: 'Solid' },
-                                        { value: 'dotted', label: 'Dotted' },
-                                        { value: 'dashed', label: 'Dashed' },
-                                        { value: 'double', label: 'Double' },
-                                    ] }
-                                />
-                                <RangeControl
-                                    label={ __(
-                                        'Border Size',
-                                        'powerful-blocks'
-                                    ) }
-                                    value={ borderSize }
-                                    onChange={ ( borderSize ) =>
-                                        setAttributes( { borderSize } )
-                                    }
-                                    min={ 0 }
-                                    step={ 1 }
-                                    max={ 10 }
-                                />
-                            </div>
-                        </>
-                        ) }
-                        { 'out' === aAniTab && (
-                        <>
-                            <div className="pb-border-control--content">
-                                <p>Coming Soon....</p>
-                            </div>
-                        </>
-                        ) }
-                    </div>
-                </div>
+                <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
+					tabs={ [
+						{
+							name: "in",
+							title: __( 'In', 'powerful-blocks' ),
+							className: "pb-panel-inspect--tab",
+						},
+						{
+							name: "out",
+							title: __( 'Out', 'powerful-blocks' ),
+							className: "pb-panel-inspect--tab",
+						},
+					] }>
+					{
+						( tab ) => {
+							let tabout
+
+							if ( "in" === tab.name ) {
+								tabout = (
+									<>
+                                        <SelectControl
+                                            label={ __(
+                                                'Border Style',
+                                                'powerful-blocks'
+                                            ) }
+                                            value={ borderStyle }
+                                            onChange={ ( borderStyle ) => {
+                                                setAttributes( { borderStyle } );
+                                            } }
+                                            options={ [
+                                                { value: 'none', label: 'None' },
+                                                { value: 'solid', label: 'Solid' },
+                                                { value: 'dotted', label: 'Dotted' },
+                                                { value: 'dashed', label: 'Dashed' },
+                                                { value: 'double', label: 'Double' },
+                                            ] }
+                                        />
+                                        <RangeControl
+                                            label={ __(
+                                                'Border Size',
+                                                'powerful-blocks'
+                                            ) }
+                                            value={ borderSize }
+                                            onChange={ ( borderSize ) =>
+                                                setAttributes( { borderSize } )
+                                            }
+                                            min={ 0 }
+                                            step={ 1 }
+                                            max={ 10 }
+                                        />
+                                    </>
+								)
+							} else if ( "out" === tab.name ) {
+								tabout = (
+									<>
+                                        <p>Coming Soon..</p>
+                                    </>
+								)
+							} else {
+								tabout = (
+									<>
+                                        <p>Else</p>
+                                    </>
+								)
+							}
+							return <div className="pb-panel-inspect--tabs__controls">{ tabout }</div>
+						}
+					}
+				</TabPanel>
             </PanelBody>
             <PanelBody title={ __( 'Positioning', 'powerful-blocks' ) } initialOpen={ false }>
                 <SelectControl

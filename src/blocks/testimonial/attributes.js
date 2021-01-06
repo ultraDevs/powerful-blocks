@@ -32,7 +32,11 @@ const attributes = {
 
 	contentColor: {
 		type: 'string',
-		default: '#111',
+		default: '#333',
+	},
+	hoverContentColor: {
+		type: 'string',
+		default: '#222',
 	},
 
 	contentTextAlign: {
@@ -116,18 +120,32 @@ const attributes = {
 	},
 
 	contentBorderRadius: {
-		type: 'number',
-		default: 0,
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
 	},
 
 	contentBorderRadiusTablet: {
-		type: 'number',
-		default: 0,
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
 	},
-
 	contentBorderRadiusMobile: {
-		type: 'number',
-		default: 0,
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
 	},
 
 	imageData: {
