@@ -1,4 +1,14 @@
 const advancedAttributes = {
+
+	backgroundType: {
+		type: 'string',
+		default: 'color',
+	},
+	hoverBackgroundType: {
+		type: 'string',
+		default: 'color',
+	},
+
     backgroundColor: {
 		type: 'string',
 		default: '',
@@ -11,6 +21,63 @@ const advancedAttributes = {
 	gradientValue: {
 		type: 'string',
 		default: '',
+	},
+	gradientAngle: {
+		type: 'number',
+		default: 0,
+	},
+	gradientColor1: {
+		type: 'string',
+	},
+	gradientColor2: {
+		type: 'string',
+	},
+	gradientLoc1: {
+		type: 'number',
+		default: 0,
+	},
+	gradientLoc2: {
+		type: 'number',
+		default: 100,
+	},
+	gradientPosition: {
+		type: 'string',
+		default: 'center center',
+	},
+	gradientType: {
+		type: 'string',
+		default: 'linear',
+	},
+
+	hoverGradientValue: {
+		type: 'string',
+		default: '',
+	},
+	hoverGradientAngle: {
+		type: 'number',
+		default: 0,
+	},
+	hoverGradientColor1: {
+		type: 'string',
+	},
+	hoverGradientColor2: {
+		type: 'string',
+	},
+	hoverGradientLoc1: {
+		type: 'number',
+		default: 0,
+	},
+	hoverGradientLoc2: {
+		type: 'number',
+		default: 100,
+	},
+	hoverGradientPosition: {
+		type: 'string',
+		default: 'center center',
+	},
+	hoverGradientType: {
+		type: 'string',
+		default: 'linear',
 	},
 
 	padding: {

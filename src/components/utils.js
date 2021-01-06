@@ -1,8 +1,8 @@
 export const renderStyle = ( css, selectorPrefix ) => {
 	const blockId = selectorPrefix.replace( '#', '' );
 	const breakpoints = {
-		tablet: 992,
-		mobile: 768,
+		tablet: 976,
+		mobile: 767,
 	};
 
 	if ( 'undefined' === typeof css.desktop ) {

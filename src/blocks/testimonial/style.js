@@ -5,9 +5,30 @@ const Styles = ( props ) => {
 
 	const {
 		blockId,
+		backgroundType,
+		hoverBackgroundType,
 
 		backgroundColor,
-        hoverBackgroundColor,
+		hoverBackgroundColor,
+
+		gradientValue,
+		gradientAngle,
+		gradientColor1,
+		gradientColor2,
+		gradientLoc1,
+		gradientLoc2,
+		gradientPosition,
+        gradientType,
+
+        hoverGradientValue,
+        hoverGradientAngle,
+        hoverGradientColor1,
+        hoverGradientColor2,
+        hoverGradientLoc1,
+        hoverGradientLoc2,
+        hoverGradientPosition,
+        hoverGradientType,
+
         padding,
         paddingTablet,
         paddingMobile,
@@ -102,16 +123,15 @@ const Styles = ( props ) => {
 		preset,
 	} = attributes;
 
+
 	const selectorPrefix = `#pb-testimonial-${ blockId }`;
 
 	let rules = {
 		desktop: {
 			'.pb-testimonial-wrapper': {
+				background: 'color' === backgroundType ? backgroundColor : gradientValue,
 				display: 'flex',
 				'flex-direction': 'column',
-				'background-color': backgroundColor
-					? backgroundColor
-					: undefined,
 				padding:
 					padding.top +
 					' ' +
@@ -154,9 +174,7 @@ const Styles = ( props ) => {
 					borderRadius.left,
 			},
 			'.pb-testimonial-wrapper:hover': {
-				'background-color': hoverBackgroundColor
-					? hoverBackgroundColor
-					: undefined,
+				background: 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue,
 				'border-width': hoverBorderSize
 					? hoverBorderSize + 'px'
 					: undefined,
@@ -256,7 +274,7 @@ const Styles = ( props ) => {
 					? hoverContentColor + '!important'
 					: undefined,
 			},
-			'.pb-testimonial--content:hover': {
+			'.pb-testimonial-wrapper:hover .pb-testimonial--content': {
 				color: hoverContentColor
 					? hoverContentColor + '!important'
 					: undefined,
@@ -464,6 +482,26 @@ const Styles = ( props ) => {
 		},
 	};
 
+	// if ( 'image' === backgroundType ) {
+	// 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
+	// 		'background-color': backgroundColor
+	// 				? backgroundColor
+	// 				: undefined,
+	// 	};
+	// } else if ( 'gradient' === backgroundType ) {
+	// 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
+	// 		'background': gradientValue
+	// 				? gradientValue
+	// 				: undefined,
+	// 	};
+	// } else {
+	// 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
+	// 		'background-color': backgroundColor
+	// 				? backgroundColor
+	// 				: undefined,
+	// 	};
+	// }
+
 
 	if ( 'inline' === blockWidth ) {
 		rules.desktop[ '.pb-testimonial-wrapper' ] = {
@@ -555,7 +593,6 @@ const Styles = ( props ) => {
 			'background-color': backgroundColor
 				? backgroundColor
 				: 'transparent',
-			padding: '0px ',
 		};
 		rules.desktop[ '.design-3 .pb-testimonial--conr' ] = {
 			'background-color': contentBackgroundColor
@@ -591,8 +628,9 @@ const Styles = ( props ) => {
 			color: titleColor ? titleColor : '#111',
 		};
 	}
-	const styles = renderStyle( rules, selectorPrefix );
 
+
+	const styles = renderStyle( rules, selectorPrefix );
 
 	return styles;
 };

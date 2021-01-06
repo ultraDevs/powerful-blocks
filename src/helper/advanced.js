@@ -9,6 +9,7 @@ const {
 	Button,
     ButtonGroup,
     TabPanel,
+    Dashicon,
 } = wp.components;
 const { __ } = wp.i18n;
 
@@ -18,15 +19,37 @@ import classnames from 'classnames';
 import { ColorPickerControl } from '../components';
 import { ResponsiveRangeControl } from '../components';
 import { ResponsiveBoxControl } from '../components';
-
+import { GradientControl } from '../components';
 
 const Advanced = ( props ) => {
 
     const { attributes, setAttributes } = props;
 
     const {
+        backgroundType,
+        hoverBackgroundType,
+
 		backgroundColor,
         hoverBackgroundColor,
+
+        gradientValue,
+		gradientAngle,
+		gradientColor1,
+		gradientColor2,
+		gradientLoc1,
+		gradientLoc2,
+		gradientPosition,
+        gradientType,
+
+        hoverGradientValue,
+        hoverGradientAngle,
+        hoverGradientColor1,
+        hoverGradientColor2,
+        hoverGradientLoc1,
+        hoverGradientLoc2,
+        hoverGradientPosition,
+        hoverGradientType,
+        
         padding,
         paddingTablet,
         paddingMobile,
@@ -64,13 +87,18 @@ const Advanced = ( props ) => {
         hideOnMobile,
         customClass,
         customID,
-        gradientValue
+        
     } = attributes;
     
+    
+    let currentbgTab = 'color';
+    const [ bgTab, setbgTab ] = useState( currentbgTab );
+
+    let currentHbgTab = 'color';
+    const [ hbgTab, sethbgTab ] = useState( currentHbgTab );
     return (
         <>
             <PanelBody title={ __( 'Background', 'powerful-blocks' ) }>
-                
                 <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
 					tabs={ [
 						{
@@ -91,25 +119,181 @@ const Advanced = ( props ) => {
 							if ( "normal" === tab.name ) {
 								tabout = (
 									<>
-                                        <ColorPickerControl
-                                            label={ __( 'Background Color', 'powerful-blocks' ) }
-                                            value={ backgroundColor }
-                                            onChange={ ( backgroundColor ) => {
-                                                setAttributes( { backgroundColor } );
-                                            } }
-                                        />
+                                        <div className="pb-panel-s--tabs">
+                                            <div className="pb-panel-s--tabs__wrapper">
+                                                <div className="pb-panel-s--tab__title">Background Type</div>
+                                                <ButtonGroup>
+                                                    <Button
+                                                        onClick = { () => {
+                                                            setbgTab('color');
+                                                            setAttributes({ backgroundType: 'color' })
+                                                        }}
+                                                        className = {
+                                                            classnames(
+                                                                "pb-panel-s--tab",
+                                                                'color' === bgTab ? 'pb-ps-tab--active' : '',
+                                                            )
+                                                        }
+                                                    >
+                                                        <Dashicon icon='admin-customizer' />
+                                                    </Button>
+                                                    <Button
+                                                        onClick = { () => {
+                                                            setbgTab('gradient');
+                                                            setAttributes({ backgroundType: 'gradient' })
+                                                        }}
+                                                        className = {
+                                                            classnames(
+                                                                "pb-panel-s--tab",
+                                                                'gradient' === bgTab ? 'pb-ps-tab--active' : '',
+                                                            )
+                                                        }
+                                                    >
+                                                        <svg class="dashicons" viewBox="0 0 18 15"><rect fill="#ddd" x=".5" y=".5" width="16.072" height="13.474" rx="1"></rect><path fill="#333" d="M.836.763l15.759 13.158h-15.759z"></path></svg>
+                                                    </Button>
+                                                    {/* <Button
+                                                        onClick = { () => {
+                                                            setbgTab('image');
+                                                            setAttributes({ backgroundType: 'image' })
+                                                        }}
+                                                        className = {
+                                                            classnames(
+                                                                "pb-panel-s--tab",
+                                                                'image' === bgTab ? 'pb-ps-tab--active' : '',
+                                                            )
+                                                        }
+                                                    >
+                                                        <Dashicon icon='format-image' />
+                                                    </Button> */}
+                                                </ButtonGroup>
+                                            </div>
+                                            <div className="pb-panel-s--tabs__controls">
+                                                { 'color' === bgTab && (
+                                                <>
+                                                    <ColorPickerControl
+                                                        label={ __( 'Background Color', 'powerful-blocks' ) }
+                                                        value={ backgroundColor }
+                                                        onChange={ ( backgroundColor ) => {
+                                                            setAttributes( { backgroundColor } );
+                                                        } }
+                                                    />
+                                                </>
+                                                ) }
+                                                { 'gradient' === bgTab && (
+                                                <>
+                                                    <GradientControl
+                                                        gradientValue = { gradientValue }
+                                                        gradientAngle = { gradientAngle }
+                                                        gradientColor1 = { gradientColor1 }
+                                                        gradientColor2 = { gradientColor2 }
+                                                        gradientLoc1 = { gradientLoc1 }
+                                                        gradientLoc2 = { gradientLoc2 }
+                                                        gradientPosition = { gradientPosition }
+                                                        gradientType = { gradientType }
+                                                        setAttributes={ setAttributes }
+                                                        onChange={ ( gradientValue ) => {
+                                                            setAttributes( { gradientValue: gradientValue.value } );
+                                                        } }
+                                                    />
+                                                </>
+                                                ) }
+                                                { 'image' === bgTab && (
+                                                <>
+                                                    <p>image</p>
+                                                </>
+                                                ) }
+                                            </div>
+                                        </div>
                                     </>
 								)
 							} else if ( "hover" === tab.name ) {
 								tabout = (
 									<>
-                                        <ColorPickerControl
-                                            label={ __( 'Background Color', 'powerful-blocks' ) }
-                                            value={ hoverBackgroundColor }
-                                            onChange={ ( hoverBackgroundColor ) => {
-                                                setAttributes( { hoverBackgroundColor } );
-                                            } }
-                                        />
+                                    <div className="pb-panel-s--tabs">
+                                            <div className="pb-panel-s--tabs__wrapper">
+                                                <div className="pb-panel-s--tab__title">Background Type</div>
+                                                <ButtonGroup>
+                                                    <Button
+                                                        onClick = { () => {
+                                                            sethbgTab('color');
+                                                            setAttributes({ hoverBackgroundType: 'color' })
+                                                        }}
+                                                        className = {
+                                                            classnames(
+                                                                "pb-panel-s--tab",
+                                                                'color' === hbgTab ? 'pb-ps-tab--active' : '',
+                                                            )
+                                                        }
+                                                    >
+                                                        <Dashicon icon='admin-customizer' />
+                                                    </Button>
+                                                    <Button
+                                                        onClick = { () => {
+                                                            sethbgTab('gradient');
+                                                            setAttributes({ hoverBackgroundType: 'gradient' })
+                                                        }}
+                                                        className = {
+                                                            classnames(
+                                                                "pb-panel-s--tab",
+                                                                'gradient' === hbgTab ? 'pb-ps-tab--active' : '',
+                                                            )
+                                                        }
+                                                    >
+                                                        <svg class="dashicons" viewBox="0 0 18 15"><rect fill="#ddd" x=".5" y=".5" width="16.072" height="13.474" rx="1"></rect><path fill="#333" d="M.836.763l15.759 13.158h-15.759z"></path></svg>
+                                                    </Button>
+                                                    {/* <Button
+                                                        onClick = { () => {
+                                                            sethbgTab('image');
+                                                            setAttributes({ hoverBackgroundType: 'image' })
+                                                        }}
+                                                        className = {
+                                                            classnames(
+                                                                "pb-panel-s--tab",
+                                                                'image' === hbgTab ? 'pb-ps-tab--active' : '',
+                                                            )
+                                                        }
+                                                    >
+                                                        <Dashicon icon='format-image' />
+                                                    </Button> */}
+                                                </ButtonGroup>
+                                            </div>
+                                            <div className="pb-panel-s--tabs__controls">
+                                                { 'color' === hbgTab && (
+                                                <>
+                                                    <ColorPickerControl
+                                                        label={ __( 'Background Color', 'powerful-blocks' ) }
+                                                        value={ hoverBackgroundColor }
+                                                        onChange={ ( hoverBackgroundColor ) => {
+                                                            setAttributes( { hoverBackgroundColor } );
+                                                        } }
+                                                    />
+                                                </>
+                                                ) }
+                                                { 'gradient' === hbgTab && (
+                                                <>
+                                                    <GradientControl
+                                                        gradientValue = { hoverGradientValue }
+                                                        gradientAngle = { hoverGradientAngle }
+                                                        gradientColor1 = { hoverGradientColor1 }
+                                                        gradientColor2 = { hoverGradientColor2 }
+                                                        gradientLoc1 = { hoverGradientLoc1 }
+                                                        gradientLoc2 = { hoverGradientLoc2 }
+                                                        gradientPosition = { hoverGradientPosition }
+                                                        gradientType = { hoverGradientType }
+                                                        setAttributes={ setAttributes }
+                                                        onChange={ ( hoverGradientValue ) => {
+                                                            setAttributes( { hoverGradientValue: hoverGradientValue.value } );
+                                                        } }
+                                                    />
+                                                </>
+                                                ) }
+                                                { 'image' === hbgTab && (
+                                                <>
+                                                    <p>image</p>
+                                                </>
+                                                ) }
+                                            </div>
+                                        </div>
                                     </>
 								)
 							} else {
