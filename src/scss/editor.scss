@@ -194,3 +194,25 @@
 		}
 	}
 }
+/** Image Control **/ 
+.pb-editor-bg-image-control {
+	.css-11vcxb9-StyledField {
+		display: flex;
+		flex-direction: row !important;
+		align-items: center;
+		span {
+			flex: 1;
+		}
+		button {
+			border: 1px solid #ddd;
+			box-shadow: none;
+			color: #111;
+			padding: 5px;
+			height: auto;
+			margin-left: -1px;
+			span {
+				margin: 0px;
+			}
+		}
+	}
+}

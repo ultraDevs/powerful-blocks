@@ -4,14 +4,15 @@ const {
     TextControl,
 	ToggleControl,
 	RangeControl,
-	BaseControl,
 	Dropdown,
-	Button,
+    Button,
+    BaseControl,
     ButtonGroup,
     TabPanel,
     Dashicon,
 } = wp.components;
 const { __ } = wp.i18n;
+const { MediaUpload } = wp.blockEditor;
 
 const { useState } = wp.element;
 import classnames from 'classnames';
@@ -31,6 +32,22 @@ const Advanced = ( props ) => {
 
 		backgroundColor,
         hoverBackgroundColor,
+
+        backgroundImg,
+        backgroundImgPosition,
+        backgroundImgSize,
+        backgroundImgRepeat,
+        backgroundImgAttachment,
+        backgroundImgOverlayColor,
+        backgroundOpacity,
+
+        hoverBackgroundImg,
+        hoverBackgroundImgPosition,
+        hoverBackgroundImgSize,
+        hoverBackgroundImgRepeat,
+        hoverBackgroundImgAttachment,
+        hoverBackgroundImgOverlayColor,
+        hoverBackgroundOpacity,
 
         gradientValue,
 		gradientAngle,
@@ -91,10 +108,10 @@ const Advanced = ( props ) => {
     } = attributes;
     
     
-    let currentbgTab = 'color';
+    let currentbgTab = backgroundType || 'color';
     const [ bgTab, setbgTab ] = useState( currentbgTab );
 
-    let currentHbgTab = 'color';
+    let currentHbgTab = hoverBackgroundType || 'color';
     const [ hbgTab, sethbgTab ] = useState( currentHbgTab );
     return (
         <>
@@ -151,7 +168,7 @@ const Advanced = ( props ) => {
                                                     >
                                                         <svg class="dashicons" viewBox="0 0 18 15"><rect fill="#ddd" x=".5" y=".5" width="16.072" height="13.474" rx="1"></rect><path fill="#333" d="M.836.763l15.759 13.158h-15.759z"></path></svg>
                                                     </Button>
-                                                    {/* <Button
+                                                    <Button
                                                         onClick = { () => {
                                                             setbgTab('image');
                                                             setAttributes({ backgroundType: 'image' })
@@ -164,7 +181,7 @@ const Advanced = ( props ) => {
                                                         }
                                                     >
                                                         <Dashicon icon='format-image' />
-                                                    </Button> */}
+                                                    </Button>
                                                 </ButtonGroup>
                                             </div>
                                             <div className="pb-panel-s--tabs__controls">
@@ -199,7 +216,109 @@ const Advanced = ( props ) => {
                                                 ) }
                                                 { 'image' === bgTab && (
                                                 <>
-                                                    <p>image</p>
+                                                    <BaseControl
+                                                        className="pb-editor-bg-image-control"
+                                                        label={ __( 'Background Image', 'powerful-blocks' ) }>
+                                                        <MediaUpload
+                                                            title={ __( 'Select Background Image', 'powerful-blocks' ) }
+                                                            onSelect={ ( image ) => {
+                                                                setAttributes( { backgroundImg: image.url } );
+                                                            } }
+                                                            allowedTypes={ [ "image" ] }
+                                                            value={ backgroundImg }
+                                                            render={ ( { open } ) => (
+                                                                <Button isDefault onClick={ open }>
+                                                                    { ! backgroundImg ? __( 'Select Image', 'powerful-blocks' ) : <Dashicon icon="edit" /> }
+                                                                </Button>
+                                                            ) }
+                                                        />
+                                                        { backgroundImg && ( 
+                                                            <Button 
+                                                                className="pb-editor-bg-image-control--remove" 
+                                                                onClick={ (  ) => {
+                                                                    setAttributes( { backgroundImg: null } );
+                                                                } }
+                                                                isLink 
+                                                                isDestructive
+                                                            >
+                                                                <Dashicon icon="trash" />
+                                                            </Button> )
+                                                        }
+                                                    </BaseControl>
+                                                    <SelectControl
+                                                        label={ __( 'Image Position', 'powerful-blocks' ) }
+                                                        value={ backgroundImgPosition }
+                                                        onChange={ ( backgroundImgPosition ) => {
+                                                            setAttributes( { backgroundImgPosition } ) }
+                                                        }
+                                                        options={ [
+                                                            { value: "top left", label: __( "Top Left" ) },
+                                                            { value: "top center", label: __( "Top Center" ) },
+                                                            { value: "top right", label: __( "Top Right" ) },
+                                                            { value: "center left", label: __( "Center Left" ) },
+                                                            { value: "center center", label: __( "Center Center" ) },
+                                                            { value: "center right", label: __( "Center Right" ) },
+                                                            { value: "bottom left", label: __( "Bottom Left" ) },
+                                                            { value: "bottom center", label: __( "Bottom Center" ) },
+                                                            { value: "bottom right", label: __( "Bottom Right" ) },
+                                                        ] }
+                                                    />
+                                                    <SelectControl
+                                                        label={ __( 'Attachment', 'powerful-blocks' ) }
+                                                        value={ backgroundImgAttachment }
+                                                        onChange={ ( backgroundImgAttachment ) => {
+                                                            setAttributes( { backgroundImgAttachment } ) }
+                                                        }
+                                                        options={ [
+                                                            { value: "fixed", label: __( "Fixed" ) },
+                                                            { value: "scroll", label: __( "Scroll" ) }
+                                                        ] }
+                                                    />
+                                                    <SelectControl
+                                                        label={ __( 'Repeat', 'powerful-blocks' ) }
+                                                        value={ backgroundImgRepeat }
+                                                        onChange={ ( backgroundImgRepeat ) => {
+                                                            setAttributes( { backgroundImgRepeat } ) }
+                                                        }
+                                                        options={ [
+                                                            { value: "no-repeat", label: __( "No Repeat" ) },
+                                                            { value: "repeat", label: __( "Repeat" ) },
+                                                            { value: "repeat-x", label: __( "Repeat-x" ) },
+                                                            { value: "repeat-y", label: __( "Repeat-y" ) }
+                                                        ] }
+                                                    />
+                                                    <SelectControl
+                                                        label={ __( 'Size', 'powerful-blocks' ) }
+                                                        value={ backgroundImgSize }
+                                                        onChange={ ( backgroundImgSize ) => {
+                                                            setAttributes( { backgroundImgSize } ) }
+                                                        }
+                                                        options={ [
+                                                            { value: "auto", label: __( "Auto" ) },
+                                                            { value: "cover", label: __( "Cover" ) },
+                                                            { value: "contain", label: __( "Contain" ) }
+                                                        ] }
+                                                    />
+                                                    <ColorPickerControl
+                                                        label={ __( 'Opacity Color', 'powerful-blocks' ) }
+                                                        value={ backgroundImgOverlayColor }
+                                                        onChange={ ( backgroundImgOverlayColor ) => {
+                                                            setAttributes( { backgroundImgOverlayColor } );
+                                                        } }
+                                                    />
+                                                    <RangeControl
+                                                        label={ __(
+                                                            'Opacity',
+                                                            'powerful-blocks'
+                                                        ) }
+                                                        value={ backgroundOpacity }
+                                                        onChange={ ( backgroundOpacity ) =>
+                                                            setAttributes( { backgroundOpacity } )
+                                                        }
+                                                        min={ 0 }
+                                                        step={ 1 }
+                                                        max={ 100 }
+                                                    />
                                                 </>
                                                 ) }
                                             </div>
@@ -241,7 +360,7 @@ const Advanced = ( props ) => {
                                                     >
                                                         <svg class="dashicons" viewBox="0 0 18 15"><rect fill="#ddd" x=".5" y=".5" width="16.072" height="13.474" rx="1"></rect><path fill="#333" d="M.836.763l15.759 13.158h-15.759z"></path></svg>
                                                     </Button>
-                                                    {/* <Button
+                                                    <Button
                                                         onClick = { () => {
                                                             sethbgTab('image');
                                                             setAttributes({ hoverBackgroundType: 'image' })
@@ -254,7 +373,7 @@ const Advanced = ( props ) => {
                                                         }
                                                     >
                                                         <Dashicon icon='format-image' />
-                                                    </Button> */}
+                                                    </Button>
                                                 </ButtonGroup>
                                             </div>
                                             <div className="pb-panel-s--tabs__controls">
@@ -289,7 +408,109 @@ const Advanced = ( props ) => {
                                                 ) }
                                                 { 'image' === hbgTab && (
                                                 <>
-                                                    <p>image</p>
+                                                <BaseControl
+                                                        className="pb-editor-bg-image-control"
+                                                        label={ __( 'Background Image', 'powerful-blocks' ) }>
+                                                        <MediaUpload
+                                                            title={ __( 'Select Background Image', 'powerful-blocks' ) }
+                                                            onSelect={ ( image ) => {
+                                                                setAttributes( { hoverBackgroundImg: image.url } );
+                                                            } }
+                                                            allowedTypes={ [ "image" ] }
+                                                            value={ hoverBackgroundImg }
+                                                            render={ ( { open } ) => (
+                                                                <Button isDefault onClick={ open }>
+                                                                    { ! hoverBackgroundImg ? __( 'Select Image', 'powerful-blocks' ) : <Dashicon icon="edit" /> }
+                                                                </Button>
+                                                            ) }
+                                                        />
+                                                        { hoverBackgroundImg && ( 
+                                                            <Button 
+                                                                className="pb-editor-bg-image-control--remove" 
+                                                                onClick={ (  ) => {
+                                                                    setAttributes( { hoverBackgroundImg: null } );
+                                                                } }
+                                                                isLink 
+                                                                isDestructive
+                                                            >
+                                                                <Dashicon icon="trash" />
+                                                            </Button> )
+                                                        }
+                                                    </BaseControl>
+                                                    <SelectControl
+                                                        label={ __( 'Image Position', 'powerful-blocks' ) }
+                                                        value={ hoverBackgroundImgPosition }
+                                                        onChange={ ( hoverBackgroundImgPosition ) => {
+                                                            setAttributes( { hoverBackgroundImgPosition } ) }
+                                                        }
+                                                        options={ [
+                                                            { value: "top left", label: __( "Top Left" ) },
+                                                            { value: "top center", label: __( "Top Center" ) },
+                                                            { value: "top right", label: __( "Top Right" ) },
+                                                            { value: "center left", label: __( "Center Left" ) },
+                                                            { value: "center center", label: __( "Center Center" ) },
+                                                            { value: "center right", label: __( "Center Right" ) },
+                                                            { value: "bottom left", label: __( "Bottom Left" ) },
+                                                            { value: "bottom center", label: __( "Bottom Center" ) },
+                                                            { value: "bottom right", label: __( "Bottom Right" ) },
+                                                        ] }
+                                                    />
+                                                    <SelectControl
+                                                        label={ __( 'Attachment', 'powerful-blocks' ) }
+                                                        value={ hoverBackgroundImgAttachment }
+                                                        onChange={ ( hoverBackgroundImgAttachment ) => {
+                                                            setAttributes( { hoverBackgroundImgAttachment } ) }
+                                                        }
+                                                        options={ [
+                                                            { value: "fixed", label: __( "Fixed" ) },
+                                                            { value: "scroll", label: __( "Scroll" ) }
+                                                        ] }
+                                                    />
+                                                    <SelectControl
+                                                        label={ __( 'Repeat', 'powerful-blocks' ) }
+                                                        value={ hoverBackgroundImgRepeat }
+                                                        onChange={ ( hoverBackgroundImgRepeat ) => {
+                                                            setAttributes( { hoverBackgroundImgRepeat } ) }
+                                                        }
+                                                        options={ [
+                                                            { value: "no-repeat", label: __( "No Repeat" ) },
+                                                            { value: "repeat", label: __( "Repeat" ) },
+                                                            { value: "repeat-x", label: __( "Repeat-x" ) },
+                                                            { value: "repeat-y", label: __( "Repeat-y" ) }
+                                                        ] }
+                                                    />
+                                                    <SelectControl
+                                                        label={ __( 'Size', 'powerful-blocks' ) }
+                                                        value={ hoverBackgroundImgSize }
+                                                        onChange={ ( hoverBackgroundImgSize ) => {
+                                                            setAttributes( { hoverBackgroundImgSize } ) }
+                                                        }
+                                                        options={ [
+                                                            { value: "auto", label: __( "Auto" ) },
+                                                            { value: "cover", label: __( "Cover" ) },
+                                                            { value: "contain", label: __( "Contain" ) }
+                                                        ] }
+                                                    />
+                                                    <ColorPickerControl
+                                                        label={ __( 'Opacity Color', 'powerful-blocks' ) }
+                                                        value={ hoverBackgroundImgOverlayColor }
+                                                        onChange={ ( hoverBackgroundImgOverlayColor ) => {
+                                                            setAttributes( { hoverBackgroundImgOverlayColor } );
+                                                        } }
+                                                    />
+                                                    <RangeControl
+                                                        label={ __(
+                                                            'Opacity',
+                                                            'powerful-blocks'
+                                                        ) }
+                                                        value={ hoverBackgroundOpacity }
+                                                        onChange={ ( hoverBackgroundOpacity ) =>
+                                                            setAttributes( { hoverBackgroundOpacity } )
+                                                        }
+                                                        min={ 0 }
+                                                        step={ 1 }
+                                                        max={ 100 }
+                                                    />
                                                 </>
                                                 ) }
                                             </div>

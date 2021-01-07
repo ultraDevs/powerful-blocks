@@ -13,6 +13,7 @@ const edit = ( props ) => {
 
 	const {
 		blockId,
+		backgroundType,
 		content,
 		imageData,
 		name,
@@ -27,7 +28,8 @@ const edit = ( props ) => {
 		preset,
 		hideOnDesktop,
         hideOnTablet,
-        hideOnMobile,
+		hideOnMobile,
+		blockWidth,
 		customClass,
         customID,
 	} = attributes;
@@ -54,6 +56,8 @@ const edit = ( props ) => {
 						hideOnDesktop ? 'pb-hide-d' : '',
 						hideOnTablet ? 'pb-hide-t' : '',
 						hideOnMobile ? 'pb-hide-m' : '',
+						blockWidth ? 'pb-b-e--width' : '',
+						'image' === backgroundType ? 'pb-ab-bg--image' : '',
 					) }
 					id = { customID ? customID : '' }
 				>

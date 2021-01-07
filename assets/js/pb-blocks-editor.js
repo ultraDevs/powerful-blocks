@@ -15156,6 +15156,7 @@ var edit = function edit(props) {
   var attributes = props.attributes,
       setAttributes = props.setAttributes;
   var blockId = attributes.blockId,
+      backgroundType = attributes.backgroundType,
       content = attributes.content,
       imageData = attributes.imageData,
       name = attributes.name,
@@ -15171,6 +15172,7 @@ var edit = function edit(props) {
       hideOnDesktop = attributes.hideOnDesktop,
       hideOnTablet = attributes.hideOnTablet,
       hideOnMobile = attributes.hideOnMobile,
+      blockWidth = attributes.blockWidth,
       customClass = attributes.customClass,
       customID = attributes.customID;
 
@@ -15190,7 +15192,7 @@ var edit = function edit(props) {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     id: "pb-testimonial-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('pb-testimonial-wrapper', props.className, 'pb-testimonial-client-info-position', preset, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : ''),
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('pb-testimonial-wrapper', props.className, 'pb-testimonial-client-info-position', preset, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : ''),
     id: customID ? customID : ''
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "pb-testimonial--conr"
@@ -16261,6 +16263,7 @@ var save = function save(_ref) {
   var attributes = _ref.attributes,
       className = _ref.className;
   var blockId = attributes.blockId,
+      backgroundType = attributes.backgroundType,
       content = attributes.content,
       imageData = attributes.imageData,
       name = attributes.name,
@@ -16276,12 +16279,13 @@ var save = function save(_ref) {
       hideOnDesktop = attributes.hideOnDesktop,
       hideOnTablet = attributes.hideOnTablet,
       hideOnMobile = attributes.hideOnMobile,
+      blockWidth = attributes.blockWidth,
       customClass = attributes.customClass,
       customID = attributes.customID;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     id: "pb-testimonial-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, 'pb-testimonial-wrapper', 'pb-testimonial-client-info-position', preset, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : ''),
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, 'pb-testimonial-wrapper', 'pb-testimonial-client-info-position', preset, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : ''),
     id: customID ? customID : ''
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "pb-testimonial--conr"
@@ -16328,32 +16332,37 @@ var save = function save(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/utils */ "./src/components/utils.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/utils */ "./src/components/utils.js");
+
 
 
 var Styles = function Styles(props) {
+  var _pbTestimonialWrap;
+
   var attributes = props.attributes;
   var blockId = attributes.blockId,
       backgroundType = attributes.backgroundType,
       hoverBackgroundType = attributes.hoverBackgroundType,
       backgroundColor = attributes.backgroundColor,
       hoverBackgroundColor = attributes.hoverBackgroundColor,
+      backgroundImg = attributes.backgroundImg,
+      backgroundImgPosition = attributes.backgroundImgPosition,
+      backgroundImgSize = attributes.backgroundImgSize,
+      backgroundImgRepeat = attributes.backgroundImgRepeat,
+      backgroundImgAttachment = attributes.backgroundImgAttachment,
+      backgroundImgOverlayColor = attributes.backgroundImgOverlayColor,
+      backgroundOpacity = attributes.backgroundOpacity,
+      hoverBackgroundImg = attributes.hoverBackgroundImg,
+      hoverBackgroundImgPosition = attributes.hoverBackgroundImgPosition,
+      hoverBackgroundImgSize = attributes.hoverBackgroundImgSize,
+      hoverBackgroundImgRepeat = attributes.hoverBackgroundImgRepeat,
+      hoverBackgroundImgAttachment = attributes.hoverBackgroundImgAttachment,
+      hoverBackgroundImgOverlayColor = attributes.hoverBackgroundImgOverlayColor,
+      hoverBackgroundOpacity = attributes.hoverBackgroundOpacity,
       gradientValue = attributes.gradientValue,
-      gradientAngle = attributes.gradientAngle,
-      gradientColor1 = attributes.gradientColor1,
-      gradientColor2 = attributes.gradientColor2,
-      gradientLoc1 = attributes.gradientLoc1,
-      gradientLoc2 = attributes.gradientLoc2,
-      gradientPosition = attributes.gradientPosition,
-      gradientType = attributes.gradientType,
       hoverGradientValue = attributes.hoverGradientValue,
-      hoverGradientAngle = attributes.hoverGradientAngle,
-      hoverGradientColor1 = attributes.hoverGradientColor1,
-      hoverGradientColor2 = attributes.hoverGradientColor2,
-      hoverGradientLoc1 = attributes.hoverGradientLoc1,
-      hoverGradientLoc2 = attributes.hoverGradientLoc2,
-      hoverGradientPosition = attributes.hoverGradientPosition,
-      hoverGradientType = attributes.hoverGradientType,
       padding = attributes.padding,
       paddingTablet = attributes.paddingTablet,
       paddingMobile = attributes.paddingMobile,
@@ -16448,20 +16457,11 @@ var Styles = function Styles(props) {
   var selectorPrefix = "#pb-testimonial-".concat(blockId);
   var rules = {
     desktop: {
-      '.pb-testimonial-wrapper': {
-        background: 'color' === backgroundType ? backgroundColor : gradientValue,
-        display: 'flex',
-        'flex-direction': 'column',
-        padding: padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left,
-        margin: margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left,
-        'box-shadow': shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor,
-        'border-width': borderSize ? borderSize + 'px' : undefined,
-        'border-style': borderStyle ? borderStyle : undefined,
-        'border-color': borderColor ? borderColor : undefined,
-        'border-radius': borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left
-      },
+      '.pb-testimonial-wrapper': (_pbTestimonialWrap = {
+        background: 'image' !== backgroundType ? backgroundColor : gradientValue
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "display", 'flex'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'flex-direction', 'column'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _pbTestimonialWrap),
       '.pb-testimonial-wrapper:hover': {
-        background: 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue,
+        background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
         'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
         'border-color': hoverBorderColor ? hoverBorderColor : undefined
@@ -16566,47 +16566,56 @@ var Styles = function Styles(props) {
         margin: titleMarginMobile.top + ' ' + titleMarginMobile.right + ' ' + titleMarginMobile.bottom + ' ' + titleMarginMobile.left
       }
     }
-  }; // if ( 'image' === backgroundType ) {
-  // 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
-  // 		'background-color': backgroundColor
-  // 				? backgroundColor
-  // 				: undefined,
-  // 	};
-  // } else if ( 'gradient' === backgroundType ) {
-  // 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
-  // 		'background': gradientValue
-  // 				? gradientValue
-  // 				: undefined,
-  // 	};
-  // } else {
-  // 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
-  // 		'background-color': backgroundColor
-  // 				? backgroundColor
-  // 				: undefined,
-  // 	};
-  // }
+  };
+
+  if ('image' === backgroundType) {
+    rules.desktop['.pb-ab-bg--image'] = {
+      'background': backgroundImg ? "url( ".concat(backgroundImg, " )") : '',
+      'background-position': backgroundImgPosition ? backgroundImgPosition : '',
+      'background-repeat': backgroundImgRepeat ? backgroundImgRepeat : '',
+      'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : '',
+      'background-size': backgroundImgSize ? backgroundImgSize : ''
+    };
+    rules.desktop['.pb-ab-bg--image:hover'] = {
+      'background': hoverBackgroundImg ? "url( ".concat(hoverBackgroundImg, " )") : '',
+      'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : '',
+      'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : '',
+      'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : '',
+      'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : ''
+    };
+    rules.desktop['.pb-ab-bg--image:before'] = {
+      background: backgroundImgOverlayColor ? backgroundImgOverlayColor : '',
+      opacity: backgroundOpacity ? backgroundOpacity / 100 : '',
+      'border-radius': borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left
+    };
+    rules.desktop['.pb-ab-bg--image:hover:before'] = {
+      background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : '',
+      opacity: hoverBackgroundOpacity ? hoverBackgroundOpacity / 100 : '',
+      'border-radius': borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left
+    };
+  }
 
   if ('inline' === blockWidth) {
-    rules.desktop['.pb-testimonial-wrapper'] = {
+    rules.desktop['.pb-b-e--width'] = {
       display: 'inline-block',
       margin: 'auto'
     };
   }
 
   if ('custom' === blockWidth) {
-    rules.desktop['.pb-testimonial-wrapper'] = {
+    rules.desktop['.pb-b-e--width'] = {
       width: blockCustomWidth + 'px'
     };
   }
 
   if ('custom' === blockWidth) {
-    rules.tablet['.pb-testimonial-wrapper'] = {
+    rules.tablet['.pb-b-e--width'] = {
       width: blockCustomWidthTablet + 'px'
     };
   }
 
   if ('custom' === blockWidth) {
-    rules.mobile['.pb-testimonial-wrapper'] = {
+    rules.mobile['.pb-b-e--width'] = {
       width: blockCustomWidthMobile + 'px'
     };
   }
@@ -16640,7 +16649,7 @@ var Styles = function Styles(props) {
   }
 
   if ('left-content' === clientInfoPosition || 'right-content' === clientInfoPosition) {
-    rules.desktop['.pb-testimonial--conr'] = {
+    rules.desktop['.pb-testimonial-wrapper .pb-testimonial--conr'] = {
       width: contentWidth ? contentWidth + '%' : undefined
     };
   } // Designs
@@ -16694,7 +16703,7 @@ var Styles = function Styles(props) {
     };
   }
 
-  var styles = Object(_components_utils__WEBPACK_IMPORTED_MODULE_0__["renderStyle"])(rules, selectorPrefix);
+  var styles = Object(_components_utils__WEBPACK_IMPORTED_MODULE_1__["renderStyle"])(rules, selectorPrefix);
   return styles;
 };
 
@@ -17530,13 +17539,14 @@ var _wp$components = wp.components,
     TextControl = _wp$components.TextControl,
     ToggleControl = _wp$components.ToggleControl,
     RangeControl = _wp$components.RangeControl,
-    BaseControl = _wp$components.BaseControl,
     Dropdown = _wp$components.Dropdown,
     Button = _wp$components.Button,
+    BaseControl = _wp$components.BaseControl,
     ButtonGroup = _wp$components.ButtonGroup,
     TabPanel = _wp$components.TabPanel,
     Dashicon = _wp$components.Dashicon;
 var __ = wp.i18n.__;
+var MediaUpload = wp.blockEditor.MediaUpload;
 var useState = wp.element.useState;
 
 
@@ -17551,6 +17561,20 @@ var Advanced = function Advanced(props) {
       hoverBackgroundType = attributes.hoverBackgroundType,
       backgroundColor = attributes.backgroundColor,
       hoverBackgroundColor = attributes.hoverBackgroundColor,
+      backgroundImg = attributes.backgroundImg,
+      backgroundImgPosition = attributes.backgroundImgPosition,
+      backgroundImgSize = attributes.backgroundImgSize,
+      backgroundImgRepeat = attributes.backgroundImgRepeat,
+      backgroundImgAttachment = attributes.backgroundImgAttachment,
+      backgroundImgOverlayColor = attributes.backgroundImgOverlayColor,
+      backgroundOpacity = attributes.backgroundOpacity,
+      hoverBackgroundImg = attributes.hoverBackgroundImg,
+      hoverBackgroundImgPosition = attributes.hoverBackgroundImgPosition,
+      hoverBackgroundImgSize = attributes.hoverBackgroundImgSize,
+      hoverBackgroundImgRepeat = attributes.hoverBackgroundImgRepeat,
+      hoverBackgroundImgAttachment = attributes.hoverBackgroundImgAttachment,
+      hoverBackgroundImgOverlayColor = attributes.hoverBackgroundImgOverlayColor,
+      hoverBackgroundOpacity = attributes.hoverBackgroundOpacity,
       gradientValue = attributes.gradientValue,
       gradientAngle = attributes.gradientAngle,
       gradientColor1 = attributes.gradientColor1,
@@ -17604,14 +17628,14 @@ var Advanced = function Advanced(props) {
       hideOnMobile = attributes.hideOnMobile,
       customClass = attributes.customClass,
       customID = attributes.customID;
-  var currentbgTab = 'color';
+  var currentbgTab = backgroundType || 'color';
 
   var _useState = useState(currentbgTab),
       _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
       bgTab = _useState2[0],
       setbgTab = _useState2[1];
 
-  var currentHbgTab = 'color';
+  var currentHbgTab = hoverBackgroundType || 'color';
 
   var _useState3 = useState(currentHbgTab),
       _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState3, 2),
@@ -17673,7 +17697,17 @@ var Advanced = function Advanced(props) {
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("path", {
         fill: "#333",
         d: "M.836.763l15.759 13.158h-15.759z"
-      }))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
+        onClick: function onClick() {
+          setbgTab('image');
+          setAttributes({
+            backgroundType: 'image'
+          });
+        },
+        className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("pb-panel-s--tab", 'image' === bgTab ? 'pb-ps-tab--active' : '')
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dashicon, {
+        icon: "format-image"
+      })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
         className: "pb-panel-s--tabs__controls"
       }, 'color' === bgTab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
         label: __('Background Color', 'powerful-blocks'),
@@ -17698,7 +17732,148 @@ var Advanced = function Advanced(props) {
             gradientValue: gradientValue.value
           });
         }
-      })), 'image' === bgTab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "image")))));
+      })), 'image' === bgTab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BaseControl, {
+        className: "pb-editor-bg-image-control",
+        label: __('Background Image', 'powerful-blocks')
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(MediaUpload, {
+        title: __('Select Background Image', 'powerful-blocks'),
+        onSelect: function onSelect(image) {
+          setAttributes({
+            backgroundImg: image.url
+          });
+        },
+        allowedTypes: ["image"],
+        value: backgroundImg,
+        render: function render(_ref) {
+          var open = _ref.open;
+          return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
+            isDefault: true,
+            onClick: open
+          }, !backgroundImg ? __('Select Image', 'powerful-blocks') : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dashicon, {
+            icon: "edit"
+          }));
+        }
+      }), backgroundImg && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
+        className: "pb-editor-bg-image-control--remove",
+        onClick: function onClick() {
+          setAttributes({
+            backgroundImg: null
+          });
+        },
+        isLink: true,
+        isDestructive: true
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dashicon, {
+        icon: "trash"
+      }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Image Position', 'powerful-blocks'),
+        value: backgroundImgPosition,
+        onChange: function onChange(backgroundImgPosition) {
+          setAttributes({
+            backgroundImgPosition: backgroundImgPosition
+          });
+        },
+        options: [{
+          value: "top left",
+          label: __("Top Left")
+        }, {
+          value: "top center",
+          label: __("Top Center")
+        }, {
+          value: "top right",
+          label: __("Top Right")
+        }, {
+          value: "center left",
+          label: __("Center Left")
+        }, {
+          value: "center center",
+          label: __("Center Center")
+        }, {
+          value: "center right",
+          label: __("Center Right")
+        }, {
+          value: "bottom left",
+          label: __("Bottom Left")
+        }, {
+          value: "bottom center",
+          label: __("Bottom Center")
+        }, {
+          value: "bottom right",
+          label: __("Bottom Right")
+        }]
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Attachment', 'powerful-blocks'),
+        value: backgroundImgAttachment,
+        onChange: function onChange(backgroundImgAttachment) {
+          setAttributes({
+            backgroundImgAttachment: backgroundImgAttachment
+          });
+        },
+        options: [{
+          value: "fixed",
+          label: __("Fixed")
+        }, {
+          value: "scroll",
+          label: __("Scroll")
+        }]
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Repeat', 'powerful-blocks'),
+        value: backgroundImgRepeat,
+        onChange: function onChange(backgroundImgRepeat) {
+          setAttributes({
+            backgroundImgRepeat: backgroundImgRepeat
+          });
+        },
+        options: [{
+          value: "no-repeat",
+          label: __("No Repeat")
+        }, {
+          value: "repeat",
+          label: __("Repeat")
+        }, {
+          value: "repeat-x",
+          label: __("Repeat-x")
+        }, {
+          value: "repeat-y",
+          label: __("Repeat-y")
+        }]
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Size', 'powerful-blocks'),
+        value: backgroundImgSize,
+        onChange: function onChange(backgroundImgSize) {
+          setAttributes({
+            backgroundImgSize: backgroundImgSize
+          });
+        },
+        options: [{
+          value: "auto",
+          label: __("Auto")
+        }, {
+          value: "cover",
+          label: __("Cover")
+        }, {
+          value: "contain",
+          label: __("Contain")
+        }]
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
+        label: __('Opacity Color', 'powerful-blocks'),
+        value: backgroundImgOverlayColor,
+        onChange: function onChange(backgroundImgOverlayColor) {
+          setAttributes({
+            backgroundImgOverlayColor: backgroundImgOverlayColor
+          });
+        }
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
+        label: __('Opacity', 'powerful-blocks'),
+        value: backgroundOpacity,
+        onChange: function onChange(backgroundOpacity) {
+          return setAttributes({
+            backgroundOpacity: backgroundOpacity
+          });
+        },
+        min: 0,
+        step: 1,
+        max: 100
+      })))));
     } else if ("hover" === tab.name) {
       tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
         className: "pb-panel-s--tabs"
@@ -17737,7 +17912,17 @@ var Advanced = function Advanced(props) {
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("path", {
         fill: "#333",
         d: "M.836.763l15.759 13.158h-15.759z"
-      }))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
+        onClick: function onClick() {
+          sethbgTab('image');
+          setAttributes({
+            hoverBackgroundType: 'image'
+          });
+        },
+        className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("pb-panel-s--tab", 'image' === hbgTab ? 'pb-ps-tab--active' : '')
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dashicon, {
+        icon: "format-image"
+      })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
         className: "pb-panel-s--tabs__controls"
       }, 'color' === hbgTab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
         label: __('Background Color', 'powerful-blocks'),
@@ -17762,7 +17947,148 @@ var Advanced = function Advanced(props) {
             hoverGradientValue: hoverGradientValue.value
           });
         }
-      })), 'image' === hbgTab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "image")))));
+      })), 'image' === hbgTab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BaseControl, {
+        className: "pb-editor-bg-image-control",
+        label: __('Background Image', 'powerful-blocks')
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(MediaUpload, {
+        title: __('Select Background Image', 'powerful-blocks'),
+        onSelect: function onSelect(image) {
+          setAttributes({
+            hoverBackgroundImg: image.url
+          });
+        },
+        allowedTypes: ["image"],
+        value: hoverBackgroundImg,
+        render: function render(_ref2) {
+          var open = _ref2.open;
+          return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
+            isDefault: true,
+            onClick: open
+          }, !hoverBackgroundImg ? __('Select Image', 'powerful-blocks') : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dashicon, {
+            icon: "edit"
+          }));
+        }
+      }), hoverBackgroundImg && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
+        className: "pb-editor-bg-image-control--remove",
+        onClick: function onClick() {
+          setAttributes({
+            hoverBackgroundImg: null
+          });
+        },
+        isLink: true,
+        isDestructive: true
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dashicon, {
+        icon: "trash"
+      }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Image Position', 'powerful-blocks'),
+        value: hoverBackgroundImgPosition,
+        onChange: function onChange(hoverBackgroundImgPosition) {
+          setAttributes({
+            hoverBackgroundImgPosition: hoverBackgroundImgPosition
+          });
+        },
+        options: [{
+          value: "top left",
+          label: __("Top Left")
+        }, {
+          value: "top center",
+          label: __("Top Center")
+        }, {
+          value: "top right",
+          label: __("Top Right")
+        }, {
+          value: "center left",
+          label: __("Center Left")
+        }, {
+          value: "center center",
+          label: __("Center Center")
+        }, {
+          value: "center right",
+          label: __("Center Right")
+        }, {
+          value: "bottom left",
+          label: __("Bottom Left")
+        }, {
+          value: "bottom center",
+          label: __("Bottom Center")
+        }, {
+          value: "bottom right",
+          label: __("Bottom Right")
+        }]
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Attachment', 'powerful-blocks'),
+        value: hoverBackgroundImgAttachment,
+        onChange: function onChange(hoverBackgroundImgAttachment) {
+          setAttributes({
+            hoverBackgroundImgAttachment: hoverBackgroundImgAttachment
+          });
+        },
+        options: [{
+          value: "fixed",
+          label: __("Fixed")
+        }, {
+          value: "scroll",
+          label: __("Scroll")
+        }]
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Repeat', 'powerful-blocks'),
+        value: hoverBackgroundImgRepeat,
+        onChange: function onChange(hoverBackgroundImgRepeat) {
+          setAttributes({
+            hoverBackgroundImgRepeat: hoverBackgroundImgRepeat
+          });
+        },
+        options: [{
+          value: "no-repeat",
+          label: __("No Repeat")
+        }, {
+          value: "repeat",
+          label: __("Repeat")
+        }, {
+          value: "repeat-x",
+          label: __("Repeat-x")
+        }, {
+          value: "repeat-y",
+          label: __("Repeat-y")
+        }]
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Size', 'powerful-blocks'),
+        value: hoverBackgroundImgSize,
+        onChange: function onChange(hoverBackgroundImgSize) {
+          setAttributes({
+            hoverBackgroundImgSize: hoverBackgroundImgSize
+          });
+        },
+        options: [{
+          value: "auto",
+          label: __("Auto")
+        }, {
+          value: "cover",
+          label: __("Cover")
+        }, {
+          value: "contain",
+          label: __("Contain")
+        }]
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
+        label: __('Opacity Color', 'powerful-blocks'),
+        value: hoverBackgroundImgOverlayColor,
+        onChange: function onChange(hoverBackgroundImgOverlayColor) {
+          setAttributes({
+            hoverBackgroundImgOverlayColor: hoverBackgroundImgOverlayColor
+          });
+        }
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
+        label: __('Opacity', 'powerful-blocks'),
+        value: hoverBackgroundOpacity,
+        onChange: function onChange(hoverBackgroundOpacity) {
+          return setAttributes({
+            hoverBackgroundOpacity: hoverBackgroundOpacity
+          });
+        },
+        min: 0,
+        step: 1,
+        max: 100
+      })))));
     } else {
       tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "..."));
     }
@@ -17977,9 +18303,9 @@ var Advanced = function Advanced(props) {
     className: "pb-shadow-control--dropdown",
     contentClassName: "my-popover-content-classname",
     position: "bottom right",
-    renderToggle: function renderToggle(_ref) {
-      var isOpen = _ref.isOpen,
-          onToggle = _ref.onToggle;
+    renderToggle: function renderToggle(_ref3) {
+      var isOpen = _ref3.isOpen,
+          onToggle = _ref3.onToggle;
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
         isSmall: true,
         onClick: onToggle,
@@ -18250,6 +18576,60 @@ var advancedAttributes = {
   hoverBackgroundColor: {
     type: 'string',
     default: ''
+  },
+  backgroundImg: {
+    type: "string"
+  },
+  backgroundImgPosition: {
+    type: "string",
+    default: "center-center"
+  },
+  backgroundImgSize: {
+    type: "string",
+    default: "cover"
+  },
+  backgroundImgRepeat: {
+    type: "string",
+    default: "no-repeat"
+  },
+  backgroundImgAttachment: {
+    type: "string",
+    default: "scroll"
+  },
+  backgroundImgOverlayColor: {
+    type: "string",
+    default: ""
+  },
+  backgroundOpacity: {
+    type: "number",
+    default: ""
+  },
+  hoverBackgroundImg: {
+    type: "string"
+  },
+  hoverBackgroundImgPosition: {
+    type: "string",
+    default: "center-center"
+  },
+  hoverBackgroundImgSize: {
+    type: "string",
+    default: "cover"
+  },
+  hoverBackgroundImgRepeat: {
+    type: "string",
+    default: "no-repeat"
+  },
+  hoverBackgroundImgAttachment: {
+    type: "string",
+    default: "scroll"
+  },
+  hoverBackgroundImgOverlayColor: {
+    type: "string",
+    default: ""
+  },
+  hoverBackgroundOpacity: {
+    type: "number",
+    default: ""
   },
   gradientValue: {
     type: 'string',

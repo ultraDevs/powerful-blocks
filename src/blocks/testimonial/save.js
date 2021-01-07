@@ -6,6 +6,7 @@ import Styles from './style';
 const save = ( { attributes, className } ) => {
 	const {
 		blockId,
+		backgroundType,
 		content,
 		imageData,
 		name,
@@ -20,7 +21,8 @@ const save = ( { attributes, className } ) => {
 		preset,
 		hideOnDesktop,
         hideOnTablet,
-        hideOnMobile,
+		hideOnMobile,
+		blockWidth,
 		customClass,
         customID,
 	} = attributes;
@@ -39,6 +41,10 @@ const save = ( { attributes, className } ) => {
 						hideOnDesktop ? 'pb-hide-d' : '',
 						hideOnTablet ? 'pb-hide-t' : '',
 						hideOnMobile ? 'pb-hide-m' : '',
+						blockWidth ? 'pb-b-e--width' : '',
+						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+
+
 					) }
 					id = { customID ? customID : '' }
 				>

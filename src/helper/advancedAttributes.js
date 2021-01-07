@@ -18,6 +18,66 @@ const advancedAttributes = {
 		default: '',
 	},
 
+	backgroundImg: {
+		type: "string",
+	},
+	backgroundImgPosition: {
+		type: "string",
+		default: "center-center"
+	},
+	backgroundImgSize: {
+		type: "string",
+		default: "cover"
+	},
+	backgroundImgRepeat: {
+		type: "string",
+		default: "no-repeat"
+	},
+	backgroundImgAttachment: {
+		type: "string",
+		default: "scroll"
+	},
+
+	backgroundImgOverlayColor : {
+		type: "string",
+		default: ""
+	},
+
+	backgroundOpacity: {
+		type: "number",
+		default: ""
+	},
+
+	hoverBackgroundImg: {
+		type: "string",
+	},
+	hoverBackgroundImgPosition: {
+		type: "string",
+		default: "center-center"
+	},
+	hoverBackgroundImgSize: {
+		type: "string",
+		default: "cover"
+	},
+	hoverBackgroundImgRepeat: {
+		type: "string",
+		default: "no-repeat"
+	},
+	hoverBackgroundImgAttachment: {
+		type: "string",
+		default: "scroll"
+	},
+
+	hoverBackgroundImgOverlayColor : {
+		type: "string",
+		default: ""
+	},
+
+	hoverBackgroundOpacity: {
+		type: "number",
+		default: ""
+	},
+
 	gradientValue: {
 		type: 'string',
 		default: '',

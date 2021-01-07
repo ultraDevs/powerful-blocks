@@ -11,23 +11,25 @@ const Styles = ( props ) => {
 		backgroundColor,
 		hoverBackgroundColor,
 
+		backgroundImg,
+        backgroundImgPosition,
+        backgroundImgSize,
+        backgroundImgRepeat,
+        backgroundImgAttachment,
+        backgroundImgOverlayColor,
+		backgroundOpacity,
+
+		hoverBackgroundImg,
+        hoverBackgroundImgPosition,
+        hoverBackgroundImgSize,
+        hoverBackgroundImgRepeat,
+        hoverBackgroundImgAttachment,
+        hoverBackgroundImgOverlayColor,
+        hoverBackgroundOpacity,
+
 		gradientValue,
-		gradientAngle,
-		gradientColor1,
-		gradientColor2,
-		gradientLoc1,
-		gradientLoc2,
-		gradientPosition,
-        gradientType,
 
         hoverGradientValue,
-        hoverGradientAngle,
-        hoverGradientColor1,
-        hoverGradientColor2,
-        hoverGradientLoc1,
-        hoverGradientLoc2,
-        hoverGradientPosition,
-        hoverGradientType,
 
         padding,
         paddingTablet,
@@ -129,7 +131,8 @@ const Styles = ( props ) => {
 	let rules = {
 		desktop: {
 			'.pb-testimonial-wrapper': {
-				background: 'color' === backgroundType ? backgroundColor : gradientValue,
+				background: 'image' !== backgroundType ? backgroundColor : gradientValue,
+				background: 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : '',
 				display: 'flex',
 				'flex-direction': 'column',
 				padding:
@@ -174,7 +177,7 @@ const Styles = ( props ) => {
 					borderRadius.left,
 			},
 			'.pb-testimonial-wrapper:hover': {
-				background: 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue,
+				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
 				'border-width': hoverBorderSize
 					? hoverBorderSize + 'px'
 					: undefined,
@@ -482,46 +485,68 @@ const Styles = ( props ) => {
 		},
 	};
 
-	// if ( 'image' === backgroundType ) {
-	// 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
-	// 		'background-color': backgroundColor
-	// 				? backgroundColor
-	// 				: undefined,
-	// 	};
-	// } else if ( 'gradient' === backgroundType ) {
-	// 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
-	// 		'background': gradientValue
-	// 				? gradientValue
-	// 				: undefined,
-	// 	};
-	// } else {
-	// 	rules.desktop[ '.pb-testimonial-wrapper' ] = {
-	// 		'background-color': backgroundColor
-	// 				? backgroundColor
-	// 				: undefined,
-	// 	};
-	// }
+	if ( 'image' === backgroundType ) {
+		rules.desktop[ '.pb-ab-bg--image' ] = {
+			'background': backgroundImg ? `url( ${ backgroundImg } )` : '',
+			'background-position': backgroundImgPosition ? backgroundImgPosition : '',
+			'background-repeat': backgroundImgRepeat ? backgroundImgRepeat : '',
+			'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : '',
+			'background-size': backgroundImgSize ? backgroundImgSize : '',
 
+		};
+		rules.desktop[ '.pb-ab-bg--image:hover' ] = {
+			'background': hoverBackgroundImg ? `url( ${ hoverBackgroundImg } )` : '',
+			'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : '',
+			'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : '',
+			'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : '',
+			'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : '',
+
+		};
+		rules.desktop[ '.pb-ab-bg--image:before' ] = {
+			background: backgroundImgOverlayColor ? backgroundImgOverlayColor : '',
+			opacity: backgroundOpacity ? ( backgroundOpacity / 100 ) : '',
+			'border-radius':
+					borderRadius.top +
+					' ' +
+					borderRadius.right +
+					' ' +
+					borderRadius.bottom +
+					' ' +
+					borderRadius.left,
+		};
+		rules.desktop[ '.pb-ab-bg--image:hover:before' ] = {
+			background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : '',
+			opacity: hoverBackgroundOpacity ? ( hoverBackgroundOpacity / 100 ) : '',
+			'border-radius':
+					borderRadius.top +
+					' ' +
+					borderRadius.right +
+					' ' +
+					borderRadius.bottom +
+					' ' +
+					borderRadius.left,
+		};
+	}
 
 	if ( 'inline' === blockWidth ) {
-		rules.desktop[ '.pb-testimonial-wrapper' ] = {
+		rules.desktop[ '.pb-b-e--width' ] = {
 			display: 'inline-block',
 			margin: 'auto',
 		};
 	}
 
 	if ( 'custom' === blockWidth ) {
-		rules.desktop[ '.pb-testimonial-wrapper' ] = {
+		rules.desktop[ '.pb-b-e--width' ] = {
 			width: blockCustomWidth + 'px',
 		};
 	}
 	if ( 'custom' === blockWidth ) {
-		rules.tablet[ '.pb-testimonial-wrapper' ] = {
+		rules.tablet[ '.pb-b-e--width' ] = {
 			width: blockCustomWidthTablet + 'px',
 		};
 	}
 	if ( 'custom' === blockWidth ) {
-		rules.mobile[ '.pb-testimonial-wrapper' ] = {
+		rules.mobile[ '.pb-b-e--width' ] = {
 			width: blockCustomWidthMobile + 'px',
 		};
 	}
@@ -556,7 +581,7 @@ const Styles = ( props ) => {
 		'left-content' === clientInfoPosition ||
 		'right-content' === clientInfoPosition
 	) {
-		rules.desktop[ '.pb-testimonial--conr' ] = {
+		rules.desktop[ '.pb-testimonial-wrapper .pb-testimonial--conr' ] = {
 			width: contentWidth ? contentWidth + '%' : undefined,
 		};
 	}

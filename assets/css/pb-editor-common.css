@@ -135,5 +135,22 @@
         height: 15px;
         width: 15px; }
 
+/** Image Control **/
+.pb-editor-bg-image-control .css-11vcxb9-StyledField {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center; }
+  .pb-editor-bg-image-control .css-11vcxb9-StyledField span {
+    flex: 1; }
+  .pb-editor-bg-image-control .css-11vcxb9-StyledField button {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    color: #111;
+    padding: 5px;
+    height: auto;
+    margin-left: -1px; }
+    .pb-editor-bg-image-control .css-11vcxb9-StyledField button span {
+      margin: 0px; }
+
 
 /*# sourceMappingURL=pb-editor-common.css.map*/

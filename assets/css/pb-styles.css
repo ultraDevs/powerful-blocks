@@ -64,7 +64,15 @@
 
 .pb-testimonial-wrapper {
   transition: all 0.3s ease-in-out;
+  position: relative;
   /** Designs **/ }
+  .pb-testimonial-wrapper:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; }
   .pb-testimonial-wrapper .pb-testimonial--conr {
     transition: all 0.3s ease-in-out;
     position: relative; }
