@@ -76,6 +76,14 @@ const Styles = ( props ) => {
 		contentPadding,
 		contentPaddingTablet,
 		contentPaddingMobile,
+
+		contentFontFamily,
+		contentFontWeight,
+		contentTextTransform,
+		contentTextDecoration,
+		contentLetterSpacing,
+		contentLineHeight,
+		contentFontSizeType,
 		contentFontSize,
 		contentFontSizeTablet,
 		contentFontSizeMobile,
@@ -85,6 +93,7 @@ const Styles = ( props ) => {
 		contentBorderRadius,
 		contentBorderRadiusTablet,
 		contentBorderRadiusMobile,
+		imageSizeType,
 		imageSize,
 		imageSizeTablet,
 		imageSizeMobile,
@@ -185,8 +194,8 @@ const Styles = ( props ) => {
 				'border-color': hoverBorderColor ? hoverBorderColor : undefined,
 			},
 			'.pb-testimonial-image img': {
-				height: imageSize ? imageSize + 'px' : undefined,
-				width: imageSize ? imageSize + 'px' : undefined,
+				height: imageSize ? imageSize + imageSizeType : undefined,
+				width: imageSize ? imageSize + imageSizeType : undefined,
 				'border-radius':
 					imageBorderRadius.top || 0 +
 					' ' +
@@ -237,7 +246,22 @@ const Styles = ( props ) => {
 				color: contentColor ? contentColor : undefined,
 				'text-align': contentTextAlign ? contentTextAlign : undefined,
 				'font-size': contentFontSize
-					? contentFontSize + 'px'
+					? contentFontSize + contentFontSizeType
+					: undefined,
+				'font-weight': contentFontWeight
+					? contentFontWeight
+					: undefined,
+				'letter-spacing': contentLetterSpacing
+					? contentLetterSpacing + 'px'
+					: undefined,
+				'line-height': contentLineHeight
+					? contentLineHeight + 'px'
+					: undefined,
+				'text-transform': contentTextTransform
+					? contentTextTransform
+					: undefined,
+				'text-decoration': contentTextDecoration
+					? contentTextDecoration
 					: undefined,
 			},
 			'.pb-testimonial--conr': {
@@ -348,7 +372,7 @@ const Styles = ( props ) => {
 			},
 			'.pb-testimonial--content': {
 				'font-size': contentFontSizeTablet
-					? contentFontSizeTablet + 'px'
+					? contentFontSizeTablet + contentFontSizeType
 					: undefined,
 			},
 			'.pb-testimonial--conr': {
@@ -440,7 +464,7 @@ const Styles = ( props ) => {
 			},
 			'.pb-testimonial--content': {
 				'font-size': contentFontSizeMobile
-					? contentFontSizeMobile + 'px'
+					? contentFontSizeMobile + contentFontSizeType
 					: undefined,
 			},
 			'.pb-testimonial--conr': {

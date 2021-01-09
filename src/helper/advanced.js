@@ -131,7 +131,7 @@ const Advanced = ( props ) => {
 					] }>
 					{
 						( tab ) => {
-							let tabout
+							let tabout;
 
 							if ( "normal" === tab.name ) {
 								tabout = (
@@ -588,7 +588,7 @@ const Advanced = ( props ) => {
 					] }>
 					{
 						( tab ) => {
-							let tabout
+							let tabout;
 
 							if ( "normal" === tab.name ) {
 								tabout = (
@@ -817,7 +817,7 @@ const Advanced = ( props ) => {
 					] }>
 					{
 						( tab ) => {
-							let tabout
+							let tabout;
 
 							if ( "in" === tab.name ) {
 								tabout = (

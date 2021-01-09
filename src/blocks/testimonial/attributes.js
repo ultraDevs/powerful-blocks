@@ -49,6 +49,16 @@ const attributes = {
 		default: 80,
 	},
 
+	contentFontFamily: {
+		type: 'string',
+		default: '',
+	},
+
+	contentFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+
 	contentFontSize: {
 		type: 'number',
 		default: 18,
@@ -63,6 +73,27 @@ const attributes = {
 		type: 'number',
 		default: 16,
 	},
+	contentFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	contentTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	contentTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	contentLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	contentLineHeight: {
+		type: 'number',
+		default: '',
+	},
+
 
 	contentMargin: {
 		type: 'object',
@@ -162,9 +193,14 @@ const attributes = {
 		default: true,
 	},
 
+	imageSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+
 	imageSize: {
 		type: 'number',
-		default: 50,
+		default: 60,
 	},
 
 	imageSizeTablet: {
@@ -174,7 +210,7 @@ const attributes = {
 
 	imageSizeMobile: {
 		type: 'number',
-		default: 50,
+		default: 40,
 	},
 
 	imageBorderStyle: {
@@ -191,19 +227,34 @@ const attributes = {
 	},
 
 	imageBorderRadius: {
-		type: 'number',
-		default: 50,
+		type: 'object',
+		default: {
+			top: '100px',
+			left: '100px',
+			right: '100px',
+			bottom: '100px',
+		},
 	},
 
 	imageBorderRadiusTablet: {
-		type: 'number',
-		default: 50,
+		type: 'object',
+		default: {
+			top: '100px',
+			left: '100px',
+			right: '100px',
+			bottom: '100px',
+		},
+	},
+	imageBorderRadiusMobile: {
+		type: 'object',
+		default: {
+			top: '100px',
+			left: '100px',
+			right: '100px',
+			bottom: '100px',
+		},
 	},
 
-	imageBorderRadiusMobile: {
-		type: 'number',
-		default: 50,
-	},
 
 	imageShadowColor: {
 		type: 'string',

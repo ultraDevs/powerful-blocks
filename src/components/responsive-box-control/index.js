@@ -19,7 +19,7 @@ const ResponsiveBoxControl = ( props ) => {
 
 	const device = props.device;
 	return (
-		<BaseControl className="pb-block-control__responsive-box-control">
+		<BaseControl className="pb-responsive-box-control">
 			<ButtonGroup>
 				<Button
 					isPrimary={ 'desktop' === device ? true : false }

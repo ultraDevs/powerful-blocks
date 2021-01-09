@@ -16,11 +16,15 @@ const { useState } = wp.element;
 import classnames from 'classnames';
 
 
-import { ResponsiveRangeControl } from '../../components';
-import { ResponsiveBoxControl } from '../../components';
-import { ColorPickerControl } from '../../components';
-import { ImageControl } from '../../components';
-import { AlignmentControl } from '../../components';
+import {
+	ResponsiveRangeControl,
+	ResponsiveBoxControl,
+	ColorPickerControl,
+	ImageControl,
+	AlignmentControl,
+	TypographyControl
+} from '../../components';
+
 import Advanced from '../../helper/advanced';
 
 
@@ -37,6 +41,13 @@ const Inspector = ( props ) => {
 		contentPadding,
 		contentPaddingTablet,
 		contentPaddingMobile,
+		contentFontFamily,
+		contentFontWeight,
+		contentTextTransform,
+		contentTextDecoration,
+		contentLetterSpacing,
+		contentLineHeight,
+		contentFontSizeType,
 		contentFontSize,
 		contentFontSizeTablet,
 		contentFontSizeMobile,
@@ -47,6 +58,7 @@ const Inspector = ( props ) => {
 		contentBorderRadiusTablet,
 		contentBorderRadiusMobile,
 		imageData,
+		imageSizeType,
 		imageSize,
 		imageSizeTablet,
 		imageSizeMobile,
@@ -268,24 +280,19 @@ const Inspector = ( props ) => {
 						>
 							<ResponsiveRangeControl
 								label={ __( 'Size', 'powerful-blocks' ) }
-								value={ {
-									desktop: imageSize,
-									tablet: imageSizeTablet,
-									mobile: imageSizeMobile,
-								} }
-								onChange={ ( value, device ) => {
-									if ( 'desktop' === device ) {
-										setAttributes( { imageSize: value } );
-									}
-									if ( 'tablet' === device ) {
-										setAttributes( { imageSizeTablet: value } );
-									}
-									if ( 'mobile' === device ) {
-										setAttributes( { imageSizeMobile: value } );
-									}
-								} }
+								sizeType = {
+									{ value: imageSizeType, name: 'imageSizeType' }
+								}
+								sizeTypes = { [
+									{ key: "px", name: __( "px" ) },
+									{ key: "em", name: __( "em" ) },
+								] }
+								sizeOnDesktop = { { value: imageSize, name: 'imageSize' } }
+								sizeOnTablet = { { value: imageSizeTablet, name: 'imageSizeTablet' } }
+								sizeOnMobile = { { value: imageSizeMobile, name: 'imageSizeMobile' } }
 								min={ 0 }
 								max={ 500 }
+								setAttributes = { setAttributes }
 							/>
 
 							<BaseControl
@@ -574,26 +581,6 @@ const Inspector = ( props ) => {
 									step={ 1 }
 								/>
 							) }
-
-							<ResponsiveRangeControl
-								label={ __( 'Font Size', 'powerful-blocks' ) }
-								value={ {
-									desktop: contentFontSize,
-									tablet: contentFontSizeTablet,
-									mobile: contentFontSizeMobile,
-								} }
-								onChange={ ( value, device ) => {
-									if ( 'desktop' === device ) {
-										setAttributes( { contentFontSize: value } );
-									}
-									if ( 'tablet' === device ) {
-										setAttributes( { contentFontSizeTablet: value } );
-									}
-									if ( 'mobile' === device ) {
-										setAttributes( { contentFontSizeMobile: value } );
-									}
-								} }
-							/>
 							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
 								value={ {
@@ -652,6 +639,22 @@ const Inspector = ( props ) => {
 									}
 								} }
 							/>
+							<TypographyControl
+								label = { __( 'Typography', 'powerful-blocks' ) }
+								// fontFamily = { contentFontFamily }
+								sizeType = {
+									{ value: contentFontSizeType, name: 'contentFontSizeType' }
+								}
+								fontSize = { { value: contentFontSize, name: 'contentFontSize' } }
+								fontSizeTablet = { { value: contentFontSizeTablet, name: 'contentFontSizeTablet' } }
+								fontSizeMobile = { { value: contentFontSizeMobile, name: 'contentFontSizeMobile' } }
+								fontWeight = { { value: contentFontWeight, name: 'contentFontWeight' } }
+								lineHeight = { { value: contentLineHeight, name: 'contentLineHeight' } }
+								letterSpacing = { { value: contentLetterSpacing, name: 'contentLetterSpacing' } }
+								textTransform = { { value: contentTextTransform, name: 'contentTextTransform' } }
+								textDecoration = { { value: contentTextDecoration, name: 'contentTextDecoration' } }
+								setAttributes = { props.setAttributes }
+							/>
 						</PanelBody>
 						<PanelBody
 							title={ __( 'Name', 'powerful-blocks' ) }
@@ -672,7 +675,7 @@ const Inspector = ( props ) => {
 									setAttributes( { nameTextAlign } );
 								} }
 							/>
-							<ResponsiveRangeControl
+							{/* <ResponsiveRangeControl
 								label={ __( 'Font Size', 'powerful-blocks' ) }
 								value={ {
 									desktop: nameFontSize,
@@ -690,7 +693,7 @@ const Inspector = ( props ) => {
 										setAttributes( { nameFontSizeMobile: value } );
 									}
 								} }
-							/>
+							/> */}
 							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
 								value={ {
@@ -730,7 +733,7 @@ const Inspector = ( props ) => {
 									setAttributes( { titleTextAlign } );
 								} }
 							/>
-							<ResponsiveRangeControl
+							{/* <ResponsiveRangeControl
 								label={ __( 'Font Size', 'powerful-blocks' ) }
 								value={ {
 									desktop: titleFontSize,
@@ -748,7 +751,7 @@ const Inspector = ( props ) => {
 										setAttributes( { titleFontSizeMobile: value } );
 									}
 								} }
-							/>
+							/> */}
 							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
 								value={ {

@@ -4,3 +4,4 @@ export { default as ResponsiveBoxControl } from './responsive-box-control';
 export { default as AlignmentControl } from './alignment-control';
 export { default as ImageControl } from './image-control';
 export { default as GradientControl } from './gradient-control';
+export { default as TypographyControl } from './typography-control';

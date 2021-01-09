@@ -19,7 +19,7 @@ module.exports = {
 		'pb-frontend': path.resolve( process.cwd(), 'src/js/frontend.js' ),
 		'pb-editor-common': path.resolve( process.cwd(), 'src/scss/editor.scss' ),
 		'pb-styles': path.resolve( process.cwd(), 'src/scss/styles.scss' ),
-		'pb-admin': path.resolve( process.cwd(), 'src/scss/admin.scss' ),
+		'pb-admin-styles': path.resolve( process.cwd(), 'src/scss/admin.scss' ),
 		// 'pb-block-styles': styleScss,
 		// 'pb-block-editor': editorScss,
 	},
