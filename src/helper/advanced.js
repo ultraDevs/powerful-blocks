@@ -95,6 +95,7 @@ const Advanced = ( props ) => {
         outAnimationDuration,
         outAnimationDelay,
         blockWidth,
+        blockCustomWidthType,
         blockCustomWidth,
         blockCustomWidthTablet,
         blockCustomWidthMobile,
@@ -887,25 +888,16 @@ const Advanced = ( props ) => {
                 />
                 { ( 'custom' === blockWidth ) && (
                     <ResponsiveRangeControl
-                        label={ __( 'Width', 'powerful-blocks' ) }
-                        value={ {
-                            desktop: blockCustomWidth,
-                            tablet: blockCustomWidthTablet,
-                            mobile: blockCustomWidthMobile,
-                        } }
-                        onChange={ ( value, device ) => {
-                            if ( 'desktop' === device ) {
-                                setAttributes( { blockCustomWidth: value } );
-                            }
-                            if ( 'tablet' === device ) {
-                                setAttributes( { blockCustomWidthTablet: value } );
-                            }
-                            if ( 'mobile' === device ) {
-                                setAttributes( { blockCustomWidthMobile: value } );
-                            }
-                        } }
+                        label={ __( 'Size', 'powerful-blocks' ) }
+                        sizeType = {
+                            { value: blockCustomWidthType, name: 'blockCustomWidthType' }
+                        }
+                        sizeOnDesktop = { { value: blockCustomWidth, name: 'blockCustomWidth' } }
+                        sizeOnTablet = { { value: blockCustomWidthTablet, name: 'blockCustomWidthTablet' } }
+                        sizeOnMobile = { { value: blockCustomWidthMobile, name: 'blockCustomWidthMobile' } }
                         min={ 0 }
-                        max={ 2000 }
+                        max={ 500 }
+                        setAttributes = { setAttributes }
                     />
                 ) }
             </PanelBody>

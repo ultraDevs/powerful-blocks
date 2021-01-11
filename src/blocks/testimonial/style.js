@@ -58,7 +58,8 @@ const Styles = ( props ) => {
         inAnimationDelay,
         outAnimationDuration,
         outAnimationDelay,
-        blockWidth,
+		blockWidth,
+		blockCustomWidthType,
         blockCustomWidth,
         blockCustomWidthTablet,
         blockCustomWidthMobile,
@@ -604,17 +605,17 @@ const Styles = ( props ) => {
 
 	if ( 'custom' === blockWidth ) {
 		rules.desktop[ '.pb-b-e--width' ] = {
-			width: blockCustomWidth + 'px',
+			width: blockCustomWidth + blockCustomWidthType,
 		};
 	}
 	if ( 'custom' === blockWidth ) {
 		rules.tablet[ '.pb-b-e--width' ] = {
-			width: blockCustomWidthTablet + 'px',
+			width: blockCustomWidthTablet + blockCustomWidthType,
 		};
 	}
 	if ( 'custom' === blockWidth ) {
 		rules.mobile[ '.pb-b-e--width' ] = {
-			width: blockCustomWidthMobile + 'px',
+			width: blockCustomWidthMobile + blockCustomWidthType,
 		};
 	}
 

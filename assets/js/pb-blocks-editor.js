@@ -21136,6 +21136,7 @@ var Styles = function Styles(props) {
       outAnimationDuration = attributes.outAnimationDuration,
       outAnimationDelay = attributes.outAnimationDelay,
       blockWidth = attributes.blockWidth,
+      blockCustomWidthType = attributes.blockCustomWidthType,
       blockCustomWidth = attributes.blockCustomWidth,
       blockCustomWidthTablet = attributes.blockCustomWidthTablet,
       blockCustomWidthMobile = attributes.blockCustomWidthMobile,
@@ -21380,19 +21381,19 @@ var Styles = function Styles(props) {
 
   if ('custom' === blockWidth) {
     rules.desktop['.pb-b-e--width'] = {
-      width: blockCustomWidth + 'px'
+      width: blockCustomWidth + blockCustomWidthType
     };
   }
 
   if ('custom' === blockWidth) {
     rules.tablet['.pb-b-e--width'] = {
-      width: blockCustomWidthTablet + 'px'
+      width: blockCustomWidthTablet + blockCustomWidthType
     };
   }
 
   if ('custom' === blockWidth) {
     rules.mobile['.pb-b-e--width'] = {
-      width: blockCustomWidthMobile + 'px'
+      width: blockCustomWidthMobile + blockCustomWidthType
     };
   }
 
@@ -22910,6 +22911,7 @@ var Advanced = function Advanced(props) {
       outAnimationDuration = attributes.outAnimationDuration,
       outAnimationDelay = attributes.outAnimationDelay,
       blockWidth = attributes.blockWidth,
+      blockCustomWidthType = attributes.blockCustomWidthType,
       blockCustomWidth = attributes.blockCustomWidth,
       blockCustomWidthTablet = attributes.blockCustomWidthTablet,
       blockCustomWidthMobile = attributes.blockCustomWidthMobile,
@@ -23762,33 +23764,26 @@ var Advanced = function Advanced(props) {
       label: 'Custom'
     }]
   }), 'custom' === blockWidth && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ResponsiveRangeControl"], {
-    label: __('Width', 'powerful-blocks'),
-    value: {
-      desktop: blockCustomWidth,
-      tablet: blockCustomWidthTablet,
-      mobile: blockCustomWidthMobile
+    label: __('Size', 'powerful-blocks'),
+    sizeType: {
+      value: blockCustomWidthType,
+      name: 'blockCustomWidthType'
     },
-    onChange: function onChange(value, device) {
-      if ('desktop' === device) {
-        setAttributes({
-          blockCustomWidth: value
-        });
-      }
-
-      if ('tablet' === device) {
-        setAttributes({
-          blockCustomWidthTablet: value
-        });
-      }
-
-      if ('mobile' === device) {
-        setAttributes({
-          blockCustomWidthMobile: value
-        });
-      }
+    sizeOnDesktop: {
+      value: blockCustomWidth,
+      name: 'blockCustomWidth'
+    },
+    sizeOnTablet: {
+      value: blockCustomWidthTablet,
+      name: 'blockCustomWidthTablet'
+    },
+    sizeOnMobile: {
+      value: blockCustomWidthMobile,
+      name: 'blockCustomWidthMobile'
     },
     min: 0,
-    max: 2000
+    max: 500,
+    setAttributes: setAttributes
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Responsive', 'powerful-blocks'),
     initialOpen: false
@@ -24140,6 +24135,10 @@ var advancedAttributes = {
   blockWidth: {
     type: 'string',
     default: ''
+  },
+  blockCustomWidthType: {
+    type: 'string',
+    default: 'px'
   },
   blockCustomWidth: {
     type: 'number',

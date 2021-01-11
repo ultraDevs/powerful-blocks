@@ -309,6 +309,11 @@ const advancedAttributes = {
 		type: 'string',
 		default: '',
 	},
+	blockCustomWidthType: {
+		type: 'string',
+		default: 'px',
+	},
+
 	blockCustomWidth: {
 		type: 'number',
 		default: '',
