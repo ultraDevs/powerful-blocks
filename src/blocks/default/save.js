@@ -5,7 +5,7 @@ import classnames from 'classnames';
 const save = ( { attributes, className } ) => {
 	const {
 		blockId,
-		
+		backgroundType,
 		hideOnDesktop,
         hideOnTablet,
 		hideOnMobile,

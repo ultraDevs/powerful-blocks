@@ -1,3 +1,7 @@
+.pb-alert-box-wrapper {
+  position: relative;
+  transition: all 0.3s ease-in-out; }
+
 .wp-block-powerful-blocks-alert-box .pb-alert-box {
   background-color: #d6efee;
   color: #094264;

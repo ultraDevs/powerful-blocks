@@ -1,4 +1,6 @@
 import { __ } from '@wordpress/i18n';
+import advancedAttributes from '../../helper/advancedAttributes';
+
 const attributes = {
 	blockId: {
 		type: 'string',
@@ -36,7 +38,7 @@ const attributes = {
 		default: '',
 	},
 
-	borderRadius: {
+	abBorderRadius: {
 		type: 'object',
 		default: {
 			top: '5px',
@@ -46,7 +48,46 @@ const attributes = {
 		},
 	},
 
-	padding: {
+	abBorderRadiusTablet: {
+		type: 'object',
+		default: {
+			top: '5px',
+			left: '5px',
+			right: '5px',
+			bottom: '5px',
+		},
+	},
+
+	abBorderRadiusMobile: {
+		type: 'object',
+		default: {
+			top: '5px',
+			left: '5px',
+			right: '5px',
+			bottom: '5px',
+		},
+	},
+
+	abPadding: {
+		type: 'object',
+		default: {
+			top: '30px',
+			left: '30px',
+			right: '30px',
+			bottom: '30px',
+		},
+	},
+
+	abPaddingTablet: {
+		type: 'object',
+		default: {
+			top: '30px',
+			left: '30px',
+			right: '30px',
+			bottom: '30px',
+		},
+	},
+	abPaddingMobile: {
 		type: 'object',
 		default: {
 			top: '30px',
@@ -78,6 +119,41 @@ const attributes = {
 		default: 18,
 	},
 
+	titleFontFamily: {
+		type: 'string',
+		default: '',
+	},
+
+	titleFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+	titleFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
+
+	titleFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	titleTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	titleTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	titleLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	titleLineHeight: {
+		type: 'number',
+		default: '',
+	},
+
 	contentColor: {
 		type: 'string',
 		default: '',
@@ -94,5 +170,36 @@ const attributes = {
 		type: 'number',
 		default: 18,
 	},
+
+	contentFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+	contentFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
+
+	contentFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	contentTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	contentTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	contentLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	contentLineHeight: {
+		type: 'number',
+		default: '',
+	},
 };
-export default attributes;
+const finalAttributes = { ...attributes, ...advancedAttributes };
+export default finalAttributes;

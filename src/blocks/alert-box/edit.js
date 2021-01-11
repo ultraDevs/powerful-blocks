@@ -5,9 +5,23 @@ import classnames from 'classnames';
 import Inspector from './inspector';
 import Styles from './style';
 
+
 const edit = ( props ) => {
 	const { attributes, setAttributes, isSelected } = props;
-	const { blockId, title, content, displayType, hideAfterTime } = attributes;
+	const { 
+		blockId,
+		title,
+		content,
+		displayType,
+		hideAfterTime,
+		backgroundType,
+		hideOnDesktop,
+        hideOnTablet,
+		hideOnMobile,
+		blockWidth,
+		customClass,
+		customID
+	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
@@ -22,38 +36,52 @@ const edit = ( props ) => {
 		<>
 			{ isSelected && <Inspector { ...{ attributes, setAttributes } } /> }
 			<Styles { ...{ attributes } } />
-			<div id={ `pb-alert-box-${ attributes.blockId }` }>
+			<div id={ `pb-alert-box-${ blockId }` }>
 				<div
-					className={ classnames( 'pb-alert-box', props.className ) }
-					data-settings={ JSON.stringify( settings ) }
-				>
-					{ 'dismissable' === displayType && (
-						<span className="pb-alert-box-hide">X</span>
+					className={ classnames(
+						'pb-alert-box-wrapper',
+						props.className,
+						customClass,
+						hideOnDesktop ? 'pb-hide-d' : '',
+						hideOnTablet ? 'pb-hide-t' : '',
+						hideOnMobile ? 'pb-hide-m' : '',
+						blockWidth ? 'pb-b-e--width' : '',
+						'image' === backgroundType ? 'pb-ab-bg--image' : '',
 					) }
+					id = { customID ? customID : '' }
+				>
+					<div
+						className={ classnames( 'pb-alert-box', props.className ) }
+						data-settings={ JSON.stringify( settings ) }
+					>
+						{ 'dismissable' === displayType && (
+							<span className="pb-alert-box-hide">X</span>
+						) }
 
-					<RichText
-						tagName="h3"
-						className="pb-alert-box__title"
-						placeholder={ __( 'Alert Title', 'powerful-blocks' ) }
-						value={ title }
-						disableLineBreaks
-						keepPlaceholderOnFocus={ true }
-						onChange={ ( title ) => {
-							setAttributes( { title } );
-						} }
-					/>
+						<RichText
+							tagName="h3"
+							className="pb-alert-box__title"
+							placeholder={ __( 'Alert Title', 'powerful-blocks' ) }
+							value={ title }
+							disableLineBreaks
+							keepPlaceholderOnFocus={ true }
+							onChange={ ( title ) => {
+								setAttributes( { title } );
+							} }
+						/>
 
-					<RichText
-						tagName="p"
-						className="pb-alert-box__content"
-						placeholder={ __( 'Alert Content', 'powerful-blocks' ) }
-						value={ content }
-						disableLineBreaks
-						keepPlaceholderOnFocus={ true }
-						onChange={ ( content ) => {
-							setAttributes( { content } );
-						} }
-					/>
+						<RichText
+							tagName="p"
+							className="pb-alert-box__content"
+							placeholder={ __( 'Alert Content', 'powerful-blocks' ) }
+							value={ content }
+							disableLineBreaks
+							keepPlaceholderOnFocus={ true }
+							onChange={ ( content ) => {
+								setAttributes( { content } );
+							} }
+						/>
+					</div>
 				</div>
 			</div>
 		</>

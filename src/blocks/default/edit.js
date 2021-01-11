@@ -13,6 +13,7 @@ const edit = ( props ) => {
 
 	const {
 		blockId,
+		backgroundType,
 		hideOnDesktop,
         hideOnTablet,
 		hideOnMobile,
