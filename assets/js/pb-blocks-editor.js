@@ -19791,6 +19791,38 @@ var attributes = {
     type: 'number',
     default: 16
   },
+  titleFontFamily: {
+    type: 'string',
+    default: ''
+  },
+  titleFontSizeType: {
+    type: 'string',
+    default: 'px'
+  },
+  titleFontStyle: {
+    type: 'string',
+    default: 'normal'
+  },
+  titleFontWeight: {
+    type: 'string',
+    default: 'normal'
+  },
+  titleTextTransform: {
+    type: 'string',
+    default: ''
+  },
+  titleTextDecoration: {
+    type: 'string',
+    default: ''
+  },
+  titleLetterSpacing: {
+    type: 'number',
+    default: ''
+  },
+  titleLineHeight: {
+    type: 'number',
+    default: ''
+  },
   titleMargin: {
     type: 'object',
     default: {
@@ -20213,6 +20245,14 @@ var Inspector = function Inspector(props) {
       titleFontSize = attributes.titleFontSize,
       titleFontSizeTablet = attributes.titleFontSizeTablet,
       titleFontSizeMobile = attributes.titleFontSizeMobile,
+      titleFontFamily = attributes.titleFontFamily,
+      titleFontSizeType = attributes.titleFontSizeType,
+      titleFontStyle = attributes.titleFontStyle,
+      titleFontWeight = attributes.titleFontWeight,
+      titleTextTransform = attributes.titleTextTransform,
+      titleTextDecoration = attributes.titleTextDecoration,
+      titleLetterSpacing = attributes.titleLetterSpacing,
+      titleLineHeight = attributes.titleLineHeight,
       titleMargin = attributes.titleMargin,
       titleMarginTablet = attributes.titleMarginTablet,
       titleMarginMobile = attributes.titleMarginMobile,
@@ -20970,6 +21010,53 @@ var Inspector = function Inspector(props) {
         });
       }
     }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["TypographyControl"], {
+    label: __('Typography', 'powerful-blocks'),
+    fontFamily: {
+      value: titleFontFamily,
+      name: 'titleFontFamily'
+    },
+    sizeType: {
+      value: titleFontSizeType,
+      name: 'titleFontSizeType'
+    },
+    fontSize: {
+      value: titleFontSize,
+      name: 'titleFontSize'
+    },
+    fontSizeTablet: {
+      value: titleFontSizeTablet,
+      name: 'titleFontSizeTablet'
+    },
+    fontSizeMobile: {
+      value: titleFontSizeMobile,
+      name: 'titleFontSizeMobile'
+    },
+    fontStyle: {
+      value: titleFontStyle,
+      name: 'titleFontStyle'
+    },
+    fontWeight: {
+      value: titleFontWeight,
+      name: 'titleFontWeight'
+    },
+    lineHeight: {
+      value: titleLineHeight,
+      name: 'titleLineHeight'
+    },
+    letterSpacing: {
+      value: titleLetterSpacing,
+      name: 'titleLetterSpacing'
+    },
+    textTransform: {
+      value: titleTextTransform,
+      name: 'titleTextTransform'
+    },
+    textDecoration: {
+      value: titleTextDecoration,
+      name: 'titleTextDecoration'
+    },
+    setAttributes: props.setAttributes
   }))), 'advanced' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_helper_advanced__WEBPACK_IMPORTED_MODULE_4__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
@@ -21211,6 +21298,14 @@ var Styles = function Styles(props) {
       titleFontSize = attributes.titleFontSize,
       titleFontSizeTablet = attributes.titleFontSizeTablet,
       titleFontSizeMobile = attributes.titleFontSizeMobile,
+      titleFontFamily = attributes.titleFontFamily,
+      titleFontSizeType = attributes.titleFontSizeType,
+      titleFontStyle = attributes.titleFontStyle,
+      titleFontWeight = attributes.titleFontWeight,
+      titleTextTransform = attributes.titleTextTransform,
+      titleTextDecoration = attributes.titleTextDecoration,
+      titleLetterSpacing = attributes.titleLetterSpacing,
+      titleLineHeight = attributes.titleLineHeight,
       titleMargin = attributes.titleMargin,
       titleMarginTablet = attributes.titleMarginTablet,
       titleMarginMobile = attributes.titleMarginMobile,
@@ -21279,7 +21374,14 @@ var Styles = function Styles(props) {
       },
       '.pb-testimonial-info--title': {
         color: titleColor ? titleColor + '!important' : undefined,
-        'font-size': titleFontSize ? titleFontSize + 'px' : undefined,
+        'font-family': titleFontFamily ? titleFontFamily : undefined,
+        'font-size': titleFontSize ? titleFontSize + titleFontSizeType : undefined,
+        'font-weight': titleFontWeight ? titleFontWeight : undefined,
+        'font-style': titleFontStyle ? titleFontStyle : undefined,
+        'letter-spacing': titleLetterSpacing ? titleLetterSpacing + 'px' : undefined,
+        'line-height': titleLineHeight ? titleLineHeight + 'px' : undefined,
+        'text-transform': titleTextTransform ? titleTextTransform : undefined,
+        'text-decoration': titleTextDecoration ? titleTextDecoration : undefined,
         'text-align': titleTextAlign ? titleTextAlign : undefined,
         margin: titleMargin.top + ' ' + titleMargin.right + ' ' + titleMargin.bottom + ' ' + titleMargin.left
       },
@@ -21311,7 +21413,7 @@ var Styles = function Styles(props) {
         'border-radius': contentBorderRadiusTablet.top + ' ' + contentBorderRadiusTablet.right + ' ' + contentBorderRadiusTablet.bottom + ' ' + contentBorderRadiusTablet.left
       },
       '.pb-testimonial-info--title': {
-        'font-size': titleFontSizeTablet ? titleFontSizeTablet + 'px' : undefined,
+        'font-size': titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined,
         margin: titleMarginTablet.top + ' ' + titleMarginTablet.right + ' ' + titleMarginTablet.bottom + ' ' + titleMarginTablet.left
       }
     },
@@ -21339,7 +21441,7 @@ var Styles = function Styles(props) {
         'border-radius': contentBorderRadiusMobile.top + ' ' + contentBorderRadiusMobile.right + ' ' + contentBorderRadiusMobile.bottom + ' ' + contentBorderRadiusMobile.left
       },
       '.pb-testimonial-info--title': {
-        'font-size': titleFontSizeMobile ? titleFontSizeMobile + 'px' : undefined,
+        'font-size': titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined,
         margin: titleMarginMobile.top + ' ' + titleMarginMobile.right + ' ' + titleMarginMobile.bottom + ' ' + titleMarginMobile.left
       }
     }

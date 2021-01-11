@@ -183,8 +183,6 @@ class Assets_Manager {
 				'Trebuchet MS',
 				'Georgia',
 			);
-			var_dump( $fonts);
-
 
 			$gfonts = '';
 

@@ -57,6 +57,10 @@
     top: 4px;
     margin-right: 5px; }
 
+.pb-default-wrapper {
+  transition: all 0.3s ease-in-out;
+  position: relative; }
+
 .pb-star-rating-wrapper .pb-star-rating--icon svg {
   width: 1em;
   height: 1em;

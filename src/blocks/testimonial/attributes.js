@@ -448,6 +448,42 @@ const attributes = {
 		type: 'number',
 		default: 16,
 	},
+
+	titleFontFamily: {
+		type: 'string',
+		default: '',
+	},
+
+	titleFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+	titleFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
+
+	titleFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	titleTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	titleTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	titleLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	titleLineHeight: {
+		type: 'number',
+		default: '',
+	},
+
 	titleMargin: {
 		type: 'object',
 		default: {

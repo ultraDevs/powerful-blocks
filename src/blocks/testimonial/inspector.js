@@ -106,6 +106,16 @@ const Inspector = ( props ) => {
 		titleFontSize,
 		titleFontSizeTablet,
 		titleFontSizeMobile,
+
+		titleFontFamily,
+		titleFontSizeType,
+		titleFontStyle,
+		titleFontWeight,
+		titleTextTransform,
+		titleTextDecoration,
+		titleLetterSpacing,
+		titleLineHeight,
+
 		titleMargin,
 		titleMarginTablet,
 		titleMarginMobile,
@@ -689,25 +699,6 @@ const Inspector = ( props ) => {
 									setAttributes( { nameTextAlign } );
 								} }
 							/>
-							{/* <ResponsiveRangeControl
-								label={ __( 'Font Size', 'powerful-blocks' ) }
-								value={ {
-									desktop: nameFontSize,
-									tablet: nameFontSizeTablet,
-									mobile: nameFontSizeMobile,
-								} }
-								onChange={ ( value, device ) => {
-									if ( 'desktop' === device ) {
-										setAttributes( { nameFontSize: value } );
-									}
-									if ( 'tablet' === device ) {
-										setAttributes( { nameFontSizeTablet: value } );
-									}
-									if ( 'mobile' === device ) {
-										setAttributes( { nameFontSizeMobile: value } );
-									}
-								} }
-							/> */}
 							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
 								value={ {
@@ -764,25 +755,7 @@ const Inspector = ( props ) => {
 									setAttributes( { titleTextAlign } );
 								} }
 							/>
-							{/* <ResponsiveRangeControl
-								label={ __( 'Font Size', 'powerful-blocks' ) }
-								value={ {
-									desktop: titleFontSize,
-									tablet: titleFontSizeTablet,
-									mobile: titleFontSizeMobile,
-								} }
-								onChange={ ( value, device ) => {
-									if ( 'desktop' === device ) {
-										setAttributes( { titleFontSize: value } );
-									}
-									if ( 'tablet' === device ) {
-										setAttributes( { titleFontSizeTablet: value } );
-									}
-									if ( 'mobile' === device ) {
-										setAttributes( { titleFontSizeMobile: value } );
-									}
-								} }
-							/> */}
+							
 							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
 								value={ {
@@ -801,6 +774,24 @@ const Inspector = ( props ) => {
 										setAttributes( { titleMarginMobile: value } );
 									}
 								} }
+							/>
+
+							<TypographyControl
+								label = { __( 'Typography', 'powerful-blocks' ) }
+								fontFamily = { { value: titleFontFamily, name: 'titleFontFamily' } }
+								sizeType = {
+									{ value: titleFontSizeType, name: 'titleFontSizeType' }
+								}
+								fontSize = { { value: titleFontSize, name: 'titleFontSize' } }
+								fontSizeTablet = { { value: titleFontSizeTablet, name: 'titleFontSizeTablet' } }
+								fontSizeMobile = { { value: titleFontSizeMobile, name: 'titleFontSizeMobile' } }
+								fontStyle = { { value: titleFontStyle, name: 'titleFontStyle' } }
+								fontWeight = { { value: titleFontWeight, name: 'titleFontWeight' } }
+								lineHeight = { { value: titleLineHeight, name: 'titleLineHeight' } }
+								letterSpacing = { { value: titleLetterSpacing, name: 'titleLetterSpacing' } }
+								textTransform = { { value: titleTextTransform, name: 'titleTextTransform' } }
+								textDecoration = { { value: titleTextDecoration, name: 'titleTextDecoration' } }
+								setAttributes = { props.setAttributes }
 							/>
 						</PanelBody>
 					</>
