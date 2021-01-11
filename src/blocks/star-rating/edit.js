@@ -12,6 +12,8 @@ import {
 	faStarHalfAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
+import classnames from 'classnames';
+
 
 const edit = ( props ) => {
 	const { attributes, setAttributes } = props;
@@ -21,9 +23,13 @@ const edit = ( props ) => {
 		stars,
 		rating,
 		color,
-		size,
-		sizeTablet,
-		sizeMobile,
+		backgroundType,
+		hideOnDesktop,
+        hideOnTablet,
+		hideOnMobile,
+		blockWidth,
+		customClass,
+        customID,
 	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
@@ -40,7 +46,19 @@ const edit = ( props ) => {
 			<Inspector { ...{ attributes, setAttributes } } />
 			<Styles { ...{ attributes } } />
 			<div id={ `pb-star-rating-${ blockId }` }>
-				<div className="pb-star-rating-wrapper">
+				<div
+					className={ classnames(
+						'pb-star-rating-wrapper',
+						props.className,
+						customClass,
+						hideOnDesktop ? 'pb-hide-d' : '',
+						hideOnTablet ? 'pb-hide-t' : '',
+						hideOnMobile ? 'pb-hide-m' : '',
+						blockWidth ? 'pb-b-e--width' : '',
+						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+					) }
+					id = { customID ? customID : '' }
+				>
 					<div className="pb-star-rating--icon">
 						{ fullStar
 							? [

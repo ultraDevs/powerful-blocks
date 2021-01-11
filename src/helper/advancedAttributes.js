@@ -23,7 +23,7 @@ const advancedAttributes = {
 	},
 	backgroundImgPosition: {
 		type: "string",
-		default: "center-center"
+		default: "center center"
 	},
 	backgroundImgSize: {
 		type: "string",
@@ -53,7 +53,7 @@ const advancedAttributes = {
 	},
 	hoverBackgroundImgPosition: {
 		type: "string",
-		default: "center-center"
+		default: "center center"
 	},
 	hoverBackgroundImgSize: {
 		type: "string",

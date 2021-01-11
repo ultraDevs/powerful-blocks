@@ -1,3 +1,5 @@
+import advancedAttributes from '../../helper/advancedAttributes';
+
 const attributes = {
 	blockId: {
 		type: 'string',
@@ -23,6 +25,11 @@ const attributes = {
 		default: 'center',
 	},
 
+	sizeType: {
+		type: 'string',
+		default: 'px',
+	},
+
 	size: {
 		type: 'number',
 		default: 18,
@@ -38,4 +45,6 @@ const attributes = {
 		default: 16,
 	},
 };
-export default attributes;
+
+const finalAttributes = { ...attributes, ...advancedAttributes };
+export default finalAttributes;

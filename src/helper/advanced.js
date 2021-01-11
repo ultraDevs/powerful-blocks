@@ -802,7 +802,7 @@ const Advanced = ( props ) => {
                 
             </PanelBody>
 
-            <PanelBody title={ __( 'Animation', 'powerful-blocks' ) } initialOpen={ false }>
+            {/* <PanelBody title={ __( 'Animation', 'powerful-blocks' ) } initialOpen={ false }>
                 <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
 					tabs={ [
 						{
@@ -872,7 +872,7 @@ const Advanced = ( props ) => {
 						}
 					}
 				</TabPanel>
-            </PanelBody>
+            </PanelBody> */}
             <PanelBody title={ __( 'Positioning', 'powerful-blocks' ) } initialOpen={ false }>
                 <SelectControl
                     label={ __( 'Width', 'powerful-blocks' ) }
