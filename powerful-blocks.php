@@ -92,6 +92,10 @@ final class PowerfulBlocks {
 		// Rest API Manager.
 		$rest_api_manager = new ultraDevs\PB\API();
 
+		// Post Meta Manager.
+		// $post_meta = new ultraDevs\PB\Admin\Post_Meta();
+		// $post_meta->register();
+
 		if ( is_admin() ) {
 
 			// Activation_Redirect.
@@ -109,6 +113,8 @@ final class PowerfulBlocks {
 
 			// Block Assets.
 			add_action( 'enqueue_block_assets', array( $assets_manager, 'block_assets' ) );
+
+			add_action( 'admin_enqueue_scripts', array( $assets_manager, 'load_fonts' ) );
 
 			// Plugin Action Links.
 			add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );

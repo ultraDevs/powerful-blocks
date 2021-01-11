@@ -87,6 +87,7 @@ const Styles = ( props ) => {
 		contentFontSize,
 		contentFontSizeTablet,
 		contentFontSizeMobile,
+		contentFontStyle,
 		contentMargin,
 		contentMarginTablet,
 		contentMarginMobile,
@@ -113,14 +114,28 @@ const Styles = ( props ) => {
 		imageMargin,
 		imageMarginTablet,
 		imageMarginMobile,
+
+
 		nameColor,
 		nameTextAlign,
 		nameFontSize,
 		nameFontSizeTablet,
 		nameFontSizeMobile,
+
+		nameFontFamily,
+		nameFontSizeType,
+		nameFontStyle,
+		nameFontWeight,
+		nameTextTransform,
+		nameTextDecoration,
+		nameLetterSpacing,
+		nameLineHeight,
+
 		nameMargin,
 		nameMarginTablet,
 		nameMarginMobile,
+
+
 		titleColor,
 		titleTextAlign,
 		titleFontSize,
@@ -136,6 +151,7 @@ const Styles = ( props ) => {
 
 
 	const selectorPrefix = `#pb-testimonial-${ blockId }`;
+
 
 	let rules = {
 		desktop: {
@@ -230,7 +246,28 @@ const Styles = ( props ) => {
 			},
 			'.pb-testimonial-info--name': {
 				color: nameColor ? nameColor + '!important' : undefined,
-				'font-size': nameFontSize ? nameFontSize + 'px' : undefined,
+				'font-family': nameFontFamily
+					? nameFontFamily
+					: undefined,
+				'font-size': nameFontSize ? nameFontSize + nameFontSizeType : undefined,
+				'font-weight':nameFontWeight
+					? nameFontWeight
+					: undefined,
+				'font-style': nameFontStyle
+					? nameFontStyle
+					: undefined,
+				'letter-spacing': nameLetterSpacing
+					? nameLetterSpacing + 'px'
+					: undefined,
+				'line-height': nameLineHeight
+					? nameLineHeight + 'px'
+					: undefined,
+				'text-transform': nameTextTransform
+					? nameTextTransform
+					: undefined,
+				'text-decoration': nameTextDecoration
+					? nameTextDecoration
+					: undefined,
 				'text-align': nameTextAlign ? nameTextAlign : undefined,
 				margin:
 					nameMargin.top +
@@ -245,11 +282,17 @@ const Styles = ( props ) => {
 			'.pb-testimonial--content': {
 				color: contentColor ? contentColor : undefined,
 				'text-align': contentTextAlign ? contentTextAlign : undefined,
+				'font-family': contentFontFamily
+					? contentFontFamily
+					: undefined,
 				'font-size': contentFontSize
 					? contentFontSize + contentFontSizeType
 					: undefined,
 				'font-weight': contentFontWeight
 					? contentFontWeight
+					: undefined,
+				'font-style': contentFontStyle
+					? contentFontStyle
 					: undefined,
 				'letter-spacing': contentLetterSpacing
 					? contentLetterSpacing + 'px'
@@ -359,7 +402,7 @@ const Styles = ( props ) => {
 			},
 			'.pb-testimonial-info--name': {
 				'font-size': nameFontSizeTablet
-					? nameFontSizeTablet + 'px'
+					? nameFontSizeTablet + nameFontSizeType
 					: undefined,
 				margin:
 					nameMarginTablet.top +
@@ -451,7 +494,7 @@ const Styles = ( props ) => {
 			},
 			'.pb-testimonial-info--name': {
 				'font-size': nameFontSizeMobile
-					? nameFontSizeMobile + 'px'
+					? nameFontSizeMobile + nameFontSizeType
 					: undefined,
 				margin:
 					nameMarginMobile.top +
@@ -647,9 +690,14 @@ const Styles = ( props ) => {
 			'background-color': contentBackgroundColor
 				? contentBackgroundColor
 				: '#6a4adc',
-			'border-radius': contentBorderRadius
-				? contentBorderRadius + 'px'
-				: '100px',
+			'border-radius':
+				contentBorderRadius.top +
+				' ' +
+				contentBorderRadius.right +
+				' ' +
+				contentBorderRadius.bottom +
+				' ' +
+				contentBorderRadius.left,
 			padding:
 				contentPadding.top ||
 				'40px' + ' ' + contentPadding.right ||

@@ -21,7 +21,7 @@ const AlignmentControl = ( props ) => {
 	return (
 		<BaseControl
 			label={ props.label }
-			className="pb-block-control__alignment"
+			className="pb-control--alignment"
 		>
 			<ButtonGroup className="align-btn-group">
 				{ ( type === 'text' || type === null ) &&

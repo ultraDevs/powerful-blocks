@@ -51,6 +51,7 @@ const Inspector = ( props ) => {
 		contentFontSize,
 		contentFontSizeTablet,
 		contentFontSizeMobile,
+		contentFontStyle,
 		contentMargin,
 		contentMarginTablet,
 		contentMarginMobile,
@@ -78,14 +79,28 @@ const Inspector = ( props ) => {
 		imageMargin,
 		imageMarginTablet,
 		imageMarginMobile,
+
+
 		nameColor,
 		nameTextAlign,
+
+		nameFontFamily,
+		nameFontSizeType,
+		nameFontStyle,
+		nameFontWeight,
+		nameTextTransform,
+		nameTextDecoration,
+		nameLetterSpacing,
+		nameLineHeight,
+
 		nameFontSize,
 		nameFontSizeTablet,
 		nameFontSizeMobile,
 		nameMargin,
 		nameMarginTablet,
 		nameMarginMobile,
+
+
 		titleColor,
 		titleTextAlign,
 		titleFontSize,
@@ -108,8 +123,6 @@ const Inspector = ( props ) => {
 	let currentTab = 'content';
 	const [ tab, setTab ] = useState( currentTab );
 
-	let currentiTab = 'normal';
-	const [ iTab, setiTab ] = useState( currentiTab );
 
 	return (
 		<InspectorControls>
@@ -641,13 +654,14 @@ const Inspector = ( props ) => {
 							/>
 							<TypographyControl
 								label = { __( 'Typography', 'powerful-blocks' ) }
-								// fontFamily = { contentFontFamily }
+								fontFamily = { { value: contentFontFamily, name: 'contentFontFamily' } }
 								sizeType = {
 									{ value: contentFontSizeType, name: 'contentFontSizeType' }
 								}
 								fontSize = { { value: contentFontSize, name: 'contentFontSize' } }
 								fontSizeTablet = { { value: contentFontSizeTablet, name: 'contentFontSizeTablet' } }
 								fontSizeMobile = { { value: contentFontSizeMobile, name: 'contentFontSizeMobile' } }
+								fontStyle = { { value: contentFontStyle, name: 'contentFontStyle' } }
 								fontWeight = { { value: contentFontWeight, name: 'contentFontWeight' } }
 								lineHeight = { { value: contentLineHeight, name: 'contentLineHeight' } }
 								letterSpacing = { { value: contentLetterSpacing, name: 'contentLetterSpacing' } }
@@ -712,6 +726,23 @@ const Inspector = ( props ) => {
 										setAttributes( { nameMarginMobile: value } );
 									}
 								} }
+							/>
+							<TypographyControl
+								label = { __( 'Typography', 'powerful-blocks' ) }
+								fontFamily = { { value: nameFontFamily, name: 'nameFontFamily' } }
+								sizeType = {
+									{ value: nameFontSizeType, name: 'nameFontSizeType' }
+								}
+								fontSize = { { value: nameFontSize, name: 'nameFontSize' } }
+								fontSizeTablet = { { value: nameFontSizeTablet, name: 'nameFontSizeTablet' } }
+								fontSizeMobile = { { value: nameFontSizeMobile, name: 'nameFontSizeMobile' } }
+								fontStyle = { { value: nameFontStyle, name: 'nameFontStyle' } }
+								fontWeight = { { value: nameFontWeight, name: 'nameFontWeight' } }
+								lineHeight = { { value: nameLineHeight, name: 'nameLineHeight' } }
+								letterSpacing = { { value: nameLetterSpacing, name: 'nameLetterSpacing' } }
+								textTransform = { { value: nameTextTransform, name: 'nameTextTransform' } }
+								textDecoration = { { value: nameTextDecoration, name: 'nameTextDecoration' } }
+								setAttributes = { props.setAttributes }
 							/>
 						</PanelBody>
 						<PanelBody

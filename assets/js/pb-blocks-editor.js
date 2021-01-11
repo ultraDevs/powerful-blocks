@@ -165,6 +165,35 @@ module.exports = _defineProperty;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
@@ -245,6 +274,64 @@ function _nonIterableSpread() {
 }
 
 module.exports = _nonIterableSpread;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var objectWithoutPropertiesLoose = __webpack_require__(/*! ./objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js");
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutProperties;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutPropertiesLoose;
 
 /***/ }),
 
@@ -19349,6 +19436,10 @@ var attributes = {
     type: 'string',
     default: 'px'
   },
+  contentFontStyle: {
+    type: 'string',
+    default: 'normal'
+  },
   contentFontSize: {
     type: 'number',
     default: 18
@@ -19612,6 +19703,38 @@ var attributes = {
   nameFontSizeMobile: {
     type: 'number',
     default: 16
+  },
+  nameFontFamily: {
+    type: 'string',
+    default: ''
+  },
+  nameFontSizeType: {
+    type: 'string',
+    default: 'px'
+  },
+  nameFontStyle: {
+    type: 'string',
+    default: 'normal'
+  },
+  nameFontWeight: {
+    type: 'string',
+    default: 'normal'
+  },
+  nameTextTransform: {
+    type: 'string',
+    default: ''
+  },
+  nameTextDecoration: {
+    type: 'string',
+    default: ''
+  },
+  nameLetterSpacing: {
+    type: 'number',
+    default: ''
+  },
+  nameLineHeight: {
+    type: 'number',
+    default: ''
   },
   nameMargin: {
     type: 'object',
@@ -20041,6 +20164,7 @@ var Inspector = function Inspector(props) {
       contentFontSize = attributes.contentFontSize,
       contentFontSizeTablet = attributes.contentFontSizeTablet,
       contentFontSizeMobile = attributes.contentFontSizeMobile,
+      contentFontStyle = attributes.contentFontStyle,
       contentMargin = attributes.contentMargin,
       contentMarginTablet = attributes.contentMarginTablet,
       contentMarginMobile = attributes.contentMarginMobile,
@@ -20070,6 +20194,14 @@ var Inspector = function Inspector(props) {
       imageMarginMobile = attributes.imageMarginMobile,
       nameColor = attributes.nameColor,
       nameTextAlign = attributes.nameTextAlign,
+      nameFontFamily = attributes.nameFontFamily,
+      nameFontSizeType = attributes.nameFontSizeType,
+      nameFontStyle = attributes.nameFontStyle,
+      nameFontWeight = attributes.nameFontWeight,
+      nameTextTransform = attributes.nameTextTransform,
+      nameTextDecoration = attributes.nameTextDecoration,
+      nameLetterSpacing = attributes.nameLetterSpacing,
+      nameLineHeight = attributes.nameLineHeight,
       nameFontSize = attributes.nameFontSize,
       nameFontSizeTablet = attributes.nameFontSizeTablet,
       nameFontSizeMobile = attributes.nameFontSizeMobile,
@@ -20099,13 +20231,6 @@ var Inspector = function Inspector(props) {
       _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
       tab = _useState2[0],
       setTab = _useState2[1];
-
-  var currentiTab = 'normal';
-
-  var _useState3 = useState(currentiTab),
-      _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState3, 2),
-      iTab = _useState4[0],
-      setiTab = _useState4[1];
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "pb-panel-head--tabs"
@@ -20660,8 +20785,11 @@ var Inspector = function Inspector(props) {
       }
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["TypographyControl"], {
-    label: __('Typography', 'powerful-blocks') // fontFamily = { contentFontFamily }
-    ,
+    label: __('Typography', 'powerful-blocks'),
+    fontFamily: {
+      value: contentFontFamily,
+      name: 'contentFontFamily'
+    },
     sizeType: {
       value: contentFontSizeType,
       name: 'contentFontSizeType'
@@ -20677,6 +20805,10 @@ var Inspector = function Inspector(props) {
     fontSizeMobile: {
       value: contentFontSizeMobile,
       name: 'contentFontSizeMobile'
+    },
+    fontStyle: {
+      value: contentFontStyle,
+      name: 'contentFontStyle'
     },
     fontWeight: {
       value: contentFontWeight,
@@ -20745,6 +20877,53 @@ var Inspector = function Inspector(props) {
         });
       }
     }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["TypographyControl"], {
+    label: __('Typography', 'powerful-blocks'),
+    fontFamily: {
+      value: nameFontFamily,
+      name: 'nameFontFamily'
+    },
+    sizeType: {
+      value: nameFontSizeType,
+      name: 'nameFontSizeType'
+    },
+    fontSize: {
+      value: nameFontSize,
+      name: 'nameFontSize'
+    },
+    fontSizeTablet: {
+      value: nameFontSizeTablet,
+      name: 'nameFontSizeTablet'
+    },
+    fontSizeMobile: {
+      value: nameFontSizeMobile,
+      name: 'nameFontSizeMobile'
+    },
+    fontStyle: {
+      value: nameFontStyle,
+      name: 'nameFontStyle'
+    },
+    fontWeight: {
+      value: nameFontWeight,
+      name: 'nameFontWeight'
+    },
+    lineHeight: {
+      value: nameLineHeight,
+      name: 'nameLineHeight'
+    },
+    letterSpacing: {
+      value: nameLetterSpacing,
+      name: 'nameLetterSpacing'
+    },
+    textTransform: {
+      value: nameTextTransform,
+      name: 'nameTextTransform'
+    },
+    textDecoration: {
+      value: nameTextDecoration,
+      name: 'nameTextDecoration'
+    },
+    setAttributes: props.setAttributes
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Title', 'powerful-blocks'),
     initialOpen: false
@@ -20983,6 +21162,7 @@ var Styles = function Styles(props) {
       contentFontSize = attributes.contentFontSize,
       contentFontSizeTablet = attributes.contentFontSizeTablet,
       contentFontSizeMobile = attributes.contentFontSizeMobile,
+      contentFontStyle = attributes.contentFontStyle,
       contentMargin = attributes.contentMargin,
       contentMarginTablet = attributes.contentMarginTablet,
       contentMarginMobile = attributes.contentMarginMobile,
@@ -21014,6 +21194,14 @@ var Styles = function Styles(props) {
       nameFontSize = attributes.nameFontSize,
       nameFontSizeTablet = attributes.nameFontSizeTablet,
       nameFontSizeMobile = attributes.nameFontSizeMobile,
+      nameFontFamily = attributes.nameFontFamily,
+      nameFontSizeType = attributes.nameFontSizeType,
+      nameFontStyle = attributes.nameFontStyle,
+      nameFontWeight = attributes.nameFontWeight,
+      nameTextTransform = attributes.nameTextTransform,
+      nameTextDecoration = attributes.nameTextDecoration,
+      nameLetterSpacing = attributes.nameLetterSpacing,
+      nameLineHeight = attributes.nameLineHeight,
       nameMargin = attributes.nameMargin,
       nameMarginTablet = attributes.nameMarginTablet,
       nameMarginMobile = attributes.nameMarginMobile,
@@ -21052,15 +21240,24 @@ var Styles = function Styles(props) {
       },
       '.pb-testimonial-info--name': {
         color: nameColor ? nameColor + '!important' : undefined,
-        'font-size': nameFontSize ? nameFontSize + 'px' : undefined,
+        'font-family': nameFontFamily ? nameFontFamily : undefined,
+        'font-size': nameFontSize ? nameFontSize + nameFontSizeType : undefined,
+        'font-weight': nameFontWeight ? nameFontWeight : undefined,
+        'font-style': nameFontStyle ? nameFontStyle : undefined,
+        'letter-spacing': nameLetterSpacing ? nameLetterSpacing + 'px' : undefined,
+        'line-height': nameLineHeight ? nameLineHeight + 'px' : undefined,
+        'text-transform': nameTextTransform ? nameTextTransform : undefined,
+        'text-decoration': nameTextDecoration ? nameTextDecoration : undefined,
         'text-align': nameTextAlign ? nameTextAlign : undefined,
         margin: nameMargin.top + ' ' + nameMargin.right + ' ' + nameMargin.bottom + ' ' + nameMargin.left
       },
       '.pb-testimonial--content': {
         color: contentColor ? contentColor : undefined,
         'text-align': contentTextAlign ? contentTextAlign : undefined,
+        'font-family': contentFontFamily ? contentFontFamily : undefined,
         'font-size': contentFontSize ? contentFontSize + contentFontSizeType : undefined,
         'font-weight': contentFontWeight ? contentFontWeight : undefined,
+        'font-style': contentFontStyle ? contentFontStyle : undefined,
         'letter-spacing': contentLetterSpacing ? contentLetterSpacing + 'px' : undefined,
         'line-height': contentLineHeight ? contentLineHeight + 'px' : undefined,
         'text-transform': contentTextTransform ? contentTextTransform : undefined,
@@ -21101,7 +21298,7 @@ var Styles = function Styles(props) {
         'border-radius': imageBorderRadiusTablet ? imageBorderRadiusTablet + 'px' : undefined
       },
       '.pb-testimonial-info--name': {
-        'font-size': nameFontSizeTablet ? nameFontSizeTablet + 'px' : undefined,
+        'font-size': nameFontSizeTablet ? nameFontSizeTablet + nameFontSizeType : undefined,
         margin: nameMarginTablet.top + ' ' + nameMarginTablet.right + ' ' + nameMarginTablet.bottom + ' ' + nameMarginTablet.left
       },
       '.pb-testimonial--content': {
@@ -21129,7 +21326,7 @@ var Styles = function Styles(props) {
         'border-radius': imageBorderRadiusMobile ? imageBorderRadiusMobile + 'px' : undefined
       },
       '.pb-testimonial-info--name': {
-        'font-size': nameFontSizeMobile ? nameFontSizeMobile + 'px' : undefined,
+        'font-size': nameFontSizeMobile ? nameFontSizeMobile + nameFontSizeType : undefined,
         margin: nameMarginMobile.top + ' ' + nameMarginMobile.right + ' ' + nameMarginMobile.bottom + ' ' + nameMarginMobile.left
       },
       '.pb-testimonial--content': {
@@ -21262,7 +21459,7 @@ var Styles = function Styles(props) {
     };
     rules.desktop['.design-3 .pb-testimonial--conr'] = {
       'background-color': contentBackgroundColor ? contentBackgroundColor : '#6a4adc',
-      'border-radius': contentBorderRadius ? contentBorderRadius + 'px' : '100px',
+      'border-radius': contentBorderRadius.top + ' ' + contentBorderRadius.right + ' ' + contentBorderRadius.bottom + ' ' + contentBorderRadius.left,
       padding: contentPadding.top || '40px' + ' ' + contentPadding.right || '40px' + ' ' + contentPadding.bottom || '40px' + ' ' + contentPadding.left || '40px'
     };
     rules.desktop['.design-3 .pb-testimonial--content'] = {
@@ -21346,7 +21543,7 @@ var AlignmentControl = function AlignmentControl(props) {
   }];
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BaseControl, {
     label: props.label,
-    className: "pb-block-control__alignment"
+    className: "pb-control--alignment"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ButtonGroup, {
     className: "align-btn-group"
   }, (type === 'text' || type === null) && TEXT_ALIGNS.map(function (align) {
@@ -21843,7 +22040,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editor.scss */ "./src/components/responsive-box-control/editor.scss");
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_1__);
 
-var withState = wp.compose.withState;
+var _wp$compose = wp.compose,
+    withState = _wp$compose.withState,
+    useState = _wp$compose.useState;
 var _wp$components = wp.components,
     __experimentalBoxControl = _wp$components.__experimentalBoxControl,
     BaseControl = _wp$components.BaseControl,
@@ -21862,7 +22061,9 @@ var BaseBoxControl = function BaseBoxControl(props) {
 };
 
 var ResponsiveBoxControl = function ResponsiveBoxControl(props) {
-  var device = props.device;
+  var device = props.device; // const currentValues = props.value;
+  // const [ bValues, setValue ] = useState( currentValues );
+
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BaseControl, {
     className: "pb-responsive-box-control"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ButtonGroup, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Button, {
@@ -22086,6 +22287,232 @@ var ResponsiveRangeControl = function ResponsiveRangeControl(props) {
 
 /***/ }),
 
+/***/ "./src/components/typography-control/fontPicker.js":
+/*!*********************************************************!*\
+  !*** ./src/components/typography-control/fontPicker.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _fonts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fonts */ "./src/components/typography-control/fonts.js");
+
+
+
+
+/**
+ * Credit: EB / Tasnim
+ */
+
+/**
+ * Internal dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+var __ = wp.i18n.__;
+var withInstanceId = wp.compose.withInstanceId;
+var BaseControl = wp.components.BaseControl;
+
+var FontFamilyPicker = function FontFamilyPicker(_ref) {
+  var label = _ref.label,
+      value = _ref.value,
+      help = _ref.help,
+      instanceId = _ref.instanceId,
+      onChange = _ref.onChange,
+      className = _ref.className,
+      props = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default()(_ref, ["label", "value", "help", "instanceId", "onChange", "className"]);
+
+  var id = "inspector-pb-font-family-".concat(instanceId);
+  var fonts = [{
+    value: "",
+    label: __("Default")
+  }, {
+    value: "Arial",
+    label: "Arial"
+  }, {
+    value: "Helvetica",
+    label: "Helvetica"
+  }, {
+    value: "Times New Roman",
+    label: "Times New Roman"
+  }, {
+    value: "Georgia",
+    label: "Georgia"
+  }]; //Add Google Fonts
+
+  Object.keys(_fonts__WEBPACK_IMPORTED_MODULE_3__["default"]).map(function (font) {
+    fonts.push({
+      value: font,
+      label: font
+    });
+  });
+
+  var onChangeValue = function onChangeValue(event) {
+    var meta = wp.data.select("core/editor").getEditedPostAttribute("meta");
+    var ba = "";
+    var googleFontsAttr = ":100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic";
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+
+    if (typeof meta !== "undefined" && typeof meta._pb_fonts_attr !== "undefined") {
+      ba = meta._pb_fonts_attr;
+    }
+
+    if (ba.length > 0) {
+      //Load fonts on the header
+      if (!ba.includes(event.target.value)) {
+        link.href = "https://fonts.googleapis.com/css?family=" + event.target.value.replace(/ /g, "+") + googleFontsAttr;
+        document.head.appendChild(link);
+      }
+
+      ba = ba.replace("," + event.target.value, "");
+      ba = ba + "," + event.target.value;
+    } else {
+      link.href = "https://fonts.googleapis.com/css?family=" + event.target.value.replace(/ /g, "+") + googleFontsAttr;
+      document.head.appendChild(link);
+      ba = event.target.value;
+    }
+
+    console.log(link);
+    wp.data.dispatch("core/editor").editPost({
+      meta: {
+        _pb_fonts_attr: ba
+      }
+    });
+    onChange(event.target.value);
+  };
+
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(BaseControl, {
+    label: label,
+    id: id,
+    help: help,
+    className: className
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("select", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+    id: id,
+    className: "components-select-control__input",
+    onChange: onChangeValue
+  }, props), fonts.map(function (option, index) {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("option", {
+      key: "".concat(option.label, "-").concat(option.value, "-").concat(index),
+      value: option.value,
+      selected: value === option.value ? "selected" : ""
+    }, option.label);
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (withInstanceId(FontFamilyPicker));
+
+/***/ }),
+
+/***/ "./src/components/typography-control/fonts.js":
+/*!****************************************************!*\
+  !*** ./src/components/typography-control/fonts.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var FONTS = {
+  "Abril Fatface": {
+    weight: ["400"]
+  },
+  Anton: {
+    weight: ["400"]
+  },
+  Arvo: {
+    weight: ["400", "700"]
+  },
+  Asap: {
+    weight: ["400", "500", "600", "700"]
+  },
+  "Barlow Condensed": {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  Barlow: {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  "Cormorant Garamond": {
+    weight: ["300", "400", "500", "600", "700"]
+  },
+  Faustina: {
+    weight: ["400", "500", "600", "700"]
+  },
+  "Fira Sans": {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  "IBM Plex Sans": {
+    weight: ["100", "200", "300", "400", "500", "600", "700"]
+  },
+  Inconsolata: {
+    weight: ["400", "700"]
+  },
+  Heebo: {
+    weight: ["100", "300", "400", "500", "700", "800", "900"]
+  },
+  Karla: {
+    weight: ["400", "700"]
+  },
+  Lato: {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  Lora: {
+    weight: ["400", "700"]
+  },
+  Merriweather: {
+    weight: ["300", "400", "500", "600", "700", "800", "900"]
+  },
+  Montserrat: {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  "Noto Sans": {
+    weight: ["400", "700"]
+  },
+  "Noto Serif": {
+    weight: ["400", "700"]
+  },
+  "Open Sans": {
+    weight: ["300", "400", "500", "600", "700", "800"]
+  },
+  Oswald: {
+    weight: ["200", "300", "400", "500", "600", "700"]
+  },
+  "Playfair Display": {
+    weight: ["400", "700", "900"]
+  },
+  "PT Serif": {
+    weight: ["400", "700"]
+  },
+  Roboto: {
+    weight: ["100", "300", "400", "500", "700", "900"]
+  },
+  Rubik: {
+    weight: ["300", "400", "500", "700", "900"]
+  },
+  Tajawal: {
+    weight: ["200", "300", "400", "500", "700", "800", "900"]
+  },
+  Ubuntu: {
+    weight: ["300", "400", "500", "700"]
+  },
+  Yrsa: {
+    weight: ["300", "400", "500", "600", "700"]
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (FONTS);
+
+/***/ }),
+
 /***/ "./src/components/typography-control/index.js":
 /*!****************************************************!*\
   !*** ./src/components/typography-control/index.js ***!
@@ -22101,7 +22528,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/components/typography-control/editor.scss");
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _responsive_range_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../responsive-range-control */ "./src/components/responsive-range-control/index.js");
+/* harmony import */ var _fonts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fonts */ "./src/components/typography-control/fonts.js");
+/* harmony import */ var _responsive_range_control__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../responsive-range-control */ "./src/components/responsive-range-control/index.js");
+/* harmony import */ var _fontPicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./fontPicker */ "./src/components/typography-control/fontPicker.js");
 
 
 var __ = wp.i18n.__;
@@ -22115,6 +22544,8 @@ var _wp$components = wp.components,
     BaseControl = _wp$components.BaseControl;
 
 
+
+
 var WEIGHTS = [{
   label: __('Default', 'powerful-blocks'),
   value: ""
@@ -22124,9 +22555,22 @@ var WEIGHTS = [{
 }, {
   label: __('Bold', 'powerful-blocks'),
   value: "bold"
+}];
+var STYLES = [{
+  label: __('Normal', 'powerful-blocks'),
+  value: "normal"
 }, {
   label: __('Italic', 'powerful-blocks'),
   value: "italic"
+}, {
+  label: __('Oblique', 'powerful-blocks'),
+  value: "oblique"
+}, {
+  label: __('Initial', 'powerful-blocks'),
+  value: "initial"
+}, {
+  label: __('Inherit', 'powerful-blocks'),
+  value: "inherit"
 }];
 var TRANSFORMS = [{
   label: __('None', 'powerful-blocks'),
@@ -22162,6 +22606,7 @@ var TypographyControl = function TypographyControl(props) {
   var label = props.label;
   var fontFamily = props.fontFamily;
   var fontSize = props.fontSize;
+  var fontStyle = props.fontStyle;
   var fontSizeTablet = props.fontSizeTablet;
   var fontSizeMobile = props.fontSizeMobile;
   var fontWeight = props.fontWeight;
@@ -22170,7 +22615,19 @@ var TypographyControl = function TypographyControl(props) {
   var textTransform = props.textTransform;
   var textDecoration = props.textDecoration;
   var setAttributes = props.setAttributes;
-  console.log(letterSpacing.value);
+
+  var onFontChange = function onFontChange(value) {
+    // const { fontFamily, fontWeight } = props.attributes;
+    setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, fontFamily.name, value));
+
+    if (typeof _fonts__WEBPACK_IMPORTED_MODULE_3__["default"][value] !== "undefined" && typeof _fonts__WEBPACK_IMPORTED_MODULE_3__["default"][value].weight !== "undefined") {
+      if (fontWeight.value && Object.values(_fonts__WEBPACK_IMPORTED_MODULE_3__["default"][fontFamily.value].weight).indexOf(fontWeight) < 0) {
+        setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, fontWeight.name, ""));
+      }
+    } // onClose();
+
+  };
+
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BaseControl, {
     label: label,
     className: "pb-typography-control"
@@ -22191,14 +22648,28 @@ var TypographyControl = function TypographyControl(props) {
     renderContent: function renderContent() {
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
         className: "pb-typography-control--content"
-      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_fontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        label: __('Font', 'powerful-blocks'),
+        value: fontFamily.value || null,
+        onChange: function onChange(nextFontFamily) {
+          onFontChange(nextFontFamily);
+        },
+        className: "components-base-control--with-flex"
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
         label: __('Weight', 'powerful-blocks'),
         value: fontWeight.value,
         onChange: function onChange(value) {
           setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, fontWeight.name, value));
         },
         options: WEIGHTS
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_responsive_range_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        label: __('Style', 'powerful-blocks'),
+        value: fontStyle.value,
+        onChange: function onChange(value) {
+          setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, fontStyle.name, value));
+        },
+        options: STYLES
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_responsive_range_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         label: __('Size', 'powerful-blocks'),
         sizeType: {
           value: props.sizeType.value,
@@ -22238,7 +22709,8 @@ var TypographyControl = function TypographyControl(props) {
         step: 1,
         max: 100
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BaseControl, {
-        label: __('Text Transform', 'powerful-blocks')
+        label: __('Text Transform', 'powerful-blocks'),
+        className: "pb-typography-control--transform"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ButtonGroup, null, TRANSFORMS.map(function (item) {
         return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
           isPrimary: textTransform.value === item.value,

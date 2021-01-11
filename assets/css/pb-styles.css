@@ -106,7 +106,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row; }
+    flex-direction: row;
+    position: relative; }
     .pb-testimonial-wrapper .pb-testimonial--details.image-position-top {
       flex-direction: column; }
       .pb-testimonial-wrapper .pb-testimonial--details.image-position-top .pb-testimonial-image {

@@ -112,17 +112,111 @@ class Assets_Manager {
 	/**
 	 * Get Block CSS from Post Meta
 	 *
-	 * @param string $hook Page slug.
-	 *
 	 * @return void
 	 */
-	public function get_block_css( $hook ) {
+	public function get_block_css() {
 		global $post;
 
 		$post_id = $post->ID;
 
 		$css = get_post_meta( $post_id, '_pb_css', true );
 
-		echo '<style>' . $css . '</style>';
+		echo '<style>' . $this->get_google_fonts( $css ) . '</style>';
+	}
+
+	/**
+	 * Get Blocks Google fonts from CSS.
+	 *
+	 * @return void
+	 */
+	public function load_fonts() {
+		global $post;
+
+		$post_id = $post->ID;
+
+		$css = get_post_meta( $post_id, '_pb_css', true );
+
+		$fonts = $this->get_google_fonts( $css, false );
+
+		$query_args = array(
+			'family' => $fonts,
+		);
+
+		wp_enqueue_style(
+			'pb-admin-block-fonts',
+			add_query_arg( $query_args, '//fonts.googleapis.com/css' ),
+			array(),
+			POWERFUL_BLOCKS_VERSION
+		);
+
+	}
+
+	/**
+	 * Extract Fonts and use google fonts API.
+	 *
+	 * @param string  $css CSS.
+	 * @return string
+	 */
+	public function get_google_fonts( $css ) {
+
+		preg_match_all( '/font-family: .*?;/', $css, $matches );
+
+		$gfonts_attr = ':100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic';
+
+		$fonts = '';
+		foreach ( $matches[0] as $match ) {
+
+			$extract = explode( ':', str_replace( array( '"', ';' ), array( '', ',' ), $match ) );
+			$fonts .= trim( $extract[1] );
+		}
+
+		if ( ! empty( $fonts ) ) {
+
+			$fonts = array_unique( explode( ',', $fonts ) );
+
+			$system = array(
+				'Arial',
+				'Tahoma',
+				'Verdana',
+				'Helvetica',
+				'Times New Roman',
+				'Trebuchet MS',
+				'Georgia',
+			);
+			var_dump( $fonts);
+
+
+			$gfonts = '';
+
+			$gfonts_attr = ':100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic';
+
+			foreach ( $fonts as $font ) {
+				if ( ! in_array( $font, $system, true ) && ! empty( $font ) ) {
+					$gfonts .= str_replace( ' ', '+', trim( $font ) ) . $gfonts_attr . '|';
+				}
+			}
+
+
+			if ( ! empty( $gfonts ) ) {
+				$query_args = array(
+					'family' => $gfonts,
+				);
+
+				wp_register_style(
+					'pb-block-fonts',
+					add_query_arg( $query_args, '//fonts.googleapis.com/css' ),
+					array(),
+					POWERFUL_BLOCKS_VERSION
+				);
+
+				wp_enqueue_style( 'pb-block-fonts' );
+
+			}
+
+			// Reset.
+			$gfonts = '';
+		}
+
+		return $css;
 	}
 }

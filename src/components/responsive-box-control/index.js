@@ -1,4 +1,4 @@
-const { withState } = wp.compose;
+const { withState, useState } = wp.compose;
 const { __experimentalBoxControl, BaseControl, Button, ButtonGroup, Icon } = wp.components;
 
 const { __ } = wp.i18n;
@@ -18,6 +18,11 @@ const BaseBoxControl = ( props ) => {
 const ResponsiveBoxControl = ( props ) => {
 
 	const device = props.device;
+
+	// const currentValues = props.value;
+
+	// const [ bValues, setValue ] = useState( currentValues );
+
 	return (
 		<BaseControl className="pb-responsive-box-control">
 			<ButtonGroup>

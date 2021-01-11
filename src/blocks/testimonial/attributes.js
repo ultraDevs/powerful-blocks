@@ -58,6 +58,10 @@ const attributes = {
 		type: 'string',
 		default: 'px',
 	},
+	contentFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
 
 	contentFontSize: {
 		type: 'number',
@@ -347,6 +351,43 @@ const attributes = {
 		type: 'number',
 		default: 16,
 	},
+
+	nameFontFamily: {
+		type: 'string',
+		default: '',
+	},
+
+	nameFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+	nameFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
+
+	nameFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	nameTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	nameTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	nameLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	nameLineHeight: {
+		type: 'number',
+		default: '',
+	},
+
+
 	nameMargin: {
 		type: 'object',
 		default: {
