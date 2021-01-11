@@ -1,4 +1,6 @@
 import { __ } from '@wordpress/i18n';
+import advancedAttributes from '../../helper/advancedAttributes';
+
 const attributes = {
 	blockId: {
 		type: 'string',
@@ -38,6 +40,40 @@ const attributes = {
 		type: 'number',
 		default: 16,
 	},
+	tFontFamily: {
+		type: 'string',
+		default: '',
+	},
+	
+	tFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+	tFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
+	
+	tFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	tTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	tTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	tLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	tLineHeight: {
+		type: 'number',
+		default: '',
+	},
 
 	btnText: {
 		type: 'string',
@@ -63,6 +99,42 @@ const attributes = {
 		type: 'number',
 		default: 16,
 	},
+
+	btnFontFamily: {
+		type: 'string',
+		default: '',
+	},
+	
+	btnFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+	btnFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
+	
+	btnFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	btnTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	btnTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	btnLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	btnLineHeight: {
+		type: 'number',
+		default: '',
+	},
+
 	btnPadding: {
 		type: 'object',
 		default: {
@@ -94,4 +166,6 @@ const attributes = {
 		default: '#1EA1F1',
 	},
 };
-export default attributes;
+
+const finalAttributes = { ...attributes, ...advancedAttributes };
+export default finalAttributes;

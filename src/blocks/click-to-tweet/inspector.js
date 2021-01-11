@@ -1,16 +1,21 @@
-import { InspectorControls } from '@wordpress/block-editor';
-import {
+const { InspectorControls } = wp.blockEditor;
+const {
 	PanelBody,
 	SelectControl,
 	RangeControl,
-	ColorPicker,
-	__experimentalBoxControl as BoxControl,
+	__experimentalBoxControl,
 	TextControl,
-} from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+	Button,
+	ButtonGroup,
+} = wp.components;
+const { __ } = wp.i18n;
+const { useState } = wp.element;
+import classnames from 'classnames';
 
-import { AlignmentControl } from '../../components';
-import { ResponsiveRangeControl } from '../../components';
+
+import { AlignmentControl, TypographyControl, ColorPickerControl } from '../../components';
+
+import Advanced from '../../helper/advanced';
 
 const Inspector = ( props ) => {
 	const { attributes, setAttributes } = props;
@@ -22,11 +27,31 @@ const Inspector = ( props ) => {
 		textSize,
 		textSizeTablet,
 		textSizeMobile,
+
+		tFontFamily,
+		tFontSizeType,
+		tFontStyle,
+		tFontWeight,
+		tTextTransform,
+		tTextDecoration,
+		tLetterSpacing,
+		tLineHeight,
+
 		btnBackgroundColor,
 		btnTxtColor,
 		btnFontSize,
 		btnFontSizeTablet,
 		btnFontSizeMobile,
+
+		btnFontFamily,
+		btnFontSizeType,
+		btnFontStyle,
+		btnFontWeight,
+		btnTextTransform,
+		btnTextDecoration,
+		btnLetterSpacing,
+		btnLineHeight,
+
 		btnPadding,
 		btnBorderRadius,
 		btnBorderStyle,
@@ -34,142 +59,196 @@ const Inspector = ( props ) => {
 		btnBorderColor,
 	} = attributes;
 
+	let currentTab = 'content';
+	const [ tab, setTab ] = useState( currentTab );
+
 	return (
 		<InspectorControls>
-			<PanelBody title={ __( 'Via', 'powerful-blocks' ) }>
-				<TextControl
-					label={ __( 'Twitter Username', 'powerful-blocks' ) }
-					value={ via }
-					onChange={ ( via ) => {
-						setAttributes( { via } );
-					} }
-				/>
-			</PanelBody>
-			<PanelBody title={ __( 'Text', 'powerful-blocks' ) }>
-				<AlignmentControl
-					label={ __( 'Alignment', 'powerful-blocks' ) }
-					type="text"
-					value={ textAlign }
-					onChange={ ( textAlign ) => {
-						setAttributes( { textAlign } );
-					} }
-				/>
-				<ColorPicker
-					label={ __( 'Color', 'powerful-blocks' ) }
-					color={ textColor }
-					onChangeComplete={ ( value ) =>
-						setAttributes( { textColor: value.hex } )
-					}
-					disableAlpha
-				/>
-				<ResponsiveRangeControl
-					label={ __( 'Font Size', 'powerful-blocks' ) }
-					value={ {
-						desktop: textSize,
-						tablet: textSizeTablet,
-						mobile: textSizeMobile,
-					} }
-					onChange={ ( value, device ) => {
-						if ( 'desktop' === device ) {
-							setAttributes( { textSize: value } );
+			<div className="pb-panel-head--tabs">
+				<ButtonGroup className="pb-panel-head--tabs__wrapper">
+					<Button
+						onClick = { () => {
+							setTab('content');
+						}}
+						className = {
+							classnames(
+								"pb-panel-head--tab",
+								'content' === tab ? 'pb-ph-tab--active' : '',
+							)
 						}
-						if ( 'tablet' === device ) {
-							setAttributes( { textSizeTablet: value } );
+						icon="edit"
+					>
+						{ __( 'Content', 'powerful-blocks' ) }
+					</Button>
+					<Button
+						onClick = { () => {
+							setTab('style');
+						}}
+						className = {
+							classnames(
+								"pb-panel-head--tab",
+								'style' === tab ? 'pb-ph-tab--active' : '',
+							)
 						}
-						if ( 'mobile' === device ) {
-							setAttributes( { textSizeMobile: value } );
+						icon="color-picker"
+					>
+						{ __( 'Style', 'powerful-blocks' ) }
+					</Button>
+					<Button
+						onClick = { () => {
+							setTab('advanced');
+						}}
+						className = {
+							classnames(
+								"pb-panel-head--tab",
+								'advanced' === tab ? 'pb-ph-tab--active' : '',
+							)
 						}
-					} }
-				/>
-			</PanelBody>
+						icon="admin-generic"
+					>
+						{ __( 'Advanced', 'powerful-blocks' ) }
+					</Button>
+				</ButtonGroup>
+				<div className="pb-panel-head--tabs__controls">
+				{ 'content' === tab && (
+					<>
+						<PanelBody title={ __( 'Via', 'powerful-blocks' ) }>
+							<TextControl
+								label={ __( 'Twitter Username', 'powerful-blocks' ) }
+								value={ via }
+								onChange={ ( via ) => {
+									setAttributes( { via } );
+								} }
+							/>
+						</PanelBody>
+					</>
+				) }
+				{ 'style' === tab && (
+					<>
+						<PanelBody title={ __( 'Text', 'powerful-blocks' ) }>
+							<AlignmentControl
+								label={ __( 'Alignment', 'powerful-blocks' ) }
+								type="text"
+								value={ textAlign }
+								onChange={ ( textAlign ) => {
+									setAttributes( { textAlign } );
+								} }
+							/>
+							<ColorPickerControl
+								label={ __( 'Color', 'powerful-blocks' ) }
+								value={ textColor }
+								onChange={ ( textColor ) => {
+									setAttributes( { textColor } );
+								} }
+							/>
+							
+							<TypographyControl
+								label = { __( 'Typography', 'powerful-blocks' ) }
+								fontFamily = { { value: tFontFamily, name: 'tFontFamily' } }
+								sizeType = {
+									{ value: tFontSizeType, name: 'tFontSizeType' }
+								}
+								fontSize = { { value: textSize, name: 'textSize' } }
+								fontSizeTablet = { { value: textSizeTablet, name: 'textSizeTablet' } }
+								fontSizeMobile = { { value: textSizeMobile, name: 'textSizeMobile' } }
+								fontStyle = { { value: tFontStyle, name: 'tFontStyle' } }
+								fontWeight = { { value: tFontWeight, name: 'tFontWeight' } }
+								lineHeight = { { value: tLineHeight, name: 'tLineHeight' } }
+								letterSpacing = { { value: tLetterSpacing, name: 'tLetterSpacing' } }
+								textTransform = { { value: tTextTransform, name: 'tTextTransform' } }
+								textDecoration = { { value: tTextDecoration, name: 'tTextDecoration' } }
+								setAttributes = { props.setAttributes }
+							/>
+						</PanelBody>
 
-			<PanelBody title={ __( 'Button', 'powerful-blocks' ) }>
-				<ColorPicker
-					label={ __( 'Background Color', 'powerful-blocks' ) }
-					color={ btnBackgroundColor }
-					onChangeComplete={ ( value ) =>
-						setAttributes( { btnBackgroundColor: value.hex } )
-					}
-					disableAlpha
-				/>
-				<ColorPicker
-					label={ __( 'Color', 'powerful-blocks' ) }
-					color={ btnTxtColor }
-					onChangeComplete={ ( value ) =>
-						setAttributes( { btnTxtColor: value.hex } )
-					}
-					disableAlpha
-				/>
+						<PanelBody title={ __( 'Button', 'powerful-blocks' ) } initialOpen={ false }>
+							<ColorPickerControl
+								label={ __( 'Background Color', 'powerful-blocks' ) }
+								value={ btnBackgroundColor }
+								onChange={ ( btnBackgroundColor ) => {
+									setAttributes( { btnBackgroundColor } );
+								} }
+							/>
+							<ColorPickerControl
+								label={ __( 'Color', 'powerful-blocks' ) }
+								value={ btnTxtColor }
+								onChange={ ( btnTxtColor ) => {
+									setAttributes( { btnTxtColor } );
+								} }
+							/>
+							<TypographyControl
+								label = { __( 'Typography', 'powerful-blocks' ) }
+								fontFamily = { { value: btnFontFamily, name: 'btnFontFamily' } }
+								sizeType = {
+									{ value: btnFontSizeType, name: 'btnFontSizeType' }
+								}
+								fontSize = { { value: btnFontSize, name: 'btnFontSize' } }
+								fontSizeTablet = { { value: btnFontSizeTablet, name: 'btnFontSizeTablet' } }
+								fontSizeMobile = { { value: btnFontSizeMobile, name: 'btnFontSizeMobile' } }
+								fontStyle = { { value: btnFontStyle, name: 'btnFontStyle' } }
+								fontWeight = { { value: btnFontWeight, name: 'btnFontWeight' } }
+								lineHeight = { { value: btnLineHeight, name: 'btnLineHeight' } }
+								letterSpacing = { { value: btnLetterSpacing, name: 'btnLetterSpacing' } }
+								textTransform = { { value: btnTextTransform, name: 'btnTextTransform' } }
+								textDecoration = { { value: btnTextDecoration, name: 'btnTextDecoration' } }
+								setAttributes = { props.setAttributes }
+							/>
 
-				<ResponsiveRangeControl
-					label={ __( 'Font Size', 'powerful-blocks' ) }
-					value={ {
-						desktop: btnFontSize,
-						tablet: btnFontSizeTablet,
-						mobile: btnFontSizeMobile,
-					} }
-					onChange={ ( value, device ) => {
-						if ( 'desktop' === device ) {
-							setAttributes( { btnFontSize: value } );
-						}
-						if ( 'tablet' === device ) {
-							setAttributes( { btnFontSizeTablet: value } );
-						}
-						if ( 'mobile' === device ) {
-							setAttributes( { btnFontSizeMobile: value } );
-						}
-					} }
-				/>
+							<__experimentalBoxControl
+								label={ __( 'Padding', 'powerful-blocks' ) }
+								values={ btnPadding }
+								onChange={ ( btnPadding ) => {
+									setAttributes( { btnPadding } );
+								} }
+							/>
 
-				<BoxControl
-					label={ __( 'Padding', 'powerful-blocks' ) }
-					values={ btnPadding }
-					onChange={ ( btnPadding ) => {
-						setAttributes( { btnPadding } );
-					} }
-				/>
+							<__experimentalBoxControl
+								label={ __( 'Border Radius', 'powerful-blocks' ) }
+								values={ btnBorderRadius }
+								onChange={ ( btnBorderRadius ) => {
+									setAttributes( { btnBorderRadius } );
+								} }
+							/>
+							<SelectControl
+								label={ __( 'Border Style', 'powerful-blocks' ) }
+								value={ btnBorderStyle }
+								onChange={ ( btnBorderStyle ) => {
+									setAttributes( { btnBorderStyle } );
+								} }
+								options={ [
+									{ value: 'none', label: 'None' },
+									{ value: 'solid', label: 'Solid' },
+									{ value: 'dotted', label: 'Dotted' },
+									{ value: 'dashed', label: 'Dashed' },
+									{ value: 'double', label: 'Double' },
+								] }
+							/>
+							<RangeControl
+								label={ __( 'Border Width', 'powerful-blocks' ) }
+								value={ btnBorderWidth }
+								onChange={ ( btnBorderWidth ) =>
+									setAttributes( { btnBorderWidth } )
+								}
+								min={ 0 }
+								step={ 1 }
+								max={ 10 }
+							/>
 
-				<BoxControl
-					label={ __( 'Border Radius', 'powerful-blocks' ) }
-					values={ btnBorderRadius }
-					onChange={ ( btnBorderRadius ) => {
-						setAttributes( { btnBorderRadius } );
-					} }
-				/>
-				<SelectControl
-					label={ __( 'Border Style', 'powerful-blocks' ) }
-					value={ btnBorderStyle }
-					onChange={ ( btnBorderStyle ) => {
-						setAttributes( { btnBorderStyle } );
-					} }
-					options={ [
-						{ value: 'none', label: 'None' },
-						{ value: 'solid', label: 'Solid' },
-						{ value: 'dotted', label: 'Dotted' },
-						{ value: 'dashed', label: 'Dashed' },
-						{ value: 'double', label: 'Double' },
-					] }
-				/>
-				<RangeControl
-					label={ __( 'Border Width', 'powerful-blocks' ) }
-					value={ btnBorderWidth }
-					onChange={ ( btnBorderWidth ) =>
-						setAttributes( { btnBorderWidth } )
-					}
-					min={ 0 }
-					step={ 1 }
-					max={ 10 }
-				/>
-
-				<ColorPicker
-					label={ __( 'Color', 'powerful-blocks' ) }
-					color={ btnBorderColor }
-					onChangeComplete={ ( value ) =>
-						setAttributes( { btnBorderColor: value.hex } )
-					}
-					disableAlpha
-				/>
-			</PanelBody>
+							<ColorPickerControl
+								label={ __( 'Color', 'powerful-blocks' ) }
+								value={ btnBorderColor }
+								onChange={ ( btnBorderColor ) => {
+									setAttributes( { btnBorderColor } );
+								} }
+							/>
+						</PanelBody>
+					</>
+				) }
+				{ 'advanced' === tab && (
+					<Advanced { ...{ attributes, setAttributes } } />
+				) }
+				</div>
+			</div>
 		</InspectorControls>
 	);
 };

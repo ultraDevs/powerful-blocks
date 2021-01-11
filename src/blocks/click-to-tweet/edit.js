@@ -4,6 +4,7 @@ import { compose } from '@wordpress/compose';
 import { withSelect } from '@wordpress/data';
 
 import Inspector from './inspector';
+import classnames from 'classnames';
 
 import './editor.scss';
 import Styles from './style';
@@ -11,7 +12,19 @@ import Styles from './style';
 const edit = ( props ) => {
 	const { attributes, setAttributes } = props;
 
-	const { blockId, tweet, url, btnText } = attributes;
+	const { 
+		blockId,
+		tweet,
+		url,
+		btnText,
+		backgroundType,
+		hideOnDesktop,
+        hideOnTablet,
+		hideOnMobile,
+		blockWidth,
+		customClass,
+        customID,
+	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
@@ -27,7 +40,19 @@ const edit = ( props ) => {
 			<Inspector { ...{ attributes, setAttributes } } />
 			<Styles { ...{ attributes } } />
 			<div id={ `pb-click-to-tweet-${ blockId }` }>
-				<div className="pb-click-to-tweet-wrapper">
+				<div 
+					className={ classnames(
+						'pb-click-to-tweet-wrapper',
+						props.className,
+						customClass,
+						hideOnDesktop ? 'pb-hide-d' : '',
+						hideOnTablet ? 'pb-hide-t' : '',
+						hideOnMobile ? 'pb-hide-m' : '',
+						blockWidth ? 'pb-b-e--width' : '',
+						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+					) }
+					id = { customID ? customID : '' }
+				>
 					<RichText
 						className="pb-click-to-tweet--text"
 						placeholder={ __( 'Tweet...', 'powerful-blocks' ) }
