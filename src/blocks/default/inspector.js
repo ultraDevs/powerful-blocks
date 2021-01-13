@@ -22,7 +22,9 @@ import {
 	ColorPickerControl,
 	ImageControl,
 	AlignmentControl,
-	TypographyControl
+	TypographyControl,
+	BorderControl,
+	ShadowControl
 } from '../../components';
 
 import Advanced from '../../helper/advanced';

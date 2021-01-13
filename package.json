@@ -50,10 +50,12 @@
         "webpack-fix-style-only-entries": "^0.4.0"
     },
     "dependencies": {
+        "@fonticonpicker/react-fonticonpicker": "^1.2.0",
         "@fortawesome/fontawesome-svg-core": "^1.2.32",
         "@fortawesome/free-brands-svg-icons": "^5.15.1",
         "@fortawesome/free-regular-svg-icons": "^5.15.1",
         "@fortawesome/free-solid-svg-icons": "^5.15.1",
-        "@fortawesome/react-fontawesome": "^0.1.14"
+        "@fortawesome/react-fontawesome": "^0.1.14",
+        "react-transition-group": "^4.4.1"
     }
 }

@@ -1,0 +1,28 @@
+
+.pb-info-box-wrapper {
+	transition: all 0.3s ease-in-out;
+	position: relative;
+	&.pb-info-box-top {
+
+	}
+	&.pb-info-box-left {
+		display: flex;
+	}
+	&.pb-info-box-right {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.pb-info-box--m {
+
+	}
+	.pb-info-box--body {
+		.pb-info-box--body__title {
+
+		}
+		.pb-info-box--body__content {
+			p {
+				margin: 0px ;
+			}
+		}
+	}
+}

@@ -57,6 +57,10 @@ class Assets_Manager {
 
 		wp_enqueue_style( 'pb-frontend', POWERFUL_BLOCKS_ASSETS . 'css/pb-styles.css', '', POWERFUL_BLOCKS_VERSION );
 		wp_enqueue_script( 'pb-frontend', POWERFUL_BLOCKS_ASSETS . 'js/pb-frontend.js', array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
+		/**
+		 * Font Awesome
+		 */
+		wp_enqueue_style( 'pb-font-awesome', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/font-awesome5.css', '', POWERFUL_BLOCKS_VERSION );
 
 	}
 
@@ -68,7 +72,15 @@ class Assets_Manager {
 	public function block_assets() {
 
 		wp_enqueue_style( 'pb-block-styles', POWERFUL_BLOCKS_ASSETS . 'css/pb-styles.css', array(), POWERFUL_BLOCKS_VERSION );
-
+		/**
+		 * Font Awesome
+		 */
+		wp_enqueue_style( 'pb-font-awesome', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/font-awesome5.css', '', POWERFUL_BLOCKS_VERSION );
+		/**
+		 * Font Icon Picker
+		 */
+		wp_enqueue_style( 'pb-font-icon-picker-base', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/fonticonpicker.base-theme.react.css', array(), POWERFUL_BLOCKS_VERSION );
+		wp_enqueue_style( 'pb-font-icon-picker-material', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/fonticonpicker.material-theme.react.css', array(), POWERFUL_BLOCKS_VERSION );
 	}
 
 	/**
@@ -155,7 +167,7 @@ class Assets_Manager {
 	/**
 	 * Extract Fonts and use google fonts API.
 	 *
-	 * @param string  $css CSS.
+	 * @param string $css CSS.
 	 * @return string
 	 */
 	public function get_google_fonts( $css ) {

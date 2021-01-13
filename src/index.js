@@ -6,6 +6,7 @@ import * as testimonial from './blocks/testimonial';
 import * as alertBox from './blocks/alert-box';
 import * as starRating from './blocks/star-rating';
 import * as clickToTweet from './blocks/click-to-tweet';
+import * as infoBox from './blocks/info-box';
 
 
 const category = 'powerful-blocks';
@@ -39,8 +40,8 @@ const registerPowerfulBlocks = () => {
 		alertBox,
 		clickToTweet,
 		starRating,
-		testimonial
-
+		testimonial,
+		infoBox
 	].forEach( registerBlock );
 };
 

@@ -56,6 +56,11 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'info-box'  => array(
+				'title'  => __( 'Info Box', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );

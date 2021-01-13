@@ -203,8 +203,7 @@ const Styles = ( props ) => {
 					shadowBlur +
 					'px ' +
 					shadowSpread +
-					'px ' +
-					shadowColor,
+					'px ' + shadowColor,
 				'border-width': borderSize
 					? borderSize + 'px'
 					: undefined,
