@@ -82,11 +82,6 @@
   .pb-border-control .pb-border-control--dropdown {
     float: right; }
 
-.pb-shadow-control {
-  margin: 10px 0; }
-  .pb-shadow-control .pb-shadow-control--dropdown {
-    float: right; }
-
 /** Responsive **/
 .edit-post-visual-editor .pb-hide-d {
   opacity: 0.6;
@@ -151,6 +146,15 @@
     margin-left: -1px; }
     .pb-editor-bg-image-control .css-11vcxb9-StyledField button span {
       margin: 0px; }
+
+.pb-custom-number-control, .pb-custom-select-control {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important; }
+  .pb-custom-number-control .components-input-control__container, .pb-custom-select-control .components-input-control__container {
+    flex-basis: 50%;
+    width: auto;
+    flex: inherit; }
 
 
 /*# sourceMappingURL=pb-editor-common.css.map*/

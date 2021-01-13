@@ -102,9 +102,10 @@ class Assets_Manager {
 		}
 		wp_localize_script(
 			'pb-block-editor',
-			'pb_blocks_data',
+			'UDPB',
 			array(
 				'inactive_blocks' => $inactive_blocks,
+				'type'            => 'free',
 			)
 		);
 

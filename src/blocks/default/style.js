@@ -42,7 +42,14 @@ const Styles = ( props ) => {
         shadowVOffset,
         shadowBlur,
         shadowSpread,
-        shadowType,
+		shadowType,
+		hoverShadowColor,
+        hoverShadowHOffset,
+        hoverShadowVOffset,
+        hoverShadowBlur,
+        hoverShadowSpread,
+		hoverShadowType,
+		
         borderStyle,
         borderSize,
         borderColor,
@@ -117,6 +124,8 @@ const Styles = ( props ) => {
 					borderRadius.bottom +
 					' ' +
 					borderRadius.left,
+				'z-index': blockzIndex ? blockzIndex : undefined,
+				
 			},
 			'.pb-default-wrapper:hover': {
 				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
@@ -125,6 +134,16 @@ const Styles = ( props ) => {
 					: undefined,
 				'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
 				'border-color': hoverBorderColor ? hoverBorderColor : undefined,
+				'box-shadow':
+					hoverShadowType + ' ' +
+					hoverShadowHOffset +
+					'px ' +
+					hoverShadowVOffset +
+					'px ' +
+					hoverShadowBlur +
+					'px ' +
+					hoverShadowSpread +
+					'px ' + hoverShadowColor,
 			},
 			
 		},

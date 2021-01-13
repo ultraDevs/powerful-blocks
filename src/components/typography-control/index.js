@@ -110,6 +110,7 @@ const TypographyControl = ( props ) => {
 							className="components-base-control--with-flex"
 						/>
                         <SelectControl
+                            className = "pb-custom-select-control"
                             label={ __(
                                 'Weight',
                                 'powerful-blocks'
@@ -121,6 +122,7 @@ const TypographyControl = ( props ) => {
                             options={ WEIGHTS }
                         />
                         <SelectControl
+                            className = "pb-custom-select-control"
                             label={ __(
                                 'Style',
                                 'powerful-blocks'
@@ -193,6 +195,7 @@ const TypographyControl = ( props ) => {
                             </ButtonGroup>
                         </BaseControl>
                         <SelectControl
+                            className = "pb-custom-select-control"
                             label={ __(
                                 'Text Decoration',
                                 'powerful-blocks'

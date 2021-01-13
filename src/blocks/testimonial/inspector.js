@@ -186,6 +186,7 @@ const Inspector = ( props ) => {
 					<>
 						<PanelBody title={ __( 'Settings', 'powerful-blocks' ) } initialOpen = { open }>
 							<SelectControl
+								className = "pb-custom-select-control"
 								label={ __( 'Preset', 'powerful-blocks' ) }
 								value={ preset }
 								onChange={ ( preset ) => {
@@ -337,6 +338,7 @@ const Inspector = ( props ) => {
 									renderContent={ () => (
 										<div className="pb-border-control--content">
 											<SelectControl
+												className = "pb-custom-select-control"
 												label={ __(
 													'Border Style',
 													'powerful-blocks'
@@ -498,6 +500,7 @@ const Inspector = ( props ) => {
 							/>
 
 							<SelectControl
+								className = "pb-custom-select-control"
 								label={ __( 'Image Position', 'powerful-blocks' ) }
 								value={ imagePosition }
 								onChange={ ( imagePosition ) => {

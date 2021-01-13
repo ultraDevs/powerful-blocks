@@ -210,6 +210,7 @@ const Inspector = ( props ) => {
 								} }
 							/>
 							<SelectControl
+								className = "pb-custom-select-control"
 								label={ __( 'Border Style', 'powerful-blocks' ) }
 								value={ btnBorderStyle }
 								onChange={ ( btnBorderStyle ) => {

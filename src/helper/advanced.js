@@ -2,6 +2,7 @@ const {
 	PanelBody,
     SelectControl,
     TextControl,
+    __experimentalNumberControl,
 	ToggleControl,
 	RangeControl,
 	Dropdown,
@@ -17,10 +18,13 @@ const { MediaUpload } = wp.blockEditor;
 const { useState } = wp.element;
 import classnames from 'classnames';
 
-import { ColorPickerControl } from '../components';
-import { ResponsiveRangeControl } from '../components';
-import { ResponsiveBoxControl } from '../components';
-import { GradientControl } from '../components';
+import { 
+    ColorPickerControl,
+    ShadowControl,
+    ResponsiveRangeControl,
+    ResponsiveBoxControl,
+    GradientControl
+} from '../components';
 
 const Advanced = ( props ) => {
 
@@ -73,12 +77,21 @@ const Advanced = ( props ) => {
         margin,
         marginTablet,
         marginMobile,
+
         shadowColor,
         shadowHOffset,
         shadowVOffset,
         shadowBlur,
         shadowSpread,
         shadowType,
+
+        hoverShadowColor,
+        hoverShadowHOffset,
+        hoverShadowVOffset,
+        hoverShadowBlur,
+        hoverShadowSpread,
+        hoverShadowType,
+
         borderStyle,
         borderSize,
         borderColor,
@@ -247,6 +260,7 @@ const Advanced = ( props ) => {
                                                         }
                                                     </BaseControl>
                                                     <SelectControl
+                                                        className = "pb-custom-select-control"
                                                         label={ __( 'Image Position', 'powerful-blocks' ) }
                                                         value={ backgroundImgPosition }
                                                         onChange={ ( backgroundImgPosition ) => {
@@ -265,6 +279,7 @@ const Advanced = ( props ) => {
                                                         ] }
                                                     />
                                                     <SelectControl
+                                                        className = "pb-custom-select-control"
                                                         label={ __( 'Attachment', 'powerful-blocks' ) }
                                                         value={ backgroundImgAttachment }
                                                         onChange={ ( backgroundImgAttachment ) => {
@@ -276,6 +291,7 @@ const Advanced = ( props ) => {
                                                         ] }
                                                     />
                                                     <SelectControl
+                                                        className = "pb-custom-select-control"
                                                         label={ __( 'Repeat', 'powerful-blocks' ) }
                                                         value={ backgroundImgRepeat }
                                                         onChange={ ( backgroundImgRepeat ) => {
@@ -289,6 +305,7 @@ const Advanced = ( props ) => {
                                                         ] }
                                                     />
                                                     <SelectControl
+                                                        className = "pb-custom-select-control"
                                                         label={ __( 'Size', 'powerful-blocks' ) }
                                                         value={ backgroundImgSize }
                                                         onChange={ ( backgroundImgSize ) => {
@@ -439,6 +456,7 @@ const Advanced = ( props ) => {
                                                         }
                                                     </BaseControl>
                                                     <SelectControl
+                                                        className = "pb-custom-select-control"
                                                         label={ __( 'Image Position', 'powerful-blocks' ) }
                                                         value={ hoverBackgroundImgPosition }
                                                         onChange={ ( hoverBackgroundImgPosition ) => {
@@ -457,6 +475,7 @@ const Advanced = ( props ) => {
                                                         ] }
                                                     />
                                                     <SelectControl
+                                                        className = "pb-custom-select-control"
                                                         label={ __( 'Attachment', 'powerful-blocks' ) }
                                                         value={ hoverBackgroundImgAttachment }
                                                         onChange={ ( hoverBackgroundImgAttachment ) => {
@@ -468,6 +487,7 @@ const Advanced = ( props ) => {
                                                         ] }
                                                     />
                                                     <SelectControl
+                                                        className = "pb-custom-select-control"
                                                         label={ __( 'Repeat', 'powerful-blocks' ) }
                                                         value={ hoverBackgroundImgRepeat }
                                                         onChange={ ( hoverBackgroundImgRepeat ) => {
@@ -481,6 +501,7 @@ const Advanced = ( props ) => {
                                                         ] }
                                                     />
                                                     <SelectControl
+                                                        className = "pb-custom-select-control"
                                                         label={ __( 'Size', 'powerful-blocks' ) }
                                                         value={ hoverBackgroundImgSize }
                                                         onChange={ ( hoverBackgroundImgSize ) => {
@@ -574,7 +595,7 @@ const Advanced = ( props ) => {
             </PanelBody>
 
             <PanelBody title={ __( 'Border', 'powerful-blocks' ) } initialOpen={ false }>
-            <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
+                <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
 					tabs={ [
 						{
 							name: "normal",
@@ -595,6 +616,7 @@ const Advanced = ( props ) => {
 								tabout = (
 									<>
                                         <SelectControl
+                                            className = "pb-custom-select-control"
                                             label={ __(
                                                 'Border Style',
                                                 'powerful-blocks'
@@ -637,6 +659,7 @@ const Advanced = ( props ) => {
 								tabout = (
 									<>
                                         <SelectControl
+                                            className = "pb-custom-select-control"
                                             label={ __(
                                                 'Border Style',
                                                 'powerful-blocks'
@@ -709,100 +732,70 @@ const Advanced = ( props ) => {
                     } }
                 />
                 <hr className="pb-hr" />
-                <BaseControl
-                    label={ __( 'Box Shadow', 'powerful-blocks' ) }
-                    className="pb-shadow-control"
-                >
-                    <Dropdown
-                        className="pb-shadow-control--dropdown"
-                        contentClassName="my-popover-content-classname"
-                        position="bottom right"
-                        renderToggle={ ( { isOpen, onToggle } ) => (
-                            <Button
-                                isSmall
-                                onClick={ onToggle }
-                                aria-expanded={ isOpen }
-                                icon="edit"
-                            ></Button>
-                        ) }
-                        renderContent={ () => (
-                            <div className="pb-shadow-control--content">
-                                <p>
-                                    <strong>Shadow</strong>
-                                </p>
-                                <ColorPickerControl
-                                    label={ __( 'Color', 'powerful-blocks' ) }
-                                    value={ shadowColor }
-                                    onChange={ ( shadowColor ) => {
-                                        setAttributes( { shadowColor } );
-                                    } }
-                                />
-                                
-                                <RangeControl
-                                    label={ __(
-                                        'Horizontal Offset',
-                                        'powerful-blocks'
-                                    ) }
-                                    value={ shadowHOffset }
-                                    onChange={ ( shadowHOffset ) =>
-                                        setAttributes( { shadowHOffset } )
-                                    }
-                                    min={ 0 }
-                                    step={ 1 }
-                                    max={ 100 }
-                                />
-                                <RangeControl
-                                    label={ __(
-                                        'Vertical Offset',
-                                        'powerful-blocks'
-                                    ) }
-                                    value={ shadowVOffset }
-                                    onChange={ ( shadowVOffset ) =>
-                                        setAttributes( { shadowVOffset } )
-                                    }
-                                    min={ 0 }
-                                    step={ 1 }
-                                    max={ 100 }
-                                />
-                                <RangeControl
-                                    label={ __( 'Blur', 'powerful-blocks' ) }
-                                    value={ shadowBlur }
-                                    onChange={ ( shadowBlur ) =>
-                                        setAttributes( { shadowBlur } )
-                                    }
-                                    min={ 0 }
-                                    step={ 1 }
-                                    max={ 100 }
-                                />
-                                <RangeControl
-                                    label={ __( 'Spread', 'powerful-blocks' ) }
-                                    value={ shadowSpread }
-                                    onChange={ ( shadowSpread ) =>
-                                        setAttributes( { shadowSpread } )
-                                    }
-                                    min={ 0 }
-                                    step={ 1 }
-                                    max={ 100 }
-                                />
-                                <SelectControl
-                                    label={ __( 'Type', 'powerful-blocks' ) }
-                                    value={ shadowType }
-                                    onChange={ ( shadowType ) => {
-                                        setAttributes( { shadowType } );
-                                    } }
-                                    options={ [
-                                        { value: 'inset', label: 'Inset' },
-                                        { value: '', label: 'Outset' },
-                                    ] }
-                                />
-                            </div>
-                        ) }
-                    />
-                </BaseControl>
+                <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
+					tabs={ [
+						{
+							name: "normal",
+							title: __( 'Normal', 'powerful-blocks' ),
+							className: "pb-panel-inspect--tab",
+						},
+						{
+							name: "hover",
+							title: __( 'Hover', 'powerful-blocks' ),
+							className: "pb-panel-inspect--tab",
+						},
+					] }>
+					{
+						( tab ) => {
+							let tabout;
+
+							if ( "normal" === tab.name ) {
+								tabout = (
+									<>
+                                        <ShadowControl 
+                                            label = { __( 'Box Shadow', 'powerful-blocks' ) }
+                                            shadowColor = { { value: shadowColor, name: 'shadowColor' } }
+                                            shadowHOffset = { { value: shadowHOffset, name: 'shadowHOffset' } }
+                                            shadowVOffset = { { value: shadowVOffset, name: 'shadowVOffset' } }
+                                            shadowBlur = { { value: shadowBlur, name: 'shadowBlur' } }
+                                            shadowSpread = { { value: shadowSpread, name: 'shadowSpread' } }
+                                            shadowType = { { value: shadowType, name: 'shadowType' } }
+                                            setAttributes = { setAttributes }
+                                        />
+                                    </>
+								)
+							} else if ( "hover" === tab.name ) {
+								tabout = (
+									<>
+                                        <ShadowControl 
+                                            label = { __( 'Box Shadow', 'powerful-blocks' ) }
+                                            shadowColor = { { value: hoverShadowColor, name: 'hoverShadowColor' } }
+                                            shadowHOffset = { { value: hoverShadowHOffset, name: 'hoverShadowHOffset' } }
+                                            shadowVOffset = { { value: hoverShadowVOffset, name: 'hoverShadowVOffset' } }
+                                            shadowBlur = { { value: hoverShadowBlur, name: 'hoverShadowBlur' } }
+                                            shadowSpread = { { value: hoverShadowSpread, name: 'hoverShadowSpread' } }
+                                            shadowType = { { value: hoverShadowType, name: 'hoverShadowType' } }
+                                            setAttributes = { setAttributes }
+                                        />
+                                    </>
+								)
+							} else {
+								tabout = (
+									<>
+                                        <p>...</p>
+                                    </>
+								)
+							}
+
+							return <div className="pb-panel-inspect--tabs__controls">{ tabout }</div>
+						}
+					}
+				</TabPanel>
+                
                 
             </PanelBody>
 
-            {/* <PanelBody title={ __( 'Animation', 'powerful-blocks' ) } initialOpen={ false }>
+            <PanelBody title={ __( 'Animation', 'powerful-blocks' ) } initialOpen={ false }>
                 <TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
 					tabs={ [
 						{
@@ -823,36 +816,13 @@ const Advanced = ( props ) => {
 							if ( "in" === tab.name ) {
 								tabout = (
 									<>
-                                        <SelectControl
-                                            label={ __(
-                                                'Border Style',
-                                                'powerful-blocks'
-                                            ) }
-                                            value={ borderStyle }
-                                            onChange={ ( borderStyle ) => {
-                                                setAttributes( { borderStyle } );
-                                            } }
-                                            options={ [
-                                                { value: 'none', label: 'None' },
-                                                { value: 'solid', label: 'Solid' },
-                                                { value: 'dotted', label: 'Dotted' },
-                                                { value: 'dashed', label: 'Dashed' },
-                                                { value: 'double', label: 'Double' },
-                                            ] }
-                                        />
-                                        <RangeControl
-                                            label={ __(
-                                                'Border Size',
-                                                'powerful-blocks'
-                                            ) }
-                                            value={ borderSize }
-                                            onChange={ ( borderSize ) =>
-                                                setAttributes( { borderSize } )
-                                            }
-                                            min={ 0 }
-                                            step={ 1 }
-                                            max={ 10 }
-                                        />
+                                        { 
+                                            'free' === UDPB.type ? (
+                                                <p>Plz Upgrade your plan!</p> 
+                                            ) : (
+                                                <p>Excellent</p>
+                                            )
+                                        }
                                     </>
 								)
 							} else if ( "out" === tab.name ) {
@@ -872,9 +842,10 @@ const Advanced = ( props ) => {
 						}
 					}
 				</TabPanel>
-            </PanelBody> */}
+            </PanelBody>
             <PanelBody title={ __( 'Positioning', 'powerful-blocks' ) } initialOpen={ false }>
                 <SelectControl
+                    className = "pb-custom-select-control"
                     label={ __( 'Width', 'powerful-blocks' ) }
                     value={ blockWidth }
                     onChange={ ( blockWidth ) => {
@@ -900,6 +871,15 @@ const Advanced = ( props ) => {
                         setAttributes = { setAttributes }
                     />
                 ) }
+                <__experimentalNumberControl
+                    className = "pb-custom-number-control"
+                    label = { __( 'Z-Index', 'powerful-blocks' ) }
+                    shi
+                    value={ blockzIndex }
+                    onChange={ ( blockzIndex ) => {
+                        setAttributes( { blockzIndex } );
+                    } }
+                />
             </PanelBody>
             <PanelBody title={ __( 'Responsive', 'powerful-blocks' ) } initialOpen={ false }>
                 <ToggleControl

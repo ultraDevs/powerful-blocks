@@ -47,7 +47,14 @@ const Styles = ( props ) => {
         shadowVOffset,
         shadowBlur,
         shadowSpread,
-        shadowType,
+		shadowType,
+		hoverShadowColor,
+        hoverShadowHOffset,
+        hoverShadowVOffset,
+        hoverShadowBlur,
+        hoverShadowSpread,
+		hoverShadowType,
+		
         borderStyle,
         borderSize,
         borderColor,
@@ -120,6 +127,8 @@ const Styles = ( props ) => {
 					borderRadius.bottom +
 					' ' +
 					borderRadius.left,
+				'z-index': blockzIndex ? blockzIndex : undefined,
+				
 			},
 			'.pb-star-rating-wrapper:hover': {
 				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
@@ -128,6 +137,16 @@ const Styles = ( props ) => {
 					: undefined,
 				'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
 				'border-color': hoverBorderColor ? hoverBorderColor : undefined,
+				'box-shadow':
+					hoverShadowType + ' ' +
+					hoverShadowHOffset +
+					'px ' +
+					hoverShadowVOffset +
+					'px ' +
+					hoverShadowBlur +
+					'px ' +
+					hoverShadowSpread +
+					'px ' + hoverShadowColor,
 			},
 			'.pb-star-rating--icon': {
 				'font-size': size ? size + sizeType : undefined,

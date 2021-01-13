@@ -29,7 +29,6 @@ const save = ( { attributes, className } ) => {
 
 	return (
 		<div>
-			{/* <Styles { ...{ attributes } } /> */}
 			<div id={ `pb-testimonial-${ blockId }` }>
 				<div
 					className={ classnames(

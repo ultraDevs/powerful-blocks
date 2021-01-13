@@ -114,6 +114,7 @@ const Inspector = ( props ) => {
 					<>
 						<PanelBody title={ __( 'Settings', 'powerful-blocks' ) } initialOpen = { open }>
 							<SelectControl
+								className = "pb-custom-select-control"
 								label={ __( 'Display', 'powerful-blocks' ) }
 								value={ displayType }
 								options={ [

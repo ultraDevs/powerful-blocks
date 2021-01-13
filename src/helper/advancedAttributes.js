@@ -220,6 +220,31 @@ const advancedAttributes = {
 		type: 'string',
 		default: '',
 	},
+
+	hoverShadowColor: {
+		type: 'string',
+		default: 'transparent',
+	},
+	hoverShadowHOffset: {
+		type: 'number',
+		default: '0',
+	},
+	hoverShadowVOffset: {
+		type: 'number',
+		default: '0',
+	},
+	hoverShadowBlur: {
+		type: 'number',
+		default: '0',
+	},
+	hoverShadowSpread: {
+		type: 'number',
+		default: '0',
+	},
+	hoverShadowType: {
+		type: 'string',
+		default: '',
+	},
     
     borderStyle: {
 		type: 'string',

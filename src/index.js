@@ -46,7 +46,7 @@ const registerPowerfulBlocks = () => {
 
 registerPowerfulBlocks();
 
-let inactive_blocks = pb_blocks_data.inactive_blocks;
+let inactive_blocks = UDPB.inactive_blocks;
 
 if ( undefined !== inactive_blocks && inactive_blocks.length ) {
 	if ( typeof wp.blocks.unregisterBlockType !== "undefined" ) {

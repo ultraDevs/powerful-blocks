@@ -18202,6 +18202,7 @@ var Inspector = function Inspector(props) {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Settings', 'powerful-blocks'),
     initialOpen: open
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+    className: "pb-custom-select-control",
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Display', 'powerful-blocks'),
     value: displayType,
     options: [{
@@ -18554,6 +18555,12 @@ var Styles = function Styles(props) {
       shadowBlur = attributes.shadowBlur,
       shadowSpread = attributes.shadowSpread,
       shadowType = attributes.shadowType,
+      hoverShadowColor = attributes.hoverShadowColor,
+      hoverShadowHOffset = attributes.hoverShadowHOffset,
+      hoverShadowVOffset = attributes.hoverShadowVOffset,
+      hoverShadowBlur = attributes.hoverShadowBlur,
+      hoverShadowSpread = attributes.hoverShadowSpread,
+      hoverShadowType = attributes.hoverShadowType,
       borderStyle = attributes.borderStyle,
       borderSize = attributes.borderSize,
       borderColor = attributes.borderColor,
@@ -18580,12 +18587,13 @@ var Styles = function Styles(props) {
     desktop: {
       '.pb-alert-box-wrapper': (_pbAlertBoxWrappe = {
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _pbAlertBoxWrappe),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'z-index', blockzIndex ? blockzIndex : undefined), _pbAlertBoxWrappe),
       '.pb-alert-box-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
         'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
-        'border-color': hoverBorderColor ? hoverBorderColor : undefined
+        'border-color': hoverBorderColor ? hoverBorderColor : undefined,
+        'box-shadow': hoverShadowType + ' ' + hoverShadowHOffset + 'px ' + hoverShadowVOffset + 'px ' + hoverShadowBlur + 'px ' + hoverShadowSpread + 'px ' + hoverShadowColor
       },
       '.pb-alert-box': {
         'text-align': textAlign ? textAlign : undefined,
@@ -19353,6 +19361,7 @@ var Inspector = function Inspector(props) {
       });
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+    className: "pb-custom-select-control",
     label: __('Border Style', 'powerful-blocks'),
     value: btnBorderStyle,
     onChange: function onChange(btnBorderStyle) {
@@ -19517,6 +19526,12 @@ var Styles = function Styles(props) {
       shadowBlur = attributes.shadowBlur,
       shadowSpread = attributes.shadowSpread,
       shadowType = attributes.shadowType,
+      hoverShadowColor = attributes.hoverShadowColor,
+      hoverShadowHOffset = attributes.hoverShadowHOffset,
+      hoverShadowVOffset = attributes.hoverShadowVOffset,
+      hoverShadowBlur = attributes.hoverShadowBlur,
+      hoverShadowSpread = attributes.hoverShadowSpread,
+      hoverShadowType = attributes.hoverShadowType,
       borderStyle = attributes.borderStyle,
       borderSize = attributes.borderSize,
       borderColor = attributes.borderColor,
@@ -19575,12 +19590,13 @@ var Styles = function Styles(props) {
       '.pb-click-to-tweet-wrapper': (_pbClickToTweetW = {
         'text-align': textAlign ? textAlign : undefined,
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _pbClickToTweetW),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'z-index', blockzIndex ? blockzIndex : undefined), _pbClickToTweetW),
       '.pb-click-to-tweet-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
         'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
-        'border-color': hoverBorderColor ? hoverBorderColor : undefined
+        'border-color': hoverBorderColor ? hoverBorderColor : undefined,
+        'box-shadow': hoverShadowType + ' ' + hoverShadowHOffset + 'px ' + hoverShadowVOffset + 'px ' + hoverShadowBlur + 'px ' + hoverShadowSpread + 'px ' + hoverShadowColor
       },
       '.pb-click-to-tweet--text': {
         color: textColor ? textColor : undefined,
@@ -20067,7 +20083,7 @@ var Inspector = function Inspector(props) {
   }))), 'style' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Icon', 'powerful-blocks')
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_4__["ColorPickerControl"], {
-    label: __('Border Color', 'powerful-blocks'),
+    label: __('Color', 'powerful-blocks'),
     value: color,
     onChange: function onChange(color) {
       setAttributes({
@@ -20238,6 +20254,12 @@ var Styles = function Styles(props) {
       shadowBlur = attributes.shadowBlur,
       shadowSpread = attributes.shadowSpread,
       shadowType = attributes.shadowType,
+      hoverShadowColor = attributes.hoverShadowColor,
+      hoverShadowHOffset = attributes.hoverShadowHOffset,
+      hoverShadowVOffset = attributes.hoverShadowVOffset,
+      hoverShadowBlur = attributes.hoverShadowBlur,
+      hoverShadowSpread = attributes.hoverShadowSpread,
+      hoverShadowType = attributes.hoverShadowType,
       borderStyle = attributes.borderStyle,
       borderSize = attributes.borderSize,
       borderColor = attributes.borderColor,
@@ -20265,12 +20287,13 @@ var Styles = function Styles(props) {
       '.pb-star-rating-wrapper': (_pbStarRatingWrap = {
         'text-align': iconAlign ? iconAlign : undefined,
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _pbStarRatingWrap),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'z-index', blockzIndex ? blockzIndex : undefined), _pbStarRatingWrap),
       '.pb-star-rating-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
         'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
-        'border-color': hoverBorderColor ? hoverBorderColor : undefined
+        'border-color': hoverBorderColor ? hoverBorderColor : undefined,
+        'box-shadow': hoverShadowType + ' ' + hoverShadowHOffset + 'px ' + hoverShadowVOffset + 'px ' + hoverShadowBlur + 'px ' + hoverShadowSpread + 'px ' + hoverShadowColor
       },
       '.pb-star-rating--icon': {
         'font-size': size ? size + sizeType : undefined
@@ -21288,6 +21311,7 @@ var Inspector = function Inspector(props) {
     title: __('Settings', 'powerful-blocks'),
     initialOpen: open
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+    className: "pb-custom-select-control",
     label: __('Preset', 'powerful-blocks'),
     value: preset,
     onChange: function onChange(preset) {
@@ -21462,6 +21486,7 @@ var Inspector = function Inspector(props) {
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
         className: "pb-border-control--content"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Border Style', 'powerful-blocks'),
         value: imageBorderStyle,
         onChange: function onChange(imageBorderStyle) {
@@ -21633,6 +21658,7 @@ var Inspector = function Inspector(props) {
       }
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+    className: "pb-custom-select-control",
     label: __('Image Position', 'powerful-blocks'),
     value: imagePosition,
     onChange: function onChange(imagePosition) {
@@ -22195,6 +22221,12 @@ var Styles = function Styles(props) {
       shadowBlur = attributes.shadowBlur,
       shadowSpread = attributes.shadowSpread,
       shadowType = attributes.shadowType,
+      hoverShadowColor = attributes.hoverShadowColor,
+      hoverShadowHOffset = attributes.hoverShadowHOffset,
+      hoverShadowVOffset = attributes.hoverShadowVOffset,
+      hoverShadowBlur = attributes.hoverShadowBlur,
+      hoverShadowSpread = attributes.hoverShadowSpread,
+      hoverShadowType = attributes.hoverShadowType,
       borderStyle = attributes.borderStyle,
       borderSize = attributes.borderSize,
       borderColor = attributes.borderColor,
@@ -22305,12 +22337,13 @@ var Styles = function Styles(props) {
     desktop: {
       '.pb-testimonial-wrapper': (_pbTestimonialWrap = {
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "display", 'flex'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'flex-direction', 'column'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _pbTestimonialWrap),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "display", 'flex'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'flex-direction', 'column'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'z-index', blockzIndex ? blockzIndex : undefined), _pbTestimonialWrap),
       '.pb-testimonial-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
         'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
-        'border-color': hoverBorderColor ? hoverBorderColor : undefined
+        'border-color': hoverBorderColor ? hoverBorderColor : undefined,
+        'box-shadow': hoverShadowType + ' ' + hoverShadowHOffset + 'px ' + hoverShadowVOffset + 'px ' + hoverShadowBlur + 'px ' + hoverShadowSpread + 'px ' + hoverShadowColor
       },
       '.pb-testimonial-image img': {
         height: imageSize ? imageSize + imageSizeType : undefined,
@@ -23070,7 +23103,7 @@ var ImageControl = function ImageControl(props) {
 /*!*********************************!*\
   !*** ./src/components/index.js ***!
   \*********************************/
-/*! exports provided: ColorPickerControl, ResponsiveRangeControl, ResponsiveBoxControl, AlignmentControl, ImageControl, GradientControl, TypographyControl */
+/*! exports provided: ColorPickerControl, ResponsiveRangeControl, ResponsiveBoxControl, AlignmentControl, ImageControl, GradientControl, TypographyControl, ShadowControl */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23095,6 +23128,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _typography_control__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./typography-control */ "./src/components/typography-control/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TypographyControl", function() { return _typography_control__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+
+/* harmony import */ var _shadow_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shadow-control */ "./src/components/shadow-control/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ShadowControl", function() { return _shadow_control__WEBPACK_IMPORTED_MODULE_7__["default"]; });
+
 
 
 
@@ -23364,6 +23401,141 @@ var ResponsiveRangeControl = function ResponsiveRangeControl(props) {
 /* harmony default export */ __webpack_exports__["default"] = (withState({
   device: 'desktop'
 })(ResponsiveRangeControl));
+
+/***/ }),
+
+/***/ "./src/components/shadow-control/editor.scss":
+/*!***************************************************!*\
+  !*** ./src/components/shadow-control/editor.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/components/shadow-control/index.js":
+/*!************************************************!*\
+  !*** ./src/components/shadow-control/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/components/shadow-control/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _color_picker_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../color-picker-control */ "./src/components/color-picker-control/index.js");
+
+
+var __ = wp.i18n.__;
+var Component = wp.element.Component;
+var _wp$components = wp.components,
+    SelectControl = _wp$components.SelectControl,
+    RangeControl = _wp$components.RangeControl,
+    Dropdown = _wp$components.Dropdown,
+    ButtonGroup = _wp$components.ButtonGroup,
+    Button = _wp$components.Button,
+    BaseControl = _wp$components.BaseControl;
+
+
+
+var ShadowControl = function ShadowControl(props) {
+  var label = props.label;
+  var shadowColor = props.shadowColor;
+  var shadowHOffset = props.shadowHOffset;
+  var shadowVOffset = props.shadowVOffset;
+  var shadowBlur = props.shadowBlur;
+  var shadowSpread = props.shadowSpread;
+  var shadowType = props.shadowType;
+  var setAttributes = props.setAttributes;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BaseControl, {
+    label: label,
+    className: "pb-shadow-control"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dropdown, {
+    className: "pb-shadow-control--dropdown",
+    contentClassName: "my-popover-content-classname",
+    position: "bottom right",
+    renderToggle: function renderToggle(_ref) {
+      var isOpen = _ref.isOpen,
+          onToggle = _ref.onToggle;
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
+        isSmall: true,
+        onClick: onToggle,
+        "aria-expanded": isOpen,
+        icon: "edit"
+      });
+    },
+    renderContent: function renderContent() {
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+        className: "pb-shadow-control--content"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("strong", null, "Shadow")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_color_picker_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        label: __('Color', 'powerful-blocks'),
+        value: shadowColor.value,
+        onChange: function onChange(color) {
+          setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, shadowColor.name, color));
+        }
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
+        label: __('Horizontal Offset', 'powerful-blocks'),
+        value: shadowHOffset.value,
+        onChange: function onChange(value) {
+          return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, shadowHOffset.name, value));
+        },
+        min: 0,
+        step: 1,
+        max: 100
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
+        label: __('Vertical Offset', 'powerful-blocks'),
+        value: shadowVOffset.value,
+        onChange: function onChange(value) {
+          return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, shadowVOffset.name, value));
+        },
+        min: 0,
+        step: 1,
+        max: 100
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
+        label: __('Blur', 'powerful-blocks'),
+        value: shadowBlur.value,
+        onChange: function onChange(value) {
+          return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, shadowBlur.name, value));
+        },
+        min: 0,
+        step: 1,
+        max: 100
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
+        label: __('Spread', 'powerful-blocks'),
+        value: shadowSpread.value,
+        onChange: function onChange(value) {
+          return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, shadowSpread.name, value));
+        },
+        min: 0,
+        step: 1,
+        max: 100
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
+        label: __('Type', 'powerful-blocks'),
+        value: shadowType.value,
+        onChange: function onChange(value) {
+          setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, shadowType.name, value));
+        },
+        options: [{
+          value: 'inset',
+          label: 'Inset'
+        }, {
+          value: '',
+          label: 'Outset'
+        }]
+      }));
+    }
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ShadowControl);
 
 /***/ }),
 
@@ -23747,6 +23919,7 @@ var TypographyControl = function TypographyControl(props) {
         },
         className: "components-base-control--with-flex"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Weight', 'powerful-blocks'),
         value: fontWeight.value,
         onChange: function onChange(value) {
@@ -23754,6 +23927,7 @@ var TypographyControl = function TypographyControl(props) {
         },
         options: WEIGHTS
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Style', 'powerful-blocks'),
         value: fontStyle.value,
         onChange: function onChange(value) {
@@ -23811,6 +23985,7 @@ var TypographyControl = function TypographyControl(props) {
           }
         }, item.label);
       }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Text Decoration', 'powerful-blocks'),
         value: textDecoration.value,
         onChange: function onChange(value) {
@@ -23919,6 +24094,7 @@ var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     SelectControl = _wp$components.SelectControl,
     TextControl = _wp$components.TextControl,
+    __experimentalNumberControl = _wp$components.__experimentalNumberControl,
     ToggleControl = _wp$components.ToggleControl,
     RangeControl = _wp$components.RangeControl,
     Dropdown = _wp$components.Dropdown,
@@ -23930,9 +24106,6 @@ var _wp$components = wp.components,
 var __ = wp.i18n.__;
 var MediaUpload = wp.blockEditor.MediaUpload;
 var useState = wp.element.useState;
-
-
-
 
 
 
@@ -23985,6 +24158,12 @@ var Advanced = function Advanced(props) {
       shadowBlur = attributes.shadowBlur,
       shadowSpread = attributes.shadowSpread,
       shadowType = attributes.shadowType,
+      hoverShadowColor = attributes.hoverShadowColor,
+      hoverShadowHOffset = attributes.hoverShadowHOffset,
+      hoverShadowVOffset = attributes.hoverShadowVOffset,
+      hoverShadowBlur = attributes.hoverShadowBlur,
+      hoverShadowSpread = attributes.hoverShadowSpread,
+      hoverShadowType = attributes.hoverShadowType,
       borderStyle = attributes.borderStyle,
       borderSize = attributes.borderSize,
       borderColor = attributes.borderColor,
@@ -24148,6 +24327,7 @@ var Advanced = function Advanced(props) {
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dashicon, {
         icon: "trash"
       }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Image Position', 'powerful-blocks'),
         value: backgroundImgPosition,
         onChange: function onChange(backgroundImgPosition) {
@@ -24184,6 +24364,7 @@ var Advanced = function Advanced(props) {
           label: __("Bottom Right")
         }]
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Attachment', 'powerful-blocks'),
         value: backgroundImgAttachment,
         onChange: function onChange(backgroundImgAttachment) {
@@ -24199,6 +24380,7 @@ var Advanced = function Advanced(props) {
           label: __("Scroll")
         }]
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Repeat', 'powerful-blocks'),
         value: backgroundImgRepeat,
         onChange: function onChange(backgroundImgRepeat) {
@@ -24220,6 +24402,7 @@ var Advanced = function Advanced(props) {
           label: __("Repeat-y")
         }]
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Size', 'powerful-blocks'),
         value: backgroundImgSize,
         onChange: function onChange(backgroundImgSize) {
@@ -24363,6 +24546,7 @@ var Advanced = function Advanced(props) {
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dashicon, {
         icon: "trash"
       }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Image Position', 'powerful-blocks'),
         value: hoverBackgroundImgPosition,
         onChange: function onChange(hoverBackgroundImgPosition) {
@@ -24399,6 +24583,7 @@ var Advanced = function Advanced(props) {
           label: __("Bottom Right")
         }]
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Attachment', 'powerful-blocks'),
         value: hoverBackgroundImgAttachment,
         onChange: function onChange(hoverBackgroundImgAttachment) {
@@ -24414,6 +24599,7 @@ var Advanced = function Advanced(props) {
           label: __("Scroll")
         }]
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Repeat', 'powerful-blocks'),
         value: hoverBackgroundImgRepeat,
         onChange: function onChange(hoverBackgroundImgRepeat) {
@@ -24435,6 +24621,7 @@ var Advanced = function Advanced(props) {
           label: __("Repeat-y")
         }]
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Size', 'powerful-blocks'),
         value: hoverBackgroundImgSize,
         onChange: function onChange(hoverBackgroundImgSize) {
@@ -24554,6 +24741,7 @@ var Advanced = function Advanced(props) {
 
     if ("normal" === tab.name) {
       tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Border Style', 'powerful-blocks'),
         value: borderStyle,
         onChange: function onChange(borderStyle) {
@@ -24599,6 +24787,7 @@ var Advanced = function Advanced(props) {
       }));
     } else if ("hover" === tab.name) {
       tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+        className: "pb-custom-select-control",
         label: __('Border Style', 'powerful-blocks'),
         value: hoverBorderStyle,
         onChange: function onChange(hoverBorderStyle) {
@@ -24679,99 +24868,120 @@ var Advanced = function Advanced(props) {
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("hr", {
     className: "pb-hr"
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BaseControl, {
-    label: __('Box Shadow', 'powerful-blocks'),
-    className: "pb-shadow-control"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dropdown, {
-    className: "pb-shadow-control--dropdown",
-    contentClassName: "my-popover-content-classname",
-    position: "bottom right",
-    renderToggle: function renderToggle(_ref3) {
-      var isOpen = _ref3.isOpen,
-          onToggle = _ref3.onToggle;
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Button, {
-        isSmall: true,
-        onClick: onToggle,
-        "aria-expanded": isOpen,
-        icon: "edit"
-      });
-    },
-    renderContent: function renderContent() {
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-        className: "pb-shadow-control--content"
-      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("strong", null, "Shadow")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
-        label: __('Color', 'powerful-blocks'),
-        value: shadowColor,
-        onChange: function onChange(shadowColor) {
-          setAttributes({
-            shadowColor: shadowColor
-          });
-        }
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
-        label: __('Horizontal Offset', 'powerful-blocks'),
-        value: shadowHOffset,
-        onChange: function onChange(shadowHOffset) {
-          return setAttributes({
-            shadowHOffset: shadowHOffset
-          });
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TabPanel, {
+    className: "pb-panel-inspect--tabs",
+    activeClass: "pb-pi-tab--active",
+    tabs: [{
+      name: "normal",
+      title: __('Normal', 'powerful-blocks'),
+      className: "pb-panel-inspect--tab"
+    }, {
+      name: "hover",
+      title: __('Hover', 'powerful-blocks'),
+      className: "pb-panel-inspect--tab"
+    }]
+  }, function (tab) {
+    var tabout;
+
+    if ("normal" === tab.name) {
+      tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ShadowControl"], {
+        label: __('Box Shadow', 'powerful-blocks'),
+        shadowColor: {
+          value: shadowColor,
+          name: 'shadowColor'
         },
-        min: 0,
-        step: 1,
-        max: 100
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
-        label: __('Vertical Offset', 'powerful-blocks'),
-        value: shadowVOffset,
-        onChange: function onChange(shadowVOffset) {
-          return setAttributes({
-            shadowVOffset: shadowVOffset
-          });
+        shadowHOffset: {
+          value: shadowHOffset,
+          name: 'shadowHOffset'
         },
-        min: 0,
-        step: 1,
-        max: 100
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
-        label: __('Blur', 'powerful-blocks'),
-        value: shadowBlur,
-        onChange: function onChange(shadowBlur) {
-          return setAttributes({
-            shadowBlur: shadowBlur
-          });
+        shadowVOffset: {
+          value: shadowVOffset,
+          name: 'shadowVOffset'
         },
-        min: 0,
-        step: 1,
-        max: 100
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
-        label: __('Spread', 'powerful-blocks'),
-        value: shadowSpread,
-        onChange: function onChange(shadowSpread) {
-          return setAttributes({
-            shadowSpread: shadowSpread
-          });
+        shadowBlur: {
+          value: shadowBlur,
+          name: 'shadowBlur'
         },
-        min: 0,
-        step: 1,
-        max: 100
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
-        label: __('Type', 'powerful-blocks'),
-        value: shadowType,
-        onChange: function onChange(shadowType) {
-          setAttributes({
-            shadowType: shadowType
-          });
+        shadowSpread: {
+          value: shadowSpread,
+          name: 'shadowSpread'
         },
-        options: [{
-          value: 'inset',
-          label: 'Inset'
-        }, {
-          value: '',
-          label: 'Outset'
-        }]
+        shadowType: {
+          value: shadowType,
+          name: 'shadowType'
+        },
+        setAttributes: setAttributes
       }));
+    } else if ("hover" === tab.name) {
+      tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ShadowControl"], {
+        label: __('Box Shadow', 'powerful-blocks'),
+        shadowColor: {
+          value: hoverShadowColor,
+          name: 'hoverShadowColor'
+        },
+        shadowHOffset: {
+          value: hoverShadowHOffset,
+          name: 'hoverShadowHOffset'
+        },
+        shadowVOffset: {
+          value: hoverShadowVOffset,
+          name: 'hoverShadowVOffset'
+        },
+        shadowBlur: {
+          value: hoverShadowBlur,
+          name: 'hoverShadowBlur'
+        },
+        shadowSpread: {
+          value: hoverShadowSpread,
+          name: 'hoverShadowSpread'
+        },
+        shadowType: {
+          value: hoverShadowType,
+          name: 'hoverShadowType'
+        },
+        setAttributes: setAttributes
+      }));
+    } else {
+      tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "..."));
     }
-  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "pb-panel-inspect--tabs__controls"
+    }, tabout);
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
+    title: __('Animation', 'powerful-blocks'),
+    initialOpen: false
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TabPanel, {
+    className: "pb-panel-inspect--tabs",
+    activeClass: "pb-pi-tab--active",
+    tabs: [{
+      name: "in",
+      title: __('In', 'powerful-blocks'),
+      className: "pb-panel-inspect--tab"
+    }, {
+      name: "out",
+      title: __('Out', 'powerful-blocks'),
+      className: "pb-panel-inspect--tab"
+    }]
+  }, function (tab) {
+    var tabout;
+
+    if ("in" === tab.name) {
+      tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, 'free' === UDPB.type ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "Plz Upgrade your plan!") : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "Excellent"));
+    } else if ("out" === tab.name) {
+      tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "Coming Soon.."));
+    } else {
+      tabout = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "Else"));
+    }
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "pb-panel-inspect--tabs__controls"
+    }, tabout);
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Positioning', 'powerful-blocks'),
     initialOpen: false
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+    className: "pb-custom-select-control",
     label: __('Width', 'powerful-blocks'),
     value: blockWidth,
     onChange: function onChange(blockWidth) {
@@ -24810,6 +25020,16 @@ var Advanced = function Advanced(props) {
     min: 0,
     max: 500,
     setAttributes: setAttributes
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(__experimentalNumberControl, {
+    className: "pb-custom-number-control",
+    label: __('Z-Index', 'powerful-blocks'),
+    shi: true,
+    value: blockzIndex,
+    onChange: function onChange(blockzIndex) {
+      setAttributes({
+        blockzIndex: blockzIndex
+      });
+    }
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Responsive', 'powerful-blocks'),
     initialOpen: false
@@ -25081,6 +25301,30 @@ var advancedAttributes = {
     type: 'string',
     default: ''
   },
+  hoverShadowColor: {
+    type: 'string',
+    default: 'transparent'
+  },
+  hoverShadowHOffset: {
+    type: 'number',
+    default: '0'
+  },
+  hoverShadowVOffset: {
+    type: 'number',
+    default: '0'
+  },
+  hoverShadowBlur: {
+    type: 'number',
+    default: '0'
+  },
+  hoverShadowSpread: {
+    type: 'number',
+    default: '0'
+  },
+  hoverShadowType: {
+    type: 'string',
+    default: ''
+  },
   borderStyle: {
     type: 'string',
     default: 'none'
@@ -25311,7 +25555,7 @@ var registerPowerfulBlocks = function registerPowerfulBlocks() {
 };
 
 registerPowerfulBlocks();
-var inactive_blocks = pb_blocks_data.inactive_blocks;
+var inactive_blocks = UDPB.inactive_blocks;
 
 if (undefined !== inactive_blocks && inactive_blocks.length) {
   if (typeof wp.blocks.unregisterBlockType !== "undefined") {
