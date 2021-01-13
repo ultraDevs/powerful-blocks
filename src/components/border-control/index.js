@@ -45,26 +45,31 @@ const BorderControl = ( props ) => {
                         { value: 'double', label: 'Double' },
                     ] }
                 />
-                <RangeControl
-                    label={ __(
-                        'Border Size',
-                        'powerful-blocks'
-                    ) }
-                    value={ borderSize.value }
-                    onChange={ ( value ) => {
-                        setAttributes( { [ borderSize.name ] : value } );
-                    } }
-                    min={ 0 }
-                    step={ 1 }
-                    max={ 10 }
-                />
-                <ColorPickerControl
-                    label={ __( 'Border Color', 'powerful-blocks' ) }
-                    value={ borderColor.value }
-                    onChange={ ( value ) => {
-                        setAttributes( { [ borderColor.name ] : value } );
-                    } }
-                />
+                { 'none' !== borderStyle.value && (
+                    <>
+                        <RangeControl
+                            label={ __(
+                                'Border Size',
+                                'powerful-blocks'
+                            ) }
+                            value={ borderSize.value }
+                            onChange={ ( value ) => {
+                                setAttributes( { [ borderSize.name ] : value } );
+                            } }
+                            min={ 0 }
+                            step={ 1 }
+                            max={ 10 }
+                        />
+                        <ColorPickerControl
+                            label={ __( 'Border Color', 'powerful-blocks' ) }
+                            value={ borderColor.value }
+                            onChange={ ( value ) => {
+                                setAttributes( { [ borderColor.name ] : value } );
+                            } }
+                        />
+                    </>
+                ) }
+                
             </BaseControl>
         </>
     );

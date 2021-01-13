@@ -22768,7 +22768,7 @@ var BorderControl = function BorderControl(props) {
       value: 'double',
       label: 'Double'
     }]
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
+  }), 'none' !== borderStyle.value && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
     label: __('Border Size', 'powerful-blocks'),
     value: borderSize.value,
     onChange: function onChange(value) {
@@ -22783,7 +22783,7 @@ var BorderControl = function BorderControl(props) {
     onChange: function onChange(value) {
       setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, borderColor.name, value));
     }
-  })));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BorderControl);
