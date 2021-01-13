@@ -77,11 +77,6 @@
 .pb-panel-inspect--tabs .pb-panel-inspect--tabs__controls {
   margin-top: 15px; }
 
-.pb-border-control {
-  margin: 10px 0; }
-  .pb-border-control .pb-border-control--dropdown {
-    float: right; }
-
 /** Responsive **/
 .edit-post-visual-editor .pb-hide-d {
   opacity: 0.6;

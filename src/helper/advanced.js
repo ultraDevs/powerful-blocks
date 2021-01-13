@@ -23,7 +23,8 @@ import {
     ShadowControl,
     ResponsiveRangeControl,
     ResponsiveBoxControl,
-    GradientControl
+    GradientControl,
+    BorderControl
 } from '../components';
 
 const Advanced = ( props ) => {
@@ -615,86 +616,24 @@ const Advanced = ( props ) => {
 							if ( "normal" === tab.name ) {
 								tabout = (
 									<>
-                                        <SelectControl
-                                            className = "pb-custom-select-control"
-                                            label={ __(
-                                                'Border Style',
-                                                'powerful-blocks'
-                                            ) }
-                                            value={ borderStyle }
-                                            onChange={ ( borderStyle ) => {
-                                                setAttributes( { borderStyle } );
-                                            } }
-                                            options={ [
-                                                { value: 'none', label: 'None' },
-                                                { value: 'solid', label: 'Solid' },
-                                                { value: 'dotted', label: 'Dotted' },
-                                                { value: 'dashed', label: 'Dashed' },
-                                                { value: 'double', label: 'Double' },
-                                            ] }
-                                        />
-                                        <RangeControl
-                                            label={ __(
-                                                'Border Size',
-                                                'powerful-blocks'
-                                            ) }
-                                            value={ borderSize }
-                                            onChange={ ( borderSize ) =>
-                                                setAttributes( { borderSize } )
-                                            }
-                                            min={ 0 }
-                                            step={ 1 }
-                                            max={ 10 }
-                                        />
-                                        <ColorPickerControl
-                                            label={ __( 'Border Color', 'powerful-blocks' ) }
-                                            value={ borderColor }
-                                            onChange={ ( borderColor ) => {
-                                                setAttributes( { borderColor } );
-                                            } }
+                                        <BorderControl
+                                            label = ''
+                                            borderStyle = { { value: borderStyle, name: 'borderStyle' } }
+                                            borderSize = { { value: borderSize, name: 'borderSize' } }
+                                            borderColor = { { value: borderColor, name: 'borderColor' } }
+                                            setAttributes = { setAttributes }
                                         />
                                     </>
 								)
 							} else if ( "hover" === tab.name ) {
 								tabout = (
 									<>
-                                        <SelectControl
-                                            className = "pb-custom-select-control"
-                                            label={ __(
-                                                'Border Style',
-                                                'powerful-blocks'
-                                            ) }
-                                            value={ hoverBorderStyle }
-                                            onChange={ ( hoverBorderStyle ) => {
-                                                setAttributes( { hoverBorderStyle } );
-                                            } }
-                                            options={ [
-                                                { value: 'none', label: 'None' },
-                                                { value: 'solid', label: 'Solid' },
-                                                { value: 'dotted', label: 'Dotted' },
-                                                { value: 'dashed', label: 'Dashed' },
-                                                { value: 'double', label: 'Double' },
-                                            ] }
-                                        />
-                                        <RangeControl
-                                            label={ __(
-                                                'Border Size',
-                                                'powerful-blocks'
-                                            ) }
-                                            value={ hoverBorderSize }
-                                            onChange={ ( hoverBorderSize ) =>
-                                                setAttributes( { hoverBorderSize } )
-                                            }
-                                            min={ 0 }
-                                            step={ 1 }
-                                            max={ 10 }
-                                        />
-                                        <ColorPickerControl
-                                            label={ __( 'Border Color', 'powerful-blocks' ) }
-                                            value={ hoverBorderColor }
-                                            onChange={ ( hoverBorderColor ) => {
-                                                setAttributes( { hoverBorderColor } );
-                                            } }
+                                        <BorderControl
+                                            label = ''
+                                            borderStyle = { { value: hoverBorderStyle, name: 'hoverBorderStyle' } }
+                                            borderSize = { { value: hoverBorderSize, name: 'hoverBorderSize' } }
+                                            borderColor = { { value: hoverBorderColor, name: 'hoverBorderColor' } }
+                                            setAttributes = { setAttributes }
                                         />
                                     </>
 								)

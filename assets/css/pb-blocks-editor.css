@@ -183,6 +183,11 @@
   .pb-shadow-control .pb-shadow-control--dropdown {
     float: right; }
 
+.pb-border-control {
+  margin: 10px 0; }
+  .pb-border-control .pb-border-control--dropdown {
+    float: right; }
+
 /** Alert Box **/
 .wp-block-powerful-blocks-alert-box {
   background-color: #d6efee;
