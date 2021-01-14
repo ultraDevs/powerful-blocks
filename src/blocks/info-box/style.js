@@ -75,13 +75,11 @@ const Styles = ( props ) => {
 
 		txtAlign,
 		mType,
-		icon,
 		iconSize,
 		iconColor,
 		iconBGColor,
 		mPosition,
 		mValign,
-		img,
 		imgHeightType,
 		imgHeight,
 		imgHeightTablet,
@@ -127,7 +125,6 @@ const Styles = ( props ) => {
 		contentBPadding,
 		contentBPaddingTablet,
 		contentBPaddingMobile,
-		title,
 		titleColor,
 		titleMargin,
 		titleMarginTablet,
@@ -143,7 +140,6 @@ const Styles = ( props ) => {
 		titleTextDecoration,
 		titleLetterSpacing,
 		titleLineHeight,
-		content,
 		contentColor,
 		contentMargin,
 		contentMarginTablet,
@@ -318,7 +314,7 @@ const Styles = ( props ) => {
 				titleMargin.bottom +
 				' ' +
 				titleMargin.left,
-				color: titleColor ? titleColor : undefined,
+				color: titleColor ? titleColor + '!important' : undefined,
 				'font-size' : titleFontSize ? titleFontSize + titleFontSizeType : undefined,
 				'font-family': titleFontFamily
 					? titleFontFamily
@@ -433,6 +429,8 @@ const Styles = ( props ) => {
 				mBorderRadiusTablet.bottom +
 				' ' +
 				mBorderRadiusTablet.left,
+			transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
+			
 			},
 			'.pb-info-box--image img' : {
 				width: imgWidthTablet ? imgWidthTablet + imgWidthType : undefined,
@@ -522,6 +520,8 @@ const Styles = ( props ) => {
 				mBorderRadiusMobile.bottom +
 				' ' +
 				mBorderRadiusMobile.left,
+			transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
+			
 			},
 			'.pb-info-box--image img' : {
 				width: imgWidthMobile ? imgWidthMobile + imgWidthType : undefined,
