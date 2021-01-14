@@ -128,6 +128,11 @@ const Inspector = ( props ) => {
 		showRatings,
 		ratingsPosition,
 		preset,
+
+		displayBubble,
+		bubblePosition,
+		bubbleSize,
+		bubbleColor,
 	} = attributes;
 
 	let currentTab = 'content';
@@ -294,6 +299,19 @@ const Inspector = ( props ) => {
 									{ value: 'after-info', label: 'After Info' },
 								] }
 							/>
+						</PanelBody>
+						<PanelBody
+							title={ __( 'Bubble', 'powerful-blocks' ) }
+							initialOpen={ false }
+						>
+							<ToggleControl
+								label={ __( 'Show Bubble?', 'powerful-blocks' ) }
+								checked={ displayBubble }
+								onChange={ ( displayBubble ) => {
+									setAttributes( { displayBubble } );
+								} }
+							/>
+							
 						</PanelBody>
 					</>
 				) }
@@ -795,6 +813,31 @@ const Inspector = ( props ) => {
 								textTransform = { { value: titleTextTransform, name: 'titleTextTransform' } }
 								textDecoration = { { value: titleTextDecoration, name: 'titleTextDecoration' } }
 								setAttributes = { props.setAttributes }
+							/>
+						</PanelBody>
+						<PanelBody
+							title={ __( 'Bubble', 'powerful-blocks' ) }
+							initialOpen={ false }
+						>
+							<ColorPickerControl
+								label={ __( 'Color', 'powerful-blocks' ) }
+								value={ bubbleColor }
+								onChange={ ( bubbleColor ) => {
+									setAttributes( { bubbleColor } );
+								} }
+							/>
+							<RangeControl
+								label={ __(
+									'Size',
+									'powerful-blocks'
+								) }
+								value={ bubbleSize }
+								onChange={ ( bubbleSize ) =>
+									setAttributes( { bubbleSize } )
+								}
+								min={ 0 }
+								step={ 1 }
+								max={ 50 }
 							/>
 						</PanelBody>
 					</>

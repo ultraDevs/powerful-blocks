@@ -23,7 +23,7 @@ const attributes = {
 
 	contentBackgroundColor: {
 		type: 'string',
-		default: '',
+		default: '#f7f7f7',
 	},
 	hoverContentBackgroundColor: {
 		type: 'string',
@@ -32,7 +32,7 @@ const attributes = {
 
 	contentColor: {
 		type: 'string',
-		default: '#333',
+		default: '#6D7680',
 	},
 	hoverContentColor: {
 		type: 'string',
@@ -330,7 +330,7 @@ const attributes = {
 	},
 	nameColor: {
 		type: 'string',
-		default: '#111',
+		default: '#6D7680',
 	},
 	nameTextAlign: {
 		type: 'string',
@@ -427,7 +427,7 @@ const attributes = {
 
 	titleColor: {
 		type: 'string',
-		default: '#111',
+		default: '#6D7680',
 	},
 	titleTextAlign: {
 		type: 'string',
@@ -533,6 +533,23 @@ const attributes = {
 	preset: {
 		type: 'string',
 		default: 'design-1',
+	},
+
+	displayBubble: {
+		type: 'boolean',
+		default: false,
+	},
+	bubblePosition: {
+		type: 'string',
+		default: 'bottom',
+	},
+	bubbleSize: {
+		type: 'number',
+		default: '15',
+	},
+	bubbleColor: {
+		type: 'string',
+		default: '#f7f7f7',
 	},
 };
 

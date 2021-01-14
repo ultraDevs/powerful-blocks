@@ -24,7 +24,8 @@ const save = ( { attributes, className } ) => {
 		hideOnMobile,
 		blockWidth,
 		customClass,
-        customID,
+		customID,
+		displayBubble
 	} = attributes;
 
 	return (
@@ -42,7 +43,7 @@ const save = ( { attributes, className } ) => {
 						hideOnMobile ? 'pb-hide-m' : '',
 						blockWidth ? 'pb-b-e--width' : '',
 						'image' === backgroundType ? 'pb-ab-bg--image' : '',
-
+						true === displayBubble ? 'pb-t-bubble' : '',
 
 					) }
 					id = { customID ? customID : '' }

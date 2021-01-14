@@ -165,11 +165,17 @@ const Styles = ( props ) => {
 		clientInfoPosition,
 		ratingsAlign,
 		preset,
+
+		displayBubble,
+		bubblePosition,
+		bubbleSize,
+		bubbleColor,
 	} = attributes;
 
 
 	const selectorPrefix = `#pb-testimonial-${ blockId }`;
 
+	const lrBubbleSize = bubbleSize + 4;
 
 	let rules = {
 		desktop: {
@@ -600,6 +606,41 @@ const Styles = ( props ) => {
 			},
 		},
 	};
+
+	if ( true === displayBubble ) {
+		if ( 'above-content' === clientInfoPosition ) {
+			rules.desktop[ '.pb-t-bubble .pb-testimonial--conr:after' ] = {
+				top: '-' + bubbleSize + 'px',
+				'border-top': bubbleSize + 'px solid ' + bubbleColor,
+				transform: 'rotate(180deg)',
+			}
+		}
+		if ( 'after-content' === clientInfoPosition ) {
+			rules.desktop[ '.pb-t-bubble .pb-testimonial--conr:after' ] = {
+				bottom: '-' + bubbleSize + 'px',
+				'border-top': bubbleSize + 'px solid ' + bubbleColor,
+			}
+		}
+		if ( 'left-content' === clientInfoPosition ) {
+			rules.desktop[ '.pb-t-bubble .pb-testimonial--conr:after' ] = {
+				margin: '0px',
+				top: '50%',
+				left: '-' + lrBubbleSize + 'px',
+				'border-top': bubbleSize + 'px solid ' + bubbleColor,
+				transform: 'rotate(90deg)',
+			}
+		}
+		if ( 'right-content' === clientInfoPosition ) {
+			rules.desktop[ '.pb-t-bubble .pb-testimonial--conr:after' ] = {
+				margin: '0px',
+				top: '50%',
+				left: 'auto',
+				right: '-' + lrBubbleSize + 'px',
+				'border-top': bubbleSize + 'px solid ' + bubbleColor,
+				transform: 'rotate(-90deg)',
+			}
+		}
+	}
 
 	if ( 'image' === backgroundType ) {
 		rules.desktop[ '.pb-ab-bg--image' ] = {

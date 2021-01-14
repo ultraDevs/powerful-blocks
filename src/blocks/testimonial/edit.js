@@ -31,7 +31,8 @@ const edit = ( props ) => {
 		hideOnMobile,
 		blockWidth,
 		customClass,
-        customID,
+		customID,
+		displayBubble
 	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
@@ -58,6 +59,7 @@ const edit = ( props ) => {
 						hideOnMobile ? 'pb-hide-m' : '',
 						blockWidth ? 'pb-b-e--width' : '',
 						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+						true === displayBubble ? 'pb-t-bubble' : '',
 					) }
 					id = { customID ? customID : '' }
 				>

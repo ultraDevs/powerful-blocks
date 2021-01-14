@@ -116,19 +116,6 @@
       width: 0;
       height: 0;
       transition: all .3s ease-in-out; }
-    .pb-testimonial-wrapper .pb-testimonial--conr::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      top: -15px;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-      width: 0;
-      height: 0;
-      transition: all .3s ease-in-out; }
   .pb-testimonial-wrapper .pb-testimonial--details {
     display: flex;
     align-items: center;

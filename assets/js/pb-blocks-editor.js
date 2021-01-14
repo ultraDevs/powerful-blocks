@@ -24502,7 +24502,7 @@ var attributes = {
   },
   contentBackgroundColor: {
     type: 'string',
-    default: ''
+    default: '#f7f7f7'
   },
   hoverContentBackgroundColor: {
     type: 'string',
@@ -24510,7 +24510,7 @@ var attributes = {
   },
   contentColor: {
     type: 'string',
-    default: '#333'
+    default: '#6D7680'
   },
   hoverContentColor: {
     type: 'string',
@@ -24782,7 +24782,7 @@ var attributes = {
   },
   nameColor: {
     type: 'string',
-    default: '#111'
+    default: '#6D7680'
   },
   nameTextAlign: {
     type: 'string',
@@ -24869,7 +24869,7 @@ var attributes = {
   },
   titleColor: {
     type: 'string',
-    default: '#111'
+    default: '#6D7680'
   },
   titleTextAlign: {
     type: 'string',
@@ -24965,6 +24965,22 @@ var attributes = {
   preset: {
     type: 'string',
     default: 'design-1'
+  },
+  displayBubble: {
+    type: 'boolean',
+    default: true
+  },
+  bubblePosition: {
+    type: 'string',
+    default: 'bottom'
+  },
+  bubbleSize: {
+    type: 'number',
+    default: '15'
+  },
+  bubbleColor: {
+    type: 'string',
+    default: '#f7f7f7'
   }
 };
 
@@ -25025,7 +25041,8 @@ var edit = function edit(props) {
       hideOnMobile = attributes.hideOnMobile,
       blockWidth = attributes.blockWidth,
       customClass = attributes.customClass,
-      customID = attributes.customID;
+      customID = attributes.customID,
+      displayBubble = attributes.displayBubble;
 
   if (props.isSelected && !props.blockId) {
     var clientId = props.clientId;
@@ -25043,7 +25060,7 @@ var edit = function edit(props) {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     id: "pb-testimonial-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('pb-testimonial-wrapper', props.className, 'pb-testimonial-client-info-position', preset, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : ''),
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('pb-testimonial-wrapper', props.className, 'pb-testimonial-client-info-position', preset, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : '', true === displayBubble ? 'pb-t-bubble' : ''),
     id: customID ? customID : ''
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "pb-testimonial--conr"
@@ -25360,7 +25377,11 @@ var Inspector = function Inspector(props) {
       ratingsAlign = attributes.ratingsAlign,
       showRatings = attributes.showRatings,
       ratingsPosition = attributes.ratingsPosition,
-      preset = attributes.preset;
+      preset = attributes.preset,
+      displayBubble = attributes.displayBubble,
+      bubblePosition = attributes.bubblePosition,
+      bubbleSize = attributes.bubbleSize,
+      bubbleColor = attributes.bubbleColor;
   var currentTab = 'content';
 
   var _useState = useState(currentTab),
@@ -25520,6 +25541,17 @@ var Inspector = function Inspector(props) {
       value: 'after-info',
       label: 'After Info'
     }]
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
+    title: __('Bubble', 'powerful-blocks'),
+    initialOpen: false
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ToggleControl, {
+    label: __('Show Bubble?', 'powerful-blocks'),
+    checked: displayBubble,
+    onChange: function onChange(displayBubble) {
+      setAttributes({
+        displayBubble: displayBubble
+      });
+    }
   }))), 'style' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Image', 'powerful-blocks')
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ResponsiveRangeControl"], {
@@ -26156,6 +26188,28 @@ var Inspector = function Inspector(props) {
       name: 'titleTextDecoration'
     },
     setAttributes: props.setAttributes
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
+    title: __('Bubble', 'powerful-blocks'),
+    initialOpen: false
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
+    label: __('Color', 'powerful-blocks'),
+    value: bubbleColor,
+    onChange: function onChange(bubbleColor) {
+      setAttributes({
+        bubbleColor: bubbleColor
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RangeControl, {
+    label: __('Size', 'powerful-blocks'),
+    value: bubbleSize,
+    onChange: function onChange(bubbleSize) {
+      return setAttributes({
+        bubbleSize: bubbleSize
+      });
+    },
+    min: 0,
+    step: 1,
+    max: 50
   }))), 'advanced' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_helper_advanced__WEBPACK_IMPORTED_MODULE_4__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
@@ -26212,11 +26266,12 @@ var save = function save(_ref) {
       hideOnMobile = attributes.hideOnMobile,
       blockWidth = attributes.blockWidth,
       customClass = attributes.customClass,
-      customID = attributes.customID;
+      customID = attributes.customID,
+      displayBubble = attributes.displayBubble;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     id: "pb-testimonial-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, 'pb-testimonial-wrapper', 'pb-testimonial-client-info-position', preset, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : ''),
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, 'pb-testimonial-wrapper', 'pb-testimonial-client-info-position', preset, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : '', true === displayBubble ? 'pb-t-bubble' : ''),
     id: customID ? customID : ''
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "pb-testimonial--conr"
@@ -26416,8 +26471,13 @@ var Styles = function Styles(props) {
       titleMarginMobile = attributes.titleMarginMobile,
       clientInfoPosition = attributes.clientInfoPosition,
       ratingsAlign = attributes.ratingsAlign,
-      preset = attributes.preset;
+      preset = attributes.preset,
+      displayBubble = attributes.displayBubble,
+      bubblePosition = attributes.bubblePosition,
+      bubbleSize = attributes.bubbleSize,
+      bubbleColor = attributes.bubbleColor;
   var selectorPrefix = "#pb-testimonial-".concat(blockId);
+  var lrBubbleSize = bubbleSize + 4;
   var rules = {
     desktop: {
       '.pb-testimonial-wrapper': (_pbTestimonialWrap = {
@@ -26552,6 +26612,44 @@ var Styles = function Styles(props) {
       }
     }
   };
+
+  if (true === displayBubble) {
+    if ('above-content' === clientInfoPosition) {
+      rules.desktop['.pb-t-bubble .pb-testimonial--conr:after'] = {
+        top: '-' + bubbleSize + 'px',
+        'border-top': bubbleSize + 'px solid ' + bubbleColor,
+        transform: 'rotate(180deg)'
+      };
+    }
+
+    if ('after-content' === clientInfoPosition) {
+      rules.desktop['.pb-t-bubble .pb-testimonial--conr:after'] = {
+        bottom: '-' + bubbleSize + 'px',
+        'border-top': bubbleSize + 'px solid ' + bubbleColor
+      };
+    }
+
+    if ('left-content' === clientInfoPosition) {
+      rules.desktop['.pb-t-bubble .pb-testimonial--conr:after'] = {
+        margin: '0px',
+        top: '50%',
+        left: '-' + lrBubbleSize + 'px',
+        'border-top': bubbleSize + 'px solid ' + bubbleColor,
+        transform: 'rotate(90deg)'
+      };
+    }
+
+    if ('right-content' === clientInfoPosition) {
+      rules.desktop['.pb-t-bubble .pb-testimonial--conr:after'] = {
+        margin: '0px',
+        top: '50%',
+        left: 'auto',
+        right: '-' + lrBubbleSize + 'px',
+        'border-top': bubbleSize + 'px solid ' + bubbleColor,
+        transform: 'rotate(-90deg)'
+      };
+    }
+  }
 
   if ('image' === backgroundType) {
     rules.desktop['.pb-ab-bg--image'] = {
