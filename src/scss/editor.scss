@@ -208,7 +208,7 @@
 	}
 }
 
-.pb-custom-number-control, .pb-custom-select-control {
+.pb-custom-number-control, .pb-custom-select-control, .pb-custom-text-control {
 	flex-direction: row !important;
 	align-items: center !important;
 	justify-content: space-between !important;
@@ -216,5 +216,39 @@
 		flex-basis: 50%;
 		width: auto;
 		flex: inherit;
+	}
+}
+
+// Pro.
+.pb-upgrade-plan-notice {
+	padding: 15px;
+    border: 2px dashed #eee;
+    border-radius: 10px;
+	position: relative;
+	span {
+		background: #f30d55;
+		color: #fff;
+		font-size: 12px;
+		padding: 2px 8px;
+		border-radius: 10px;
+	}
+	p {
+		color: #57616d;
+		margin-top: 8px;
+		font-size: 14px;
+		line-height: 18px;	
+	}
+	.pb-upn--btn {
+		
+		a {
+			background: #f30d55;
+			color: #fff;
+			padding: 5px 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			&:first-child {
+				margin-right: 10px;
+			}
+		}
 	}
 }

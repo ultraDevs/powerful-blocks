@@ -145,14 +145,39 @@
     .pb-editor-bg-image-control .css-11vcxb9-StyledField button span {
       margin: 0px; }
 
-.pb-custom-number-control, .pb-custom-select-control {
+.pb-custom-number-control, .pb-custom-select-control, .pb-custom-text-control {
   flex-direction: row !important;
   align-items: center !important;
   justify-content: space-between !important; }
-  .pb-custom-number-control .components-input-control__container, .pb-custom-select-control .components-input-control__container {
+  .pb-custom-number-control .components-input-control__container, .pb-custom-select-control .components-input-control__container, .pb-custom-text-control .components-input-control__container {
     flex-basis: 50%;
     width: auto;
     flex: inherit; }
+
+.pb-upgrade-plan-notice {
+  padding: 15px;
+  border: 2px dashed #eee;
+  border-radius: 10px;
+  position: relative; }
+  .pb-upgrade-plan-notice span {
+    background: #f30d55;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px; }
+  .pb-upgrade-plan-notice p {
+    color: #57616d;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 18px; }
+  .pb-upgrade-plan-notice .pb-upn--btn a {
+    background: #f30d55;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none; }
+    .pb-upgrade-plan-notice .pb-upn--btn a:first-child {
+      margin-right: 10px; }
 
 
 /*# sourceMappingURL=pb-editor-common.css.map*/

@@ -1,7 +1,6 @@
 import { RichText, InnerBlocks } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
-import Styles from './style';
 
 const save = ( { attributes, className } ) => {
 	const {
@@ -25,8 +24,21 @@ const save = ( { attributes, className } ) => {
 		blockWidth,
 		customClass,
 		customID,
-		displayBubble
+		displayBubble,
+		
+		addWLink,
+        wrapperLink,
+        wrapperLinkNewTab,
+        wrapperLinkNofollow,
 	} = attributes;
+
+	const WrapperLink = JSON.stringify({
+		'id': blockId ? blockId : 'pb-wl-r',
+		'addLink': addWLink ? addWLink : false,
+		'url': wrapperLink ? wrapperLink : false,
+		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
+		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
+	});
 
 	return (
 		<div>
@@ -47,6 +59,7 @@ const save = ( { attributes, className } ) => {
 
 					) }
 					id = { customID ? customID : '' }
+					data-pb-link = { true === addWLink ? WrapperLink : '' }
 				>
 					<div className="pb-testimonial--conr">
 						{ true === showRatings &&

@@ -32,7 +32,12 @@ const edit = ( props ) => {
 		blockWidth,
 		customClass,
 		customID,
-		displayBubble
+		displayBubble,
+
+		addWLink,
+        wrapperLink,
+        wrapperLinkNewTab,
+        wrapperLinkNofollow,
 	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
@@ -41,6 +46,13 @@ const edit = ( props ) => {
 	}
 	const allowedBlocks = [ 'powerful-blocks/star-rating' ];
 
+	const WrapperLink = JSON.stringify({
+		'id': blockId ? blockId : 'pb-wl-r',
+		'addLink': addWLink ? addWLink : false,
+		'url': wrapperLink ? wrapperLink : false,
+		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
+		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
+	});
 
 	return (
 		<>
@@ -62,6 +74,7 @@ const edit = ( props ) => {
 						true === displayBubble ? 'pb-t-bubble' : '',
 					) }
 					id = { customID ? customID : '' }
+					data-pb-link = { true === addWLink ? WrapperLink : '' }
 				>
 					<div className="pb-testimonial--conr">
 						{ true === showRatings &&

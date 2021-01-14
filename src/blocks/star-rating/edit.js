@@ -29,7 +29,12 @@ const edit = ( props ) => {
 		hideOnMobile,
 		blockWidth,
 		customClass,
-        customID,
+		customID,
+		
+		addWLink,
+        wrapperLink,
+        wrapperLinkNewTab,
+        wrapperLinkNofollow,
 	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
@@ -40,6 +45,14 @@ const edit = ( props ) => {
 	const fullStar = Math.floor( rating );
 	const halfStar = rating % 1 === 0 ? 0 : 1;
 	const emptyStar = stars - ( fullStar + halfStar );
+
+	const WrapperLink = JSON.stringify({
+		'id': blockId ? blockId : 'pb-wl-r',
+		'addLink': addWLink ? addWLink : false,
+		'url': wrapperLink ? wrapperLink : false,
+		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
+		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
+	});
 
 	return [
 		<>
@@ -58,6 +71,7 @@ const edit = ( props ) => {
 						'image' === backgroundType ? 'pb-ab-bg--image' : '',
 					) }
 					id = { customID ? customID : '' }
+					data-pb-link = { true === addWLink ? WrapperLink : '' }
 				>
 					<div className="pb-star-rating--icon">
 						{ fullStar

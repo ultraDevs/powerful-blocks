@@ -20,7 +20,12 @@ const edit = ( props ) => {
 		hideOnMobile,
 		blockWidth,
 		customClass,
-		customID
+		customID,
+
+		addWLink,
+        wrapperLink,
+        wrapperLinkNewTab,
+        wrapperLinkNofollow,
 	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
@@ -31,6 +36,14 @@ const edit = ( props ) => {
 		time: 'hideAfterTime' === displayType ? hideAfterTime : 0,
 		id: `pb-alert-box-${ attributes.blockId }`,
 	};
+
+	const WrapperLink = JSON.stringify({
+		'id': blockId ? blockId : 'pb-wl-r',
+		'addLink': addWLink ? addWLink : false,
+		'url': wrapperLink ? wrapperLink : false,
+		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
+		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
+	});
 
 	return (
 		<>
@@ -49,6 +62,7 @@ const edit = ( props ) => {
 						'image' === backgroundType ? 'pb-ab-bg--image' : '',
 					) }
 					id = { customID ? customID : '' }
+					data-pb-link = { true === addWLink ? WrapperLink : '' }
 				>
 					<div
 						className={ classnames( 'pb-alert-box', props.className ) }

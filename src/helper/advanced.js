@@ -18,6 +18,9 @@ const { MediaUpload } = wp.blockEditor;
 const { useState } = wp.element;
 import classnames from 'classnames';
 
+import { pType, UpgradePlanNotice } from './lic';
+
+
 import { 
     ColorPickerControl,
     ShadowControl,
@@ -884,34 +887,44 @@ const Advanced = ( props ) => {
                 />
             </PanelBody>
             <PanelBody title={ __( 'Wrapper Link', 'powerful-blocks' ) } initialOpen={ false }>
-                <ToggleControl
-                    label={ __( 'Add Link?', 'powerful-blocks' ) }
-                    checked={ addWLink }
-                    onChange={ ( addWLink ) => {
-                        setAttributes( { addWLink } );
-                    } }
-                />
-                <TextControl
-                    label={ __( 'Link', 'powerful-blocks' ) }
-                    value={ wrapperLink }
-                    onChange={ ( wrapperLink ) => {
-                        setAttributes( { wrapperLink } );
-                    } }
-                />
-                <ToggleControl
-                    label={ __( 'Open in new window', 'powerful-blocks' ) }
-                    checked={ wrapperLinkNewTab }
-                    onChange={ ( wrapperLinkNewTab ) => {
-                        setAttributes( { wrapperLinkNewTab } );
-                    } }
-                />
-                <ToggleControl
-                    label={ __( 'Add Nofollow?', 'powerful-blocks' ) }
-                    checked={ wrapperLinkNofollow }
-                    onChange={ ( wrapperLinkNofollow ) => {
-                        setAttributes( { wrapperLinkNofollow } );
-                    } }
-                />
+                { 
+                    'free' === pType ? (
+                        <UpgradePlanNotice />
+                    ) : (
+                        <>
+                            <ToggleControl
+                                label={ __( 'Add Link?', 'powerful-blocks' ) }
+                                checked={ addWLink }
+                                onChange={ ( addWLink ) => {
+                                    setAttributes( { addWLink } );
+                                } }
+                            />
+                            <TextControl
+                                label={ __( 'Link', 'powerful-blocks' ) }
+                                className = 'pb-custom-text-control'
+                                value={ wrapperLink }
+                                placeHolder = 'https://example.com'
+                                onChange={ ( wrapperLink ) => {
+                                    setAttributes( { wrapperLink } );
+                                } }
+                            />
+                            <ToggleControl
+                                label={ __( 'Open in new window', 'powerful-blocks' ) }
+                                checked={ wrapperLinkNewTab }
+                                onChange={ ( wrapperLinkNewTab ) => {
+                                    setAttributes( { wrapperLinkNewTab } );
+                                } }
+                            />
+                            <ToggleControl
+                                label={ __( 'Add Nofollow?', 'powerful-blocks' ) }
+                                checked={ wrapperLinkNofollow }
+                                onChange={ ( wrapperLinkNofollow ) => {
+                                    setAttributes( { wrapperLinkNofollow } );
+                                } }
+                            />
+                        </>
+                    )
+                }
             </PanelBody>
         </>
     );
