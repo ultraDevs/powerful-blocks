@@ -20742,6 +20742,10 @@ var Styles = function Styles(props) {
       inAnimationDelay = attributes.inAnimationDelay,
       outAnimationDuration = attributes.outAnimationDuration,
       outAnimationDelay = attributes.outAnimationDelay,
+      blockHeightType = attributes.blockHeightType,
+      blockHeight = attributes.blockHeight,
+      blockHeightMobile = attributes.blockHeightMobile,
+      blockHeightTablet = attributes.blockHeightTablet,
       blockWidth = attributes.blockWidth,
       blockCustomWidthType = attributes.blockCustomWidthType,
       blockCustomWidth = attributes.blockCustomWidth,
@@ -20753,7 +20757,7 @@ var Styles = function Styles(props) {
     desktop: {
       '.pb-alert-box-wrapper': (_pbAlertBoxWrappe = {
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'z-index', blockzIndex ? blockzIndex : undefined), _pbAlertBoxWrappe),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'z-index', blockzIndex ? blockzIndex : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "height", blockHeight ? blockHeight + blockHeightType : undefined), _pbAlertBoxWrappe),
       '.pb-alert-box-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
@@ -20791,9 +20795,10 @@ var Styles = function Styles(props) {
       }
     },
     tablet: {
-      '.pb-alert-box': {
+      '.pb-alert-box-wrapper': {
         padding: abPaddingTablet.top + ' ' + abPaddingTablet.right + ' ' + abPaddingTablet.bottom + ' ' + abPaddingTablet.left,
-        'border-radius': abBorderRadiusTablet.top + ' ' + abBorderRadiusTablet.right + ' ' + abBorderRadiusTablet.bottom + ' ' + abBorderRadiusTablet.left
+        'border-radius': abBorderRadiusTablet.top + ' ' + abBorderRadiusTablet.right + ' ' + abBorderRadiusTablet.bottom + ' ' + abBorderRadiusTablet.left,
+        height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined
       },
       '.pb-alert-box__title': {
         'font-size': titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined
@@ -20803,9 +20808,10 @@ var Styles = function Styles(props) {
       }
     },
     mobile: {
-      '.pb-alert-box': {
+      '.pb-alert-box-wrapper': {
         padding: abPaddingMobile.top + ' ' + abPaddingMobile.right + ' ' + abPaddingMobile.bottom + ' ' + abPaddingMobile.left,
-        'border-radius': abBorderRadiusMobile.top + ' ' + abBorderRadiusMobile.right + ' ' + abBorderRadiusMobile.bottom + ' ' + abBorderRadiusMobile.left
+        'border-radius': abBorderRadiusMobile.top + ' ' + abBorderRadiusMobile.right + ' ' + abBorderRadiusMobile.bottom + ' ' + abBorderRadiusMobile.left,
+        height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined
       },
       '.pb-alert-box__title': {
         'font-size': titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined
@@ -21713,6 +21719,10 @@ var Styles = function Styles(props) {
       inAnimationDelay = attributes.inAnimationDelay,
       outAnimationDuration = attributes.outAnimationDuration,
       outAnimationDelay = attributes.outAnimationDelay,
+      blockHeightType = attributes.blockHeightType,
+      blockHeight = attributes.blockHeight,
+      blockHeightMobile = attributes.blockHeightMobile,
+      blockHeightTablet = attributes.blockHeightTablet,
       blockWidth = attributes.blockWidth,
       blockCustomWidthType = attributes.blockCustomWidthType,
       blockCustomWidth = attributes.blockCustomWidth,
@@ -21756,7 +21766,7 @@ var Styles = function Styles(props) {
       '.pb-click-to-tweet-wrapper': (_pbClickToTweetW = {
         'text-align': textAlign ? textAlign : undefined,
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'z-index', blockzIndex ? blockzIndex : undefined), _pbClickToTweetW),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, 'z-index', blockzIndex ? blockzIndex : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbClickToTweetW, "height", blockHeight ? blockHeight + blockHeightType : undefined), _pbClickToTweetW),
       '.pb-click-to-tweet-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
@@ -21797,7 +21807,8 @@ var Styles = function Styles(props) {
       '.pb-click-to-tweet-wrapper': {
         padding: paddingTablet.top + ' ' + paddingTablet.right + ' ' + paddingTablet.bottom + ' ' + paddingTablet.left,
         margin: marginTablet.top + ' ' + marginTablet.right + ' ' + marginTablet.bottom + ' ' + marginTablet.left,
-        'border-radius': borderRadiusTablet.top + ' ' + borderRadiusTablet.right + ' ' + borderRadiusTablet.bottom + ' ' + borderRadiusTablet.left
+        'border-radius': borderRadiusTablet.top + ' ' + borderRadiusTablet.right + ' ' + borderRadiusTablet.bottom + ' ' + borderRadiusTablet.left,
+        height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined
       },
       '.pb-click-to-tweet--text': {
         'font-size': textSizeTablet ? textSizeTablet + tFontSizeType : undefined
@@ -21810,7 +21821,8 @@ var Styles = function Styles(props) {
       '.pb-click-to-tweet-wrapper': {
         padding: paddingMobile.top + ' ' + paddingMobile.right + ' ' + paddingMobile.bottom + ' ' + paddingMobile.left,
         margin: marginMobile.top + ' ' + marginMobile.right + ' ' + marginMobile.bottom + ' ' + marginMobile.left,
-        'border-radius': borderRadiusMobile.top + ' ' + borderRadiusMobile.right + ' ' + borderRadiusMobile.bottom + ' ' + borderRadiusMobile.left
+        'border-radius': borderRadiusMobile.top + ' ' + borderRadiusMobile.right + ' ' + borderRadiusMobile.bottom + ' ' + borderRadiusMobile.left,
+        height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined
       },
       '.pb-click-to-tweet--text': {
         'font-size': textSizeMobile ? textSizeMobile + tFontSizeType : undefined
@@ -23527,6 +23539,10 @@ var Styles = function Styles(props) {
       inAnimationDelay = attributes.inAnimationDelay,
       outAnimationDuration = attributes.outAnimationDuration,
       outAnimationDelay = attributes.outAnimationDelay,
+      blockHeightType = attributes.blockHeightType,
+      blockHeight = attributes.blockHeight,
+      blockHeightMobile = attributes.blockHeightMobile,
+      blockHeightTablet = attributes.blockHeightTablet,
       blockWidth = attributes.blockWidth,
       blockCustomWidthType = attributes.blockCustomWidthType,
       blockCustomWidth = attributes.blockCustomWidth,
@@ -23621,7 +23637,7 @@ var Styles = function Styles(props) {
     desktop: {
       '.pb-info-box-wrapper': (_pbInfoBoxWrapper = {
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'z-index', blockzIndex ? blockzIndex : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'text-align', txtAlign ? txtAlign : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'align-items', mValign ? mValign : undefined), _pbInfoBoxWrapper),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'z-index', blockzIndex ? blockzIndex : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'text-align', txtAlign ? txtAlign : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, 'align-items', mValign ? mValign : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbInfoBoxWrapper, "height", blockHeight ? blockHeight + blockHeightType : undefined), _pbInfoBoxWrapper),
       '.pb-info-box-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
@@ -23682,7 +23698,8 @@ var Styles = function Styles(props) {
       '.pb-info-box-wrapper': {
         padding: paddingTablet.top + ' ' + paddingTablet.right + ' ' + paddingTablet.bottom + ' ' + paddingTablet.left,
         margin: marginTablet.top + ' ' + marginTablet.right + ' ' + marginTablet.bottom + ' ' + marginTablet.left,
-        'border-radius': borderRadiusTablet.top + ' ' + borderRadiusTablet.right + ' ' + borderRadiusTablet.bottom + ' ' + borderRadiusTablet.left
+        'border-radius': borderRadiusTablet.top + ' ' + borderRadiusTablet.right + ' ' + borderRadiusTablet.bottom + ' ' + borderRadiusTablet.left,
+        height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined
       },
       '.pb-info-box--m': {
         padding: mPaddingTablet.top + ' ' + mPaddingTablet.right + ' ' + mPaddingTablet.bottom + ' ' + mPaddingTablet.left,
@@ -23711,7 +23728,8 @@ var Styles = function Styles(props) {
       '.pb-info-box-wrapper': {
         padding: paddingMobile.top + ' ' + paddingMobile.right + ' ' + paddingMobile.bottom + ' ' + paddingMobile.left,
         margin: marginMobile.top + ' ' + marginMobile.right + ' ' + marginMobile.bottom + ' ' + marginMobile.left,
-        'border-radius': borderRadiusMobile.top + ' ' + borderRadiusMobile.right + ' ' + borderRadiusMobile.bottom + ' ' + borderRadiusMobile.left
+        'border-radius': borderRadiusMobile.top + ' ' + borderRadiusMobile.right + ' ' + borderRadiusMobile.bottom + ' ' + borderRadiusMobile.left,
+        height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined
       },
       '.pb-info-box--m': {
         padding: mPaddingMobile.top + ' ' + mPaddingMobile.right + ' ' + mPaddingMobile.bottom + ' ' + mPaddingMobile.left,
@@ -24360,6 +24378,10 @@ var Styles = function Styles(props) {
       inAnimationDelay = attributes.inAnimationDelay,
       outAnimationDuration = attributes.outAnimationDuration,
       outAnimationDelay = attributes.outAnimationDelay,
+      blockHeightType = attributes.blockHeightType,
+      blockHeight = attributes.blockHeight,
+      blockHeightMobile = attributes.blockHeightMobile,
+      blockHeightTablet = attributes.blockHeightTablet,
       blockWidth = attributes.blockWidth,
       blockCustomWidthType = attributes.blockCustomWidthType,
       blockCustomWidth = attributes.blockCustomWidth,
@@ -24372,7 +24394,7 @@ var Styles = function Styles(props) {
       '.pb-star-rating-wrapper': (_pbStarRatingWrap = {
         'text-align': iconAlign ? iconAlign : undefined,
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'z-index', blockzIndex ? blockzIndex : undefined), _pbStarRatingWrap),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, 'z-index', blockzIndex ? blockzIndex : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbStarRatingWrap, "height", blockHeight ? blockHeight + blockHeightType : undefined), _pbStarRatingWrap),
       '.pb-star-rating-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
@@ -24388,7 +24410,8 @@ var Styles = function Styles(props) {
       '.pb-star-rating-wrapper': {
         padding: paddingTablet.top + ' ' + paddingTablet.right + ' ' + paddingTablet.bottom + ' ' + paddingTablet.left,
         margin: marginTablet.top + ' ' + marginTablet.right + ' ' + marginTablet.bottom + ' ' + marginTablet.left,
-        'border-radius': borderRadiusTablet.top + ' ' + borderRadiusTablet.right + ' ' + borderRadiusTablet.bottom + ' ' + borderRadiusTablet.left
+        'border-radius': borderRadiusTablet.top + ' ' + borderRadiusTablet.right + ' ' + borderRadiusTablet.bottom + ' ' + borderRadiusTablet.left,
+        height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined
       },
       '.pb-star-rating--icon': {
         'font-size': sizeTablet ? sizeTablet + sizeType : undefined
@@ -24398,7 +24421,8 @@ var Styles = function Styles(props) {
       '.pb-star-rating-wrapper': {
         padding: paddingMobile.top + ' ' + paddingMobile.right + ' ' + paddingMobile.bottom + ' ' + paddingMobile.left,
         margin: marginMobile.top + ' ' + marginMobile.right + ' ' + marginMobile.bottom + ' ' + marginMobile.left,
-        'border-radius': borderRadiusMobile.top + ' ' + borderRadiusMobile.right + ' ' + borderRadiusMobile.bottom + ' ' + borderRadiusMobile.left
+        'border-radius': borderRadiusMobile.top + ' ' + borderRadiusMobile.right + ' ' + borderRadiusMobile.bottom + ' ' + borderRadiusMobile.left,
+        height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined
       },
       '.pb-star-rating--icon': {
         'font-size': sizeMobile ? sizeMobile + sizeType : undefined
@@ -24968,7 +24992,7 @@ var attributes = {
   },
   displayBubble: {
     type: 'boolean',
-    default: true
+    default: false
   },
   bubblePosition: {
     type: 'string',
@@ -26382,6 +26406,10 @@ var Styles = function Styles(props) {
       inAnimationDelay = attributes.inAnimationDelay,
       outAnimationDuration = attributes.outAnimationDuration,
       outAnimationDelay = attributes.outAnimationDelay,
+      blockHeightType = attributes.blockHeightType,
+      blockHeight = attributes.blockHeight,
+      blockHeightMobile = attributes.blockHeightMobile,
+      blockHeightTablet = attributes.blockHeightTablet,
       blockWidth = attributes.blockWidth,
       blockCustomWidthType = attributes.blockCustomWidthType,
       blockCustomWidth = attributes.blockCustomWidth,
@@ -26482,7 +26510,7 @@ var Styles = function Styles(props) {
     desktop: {
       '.pb-testimonial-wrapper': (_pbTestimonialWrap = {
         background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "display", 'flex'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'flex-direction', 'column'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'z-index', blockzIndex ? blockzIndex : undefined), _pbTestimonialWrap),
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "display", 'flex'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'flex-direction', 'column'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, 'z-index', blockzIndex ? blockzIndex : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbTestimonialWrap, "height", blockHeight ? blockHeight + blockHeightType : undefined), _pbTestimonialWrap),
       '.pb-testimonial-wrapper:hover': {
         background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
         'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
@@ -26559,7 +26587,8 @@ var Styles = function Styles(props) {
       '.pb-testimonial-wrapper': {
         padding: paddingTablet.top + ' ' + paddingTablet.right + ' ' + paddingTablet.bottom + ' ' + paddingTablet.left,
         margin: marginTablet.top + ' ' + marginTablet.right + ' ' + marginTablet.bottom + ' ' + marginTablet.left,
-        'border-radius': borderRadiusTablet.top + ' ' + borderRadiusTablet.right + ' ' + borderRadiusTablet.bottom + ' ' + borderRadiusTablet.left
+        'border-radius': borderRadiusTablet.top + ' ' + borderRadiusTablet.right + ' ' + borderRadiusTablet.bottom + ' ' + borderRadiusTablet.left,
+        height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined
       },
       '.pb-testimonial-image img': {
         height: imageSizeTablet ? imageSizeTablet + 'px' : undefined,
@@ -26587,7 +26616,8 @@ var Styles = function Styles(props) {
       '.pb-testimonial-wrapper': {
         padding: paddingMobile.top + ' ' + paddingMobile.right + ' ' + paddingMobile.bottom + ' ' + paddingMobile.left,
         margin: marginMobile.top + ' ' + marginMobile.right + ' ' + marginMobile.bottom + ' ' + marginMobile.left,
-        'border-radius': borderRadiusMobile.top + ' ' + borderRadiusMobile.right + ' ' + borderRadiusMobile.bottom + ' ' + borderRadiusMobile.left
+        'border-radius': borderRadiusMobile.top + ' ' + borderRadiusMobile.right + ' ' + borderRadiusMobile.bottom + ' ' + borderRadiusMobile.left,
+        height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined
       },
       '.pb-testimonial-image img': {
         height: imageSizeMobile ? imageSizeMobile + 'px' : undefined,
@@ -28461,6 +28491,10 @@ var Advanced = function Advanced(props) {
       inAnimationDelay = attributes.inAnimationDelay,
       outAnimationDuration = attributes.outAnimationDuration,
       outAnimationDelay = attributes.outAnimationDelay,
+      blockHeightType = attributes.blockHeightType,
+      blockHeight = attributes.blockHeight,
+      blockHeightMobile = attributes.blockHeightMobile,
+      blockHeightTablet = attributes.blockHeightTablet,
       blockWidth = attributes.blockWidth,
       blockCustomWidthType = attributes.blockCustomWidthType,
       blockCustomWidth = attributes.blockCustomWidth,
@@ -28471,7 +28505,11 @@ var Advanced = function Advanced(props) {
       hideOnTablet = attributes.hideOnTablet,
       hideOnMobile = attributes.hideOnMobile,
       customClass = attributes.customClass,
-      customID = attributes.customID;
+      customID = attributes.customID,
+      addWLink = attributes.addWLink,
+      wrapperLink = attributes.wrapperLink,
+      wrapperLinkNewTab = attributes.wrapperLinkNewTab,
+      wrapperLinkNofollow = attributes.wrapperLinkNofollow;
   var currentbgTab = backgroundType || 'color';
 
   var _useState = useState(currentbgTab),
@@ -29244,6 +29282,27 @@ var Advanced = function Advanced(props) {
     min: 0,
     max: 500,
     setAttributes: setAttributes
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ResponsiveRangeControl"], {
+    label: __('Height', 'powerful-blocks'),
+    sizeType: {
+      value: blockHeightType,
+      name: 'blockHeightType'
+    },
+    sizeOnDesktop: {
+      value: blockHeight,
+      name: 'blockHeight'
+    },
+    sizeOnTablet: {
+      value: blockHeightTablet,
+      name: 'blockHeightTablet'
+    },
+    sizeOnMobile: {
+      value: blockHeightMobile,
+      name: 'blockHeightMobile'
+    },
+    min: 0,
+    max: 1000,
+    setAttributes: setAttributes
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(__experimentalNumberControl, {
     className: "pb-custom-number-control",
     label: __('Z-Index', 'powerful-blocks'),
@@ -29298,6 +29357,41 @@ var Advanced = function Advanced(props) {
     onChange: function onChange(customID) {
       setAttributes({
         customID: customID
+      });
+    }
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
+    title: __('Wrapper Link', 'powerful-blocks'),
+    initialOpen: false
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ToggleControl, {
+    label: __('Add Link?', 'powerful-blocks'),
+    checked: addWLink,
+    onChange: function onChange(addWLink) {
+      setAttributes({
+        addWLink: addWLink
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
+    label: __('Link', 'powerful-blocks'),
+    value: wrapperLink,
+    onChange: function onChange(wrapperLink) {
+      setAttributes({
+        wrapperLink: wrapperLink
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ToggleControl, {
+    label: __('Open in new window', 'powerful-blocks'),
+    checked: wrapperLinkNewTab,
+    onChange: function onChange(wrapperLinkNewTab) {
+      setAttributes({
+        wrapperLinkNewTab: wrapperLinkNewTab
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ToggleControl, {
+    label: __('Add Nofollow?', 'powerful-blocks'),
+    checked: wrapperLinkNofollow,
+    onChange: function onChange(wrapperLinkNofollow) {
+      setAttributes({
+        wrapperLinkNofollow: wrapperLinkNofollow
       });
     }
   })));
@@ -29630,6 +29724,22 @@ var advancedAttributes = {
     type: 'string',
     default: ''
   },
+  blockHeightType: {
+    type: 'string',
+    default: 'px'
+  },
+  blockHeight: {
+    type: 'number',
+    default: ''
+  },
+  blockHeightTablet: {
+    type: 'number',
+    default: ''
+  },
+  blockHeightMobile: {
+    type: 'number',
+    default: ''
+  },
   blockCustomWidthType: {
     type: 'string',
     default: 'px'
@@ -29671,6 +29781,23 @@ var advancedAttributes = {
   customID: {
     type: 'string',
     default: ''
+  },
+  // Wrapper Link
+  addWLink: {
+    type: 'boolean',
+    default: false
+  },
+  wrapperLink: {
+    type: 'string',
+    default: ''
+  },
+  wrapperLinkNewTab: {
+    type: 'boolean',
+    default: true
+  },
+  wrapperLinkNofollow: {
+    type: 'boolean',
+    default: false
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (advancedAttributes);

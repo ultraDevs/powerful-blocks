@@ -64,7 +64,13 @@ const Styles = ( props ) => {
         inAnimationDuration,
         inAnimationDelay,
         outAnimationDuration,
-        outAnimationDelay,
+		outAnimationDelay,
+		
+		blockHeightType,
+        blockHeight,
+        blockHeightMobile,
+		blockHeightTablet,
+		
 		blockWidth,
 		blockCustomWidthType,
         blockCustomWidth,
@@ -211,6 +217,7 @@ const Styles = ( props ) => {
 				'z-index': blockzIndex ? blockzIndex : undefined,
 				'text-align': txtAlign ? txtAlign : undefined,
 				'align-items': mValign ? mValign : undefined,
+				height: blockHeight ? blockHeight + blockHeightType : undefined,
 			},
 			'.pb-info-box-wrapper:hover': {
 				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
@@ -403,6 +410,7 @@ const Styles = ( props ) => {
 					borderRadiusTablet.bottom +
 					' ' +
 					borderRadiusTablet.left,
+				height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined,
 			},
 			'.pb-info-box--m' : {
 				padding:
@@ -494,6 +502,7 @@ const Styles = ( props ) => {
 					borderRadiusMobile.bottom +
 					' ' +
 					borderRadiusMobile.left,
+				height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined,
 			},
 			'.pb-info-box--m' : {
 				padding:

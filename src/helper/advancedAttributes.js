@@ -334,6 +334,22 @@ const advancedAttributes = {
 		type: 'string',
 		default: '',
 	},
+	blockHeightType: {
+		type: 'string',
+		default: 'px',
+	},
+	blockHeight: {
+		type: 'number',
+		default: '',
+	},
+	blockHeightTablet: {
+		type: 'number',
+		default: '',
+	},
+	blockHeightMobile: {
+		type: 'number',
+		default: '',
+	},
 	blockCustomWidthType: {
 		type: 'string',
 		default: 'px',
@@ -378,6 +394,24 @@ const advancedAttributes = {
 	customID: {
 		type: 'string',
 		default: '',
+	},
+
+	// Wrapper Link
+	addWLink: {
+		type: 'boolean',
+		default: false,
+	},
+	wrapperLink: {
+		type: 'string',
+		default: '',
+	},
+	wrapperLinkNewTab: {
+		type: 'boolean',
+		default: true,
+	},
+	wrapperLinkNofollow: {
+		type: 'boolean',
+		default: false,
 	},
 };
 export default advancedAttributes;

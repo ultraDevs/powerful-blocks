@@ -99,7 +99,13 @@ const Styles = ( props ) => {
         inAnimationDuration,
         inAnimationDelay,
         outAnimationDuration,
-        outAnimationDelay,
+		outAnimationDelay,
+		
+		blockHeightType,
+        blockHeight,
+        blockHeightMobile,
+		blockHeightTablet,
+		
 		blockWidth,
 		blockCustomWidthType,
         blockCustomWidth,
@@ -157,6 +163,7 @@ const Styles = ( props ) => {
 					' ' +
 					borderRadius.left,
 				'z-index': blockzIndex ? blockzIndex : undefined,
+				height: blockHeight ? blockHeight + blockHeightType : undefined,
 			},
 			'.pb-alert-box-wrapper:hover': {
 				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
@@ -251,7 +258,7 @@ const Styles = ( props ) => {
 			},
 		},
 		tablet: {
-			'.pb-alert-box': {
+			'.pb-alert-box-wrapper': {
 				padding:
 					abPaddingTablet.top +
 					' ' +
@@ -268,6 +275,8 @@ const Styles = ( props ) => {
 					abBorderRadiusTablet.bottom +
 					' ' +
 					abBorderRadiusTablet.left,
+				height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined,
+				
 			},
 			'.pb-alert-box__title': {
 				'font-size': titleFontSizeTablet
@@ -281,7 +290,7 @@ const Styles = ( props ) => {
 			},
 		},
 		mobile: {
-			'.pb-alert-box': {
+			'.pb-alert-box-wrapper': {
 				padding:
 					abPaddingMobile.top +
 					' ' +
@@ -298,6 +307,8 @@ const Styles = ( props ) => {
 					abBorderRadiusMobile.bottom +
 					' ' +
 					abBorderRadiusMobile.left,
+				height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined,
+				
 			},
 			'.pb-alert-box__title': {
 				'font-size': titleFontSizeMobile

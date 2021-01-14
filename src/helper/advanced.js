@@ -102,12 +102,19 @@ const Advanced = ( props ) => {
         borderRadius,
         borderRadiusTablet,
         borderRadiusMobile,
+
         inAnimation,
         outAnimation,
         inAnimationDuration,
         inAnimationDelay,
         outAnimationDuration,
         outAnimationDelay,
+
+        blockHeightType,
+        blockHeight,
+        blockHeightMobile,
+        blockHeightTablet,
+
         blockWidth,
         blockCustomWidthType,
         blockCustomWidth,
@@ -119,6 +126,11 @@ const Advanced = ( props ) => {
         hideOnMobile,
         customClass,
         customID,
+
+        addWLink,
+        wrapperLink,
+        wrapperLinkNewTab,
+        wrapperLinkNofollow,
         
     } = attributes;
     
@@ -810,6 +822,18 @@ const Advanced = ( props ) => {
                         setAttributes = { setAttributes }
                     />
                 ) }
+                <ResponsiveRangeControl
+                        label={ __( 'Height', 'powerful-blocks' ) }
+                        sizeType = {
+                            { value: blockHeightType, name: 'blockHeightType' }
+                        }
+                        sizeOnDesktop = { { value: blockHeight, name: 'blockHeight' } }
+                        sizeOnTablet = { { value: blockHeightTablet, name: 'blockHeightTablet' } }
+                        sizeOnMobile = { { value: blockHeightMobile, name: 'blockHeightMobile' } }
+                        min={ 0 }
+                        max={ 1000 }
+                        setAttributes = { setAttributes }
+                    />
                 <__experimentalNumberControl
                     className = "pb-custom-number-control"
                     label = { __( 'Z-Index', 'powerful-blocks' ) }
@@ -856,6 +880,36 @@ const Advanced = ( props ) => {
                     value={ customID }
                     onChange={ ( customID ) => {
                         setAttributes( { customID } );
+                    } }
+                />
+            </PanelBody>
+            <PanelBody title={ __( 'Wrapper Link', 'powerful-blocks' ) } initialOpen={ false }>
+                <ToggleControl
+                    label={ __( 'Add Link?', 'powerful-blocks' ) }
+                    checked={ addWLink }
+                    onChange={ ( addWLink ) => {
+                        setAttributes( { addWLink } );
+                    } }
+                />
+                <TextControl
+                    label={ __( 'Link', 'powerful-blocks' ) }
+                    value={ wrapperLink }
+                    onChange={ ( wrapperLink ) => {
+                        setAttributes( { wrapperLink } );
+                    } }
+                />
+                <ToggleControl
+                    label={ __( 'Open in new window', 'powerful-blocks' ) }
+                    checked={ wrapperLinkNewTab }
+                    onChange={ ( wrapperLinkNewTab ) => {
+                        setAttributes( { wrapperLinkNewTab } );
+                    } }
+                />
+                <ToggleControl
+                    label={ __( 'Add Nofollow?', 'powerful-blocks' ) }
+                    checked={ wrapperLinkNofollow }
+                    onChange={ ( wrapperLinkNofollow ) => {
+                        setAttributes( { wrapperLinkNofollow } );
                     } }
                 />
             </PanelBody>

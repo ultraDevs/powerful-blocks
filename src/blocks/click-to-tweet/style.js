@@ -64,7 +64,13 @@ const Styles = ( props ) => {
         inAnimationDuration,
         inAnimationDelay,
         outAnimationDuration,
-        outAnimationDelay,
+		outAnimationDelay,
+		
+		blockHeightType,
+        blockHeight,
+        blockHeightMobile,
+		blockHeightTablet,
+		
 		blockWidth,
 		blockCustomWidthType,
         blockCustomWidth,
@@ -159,7 +165,7 @@ const Styles = ( props ) => {
 					' ' +
 					borderRadius.left,
 				'z-index': blockzIndex ? blockzIndex : undefined,
-				
+				height: blockHeight ? blockHeight + blockHeightType : undefined,
 			},
 			'.pb-click-to-tweet-wrapper:hover': {
 				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
@@ -280,6 +286,7 @@ const Styles = ( props ) => {
 					borderRadiusTablet.bottom +
 					' ' +
 					borderRadiusTablet.left,
+				height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined,
 			},
 			'.pb-click-to-tweet--text': {
 				'font-size': textSizeTablet ? textSizeTablet + tFontSizeType : undefined,
@@ -316,6 +323,7 @@ const Styles = ( props ) => {
 					borderRadiusMobile.bottom +
 					' ' +
 					borderRadiusMobile.left,
+				height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined,
 			},
 			'.pb-click-to-tweet--text': {
 				'font-size': textSizeMobile ? textSizeMobile + tFontSizeType : undefined,
