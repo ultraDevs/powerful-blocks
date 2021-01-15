@@ -292,7 +292,7 @@ const Styles = ( props ) => {
 					: undefined,
 				'font-size': nameFontSize ? nameFontSize + nameFontSizeType : undefined,
 				'font-weight':nameFontWeight
-					? nameFontWeight
+					? nameFontWeight + '!important'
 					: undefined,
 				'font-style': nameFontStyle
 					? nameFontStyle
@@ -397,7 +397,7 @@ const Styles = ( props ) => {
 					: undefined,
 				'font-size': titleFontSize ? titleFontSize + titleFontSizeType : undefined,
 				'font-weight': titleFontWeight
-					? titleFontWeight
+					? titleFontWeight + '!important'
 					: undefined,
 				'font-style': titleFontStyle
 					? titleFontStyle
