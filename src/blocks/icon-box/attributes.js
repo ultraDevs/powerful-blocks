@@ -13,11 +13,6 @@ const attributes = {
 		default: 'center',
 	},
 
-	mType: {
-		type: 'string',
-		default: 'icon',
-	},
-
 	icon: {
 		type: 'string',
 		default: 'fab fa-wordpress',
@@ -33,58 +28,6 @@ const attributes = {
 	iconBGColor: {
 		type: 'string',
 		default: 'transparent',
-	},
-
-	mPosition: {
-		type: 'string',
-		default: 'top',
-	},
-	mValign: {
-		type: 'string',
-		default: 'middle',
-	},
-
-	img: {
-		type: 'object',
-		default: {
-			id: undefined,
-			alt: '',
-			size: undefined,
-			url: '',
-		},
-	},
-	imgHeightType: {
-		type: "string",
-		default: "px"
-	},
-	imgHeight: {
-		type: "number",
-		default: "100"
-	},
-	imgHeightTablet: {
-		type: "number",
-		default: "100"
-	},
-	imgHeightMobile: {
-		type: "number",
-		default: "100"
-	},
-
-	imgWidthType: {
-		type: "string",
-		default: "px"
-	},
-	imgWidth: {
-		type: "number",
-		default: "100"
-	},
-	imgWidthTablet: {
-		type: "number",
-		default: "100"
-	},
-	imgWidthMobile: {
-		type: "number",
-		default: "100"
 	},
 
 	mPadding: {
@@ -282,10 +225,10 @@ const attributes = {
 	contentBPadding: {
 		type: 'object',
 		default: {
-			top: '10px',
-			left: '10px',
-			right: '10px',
-			bottom: '10px',
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
 		},
 	},
 	contentBPaddingTablet: {
@@ -309,7 +252,7 @@ const attributes = {
 
 	title: {
 		type: 'string',
-		default: __( 'PB Info Box Title', 'powerful-blocks' ),
+		default: __( 'PB Icon Box', 'powerful-blocks' ),
 	},
 	titleColor: {
 		type: 'string',
@@ -394,91 +337,6 @@ const attributes = {
 		default: '',
 	},
 
-	content: {
-		type: 'string',
-		default: __( 'PB Info Box Description Goes Here.', 'powerful-blocks' ),
-	},
-	contentColor: {
-		type: 'string',
-		default: '#333',
-	},
-
-	contentMargin: {
-		type: 'object',
-		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '10px',
-		},
-	},
-	contentMarginTablet: {
-		type: 'object',
-		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
-		},
-	},
-	contentMarginMobile: {
-		type: 'object',
-		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
-		},
-	},
-	
-	contentFontFamily: {
-		type: 'string',
-		default: '',
-	},
-
-	contentFontSizeType: {
-		type: 'string',
-		default: 'px',
-	},
-	contentFontStyle: {
-		type: 'string',
-		default: 'normal',
-	},
-
-	contentFontSize: {
-		type: 'number',
-		default: 18,
-	},
-
-	contentFontSizeTablet: {
-		type: 'number',
-		default: 17,
-	},
-
-	contentFontSizeMobile: {
-		type: 'number',
-		default: 16,
-	},
-	contentFontWeight: {
-		type: 'string',
-		default: 'normal',
-	},
-	contentTextTransform: {
-		type: 'string',
-		default: '',
-	},
-	contentTextDecoration: {
-		type: 'string',
-		default: '',
-	},
-	contentLetterSpacing: {
-		type: 'number',
-		default: '',
-	},
-	contentLineHeight: {
-		type: 'number',
-		default: '',
-	},
 
 	preset: {
 		type: 'string',

@@ -80,20 +80,11 @@ const Styles = ( props ) => {
 		
 
 		txtAlign,
-		mType,
-		iconSize,
+		icon,
 		iconColor,
+		iconSize,
 		iconBGColor,
-		mPosition,
-		mValign,
-		imgHeightType,
-		imgHeight,
-		imgHeightTablet,
-		imgHeightMobile,
-		imgWidthType,
-		imgWidth,
-		imgWidthTablet,
-		imgWidthMobile,
+		
 		mPadding,
 		mPaddingTablet,
 		mPaddingMobile,
@@ -131,6 +122,7 @@ const Styles = ( props ) => {
 		contentBPadding,
 		contentBPaddingTablet,
 		contentBPaddingMobile,
+		title,
 		titleColor,
 		titleMargin,
 		titleMarginTablet,
@@ -146,32 +138,18 @@ const Styles = ( props ) => {
 		titleTextDecoration,
 		titleLetterSpacing,
 		titleLineHeight,
-		contentColor,
-		contentMargin,
-		contentMarginTablet,
-		contentMarginMobile,
-		contentFontFamily,
-		contentFontSizeType,
-		contentFontStyle,
-		contentFontSize,
-		contentFontSizeTablet,
-		contentFontSizeMobile,
-		contentFontWeight,
-		contentTextTransform,
-		contentTextDecoration,
-		contentLetterSpacing,
-		contentLineHeight,
-		preset
+		
+		preset,
 
 	} = attributes;
 
 
-	const selectorPrefix = `#pb-info-box-${ blockId }`;
+	const selectorPrefix = `#pb-icon-box-${ blockId }`;
 
 
 	let rules = {
 		desktop: {
-			'.pb-info-box-wrapper': {
+			'.pb-icon-box-wrapper': {
 				background: 'image' !== backgroundType ? backgroundColor : gradientValue,
 				background: 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : '',
 				padding:
@@ -216,10 +194,9 @@ const Styles = ( props ) => {
 					borderRadius.left,
 				'z-index': blockzIndex ? blockzIndex : undefined,
 				'text-align': txtAlign ? txtAlign : undefined,
-				'align-items': mValign ? mValign : undefined,
 				height: blockHeight ? blockHeight + blockHeightType : undefined,
 			},
-			'.pb-info-box-wrapper:hover': {
+			'.pb-icon-box-wrapper:hover': {
 				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
 				'border-width': hoverBorderSize
 					? hoverBorderSize + 'px'
@@ -237,7 +214,7 @@ const Styles = ( props ) => {
 					hoverShadowSpread +
 					'px ' + hoverShadowColor,
 			},
-			'.pb-info-box--m' : {
+			'.pb-icon-box--m' : {
 				padding:
 				mPadding.top +
 				' ' +
@@ -279,16 +256,13 @@ const Styles = ( props ) => {
 				mBorderRadius.left,
 				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
 			},
-			'.pb-info-box--icon' : {
+			'.pb-icon-box--icon' : {
 				color: iconColor ? iconColor : undefined,
 				background: iconBGColor ? iconBGColor : undefined,
 				'font-size': iconSize ? iconSize + 'px' : undefined,
 			},
-			'.pb-info-box--image img' : {
-				width: imgWidth ? imgWidth + imgWidthType : undefined,
-				height: imgHeight ? imgHeight + imgHeightType : undefined,
-			},
-			'.pb-info-box--m:hover' : {
+			
+			'.pb-icon-box--m:hover' : {
 				'box-shadow': hoverMShadowType + ' ' +
 				hoverMShadowHOffset +
 					'px ' +
@@ -304,7 +278,7 @@ const Styles = ( props ) => {
 				'border-style': hoverMBorderStyle ? hoverMBorderStyle : undefined,
 				'border-color': hoverMBorderColor ? hoverMBorderColor : undefined,
 			},
-			'.pb-info-box--body' : {
+			'.pb-icon-box--body' : {
 				padding: contentBPadding.top +
 				' ' +
 				contentBPadding.right +
@@ -313,9 +287,8 @@ const Styles = ( props ) => {
 				' ' +
 				contentBPadding.left,
 				'margin-top': mOffsetTop ? mOffsetTop + mOffsetType : undefined,
-
 			},
-			'.pb-info-box--body__title' : {
+			'.pb-icon-box--body__title' : {
 				margin: titleMargin.top +
 				' ' +
 				titleMargin.right +
@@ -329,7 +302,7 @@ const Styles = ( props ) => {
 					? titleFontFamily + '!important'
 					: undefined,
 				'font-weight': titleFontWeight
-					? titleFontWeight + '!important'
+					? titleFontWeight  + '!important'
 					: undefined,
 				'font-style': titleFontStyle
 					? titleFontStyle
@@ -347,47 +320,10 @@ const Styles = ( props ) => {
 					? titleTextDecoration
 					: undefined,
 			},
-			'.pb-info-box--body__content' : {
-				margin: contentMargin.top +
-				' ' +
-				contentMargin.right +
-				' ' +
-				contentMargin.bottom +
-				' ' +
-				contentMargin.left,
-				
-			},
-			'.pb-info-box--body__content p' : {
-				color: contentColor ? contentColor : undefined,
-				'font-size' : contentFontSize ? contentFontSize + contentFontSizeTablet : undefined,
-				'font-family': contentFontFamily
-					? contentFontFamily + '!important'
-					: undefined,
-				'font-size': contentFontSize
-					? contentFontSize + contentFontSizeType
-					: undefined,
-				'font-weight': contentFontWeight
-					? contentFontWeight + '!important'
-					: undefined,
-				'font-style': contentFontStyle
-					? contentFontStyle
-					: undefined,
-				'letter-spacing': contentLetterSpacing
-					? contentLetterSpacing + 'px'
-					: undefined,
-				'line-height': contentLineHeight
-					? contentLineHeight + 'px'
-					: undefined,
-				'text-transform': contentTextTransform
-					? contentTextTransform
-					: undefined,
-				'text-decoration': contentTextDecoration
-					? contentTextDecoration
-					: undefined,
-			},
+			
 		},
 		tablet: {
-			'.pb-info-box-wrapper': {
+			'.pb-icon-box-wrapper': {
 				padding:
 					paddingTablet.top +
 					' ' +
@@ -414,7 +350,7 @@ const Styles = ( props ) => {
 					borderRadiusTablet.left,
 				height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined,
 			},
-			'.pb-info-box--m' : {
+			'.pb-icon-box--m' : {
 				padding:
 				mPaddingTablet.top +
 				' ' +
@@ -442,11 +378,8 @@ const Styles = ( props ) => {
 			transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
 			
 			},
-			'.pb-info-box--image img' : {
-				width: imgWidthTablet ? imgWidthTablet + imgWidthType : undefined,
-				height: imgHeightTablet ? imgHeightTablet + imgHeightType : undefined,
-			},
-			'.pb-info-box--body' : {
+			
+			'.pb-icon-box--body' : {
 				padding: contentBPaddingTablet.top +
 				' ' +
 				contentBPaddingTablet.right +
@@ -457,7 +390,7 @@ const Styles = ( props ) => {
 				'margin-top': mOffsetTopTablet ? mOffsetTopTablet + mOffsetType : undefined,
 
 			},
-			'.pb-info-box--body__title' : {
+			'.pb-icon-box--body__title' : {
 				margin: titleMarginTablet.top +
 				' ' +
 				titleMarginTablet.right +
@@ -467,21 +400,10 @@ const Styles = ( props ) => {
 				titleMarginTablet.left,
 				'font-size' : titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined,
 			},
-			'.pb-info-box--body__content' : {
-				margin: contentMarginTablet.top +
-				' ' +
-				contentMarginTablet.right +
-				' ' +
-				contentMarginTablet.bottom +
-				' ' +
-				contentMarginTablet.left,
-			},
-			'.pb-info-box--body__content' : {
-				'font-size' : contentFontSizeTablet ? contentFontSizeTablet + contentFontSizeTablet : undefined,
-			},
+			
 		},
 		mobile: {
-			'.pb-info-box-wrapper': {
+			'.pb-icon-box-wrapper': {
 				padding:
 					paddingMobile.top +
 					' ' +
@@ -508,7 +430,7 @@ const Styles = ( props ) => {
 					borderRadiusMobile.left,
 				height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined,
 			},
-			'.pb-info-box--m' : {
+			'.pb-icon-box--m' : {
 				padding:
 				mPaddingMobile.top +
 				' ' +
@@ -536,11 +458,7 @@ const Styles = ( props ) => {
 			transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
 			
 			},
-			'.pb-info-box--image img' : {
-				width: imgWidthMobile ? imgWidthMobile + imgWidthType : undefined,
-				height: imgHeightMobile ? imgHeightMobile + imgHeightType : undefined,
-			},
-			'.pb-info-box--body' : {
+			'.pb-icon-box--body' : {
 				padding: contentBPaddingMobile.top +
 				' ' +
 				contentBPaddingMobile.right +
@@ -551,7 +469,7 @@ const Styles = ( props ) => {
 				'margin-top': mOffsetTopMobile ? mOffsetTopMobile + mOffsetType : undefined,
 
 			},
-			'.pb-info-box--body__title' : {
+			'.pb-icon-box--body__title' : {
 				margin: titleMarginMobile.top +
 				' ' +
 				titleMarginMobile.right +
@@ -561,19 +479,7 @@ const Styles = ( props ) => {
 				titleMarginMobile.left,
 				'font-size' : titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined,
 			},
-			'.pb-info-box--body__content' : {
-				margin: contentMarginMobile.top +
-				' ' +
-				contentMarginMobile.right +
-				' ' +
-				contentMarginMobile.bottom +
-				' ' +
-				contentMarginMobile.left,
-			},
-			'.pb-info-box--body__content p' : {
-				
-				'font-size' : contentFontSizeMobile ? contentFontSizeMobile + contentFontSizeTablet : undefined,
-			},
+			
 		},
 	};
 

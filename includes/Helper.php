@@ -61,6 +61,11 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'icon-box'  => array(
+				'title'  => __( 'Icon Box', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );

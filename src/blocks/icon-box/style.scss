@@ -1,0 +1,18 @@
+
+.pb-icon-box-wrapper {
+	transition: all 0.3s ease-in-out;
+	position: relative;
+	.pb-icon-box--m {
+		display: inline-block;
+	}
+	.pb-icon-box--body {
+		.pb-icon-box--body__title {
+
+		}
+		.pb-icon-box--body__content {
+			p {
+				margin: 0px ;
+			}
+		}
+	}
+}

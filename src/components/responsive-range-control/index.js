@@ -12,7 +12,7 @@ const BaseRangeControl = ( props ) => {
 			value={ props.value }
 			min={ props.min ? props.min : 1 }
 			max={ props.max ? props.max : 200 }
-			allowReset
+			allowReset = { 'undefined' !== typeof props.allowReset ? props.allowReset : true }
 			onChange={ props.onChange }
 		/>
 	);
@@ -90,7 +90,7 @@ const ResponsiveRangeControl = ( props ) => {
 						} }
 						min = { props.min }
 						max = { props.max }
-						
+						allowReset = { props.allowReset }
 					/>
 				) }
 				{ 'tablet' === device && (
@@ -101,6 +101,7 @@ const ResponsiveRangeControl = ( props ) => {
 						} }
 						min = { props.min }
 						max = { props.max }
+						allowReset = { props.allowReset }
 					/>
 				) }
 				{ 'mobile' === device && (
@@ -111,6 +112,7 @@ const ResponsiveRangeControl = ( props ) => {
 						} }
 						min = { props.min }
 						max = { props.max }
+						allowReset = { props.allowReset }
 					/>
 				) }
 		</BaseControl>
