@@ -1,4 +1,4 @@
-import { renderStyle } from '../../components/utils';
+import { renderStyle } from '../../helper/utils';
 
 import AdvancedCSS from '../../helper/advancedCSS';
 
