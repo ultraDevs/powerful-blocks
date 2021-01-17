@@ -33,7 +33,6 @@ const Styles = ( props ) => {
 		},
 	};
 
-
 	const advancedRules = AdvancedCSS( attributes );
 
 	let keys = [...new Set([...Object.keys(rules),...Object.keys(advancedRules)])]

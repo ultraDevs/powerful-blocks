@@ -22,6 +22,13 @@ const edit = ( props ) => {
 		customClass,
 		customID,
 
+		enableCondition,
+
+		inAnimation,
+        outAnimation,
+        inAnimationDuration,
+        outAnimationDuration,
+
 		addWLink,
         wrapperLink,
         wrapperLinkNewTab,
@@ -53,6 +60,7 @@ const edit = ( props ) => {
 				<div
 					className={ classnames(
 						'pb-alert-box-wrapper',
+						'pb-block-advanced--wrapper',
 						props.className,
 						customClass,
 						hideOnDesktop ? 'pb-hide-d' : '',
@@ -60,6 +68,11 @@ const edit = ( props ) => {
 						hideOnMobile ? 'pb-hide-m' : '',
 						blockWidth ? 'pb-b-e--width' : '',
 						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+						true === enableCondition ? 'pb-block-conditions' : '',
+						'' !== inAnimation ? `pb__animated pb__${inAnimation}` : '',
+						'' !== outAnimation ? `pb__animated_out pb__out_${outAnimation}` : '',
+						'' !== inAnimationDuration ? `pb-anim-dur__${inAnimationDuration}` : '',
+						'' !== outAnimationDuration ? `pb-anim-out-dur__${outAnimationDuration}` : '',
 					) }
 					id = { customID ? customID : '' }
 					data-pb-link = { true === addWLink ? WrapperLink : '' }

@@ -6,6 +6,8 @@
   background-color: #d6efee;
   color: #094264;
   padding: 30px; }
+  .wp-block-powerful-blocks-alert-box .pb-alert-box .pb-alert-box__title {
+    color: #094264; }
 
 .wp-block-powerful-blocks-alert-box.is-style-info .pb-alert-box {
   background-color: #d6efee;

@@ -20100,6 +20100,11 @@ var edit = function edit(props) {
       blockWidth = attributes.blockWidth,
       customClass = attributes.customClass,
       customID = attributes.customID,
+      enableCondition = attributes.enableCondition,
+      inAnimation = attributes.inAnimation,
+      outAnimation = attributes.outAnimation,
+      inAnimationDuration = attributes.inAnimationDuration,
+      outAnimationDuration = attributes.outAnimationDuration,
       addWLink = attributes.addWLink,
       wrapperLink = attributes.wrapperLink,
       wrapperLinkNewTab = attributes.wrapperLinkNewTab,
@@ -20131,7 +20136,7 @@ var edit = function edit(props) {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     id: "pb-alert-box-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('pb-alert-box-wrapper', props.className, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : ''),
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('pb-alert-box-wrapper', 'pb-block-advanced--wrapper', props.className, customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : '', true === enableCondition ? 'pb-block-conditions' : '', '' !== inAnimation ? "pb__animated pb__".concat(inAnimation) : '', '' !== outAnimation ? "pb__animated_out pb__out_".concat(outAnimation) : '', '' !== inAnimationDuration ? "pb-anim-dur__".concat(inAnimationDuration) : '', '' !== outAnimationDuration ? "pb-anim-out-dur__".concat(outAnimationDuration) : ''),
     id: customID ? customID : '',
     "data-pb-link": true === addWLink ? WrapperLink : ''
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
@@ -20635,6 +20640,11 @@ var save = function save(_ref) {
       blockWidth = attributes.blockWidth,
       customClass = attributes.customClass,
       customID = attributes.customID,
+      enableCondition = attributes.enableCondition,
+      inAnimation = attributes.inAnimation,
+      outAnimation = attributes.outAnimation,
+      inAnimationDuration = attributes.inAnimationDuration,
+      outAnimationDuration = attributes.outAnimationDuration,
       addWLink = attributes.addWLink,
       wrapperLink = attributes.wrapperLink,
       wrapperLinkNewTab = attributes.wrapperLinkNewTab,
@@ -20653,7 +20663,11 @@ var save = function save(_ref) {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     id: "pb-alert-box-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, 'pb-alert-box-wrapper', customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : ''),
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, 'pb-alert-box-wrapper', 'pb-block-advanced--wrapper', customClass, hideOnDesktop ? 'pb-hide-d' : '', hideOnTablet ? 'pb-hide-t' : '', hideOnMobile ? 'pb-hide-m' : '', blockWidth ? 'pb-b-e--width' : '', 'image' === backgroundType ? 'pb-ab-bg--image' : '', true === enableCondition ? 'pb-block-conditions' : '', '' !== inAnimation ? 'pb__animated' : '', '' !== outAnimation ? 'pb__animated_out' : '', '' !== inAnimationDuration ? "pb-anim-dur__".concat(inAnimationDuration) : '', '' !== outAnimationDuration ? "pb-anim-out-dur__".concat(outAnimationDuration) : ''),
+    "data-pb-animation": JSON.stringify({
+      'in': inAnimation ? inAnimation : '',
+      'out': outAnimation ? outAnimation : ''
+    }),
     id: customID ? customID : '',
     "data-pb-link": true === addWLink ? WrapperLink : ''
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
@@ -20687,13 +20701,21 @@ var save = function save(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/utils */ "./src/components/utils.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/utils */ "./src/components/utils.js");
+/* harmony import */ var _helper_advancedCSS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helper/advancedCSS */ "./src/helper/advancedCSS.js");
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 
 var Styles = function Styles(props) {
-  var _pbAlertBoxWrappe;
-
   var attributes = props.attributes;
   var blockId = attributes.blockId,
       abBorderRadius = attributes.abBorderRadius,
@@ -20727,83 +20749,11 @@ var Styles = function Styles(props) {
       contentFontSize = attributes.contentFontSize,
       contentFontSizeTablet = attributes.contentFontSizeTablet,
       contentFontSizeMobile = attributes.contentFontSizeMobile,
-      contentFontStyle = attributes.contentFontStyle,
-      backgroundType = attributes.backgroundType,
-      hoverBackgroundType = attributes.hoverBackgroundType,
-      backgroundColor = attributes.backgroundColor,
-      hoverBackgroundColor = attributes.hoverBackgroundColor,
-      backgroundImg = attributes.backgroundImg,
-      backgroundImgPosition = attributes.backgroundImgPosition,
-      backgroundImgSize = attributes.backgroundImgSize,
-      backgroundImgRepeat = attributes.backgroundImgRepeat,
-      backgroundImgAttachment = attributes.backgroundImgAttachment,
-      backgroundImgOverlayColor = attributes.backgroundImgOverlayColor,
-      backgroundOpacity = attributes.backgroundOpacity,
-      hoverBackgroundImg = attributes.hoverBackgroundImg,
-      hoverBackgroundImgPosition = attributes.hoverBackgroundImgPosition,
-      hoverBackgroundImgSize = attributes.hoverBackgroundImgSize,
-      hoverBackgroundImgRepeat = attributes.hoverBackgroundImgRepeat,
-      hoverBackgroundImgAttachment = attributes.hoverBackgroundImgAttachment,
-      hoverBackgroundImgOverlayColor = attributes.hoverBackgroundImgOverlayColor,
-      hoverBackgroundOpacity = attributes.hoverBackgroundOpacity,
-      gradientValue = attributes.gradientValue,
-      hoverGradientValue = attributes.hoverGradientValue,
-      padding = attributes.padding,
-      paddingTablet = attributes.paddingTablet,
-      paddingMobile = attributes.paddingMobile,
-      margin = attributes.margin,
-      marginTablet = attributes.marginTablet,
-      marginMobile = attributes.marginMobile,
-      shadowColor = attributes.shadowColor,
-      shadowHOffset = attributes.shadowHOffset,
-      shadowVOffset = attributes.shadowVOffset,
-      shadowBlur = attributes.shadowBlur,
-      shadowSpread = attributes.shadowSpread,
-      shadowType = attributes.shadowType,
-      hoverShadowColor = attributes.hoverShadowColor,
-      hoverShadowHOffset = attributes.hoverShadowHOffset,
-      hoverShadowVOffset = attributes.hoverShadowVOffset,
-      hoverShadowBlur = attributes.hoverShadowBlur,
-      hoverShadowSpread = attributes.hoverShadowSpread,
-      hoverShadowType = attributes.hoverShadowType,
-      borderStyle = attributes.borderStyle,
-      borderSize = attributes.borderSize,
-      borderColor = attributes.borderColor,
-      hoverBorderStyle = attributes.hoverBorderStyle,
-      hoverBorderSize = attributes.hoverBorderSize,
-      hoverBorderColor = attributes.hoverBorderColor,
-      borderRadius = attributes.borderRadius,
-      borderRadiusTablet = attributes.borderRadiusTablet,
-      borderRadiusMobile = attributes.borderRadiusMobile,
-      inAnimation = attributes.inAnimation,
-      outAnimation = attributes.outAnimation,
-      inAnimationDuration = attributes.inAnimationDuration,
-      inAnimationDelay = attributes.inAnimationDelay,
-      outAnimationDuration = attributes.outAnimationDuration,
-      outAnimationDelay = attributes.outAnimationDelay,
-      blockHeightType = attributes.blockHeightType,
-      blockHeight = attributes.blockHeight,
-      blockHeightMobile = attributes.blockHeightMobile,
-      blockHeightTablet = attributes.blockHeightTablet,
-      blockWidth = attributes.blockWidth,
-      blockCustomWidthType = attributes.blockCustomWidthType,
-      blockCustomWidth = attributes.blockCustomWidth,
-      blockCustomWidthTablet = attributes.blockCustomWidthTablet,
-      blockCustomWidthMobile = attributes.blockCustomWidthMobile,
-      blockzIndex = attributes.blockzIndex;
+      contentFontStyle = attributes.contentFontStyle;
   var selectorPrefix = "#pb-alert-box-".concat(blockId);
   var rules = {
     desktop: {
-      '.pb-alert-box-wrapper': (_pbAlertBoxWrappe = {
-        background: 'image' !== backgroundType ? backgroundColor : gradientValue
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "background", 'image' !== backgroundType ? 'color' === backgroundType ? backgroundColor : gradientValue : ''), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "padding", padding.top + ' ' + padding.right + ' ' + padding.bottom + ' ' + padding.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "margin", margin.top + ' ' + margin.right + ' ' + margin.bottom + ' ' + margin.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'box-shadow', shadowType + ' ' + shadowHOffset + 'px ' + shadowVOffset + 'px ' + shadowBlur + 'px ' + shadowSpread + 'px ' + shadowColor), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-width', borderSize ? borderSize + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-style', borderStyle ? borderStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-color', borderColor ? borderColor : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'border-radius', borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, 'z-index', blockzIndex ? blockzIndex : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_pbAlertBoxWrappe, "height", blockHeight ? blockHeight + blockHeightType : undefined), _pbAlertBoxWrappe),
-      '.pb-alert-box-wrapper:hover': {
-        background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
-        'border-width': hoverBorderSize ? hoverBorderSize + 'px' : undefined,
-        'border-style': hoverBorderStyle ? hoverBorderStyle : undefined,
-        'border-color': hoverBorderColor ? hoverBorderColor : undefined,
-        'box-shadow': hoverShadowType + ' ' + hoverShadowHOffset + 'px ' + hoverShadowVOffset + 'px ' + hoverShadowBlur + 'px ' + hoverShadowSpread + 'px ' + hoverShadowColor
-      },
+      '.pb-alert-box-wrapper': {},
       '.pb-alert-box': {
         'text-align': textAlign ? textAlign : undefined,
         padding: abPadding.top + ' ' + abPadding.right + ' ' + abPadding.bottom + ' ' + abPadding.left,
@@ -20836,8 +20786,7 @@ var Styles = function Styles(props) {
     tablet: {
       '.pb-alert-box-wrapper': {
         padding: abPaddingTablet.top + ' ' + abPaddingTablet.right + ' ' + abPaddingTablet.bottom + ' ' + abPaddingTablet.left,
-        'border-radius': abBorderRadiusTablet.top + ' ' + abBorderRadiusTablet.right + ' ' + abBorderRadiusTablet.bottom + ' ' + abBorderRadiusTablet.left,
-        height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined
+        'border-radius': abBorderRadiusTablet.top + ' ' + abBorderRadiusTablet.right + ' ' + abBorderRadiusTablet.bottom + ' ' + abBorderRadiusTablet.left
       },
       '.pb-alert-box__title': {
         'font-size': titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined
@@ -20849,8 +20798,7 @@ var Styles = function Styles(props) {
     mobile: {
       '.pb-alert-box-wrapper': {
         padding: abPaddingMobile.top + ' ' + abPaddingMobile.right + ' ' + abPaddingMobile.bottom + ' ' + abPaddingMobile.left,
-        'border-radius': abBorderRadiusMobile.top + ' ' + abBorderRadiusMobile.right + ' ' + abBorderRadiusMobile.bottom + ' ' + abBorderRadiusMobile.left,
-        height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined
+        'border-radius': abBorderRadiusMobile.top + ' ' + abBorderRadiusMobile.right + ' ' + abBorderRadiusMobile.bottom + ' ' + abBorderRadiusMobile.left
       },
       '.pb-alert-box__title': {
         'font-size': titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined
@@ -20860,60 +20808,16 @@ var Styles = function Styles(props) {
       }
     }
   };
+  var advancedRules = Object(_helper_advancedCSS__WEBPACK_IMPORTED_MODULE_3__["default"])(attributes);
 
-  if ('image' === backgroundType) {
-    rules.desktop['.pb-ab-bg--image'] = {
-      'background': backgroundImg ? "url( ".concat(backgroundImg, " )") : '',
-      'background-position': backgroundImgPosition ? backgroundImgPosition : '',
-      'background-repeat': backgroundImgRepeat ? backgroundImgRepeat : '',
-      'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : '',
-      'background-size': backgroundImgSize ? backgroundImgSize : ''
-    };
-    rules.desktop['.pb-ab-bg--image:hover'] = {
-      'background': hoverBackgroundImg ? "url( ".concat(hoverBackgroundImg, " )") : '',
-      'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : '',
-      'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : '',
-      'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : '',
-      'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : ''
-    };
-    rules.desktop['.pb-ab-bg--image:before'] = {
-      background: backgroundImgOverlayColor ? backgroundImgOverlayColor : '',
-      opacity: backgroundOpacity ? backgroundOpacity / 100 : '',
-      'border-radius': borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left
-    };
-    rules.desktop['.pb-ab-bg--image:hover:before'] = {
-      background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : '',
-      opacity: hoverBackgroundOpacity ? hoverBackgroundOpacity / 100 : '',
-      'border-radius': borderRadius.top + ' ' + borderRadius.right + ' ' + borderRadius.bottom + ' ' + borderRadius.left
-    };
-  }
+  var keys = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(new Set([].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(Object.keys(rules)), _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(Object.keys(advancedRules)))));
 
-  if ('inline' === blockWidth) {
-    rules.desktop['.pb-b-e--width'] = {
-      display: 'inline-block',
-      margin: 'auto'
-    };
-  }
-
-  if ('custom' === blockWidth) {
-    rules.desktop['.pb-b-e--width'] = {
-      width: blockCustomWidth + blockCustomWidthType
-    };
-  }
-
-  if ('custom' === blockWidth) {
-    rules.tablet['.pb-b-e--width'] = {
-      width: blockCustomWidthTablet + blockCustomWidthType
-    };
-  }
-
-  if ('custom' === blockWidth) {
-    rules.mobile['.pb-b-e--width'] = {
-      width: blockCustomWidthMobile + blockCustomWidthType
-    };
-  }
-
-  return Object(_components_utils__WEBPACK_IMPORTED_MODULE_1__["renderStyle"])(rules, selectorPrefix);
+  var finalRules = {};
+  var merged = keys.forEach(function (key) {
+    finalRules[key] = _objectSpread(_objectSpread({}, rules[key]), advancedRules[key]);
+  });
+  var styles = Object(_components_utils__WEBPACK_IMPORTED_MODULE_2__["renderStyle"])(finalRules, selectorPrefix);
+  return styles;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Styles);
