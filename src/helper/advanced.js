@@ -135,6 +135,7 @@ const Advanced = ( props ) => {
         hideOnMobile,
         customClass,
         customID,
+        customAttributes,
 
         enableCondition,
 
@@ -1080,6 +1081,26 @@ const Advanced = ( props ) => {
                         setAttributes( { customID } );
                     } }
                 />
+            </PanelBody>
+            <PanelBody title={ __( 'Attributes', 'powerful-blocks' ) } initialOpen={ false }>
+                <p className="pb-control--helper__txt">
+                    { __( 'Example: name|value, name|value', 'powerful-blocks' ) }
+                    { __( 'Note: Don\'t Add class and id attribute.', 'powerful-blocks' ) }
+                </p>
+                { 
+                    'free' === pType ? (
+                        <UpgradePlanNotice />
+                    ) : (
+                        <TextControl
+                            label={ __( 'Attributes', 'powerful-blocks' ) }
+                            value={ customAttributes }
+                            onChange={ ( customAttributes ) => {
+                                setAttributes( { customAttributes } );
+                            } }
+                        />
+                    )
+                }
+                
             </PanelBody>
             <PanelBody title={ __( 'Wrapper Link', 'powerful-blocks' ) } initialOpen={ false }>
                 { 

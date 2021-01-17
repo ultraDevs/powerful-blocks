@@ -20,6 +20,7 @@ const edit = ( props ) => {
 		blockWidth,
 		customClass,
 		customID,
+		customAttributes,
 
 		enableCondition,
 
@@ -48,6 +49,20 @@ const edit = ( props ) => {
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
 
+	let extractAttribute = customAttributes ? customAttributes.split(/[,]+/) : '',
+		finalAttr = {},
+		eAttr = [];
+	if ( extractAttribute ) {
+		
+		extractAttribute.forEach( ( attr, index ) => {
+			eAttr.push( attr.trim().split('|') );
+		});
+		eAttr.map( ( attr, i ) => {
+			finalAttr[ attr[0] ] = attr[1];
+		});
+	}
+
+
 	return (
 		<>
 			<Inspector { ...{ attributes, setAttributes } } />
@@ -70,8 +85,9 @@ const edit = ( props ) => {
 						'' !== inAnimationDuration ? `pb-anim-dur__${inAnimationDuration}` : '',
 						'' !== outAnimationDuration ? `pb-anim-out-dur__${outAnimationDuration}` : '',
 					) }
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					id = { customID ? customID : undefined }
+					data-pb-link = { true === addWLink ? WrapperLink : undefined }
+					{ ...finalAttr }
 				>
 					<h3>Default</h3>
 				</div>

@@ -419,6 +419,10 @@ const advancedAttributes = {
 		type: 'string',
 		default: '',
 	},
+	customAttributes: {
+		type: 'string',
+		default: '',
+	},
 
 	// Condition
 	enableCondition: {

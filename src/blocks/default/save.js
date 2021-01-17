@@ -12,6 +12,7 @@ const save = ( { attributes, className } ) => {
 		blockWidth,
 		customClass,
 		customID,
+		customAttributes,
 
 		enableCondition,
 
@@ -25,6 +26,19 @@ const save = ( { attributes, className } ) => {
         wrapperLinkNewTab,
         wrapperLinkNofollow,
 	} = attributes;
+
+	let extractAttribute = customAttributes ? customAttributes.split(/[,]+/) : '',
+		finalAttr = {},
+		eAttr = [];
+	if ( extractAttribute ) {
+		
+		extractAttribute.forEach( ( attr, index ) => {
+			eAttr.push( attr.trim().split('|') );
+		});
+		eAttr.map( ( attr, i ) => {
+			finalAttr[ attr[0] ] = attr[1];
+		});
+	}
 
 	const WrapperLink = JSON.stringify({
 		'id': blockId ? blockId : 'pb-wl-r',
@@ -54,14 +68,15 @@ const save = ( { attributes, className } ) => {
 						'' !== inAnimationDuration ? `pb-anim-dur__${inAnimationDuration}` : '',
 						'' !== outAnimationDuration ? `pb-anim-out-dur__${outAnimationDuration}` : '',
 					) }
+					id = { customID ? customID : undefined }
+					data-pb-link = { true === addWLink ? WrapperLink : undefined }
 					data-pb-animation = {
 						JSON.stringify({
 							'in' : inAnimation ? inAnimation : '',
 							'out' : outAnimation ? outAnimation : '',
 						})
 					}
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					{ ...finalAttr }
 				>
 					<h3>Default</h3>
 					

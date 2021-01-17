@@ -179,5 +179,13 @@
     .pb-upgrade-plan-notice .pb-upn--btn a:first-child {
       margin-right: 10px; }
 
+.pb-control--helper__txt {
+  color: #154a28;
+  margin-bottom: 15px;
+  border: 1px dashed #ddd;
+  padding: 10px;
+  background: #d0eac4;
+  font-size: 12px; }
+
 
 /*# sourceMappingURL=pb-editor-common.css.map*/
