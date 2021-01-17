@@ -202,19 +202,19 @@ const advancedAttributes = {
 	},
 	shadowHOffset: {
 		type: 'number',
-		default: '0',
+		default: '',
 	},
 	shadowVOffset: {
 		type: 'number',
-		default: '0',
+		default: '',
 	},
 	shadowBlur: {
 		type: 'number',
-		default: '0',
+		default: '',
 	},
 	shadowSpread: {
 		type: 'number',
-		default: '0',
+		default: '',
 	},
 	shadowType: {
 		type: 'string',
@@ -223,23 +223,23 @@ const advancedAttributes = {
 
 	hoverShadowColor: {
 		type: 'string',
-		default: 'transparent',
+		default: '',
 	},
 	hoverShadowHOffset: {
 		type: 'number',
-		default: '0',
+		default: '',
 	},
 	hoverShadowVOffset: {
 		type: 'number',
-		default: '0',
+		default: '',
 	},
 	hoverShadowBlur: {
 		type: 'number',
-		default: '0',
+		default: '',
 	},
 	hoverShadowSpread: {
 		type: 'number',
-		default: '0',
+		default: '',
 	},
 	hoverShadowType: {
 		type: 'string',
@@ -248,28 +248,28 @@ const advancedAttributes = {
     
     borderStyle: {
 		type: 'string',
-		default: 'none',
+		default: '',
 	},
 	borderSize: {
 		type: 'number',
-		default: 1,
+		default: '',
 	},
 	borderColor: {
 		type: 'string',
-		default: '#ddd',
+		default: '',
 	},
 
 	hoverBorderStyle: {
 		type: 'string',
-		default: 'none',
+		default: '',
 	},
 	hoverBorderSize: {
 		type: 'number',
-		default: 1,
+		default: '',
 	},
 	hoverBorderColor: {
 		type: 'string',
-		default: '#ddd',
+		default: '',
 	},
 
 	borderRadius: {
@@ -315,6 +315,18 @@ const advancedAttributes = {
 		type: 'string',
 		default: '',
 	},
+	inAnimationDurationCustom: {
+		type: 'string',
+		default: '',
+	},
+	inAnimationEasing: {
+		type: 'string',
+		default: '',
+	},
+	inAnimationEasingCustom: {
+		type: 'string',
+		default: '',
+	},
 
 	outAnimation: {
 		type: 'string',
@@ -325,6 +337,18 @@ const advancedAttributes = {
 		default: '',
 	},
 	outAnimationDelay: {
+		type: 'string',
+		default: '',
+	},
+	outAnimationDurationCustom: {
+		type: 'string',
+		default: '',
+	},
+	outAnimationEasing: {
+		type: 'string',
+		default: '',
+	},
+	outAnimationEasingCustom: {
 		type: 'string',
 		default: '',
 	},
@@ -394,6 +418,12 @@ const advancedAttributes = {
 	customID: {
 		type: 'string',
 		default: '',
+	},
+
+	// Condition
+	enableCondition: {
+		type: 'boolean',
+		default: false,
 	},
 
 	// Wrapper Link

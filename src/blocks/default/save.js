@@ -12,6 +12,13 @@ const save = ( { attributes, className } ) => {
 		blockWidth,
 		customClass,
 		customID,
+
+		enableCondition,
+
+		inAnimation,
+        outAnimation,
+        inAnimationDuration,
+        outAnimationDuration,
 		
 		addWLink,
         wrapperLink,
@@ -29,21 +36,34 @@ const save = ( { attributes, className } ) => {
 
 	return (
 		<div>
-			<div id={ `pb-testimonial-${ blockId }` }>
+			<div id={ `pb-default-${ blockId }` }>
 				<div
 					className={ classnames(
 						className,
 						'pb-testimonial-wrapper',
+						'pb-block-advanced--wrapper',
 						customClass,
 						hideOnDesktop ? 'pb-hide-d' : '',
 						hideOnTablet ? 'pb-hide-t' : '',
 						hideOnMobile ? 'pb-hide-m' : '',
 						blockWidth ? 'pb-b-e--width' : '',
 						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+						true === enableCondition ? 'pb-block-conditions' : '',
+						'' !== inAnimation ? 'pb__animated' : '',
+						'' !== outAnimation ? 'pb__animated_out' : '',
+						'' !== inAnimationDuration ? `pb-anim-dur__${inAnimationDuration}` : '',
+						'' !== outAnimationDuration ? `pb-anim-out-dur__${outAnimationDuration}` : '',
 					) }
+					data-pb-animation = {
+						JSON.stringify({
+							'in' : inAnimation ? inAnimation : '',
+							'out' : outAnimation ? outAnimation : '',
+						})
+					}
 					id = { customID ? customID : '' }
 					data-pb-link = { true === addWLink ? WrapperLink : '' }
 				>
+					<h3>Default</h3>
 					
 				</div>
 			</div>

@@ -61,6 +61,7 @@ class Assets_Manager {
 		 * Font Awesome
 		 */
 		wp_enqueue_style( 'pb-font-awesome', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/font-awesome5.css', '', POWERFUL_BLOCKS_VERSION );
+		wp_enqueue_style( 'pb-animatecss', POWERFUL_BLOCKS_ASSETS . 'vendor/animatecss/animate.min.css', '', POWERFUL_BLOCKS_VERSION );
 
 	}
 
@@ -72,6 +73,7 @@ class Assets_Manager {
 	public function block_assets() {
 
 		wp_enqueue_style( 'pb-block-styles', POWERFUL_BLOCKS_ASSETS . 'css/pb-styles.css', array(), POWERFUL_BLOCKS_VERSION );
+		wp_enqueue_style( 'pb-animatecss', POWERFUL_BLOCKS_ASSETS . 'vendor/animatecss/animate.min.css', '', POWERFUL_BLOCKS_VERSION );
 		/**
 		 * Font Awesome
 		 */
