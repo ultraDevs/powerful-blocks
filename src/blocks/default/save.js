@@ -2,6 +2,8 @@ const { RichText, InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n;
 import classnames from 'classnames';
 
+import { genClass, blockAttributes } from '../../helper';
+
 const save = ( { attributes, className } ) => {
 	const {
 		blockId,
@@ -16,6 +18,8 @@ const save = ( { attributes, className } ) => {
 
 		enableCondition,
 
+		CSSTransform,
+
 		inAnimation,
         outAnimation,
         inAnimationDuration,
@@ -27,26 +31,8 @@ const save = ( { attributes, className } ) => {
         wrapperLinkNofollow,
 	} = attributes;
 
-	let extractAttribute = customAttributes ? customAttributes.split(/[,]+/) : '',
-		finalAttr = {},
-		eAttr = [];
-	if ( extractAttribute ) {
-		
-		extractAttribute.forEach( ( attr, index ) => {
-			eAttr.push( attr.trim().split('|') );
-		});
-		eAttr.map( ( attr, i ) => {
-			finalAttr[ attr[0] ] = attr[1];
-		});
-	}
-
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
+	const classes = genClass( attributes, 'save'  );
+	const blockAttr = blockAttributes( attributes, 'save' );
 
 	return (
 		<div>
@@ -54,29 +40,12 @@ const save = ( { attributes, className } ) => {
 				<div
 					className={ classnames(
 						className,
-						'pb-testimonial-wrapper',
-						'pb-block-advanced--wrapper',
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
-						true === enableCondition ? 'pb-block-conditions' : '',
-						'' !== inAnimation ? 'pb__animated' : '',
-						'' !== outAnimation ? 'pb__animated_out' : '',
-						'' !== inAnimationDuration ? `pb-anim-dur__${inAnimationDuration}` : '',
-						'' !== outAnimationDuration ? `pb-anim-out-dur__${outAnimationDuration}` : '',
+						'pb-default-wrapper',
+						...classes
 					) }
 					id = { customID ? customID : undefined }
-					data-pb-link = { true === addWLink ? WrapperLink : undefined }
-					data-pb-animation = {
-						JSON.stringify({
-							'in' : inAnimation ? inAnimation : '',
-							'out' : outAnimation ? outAnimation : '',
-						})
-					}
-					{ ...finalAttr }
+					
+					{ ...blockAttr }
 				>
 					<h3>Default</h3>
 					

@@ -124,6 +124,8 @@ const Advanced = ( props ) => {
         blockHeightMobile,
         blockHeightTablet,
 
+        CSSTransform,
+
         blockWidth,
         blockCustomWidthType,
         blockCustomWidth,

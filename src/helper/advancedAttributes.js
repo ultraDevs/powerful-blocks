@@ -410,6 +410,12 @@ const advancedAttributes = {
 		default: '',
 	},
 
+	// CSS Transform
+	CSSTransform: {
+		type: 'boolean',
+		default: false,
+	},
+
 	// Custom.
 	customClass: {
 		type: 'string',
