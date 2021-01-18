@@ -30804,7 +30804,7 @@ var Advanced = function Advanced(props) {
       name: 'blockCustomWidthMobile'
     },
     min: 0,
-    max: 500,
+    max: 2000,
     setAttributes: setAttributes
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_4__["ResponsiveRangeControl"], {
     label: __('Height', 'powerful-blocks'),
