@@ -12,8 +12,8 @@ const save = ( { attributes, className } ) => {
 
 	} = attributes;
 
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
+	const classes = genClass( attributes, 'save'  );
+	const blockAttr = blockAttributes( attributes, 'save' );
 
 	return (
 		<div>
