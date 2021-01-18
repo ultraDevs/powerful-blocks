@@ -21,10 +21,6 @@ const genClass = ( attributes, type = 'edit' ) => {
 		
 		CSSTransform,
 		
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-		wrapperLinkNofollow,
     } = attributes;
 
     const classes = [

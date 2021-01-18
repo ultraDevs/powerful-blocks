@@ -7,28 +7,6 @@ import { genClass, blockAttributes } from '../../helper';
 const save = ( { attributes, className } ) => {
 	const {
 		blockId,
-		backgroundType,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
-		customAttributes,
-
-		enableCondition,
-
-		CSSTransform,
-
-		inAnimation,
-        outAnimation,
-        inAnimationDuration,
-        outAnimationDuration,
-		
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-        wrapperLinkNofollow,
 	} = attributes;
 
 	const classes = genClass( attributes, 'save'  );

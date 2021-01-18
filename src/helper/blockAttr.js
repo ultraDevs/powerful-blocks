@@ -3,13 +3,6 @@
 const blockAttr = ( attributes, type = 'edit' ) => {
     const {
         blockId,
-		backgroundType,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
 		customAttributes,
 
 		enableCondition,
@@ -17,7 +10,8 @@ const blockAttr = ( attributes, type = 'edit' ) => {
 		inAnimation,
         outAnimation,
 		
-		CSSTransform,
+        CSSTransform,
+		customID,
 		
 		addWLink,
         wrapperLink,
@@ -59,7 +53,8 @@ const blockAttr = ( attributes, type = 'edit' ) => {
 	});
 
     const bAttributes = {
-        'data-pb-link' : true === addWLink ? WrapperLink : undefined ,
+        'data-pb-link' : true === addWLink ? WrapperLink : undefined,
+		'id' :  customID ? customID : undefined,
         ...saveAttr,
         ...finalAttr,
     };

@@ -16,8 +16,6 @@ const edit = ( props ) => {
 
 	const {
 		blockId,
-		customID,
-		
 	} = attributes;
 
 	const classes = genClass( attributes, 'edit'  );
@@ -39,7 +37,6 @@ const edit = ( props ) => {
 						props.className,
 						...classes
 					) }
-					id = { customID ? customID : undefined }
 					{ ... blockAttr }
 				>
 					<h3>Default</h3>
