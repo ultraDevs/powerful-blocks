@@ -1,6 +1,7 @@
 import { RichText, InnerBlocks } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
+import { genClass, blockAttributes } from '../../helper';
 
 const save = ( { attributes, className } ) => {
 	const {
@@ -32,13 +33,8 @@ const save = ( { attributes, className } ) => {
         wrapperLinkNofollow,
 	} = attributes;
 
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
+	const classes = genClass( attributes, 'save'  );
+	const blockAttr = blockAttributes( attributes, 'save' );
 
 	return (
 		<div>
@@ -49,17 +45,10 @@ const save = ( { attributes, className } ) => {
 						'pb-testimonial-wrapper',
 						'pb-testimonial-client-info-position',
 						preset,
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
 						true === displayBubble ? 'pb-t-bubble' : '',
-
+						...classes
 					) }
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					{ ... blockAttr }
 				>
 					<div className="pb-testimonial--conr">
 						{ true === showRatings &&

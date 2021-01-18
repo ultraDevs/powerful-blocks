@@ -4,6 +4,8 @@ const { Button } = wp.components;
 import classnames from 'classnames';
 
 import Inspector from './inspector';
+import { genClass, blockAttributes } from '../../helper';
+
 
 import './editor.scss';
 import Styles from './style';
@@ -46,13 +48,8 @@ const edit = ( props ) => {
 	}
 	const allowedBlocks = [ 'powerful-blocks/star-rating' ];
 
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
+	const classes = genClass( attributes, 'edit'  );
+	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	return (
 		<>
@@ -65,16 +62,10 @@ const edit = ( props ) => {
 						props.className,
 						'pb-testimonial-client-info-position',
 						preset,
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
 						true === displayBubble ? 'pb-t-bubble' : '',
+						...classes
 					) }
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					{ ... blockAttr }
 				>
 					<div className="pb-testimonial--conr">
 						{ true === showRatings &&
