@@ -4,6 +4,8 @@ const { Button } = wp.components;
 import classnames from 'classnames';
 
 import Inspector from './inspector';
+import { genClass, blockAttributes } from '../../helper';
+
 
 import './editor.scss';
 import Styles from './style';
@@ -21,33 +23,16 @@ const edit = ( props ) => {
 		content,
 		mPosition,
 		preset,
-
-		backgroundType,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
-		
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-        wrapperLinkNofollow,
 	} = attributes;
+
+	const classes = genClass( attributes, 'edit'  );
+	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
 
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
 
 	return (
 		<>
@@ -58,16 +43,9 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-info-box-wrapper',
 						props.className,
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
-						`pb-info-box-${mPosition}`
+						...classes
 					) }
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					{ ... blockAttr }
 				>
 					<div className="pb-info-box--m">
 						{ 'icon' === mType ? (
