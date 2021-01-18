@@ -2,6 +2,7 @@ import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
 import Inspector from './inspector';
+import { genClass, blockAttributes } from '../../helper';
 
 import './editor.scss';
 import Styles from './style';
@@ -46,13 +47,8 @@ const edit = ( props ) => {
 	const halfStar = rating % 1 === 0 ? 0 : 1;
 	const emptyStar = stars - ( fullStar + halfStar );
 
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
+	const classes = genClass( attributes, 'edit'  );
+	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	return [
 		<>
@@ -63,15 +59,9 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-star-rating-wrapper',
 						props.className,
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+						...classes
 					) }
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					{ ... blockAttr }
 				>
 					<div className="pb-star-rating--icon">
 						{ fullStar

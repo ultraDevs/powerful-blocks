@@ -8,6 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 import classnames from 'classnames';
+import { genClass, blockAttributes } from '../../helper';
 
 
 const save = ( props ) => {
@@ -36,13 +37,8 @@ const save = ( props ) => {
 	const halfStar = rating % 1 === 0 ? 0 : 1;
 	const emptyStar = stars - ( fullStar + halfStar );
 
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
+	const classes = genClass( attributes, 'save'  );
+	const blockAttr = blockAttributes( attributes, 'save' );
 
 	return (
 		<div>
@@ -51,15 +47,9 @@ const save = ( props ) => {
 					className={ classnames(
 						props.className,
 						'pb-star-rating-wrapper',
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+						...classes
 					) }
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					{ ... blockAttr }
 				>
 					<div className="pb-star-rating--icon">
 						{ fullStar
