@@ -17,7 +17,6 @@ const Styles = ( props ) => {
 			'.pb-default-wrapper': {
 				
 			},
-			
 		},
 		tablet: {
 			'.pb-default-wrapper': {

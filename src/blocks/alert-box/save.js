@@ -9,25 +9,6 @@ const save = ( { attributes, className } ) => {
 		content,
 		displayType,
 		hideAfterTime,
-		backgroundType,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
-
-		enableCondition,
-
-		inAnimation,
-        outAnimation,
-        inAnimationDuration,
-        outAnimationDuration,
-
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-        wrapperLinkNofollow,
 	} = attributes;
 
 	const classes = genClass( attributes, 'save'  );
