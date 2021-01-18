@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
 import Inspector from './inspector';
 import Styles from './style';
-
+import { genClass, blockAttributes } from '../../helper';
 
 const edit = ( props ) => {
 	const { attributes, setAttributes, isSelected } = props;
@@ -14,25 +14,6 @@ const edit = ( props ) => {
 		content,
 		displayType,
 		hideAfterTime,
-		backgroundType,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
-
-		enableCondition,
-
-		inAnimation,
-        outAnimation,
-        inAnimationDuration,
-        outAnimationDuration,
-
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-        wrapperLinkNofollow,
 	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
@@ -44,13 +25,8 @@ const edit = ( props ) => {
 		id: `pb-alert-box-${ attributes.blockId }`,
 	};
 
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
+	const classes = genClass( attributes, 'edit'  );
+	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	return (
 		<>
@@ -60,22 +36,9 @@ const edit = ( props ) => {
 				<div
 					className={ classnames(
 						'pb-alert-box-wrapper',
-						'pb-block-advanced--wrapper',
-						props.className,
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
-						true === enableCondition ? 'pb-block-conditions' : '',
-						'' !== inAnimation ? `pb__animated pb__${inAnimation}` : '',
-						'' !== outAnimation ? `pb__animated_out pb__out_${outAnimation}` : '',
-						'' !== inAnimationDuration ? `pb-anim-dur__${inAnimationDuration}` : '',
-						'' !== outAnimationDuration ? `pb-anim-out-dur__${outAnimationDuration}` : '',
+						...classes
 					) }
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					{ ... blockAttr }
 				>
 					<div
 						className={ classnames( 'pb-alert-box', props.className ) }

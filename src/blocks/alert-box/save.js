@@ -1,5 +1,6 @@
 import { RichText } from '@wordpress/block-editor';
 import classnames from 'classnames';
+import { genClass, blockAttributes } from '../../helper';
 
 const save = ( { attributes, className } ) => {
 	const { 
@@ -29,18 +30,13 @@ const save = ( { attributes, className } ) => {
         wrapperLinkNofollow,
 	} = attributes;
 
+	const classes = genClass( attributes, 'save'  );
+	const blockAttr = blockAttributes( attributes, 'save' );
+
 	const settings = {
 		time: 'hideAfterTime' === displayType ? hideAfterTime : 0,
 		id: `pb-alert-box-${ attributes.blockId }`,
 	};
-
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
 
 	return (
 		<div>
@@ -49,27 +45,9 @@ const save = ( { attributes, className } ) => {
 					className={ classnames(
 						className,
 						'pb-alert-box-wrapper',
-						'pb-block-advanced--wrapper',
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
-						true === enableCondition ? 'pb-block-conditions' : '',
-						'' !== inAnimation ? 'pb__animated' : '',
-						'' !== outAnimation ? 'pb__animated_out' : '',
-						'' !== inAnimationDuration ? `pb-anim-dur__${inAnimationDuration}` : '',
-						'' !== outAnimationDuration ? `pb-anim-out-dur__${outAnimationDuration}` : '',
-					) }
-					data-pb-animation = {
-						JSON.stringify({
-							'in' : inAnimation ? inAnimation : '',
-							'out' : outAnimation ? outAnimation : '',
-						})
-					}
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+						...classes
+					) }					
+					{ ...blockAttr }
 				>
 					<div
 						className={ classnames( className, 'pb-alert-box' ) }

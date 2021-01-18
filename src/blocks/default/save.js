@@ -20,9 +20,7 @@ const save = ( { attributes, className } ) => {
 						className,
 						'pb-default-wrapper',
 						...classes
-					) }
-					id = { customID ? customID : undefined }
-					
+					) }					
 					{ ...blockAttr }
 				>
 					<h3>Default</h3>
