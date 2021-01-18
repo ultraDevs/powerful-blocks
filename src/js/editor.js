@@ -34,6 +34,7 @@ jQuery( function($){
 			width="24"
 			height="24"
 			viewBox="0 0 24 24"
+			className="pb-block-icon"
 		>
 			<G>
 				<Rect x="3" y="3" width="6" height="6"/>

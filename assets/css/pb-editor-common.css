@@ -187,5 +187,8 @@
   background: #d0eac4;
   font-size: 12px; }
 
+.pb-block-icon {
+  fill: url(#powerfulblocks-gradient) !important; }
+
 
 /*# sourceMappingURL=pb-editor-common.css.map*/

@@ -1,6 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 
 import './js/editor';
+import './helper/icons';
 
 import * as testimonial from './blocks/testimonial';
 import * as alertBox from './blocks/alert-box';
