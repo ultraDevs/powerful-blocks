@@ -1,9 +1,9 @@
-const { RichText, InnerBlocks, MediaUpload } = wp.blockEditor;
+const { RichText } = wp.blockEditor;
 const { __ } = wp.i18n;
-const { Button } = wp.components;
 import classnames from 'classnames';
 
 import Inspector from './inspector';
+import { genClass, blockAttributes } from '../../helper';
 
 import './editor.scss';
 import Styles from './style';
@@ -17,34 +17,17 @@ const edit = ( props ) => {
 		icon,
 		title,
 		preset,
-
-		backgroundType,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
-		
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-        wrapperLinkNofollow,
 	} = attributes;
+
+	const classes = genClass( attributes, 'edit'  );
+	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
 
-	const WrapperLink = JSON.stringify({
-		'id': blockId ? blockId : 'pb-wl-r',
-		'addLink': addWLink ? addWLink : false,
-		'url': wrapperLink ? wrapperLink : false,
-		'new_window': wrapperLinkNewTab ? wrapperLinkNewTab : false,
-		'nofollow': wrapperLinkNofollow ? wrapperLinkNofollow : false,
-	});
-
+	
 	return (
 		<>
 			<Inspector { ...{ attributes, setAttributes } } />
@@ -54,15 +37,9 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-icon-box-wrapper',
 						props.className,
-						customClass,
-						hideOnDesktop ? 'pb-hide-d' : '',
-						hideOnTablet ? 'pb-hide-t' : '',
-						hideOnMobile ? 'pb-hide-m' : '',
-						blockWidth ? 'pb-b-e--width' : '',
-						'image' === backgroundType ? 'pb-ab-bg--image' : '',
+						...classes
 					) }
-					id = { customID ? customID : '' }
-					data-pb-link = { true === addWLink ? WrapperLink : '' }
+					{ ... blockAttr }
 				>
 					<div className="pb-icon-box--m">
 						<IconBox icon={ icon } iconClass = 'pb-icon-box--icon' />
