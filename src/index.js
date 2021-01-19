@@ -10,6 +10,7 @@ import * as clickToTweet from './blocks/click-to-tweet';
 import * as infoBox from './blocks/info-box';
 import * as iconBox from './blocks/icon-box';
 import * as defaultBlock from './blocks/default';
+import * as pbSpacer from './blocks/spacer';
 
 
 const category = 'powerful-blocks';
@@ -46,7 +47,8 @@ const registerPowerfulBlocks = () => {
 		testimonial,
 		infoBox,
 		iconBox,
-		defaultBlock
+		defaultBlock,
+		pbSpacer,
 	].forEach( registerBlock );
 };
 

@@ -66,6 +66,11 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'pb-spacer'  => array(
+				'title'  => __( 'PB Spacer', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );
