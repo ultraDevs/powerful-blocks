@@ -263,3 +263,85 @@
 .pb-block-icon {
 	fill: url(#powerfulblocks-gradient) !important;
 }
+
+/** Repeater Control **/
+.pb-repeater--wrapper{
+	text-align: center;
+	.pb-repeater--item {
+		color: #555;
+		padding: 0;
+		margin: 0;
+		background: #fff;
+		border: 1px solid #e6e7e7;
+		margin-bottom: 10px;
+		transition: all 0.3s ease-in-out;
+		border-radius: 3px;
+		&:hover {
+			border: 1px solid #999;
+		}
+		.pb-repeater-header {
+			display: flex;
+			cursor: pointer;
+			.pb-repeater-header--title {
+				display: flex;
+				width: 100%;
+				padding: 10px;
+			}
+			.pb-repeater-header--duplicate {
+				border-left: 1px solid #e6e7e7;
+				border-right: 1px solid #e6e7e7;
+			}
+			.pb-repeater-header--del {
+			}
+			button {
+				height: auto;
+				padding: 10px;
+			}
+		}
+		.pb-repeater-controls {
+			display: none;
+			border-top: 1px solid #e6e7e7;
+			padding: 15px;
+			text-align: left;
+		}
+		&.pb-repeater-active {
+			border: 1px solid #999;
+			.pb-repeater-controls {
+				display: block;
+			}
+		}
+	}
+	.pb-repeater-add-item {
+		display: inline-block;
+		margin: 0 auto !important;
+		padding: 5px 10px;
+	}
+}
+
+/** Icon Picker **/
+.pb-icon-picker {
+	.components-base-control__field {
+		display: flex;
+		flex-direction: row !important;
+		justify-content: space-between;
+		align-items: center;
+		.rfipbtn__icon--empty {
+			margin-left: 0px;
+			color: #555;
+		}
+		.rfipbtn--default {
+			border: 0px solid transparent;
+		}
+		.rfipbtn {
+			width: auto;
+			min-height: auto;
+		}
+		.rfipbtn__current {
+			flex: 0 0 auto;
+		}
+		.rfipbtn__button {
+			display: none;
+		}
+	}
+	
+}

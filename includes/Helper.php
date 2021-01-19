@@ -36,6 +36,11 @@ class Helper {
 	 */
 	public static function block_list() {
 		self::$blocks = array(
+			'accordion'  => array(
+				'title'  => __( 'Accordion', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 			'alert-box'  => array(
 				'title'  => __( 'Alert Box', 'powerful-blocks' ),
 				'is_pro' => false,
