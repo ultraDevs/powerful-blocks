@@ -22754,9 +22754,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components */ "./src/components/index.js");
 /* harmony import */ var _helper_advanced__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helper/advanced */ "./src/helper/advanced.js");
-/* harmony import */ var _helper_faIcons_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helper/faIcons.js */ "./src/helper/faIcons.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_6__);
 
 
 var InspectorControls = wp.blockEditor.InspectorControls;
@@ -22775,8 +22772,6 @@ var _wp$components = wp.components,
     Dashicon = _wp$components.Dashicon;
 var __ = wp.i18n.__;
 var useState = wp.element.useState;
-
-
 
 
 
@@ -22889,16 +22884,14 @@ var Inspector = function Inspector(props) {
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Icon', 'powerful-blocks'),
     initialOpen: false
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_6___default.a, {
-    icons: _helper_faIcons_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["IconPickerControl"], {
+    label: __('Select Icon', 'powerful-blocks'),
     onChange: function onChange(icon) {
-      return setAttributes({
+      setAttributes({
         icon: icon
       });
     },
-    value: icon,
-    appendTo: "body",
-    isMulti: false
+    icon: icon
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Title', 'powerful-blocks'),
     initialOpen: false

@@ -181,7 +181,7 @@ class Assets_Manager {
 		$fonts = '';
 		foreach ( $matches[0] as $match ) {
 
-			$extract = explode( ':', str_replace( array( '"', ';' ), array( '', ',' ), $match ) );
+			$extract = explode( ':', str_replace( array( '"', ';', '!important' ), array( '', ',', '' ), $match ) );
 			$fonts .= trim( $extract[1] );
 		}
 
