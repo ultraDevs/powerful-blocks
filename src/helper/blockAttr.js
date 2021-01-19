@@ -34,11 +34,12 @@ const blockAttr = ( attributes, type = 'edit' ) => {
     }
     let saveAttr;
     if ( 'save' === type ) {
+        let animationSettings = JSON.stringify({
+            'in' : inAnimation ? inAnimation : '',
+            'out' : outAnimation ? outAnimation : '',
+        });
         saveAttr = {
-            'data-pb-animation' : JSON.stringify({
-                'in' : inAnimation ? inAnimation : '',
-                'out' : outAnimation ? outAnimation : '',
-            }),
+            'data-pb-animation' : ( '' !== inAnimation || '' !== outAnimation ) ? animationSettings : undefined,
         }
     } else {
         saveAttr = {};
