@@ -28,12 +28,10 @@ import {
 	TypographyControl,
 	BorderControl,
 	ShadowControl,
+	IconPickerControl
 } from '../../components';
 
 import Advanced from '../../helper/advanced';
-
-import faIcons from "../../helper/faIcons.js";
-import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
 
 
 const Inspector = ( props ) => {
@@ -237,12 +235,12 @@ const Inspector = ( props ) => {
 								<div className="pb-panel-s--tabs__controls">
 									{ 'icon' === mTab && (
 									<>
-										<FontIconPicker
-											icons = { faIcons }
-											onChange = { (icon) => setAttributes({ icon })}
-											value = { icon }
-											appendTo="body"
-											isMulti={false}
+										<IconPickerControl
+											label={ __( 'Select Icon', 'powerful-blocks' ) }
+											onChange = { (icon) => {
+												setAttributes({ icon })
+											}}
+											icon = { icon }
 										/>
 									</>
 									) }
