@@ -17,8 +17,6 @@ const { __ } = wp.i18n;
 
 const { useState } = wp.element;
 import classnames from 'classnames';
-import faIcons from "../../helper/faIcons.js";
-import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
 
 import {
 	ResponsiveRangeControl,
@@ -28,7 +26,8 @@ import {
 	AlignmentControl,
 	TypographyControl,
 	BorderControl,
-	ShadowControl
+	ShadowControl,
+	IconPickerControl
 } from '../../components';
 
 import Advanced from '../../helper/advanced';
@@ -170,21 +169,14 @@ const Inspector = ( props ) => {
 												/>
 												{ 
 													true === accordion.enableIcon ? (
-														<BaseControl
+														
+														<IconPickerControl
 															label={ __( 'Select Icon', 'powerful-blocks' ) }
-															className="pb-icon-picker"
-														>
-															<FontIconPicker
-																noSelectedPlaceholder = { <Dashicon icon="admin-tools" /> }
-																icons = { faIcons }
-																onChange = { (icon) => {
-																	updateAccordion( icon, key, 'icon' );
-																}}
-																value = { accordion.icon }
-																appendTo="body"
-																isMulti={false}
-															/>
-														</BaseControl>
+															onChange = { (icon) => {
+																updateAccordion( icon, key, 'icon' );
+															}}
+															icon = { accordion.icon }
+														/>
 													) : ''
 												}
 											</div>

@@ -188,6 +188,25 @@
   .pb-border-control .pb-border-control--dropdown {
     float: right; }
 
+/** Icon Picker **/
+.pb-icon-picker .components-base-control__field {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center; }
+  .pb-icon-picker .components-base-control__field .rfipbtn__icon--empty {
+    margin-left: 0px;
+    color: #555; }
+  .pb-icon-picker .components-base-control__field .rfipbtn--default {
+    border: 0px solid transparent; }
+  .pb-icon-picker .components-base-control__field .rfipbtn {
+    width: auto;
+    min-height: auto; }
+  .pb-icon-picker .components-base-control__field .rfipbtn__current {
+    flex: 0 0 auto; }
+  .pb-icon-picker .components-base-control__field .rfipbtn__button {
+    display: none; }
+
 /** Alert Box **/
 .wp-block-powerful-blocks-alert-box {
   background-color: #d6efee;

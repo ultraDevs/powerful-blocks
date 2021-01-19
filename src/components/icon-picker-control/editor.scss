@@ -1,0 +1,27 @@
+/** Icon Picker **/
+.pb-icon-picker {
+	.components-base-control__field {
+		display: flex;
+		flex-direction: row !important;
+		justify-content: space-between;
+		align-items: center;
+		.rfipbtn__icon--empty {
+			margin-left: 0px;
+			color: #555;
+		}
+		.rfipbtn--default {
+			border: 0px solid transparent;
+		}
+		.rfipbtn {
+			width: auto;
+			min-height: auto;
+		}
+		.rfipbtn__current {
+			flex: 0 0 auto;
+		}
+		.rfipbtn__button {
+			display: none;
+		}
+	}
+	
+}

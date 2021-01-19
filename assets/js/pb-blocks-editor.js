@@ -20101,11 +20101,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _helper_faIcons_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helper/faIcons.js */ "./src/helper/faIcons.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components */ "./src/components/index.js");
-/* harmony import */ var _helper_advanced__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helper/advanced */ "./src/helper/advanced.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components */ "./src/components/index.js");
+/* harmony import */ var _helper_advanced__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helper/advanced */ "./src/helper/advanced.js");
 
 
 
@@ -20125,8 +20122,6 @@ var _wp$components = wp.components,
     Dashicon = _wp$components.Dashicon;
 var __ = wp.i18n.__;
 var useState = wp.element.useState;
-
-
 
 
 
@@ -20234,21 +20229,13 @@ var Inspector = function Inspector(props) {
       onChange: function onChange(enableIcon) {
         updateAccordion(enableIcon, key, 'enableIcon');
       }
-    }), true === accordion.enableIcon ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(BaseControl, {
+    }), true === accordion.enableIcon ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_4__["IconPickerControl"], {
       label: __('Select Icon', 'powerful-blocks'),
-      className: "pb-icon-picker"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      noSelectedPlaceholder: Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(Dashicon, {
-        icon: "admin-tools"
-      }),
-      icons: _helper_faIcons_js__WEBPACK_IMPORTED_MODULE_4__["default"],
       onChange: function onChange(icon) {
         updateAccordion(icon, key, 'icon');
       },
-      value: accordion.icon,
-      appendTo: "body",
-      isMulti: false
-    })) : ''));
+      icon: accordion.icon
+    }) : ''));
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-repeater-add-item pb-repeater--item",
     onClick: function onClick() {
@@ -20270,7 +20257,7 @@ var Inspector = function Inspector(props) {
   }), "Add Accordion"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(PanelBody, {
     title: __('Image', 'powerful-blocks'),
     initialOpen: false
-  })), 'style' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null), 'advanced' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_helper_advanced__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), 'style' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null), 'advanced' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_helper_advanced__WEBPACK_IMPORTED_MODULE_5__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   }))));
@@ -29124,6 +29111,66 @@ var GradientControl = function GradientControl(props) {
 
 /***/ }),
 
+/***/ "./src/components/icon-picker-control/editor.scss":
+/*!********************************************************!*\
+  !*** ./src/components/icon-picker-control/editor.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/components/icon-picker-control/index.js":
+/*!*****************************************************!*\
+  !*** ./src/components/icon-picker-control/index.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editor.scss */ "./src/components/icon-picker-control/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _helper_faIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helper/faIcons */ "./src/helper/faIcons.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_3__);
+
+var __ = wp.i18n.__;
+var _wp$components = wp.components,
+    BaseControl = _wp$components.BaseControl,
+    Dashicon = _wp$components.Dashicon;
+
+
+
+
+var IconPickerControl = function IconPickerControl(props) {
+  var label = props.label;
+  var icon = props.icon;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BaseControl, {
+    label: label,
+    className: "pb-icon-picker"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    noSelectedPlaceholder: Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Dashicon, {
+      icon: "admin-tools"
+    }),
+    icons: _helper_faIcons__WEBPACK_IMPORTED_MODULE_2__["default"],
+    onChange: function onChange(icon) {
+      props.onChange(icon);
+    },
+    value: icon,
+    appendTo: "body",
+    isMulti: false
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (IconPickerControl);
+
+/***/ }),
+
 /***/ "./src/components/image-control/editor.scss":
 /*!**************************************************!*\
   !*** ./src/components/image-control/editor.scss ***!
@@ -29326,7 +29373,7 @@ var ImageControl = function ImageControl(props) {
 /*!*********************************!*\
   !*** ./src/components/index.js ***!
   \*********************************/
-/*! exports provided: ColorPickerControl, ResponsiveRangeControl, ResponsiveBoxControl, AlignmentControl, ImageControl, GradientControl, TypographyControl, ShadowControl, BorderControl */
+/*! exports provided: ColorPickerControl, ResponsiveRangeControl, ResponsiveBoxControl, AlignmentControl, ImageControl, GradientControl, TypographyControl, ShadowControl, BorderControl, IconPickerControl */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29357,6 +29404,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _border_control__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./border-control */ "./src/components/border-control/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BorderControl", function() { return _border_control__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+
+/* harmony import */ var _icon_picker_control__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./icon-picker-control */ "./src/components/icon-picker-control/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IconPickerControl", function() { return _icon_picker_control__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+
 
 
 
