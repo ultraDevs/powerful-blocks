@@ -44,6 +44,9 @@
 		}
 	}
 	.pb-panel-head--tabs__controls {
+		.components-popover__content {
+			width: 250px !important;
+		}
 		.css-c3bpo-BackdropUI {
 			border: 1px solid #ccc !important;
 		}
