@@ -95,24 +95,11 @@ class Assets_Manager {
 		wp_enqueue_style( 'pb-block-editor', POWERFUL_BLOCKS_ASSETS . 'css/pb-blocks-editor.css', array( 'wp-edit-blocks' ), POWERFUL_BLOCKS_VERSION );
 		wp_enqueue_style( 'pb-block-editor-common', POWERFUL_BLOCKS_ASSETS . 'css/pb-editor-common.css', array( 'wp-edit-blocks' ), POWERFUL_BLOCKS_VERSION );
 		wp_enqueue_script( 'pb-block-editor', POWERFUL_BLOCKS_ASSETS . 'js/pb-blocks-editor.js', array( 'wp-blocks', 'wp-components', 'wp-compose', 'wp-i18n', 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-polyfill', 'wp-editor', 'wp-api-fetch' ), POWERFUL_BLOCKS_VERSION, true );
+		wp_enqueue_script( 'pb-frontend-e', POWERFUL_BLOCKS_ASSETS . 'js/pb-frontend.js', array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
 
-		/**
-		 * Block Slug Update
-		 *
-		 * @param string $txt Text.
-		 * @return string
-		 */
-		function pb_block_name_u( $txt ) {
-			if ( preg_match( '/-/', $txt, $matches ) ) {
-				$n_txt = explode( '-', $txt );
-				return $n_txt[0] . '-' . $n_txt[1];
-			} else {
-				return $txt;
-			}
-		}
 		$inactive_blocks = array();
 		foreach ( Dashboard::inactive_blocks() as $block ) {
-			$inactive_blocks[] = pb_block_name_u( $block );
+			$inactive_blocks[] = $this->pb_block_name_u( $block );
 		}
 		wp_localize_script(
 			'pb-block-editor',
@@ -123,6 +110,20 @@ class Assets_Manager {
 			)
 		);
 
+	}
+	/**
+	 * Block Slug Update
+	 *
+	 * @param string $txt Text.
+	 * @return string
+	 */
+	public function pb_block_name_u( $txt ) {
+		if ( preg_match( '/-/', $txt, $matches ) ) {
+			$n_txt = explode( '-', $txt );
+			return $n_txt[0] . '-' . $n_txt[1];
+		} else {
+			return $txt;
+		}
 	}
 	/**
 	 * Get Block CSS from Post Meta

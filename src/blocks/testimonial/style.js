@@ -6,81 +6,8 @@ const Styles = ( props ) => {
 
 	const {
 		blockId,
-		backgroundType,
-		hoverBackgroundType,
 
 		backgroundColor,
-		hoverBackgroundColor,
-
-		backgroundImg,
-        backgroundImgPosition,
-        backgroundImgSize,
-        backgroundImgRepeat,
-        backgroundImgAttachment,
-        backgroundImgOverlayColor,
-		backgroundOpacity,
-
-		hoverBackgroundImg,
-        hoverBackgroundImgPosition,
-        hoverBackgroundImgSize,
-        hoverBackgroundImgRepeat,
-        hoverBackgroundImgAttachment,
-        hoverBackgroundImgOverlayColor,
-        hoverBackgroundOpacity,
-
-		gradientValue,
-
-        hoverGradientValue,
-
-        padding,
-        paddingTablet,
-        paddingMobile,
-        margin,
-        marginTablet,
-        marginMobile,
-        shadowColor,
-        shadowHOffset,
-        shadowVOffset,
-        shadowBlur,
-        shadowSpread,
-		shadowType,
-		hoverShadowColor,
-        hoverShadowHOffset,
-        hoverShadowVOffset,
-        hoverShadowBlur,
-        hoverShadowSpread,
-		hoverShadowType,
-		
-        borderStyle,
-        borderSize,
-        borderColor,
-        hoverBorderStyle,
-        hoverBorderSize,
-        hoverBorderColor,
-        borderRadius,
-        borderRadiusTablet,
-        borderRadiusMobile,
-        inAnimation,
-        outAnimation,
-        inAnimationDuration,
-        inAnimationDelay,
-        outAnimationDuration,
-		outAnimationDelay,
-		
-		blockHeightType,
-        blockHeight,
-        blockHeightMobile,
-		blockHeightTablet,
-		
-		blockWidth,
-		blockCustomWidthType,
-        blockCustomWidth,
-        blockCustomWidthTablet,
-        blockCustomWidthMobile,
-        blockzIndex,
-        hideOnDesktop,
-        hideOnTablet,
-        hideOnMobile,
 
 		contentBackgroundColor,
 		hoverContentBackgroundColor,
@@ -375,6 +302,14 @@ const Styles = ( props ) => {
 				'border-radius': imageBorderRadiusTablet
 					? imageBorderRadiusTablet + 'px'
 					: undefined,
+				margin:
+					imageMarginTablet.top +
+					' ' +
+					imageMarginTablet.right +
+					' ' +
+					imageMarginTablet.bottom +
+					' ' +
+					imageMarginTablet.left,
 			},
 			'.pb-testimonial-info--name': {
 				'font-size': nameFontSizeTablet
@@ -442,6 +377,14 @@ const Styles = ( props ) => {
 				'border-radius': imageBorderRadiusMobile
 					? imageBorderRadiusMobile + 'px'
 					: undefined,
+				margin:
+					imageMarginMobile.top +
+					' ' +
+					imageMarginMobile.right +
+					' ' +
+					imageMarginMobile.bottom +
+					' ' +
+					imageMarginMobile.left,
 			},
 			'.pb-testimonial-info--name': {
 				'font-size': nameFontSizeMobile

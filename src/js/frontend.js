@@ -1,12 +1,14 @@
 import '../blocks/alert-box/frontend';
+import '../blocks/accordion/frontend';
 
 jQuery( function($){
 
     var linkData = $('[data-pb-link]');
     var lData = $( linkData[0]).data('pb-link');
-    if( lData.addLink ) {
-        $( linkData[0]).css('cursor', 'pointer');
-    }
+    
+    // if( '' !== lData.addLink ) {
+    //     $( linkData[0]).css('cursor', 'pointer');
+    // }
 
     $('[data-pb-link]').on( 'click', function(){
         var _this = $( this ),

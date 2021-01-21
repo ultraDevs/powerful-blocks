@@ -24,6 +24,9 @@ const settings = {
 	keywords: [
 		'ultrablocks',
 		'accordion',
+		'toggle',
+		'show/hide',
+		'faq',
 		__( 'Accordion', 'powerful-blocks' ),
 	],
 
