@@ -34,7 +34,7 @@ class Assets_Manager {
 			return;
 		}
 
-		wp_enqueue_style( 'pb-admin', POWERFUL_BLOCKS_ASSETS . 'css/pb-admin.css', '', POWERFUL_BLOCKS_VERSION );
+		wp_enqueue_style( 'pb-admin', POWERFUL_BLOCKS_ASSETS . 'css/pb-admin-styles.css', '', POWERFUL_BLOCKS_VERSION );
 		wp_enqueue_script( 'pb-admin', POWERFUL_BLOCKS_ASSETS . 'js/pb-admin.js', array( 'jquery', 'wp-util' ), POWERFUL_BLOCKS_VERSION, false );
 
 		wp_localize_script(

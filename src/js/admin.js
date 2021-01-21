@@ -1,5 +1,10 @@
 jQuery(function($) {
 
+    // Icon Gradient Color.
+    let powerfulBlocksGradient ='<div><svg xmlns="http://www.w3.org/2000/svg" class="pb-icon-gradient" height="0" width="0" style="opacity: 0"><defs><linearGradient id="powerfulblocks-gradient"><stop offset="20%" stop-color="#5820e5" stop-opacity="1"></stop><stop offset="90%" stop-color=" #f30d55" stop-opacity="1"></stop></linearGradient></defs></svg></div>';
+    
+    $(powerfulBlocksGradient).prependTo('body');
+
     $('.pb-tabs__content .pb-tabs__item').hide();
     $('.pb-tabs__content .pb-tabs__item:first').show();
     $('.pb-tabs__nav li:first').addClass('tabs__is-active');
