@@ -30871,7 +30871,7 @@ var Inspector = function Inspector(props) {
     className: "pb-border-control"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dropdown, {
     className: "pb-border-control--dropdown",
-    contentClassName: "my-popover-content-classname",
+    contentClassName: "pb-control-dropdown--content",
     position: "bottom right",
     renderToggle: function renderToggle(_ref) {
       var isOpen = _ref.isOpen,
@@ -30963,7 +30963,7 @@ var Inspector = function Inspector(props) {
     className: "pb-shadow-control"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dropdown, {
     className: "pb-shadow-control--dropdown",
-    contentClassName: "my-popover-content-classname",
+    contentClassName: "pb-control-dropdown--content",
     position: "bottom right",
     renderToggle: function renderToggle(_ref2) {
       var isOpen = _ref2.isOpen,
@@ -32992,7 +32992,7 @@ var ShadowControl = function ShadowControl(props) {
     className: "pb-shadow-control"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dropdown, {
     className: "pb-shadow-control--dropdown",
-    contentClassName: "my-popover-content-classname",
+    contentClassName: "pb-control-dropdown--content",
     position: "bottom right",
     renderToggle: function renderToggle(_ref) {
       var isOpen = _ref.isOpen,
@@ -33429,7 +33429,7 @@ var TypographyControl = function TypographyControl(props) {
     className: "pb-typography-control"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Dropdown, {
     className: "pb-typography-control--dropdown",
-    contentClassName: "my-popover-content-classname",
+    contentClassName: "pb-control-dropdown--content",
     position: "bottom right",
     renderToggle: function renderToggle(_ref) {
       var isOpen = _ref.isOpen,

@@ -29,9 +29,6 @@
       outline: none;
       box-shadow: none; }
 
-.pb-panel-head--tabs .pb-panel-head--tabs__controls .components-popover__content {
-  width: 250px !important; }
-
 .pb-panel-head--tabs .pb-panel-head--tabs__controls .css-c3bpo-BackdropUI {
   border: 1px solid #ccc !important; }
 
@@ -232,6 +229,9 @@
   .pb-repeater--wrapper .pb-repeater-add-item {
     display: inline-block;
     padding: 5px 10px; }
+
+.pb-control-dropdown--content .components-popover__content {
+  width: 250px !important; }
 
 
 /*# sourceMappingURL=pb-editor-common.css.map*/

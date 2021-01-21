@@ -32,7 +32,7 @@ const ShadowControl = ( props ) => {
             >
                 <Dropdown
                     className="pb-shadow-control--dropdown"
-                    contentClassName="my-popover-content-classname"
+                    contentClassName="pb-control-dropdown--content"
                     position="bottom right"
                     renderToggle={ ( { isOpen, onToggle } ) => (
                         <Button
