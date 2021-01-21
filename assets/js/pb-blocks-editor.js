@@ -23671,13 +23671,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helper_advancedAttributes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helper/advancedAttributes */ "./src/helper/advancedAttributes.js");
 
 
+var _attributes;
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 
 
-var attributes = {
+var attributes = (_attributes = {
   blockId: {
     type: 'string',
     default: undefined
@@ -23692,7 +23694,7 @@ var attributes = {
   },
   icon: {
     type: 'string',
-    default: 'fab fa-wordpress'
+    default: 'far fa-smile'
   },
   iconSize: {
     type: 'number',
@@ -23720,7 +23722,7 @@ var attributes = {
       id: undefined,
       alt: '',
       size: undefined,
-      url: ''
+      url: UDPB.assets + 'images/pb-placeholder.png'
     }
   },
   imgHeightType: {
@@ -23936,7 +23938,7 @@ var attributes = {
     type: 'string',
     default: ''
   },
-  contentBPadding: {
+  numberBPadding: {
     type: 'object',
     default: {
       top: '10px',
@@ -23945,7 +23947,7 @@ var attributes = {
       bottom: '10px'
     }
   },
-  contentBPaddingTablet: {
+  numberBPaddingTablet: {
     type: 'object',
     default: {
       top: '0px',
@@ -23954,7 +23956,7 @@ var attributes = {
       bottom: '0px'
     }
   },
-  contentBPaddingMobile: {
+  numberBPaddingMobile: {
     type: 'object',
     default: {
       top: '0px',
@@ -23965,7 +23967,7 @@ var attributes = {
   },
   title: {
     type: 'string',
-    default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('PB Info Box Title', 'powerful-blocks')
+    default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Fun Factor Title', 'powerful-blocks')
   },
   titleColor: {
     type: 'string',
@@ -24042,90 +24044,103 @@ var attributes = {
     type: 'number',
     default: ''
   },
-  content: {
-    type: 'string',
-    default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('PB Info Box Description Goes Here.', 'powerful-blocks')
+  number: {
+    type: 'number',
+    default: 0
   },
-  contentColor: {
-    type: 'string',
-    default: '#333'
+  endingNumber: {
+    type: 'number',
+    default: 100
   },
-  contentMargin: {
-    type: 'object',
-    default: {
-      top: '0px',
-      left: '0px',
-      right: '0px',
-      bottom: '10px'
-    }
-  },
-  contentMarginTablet: {
-    type: 'object',
-    default: {
-      top: '0px',
-      left: '0px',
-      right: '0px',
-      bottom: '0px'
-    }
-  },
-  contentMarginMobile: {
-    type: 'object',
-    default: {
-      top: '0px',
-      left: '0px',
-      right: '0px',
-      bottom: '0px'
-    }
-  },
-  contentFontFamily: {
+  numberPrefix: {
     type: 'string',
     default: ''
   },
-  contentFontSizeType: {
-    type: 'string',
-    default: 'px'
-  },
-  contentFontStyle: {
-    type: 'string',
-    default: 'normal'
-  },
-  contentFontSize: {
-    type: 'number',
-    default: 18
-  },
-  contentFontSizeTablet: {
-    type: 'number',
-    default: 17
-  },
-  contentFontSizeMobile: {
-    type: 'number',
-    default: 16
-  },
-  contentFontWeight: {
-    type: 'string',
-    default: 'normal'
-  },
-  contentTextTransform: {
+  numberSuffix: {
     type: 'string',
     default: ''
   },
-  contentTextDecoration: {
+  easing: {
     type: 'string',
-    default: ''
+    default: 'linear'
   },
-  contentLetterSpacing: {
+  duration: {
     type: 'number',
-    default: ''
-  },
-  contentLineHeight: {
-    type: 'number',
-    default: ''
-  },
-  preset: {
-    type: 'string',
-    default: 'design-1'
+    default: 200
   }
-};
+}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "duration", {
+  type: 'number',
+  default: 200
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "delimiter", {
+  type: 'string',
+  default: ','
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "rounding", {
+  type: 'number',
+  default: 0
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberColor", {
+  type: 'string',
+  default: '#333'
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberMargin", {
+  type: 'object',
+  default: {
+    top: '0px',
+    left: '0px',
+    right: '0px',
+    bottom: '10px'
+  }
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberMarginTablet", {
+  type: 'object',
+  default: {
+    top: '0px',
+    left: '0px',
+    right: '0px',
+    bottom: '0px'
+  }
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberMarginMobile", {
+  type: 'object',
+  default: {
+    top: '0px',
+    left: '0px',
+    right: '0px',
+    bottom: '0px'
+  }
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontFamily", {
+  type: 'string',
+  default: ''
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontSizeType", {
+  type: 'string',
+  default: 'px'
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontStyle", {
+  type: 'string',
+  default: 'normal'
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontSize", {
+  type: 'number',
+  default: 18
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontSizeTablet", {
+  type: 'number',
+  default: 17
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontSizeMobile", {
+  type: 'number',
+  default: 16
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontWeight", {
+  type: 'string',
+  default: 'normal'
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberTextTransform", {
+  type: 'string',
+  default: ''
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberTextDecoration", {
+  type: 'string',
+  default: ''
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberLetterSpacing", {
+  type: 'number',
+  default: ''
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberLineHeight", {
+  type: 'number',
+  default: ''
+}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "preset", {
+  type: 'string',
+  default: 'design-1'
+}), _attributes);
 
 var finalAttributes = _objectSpread(_objectSpread({}, attributes), _helper_advancedAttributes__WEBPACK_IMPORTED_MODULE_2__["default"]);
 
@@ -24180,8 +24195,15 @@ var edit = function edit(props) {
       icon = attributes.icon,
       img = attributes.img,
       title = attributes.title,
-      content = attributes.content,
+      number = attributes.number,
       mPosition = attributes.mPosition,
+      endingNumber = attributes.endingNumber,
+      numberPrefix = attributes.numberPrefix,
+      numberSuffix = attributes.numberSuffix,
+      easing = attributes.easing,
+      duration = attributes.duration,
+      delimiter = attributes.delimiter,
+      rounding = attributes.rounding,
       preset = attributes.preset;
   var classes = Object(_helper__WEBPACK_IMPORTED_MODULE_5__["genClass"])(attributes, 'edit');
   var blockAttr = Object(_helper__WEBPACK_IMPORTED_MODULE_5__["blockAttributes"])(attributes, 'edit');
@@ -24214,7 +24236,22 @@ var edit = function edit(props) {
     alt: img.alt
   })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-fun-factor--body"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText, {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "pb-fun-factor-counter"
+  }, numberPrefix && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    className: "pb-fun-factor-number--prefix"
+  }, numberPrefix), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    className: "pb-fun-factor-number",
+    "data-settings": JSON.stringify({
+      from: number ? number : 0,
+      to: endingNumber ? endingNumber : 0,
+      delimiter: delimiter ? delimiter : '',
+      duration: duration ? duration : '',
+      easing: easing ? easing : ''
+    })
+  }, number ? number : '0'), numberSuffix && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    className: "pb-fun-factor-number--suffix"
+  }, numberSuffix)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText, {
     tagName: "h3",
     className: "pb-fun-factor--body__title",
     value: title,
@@ -24225,19 +24262,7 @@ var edit = function edit(props) {
         title: title
       });
     }
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: "pb-fun-factor--body__content"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText, {
-    tagName: "p",
-    value: content,
-    disableLineBreaks: true,
-    keepPlaceholderOnFocus: true,
-    onChange: function onChange(content) {
-      setAttributes({
-        content: content
-      });
-    }
-  }))))));
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (edit);
@@ -24387,11 +24412,10 @@ var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     TextControl = _wp$components.TextControl,
     TextareaControl = _wp$components.TextareaControl,
+    __experimentalNumberControl = _wp$components.__experimentalNumberControl,
     SelectControl = _wp$components.SelectControl,
     ToggleControl = _wp$components.ToggleControl,
     RangeControl = _wp$components.RangeControl,
-    BaseControl = _wp$components.BaseControl,
-    Dropdown = _wp$components.Dropdown,
     Button = _wp$components.Button,
     ButtonGroup = _wp$components.ButtonGroup,
     TabPanel = _wp$components.TabPanel,
@@ -24455,9 +24479,9 @@ var Inspector = function Inspector(props) {
       hoverMShadowBlur = attributes.hoverMShadowBlur,
       hoverMShadowSpread = attributes.hoverMShadowSpread,
       hoverMShadowType = attributes.hoverMShadowType,
-      contentBPadding = attributes.contentBPadding,
-      contentBPaddingTablet = attributes.contentBPaddingTablet,
-      contentBPaddingMobile = attributes.contentBPaddingMobile,
+      numberBPadding = attributes.numberBPadding,
+      numberBPaddingTablet = attributes.numberBPaddingTablet,
+      numberBPaddingMobile = attributes.numberBPaddingMobile,
       title = attributes.title,
       titleColor = attributes.titleColor,
       titleMargin = attributes.titleMargin,
@@ -24474,22 +24498,29 @@ var Inspector = function Inspector(props) {
       titleTextDecoration = attributes.titleTextDecoration,
       titleLetterSpacing = attributes.titleLetterSpacing,
       titleLineHeight = attributes.titleLineHeight,
-      content = attributes.content,
-      contentColor = attributes.contentColor,
-      contentMargin = attributes.contentMargin,
-      contentMarginTablet = attributes.contentMarginTablet,
-      contentMarginMobile = attributes.contentMarginMobile,
-      contentFontFamily = attributes.contentFontFamily,
-      contentFontSizeType = attributes.contentFontSizeType,
-      contentFontStyle = attributes.contentFontStyle,
-      contentFontSize = attributes.contentFontSize,
-      contentFontSizeTablet = attributes.contentFontSizeTablet,
-      contentFontSizeMobile = attributes.contentFontSizeMobile,
-      contentFontWeight = attributes.contentFontWeight,
-      contentTextTransform = attributes.contentTextTransform,
-      contentTextDecoration = attributes.contentTextDecoration,
-      contentLetterSpacing = attributes.contentLetterSpacing,
-      contentLineHeight = attributes.contentLineHeight,
+      number = attributes.number,
+      endingNumber = attributes.endingNumber,
+      numberPrefix = attributes.numberPrefix,
+      numberSuffix = attributes.numberSuffix,
+      easing = attributes.easing,
+      duration = attributes.duration,
+      delimiter = attributes.delimiter,
+      rounding = attributes.rounding,
+      numberColor = attributes.numberColor,
+      numberMargin = attributes.numberMargin,
+      numberMarginTablet = attributes.numberMarginTablet,
+      numberMarginMobile = attributes.numberMarginMobile,
+      numberFontFamily = attributes.numberFontFamily,
+      numberFontSizeType = attributes.numberFontSizeType,
+      numberFontStyle = attributes.numberFontStyle,
+      numberFontSize = attributes.numberFontSize,
+      numberFontSizeTablet = attributes.numberFontSizeTablet,
+      numberFontSizeMobile = attributes.numberFontSizeMobile,
+      numberFontWeight = attributes.numberFontWeight,
+      numberTextTransform = attributes.numberTextTransform,
+      numberTextDecoration = attributes.numberTextDecoration,
+      numberLetterSpacing = attributes.numberLetterSpacing,
+      numberLineHeight = attributes.numberLineHeight,
       preset = attributes.preset,
       mValign = attributes.mValign;
   var currentTab = 'content';
@@ -24605,14 +24636,88 @@ var Inspector = function Inspector(props) {
       });
     }
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
-    title: __('Content', 'powerful-blocks'),
+    title: __('Digit', 'powerful-blocks'),
     initialOpen: false
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextareaControl, {
-    label: __('Content', 'powerful-blocks'),
-    value: content,
-    onChange: function onChange(content) {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(__experimentalNumberControl, {
+    className: "pb-custom-number-control",
+    label: __('Starting Number', 'powerful-blocks'),
+    shi: true,
+    value: number,
+    onChange: function onChange(number) {
       setAttributes({
-        content: content
+        number: number
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(__experimentalNumberControl, {
+    className: "pb-custom-number-control",
+    label: __('Final Number', 'powerful-blocks'),
+    shi: true,
+    value: endingNumber,
+    onChange: function onChange(endingNumber) {
+      setAttributes({
+        endingNumber: endingNumber
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
+    label: __('Duration', 'powerful-blocks'),
+    value: duration,
+    onChange: function onChange(duration) {
+      setAttributes({
+        duration: duration
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+    className: "pb-custom-select-control",
+    label: __('Easing', 'powerful-blocks'),
+    value: delimiter,
+    onChange: function onChange(delimiter) {
+      setAttributes({
+        delimiter: delimiter
+      });
+    },
+    options: [{
+      value: '',
+      label: __('None', 'powerful-blocks')
+    }, {
+      value: 'linear',
+      label: __('Linear', 'powerful-blocks')
+    }]
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
+    className: "pb-custom-select-control",
+    label: __('Thousand Separator', 'powerful-blocks'),
+    value: delimiter,
+    onChange: function onChange(delimiter) {
+      setAttributes({
+        delimiter: delimiter
+      });
+    },
+    options: [{
+      value: '',
+      label: __('None', 'powerful-blocks')
+    }, {
+      value: ',',
+      label: __('Comma', 'powerful-blocks')
+    }, {
+      value: '.',
+      label: __('Dot', 'powerful-blocks')
+    }]
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
+    title: __('Suffix/Prefix', 'powerful-blocks'),
+    initialOpen: false
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
+    label: __('Suffix', 'powerful-blocks'),
+    value: numberSuffix,
+    onChange: function onChange(numberSuffix) {
+      setAttributes({
+        numberSuffix: numberSuffix
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
+    label: __('Prefix', 'powerful-blocks'),
+    value: numberPrefix,
+    onChange: function onChange(numberPrefix) {
+      setAttributes({
+        numberPrefix: numberPrefix
       });
     }
   }))), 'style' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
@@ -24972,26 +25077,26 @@ var Inspector = function Inspector(props) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ResponsiveBoxControl"], {
     label: __('Padding', 'powerful-blocks'),
     value: {
-      desktop: contentBPadding,
-      tablet: contentBPaddingTablet,
-      mobile: contentBPaddingMobile
+      desktop: numberBPadding,
+      tablet: numberBPaddingTablet,
+      mobile: numberBPaddingMobile
     },
     onChange: function onChange(value, device) {
       if ('desktop' === device) {
         setAttributes({
-          contentBPadding: value
+          numberBPadding: value
         });
       }
 
       if ('tablet' === device) {
         setAttributes({
-          contentBPaddingTablet: value
+          numberBPaddingTablet: value
         });
       }
 
       if ('mobile' === device) {
         setAttributes({
-          contentBPaddingMobile: value
+          numberBPaddingMobile: value
         });
       }
     }
@@ -25082,83 +25187,83 @@ var Inspector = function Inspector(props) {
     className: "pb-h-title"
   }, __('Content', 'powerful-blocks')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
     label: __('Color', 'powerful-blocks'),
-    value: contentColor,
-    onChange: function onChange(contentColor) {
+    value: numberColor,
+    onChange: function onChange(numberColor) {
       setAttributes({
-        contentColor: contentColor
+        numberColor: numberColor
       });
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ResponsiveBoxControl"], {
     label: __('Margin', 'powerful-blocks'),
     value: {
-      desktop: contentMargin,
-      tablet: contentMarginTablet,
-      mobile: contentMarginMobile
+      desktop: numberMargin,
+      tablet: numberMarginTablet,
+      mobile: numberMarginMobile
     },
     onChange: function onChange(value, device) {
       if ('desktop' === device) {
         setAttributes({
-          contentMargin: value
+          numberMargin: value
         });
       }
 
       if ('tablet' === device) {
         setAttributes({
-          contentMarginTablet: value
+          numberMarginTablet: value
         });
       }
 
       if ('mobile' === device) {
         setAttributes({
-          contentMarginMobile: value
+          numberMarginMobile: value
         });
       }
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["TypographyControl"], {
     label: __('Typography', 'powerful-blocks'),
     fontFamily: {
-      value: contentFontFamily,
-      name: 'contentFontFamily'
+      value: numberFontFamily,
+      name: 'numberFontFamily'
     },
     sizeType: {
-      value: contentFontSizeType,
-      name: 'contentFontSizeType'
+      value: numberFontSizeType,
+      name: 'numberFontSizeType'
     },
     fontSize: {
-      value: contentFontSize,
-      name: 'contentFontSize'
+      value: numberFontSize,
+      name: 'numberFontSize'
     },
     fontSizeTablet: {
-      value: contentFontSizeTablet,
-      name: 'contentFontSizeTablet'
+      value: numberFontSizeTablet,
+      name: 'numberFontSizeTablet'
     },
     fontSizeMobile: {
-      value: contentFontSizeMobile,
-      name: 'contentFontSizeMobile'
+      value: numberFontSizeMobile,
+      name: 'numberFontSizeMobile'
     },
     fontStyle: {
-      value: contentFontStyle,
-      name: 'contentFontStyle'
+      value: numberFontStyle,
+      name: 'numberFontStyle'
     },
     fontWeight: {
-      value: contentFontWeight,
-      name: 'contentFontWeight'
+      value: numberFontWeight,
+      name: 'numberFontWeight'
     },
     lineHeight: {
-      value: contentLineHeight,
-      name: 'contentLineHeight'
+      value: numberLineHeight,
+      name: 'numberLineHeight'
     },
     letterSpacing: {
-      value: contentLetterSpacing,
-      name: 'contentLetterSpacing'
+      value: numberLetterSpacing,
+      name: 'numberLetterSpacing'
     },
     textTransform: {
-      value: contentTextTransform,
-      name: 'contentTextTransform'
+      value: numberTextTransform,
+      name: 'numberTextTransform'
     },
     textDecoration: {
-      value: contentTextDecoration,
-      name: 'contentTextDecoration'
+      value: numberTextDecoration,
+      name: 'numberTextDecoration'
     },
     setAttributes: props.setAttributes
   }))), 'advanced' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_helper_advanced__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -25209,8 +25314,16 @@ var save = function save(_ref) {
       icon = attributes.icon,
       img = attributes.img,
       title = attributes.title,
-      content = attributes.content,
-      mPosition = attributes.mPosition;
+      number = attributes.number,
+      mPosition = attributes.mPosition,
+      endingNumber = attributes.endingNumber,
+      numberPrefix = attributes.numberPrefix,
+      numberSuffix = attributes.numberSuffix,
+      easing = attributes.easing,
+      duration = attributes.duration,
+      delimiter = attributes.delimiter,
+      rounding = attributes.rounding,
+      preset = attributes.preset;
   var classes = Object(_helper__WEBPACK_IMPORTED_MODULE_5__["genClass"])(attributes, 'save');
   var blockAttr = Object(_helper__WEBPACK_IMPORTED_MODULE_5__["blockAttributes"])(attributes, 'save');
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
@@ -25229,16 +25342,26 @@ var save = function save(_ref) {
     alt: img.alt
   })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-fun-factor--body"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText.Content, {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "pb-fun-factor-counter"
+  }, numberPrefix && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    className: "pb-fun-factor-number--prefix"
+  }, numberPrefix), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    className: "pb-fun-factor-number",
+    "data-settings": JSON.stringify({
+      from: number ? number : 0,
+      to: endingNumber ? endingNumber : 0,
+      delimiter: delimiter ? delimiter : '',
+      duration: duration ? duration : '',
+      easing: easing ? easing : ''
+    })
+  }, number ? number : '0'), numberSuffix && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    className: "pb-fun-factor-number--suffix"
+  }, numberSuffix)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText.Content, {
     tagName: "h3",
     className: "pb-fun-factor--body__title",
     value: title
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: "pb-fun-factor--body__content"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText.Content, {
-    tagName: "p",
-    value: content
-  }))))));
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (save);
@@ -25387,9 +25510,9 @@ var Styles = function Styles(props) {
       hoverMShadowBlur = attributes.hoverMShadowBlur,
       hoverMShadowSpread = attributes.hoverMShadowSpread,
       hoverMShadowType = attributes.hoverMShadowType,
-      contentBPadding = attributes.contentBPadding,
-      contentBPaddingTablet = attributes.contentBPaddingTablet,
-      contentBPaddingMobile = attributes.contentBPaddingMobile,
+      numberBPadding = attributes.numberBPadding,
+      numberBPaddingTablet = attributes.numberBPaddingTablet,
+      numberBPaddingMobile = attributes.numberBPaddingMobile,
       titleColor = attributes.titleColor,
       titleMargin = attributes.titleMargin,
       titleMarginTablet = attributes.titleMarginTablet,
@@ -25405,21 +25528,21 @@ var Styles = function Styles(props) {
       titleTextDecoration = attributes.titleTextDecoration,
       titleLetterSpacing = attributes.titleLetterSpacing,
       titleLineHeight = attributes.titleLineHeight,
-      contentColor = attributes.contentColor,
-      contentMargin = attributes.contentMargin,
-      contentMarginTablet = attributes.contentMarginTablet,
-      contentMarginMobile = attributes.contentMarginMobile,
-      contentFontFamily = attributes.contentFontFamily,
-      contentFontSizeType = attributes.contentFontSizeType,
-      contentFontStyle = attributes.contentFontStyle,
-      contentFontSize = attributes.contentFontSize,
-      contentFontSizeTablet = attributes.contentFontSizeTablet,
-      contentFontSizeMobile = attributes.contentFontSizeMobile,
-      contentFontWeight = attributes.contentFontWeight,
-      contentTextTransform = attributes.contentTextTransform,
-      contentTextDecoration = attributes.contentTextDecoration,
-      contentLetterSpacing = attributes.contentLetterSpacing,
-      contentLineHeight = attributes.contentLineHeight,
+      numberColor = attributes.numberColor,
+      numberMargin = attributes.numberMargin,
+      numberMarginTablet = attributes.numberMarginTablet,
+      numberMarginMobile = attributes.numberMarginMobile,
+      numberFontFamily = attributes.numberFontFamily,
+      numberFontSizeType = attributes.numberFontSizeType,
+      numberFontStyle = attributes.numberFontStyle,
+      numberFontSize = attributes.numberFontSize,
+      numberFontSizeTablet = attributes.numberFontSizeTablet,
+      numberFontSizeMobile = attributes.numberFontSizeMobile,
+      numberFontWeight = attributes.numberFontWeight,
+      numberTextTransform = attributes.numberTextTransform,
+      numberTextDecoration = attributes.numberTextDecoration,
+      numberLetterSpacing = attributes.numberLetterSpacing,
+      numberLineHeight = attributes.numberLineHeight,
       preset = attributes.preset;
   var selectorPrefix = "#pb-fun-factor-".concat(blockId);
   var rules = {
@@ -25454,7 +25577,7 @@ var Styles = function Styles(props) {
         'border-color': hoverMBorderColor ? hoverMBorderColor : undefined
       },
       '.pb-fun-factor--body': {
-        padding: contentBPadding.top + ' ' + contentBPadding.right + ' ' + contentBPadding.bottom + ' ' + contentBPadding.left,
+        padding: numberBPadding.top + ' ' + numberBPadding.right + ' ' + numberBPadding.bottom + ' ' + numberBPadding.left,
         'margin-top': mOffsetTop ? mOffsetTop + mOffsetType : undefined
       },
       '.pb-fun-factor--body__title': {
@@ -25469,14 +25592,14 @@ var Styles = function Styles(props) {
         'text-transform': titleTextTransform ? titleTextTransform : undefined,
         'text-decoration': titleTextDecoration ? titleTextDecoration : undefined
       },
-      '.pb-fun-factor--body__content': {
-        margin: contentMargin.top + ' ' + contentMargin.right + ' ' + contentMargin.bottom + ' ' + contentMargin.left
+      '.pb-fun-factor--body__number': {
+        margin: numberMargin.top + ' ' + numberMargin.right + ' ' + numberMargin.bottom + ' ' + numberMargin.left
       },
-      '.pb-fun-factor--body__content p': (_pbFunFactorBody = {
-        color: contentColor ? contentColor : undefined,
-        'font-size': contentFontSize ? contentFontSize + contentFontSizeTablet : undefined,
-        'font-family': contentFontFamily ? contentFontFamily + '!important' : undefined
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, "font-size", contentFontSize ? contentFontSize + contentFontSizeType : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'font-weight', contentFontWeight ? contentFontWeight + '!important' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'font-style', contentFontStyle ? contentFontStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'letter-spacing', contentLetterSpacing ? contentLetterSpacing + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'line-height', contentLineHeight ? contentLineHeight + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'text-transform', contentTextTransform ? contentTextTransform : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'text-decoration', contentTextDecoration ? contentTextDecoration : undefined), _pbFunFactorBody)
+      '.pb-fun-factor--body__number p': (_pbFunFactorBody = {
+        color: numberColor ? numberColor : undefined,
+        'font-size': numberFontSize ? numberFontSize + numberFontSizeTablet : undefined,
+        'font-family': numberFontFamily ? numberFontFamily + '!important' : undefined
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, "font-size", numberFontSize ? numberFontSize + numberFontSizeType : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'font-weight', numberFontWeight ? numberFontWeight + '!important' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'font-style', numberFontStyle ? numberFontStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'letter-spacing', numberLetterSpacing ? numberLetterSpacing + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'line-height', numberLineHeight ? numberLineHeight + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'text-transform', numberTextTransform ? numberTextTransform : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'text-decoration', numberTextDecoration ? numberTextDecoration : undefined), _pbFunFactorBody)
     },
     tablet: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()({
       '.pb-fun-factor--m': {
@@ -25490,18 +25613,18 @@ var Styles = function Styles(props) {
         height: imgHeightTablet ? imgHeightTablet + imgHeightType : undefined
       },
       '.pb-fun-factor--body': {
-        padding: contentBPaddingTablet.top + ' ' + contentBPaddingTablet.right + ' ' + contentBPaddingTablet.bottom + ' ' + contentBPaddingTablet.left,
+        padding: numberBPaddingTablet.top + ' ' + numberBPaddingTablet.right + ' ' + numberBPaddingTablet.bottom + ' ' + numberBPaddingTablet.left,
         'margin-top': mOffsetTopTablet ? mOffsetTopTablet + mOffsetType : undefined
       },
       '.pb-fun-factor--body__title': {
         margin: titleMarginTablet.top + ' ' + titleMarginTablet.right + ' ' + titleMarginTablet.bottom + ' ' + titleMarginTablet.left,
         'font-size': titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined
       },
-      '.pb-fun-factor--body__content': {
-        margin: contentMarginTablet.top + ' ' + contentMarginTablet.right + ' ' + contentMarginTablet.bottom + ' ' + contentMarginTablet.left
+      '.pb-fun-factor--body__number': {
+        margin: numberMarginTablet.top + ' ' + numberMarginTablet.right + ' ' + numberMarginTablet.bottom + ' ' + numberMarginTablet.left
       }
-    }, ".pb-fun-factor--body__content", {
-      'font-size': contentFontSizeTablet ? contentFontSizeTablet + contentFontSizeTablet : undefined
+    }, ".pb-fun-factor--body__number", {
+      'font-size': numberFontSizeTablet ? numberFontSizeTablet + numberFontSizeTablet : undefined
     }),
     mobile: {
       '.pb-fun-factor--m': {
@@ -25515,18 +25638,18 @@ var Styles = function Styles(props) {
         height: imgHeightMobile ? imgHeightMobile + imgHeightType : undefined
       },
       '.pb-fun-factor--body': {
-        padding: contentBPaddingMobile.top + ' ' + contentBPaddingMobile.right + ' ' + contentBPaddingMobile.bottom + ' ' + contentBPaddingMobile.left,
+        padding: numberBPaddingMobile.top + ' ' + numberBPaddingMobile.right + ' ' + numberBPaddingMobile.bottom + ' ' + numberBPaddingMobile.left,
         'margin-top': mOffsetTopMobile ? mOffsetTopMobile + mOffsetType : undefined
       },
       '.pb-fun-factor--body__title': {
         margin: titleMarginMobile.top + ' ' + titleMarginMobile.right + ' ' + titleMarginMobile.bottom + ' ' + titleMarginMobile.left,
         'font-size': titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined
       },
-      '.pb-fun-factor--body__content': {
-        margin: contentMarginMobile.top + ' ' + contentMarginMobile.right + ' ' + contentMarginMobile.bottom + ' ' + contentMarginMobile.left
+      '.pb-fun-factor--body__number': {
+        margin: numberMarginMobile.top + ' ' + numberMarginMobile.right + ' ' + numberMarginMobile.bottom + ' ' + numberMarginMobile.left
       },
-      '.pb-fun-factor--body__content p': {
-        'font-size': contentFontSizeMobile ? contentFontSizeMobile + contentFontSizeTablet : undefined
+      '.pb-fun-factor--body__number p': {
+        'font-size': numberFontSizeMobile ? numberFontSizeMobile + numberFontSizeTablet : undefined
       }
     }
   };
@@ -26930,7 +27053,7 @@ var attributes = {
       id: undefined,
       alt: '',
       size: undefined,
-      url: ''
+      url: UDPB.assets + 'images/pb-placeholder.png'
     }
   },
   imgHeightType: {
@@ -29928,7 +30051,7 @@ var attributes = {
       id: undefined,
       alt: '',
       size: undefined,
-      url: ''
+      url: UDPB.assets + 'images/pb-placeholder.png'
     }
   },
   showImage: {

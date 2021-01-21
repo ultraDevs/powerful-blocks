@@ -107,6 +107,7 @@ class Assets_Manager {
 			array(
 				'inactive_blocks' => $inactive_blocks,
 				'type'            => 'free',
+				'assets'          => POWERFUL_BLOCKS_ASSETS,
 			)
 		);
 

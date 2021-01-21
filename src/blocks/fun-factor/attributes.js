@@ -50,7 +50,7 @@ const attributes = {
 			id: undefined,
 			alt: '',
 			size: undefined,
-			url: '',
+			url: UDPB.assets + 'images/pb-placeholder.png',
 		},
 	},
 	imgHeightType: {
