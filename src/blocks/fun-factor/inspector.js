@@ -3,11 +3,10 @@ const {
 	PanelBody,
 	TextControl,
 	TextareaControl,
+	__experimentalNumberControl,
 	SelectControl,
 	ToggleControl,
 	RangeControl,
-	BaseControl,
-	Dropdown,
 	Button,
 	ButtonGroup,
 	TabPanel,
@@ -88,9 +87,9 @@ const Inspector = ( props ) => {
 		hoverMShadowBlur,
 		hoverMShadowSpread,
 		hoverMShadowType,
-		contentBPadding,
-		contentBPaddingTablet,
-		contentBPaddingMobile,
+		numberBPadding,
+		numberBPaddingTablet,
+		numberBPaddingMobile,
 		title,
 		titleColor,
 		titleMargin,
@@ -107,22 +106,31 @@ const Inspector = ( props ) => {
 		titleTextDecoration,
 		titleLetterSpacing,
 		titleLineHeight,
-		content,
-		contentColor,
-		contentMargin,
-		contentMarginTablet,
-		contentMarginMobile,
-		contentFontFamily,
-		contentFontSizeType,
-		contentFontStyle,
-		contentFontSize,
-		contentFontSizeTablet,
-		contentFontSizeMobile,
-		contentFontWeight,
-		contentTextTransform,
-		contentTextDecoration,
-		contentLetterSpacing,
-		contentLineHeight,
+		number,
+		endingNumber,
+
+		numberPrefix,
+		numberSuffix,
+		easing,
+		duration,
+		delimiter,
+		rounding,
+
+		numberColor,
+		numberMargin,
+		numberMarginTablet,
+		numberMarginMobile,
+		numberFontFamily,
+		numberFontSizeType,
+		numberFontStyle,
+		numberFontSize,
+		numberFontSizeTablet,
+		numberFontSizeMobile,
+		numberFontWeight,
+		numberTextTransform,
+		numberTextDecoration,
+		numberLetterSpacing,
+		numberLineHeight,
 		preset,
 		mValign
 	} = attributes;
@@ -279,14 +287,76 @@ const Inspector = ( props ) => {
 
 						</PanelBody>
 						<PanelBody
-							title={ __( 'Content', 'powerful-blocks' ) }
+							title={ __( 'Digit', 'powerful-blocks' ) }
 							initialOpen={ false }
 						>
-							<TextareaControl
-								label={ __( 'Content', 'powerful-blocks' ) }
-								value={ content }
-								onChange={ ( content ) => {
-									setAttributes( { content } );
+							<__experimentalNumberControl
+								className = "pb-custom-number-control"
+								label = { __( 'Starting Number', 'powerful-blocks' ) }
+								shi
+								value={ number }
+								onChange={ ( number ) => {
+									setAttributes( { number } );
+								} }
+							/>
+							<__experimentalNumberControl
+								className = "pb-custom-number-control"
+								label = { __( 'Final Number', 'powerful-blocks' ) }
+								shi
+								value={ endingNumber }
+								onChange={ ( endingNumber ) => {
+									setAttributes( { endingNumber } );
+								} }
+							/>
+							<TextControl
+								label={ __( 'Duration', 'powerful-blocks' ) }
+								value={ duration }
+								onChange={ ( duration ) => {
+									setAttributes( { duration } );
+								} }
+							/>
+							<SelectControl
+								className = "pb-custom-select-control"
+								label={ __( 'Easing', 'powerful-blocks' ) }
+								value={ delimiter }
+								onChange={ ( delimiter ) => {
+									setAttributes( { delimiter } );
+								} }
+								options={ [
+									{ value: '', label: __( 'None', 'powerful-blocks' ) },
+									{ value: 'linear', label: __( 'Linear', 'powerful-blocks' ) },
+								] }
+							/>
+							<SelectControl
+								className = "pb-custom-select-control"
+								label={ __( 'Thousand Separator', 'powerful-blocks' ) }
+								value={ delimiter }
+								onChange={ ( delimiter ) => {
+									setAttributes( { delimiter } );
+								} }
+								options={ [
+									{ value: '', label: __( 'None', 'powerful-blocks' ) },
+									{ value: ',', label: __( 'Comma', 'powerful-blocks' ) },
+									{ value: '.', label: __( 'Dot', 'powerful-blocks' ) },
+								] }
+							/>
+						</PanelBody>
+						<PanelBody
+							title={ __( 'Suffix/Prefix', 'powerful-blocks' ) }
+							initialOpen={ false }
+						>
+							<TextControl
+								label={ __( 'Suffix', 'powerful-blocks' ) }
+								value={ numberSuffix }
+								onChange={ ( numberSuffix ) => {
+									setAttributes( { numberSuffix } );
+								} }
+							/>
+							<TextControl
+								label={ __( 'Prefix', 'powerful-blocks' ) }
+								value={ numberPrefix }
+								onChange={ ( numberPrefix ) => {
+									setAttributes( { numberPrefix } );
 								} }
 							/>
 						</PanelBody>
@@ -554,19 +624,19 @@ const Inspector = ( props ) => {
 							<ResponsiveBoxControl
 								label={ __( 'Padding', 'powerful-blocks' ) }
 								value={ {
-									desktop: contentBPadding,
-									tablet: contentBPaddingTablet,
-									mobile: contentBPaddingMobile,
+									desktop: numberBPadding,
+									tablet: numberBPaddingTablet,
+									mobile: numberBPaddingMobile,
 								} }
 								onChange={ ( value, device ) => {
 									if ( 'desktop' === device ) {
-										setAttributes( { contentBPadding: value } );
+										setAttributes( { numberBPadding: value } );
 									}
 									if ( 'tablet' === device ) {
-										setAttributes( { contentBPaddingTablet: value } );
+										setAttributes( { numberBPaddingTablet: value } );
 									}
 									if ( 'mobile' === device ) {
-										setAttributes( { contentBPaddingMobile: value } );
+										setAttributes( { numberBPaddingMobile: value } );
 									}
 								} }
 							/>
@@ -618,45 +688,45 @@ const Inspector = ( props ) => {
 							<p className="pb-h-title">{ __( 'Content', 'powerful-blocks' ) }</p>
 							<ColorPickerControl
 								label={ __( 'Color', 'powerful-blocks' ) }
-								value={ contentColor }
-								onChange={ ( contentColor ) => {
-									setAttributes( { contentColor } );
+								value={ numberColor }
+								onChange={ ( numberColor ) => {
+									setAttributes( { numberColor } );
 								} }
 							/>
 							<ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }
 								value={ {
-									desktop: contentMargin,
-									tablet: contentMarginTablet,
-									mobile: contentMarginMobile,
+									desktop: numberMargin,
+									tablet: numberMarginTablet,
+									mobile: numberMarginMobile,
 								} }
 								onChange={ ( value, device ) => {
 									if ( 'desktop' === device ) {
-										setAttributes( { contentMargin: value } );
+										setAttributes( { numberMargin: value } );
 									}
 									if ( 'tablet' === device ) {
-										setAttributes( { contentMarginTablet: value } );
+										setAttributes( { numberMarginTablet: value } );
 									}
 									if ( 'mobile' === device ) {
-										setAttributes( { contentMarginMobile: value } );
+										setAttributes( { numberMarginMobile: value } );
 									}
 								} }
 							/>
 							<TypographyControl
 								label = { __( 'Typography', 'powerful-blocks' ) }
-								fontFamily = { { value: contentFontFamily, name: 'contentFontFamily' } }
+								fontFamily = { { value: numberFontFamily, name: 'numberFontFamily' } }
 								sizeType = {
-									{ value: contentFontSizeType, name: 'contentFontSizeType' }
+									{ value: numberFontSizeType, name: 'numberFontSizeType' }
 								}
-								fontSize = { { value: contentFontSize, name: 'contentFontSize' } }
-								fontSizeTablet = { { value: contentFontSizeTablet, name: 'contentFontSizeTablet' } }
-								fontSizeMobile = { { value: contentFontSizeMobile, name: 'contentFontSizeMobile' } }
-								fontStyle = { { value: contentFontStyle, name: 'contentFontStyle' } }
-								fontWeight = { { value: contentFontWeight, name: 'contentFontWeight' } }
-								lineHeight = { { value: contentLineHeight, name: 'contentLineHeight' } }
-								letterSpacing = { { value: contentLetterSpacing, name: 'contentLetterSpacing' } }
-								textTransform = { { value: contentTextTransform, name: 'contentTextTransform' } }
-								textDecoration = { { value: contentTextDecoration, name: 'contentTextDecoration' } }
+								fontSize = { { value: numberFontSize, name: 'numberFontSize' } }
+								fontSizeTablet = { { value: numberFontSizeTablet, name: 'numberFontSizeTablet' } }
+								fontSizeMobile = { { value: numberFontSizeMobile, name: 'numberFontSizeMobile' } }
+								fontStyle = { { value: numberFontStyle, name: 'numberFontStyle' } }
+								fontWeight = { { value: numberFontWeight, name: 'numberFontWeight' } }
+								lineHeight = { { value: numberLineHeight, name: 'numberLineHeight' } }
+								letterSpacing = { { value: numberLetterSpacing, name: 'numberLetterSpacing' } }
+								textTransform = { { value: numberTextTransform, name: 'numberTextTransform' } }
+								textDecoration = { { value: numberTextDecoration, name: 'numberTextDecoration' } }
 								setAttributes = { props.setAttributes }
 							/>
 

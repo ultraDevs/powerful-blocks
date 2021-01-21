@@ -20,7 +20,7 @@ const attributes = {
 
 	icon: {
 		type: 'string',
-		default: 'fab fa-wordpress',
+		default: 'far fa-smile',
 	},
 	iconSize: {
 		type: 'number',
@@ -279,7 +279,7 @@ const attributes = {
 		default: '',
 	},
 
-	contentBPadding: {
+	numberBPadding: {
 		type: 'object',
 		default: {
 			top: '10px',
@@ -288,7 +288,7 @@ const attributes = {
 			bottom: '10px',
 		},
 	},
-	contentBPaddingTablet: {
+	numberBPaddingTablet: {
 		type: 'object',
 		default: {
 			top: '0px',
@@ -297,7 +297,7 @@ const attributes = {
 			bottom: '0px',
 		},
 	},
-	contentBPaddingMobile: {
+	numberBPaddingMobile: {
 		type: 'object',
 		default: {
 			top: '0px',
@@ -309,7 +309,7 @@ const attributes = {
 
 	title: {
 		type: 'string',
-		default: __( 'PB Info Box Title', 'powerful-blocks' ),
+		default: __( 'Fun Factor Title', 'powerful-blocks' ),
 	},
 	titleColor: {
 		type: 'string',
@@ -394,16 +394,51 @@ const attributes = {
 		default: '',
 	},
 
-	content: {
-		type: 'string',
-		default: __( 'PB Info Box Description Goes Here.', 'powerful-blocks' ),
+	number: {
+		type: 'number',
+		default: 0,
 	},
-	contentColor: {
+	endingNumber: {
+		type: 'number',
+		default: 100,
+	},
+
+	numberPrefix: {
+		type: 'string',
+		default: '',
+	},
+	numberSuffix: {
+		type: 'string',
+		default: '',
+	},
+
+	easing: {
+		type: 'string',
+		default: 'linear',
+	},
+	duration: {
+		type: 'number',
+		default: 200,
+	},
+	duration: {
+		type: 'number',
+		default: 200,
+	},
+	delimiter: {
+		type: 'string',
+		default: ',',
+	},
+	rounding: {
+		type: 'number',
+		default: 0,
+	},
+
+	numberColor: {
 		type: 'string',
 		default: '#333',
 	},
 
-	contentMargin: {
+	numberMargin: {
 		type: 'object',
 		default: {
 			top: '0px',
@@ -412,7 +447,7 @@ const attributes = {
 			bottom: '10px',
 		},
 	},
-	contentMarginTablet: {
+	numberMarginTablet: {
 		type: 'object',
 		default: {
 			top: '0px',
@@ -421,7 +456,7 @@ const attributes = {
 			bottom: '0px',
 		},
 	},
-	contentMarginMobile: {
+	numberMarginMobile: {
 		type: 'object',
 		default: {
 			top: '0px',
@@ -431,51 +466,51 @@ const attributes = {
 		},
 	},
 	
-	contentFontFamily: {
+	numberFontFamily: {
 		type: 'string',
 		default: '',
 	},
 
-	contentFontSizeType: {
+	numberFontSizeType: {
 		type: 'string',
 		default: 'px',
 	},
-	contentFontStyle: {
+	numberFontStyle: {
 		type: 'string',
 		default: 'normal',
 	},
 
-	contentFontSize: {
+	numberFontSize: {
 		type: 'number',
 		default: 18,
 	},
 
-	contentFontSizeTablet: {
+	numberFontSizeTablet: {
 		type: 'number',
 		default: 17,
 	},
 
-	contentFontSizeMobile: {
+	numberFontSizeMobile: {
 		type: 'number',
 		default: 16,
 	},
-	contentFontWeight: {
+	numberFontWeight: {
 		type: 'string',
 		default: 'normal',
 	},
-	contentTextTransform: {
+	numberTextTransform: {
 		type: 'string',
 		default: '',
 	},
-	contentTextDecoration: {
+	numberTextDecoration: {
 		type: 'string',
 		default: '',
 	},
-	contentLetterSpacing: {
+	numberLetterSpacing: {
 		type: 'number',
 		default: '',
 	},
-	contentLineHeight: {
+	numberLineHeight: {
 		type: 'number',
 		default: '',
 	},

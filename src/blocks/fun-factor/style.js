@@ -129,9 +129,9 @@ const Styles = ( props ) => {
 		hoverMShadowBlur,
 		hoverMShadowSpread,
 		hoverMShadowType,
-		contentBPadding,
-		contentBPaddingTablet,
-		contentBPaddingMobile,
+		numberBPadding,
+		numberBPaddingTablet,
+		numberBPaddingMobile,
 		titleColor,
 		titleMargin,
 		titleMarginTablet,
@@ -147,21 +147,21 @@ const Styles = ( props ) => {
 		titleTextDecoration,
 		titleLetterSpacing,
 		titleLineHeight,
-		contentColor,
-		contentMargin,
-		contentMarginTablet,
-		contentMarginMobile,
-		contentFontFamily,
-		contentFontSizeType,
-		contentFontStyle,
-		contentFontSize,
-		contentFontSizeTablet,
-		contentFontSizeMobile,
-		contentFontWeight,
-		contentTextTransform,
-		contentTextDecoration,
-		contentLetterSpacing,
-		contentLineHeight,
+		numberColor,
+		numberMargin,
+		numberMarginTablet,
+		numberMarginMobile,
+		numberFontFamily,
+		numberFontSizeType,
+		numberFontStyle,
+		numberFontSize,
+		numberFontSizeTablet,
+		numberFontSizeMobile,
+		numberFontWeight,
+		numberTextTransform,
+		numberTextDecoration,
+		numberLetterSpacing,
+		numberLineHeight,
 		preset
 
 	} = attributes;
@@ -244,13 +244,13 @@ const Styles = ( props ) => {
 				'border-color': hoverMBorderColor ? hoverMBorderColor : undefined,
 			},
 			'.pb-fun-factor--body' : {
-				padding: contentBPadding.top +
+				padding: numberBPadding.top +
 				' ' +
-				contentBPadding.right +
+				numberBPadding.right +
 				' ' +
-				contentBPadding.bottom +
+				numberBPadding.bottom +
 				' ' +
-				contentBPadding.left,
+				numberBPadding.left,
 				'margin-top': mOffsetTop ? mOffsetTop + mOffsetType : undefined,
 
 			},
@@ -286,42 +286,42 @@ const Styles = ( props ) => {
 					? titleTextDecoration
 					: undefined,
 			},
-			'.pb-fun-factor--body__content' : {
-				margin: contentMargin.top +
+			'.pb-fun-factor--body__number' : {
+				margin: numberMargin.top +
 				' ' +
-				contentMargin.right +
+				numberMargin.right +
 				' ' +
-				contentMargin.bottom +
+				numberMargin.bottom +
 				' ' +
-				contentMargin.left,
+				numberMargin.left,
 				
 			},
-			'.pb-fun-factor--body__content p' : {
-				color: contentColor ? contentColor : undefined,
-				'font-size' : contentFontSize ? contentFontSize + contentFontSizeTablet : undefined,
-				'font-family': contentFontFamily
-					? contentFontFamily + '!important'
+			'.pb-fun-factor--body__number p' : {
+				color: numberColor ? numberColor : undefined,
+				'font-size' : numberFontSize ? numberFontSize + numberFontSizeTablet : undefined,
+				'font-family': numberFontFamily
+					? numberFontFamily + '!important'
 					: undefined,
-				'font-size': contentFontSize
-					? contentFontSize + contentFontSizeType
+				'font-size': numberFontSize
+					? numberFontSize + numberFontSizeType
 					: undefined,
-				'font-weight': contentFontWeight
-					? contentFontWeight + '!important'
+				'font-weight': numberFontWeight
+					? numberFontWeight + '!important'
 					: undefined,
-				'font-style': contentFontStyle
-					? contentFontStyle
+				'font-style': numberFontStyle
+					? numberFontStyle
 					: undefined,
-				'letter-spacing': contentLetterSpacing
-					? contentLetterSpacing + 'px'
+				'letter-spacing': numberLetterSpacing
+					? numberLetterSpacing + 'px'
 					: undefined,
-				'line-height': contentLineHeight
-					? contentLineHeight + 'px'
+				'line-height': numberLineHeight
+					? numberLineHeight + 'px'
 					: undefined,
-				'text-transform': contentTextTransform
-					? contentTextTransform
+				'text-transform': numberTextTransform
+					? numberTextTransform
 					: undefined,
-				'text-decoration': contentTextDecoration
-					? contentTextDecoration
+				'text-decoration': numberTextDecoration
+					? numberTextDecoration
 					: undefined,
 			},
 		},
@@ -359,13 +359,13 @@ const Styles = ( props ) => {
 				height: imgHeightTablet ? imgHeightTablet + imgHeightType : undefined,
 			},
 			'.pb-fun-factor--body' : {
-				padding: contentBPaddingTablet.top +
+				padding: numberBPaddingTablet.top +
 				' ' +
-				contentBPaddingTablet.right +
+				numberBPaddingTablet.right +
 				' ' +
-				contentBPaddingTablet.bottom +
+				numberBPaddingTablet.bottom +
 				' ' +
-				contentBPaddingTablet.left,
+				numberBPaddingTablet.left,
 				'margin-top': mOffsetTopTablet ? mOffsetTopTablet + mOffsetType : undefined,
 
 			},
@@ -379,17 +379,17 @@ const Styles = ( props ) => {
 				titleMarginTablet.left,
 				'font-size' : titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined,
 			},
-			'.pb-fun-factor--body__content' : {
-				margin: contentMarginTablet.top +
+			'.pb-fun-factor--body__number' : {
+				margin: numberMarginTablet.top +
 				' ' +
-				contentMarginTablet.right +
+				numberMarginTablet.right +
 				' ' +
-				contentMarginTablet.bottom +
+				numberMarginTablet.bottom +
 				' ' +
-				contentMarginTablet.left,
+				numberMarginTablet.left,
 			},
-			'.pb-fun-factor--body__content' : {
-				'font-size' : contentFontSizeTablet ? contentFontSizeTablet + contentFontSizeTablet : undefined,
+			'.pb-fun-factor--body__number' : {
+				'font-size' : numberFontSizeTablet ? numberFontSizeTablet + numberFontSizeTablet : undefined,
 			},
 		},
 		mobile: {
@@ -427,13 +427,13 @@ const Styles = ( props ) => {
 				height: imgHeightMobile ? imgHeightMobile + imgHeightType : undefined,
 			},
 			'.pb-fun-factor--body' : {
-				padding: contentBPaddingMobile.top +
+				padding: numberBPaddingMobile.top +
 				' ' +
-				contentBPaddingMobile.right +
+				numberBPaddingMobile.right +
 				' ' +
-				contentBPaddingMobile.bottom +
+				numberBPaddingMobile.bottom +
 				' ' +
-				contentBPaddingMobile.left,
+				numberBPaddingMobile.left,
 				'margin-top': mOffsetTopMobile ? mOffsetTopMobile + mOffsetType : undefined,
 
 			},
@@ -447,18 +447,18 @@ const Styles = ( props ) => {
 				titleMarginMobile.left,
 				'font-size' : titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined,
 			},
-			'.pb-fun-factor--body__content' : {
-				margin: contentMarginMobile.top +
+			'.pb-fun-factor--body__number' : {
+				margin: numberMarginMobile.top +
 				' ' +
-				contentMarginMobile.right +
+				numberMarginMobile.right +
 				' ' +
-				contentMarginMobile.bottom +
+				numberMarginMobile.bottom +
 				' ' +
-				contentMarginMobile.left,
+				numberMarginMobile.left,
 			},
-			'.pb-fun-factor--body__content p' : {
+			'.pb-fun-factor--body__number p' : {
 				
-				'font-size' : contentFontSizeMobile ? contentFontSizeMobile + contentFontSizeTablet : undefined,
+				'font-size' : numberFontSizeMobile ? numberFontSizeMobile + numberFontSizeTablet : undefined,
 			},
 		},
 	};
