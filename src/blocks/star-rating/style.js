@@ -18,6 +18,7 @@ const Styles = ( props ) => {
 		desktop: {
 			'.pb-star-rating--icon': {
 				'font-size': size ? size + sizeType : undefined,
+				'text-align': iconAlign ? iconAlign : undefined,
 			},
 		},
 		tablet: {
@@ -26,7 +27,6 @@ const Styles = ( props ) => {
 			},
 		},
 		mobile: {
-			
 			'.pb-star-rating--icon': {
 				'font-size': sizeMobile ? sizeMobile + sizeType : undefined,
 			},

@@ -29831,7 +29831,8 @@ var Styles = function Styles(props) {
   var rules = {
     desktop: {
       '.pb-star-rating--icon': {
-        'font-size': size ? size + sizeType : undefined
+        'font-size': size ? size + sizeType : undefined,
+        'text-align': iconAlign ? iconAlign : undefined
       }
     },
     tablet: {
