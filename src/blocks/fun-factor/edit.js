@@ -20,7 +20,7 @@ const edit = ( props ) => {
 		icon,
 		img,
 		title,
-		number,
+		startingNumber,
 		mPosition,
 		endingNumber,
 
@@ -41,16 +41,24 @@ const edit = ( props ) => {
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
 
-
+	setTimeout( function () {
+		pbCounter();
+	}, 500 );
 	return (
 		<>
 			<Inspector { ...{ attributes, setAttributes } } />
 			<Styles { ...{ attributes } } />
-			<div id={ `pb-fun-factor-${ blockId }` }>
+			<div 
+				id={ `pb-fun-factor-${ blockId }` }
+				className={ classnames(
+					props.className,
+					props.isSelected ? 'pb-is-selected' : '',
+				) }
+			>
 				<div
 					className={ classnames(
 						'pb-fun-factor-wrapper',
-						props.className,
+						mPosition ? `pb-fun-factor-${mPosition}` : '',
 						...classes
 					) }
 					{ ... blockAttr }
@@ -77,17 +85,13 @@ const edit = ( props ) => {
 						) }
 						<span 
 							className="pb-fun-factor-number"
-							data-settings = {
-								JSON.stringify({
-									from: number ? number : 0,
-									to: endingNumber ? endingNumber : 0,
-									delimiter: delimiter ? delimiter : '',
-									duration: duration ? duration : '',
-									easing: easing ? easing : '',
-								})
-							}
+							data-from = { startingNumber }
+							data-to = { endingNumber }
+							data-delimiter = { delimiter }
+							data-duration = { duration }
+							data-easing = { easing }
 						>
-							{ number ? number : '0' }
+							{ startingNumber ? startingNumber : 0 }
 						</span>
 
 						{ numberSuffix && (

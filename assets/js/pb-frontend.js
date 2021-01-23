@@ -177,6 +177,61 @@ jQuery(function ($) {
 
 /***/ }),
 
+/***/ "./src/blocks/fun-factor/frontend.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/fun-factor/frontend.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+jQuery(function ($) {
+  // Fun Factor Counter
+  window['pbCounter'] = function () {
+    $('.pb-fun-factor-wrapper').each(function () {
+      if ($('body').hasClass('wp-admin') && $(this).parents('.wp-block-powerful-blocks-fun-factor.pb-is-selected').length === 0) {
+        return;
+      }
+
+      if ($(window).scrollTop() > $(this).offset().top - window.innerHeight) {
+        var $el = $(this).find('.pb-fun-factor-number'),
+            data = {
+          fromValue: $el.attr('data-from'),
+          toValue: $el.attr('data-to'),
+          delimiter: $el.attr('data-delimiter'),
+          duration: $el.attr('data-duration'),
+          easing: $el.attr('data-easing'),
+          onComplete: function onComplete() {
+            $el.addClass('pb-num-counter-complete');
+          }
+        },
+            decimalDigits = data.toValue.toString().match(/\.(.*)/);
+
+        if (decimalDigits) {
+          data.rounding = decimalDigits[1].length;
+        }
+
+        if ($('body').hasClass('wp-admin')) {
+          data.onComplete = function () {};
+
+          $el.empty();
+        }
+
+        if (!$el.hasClass('pb-num-counter-complete')) {
+          $el.numerator(data);
+        }
+      }
+    });
+  };
+
+  if ($('.pb-fun-factor-wrapper').length > 0) {
+    $(window).on('scroll', function () {
+      pbCounter();
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/frontend.js":
 /*!****************************!*\
   !*** ./src/js/frontend.js ***!
@@ -190,6 +245,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_alert_box_frontend__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_blocks_alert_box_frontend__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _blocks_accordion_frontend__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/accordion/frontend */ "./src/blocks/accordion/frontend.js");
 /* harmony import */ var _blocks_accordion_frontend__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_blocks_accordion_frontend__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _blocks_fun_factor_frontend__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/fun-factor/frontend */ "./src/blocks/fun-factor/frontend.js");
+/* harmony import */ var _blocks_fun_factor_frontend__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_blocks_fun_factor_frontend__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 jQuery(function ($) {

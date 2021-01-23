@@ -6,80 +6,6 @@ const Styles = ( props ) => {
 
 	const {
 		blockId,
-		backgroundType,
-		hoverBackgroundType,
-
-		backgroundColor,
-		hoverBackgroundColor,
-
-		backgroundImg,
-        backgroundImgPosition,
-        backgroundImgSize,
-        backgroundImgRepeat,
-        backgroundImgAttachment,
-        backgroundImgOverlayColor,
-		backgroundOpacity,
-
-		hoverBackgroundImg,
-        hoverBackgroundImgPosition,
-        hoverBackgroundImgSize,
-        hoverBackgroundImgRepeat,
-        hoverBackgroundImgAttachment,
-        hoverBackgroundImgOverlayColor,
-        hoverBackgroundOpacity,
-
-		gradientValue,
-
-        hoverGradientValue,
-
-        padding,
-        paddingTablet,
-        paddingMobile,
-        margin,
-        marginTablet,
-        marginMobile,
-        shadowColor,
-        shadowHOffset,
-        shadowVOffset,
-        shadowBlur,
-        shadowSpread,
-		shadowType,
-		hoverShadowColor,
-        hoverShadowHOffset,
-        hoverShadowVOffset,
-        hoverShadowBlur,
-        hoverShadowSpread,
-		hoverShadowType,
-		
-        borderStyle,
-        borderSize,
-        borderColor,
-        hoverBorderStyle,
-        hoverBorderSize,
-        hoverBorderColor,
-        borderRadius,
-        borderRadiusTablet,
-        borderRadiusMobile,
-        inAnimation,
-        outAnimation,
-        inAnimationDuration,
-        inAnimationDelay,
-        outAnimationDuration,
-		outAnimationDelay,
-		
-		blockHeightType,
-        blockHeight,
-        blockHeightMobile,
-		blockHeightTablet,
-		
-		blockWidth,
-		blockCustomWidthType,
-        blockCustomWidth,
-        blockCustomWidthTablet,
-        blockCustomWidthMobile,
-		blockzIndex,
-		
-
 		txtAlign,
 		mType,
 		iconSize,
@@ -162,6 +88,24 @@ const Styles = ( props ) => {
 		numberTextDecoration,
 		numberLetterSpacing,
 		numberLineHeight,
+
+
+		suffpreColor,
+		suffpreMargin,
+		suffpreMarginTablet,
+		suffpreMarginMobile,
+		suffpreFontFamily,
+		suffpreFontSizeType,
+		suffpreFontStyle,
+		suffpreFontSize,
+		suffpreFontSizeTablet,
+		suffpreFontSizeMobile,
+		suffpreFontWeight,
+		suffpreTextTransform,
+		suffpreTextDecoration,
+		suffpreLetterSpacing,
+		suffpreLineHeight,
+
 		preset
 
 	} = attributes;
@@ -193,7 +137,14 @@ const Styles = ( props ) => {
 				mMargin.bottom +
 				' ' +
 				mMargin.left,
-			'box-shadow':
+			
+				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
+			},
+			'.pb-fun-factor--icon' : {
+				color: iconColor ? iconColor : undefined,
+				background: iconBGColor ? iconBGColor : undefined,
+				'font-size': iconSize ? iconSize + 'px' : undefined,
+				'box-shadow':
 				mShadowType + ' ' +
 				mShadowHOffset +
 				'px ' +
@@ -216,18 +167,51 @@ const Styles = ( props ) => {
 				mBorderRadius.bottom +
 				' ' +
 				mBorderRadius.left,
-				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
-			},
-			'.pb-fun-factor--icon' : {
-				color: iconColor ? iconColor : undefined,
-				background: iconBGColor ? iconBGColor : undefined,
-				'font-size': iconSize ? iconSize + 'px' : undefined,
 			},
 			'.pb-fun-factor--image img' : {
 				width: imgWidth ? imgWidth + imgWidthType : undefined,
 				height: imgHeight ? imgHeight + imgHeightType : undefined,
+				'box-shadow':
+				mShadowType + ' ' +
+				mShadowHOffset +
+				'px ' +
+				mShadowVOffset +
+				'px ' +
+				mShadowBlur +
+				'px ' +
+				mShadowSpread +
+				'px ' + mShadowColor,
+			'border-width': mBorderSize
+				? mBorderSize + 'px'
+				: undefined,
+			'border-style': mBorderStyle ? mBorderStyle : undefined,
+			'border-color': mBorderColor ? mBorderColor : undefined,
+			'border-radius':
+				mBorderRadius.top +
+				' ' +
+				mBorderRadius.right +
+				' ' +
+				mBorderRadius.bottom +
+				' ' +
+				mBorderRadius.left,
 			},
-			'.pb-fun-factor--m:hover' : {
+			'.pb-fun-factor--m:hover .pb-fun-factor--icon' : {
+				'box-shadow': hoverMShadowType + ' ' +
+				hoverMShadowHOffset +
+					'px ' +
+					hoverMShadowVOffset +
+					'px ' +
+					hoverMShadowBlur +
+					'px ' +
+					hoverMShadowSpread +
+					'px ' + hoverMShadowColor,
+				'border-width': hoverMBorderSize
+					? hoverMBorderSize + 'px'
+					: undefined,
+				'border-style': hoverMBorderStyle ? hoverMBorderStyle : undefined,
+				'border-color': hoverMBorderColor ? hoverMBorderColor : undefined,
+			},
+			'.pb-fun-factor--m:hover .pb-fun-factor--image img' : {
 				'box-shadow': hoverMShadowType + ' ' +
 				hoverMShadowHOffset +
 					'px ' +
@@ -286,19 +270,8 @@ const Styles = ( props ) => {
 					? titleTextDecoration
 					: undefined,
 			},
-			'.pb-fun-factor--body__number' : {
-				margin: numberMargin.top +
-				' ' +
-				numberMargin.right +
-				' ' +
-				numberMargin.bottom +
-				' ' +
-				numberMargin.left,
-				
-			},
-			'.pb-fun-factor--body__number p' : {
+			'.pb-fun-factor-number' : {
 				color: numberColor ? numberColor : undefined,
-				'font-size' : numberFontSize ? numberFontSize + numberFontSizeTablet : undefined,
 				'font-family': numberFontFamily
 					? numberFontFamily + '!important'
 					: undefined,
@@ -323,7 +296,79 @@ const Styles = ( props ) => {
 				'text-decoration': numberTextDecoration
 					? numberTextDecoration
 					: undefined,
+				margin: numberMargin.top +
+				' ' +
+				numberMargin.right +
+				' ' +
+				numberMargin.bottom +
+				' ' +
+				numberMargin.left,
+				
 			},
+			'.pb-fun-factor-number--prefix': {
+				color: suffpreColor ? suffpreColor : undefined,
+				'font-size' : suffpreFontSize ? suffpreFontSize + suffpreFontSizeType : undefined,
+				'font-family': suffpreFontFamily
+					? suffpreFontFamily + '!important'
+					: undefined,
+				'font-weight': suffpreFontWeight
+					? suffpreFontWeight + '!important'
+					: undefined,
+				'font-style': suffpreFontStyle
+					? suffpreFontStyle
+					: undefined,
+				'letter-spacing': suffpreLetterSpacing
+					? suffpreLetterSpacing + 'px'
+					: undefined,
+				'line-height': suffpreLineHeight
+					? suffpreLineHeight + 'px'
+					: undefined,
+				'text-transform': suffpreTextTransform
+					? suffpreTextTransform
+					: undefined,
+				'text-decoration': suffpreTextDecoration
+					? suffpreTextDecoration
+					: undefined,
+				margin: suffpreMargin.top +
+				' ' +
+				suffpreMargin.right +
+				' ' +
+				suffpreMargin.bottom +
+				' ' +
+				suffpreMargin.left,
+			},
+			'.pb-fun-factor-number--suffix': {
+				color: suffpreColor ? suffpreColor : undefined,
+				'font-size' : suffpreFontSize ? suffpreFontSize + suffpreFontSizeType : undefined,
+				'font-family': suffpreFontFamily
+					? suffpreFontFamily + '!important'
+					: undefined,
+				'font-weight': suffpreFontWeight
+					? suffpreFontWeight + '!important'
+					: undefined,
+				'font-style': suffpreFontStyle
+					? suffpreFontStyle
+					: undefined,
+				'letter-spacing': suffpreLetterSpacing
+					? suffpreLetterSpacing + 'px'
+					: undefined,
+				'line-height': suffpreLineHeight
+					? suffpreLineHeight + 'px'
+					: undefined,
+				'text-transform': suffpreTextTransform
+					? suffpreTextTransform
+					: undefined,
+				'text-decoration': suffpreTextDecoration
+					? suffpreTextDecoration
+					: undefined,
+				margin: suffpreMargin.top +
+				' ' +
+				suffpreMargin.right +
+				' ' +
+				suffpreMargin.bottom +
+				' ' +
+				suffpreMargin.left,
+			}
 		},
 		tablet: {
 			'.pb-fun-factor--m' : {
@@ -379,7 +424,7 @@ const Styles = ( props ) => {
 				titleMarginTablet.left,
 				'font-size' : titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined,
 			},
-			'.pb-fun-factor--body__number' : {
+			'.pb-fun-factor-number' : {
 				margin: numberMarginTablet.top +
 				' ' +
 				numberMarginTablet.right +
@@ -388,9 +433,29 @@ const Styles = ( props ) => {
 				' ' +
 				numberMarginTablet.left,
 			},
-			'.pb-fun-factor--body__number' : {
+			'.pb-fun-factor-number' : {
 				'font-size' : numberFontSizeTablet ? numberFontSizeTablet + numberFontSizeTablet : undefined,
 			},
+			'.pb-fun-factor-number--prefix': {
+				'font-size' : suffpreFontSizeTablet ? suffpreFontSizeTablet + suffpreFontSizeType : undefined,
+				margin: suffpreMarginTablet.top +
+				' ' +
+				suffpreMarginTablet.right +
+				' ' +
+				suffpreMarginTablet.bottom +
+				' ' +
+				suffpreMarginTablet.left,
+			},
+			'.pb-fun-factor-number--suffix': {
+				'font-size' : suffpreFontSizeTablet ? suffpreFontSizeTablet + suffpreFontSizeType : undefined,
+				margin: suffpreMarginTablet.top +
+				' ' +
+				suffpreMarginTablet.right +
+				' ' +
+				suffpreMarginTablet.bottom +
+				' ' +
+				suffpreMarginTablet.left,
+			}
 		},
 		mobile: {
 			
@@ -447,7 +512,9 @@ const Styles = ( props ) => {
 				titleMarginMobile.left,
 				'font-size' : titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined,
 			},
-			'.pb-fun-factor--body__number' : {
+			'.pb-fun-factor-number' : {
+				'font-size' : numberFontSizeMobile ? numberFontSizeMobile + numberFontSizeTablet : undefined,
+
 				margin: numberMarginMobile.top +
 				' ' +
 				numberMarginMobile.right +
@@ -456,10 +523,26 @@ const Styles = ( props ) => {
 				' ' +
 				numberMarginMobile.left,
 			},
-			'.pb-fun-factor--body__number p' : {
-				
-				'font-size' : numberFontSizeMobile ? numberFontSizeMobile + numberFontSizeTablet : undefined,
+			'.pb-fun-factor-number--prefix': {
+				'font-size' : suffpreFontSizeMobile ? suffpreFontSizeMobile + suffpreFontSizeType : undefined,
+				margin: suffpreMarginMobile.top +
+				' ' +
+				suffpreMarginMobile.right +
+				' ' +
+				suffpreMarginMobile.bottom +
+				' ' +
+				suffpreMarginMobile.left,
 			},
+			'.pb-fun-factor-number--suffix': {
+				'font-size' : suffpreFontSizeMobile ? suffpreFontSizeMobile + suffpreFontSizeType : undefined,
+				margin: suffpreMarginMobile.top +
+				' ' +
+				suffpreMarginMobile.right +
+				' ' +
+				suffpreMarginMobile.bottom +
+				' ' +
+				suffpreMarginMobile.left,
+			}
 		},
 	};
 

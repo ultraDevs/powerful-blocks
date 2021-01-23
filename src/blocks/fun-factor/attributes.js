@@ -41,7 +41,7 @@ const attributes = {
 	},
 	mValign: {
 		type: 'string',
-		default: 'middle',
+		default: 'center',
 	},
 
 	img: {
@@ -121,7 +121,7 @@ const attributes = {
 			top: '0px',
 			left: '0px',
 			right: '0px',
-			bottom: '10px',
+			bottom: '0px',
 		},
 	},
 	mMarginTablet: {
@@ -394,13 +394,13 @@ const attributes = {
 		default: '',
 	},
 
-	number: {
+	startingNumber: {
 		type: 'number',
 		default: 0,
 	},
 	endingNumber: {
 		type: 'number',
-		default: 100,
+		default: 1000,
 	},
 
 	numberPrefix: {
@@ -418,11 +418,7 @@ const attributes = {
 	},
 	duration: {
 		type: 'number',
-		default: 200,
-	},
-	duration: {
-		type: 'number',
-		default: 200,
+		default: 1000,
 	},
 	delimiter: {
 		type: 'string',
@@ -511,6 +507,89 @@ const attributes = {
 		default: '',
 	},
 	numberLineHeight: {
+		type: 'number',
+		default: '',
+	},
+
+
+
+	suffpreColor: {
+		type: 'string',
+		default: '#333',
+	},
+	suffpreMargin: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '10px',
+		},
+	},
+	suffpreMarginTablet: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
+	},
+	suffpreMarginMobile: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
+		},
+	},
+	
+	suffpreFontFamily: {
+		type: 'string',
+		default: '',
+	},
+
+	suffpreFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+	suffpreFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
+
+	suffpreFontSize: {
+		type: 'number',
+		default: 18,
+	},
+
+	suffpreFontSizeTablet: {
+		type: 'number',
+		default: 17,
+	},
+
+	suffpreFontSizeMobile: {
+		type: 'number',
+		default: 16,
+	},
+	suffpreFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	suffpreTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	suffpreTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	suffpreLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	suffpreLineHeight: {
 		type: 'number',
 		default: '',
 	},

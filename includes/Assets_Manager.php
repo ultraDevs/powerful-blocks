@@ -47,6 +47,22 @@ class Assets_Manager {
 			)
 		);
 	}
+	/**
+	 * Common Assets
+	 *
+	 * Enqueue Frontend Styles and Scripts
+	 */
+	public function common_assets() {
+		wp_enqueue_style( 'pb-animatecss', POWERFUL_BLOCKS_ASSETS . 'vendor/animatecss/animate.min.css', '', POWERFUL_BLOCKS_VERSION );
+		/**
+		 * Font Awesome
+		 */
+		wp_enqueue_style( 'pb-font-awesome', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/font-awesome5.css', '', POWERFUL_BLOCKS_VERSION );
+		wp_enqueue_script( 'pb-numerator', POWERFUL_BLOCKS_ASSETS . 'vendor/numerator/jquery-numerator.min.js', array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
+
+		wp_enqueue_style( 'pb-frontend', POWERFUL_BLOCKS_ASSETS . 'css/pb-styles.css', '', POWERFUL_BLOCKS_VERSION );
+		wp_enqueue_script( 'pb-frontend', POWERFUL_BLOCKS_ASSETS . 'js/pb-frontend.js', array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
+	}
 
 	/**
 	 * Frontend Assets
@@ -54,14 +70,7 @@ class Assets_Manager {
 	 * Enqueue Frontend Styles and Scripts
 	 */
 	public function frontend_assets() {
-
-		wp_enqueue_style( 'pb-frontend', POWERFUL_BLOCKS_ASSETS . 'css/pb-styles.css', '', POWERFUL_BLOCKS_VERSION );
-		wp_enqueue_script( 'pb-frontend', POWERFUL_BLOCKS_ASSETS . 'js/pb-frontend.js', array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
-		/**
-		 * Font Awesome
-		 */
-		wp_enqueue_style( 'pb-font-awesome', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/font-awesome5.css', '', POWERFUL_BLOCKS_VERSION );
-		wp_enqueue_style( 'pb-animatecss', POWERFUL_BLOCKS_ASSETS . 'vendor/animatecss/animate.min.css', '', POWERFUL_BLOCKS_VERSION );
+		$this->common_assets();
 
 	}
 
@@ -72,12 +81,7 @@ class Assets_Manager {
 	 */
 	public function block_assets() {
 
-		wp_enqueue_style( 'pb-block-styles', POWERFUL_BLOCKS_ASSETS . 'css/pb-styles.css', array(), POWERFUL_BLOCKS_VERSION );
-		wp_enqueue_style( 'pb-animatecss', POWERFUL_BLOCKS_ASSETS . 'vendor/animatecss/animate.min.css', '', POWERFUL_BLOCKS_VERSION );
-		/**
-		 * Font Awesome
-		 */
-		wp_enqueue_style( 'pb-font-awesome', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/font-awesome5.css', '', POWERFUL_BLOCKS_VERSION );
+		$this->common_assets();
 		/**
 		 * Font Icon Picker
 		 */
@@ -210,7 +214,6 @@ class Assets_Manager {
 					$gfonts .= str_replace( ' ', '+', trim( $font ) ) . $gfonts_attr . '|';
 				}
 			}
-
 
 			if ( ! empty( $gfonts ) ) {
 				$query_args = array(

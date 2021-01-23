@@ -23671,15 +23671,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helper_advancedAttributes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helper/advancedAttributes */ "./src/helper/advancedAttributes.js");
 
 
-var _attributes;
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 
 
-var attributes = (_attributes = {
+var attributes = {
   blockId: {
     type: 'string',
     default: undefined
@@ -23714,7 +23712,7 @@ var attributes = (_attributes = {
   },
   mValign: {
     type: 'string',
-    default: 'middle'
+    default: 'center'
   },
   img: {
     type: 'object',
@@ -23790,7 +23788,7 @@ var attributes = (_attributes = {
       top: '0px',
       left: '0px',
       right: '0px',
-      bottom: '10px'
+      bottom: '0px'
     }
   },
   mMarginTablet: {
@@ -24044,13 +24042,13 @@ var attributes = (_attributes = {
     type: 'number',
     default: ''
   },
-  number: {
+  startingNumber: {
     type: 'number',
     default: 0
   },
   endingNumber: {
     type: 'number',
-    default: 100
+    default: 1000
   },
   numberPrefix: {
     type: 'string',
@@ -24066,81 +24064,171 @@ var attributes = (_attributes = {
   },
   duration: {
     type: 'number',
-    default: 200
+    default: 1000
+  },
+  delimiter: {
+    type: 'string',
+    default: ','
+  },
+  rounding: {
+    type: 'number',
+    default: 0
+  },
+  numberColor: {
+    type: 'string',
+    default: '#333'
+  },
+  numberMargin: {
+    type: 'object',
+    default: {
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '10px'
+    }
+  },
+  numberMarginTablet: {
+    type: 'object',
+    default: {
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '0px'
+    }
+  },
+  numberMarginMobile: {
+    type: 'object',
+    default: {
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '0px'
+    }
+  },
+  numberFontFamily: {
+    type: 'string',
+    default: ''
+  },
+  numberFontSizeType: {
+    type: 'string',
+    default: 'px'
+  },
+  numberFontStyle: {
+    type: 'string',
+    default: 'normal'
+  },
+  numberFontSize: {
+    type: 'number',
+    default: 18
+  },
+  numberFontSizeTablet: {
+    type: 'number',
+    default: 17
+  },
+  numberFontSizeMobile: {
+    type: 'number',
+    default: 16
+  },
+  numberFontWeight: {
+    type: 'string',
+    default: 'normal'
+  },
+  numberTextTransform: {
+    type: 'string',
+    default: ''
+  },
+  numberTextDecoration: {
+    type: 'string',
+    default: ''
+  },
+  numberLetterSpacing: {
+    type: 'number',
+    default: ''
+  },
+  numberLineHeight: {
+    type: 'number',
+    default: ''
+  },
+  suffpreColor: {
+    type: 'string',
+    default: '#333'
+  },
+  suffpreMargin: {
+    type: 'object',
+    default: {
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '10px'
+    }
+  },
+  suffpreMarginTablet: {
+    type: 'object',
+    default: {
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '0px'
+    }
+  },
+  suffpreMarginMobile: {
+    type: 'object',
+    default: {
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '0px'
+    }
+  },
+  suffpreFontFamily: {
+    type: 'string',
+    default: ''
+  },
+  suffpreFontSizeType: {
+    type: 'string',
+    default: 'px'
+  },
+  suffpreFontStyle: {
+    type: 'string',
+    default: 'normal'
+  },
+  suffpreFontSize: {
+    type: 'number',
+    default: 18
+  },
+  suffpreFontSizeTablet: {
+    type: 'number',
+    default: 17
+  },
+  suffpreFontSizeMobile: {
+    type: 'number',
+    default: 16
+  },
+  suffpreFontWeight: {
+    type: 'string',
+    default: 'normal'
+  },
+  suffpreTextTransform: {
+    type: 'string',
+    default: ''
+  },
+  suffpreTextDecoration: {
+    type: 'string',
+    default: ''
+  },
+  suffpreLetterSpacing: {
+    type: 'number',
+    default: ''
+  },
+  suffpreLineHeight: {
+    type: 'number',
+    default: ''
+  },
+  preset: {
+    type: 'string',
+    default: 'design-1'
   }
-}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "duration", {
-  type: 'number',
-  default: 200
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "delimiter", {
-  type: 'string',
-  default: ','
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "rounding", {
-  type: 'number',
-  default: 0
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberColor", {
-  type: 'string',
-  default: '#333'
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberMargin", {
-  type: 'object',
-  default: {
-    top: '0px',
-    left: '0px',
-    right: '0px',
-    bottom: '10px'
-  }
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberMarginTablet", {
-  type: 'object',
-  default: {
-    top: '0px',
-    left: '0px',
-    right: '0px',
-    bottom: '0px'
-  }
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberMarginMobile", {
-  type: 'object',
-  default: {
-    top: '0px',
-    left: '0px',
-    right: '0px',
-    bottom: '0px'
-  }
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontFamily", {
-  type: 'string',
-  default: ''
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontSizeType", {
-  type: 'string',
-  default: 'px'
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontStyle", {
-  type: 'string',
-  default: 'normal'
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontSize", {
-  type: 'number',
-  default: 18
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontSizeTablet", {
-  type: 'number',
-  default: 17
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontSizeMobile", {
-  type: 'number',
-  default: 16
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberFontWeight", {
-  type: 'string',
-  default: 'normal'
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberTextTransform", {
-  type: 'string',
-  default: ''
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberTextDecoration", {
-  type: 'string',
-  default: ''
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberLetterSpacing", {
-  type: 'number',
-  default: ''
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "numberLineHeight", {
-  type: 'number',
-  default: ''
-}), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "preset", {
-  type: 'string',
-  default: 'design-1'
-}), _attributes);
+};
 
 var finalAttributes = _objectSpread(_objectSpread({}, attributes), _helper_advancedAttributes__WEBPACK_IMPORTED_MODULE_2__["default"]);
 
@@ -24195,7 +24283,7 @@ var edit = function edit(props) {
       icon = attributes.icon,
       img = attributes.img,
       title = attributes.title,
-      number = attributes.number,
+      startingNumber = attributes.startingNumber,
       mPosition = attributes.mPosition,
       endingNumber = attributes.endingNumber,
       numberPrefix = attributes.numberPrefix,
@@ -24215,15 +24303,19 @@ var edit = function edit(props) {
     });
   }
 
+  setTimeout(function () {
+    pbCounter();
+  }, 500);
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_inspector__WEBPACK_IMPORTED_MODULE_4__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_style__WEBPACK_IMPORTED_MODULE_7__["default"], {
     attributes: attributes
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    id: "pb-fun-factor-".concat(blockId)
+    id: "pb-fun-factor-".concat(blockId),
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(props.className, props.isSelected ? 'pb-is-selected' : '')
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default.a.apply(void 0, ['pb-fun-factor-wrapper', props.className].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(classes)))
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default.a.apply(void 0, ['pb-fun-factor-wrapper', mPosition ? "pb-fun-factor-".concat(mPosition) : ''].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(classes)))
   }, blockAttr), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-fun-factor--m"
   }, 'icon' === mType ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_helper_iconbox_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -24242,14 +24334,12 @@ var edit = function edit(props) {
     className: "pb-fun-factor-number--prefix"
   }, numberPrefix), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
     className: "pb-fun-factor-number",
-    "data-settings": JSON.stringify({
-      from: number ? number : 0,
-      to: endingNumber ? endingNumber : 0,
-      delimiter: delimiter ? delimiter : '',
-      duration: duration ? duration : '',
-      easing: easing ? easing : ''
-    })
-  }, number ? number : '0'), numberSuffix && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    "data-from": startingNumber,
+    "data-to": endingNumber,
+    "data-delimiter": delimiter,
+    "data-duration": duration,
+    "data-easing": easing
+  }, startingNumber ? startingNumber : 0), numberSuffix && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
     className: "pb-fun-factor-number--suffix"
   }, numberSuffix)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText, {
     tagName: "h3",
@@ -24498,7 +24588,7 @@ var Inspector = function Inspector(props) {
       titleTextDecoration = attributes.titleTextDecoration,
       titleLetterSpacing = attributes.titleLetterSpacing,
       titleLineHeight = attributes.titleLineHeight,
-      number = attributes.number,
+      startingNumber = attributes.startingNumber,
       endingNumber = attributes.endingNumber,
       numberPrefix = attributes.numberPrefix,
       numberSuffix = attributes.numberSuffix,
@@ -24521,6 +24611,21 @@ var Inspector = function Inspector(props) {
       numberTextDecoration = attributes.numberTextDecoration,
       numberLetterSpacing = attributes.numberLetterSpacing,
       numberLineHeight = attributes.numberLineHeight,
+      suffpreColor = attributes.suffpreColor,
+      suffpreMargin = attributes.suffpreMargin,
+      suffpreMarginTablet = attributes.suffpreMarginTablet,
+      suffpreMarginMobile = attributes.suffpreMarginMobile,
+      suffpreFontFamily = attributes.suffpreFontFamily,
+      suffpreFontSizeType = attributes.suffpreFontSizeType,
+      suffpreFontStyle = attributes.suffpreFontStyle,
+      suffpreFontSize = attributes.suffpreFontSize,
+      suffpreFontSizeTablet = attributes.suffpreFontSizeTablet,
+      suffpreFontSizeMobile = attributes.suffpreFontSizeMobile,
+      suffpreFontWeight = attributes.suffpreFontWeight,
+      suffpreTextTransform = attributes.suffpreTextTransform,
+      suffpreTextDecoration = attributes.suffpreTextDecoration,
+      suffpreLetterSpacing = attributes.suffpreLetterSpacing,
+      suffpreLineHeight = attributes.suffpreLineHeight,
       preset = attributes.preset,
       mValign = attributes.mValign;
   var currentTab = 'content';
@@ -24536,6 +24641,14 @@ var Inspector = function Inspector(props) {
       _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState3, 2),
       mTab = _useState4[0],
       setmTab = _useState4[1];
+
+  var validateNumValue = function validateNumValue(value) {
+    if (isNaN(Number(value))) {
+      return 0;
+    }
+
+    return Number(value);
+  };
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "pb-panel-head--tabs"
@@ -24638,22 +24751,20 @@ var Inspector = function Inspector(props) {
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Digit', 'powerful-blocks'),
     initialOpen: false
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(__experimentalNumberControl, {
-    className: "pb-custom-number-control",
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
     label: __('Starting Number', 'powerful-blocks'),
-    shi: true,
-    value: number,
-    onChange: function onChange(number) {
+    value: startingNumber,
+    onChange: function onChange(startingNumber) {
+      startingNumber = validateNumValue(startingNumber);
       setAttributes({
-        number: number
+        startingNumber: startingNumber
       });
     }
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(__experimentalNumberControl, {
-    className: "pb-custom-number-control",
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
     label: __('Final Number', 'powerful-blocks'),
-    shi: true,
     value: endingNumber,
     onChange: function onChange(endingNumber) {
+      endingNumber = validateNumValue(endingNumber);
       setAttributes({
         endingNumber: endingNumber
       });
@@ -24662,6 +24773,7 @@ var Inspector = function Inspector(props) {
     label: __('Duration', 'powerful-blocks'),
     value: duration,
     onChange: function onChange(duration) {
+      duration = validateNumValue(duration);
       setAttributes({
         duration: duration
       });
@@ -24669,10 +24781,10 @@ var Inspector = function Inspector(props) {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
     className: "pb-custom-select-control",
     label: __('Easing', 'powerful-blocks'),
-    value: delimiter,
-    onChange: function onChange(delimiter) {
+    value: easing,
+    onChange: function onChange(easing) {
       setAttributes({
-        delimiter: delimiter
+        easing: easing
       });
     },
     options: [{
@@ -24681,6 +24793,9 @@ var Inspector = function Inspector(props) {
     }, {
       value: 'linear',
       label: __('Linear', 'powerful-blocks')
+    }, {
+      value: 'swing',
+      label: __('Swing', 'powerful-blocks')
     }]
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(SelectControl, {
     className: "pb-custom-select-control",
@@ -24960,8 +25075,6 @@ var Inspector = function Inspector(props) {
           name: 'mBorderColor'
         },
         setAttributes: setAttributes
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("hr", {
-        className: "pb-hr"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ShadowControl"], {
         label: __('Box Shadow', 'powerful-blocks'),
         shadowColor: {
@@ -25006,8 +25119,6 @@ var Inspector = function Inspector(props) {
           name: 'hoverMBorderColor'
         },
         setAttributes: setAttributes
-      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("hr", {
-        className: "pb-hr"
       }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ShadowControl"], {
         label: __('Box Shadow', 'powerful-blocks'),
         shadowColor: {
@@ -25072,7 +25183,7 @@ var Inspector = function Inspector(props) {
       }
     }
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
-    title: __('Title & Content', 'powerful-blocks'),
+    title: __('Title & Number', 'powerful-blocks'),
     initialOpen: false
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ResponsiveBoxControl"], {
     label: __('Padding', 'powerful-blocks'),
@@ -25185,7 +25296,7 @@ var Inspector = function Inspector(props) {
     setAttributes: props.setAttributes
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", {
     className: "pb-h-title"
-  }, __('Content', 'powerful-blocks')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
+  }, __('Number', 'powerful-blocks')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
     label: __('Color', 'powerful-blocks'),
     value: numberColor,
     onChange: function onChange(numberColor) {
@@ -25266,6 +25377,90 @@ var Inspector = function Inspector(props) {
       name: 'numberTextDecoration'
     },
     setAttributes: props.setAttributes
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
+    title: __('Suffix & Prefix', 'powerful-blocks'),
+    initialOpen: false
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ColorPickerControl"], {
+    label: __('Color', 'powerful-blocks'),
+    value: suffpreColor,
+    onChange: function onChange(suffpreColor) {
+      setAttributes({
+        suffpreColor: suffpreColor
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["ResponsiveBoxControl"], {
+    label: __('Margin', 'powerful-blocks'),
+    value: {
+      desktop: suffpreMargin,
+      tablet: suffpreMarginTablet,
+      mobile: suffpreMarginMobile
+    },
+    onChange: function onChange(value, device) {
+      if ('desktop' === device) {
+        setAttributes({
+          suffpreMargin: value
+        });
+      }
+
+      if ('tablet' === device) {
+        setAttributes({
+          suffpreMarginTablet: value
+        });
+      }
+
+      if ('mobile' === device) {
+        setAttributes({
+          suffpreMarginMobile: value
+        });
+      }
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_3__["TypographyControl"], {
+    label: __('Typography', 'powerful-blocks'),
+    fontFamily: {
+      value: suffpreFontFamily,
+      name: 'suffpreFontFamily'
+    },
+    sizeType: {
+      value: suffpreFontSizeType,
+      name: 'suffpreFontSizeType'
+    },
+    fontSize: {
+      value: suffpreFontSize,
+      name: 'suffpreFontSize'
+    },
+    fontSizeTablet: {
+      value: suffpreFontSizeTablet,
+      name: 'suffpreFontSizeTablet'
+    },
+    fontSizeMobile: {
+      value: suffpreFontSizeMobile,
+      name: 'suffpreFontSizeMobile'
+    },
+    fontStyle: {
+      value: suffpreFontStyle,
+      name: 'suffpreFontStyle'
+    },
+    fontWeight: {
+      value: suffpreFontWeight,
+      name: 'suffpreFontWeight'
+    },
+    lineHeight: {
+      value: suffpreLineHeight,
+      name: 'suffpreLineHeight'
+    },
+    letterSpacing: {
+      value: suffpreLetterSpacing,
+      name: 'suffpreLetterSpacing'
+    },
+    textTransform: {
+      value: suffpreTextTransform,
+      name: 'suffpreTextTransform'
+    },
+    textDecoration: {
+      value: suffpreTextDecoration,
+      name: 'suffpreTextDecoration'
+    },
+    setAttributes: props.setAttributes
   }))), 'advanced' === tab && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_helper_advanced__WEBPACK_IMPORTED_MODULE_4__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
@@ -25308,13 +25503,14 @@ var __ = wp.i18n.__;
 
 var save = function save(_ref) {
   var attributes = _ref.attributes,
-      className = _ref.className;
+      className = _ref.className,
+      clientId = _ref.clientId;
   var blockId = attributes.blockId,
       mType = attributes.mType,
       icon = attributes.icon,
       img = attributes.img,
       title = attributes.title,
-      number = attributes.number,
+      startingNumber = attributes.startingNumber,
       mPosition = attributes.mPosition,
       endingNumber = attributes.endingNumber,
       numberPrefix = attributes.numberPrefix,
@@ -25329,7 +25525,7 @@ var save = function save(_ref) {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     id: "pb-fun-factor-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default.a.apply(void 0, [className, 'pb-fun-factor-wrapper'].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(classes)))
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default.a.apply(void 0, [className, 'pb-fun-factor-wrapper', mPosition ? "pb-fun-factor-".concat(mPosition) : ''].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(classes)))
   }, blockAttr), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-fun-factor--m"
   }, 'icon' === mType ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_helper_iconbox_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -25348,14 +25544,12 @@ var save = function save(_ref) {
     className: "pb-fun-factor-number--prefix"
   }, numberPrefix), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
     className: "pb-fun-factor-number",
-    "data-settings": JSON.stringify({
-      from: number ? number : 0,
-      to: endingNumber ? endingNumber : 0,
-      delimiter: delimiter ? delimiter : '',
-      duration: duration ? duration : '',
-      easing: easing ? easing : ''
-    })
-  }, number ? number : '0'), numberSuffix && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+    "data-from": startingNumber,
+    "data-to": endingNumber,
+    "data-delimiter": delimiter,
+    "data-duration": duration,
+    "data-easing": easing
+  }, startingNumber ? startingNumber : '0'), numberSuffix && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
     className: "pb-fun-factor-number--suffix"
   }, numberSuffix)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText.Content, {
     tagName: "h3",
@@ -25394,73 +25588,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 var Styles = function Styles(props) {
-  var _pbFunFactorBody;
+  var _tablet;
 
   var attributes = props.attributes;
   var blockId = attributes.blockId,
-      backgroundType = attributes.backgroundType,
-      hoverBackgroundType = attributes.hoverBackgroundType,
-      backgroundColor = attributes.backgroundColor,
-      hoverBackgroundColor = attributes.hoverBackgroundColor,
-      backgroundImg = attributes.backgroundImg,
-      backgroundImgPosition = attributes.backgroundImgPosition,
-      backgroundImgSize = attributes.backgroundImgSize,
-      backgroundImgRepeat = attributes.backgroundImgRepeat,
-      backgroundImgAttachment = attributes.backgroundImgAttachment,
-      backgroundImgOverlayColor = attributes.backgroundImgOverlayColor,
-      backgroundOpacity = attributes.backgroundOpacity,
-      hoverBackgroundImg = attributes.hoverBackgroundImg,
-      hoverBackgroundImgPosition = attributes.hoverBackgroundImgPosition,
-      hoverBackgroundImgSize = attributes.hoverBackgroundImgSize,
-      hoverBackgroundImgRepeat = attributes.hoverBackgroundImgRepeat,
-      hoverBackgroundImgAttachment = attributes.hoverBackgroundImgAttachment,
-      hoverBackgroundImgOverlayColor = attributes.hoverBackgroundImgOverlayColor,
-      hoverBackgroundOpacity = attributes.hoverBackgroundOpacity,
-      gradientValue = attributes.gradientValue,
-      hoverGradientValue = attributes.hoverGradientValue,
-      padding = attributes.padding,
-      paddingTablet = attributes.paddingTablet,
-      paddingMobile = attributes.paddingMobile,
-      margin = attributes.margin,
-      marginTablet = attributes.marginTablet,
-      marginMobile = attributes.marginMobile,
-      shadowColor = attributes.shadowColor,
-      shadowHOffset = attributes.shadowHOffset,
-      shadowVOffset = attributes.shadowVOffset,
-      shadowBlur = attributes.shadowBlur,
-      shadowSpread = attributes.shadowSpread,
-      shadowType = attributes.shadowType,
-      hoverShadowColor = attributes.hoverShadowColor,
-      hoverShadowHOffset = attributes.hoverShadowHOffset,
-      hoverShadowVOffset = attributes.hoverShadowVOffset,
-      hoverShadowBlur = attributes.hoverShadowBlur,
-      hoverShadowSpread = attributes.hoverShadowSpread,
-      hoverShadowType = attributes.hoverShadowType,
-      borderStyle = attributes.borderStyle,
-      borderSize = attributes.borderSize,
-      borderColor = attributes.borderColor,
-      hoverBorderStyle = attributes.hoverBorderStyle,
-      hoverBorderSize = attributes.hoverBorderSize,
-      hoverBorderColor = attributes.hoverBorderColor,
-      borderRadius = attributes.borderRadius,
-      borderRadiusTablet = attributes.borderRadiusTablet,
-      borderRadiusMobile = attributes.borderRadiusMobile,
-      inAnimation = attributes.inAnimation,
-      outAnimation = attributes.outAnimation,
-      inAnimationDuration = attributes.inAnimationDuration,
-      inAnimationDelay = attributes.inAnimationDelay,
-      outAnimationDuration = attributes.outAnimationDuration,
-      outAnimationDelay = attributes.outAnimationDelay,
-      blockHeightType = attributes.blockHeightType,
-      blockHeight = attributes.blockHeight,
-      blockHeightMobile = attributes.blockHeightMobile,
-      blockHeightTablet = attributes.blockHeightTablet,
-      blockWidth = attributes.blockWidth,
-      blockCustomWidthType = attributes.blockCustomWidthType,
-      blockCustomWidth = attributes.blockCustomWidth,
-      blockCustomWidthTablet = attributes.blockCustomWidthTablet,
-      blockCustomWidthMobile = attributes.blockCustomWidthMobile,
-      blockzIndex = attributes.blockzIndex,
       txtAlign = attributes.txtAlign,
       mType = attributes.mType,
       iconSize = attributes.iconSize,
@@ -25543,6 +25674,21 @@ var Styles = function Styles(props) {
       numberTextDecoration = attributes.numberTextDecoration,
       numberLetterSpacing = attributes.numberLetterSpacing,
       numberLineHeight = attributes.numberLineHeight,
+      suffpreColor = attributes.suffpreColor,
+      suffpreMargin = attributes.suffpreMargin,
+      suffpreMarginTablet = attributes.suffpreMarginTablet,
+      suffpreMarginMobile = attributes.suffpreMarginMobile,
+      suffpreFontFamily = attributes.suffpreFontFamily,
+      suffpreFontSizeType = attributes.suffpreFontSizeType,
+      suffpreFontStyle = attributes.suffpreFontStyle,
+      suffpreFontSize = attributes.suffpreFontSize,
+      suffpreFontSizeTablet = attributes.suffpreFontSizeTablet,
+      suffpreFontSizeMobile = attributes.suffpreFontSizeMobile,
+      suffpreFontWeight = attributes.suffpreFontWeight,
+      suffpreTextTransform = attributes.suffpreTextTransform,
+      suffpreTextDecoration = attributes.suffpreTextDecoration,
+      suffpreLetterSpacing = attributes.suffpreLetterSpacing,
+      suffpreLineHeight = attributes.suffpreLineHeight,
       preset = attributes.preset;
   var selectorPrefix = "#pb-fun-factor-".concat(blockId);
   var rules = {
@@ -25554,23 +25700,34 @@ var Styles = function Styles(props) {
       '.pb-fun-factor--m': {
         padding: mPadding.top + ' ' + mPadding.right + ' ' + mPadding.bottom + ' ' + mPadding.left,
         margin: mMargin.top + ' ' + mMargin.right + ' ' + mMargin.bottom + ' ' + mMargin.left,
-        'box-shadow': mShadowType + ' ' + mShadowHOffset + 'px ' + mShadowVOffset + 'px ' + mShadowBlur + 'px ' + mShadowSpread + 'px ' + mShadowColor,
-        'border-width': mBorderSize ? mBorderSize + 'px' : undefined,
-        'border-style': mBorderStyle ? mBorderStyle : undefined,
-        'border-color': mBorderColor ? mBorderColor : undefined,
-        'border-radius': mBorderRadius.top + ' ' + mBorderRadius.right + ' ' + mBorderRadius.bottom + ' ' + mBorderRadius.left,
         transform: "translate( ".concat(mOffsetLeft + mOffsetType, ",").concat(mOffsetTop + mOffsetType, ")")
       },
       '.pb-fun-factor--icon': {
         color: iconColor ? iconColor : undefined,
         background: iconBGColor ? iconBGColor : undefined,
-        'font-size': iconSize ? iconSize + 'px' : undefined
+        'font-size': iconSize ? iconSize + 'px' : undefined,
+        'box-shadow': mShadowType + ' ' + mShadowHOffset + 'px ' + mShadowVOffset + 'px ' + mShadowBlur + 'px ' + mShadowSpread + 'px ' + mShadowColor,
+        'border-width': mBorderSize ? mBorderSize + 'px' : undefined,
+        'border-style': mBorderStyle ? mBorderStyle : undefined,
+        'border-color': mBorderColor ? mBorderColor : undefined,
+        'border-radius': mBorderRadius.top + ' ' + mBorderRadius.right + ' ' + mBorderRadius.bottom + ' ' + mBorderRadius.left
       },
       '.pb-fun-factor--image img': {
         width: imgWidth ? imgWidth + imgWidthType : undefined,
-        height: imgHeight ? imgHeight + imgHeightType : undefined
+        height: imgHeight ? imgHeight + imgHeightType : undefined,
+        'box-shadow': mShadowType + ' ' + mShadowHOffset + 'px ' + mShadowVOffset + 'px ' + mShadowBlur + 'px ' + mShadowSpread + 'px ' + mShadowColor,
+        'border-width': mBorderSize ? mBorderSize + 'px' : undefined,
+        'border-style': mBorderStyle ? mBorderStyle : undefined,
+        'border-color': mBorderColor ? mBorderColor : undefined,
+        'border-radius': mBorderRadius.top + ' ' + mBorderRadius.right + ' ' + mBorderRadius.bottom + ' ' + mBorderRadius.left
       },
-      '.pb-fun-factor--m:hover': {
+      '.pb-fun-factor--m:hover .pb-fun-factor--icon': {
+        'box-shadow': hoverMShadowType + ' ' + hoverMShadowHOffset + 'px ' + hoverMShadowVOffset + 'px ' + hoverMShadowBlur + 'px ' + hoverMShadowSpread + 'px ' + hoverMShadowColor,
+        'border-width': hoverMBorderSize ? hoverMBorderSize + 'px' : undefined,
+        'border-style': hoverMBorderStyle ? hoverMBorderStyle : undefined,
+        'border-color': hoverMBorderColor ? hoverMBorderColor : undefined
+      },
+      '.pb-fun-factor--m:hover .pb-fun-factor--image img': {
         'box-shadow': hoverMShadowType + ' ' + hoverMShadowHOffset + 'px ' + hoverMShadowVOffset + 'px ' + hoverMShadowBlur + 'px ' + hoverMShadowSpread + 'px ' + hoverMShadowColor,
         'border-width': hoverMBorderSize ? hoverMBorderSize + 'px' : undefined,
         'border-style': hoverMBorderStyle ? hoverMBorderStyle : undefined,
@@ -25592,16 +25749,44 @@ var Styles = function Styles(props) {
         'text-transform': titleTextTransform ? titleTextTransform : undefined,
         'text-decoration': titleTextDecoration ? titleTextDecoration : undefined
       },
-      '.pb-fun-factor--body__number': {
+      '.pb-fun-factor-number': {
+        color: numberColor ? numberColor : undefined,
+        'font-family': numberFontFamily ? numberFontFamily + '!important' : undefined,
+        'font-size': numberFontSize ? numberFontSize + numberFontSizeType : undefined,
+        'font-weight': numberFontWeight ? numberFontWeight + '!important' : undefined,
+        'font-style': numberFontStyle ? numberFontStyle : undefined,
+        'letter-spacing': numberLetterSpacing ? numberLetterSpacing + 'px' : undefined,
+        'line-height': numberLineHeight ? numberLineHeight + 'px' : undefined,
+        'text-transform': numberTextTransform ? numberTextTransform : undefined,
+        'text-decoration': numberTextDecoration ? numberTextDecoration : undefined,
         margin: numberMargin.top + ' ' + numberMargin.right + ' ' + numberMargin.bottom + ' ' + numberMargin.left
       },
-      '.pb-fun-factor--body__number p': (_pbFunFactorBody = {
-        color: numberColor ? numberColor : undefined,
-        'font-size': numberFontSize ? numberFontSize + numberFontSizeTablet : undefined,
-        'font-family': numberFontFamily ? numberFontFamily + '!important' : undefined
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, "font-size", numberFontSize ? numberFontSize + numberFontSizeType : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'font-weight', numberFontWeight ? numberFontWeight + '!important' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'font-style', numberFontStyle ? numberFontStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'letter-spacing', numberLetterSpacing ? numberLetterSpacing + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'line-height', numberLineHeight ? numberLineHeight + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'text-transform', numberTextTransform ? numberTextTransform : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbFunFactorBody, 'text-decoration', numberTextDecoration ? numberTextDecoration : undefined), _pbFunFactorBody)
+      '.pb-fun-factor-number--prefix': {
+        color: suffpreColor ? suffpreColor : undefined,
+        'font-size': suffpreFontSize ? suffpreFontSize + suffpreFontSizeType : undefined,
+        'font-family': suffpreFontFamily ? suffpreFontFamily + '!important' : undefined,
+        'font-weight': suffpreFontWeight ? suffpreFontWeight + '!important' : undefined,
+        'font-style': suffpreFontStyle ? suffpreFontStyle : undefined,
+        'letter-spacing': suffpreLetterSpacing ? suffpreLetterSpacing + 'px' : undefined,
+        'line-height': suffpreLineHeight ? suffpreLineHeight + 'px' : undefined,
+        'text-transform': suffpreTextTransform ? suffpreTextTransform : undefined,
+        'text-decoration': suffpreTextDecoration ? suffpreTextDecoration : undefined,
+        margin: suffpreMargin.top + ' ' + suffpreMargin.right + ' ' + suffpreMargin.bottom + ' ' + suffpreMargin.left
+      },
+      '.pb-fun-factor-number--suffix': {
+        color: suffpreColor ? suffpreColor : undefined,
+        'font-size': suffpreFontSize ? suffpreFontSize + suffpreFontSizeType : undefined,
+        'font-family': suffpreFontFamily ? suffpreFontFamily + '!important' : undefined,
+        'font-weight': suffpreFontWeight ? suffpreFontWeight + '!important' : undefined,
+        'font-style': suffpreFontStyle ? suffpreFontStyle : undefined,
+        'letter-spacing': suffpreLetterSpacing ? suffpreLetterSpacing + 'px' : undefined,
+        'line-height': suffpreLineHeight ? suffpreLineHeight + 'px' : undefined,
+        'text-transform': suffpreTextTransform ? suffpreTextTransform : undefined,
+        'text-decoration': suffpreTextDecoration ? suffpreTextDecoration : undefined,
+        margin: suffpreMargin.top + ' ' + suffpreMargin.right + ' ' + suffpreMargin.bottom + ' ' + suffpreMargin.left
+      }
     },
-    tablet: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()({
+    tablet: (_tablet = {
       '.pb-fun-factor--m': {
         padding: mPaddingTablet.top + ' ' + mPaddingTablet.right + ' ' + mPaddingTablet.bottom + ' ' + mPaddingTablet.left,
         margin: mMarginTablet.top + ' ' + mMarginTablet.right + ' ' + mMarginTablet.bottom + ' ' + mMarginTablet.left,
@@ -25620,12 +25805,18 @@ var Styles = function Styles(props) {
         margin: titleMarginTablet.top + ' ' + titleMarginTablet.right + ' ' + titleMarginTablet.bottom + ' ' + titleMarginTablet.left,
         'font-size': titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined
       },
-      '.pb-fun-factor--body__number': {
+      '.pb-fun-factor-number': {
         margin: numberMarginTablet.top + ' ' + numberMarginTablet.right + ' ' + numberMarginTablet.bottom + ' ' + numberMarginTablet.left
       }
-    }, ".pb-fun-factor--body__number", {
+    }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_tablet, ".pb-fun-factor-number", {
       'font-size': numberFontSizeTablet ? numberFontSizeTablet + numberFontSizeTablet : undefined
-    }),
+    }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_tablet, '.pb-fun-factor-number--prefix', {
+      'font-size': suffpreFontSizeTablet ? suffpreFontSizeTablet + suffpreFontSizeType : undefined,
+      margin: suffpreMarginTablet.top + ' ' + suffpreMarginTablet.right + ' ' + suffpreMarginTablet.bottom + ' ' + suffpreMarginTablet.left
+    }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_tablet, '.pb-fun-factor-number--suffix', {
+      'font-size': suffpreFontSizeTablet ? suffpreFontSizeTablet + suffpreFontSizeType : undefined,
+      margin: suffpreMarginTablet.top + ' ' + suffpreMarginTablet.right + ' ' + suffpreMarginTablet.bottom + ' ' + suffpreMarginTablet.left
+    }), _tablet),
     mobile: {
       '.pb-fun-factor--m': {
         padding: mPaddingMobile.top + ' ' + mPaddingMobile.right + ' ' + mPaddingMobile.bottom + ' ' + mPaddingMobile.left,
@@ -25645,11 +25836,17 @@ var Styles = function Styles(props) {
         margin: titleMarginMobile.top + ' ' + titleMarginMobile.right + ' ' + titleMarginMobile.bottom + ' ' + titleMarginMobile.left,
         'font-size': titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined
       },
-      '.pb-fun-factor--body__number': {
+      '.pb-fun-factor-number': {
+        'font-size': numberFontSizeMobile ? numberFontSizeMobile + numberFontSizeTablet : undefined,
         margin: numberMarginMobile.top + ' ' + numberMarginMobile.right + ' ' + numberMarginMobile.bottom + ' ' + numberMarginMobile.left
       },
-      '.pb-fun-factor--body__number p': {
-        'font-size': numberFontSizeMobile ? numberFontSizeMobile + numberFontSizeTablet : undefined
+      '.pb-fun-factor-number--prefix': {
+        'font-size': suffpreFontSizeMobile ? suffpreFontSizeMobile + suffpreFontSizeType : undefined,
+        margin: suffpreMarginMobile.top + ' ' + suffpreMarginMobile.right + ' ' + suffpreMarginMobile.bottom + ' ' + suffpreMarginMobile.left
+      },
+      '.pb-fun-factor-number--suffix': {
+        'font-size': suffpreFontSizeMobile ? suffpreFontSizeMobile + suffpreFontSizeType : undefined,
+        margin: suffpreMarginMobile.top + ' ' + suffpreMarginMobile.right + ' ' + suffpreMarginMobile.bottom + ' ' + suffpreMarginMobile.left
       }
     }
   };

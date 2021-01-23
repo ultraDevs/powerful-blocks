@@ -4,14 +4,14 @@ import classnames from 'classnames';
 import IconBox from "../../helper/iconbox.js";
 import { genClass, blockAttributes } from '../../helper';
 
-const save = ( { attributes, className } ) => {
+const save = ( { attributes, className, clientId } ) => {
 	const {
 		blockId,
 		mType,
 		icon,
 		img,
 		title,
-		number,
+		startingNumber,
 		mPosition,
 		endingNumber,
 
@@ -35,6 +35,7 @@ const save = ( { attributes, className } ) => {
 					className={ classnames(
 						className,
 						'pb-fun-factor-wrapper',
+						mPosition ? `pb-fun-factor-${mPosition}` : '',
 						...classes
 					) }
 					{ ... blockAttr }
@@ -61,17 +62,13 @@ const save = ( { attributes, className } ) => {
 						) }
 						<span 
 							className="pb-fun-factor-number"
-							data-settings = {
-								JSON.stringify({
-									from: number ? number : 0,
-									to: endingNumber ? endingNumber : 0,
-									delimiter: delimiter ? delimiter : '',
-									duration: duration ? duration : '',
-									easing: easing ? easing : '',
-								})
-							}
+							data-from = { startingNumber }
+							data-to = { endingNumber }
+							data-delimiter = { delimiter }
+							data-duration = { duration }
+							data-easing = { easing }
 						>
-							{ number ? number : '0' }
+							{ startingNumber ? startingNumber : '0' }
 						</span>
 
 						{ numberSuffix && (

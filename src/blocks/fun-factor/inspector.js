@@ -106,7 +106,7 @@ const Inspector = ( props ) => {
 		titleTextDecoration,
 		titleLetterSpacing,
 		titleLineHeight,
-		number,
+		startingNumber,
 		endingNumber,
 
 		numberPrefix,
@@ -131,6 +131,23 @@ const Inspector = ( props ) => {
 		numberTextDecoration,
 		numberLetterSpacing,
 		numberLineHeight,
+
+		suffpreColor,
+		suffpreMargin,
+		suffpreMarginTablet,
+		suffpreMarginMobile,
+		suffpreFontFamily,
+		suffpreFontSizeType,
+		suffpreFontStyle,
+		suffpreFontSize,
+		suffpreFontSizeTablet,
+		suffpreFontSizeMobile,
+		suffpreFontWeight,
+		suffpreTextTransform,
+		suffpreTextDecoration,
+		suffpreLetterSpacing,
+		suffpreLineHeight,
+
 		preset,
 		mValign
 	} = attributes;
@@ -141,6 +158,12 @@ const Inspector = ( props ) => {
 	let currentMTab = mType || 'icon';
     const [ mTab, setmTab ] = useState( currentMTab );
 
+	const validateNumValue = ( value ) => {
+		if ( isNaN( Number( value ) ) ) {
+			return 0;
+		}
+		return Number( value );
+	};
 
 	return (
 		<InspectorControls>
@@ -290,21 +313,37 @@ const Inspector = ( props ) => {
 							title={ __( 'Digit', 'powerful-blocks' ) }
 							initialOpen={ false }
 						>
-							<__experimentalNumberControl
+							{/* <__experimentalNumberControl
 								className = "pb-custom-number-control"
 								label = { __( 'Starting Number', 'powerful-blocks' ) }
-								shi
-								value={ number }
-								onChange={ ( number ) => {
-									setAttributes( { number } );
+								value={ startingNumber }
+								onChange={ ( startingNumber ) => {
+									startingNumber = validateNumValue( startingNumber);
+									setAttributes( { startingNumber } );
 								} }
 							/>
 							<__experimentalNumberControl
 								className = "pb-custom-number-control"
 								label = { __( 'Final Number', 'powerful-blocks' ) }
-								shi
 								value={ endingNumber }
 								onChange={ ( endingNumber ) => {
+									endingNumber = validateNumValue( endingNumber);
+									setAttributes( { endingNumber } );
+								} }
+							/> */}
+							<TextControl
+								label={ __( 'Starting Number', 'powerful-blocks' ) }
+								value={ startingNumber }
+								onChange={ ( startingNumber ) => {
+									startingNumber = validateNumValue( startingNumber);
+									setAttributes( { startingNumber } );
+								} }
+							/>
+							<TextControl
+								label={ __( 'Final Number', 'powerful-blocks' ) }
+								value={ endingNumber }
+								onChange={ ( endingNumber ) => {
+									endingNumber = validateNumValue( endingNumber);
 									setAttributes( { endingNumber } );
 								} }
 							/>
@@ -312,19 +351,21 @@ const Inspector = ( props ) => {
 								label={ __( 'Duration', 'powerful-blocks' ) }
 								value={ duration }
 								onChange={ ( duration ) => {
+									duration = validateNumValue( duration);
 									setAttributes( { duration } );
 								} }
 							/>
 							<SelectControl
 								className = "pb-custom-select-control"
 								label={ __( 'Easing', 'powerful-blocks' ) }
-								value={ delimiter }
-								onChange={ ( delimiter ) => {
-									setAttributes( { delimiter } );
+								value={ easing }
+								onChange={ ( easing ) => {
+									setAttributes( { easing } );
 								} }
 								options={ [
 									{ value: '', label: __( 'None', 'powerful-blocks' ) },
 									{ value: 'linear', label: __( 'Linear', 'powerful-blocks' ) },
+									{ value: 'swing', label: __( 'Swing', 'powerful-blocks' ) },
 								] }
 							/>
 							<SelectControl
@@ -546,7 +587,6 @@ const Inspector = ( props ) => {
 														borderColor = { { value: mBorderColor, name: 'mBorderColor' } }
 														setAttributes = { setAttributes }
 													/>
-													<hr className="pb-hr" />
 													<ShadowControl 
 														label = { __( 'Box Shadow', 'powerful-blocks' ) }
 														shadowColor = { { value: mShadowColor, name: 'mShadowColor' } }
@@ -569,7 +609,6 @@ const Inspector = ( props ) => {
 														borderColor = { { value: hoverMBorderColor, name: 'hoverMBorderColor' } }
 														setAttributes = { setAttributes }
 													/>
-													<hr className="pb-hr" />
 													<ShadowControl 
 														label = { __( 'Box Shadow', 'powerful-blocks' ) }
 														shadowColor = { { value: hoverMShadowColor, name: 'hoverMShadowColor' } }
@@ -618,7 +657,7 @@ const Inspector = ( props ) => {
 							
 						</PanelBody>
 						<PanelBody
-							title={ __( 'Title & Content', 'powerful-blocks' ) }
+							title={ __( 'Title & Number', 'powerful-blocks' ) }
 							initialOpen={ false }
 						>
 							<ResponsiveBoxControl
@@ -685,7 +724,7 @@ const Inspector = ( props ) => {
 								setAttributes = { props.setAttributes }
 							/>
 
-							<p className="pb-h-title">{ __( 'Content', 'powerful-blocks' ) }</p>
+							<p className="pb-h-title">{ __( 'Number', 'powerful-blocks' ) }</p>
 							<ColorPickerControl
 								label={ __( 'Color', 'powerful-blocks' ) }
 								value={ numberColor }
@@ -727,6 +766,55 @@ const Inspector = ( props ) => {
 								letterSpacing = { { value: numberLetterSpacing, name: 'numberLetterSpacing' } }
 								textTransform = { { value: numberTextTransform, name: 'numberTextTransform' } }
 								textDecoration = { { value: numberTextDecoration, name: 'numberTextDecoration' } }
+								setAttributes = { props.setAttributes }
+							/>
+
+						</PanelBody>
+						<PanelBody
+							title={ __( 'Suffix & Prefix', 'powerful-blocks' ) }
+							initialOpen={ false }
+						>
+							<ColorPickerControl
+								label={ __( 'Color', 'powerful-blocks' ) }
+								value={ suffpreColor }
+								onChange={ ( suffpreColor ) => {
+									setAttributes( { suffpreColor } );
+								} }
+							/>
+							<ResponsiveBoxControl
+								label={ __( 'Margin', 'powerful-blocks' ) }
+								value={ {
+									desktop: suffpreMargin,
+									tablet: suffpreMarginTablet,
+									mobile: suffpreMarginMobile,
+								} }
+								onChange={ ( value, device ) => {
+									if ( 'desktop' === device ) {
+										setAttributes( { suffpreMargin: value } );
+									}
+									if ( 'tablet' === device ) {
+										setAttributes( { suffpreMarginTablet: value } );
+									}
+									if ( 'mobile' === device ) {
+										setAttributes( { suffpreMarginMobile: value } );
+									}
+								} }
+							/>
+							<TypographyControl
+								label = { __( 'Typography', 'powerful-blocks' ) }
+								fontFamily = { { value: suffpreFontFamily, name: 'suffpreFontFamily' } }
+								sizeType = {
+									{ value: suffpreFontSizeType, name: 'suffpreFontSizeType' }
+								}
+								fontSize = { { value: suffpreFontSize, name: 'suffpreFontSize' } }
+								fontSizeTablet = { { value: suffpreFontSizeTablet, name: 'suffpreFontSizeTablet' } }
+								fontSizeMobile = { { value: suffpreFontSizeMobile, name: 'suffpreFontSizeMobile' } }
+								fontStyle = { { value: suffpreFontStyle, name: 'suffpreFontStyle' } }
+								fontWeight = { { value: suffpreFontWeight, name: 'suffpreFontWeight' } }
+								lineHeight = { { value: suffpreLineHeight, name: 'suffpreLineHeight' } }
+								letterSpacing = { { value: suffpreLetterSpacing, name: 'suffpreLetterSpacing' } }
+								textTransform = { { value: suffpreTextTransform, name: 'suffpreTextTransform' } }
+								textDecoration = { { value: suffpreTextDecoration, name: 'suffpreTextDecoration' } }
 								setAttributes = { props.setAttributes }
 							/>
 
