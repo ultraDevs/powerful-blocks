@@ -2,16 +2,10 @@ const { InspectorControls } = wp.blockEditor;
 const {
 	PanelBody,
 	TextControl,
-	TextareaControl,
-	SelectControl,
-	ToggleControl,
 	RangeControl,
-	BaseControl,
-	Dropdown,
 	Button,
 	ButtonGroup,
 	TabPanel,
-	Dashicon
 } = wp.components;
 const { __ } = wp.i18n;
 
@@ -23,7 +17,6 @@ import {
 	ResponsiveRangeControl,
 	ResponsiveBoxControl,
 	ColorPickerControl,
-	ImageControl,
 	AlignmentControl,
 	TypographyControl,
 	BorderControl,

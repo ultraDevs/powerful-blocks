@@ -6,8 +6,6 @@ const Styles = ( props ) => {
 
 	const {
 		blockId,
-		
-
 		txtAlign,
 		icon,
 		iconColor,
@@ -51,7 +49,6 @@ const Styles = ( props ) => {
 		contentBPadding,
 		contentBPaddingTablet,
 		contentBPaddingMobile,
-		title,
 		titleColor,
 		titleMargin,
 		titleMarginTablet,
@@ -98,7 +95,13 @@ const Styles = ( props ) => {
 				mMargin.bottom +
 				' ' +
 				mMargin.left,
-			'box-shadow':
+				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
+			},
+			'.pb-icon-box--icon' : {
+				color: iconColor ? iconColor : undefined,
+				background: iconBGColor ? iconBGColor : undefined,
+				'font-size': iconSize ? iconSize + 'px' : undefined,
+				'box-shadow':
 				mShadowType + ' ' +
 				mShadowHOffset +
 				'px ' +
@@ -121,15 +124,9 @@ const Styles = ( props ) => {
 				mBorderRadius.bottom +
 				' ' +
 				mBorderRadius.left,
-				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
-			},
-			'.pb-icon-box--icon' : {
-				color: iconColor ? iconColor : undefined,
-				background: iconBGColor ? iconBGColor : undefined,
-				'font-size': iconSize ? iconSize + 'px' : undefined,
 			},
 			
-			'.pb-icon-box--m:hover' : {
+			'.pb-icon-box--m:hover .pb-icon-box--icon': {
 				'box-shadow': hoverMShadowType + ' ' +
 				hoverMShadowHOffset +
 					'px ' +
@@ -199,15 +196,18 @@ const Styles = ( props ) => {
 				mPaddingTablet.bottom +
 				' ' +
 				mPaddingTablet.left,
-			margin:
-				mMarginTablet.top +
-				' ' +
-				mMarginTablet.right +
-				' ' +
-				mMarginTablet.bottom +
-				' ' +
-				mMarginTablet.left,
-			'border-radius':
+				margin:
+					mMarginTablet.top +
+					' ' +
+					mMarginTablet.right +
+					' ' +
+					mMarginTablet.bottom +
+					' ' +
+					mMarginTablet.left,
+				transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
+			},
+			'.pb-icon-box--icon' : {
+				'border-radius':
 				mBorderRadiusTablet.top +
 				' ' +
 				mBorderRadiusTablet.right +
@@ -215,8 +215,6 @@ const Styles = ( props ) => {
 				mBorderRadiusTablet.bottom +
 				' ' +
 				mBorderRadiusTablet.left,
-			transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
-			
 			},
 			
 			'.pb-icon-box--body' : {
@@ -253,15 +251,20 @@ const Styles = ( props ) => {
 				mPaddingMobile.bottom +
 				' ' +
 				mPaddingMobile.left,
-			margin:
-				mMarginMobile.top +
-				' ' +
-				mMarginMobile.right +
-				' ' +
-				mMarginMobile.bottom +
-				' ' +
-				mMarginMobile.left,
-			'border-radius':
+				margin:
+					mMarginMobile.top +
+					' ' +
+					mMarginMobile.right +
+					' ' +
+					mMarginMobile.bottom +
+					' ' +
+					mMarginMobile.left,
+				transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
+			
+			},
+
+			'.pb-icon-box--icon' : {
+				'border-radius':
 				mBorderRadiusMobile.top +
 				' ' +
 				mBorderRadiusMobile.right +
@@ -269,8 +272,6 @@ const Styles = ( props ) => {
 				mBorderRadiusMobile.bottom +
 				' ' +
 				mBorderRadiusMobile.left,
-			transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
-			
 			},
 			'.pb-icon-box--body' : {
 				padding: contentBPaddingMobile.top +
