@@ -6,86 +6,12 @@ const Styles = ( props ) => {
 
 	const {
 		blockId,
-		backgroundType,
-		hoverBackgroundType,
-
-		backgroundColor,
-		hoverBackgroundColor,
-
-		backgroundImg,
-        backgroundImgPosition,
-        backgroundImgSize,
-        backgroundImgRepeat,
-        backgroundImgAttachment,
-        backgroundImgOverlayColor,
-		backgroundOpacity,
-
-		hoverBackgroundImg,
-        hoverBackgroundImgPosition,
-        hoverBackgroundImgSize,
-        hoverBackgroundImgRepeat,
-        hoverBackgroundImgAttachment,
-        hoverBackgroundImgOverlayColor,
-        hoverBackgroundOpacity,
-
-		gradientValue,
-
-        hoverGradientValue,
-
-        padding,
-        paddingTablet,
-        paddingMobile,
-        margin,
-        marginTablet,
-        marginMobile,
-        shadowColor,
-        shadowHOffset,
-        shadowVOffset,
-        shadowBlur,
-        shadowSpread,
-		shadowType,
-		hoverShadowColor,
-        hoverShadowHOffset,
-        hoverShadowVOffset,
-        hoverShadowBlur,
-        hoverShadowSpread,
-		hoverShadowType,
-		
-        borderStyle,
-        borderSize,
-        borderColor,
-        hoverBorderStyle,
-        hoverBorderSize,
-        hoverBorderColor,
-        borderRadius,
-        borderRadiusTablet,
-        borderRadiusMobile,
-        inAnimation,
-        outAnimation,
-        inAnimationDuration,
-        inAnimationDelay,
-        outAnimationDuration,
-		outAnimationDelay,
-		
-		blockHeightType,
-        blockHeight,
-        blockHeightMobile,
-		blockHeightTablet,
-		
-		blockWidth,
-		blockCustomWidthType,
-        blockCustomWidth,
-        blockCustomWidthTablet,
-        blockCustomWidthMobile,
-		blockzIndex,
-		
 
 		txtAlign,
 		mType,
 		iconSize,
 		iconColor,
 		iconBGColor,
-		mPosition,
 		mValign,
 		imgHeightType,
 		imgHeight,
@@ -193,7 +119,14 @@ const Styles = ( props ) => {
 				mMargin.bottom +
 				' ' +
 				mMargin.left,
-			'box-shadow':
+			
+				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
+			},
+			'.pb-info-box--icon' : {
+				color: iconColor ? iconColor : undefined,
+				background: iconBGColor ? iconBGColor : undefined,
+				'font-size': iconSize ? iconSize + 'px' : undefined,
+				'box-shadow':
 				mShadowType + ' ' +
 				mShadowHOffset +
 				'px ' +
@@ -216,18 +149,51 @@ const Styles = ( props ) => {
 				mBorderRadius.bottom +
 				' ' +
 				mBorderRadius.left,
-				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
-			},
-			'.pb-info-box--icon' : {
-				color: iconColor ? iconColor : undefined,
-				background: iconBGColor ? iconBGColor : undefined,
-				'font-size': iconSize ? iconSize + 'px' : undefined,
 			},
 			'.pb-info-box--image img' : {
 				width: imgWidth ? imgWidth + imgWidthType : undefined,
 				height: imgHeight ? imgHeight + imgHeightType : undefined,
+				'box-shadow':
+				mShadowType + ' ' +
+				mShadowHOffset +
+				'px ' +
+				mShadowVOffset +
+				'px ' +
+				mShadowBlur +
+				'px ' +
+				mShadowSpread +
+				'px ' + mShadowColor,
+			'border-width': mBorderSize
+				? mBorderSize + 'px'
+				: undefined,
+			'border-style': mBorderStyle ? mBorderStyle : undefined,
+			'border-color': mBorderColor ? mBorderColor : undefined,
+			'border-radius':
+				mBorderRadius.top +
+				' ' +
+				mBorderRadius.right +
+				' ' +
+				mBorderRadius.bottom +
+				' ' +
+				mBorderRadius.left,
 			},
-			'.pb-info-box--m:hover' : {
+			'.pb-info-box--m:hover .pb-info-box--icon' : {
+				'box-shadow': hoverMShadowType + ' ' +
+				hoverMShadowHOffset +
+					'px ' +
+					hoverMShadowVOffset +
+					'px ' +
+					hoverMShadowBlur +
+					'px ' +
+					hoverMShadowSpread +
+					'px ' + hoverMShadowColor,
+				'border-width': hoverMBorderSize
+					? hoverMBorderSize + 'px'
+					: undefined,
+				'border-style': hoverMBorderStyle ? hoverMBorderStyle : undefined,
+				'border-color': hoverMBorderColor ? hoverMBorderColor : undefined,
+			},
+			'.pb-info-box--m:hover .pb-info-box--image img' : {
 				'box-shadow': hoverMShadowType + ' ' +
 				hoverMShadowHOffset +
 					'px ' +
@@ -298,7 +264,6 @@ const Styles = ( props ) => {
 			},
 			'.pb-info-box--body__content p' : {
 				color: contentColor ? contentColor : undefined,
-				'font-size' : contentFontSize ? contentFontSize + contentFontSizeTablet : undefined,
 				'font-family': contentFontFamily
 					? contentFontFamily + '!important'
 					: undefined,
@@ -343,7 +308,12 @@ const Styles = ( props ) => {
 				mMarginTablet.bottom +
 				' ' +
 				mMarginTablet.left,
-			'border-radius':
+			
+			transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
+			
+			},
+			'.pb-info-box--icon': {
+				'border-radius':
 				mBorderRadiusTablet.top +
 				' ' +
 				mBorderRadiusTablet.right +
@@ -351,12 +321,18 @@ const Styles = ( props ) => {
 				mBorderRadiusTablet.bottom +
 				' ' +
 				mBorderRadiusTablet.left,
-			transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
-			
 			},
 			'.pb-info-box--image img' : {
 				width: imgWidthTablet ? imgWidthTablet + imgWidthType : undefined,
 				height: imgHeightTablet ? imgHeightTablet + imgHeightType : undefined,
+				'border-radius':
+				mBorderRadiusTablet.top +
+				' ' +
+				mBorderRadiusTablet.right +
+				' ' +
+				mBorderRadiusTablet.bottom +
+				' ' +
+				mBorderRadiusTablet.left,
 			},
 			'.pb-info-box--body' : {
 				padding: contentBPaddingTablet.top +
@@ -389,7 +365,7 @@ const Styles = ( props ) => {
 				contentMarginTablet.left,
 			},
 			'.pb-info-box--body__content' : {
-				'font-size' : contentFontSizeTablet ? contentFontSizeTablet + contentFontSizeTablet : undefined,
+				'font-size' : contentFontSizeTablet ? contentFontSizeTablet + contentFontSizeType : undefined,
 			},
 		},
 		mobile: {
@@ -411,7 +387,12 @@ const Styles = ( props ) => {
 				mMarginMobile.bottom +
 				' ' +
 				mMarginMobile.left,
-			'border-radius':
+			
+			transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
+			
+			},
+			'.pb-info-box--icon': {
+				'border-radius':
 				mBorderRadiusMobile.top +
 				' ' +
 				mBorderRadiusMobile.right +
@@ -419,12 +400,18 @@ const Styles = ( props ) => {
 				mBorderRadiusMobile.bottom +
 				' ' +
 				mBorderRadiusMobile.left,
-			transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
-			
 			},
 			'.pb-info-box--image img' : {
 				width: imgWidthMobile ? imgWidthMobile + imgWidthType : undefined,
 				height: imgHeightMobile ? imgHeightMobile + imgHeightType : undefined,
+				'border-radius':
+				mBorderRadiusMobile.top +
+				' ' +
+				mBorderRadiusMobile.right +
+				' ' +
+				mBorderRadiusMobile.bottom +
+				' ' +
+				mBorderRadiusMobile.left,
 			},
 			'.pb-info-box--body' : {
 				padding: contentBPaddingMobile.top +
@@ -458,7 +445,7 @@ const Styles = ( props ) => {
 			},
 			'.pb-info-box--body__content p' : {
 				
-				'font-size' : contentFontSizeMobile ? contentFontSizeMobile + contentFontSizeTablet : undefined,
+				'font-size' : contentFontSizeMobile ? contentFontSizeMobile + contentFontSizeType : undefined,
 			},
 		},
 	};

@@ -42,6 +42,7 @@ const edit = ( props ) => {
 				<div
 					className={ classnames(
 						'pb-info-box-wrapper',
+						mPosition ? `pb-info-box-${mPosition}` : '',
 						props.className,
 						...classes
 					) }

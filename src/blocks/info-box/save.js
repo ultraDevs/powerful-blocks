@@ -26,6 +26,7 @@ const save = ( { attributes, className } ) => {
 					className={ classnames(
 						className,
 						'pb-info-box-wrapper',
+						mPosition ? `pb-info-box-${mPosition}` : '',
 						...classes
 					) }
 					{ ... blockAttr }

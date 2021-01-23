@@ -41,7 +41,7 @@ const attributes = {
 	},
 	mValign: {
 		type: 'string',
-		default: 'middle',
+		default: 'center',
 	},
 
 	img: {

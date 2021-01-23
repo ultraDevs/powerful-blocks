@@ -27242,7 +27242,7 @@ var attributes = {
   },
   mValign: {
     type: 'string',
-    default: 'middle'
+    default: 'center'
   },
   img: {
     type: 'object',
@@ -27731,7 +27731,7 @@ var edit = function edit(props) {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     id: "pb-info-box-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default.a.apply(void 0, ['pb-info-box-wrapper', props.className].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(classes)))
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default.a.apply(void 0, ['pb-info-box-wrapper', mPosition ? "pb-info-box-".concat(mPosition) : '', props.className].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(classes)))
   }, blockAttr), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-info-box--m"
   }, 'icon' === mType ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_helper_iconbox_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -28723,7 +28723,7 @@ var save = function save(_ref) {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     id: "pb-info-box-".concat(blockId)
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default.a.apply(void 0, [className, 'pb-info-box-wrapper'].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(classes)))
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default.a.apply(void 0, [className, 'pb-info-box-wrapper', mPosition ? "pb-info-box-".concat(mPosition) : ''].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(classes)))
   }, blockAttr), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-info-box--m"
   }, 'icon' === mType ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_helper_iconbox_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -28778,79 +28778,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 var Styles = function Styles(props) {
-  var _pbInfoBoxBody__;
-
   var attributes = props.attributes;
   var blockId = attributes.blockId,
-      backgroundType = attributes.backgroundType,
-      hoverBackgroundType = attributes.hoverBackgroundType,
-      backgroundColor = attributes.backgroundColor,
-      hoverBackgroundColor = attributes.hoverBackgroundColor,
-      backgroundImg = attributes.backgroundImg,
-      backgroundImgPosition = attributes.backgroundImgPosition,
-      backgroundImgSize = attributes.backgroundImgSize,
-      backgroundImgRepeat = attributes.backgroundImgRepeat,
-      backgroundImgAttachment = attributes.backgroundImgAttachment,
-      backgroundImgOverlayColor = attributes.backgroundImgOverlayColor,
-      backgroundOpacity = attributes.backgroundOpacity,
-      hoverBackgroundImg = attributes.hoverBackgroundImg,
-      hoverBackgroundImgPosition = attributes.hoverBackgroundImgPosition,
-      hoverBackgroundImgSize = attributes.hoverBackgroundImgSize,
-      hoverBackgroundImgRepeat = attributes.hoverBackgroundImgRepeat,
-      hoverBackgroundImgAttachment = attributes.hoverBackgroundImgAttachment,
-      hoverBackgroundImgOverlayColor = attributes.hoverBackgroundImgOverlayColor,
-      hoverBackgroundOpacity = attributes.hoverBackgroundOpacity,
-      gradientValue = attributes.gradientValue,
-      hoverGradientValue = attributes.hoverGradientValue,
-      padding = attributes.padding,
-      paddingTablet = attributes.paddingTablet,
-      paddingMobile = attributes.paddingMobile,
-      margin = attributes.margin,
-      marginTablet = attributes.marginTablet,
-      marginMobile = attributes.marginMobile,
-      shadowColor = attributes.shadowColor,
-      shadowHOffset = attributes.shadowHOffset,
-      shadowVOffset = attributes.shadowVOffset,
-      shadowBlur = attributes.shadowBlur,
-      shadowSpread = attributes.shadowSpread,
-      shadowType = attributes.shadowType,
-      hoverShadowColor = attributes.hoverShadowColor,
-      hoverShadowHOffset = attributes.hoverShadowHOffset,
-      hoverShadowVOffset = attributes.hoverShadowVOffset,
-      hoverShadowBlur = attributes.hoverShadowBlur,
-      hoverShadowSpread = attributes.hoverShadowSpread,
-      hoverShadowType = attributes.hoverShadowType,
-      borderStyle = attributes.borderStyle,
-      borderSize = attributes.borderSize,
-      borderColor = attributes.borderColor,
-      hoverBorderStyle = attributes.hoverBorderStyle,
-      hoverBorderSize = attributes.hoverBorderSize,
-      hoverBorderColor = attributes.hoverBorderColor,
-      borderRadius = attributes.borderRadius,
-      borderRadiusTablet = attributes.borderRadiusTablet,
-      borderRadiusMobile = attributes.borderRadiusMobile,
-      inAnimation = attributes.inAnimation,
-      outAnimation = attributes.outAnimation,
-      inAnimationDuration = attributes.inAnimationDuration,
-      inAnimationDelay = attributes.inAnimationDelay,
-      outAnimationDuration = attributes.outAnimationDuration,
-      outAnimationDelay = attributes.outAnimationDelay,
-      blockHeightType = attributes.blockHeightType,
-      blockHeight = attributes.blockHeight,
-      blockHeightMobile = attributes.blockHeightMobile,
-      blockHeightTablet = attributes.blockHeightTablet,
-      blockWidth = attributes.blockWidth,
-      blockCustomWidthType = attributes.blockCustomWidthType,
-      blockCustomWidth = attributes.blockCustomWidth,
-      blockCustomWidthTablet = attributes.blockCustomWidthTablet,
-      blockCustomWidthMobile = attributes.blockCustomWidthMobile,
-      blockzIndex = attributes.blockzIndex,
       txtAlign = attributes.txtAlign,
       mType = attributes.mType,
       iconSize = attributes.iconSize,
       iconColor = attributes.iconColor,
       iconBGColor = attributes.iconBGColor,
-      mPosition = attributes.mPosition,
       mValign = attributes.mValign,
       imgHeightType = attributes.imgHeightType,
       imgHeight = attributes.imgHeight,
@@ -28938,23 +28872,34 @@ var Styles = function Styles(props) {
       '.pb-info-box--m': {
         padding: mPadding.top + ' ' + mPadding.right + ' ' + mPadding.bottom + ' ' + mPadding.left,
         margin: mMargin.top + ' ' + mMargin.right + ' ' + mMargin.bottom + ' ' + mMargin.left,
-        'box-shadow': mShadowType + ' ' + mShadowHOffset + 'px ' + mShadowVOffset + 'px ' + mShadowBlur + 'px ' + mShadowSpread + 'px ' + mShadowColor,
-        'border-width': mBorderSize ? mBorderSize + 'px' : undefined,
-        'border-style': mBorderStyle ? mBorderStyle : undefined,
-        'border-color': mBorderColor ? mBorderColor : undefined,
-        'border-radius': mBorderRadius.top + ' ' + mBorderRadius.right + ' ' + mBorderRadius.bottom + ' ' + mBorderRadius.left,
         transform: "translate( ".concat(mOffsetLeft + mOffsetType, ",").concat(mOffsetTop + mOffsetType, ")")
       },
       '.pb-info-box--icon': {
         color: iconColor ? iconColor : undefined,
         background: iconBGColor ? iconBGColor : undefined,
-        'font-size': iconSize ? iconSize + 'px' : undefined
+        'font-size': iconSize ? iconSize + 'px' : undefined,
+        'box-shadow': mShadowType + ' ' + mShadowHOffset + 'px ' + mShadowVOffset + 'px ' + mShadowBlur + 'px ' + mShadowSpread + 'px ' + mShadowColor,
+        'border-width': mBorderSize ? mBorderSize + 'px' : undefined,
+        'border-style': mBorderStyle ? mBorderStyle : undefined,
+        'border-color': mBorderColor ? mBorderColor : undefined,
+        'border-radius': mBorderRadius.top + ' ' + mBorderRadius.right + ' ' + mBorderRadius.bottom + ' ' + mBorderRadius.left
       },
       '.pb-info-box--image img': {
         width: imgWidth ? imgWidth + imgWidthType : undefined,
-        height: imgHeight ? imgHeight + imgHeightType : undefined
+        height: imgHeight ? imgHeight + imgHeightType : undefined,
+        'box-shadow': mShadowType + ' ' + mShadowHOffset + 'px ' + mShadowVOffset + 'px ' + mShadowBlur + 'px ' + mShadowSpread + 'px ' + mShadowColor,
+        'border-width': mBorderSize ? mBorderSize + 'px' : undefined,
+        'border-style': mBorderStyle ? mBorderStyle : undefined,
+        'border-color': mBorderColor ? mBorderColor : undefined,
+        'border-radius': mBorderRadius.top + ' ' + mBorderRadius.right + ' ' + mBorderRadius.bottom + ' ' + mBorderRadius.left
       },
-      '.pb-info-box--m:hover': {
+      '.pb-info-box--m:hover .pb-info-box--icon': {
+        'box-shadow': hoverMShadowType + ' ' + hoverMShadowHOffset + 'px ' + hoverMShadowVOffset + 'px ' + hoverMShadowBlur + 'px ' + hoverMShadowSpread + 'px ' + hoverMShadowColor,
+        'border-width': hoverMBorderSize ? hoverMBorderSize + 'px' : undefined,
+        'border-style': hoverMBorderStyle ? hoverMBorderStyle : undefined,
+        'border-color': hoverMBorderColor ? hoverMBorderColor : undefined
+      },
+      '.pb-info-box--m:hover .pb-info-box--image img': {
         'box-shadow': hoverMShadowType + ' ' + hoverMShadowHOffset + 'px ' + hoverMShadowVOffset + 'px ' + hoverMShadowBlur + 'px ' + hoverMShadowSpread + 'px ' + hoverMShadowColor,
         'border-width': hoverMBorderSize ? hoverMBorderSize + 'px' : undefined,
         'border-style': hoverMBorderStyle ? hoverMBorderStyle : undefined,
@@ -28979,22 +28924,31 @@ var Styles = function Styles(props) {
       '.pb-info-box--body__content': {
         margin: contentMargin.top + ' ' + contentMargin.right + ' ' + contentMargin.bottom + ' ' + contentMargin.left
       },
-      '.pb-info-box--body__content p': (_pbInfoBoxBody__ = {
+      '.pb-info-box--body__content p': {
         color: contentColor ? contentColor : undefined,
-        'font-size': contentFontSize ? contentFontSize + contentFontSizeTablet : undefined,
-        'font-family': contentFontFamily ? contentFontFamily + '!important' : undefined
-      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbInfoBoxBody__, "font-size", contentFontSize ? contentFontSize + contentFontSizeType : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbInfoBoxBody__, 'font-weight', contentFontWeight ? contentFontWeight + '!important' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbInfoBoxBody__, 'font-style', contentFontStyle ? contentFontStyle : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbInfoBoxBody__, 'letter-spacing', contentLetterSpacing ? contentLetterSpacing + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbInfoBoxBody__, 'line-height', contentLineHeight ? contentLineHeight + 'px' : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbInfoBoxBody__, 'text-transform', contentTextTransform ? contentTextTransform : undefined), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_pbInfoBoxBody__, 'text-decoration', contentTextDecoration ? contentTextDecoration : undefined), _pbInfoBoxBody__)
+        'font-family': contentFontFamily ? contentFontFamily + '!important' : undefined,
+        'font-size': contentFontSize ? contentFontSize + contentFontSizeType : undefined,
+        'font-weight': contentFontWeight ? contentFontWeight + '!important' : undefined,
+        'font-style': contentFontStyle ? contentFontStyle : undefined,
+        'letter-spacing': contentLetterSpacing ? contentLetterSpacing + 'px' : undefined,
+        'line-height': contentLineHeight ? contentLineHeight + 'px' : undefined,
+        'text-transform': contentTextTransform ? contentTextTransform : undefined,
+        'text-decoration': contentTextDecoration ? contentTextDecoration : undefined
+      }
     },
     tablet: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()({
       '.pb-info-box--m': {
         padding: mPaddingTablet.top + ' ' + mPaddingTablet.right + ' ' + mPaddingTablet.bottom + ' ' + mPaddingTablet.left,
         margin: mMarginTablet.top + ' ' + mMarginTablet.right + ' ' + mMarginTablet.bottom + ' ' + mMarginTablet.left,
-        'border-radius': mBorderRadiusTablet.top + ' ' + mBorderRadiusTablet.right + ' ' + mBorderRadiusTablet.bottom + ' ' + mBorderRadiusTablet.left,
         transform: "translate( ".concat(mOffsetLeftTablet + mOffsetType, ",").concat(mOffsetTopTablet + mOffsetType, ")")
+      },
+      '.pb-info-box--icon': {
+        'border-radius': mBorderRadiusTablet.top + ' ' + mBorderRadiusTablet.right + ' ' + mBorderRadiusTablet.bottom + ' ' + mBorderRadiusTablet.left
       },
       '.pb-info-box--image img': {
         width: imgWidthTablet ? imgWidthTablet + imgWidthType : undefined,
-        height: imgHeightTablet ? imgHeightTablet + imgHeightType : undefined
+        height: imgHeightTablet ? imgHeightTablet + imgHeightType : undefined,
+        'border-radius': mBorderRadiusTablet.top + ' ' + mBorderRadiusTablet.right + ' ' + mBorderRadiusTablet.bottom + ' ' + mBorderRadiusTablet.left
       },
       '.pb-info-box--body': {
         padding: contentBPaddingTablet.top + ' ' + contentBPaddingTablet.right + ' ' + contentBPaddingTablet.bottom + ' ' + contentBPaddingTablet.left,
@@ -29008,18 +28962,21 @@ var Styles = function Styles(props) {
         margin: contentMarginTablet.top + ' ' + contentMarginTablet.right + ' ' + contentMarginTablet.bottom + ' ' + contentMarginTablet.left
       }
     }, ".pb-info-box--body__content", {
-      'font-size': contentFontSizeTablet ? contentFontSizeTablet + contentFontSizeTablet : undefined
+      'font-size': contentFontSizeTablet ? contentFontSizeTablet + contentFontSizeType : undefined
     }),
     mobile: {
       '.pb-info-box--m': {
         padding: mPaddingMobile.top + ' ' + mPaddingMobile.right + ' ' + mPaddingMobile.bottom + ' ' + mPaddingMobile.left,
         margin: mMarginMobile.top + ' ' + mMarginMobile.right + ' ' + mMarginMobile.bottom + ' ' + mMarginMobile.left,
-        'border-radius': mBorderRadiusMobile.top + ' ' + mBorderRadiusMobile.right + ' ' + mBorderRadiusMobile.bottom + ' ' + mBorderRadiusMobile.left,
         transform: "translate( ".concat(mOffsetLeftMobile + mOffsetType, ",").concat(mOffsetTopMobile + mOffsetType, ")")
+      },
+      '.pb-info-box--icon': {
+        'border-radius': mBorderRadiusMobile.top + ' ' + mBorderRadiusMobile.right + ' ' + mBorderRadiusMobile.bottom + ' ' + mBorderRadiusMobile.left
       },
       '.pb-info-box--image img': {
         width: imgWidthMobile ? imgWidthMobile + imgWidthType : undefined,
-        height: imgHeightMobile ? imgHeightMobile + imgHeightType : undefined
+        height: imgHeightMobile ? imgHeightMobile + imgHeightType : undefined,
+        'border-radius': mBorderRadiusMobile.top + ' ' + mBorderRadiusMobile.right + ' ' + mBorderRadiusMobile.bottom + ' ' + mBorderRadiusMobile.left
       },
       '.pb-info-box--body': {
         padding: contentBPaddingMobile.top + ' ' + contentBPaddingMobile.right + ' ' + contentBPaddingMobile.bottom + ' ' + contentBPaddingMobile.left,
@@ -29033,7 +28990,7 @@ var Styles = function Styles(props) {
         margin: contentMarginMobile.top + ' ' + contentMarginMobile.right + ' ' + contentMarginMobile.bottom + ' ' + contentMarginMobile.left
       },
       '.pb-info-box--body__content p': {
-        'font-size': contentFontSizeMobile ? contentFontSizeMobile + contentFontSizeTablet : undefined
+        'font-size': contentFontSizeMobile ? contentFontSizeMobile + contentFontSizeType : undefined
       }
     }
   };
