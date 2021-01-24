@@ -1,6 +1,5 @@
-const { RichText, InnerBlocks, MediaUpload } = wp.blockEditor;
+const { RichText, InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n;
-const { Button } = wp.components;
 import classnames from 'classnames';
 
 import Inspector from './inspector';
@@ -20,16 +19,8 @@ const edit = ( props ) => {
 		icon,
 		img,
 		title,
-		startingNumber,
 		mPosition,
-		endingNumber,
 
-		numberPrefix,
-		numberSuffix,
-		easing,
-		duration,
-		delimiter,
-		rounding,
 		preset,
 	} = attributes;
 
@@ -40,6 +31,7 @@ const edit = ( props ) => {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
+	const allowedBlocks = [ 'powerful-blocks/counter' ];
 
 	setTimeout( function () {
 		pbCounter();
@@ -75,32 +67,9 @@ const edit = ( props ) => {
 						) } 
 					</div>
 					<div className="pb-fun-factor--body">
-						<div 
-							className="pb-fun-factor-counter"
-						>
-						{ numberPrefix && (
-							<span className="pb-fun-factor-number--prefix">
-								{ numberPrefix }
-							</span>
-						) }
-						<span 
-							className="pb-fun-factor-number"
-							data-from = { startingNumber }
-							data-to = { endingNumber }
-							data-delimiter = { delimiter }
-							data-duration = { duration }
-							data-easing = { easing }
-						>
-							{ startingNumber ? startingNumber : 0 }
-						</span>
-
-						{ numberSuffix && (
-							<span className="pb-fun-factor-number--suffix">
-								{ numberSuffix }
-							</span>
-						) }
-
-						</div>
+						<InnerBlocks
+							allowedBlocks={ allowedBlocks }
+						/>
 						<RichText
 							tagName="h3"
 							className="pb-fun-factor--body__title"

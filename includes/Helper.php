@@ -81,6 +81,11 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'counter'  => array(
+				'title'  => __( 'Counter', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );
