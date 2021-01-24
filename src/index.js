@@ -12,6 +12,7 @@ import * as iconBox from './blocks/icon-box';
 import * as pbSpacer from './blocks/spacer';
 import * as accordion from './blocks/accordion';
 import * as funFactor from './blocks/fun-factor';
+import * as counter from './blocks/counter';
 
 
 const category = 'powerful-blocks';
@@ -50,7 +51,8 @@ const registerPowerfulBlocks = () => {
 		iconBox,
 		pbSpacer,
 		accordion,
-		funFactor
+		funFactor,
+		counter
 	].forEach( registerBlock );
 };
 

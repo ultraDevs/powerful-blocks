@@ -1,0 +1,28 @@
+
+.pb-fun-factor-wrapper {
+	transition: all 0.3s ease-in-out;
+	position: relative;
+	&.pb-fun-factor-top {
+
+	}
+	&.pb-fun-factor-left {
+		display: flex;
+	}
+	&.pb-fun-factor-right {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.pb-fun-factor--m {
+		display: inline-block;
+	}
+	.pb-fun-factor--body {
+		.pb-fun-factor--body__title {
+
+		}
+		.pb-fun-factor--body__number {
+			p {
+				margin: 0px ;
+			}
+		}
+	}
+}
