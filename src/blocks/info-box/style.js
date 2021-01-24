@@ -126,8 +126,7 @@ const Styles = ( props ) => {
 				color: iconColor ? iconColor : undefined,
 				background: iconBGColor ? iconBGColor : undefined,
 				'font-size': iconSize ? iconSize + 'px' : undefined,
-				'box-shadow':
-				mShadowType + ' ' +
+				'box-shadow': mShadowColor ? mShadowType + ' ' +
 				mShadowHOffset +
 				'px ' +
 				mShadowVOffset +
@@ -135,7 +134,7 @@ const Styles = ( props ) => {
 				mShadowBlur +
 				'px ' +
 				mShadowSpread +
-				'px ' + mShadowColor,
+				'px ' + mShadowColor : undefined,
 			'border-width': mBorderSize
 				? mBorderSize + 'px'
 				: undefined,
@@ -153,8 +152,7 @@ const Styles = ( props ) => {
 			'.pb-info-box--image img' : {
 				width: imgWidth ? imgWidth + imgWidthType : undefined,
 				height: imgHeight ? imgHeight + imgHeightType : undefined,
-				'box-shadow':
-				mShadowType + ' ' +
+				'box-shadow': mShadowColor ? mShadowType + ' ' +
 				mShadowHOffset +
 				'px ' +
 				mShadowVOffset +
@@ -162,7 +160,7 @@ const Styles = ( props ) => {
 				mShadowBlur +
 				'px ' +
 				mShadowSpread +
-				'px ' + mShadowColor,
+				'px ' + mShadowColor : undefined,
 			'border-width': mBorderSize
 				? mBorderSize + 'px'
 				: undefined,
@@ -178,7 +176,7 @@ const Styles = ( props ) => {
 				mBorderRadius.left,
 			},
 			'.pb-info-box--m:hover .pb-info-box--icon' : {
-				'box-shadow': hoverMShadowType + ' ' +
+				'box-shadow': hoverMShadowColor ? hoverMShadowType + ' ' +
 				hoverMShadowHOffset +
 					'px ' +
 					hoverMShadowVOffset +
@@ -186,7 +184,7 @@ const Styles = ( props ) => {
 					hoverMShadowBlur +
 					'px ' +
 					hoverMShadowSpread +
-					'px ' + hoverMShadowColor,
+					'px ' + hoverMShadowColor : undefined,
 				'border-width': hoverMBorderSize
 					? hoverMBorderSize + 'px'
 					: undefined,
@@ -194,7 +192,7 @@ const Styles = ( props ) => {
 				'border-color': hoverMBorderColor ? hoverMBorderColor : undefined,
 			},
 			'.pb-info-box--m:hover .pb-info-box--image img' : {
-				'box-shadow': hoverMShadowType + ' ' +
+				'box-shadow': hoverMShadowColor ? hoverMShadowType + ' ' +
 				hoverMShadowHOffset +
 					'px ' +
 					hoverMShadowVOffset +
@@ -202,7 +200,7 @@ const Styles = ( props ) => {
 					hoverMShadowBlur +
 					'px ' +
 					hoverMShadowSpread +
-					'px ' + hoverMShadowColor,
+					'px ' + hoverMShadowColor : undefined,
 				'border-width': hoverMBorderSize
 					? hoverMBorderSize + 'px'
 					: undefined,

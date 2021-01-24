@@ -32,7 +32,7 @@ const attributes = {
 	},
 	iconBGColor: {
 		type: 'string',
-		default: 'transparent',
+		default: '',
 	},
 
 	mPosition: {
@@ -231,7 +231,7 @@ const attributes = {
 
 	mShadowColor: {
 		type: 'string',
-		default: 'transparent',
+		default: '',
 	},
 	mShadowHOffset: {
 		type: 'number',
@@ -256,7 +256,7 @@ const attributes = {
 
 	hoverMShadowColor: {
 		type: 'string',
-		default: 'transparent',
+		default: '',
 	},
 	hoverMShadowHOffset: {
 		type: 'number',

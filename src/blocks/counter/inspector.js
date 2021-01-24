@@ -3,7 +3,6 @@ const {
 	PanelBody,
 	TextControl,
 	SelectControl,
-	__experimentalNumberControl,
 	Button,
 	ButtonGroup,
 } = wp.components;
@@ -149,25 +148,7 @@ const Inspector = ( props ) => {
 							title={ __( 'Digit', 'powerful-blocks' ) }
 							initialOpen={ false }
 						>
-							<__experimentalNumberControl
-								className = "pb-custom-number-control"
-								label = { __( 'Starting Number', 'powerful-blocks' ) }
-								value={ startingNumber }
-								onChange={ ( startingNumber ) => {
-									startingNumber = validateNumValue( startingNumber);
-									setAttributes( { startingNumber } );
-								} }
-							/>
-							<__experimentalNumberControl
-								className = "pb-custom-number-control"
-								label = { __( 'Final Number', 'powerful-blocks' ) }
-								value={ endingNumber }
-								onChange={ ( endingNumber ) => {
-									endingNumber = validateNumValue( endingNumber);
-									setAttributes( { endingNumber } );
-								} }
-							/>
-							{/* <TextControl
+							<TextControl
 								label={ __( 'Starting Number', 'powerful-blocks' ) }
 								value={ startingNumber }
 								onChange={ ( startingNumber ) => {
@@ -182,7 +163,7 @@ const Inspector = ( props ) => {
 									endingNumber = validateNumValue( endingNumber);
 									setAttributes( { endingNumber } );
 								} }
-							/> */}
+							/>
 							<TextControl
 								label={ __( 'Duration', 'powerful-blocks' ) }
 								value={ duration }

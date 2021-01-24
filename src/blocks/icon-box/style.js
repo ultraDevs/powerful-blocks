@@ -101,8 +101,7 @@ const Styles = ( props ) => {
 				color: iconColor ? iconColor : undefined,
 				background: iconBGColor ? iconBGColor : undefined,
 				'font-size': iconSize ? iconSize + 'px' : undefined,
-				'box-shadow':
-				mShadowType + ' ' +
+				'box-shadow': mShadowColor ? mShadowType + ' ' +
 				mShadowHOffset +
 				'px ' +
 				mShadowVOffset +
@@ -110,7 +109,7 @@ const Styles = ( props ) => {
 				mShadowBlur +
 				'px ' +
 				mShadowSpread +
-				'px ' + mShadowColor,
+				'px ' + mShadowColor : undefined,
 			'border-width': mBorderSize
 				? mBorderSize + 'px'
 				: undefined,
@@ -127,7 +126,7 @@ const Styles = ( props ) => {
 			},
 			
 			'.pb-icon-box--m:hover .pb-icon-box--icon': {
-				'box-shadow': hoverMShadowType + ' ' +
+				'box-shadow': hoverMShadowColor ? hoverMShadowType + ' ' +
 				hoverMShadowHOffset +
 					'px ' +
 					hoverMShadowVOffset +
@@ -135,7 +134,7 @@ const Styles = ( props ) => {
 					hoverMShadowBlur +
 					'px ' +
 					hoverMShadowSpread +
-					'px ' + hoverMShadowColor,
+					'px ' + hoverMShadowColor : undefined,
 				'border-width': hoverMBorderSize
 					? hoverMBorderSize + 'px'
 					: undefined,
