@@ -82,63 +82,12 @@ const advancedAttributes = {
 		type: 'string',
 		default: '',
 	},
-	gradientAngle: {
-		type: 'number',
-		default: 0,
-	},
-	gradientColor1: {
-		type: 'string',
-	},
-	gradientColor2: {
-		type: 'string',
-	},
-	gradientLoc1: {
-		type: 'number',
-		default: 0,
-	},
-	gradientLoc2: {
-		type: 'number',
-		default: 100,
-	},
-	gradientPosition: {
-		type: 'string',
-		default: 'center center',
-	},
-	gradientType: {
-		type: 'string',
-		default: 'linear',
-	},
 
 	hoverGradientValue: {
 		type: 'string',
 		default: '',
 	},
-	hoverGradientAngle: {
-		type: 'number',
-		default: 0,
-	},
-	hoverGradientColor1: {
-		type: 'string',
-	},
-	hoverGradientColor2: {
-		type: 'string',
-	},
-	hoverGradientLoc1: {
-		type: 'number',
-		default: 0,
-	},
-	hoverGradientLoc2: {
-		type: 'number',
-		default: 100,
-	},
-	hoverGradientPosition: {
-		type: 'string',
-		default: 'center center',
-	},
-	hoverGradientType: {
-		type: 'string',
-		default: 'linear',
-	},
+	
 
 	padding: {
 		type: 'object',
@@ -198,23 +147,23 @@ const advancedAttributes = {
 
 	shadowColor: {
 		type: 'string',
-		default: 'transparent',
+		default: '',
 	},
 	shadowHOffset: {
 		type: 'number',
-		default: '',
+		default: 0,
 	},
 	shadowVOffset: {
 		type: 'number',
-		default: '',
+		default: 0,
 	},
 	shadowBlur: {
 		type: 'number',
-		default: '',
+		default: 2,
 	},
 	shadowSpread: {
 		type: 'number',
-		default: '',
+		default: 2,
 	},
 	shadowType: {
 		type: 'string',
@@ -227,19 +176,19 @@ const advancedAttributes = {
 	},
 	hoverShadowHOffset: {
 		type: 'number',
-		default: '',
+		default: 0,
 	},
 	hoverShadowVOffset: {
 		type: 'number',
-		default: '',
+		default: 0,
 	},
 	hoverShadowBlur: {
 		type: 'number',
-		default: '',
+		default: 0,
 	},
 	hoverShadowSpread: {
 		type: 'number',
-		default: '',
+		default: 0,
 	},
 	hoverShadowType: {
 		type: 'string',

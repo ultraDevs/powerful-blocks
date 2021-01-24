@@ -58,22 +58,8 @@ const Advanced = ( props ) => {
         hoverBackgroundOpacity,
 
         gradientValue,
-		gradientAngle,
-		gradientColor1,
-		gradientColor2,
-		gradientLoc1,
-		gradientLoc2,
-		gradientPosition,
-        gradientType,
 
         hoverGradientValue,
-        hoverGradientAngle,
-        hoverGradientColor1,
-        hoverGradientColor2,
-        hoverGradientLoc1,
-        hoverGradientLoc2,
-        hoverGradientPosition,
-        hoverGradientType,
         
         padding,
         paddingTablet,
@@ -248,14 +234,6 @@ const Advanced = ( props ) => {
                                                 <>
                                                     <GradientControl
                                                         gradientValue = { gradientValue }
-                                                        gradientAngle = { gradientAngle }
-                                                        gradientColor1 = { gradientColor1 }
-                                                        gradientColor2 = { gradientColor2 }
-                                                        gradientLoc1 = { gradientLoc1 }
-                                                        gradientLoc2 = { gradientLoc2 }
-                                                        gradientPosition = { gradientPosition }
-                                                        gradientType = { gradientType }
-                                                        setAttributes={ setAttributes }
                                                         onChange={ ( gradientValue ) => {
                                                             setAttributes( { gradientValue: gradientValue.value } );
                                                         } }
@@ -444,14 +422,6 @@ const Advanced = ( props ) => {
                                                 <>
                                                     <GradientControl
                                                         gradientValue = { hoverGradientValue }
-                                                        gradientAngle = { hoverGradientAngle }
-                                                        gradientColor1 = { hoverGradientColor1 }
-                                                        gradientColor2 = { hoverGradientColor2 }
-                                                        gradientLoc1 = { hoverGradientLoc1 }
-                                                        gradientLoc2 = { hoverGradientLoc2 }
-                                                        gradientPosition = { hoverGradientPosition }
-                                                        gradientType = { hoverGradientType }
-                                                        setAttributes={ setAttributes }
                                                         onChange={ ( hoverGradientValue ) => {
                                                             setAttributes( { hoverGradientValue: hoverGradientValue.value } );
                                                         } }

@@ -219,14 +219,7 @@ const AdvancedCSS = ( attributes ) => {
 			'background-size': backgroundImgSize ? backgroundImgSize : '',
 
 		};
-		rules.desktop[ '.pb-ab-bg--image:hover' ] = {
-			'background': hoverBackgroundImg ? `url( ${ hoverBackgroundImg } )` : '',
-			'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : '',
-			'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : '',
-			'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : '',
-			'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : '',
-
-		};
+		
 		rules.desktop[ '.pb-ab-bg--image:before' ] = {
 			background: backgroundImgOverlayColor ? backgroundImgOverlayColor : '',
 			opacity: backgroundOpacity ? ( backgroundOpacity / 100 ) : '',
@@ -250,6 +243,16 @@ const AdvancedCSS = ( attributes ) => {
 					borderRadius.bottom +
 					' ' +
 					borderRadius.left,
+		};
+	}
+	if ( 'image' === hoverBackgroundType ) {
+		rules.desktop[ '.pb-ab-bg--image:hover' ] = {
+			'background': hoverBackgroundImg ? `url( ${ hoverBackgroundImg } )` : '',
+			'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : '',
+			'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : '',
+			'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : '',
+			'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : '',
+
 		};
 	}
 
