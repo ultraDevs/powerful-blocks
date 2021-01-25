@@ -149,8 +149,15 @@ class Assets_Manager {
 	 * Get Blocks Google fonts from CSS.
 	 *
 	 * @return void
+	 *
+	 *  @param string $hook Page slug.
 	 */
-	public function load_fonts() {
+	public function load_fonts( $hook ) {
+
+		if ( 'post-new.php' !== $hook ) {
+			return;
+		}
+
 		global $post;
 
 		$post_id = $post->ID;
