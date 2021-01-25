@@ -47,7 +47,7 @@ final class PowerfulBlocks {
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
-		add_action( 'block_categories', array( $this, 'register_block_category' ), 10, 2 );
+		add_filter( 'block_categories', array( $this, 'register_block_category' ), 10, 2 );
 		add_action( 'init', array( $this, 'load_text_domain' ) );
 
 	}
