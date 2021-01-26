@@ -13,6 +13,7 @@ import * as pbSpacer from './blocks/spacer';
 import * as accordion from './blocks/accordion';
 import * as funFactor from './blocks/fun-factor';
 import * as counter from './blocks/counter';
+import * as blockWrapper from './blocks/block-wrapper';
 
 
 const category = 'powerful-blocks';
@@ -52,7 +53,8 @@ const registerPowerfulBlocks = () => {
 		pbSpacer,
 		accordion,
 		funFactor,
-		counter
+		counter,
+		blockWrapper
 	].forEach( registerBlock );
 };
 

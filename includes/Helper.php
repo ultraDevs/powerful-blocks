@@ -86,6 +86,11 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'block-wrapper'  => array(
+				'title'  => __( 'PB Block Wrapper', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );
