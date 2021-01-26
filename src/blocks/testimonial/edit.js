@@ -46,6 +46,9 @@ const edit = ( props ) => {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
+	const TEMPLATE = [
+		[ 'powerful-blocks/star-rating' ]	
+	];
 	const allowedBlocks = [ 'powerful-blocks/star-rating' ];
 
 	const classes = genClass( attributes, 'edit'  );
@@ -72,6 +75,8 @@ const edit = ( props ) => {
 							'before-content' === ratingsPosition && (
 								<div className="pb-testimonial--rating">
 									<InnerBlocks
+										templateLock="all"
+										template={ TEMPLATE }
 										allowedBlocks={ allowedBlocks }
 									/>
 								</div>
@@ -96,6 +101,8 @@ const edit = ( props ) => {
 							'after-content' === ratingsPosition && (
 								<div className="pb-testimonial--rating">
 									<InnerBlocks
+										templateLock="all"
+										template={ TEMPLATE }
 										allowedBlocks={ allowedBlocks }
 									/>
 								</div>
@@ -172,6 +179,8 @@ const edit = ( props ) => {
 								'after-info' === ratingsPosition && (
 									<div className="pb-testimonial--rating">
 										<InnerBlocks
+											templateLock="all"
+											template={ TEMPLATE }
 											allowedBlocks={ allowedBlocks }
 										/>
 									</div>

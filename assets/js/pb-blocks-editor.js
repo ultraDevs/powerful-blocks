@@ -25123,6 +25123,7 @@ var edit = function edit(props) {
     });
   }
 
+  var TEMPLATE = [['powerful-blocks/counter']];
   var allowedBlocks = ['powerful-blocks/counter'];
   setTimeout(function () {
     pbCounter();
@@ -25150,7 +25151,9 @@ var edit = function edit(props) {
   })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-fun-factor--body"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(InnerBlocks, {
-    allowedBlocks: allowedBlocks
+    allowedBlocks: allowedBlocks,
+    templateLock: "all",
+    template: TEMPLATE
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText, {
     tagName: "h3",
     className: "pb-fun-factor--body__title",
@@ -30983,6 +30986,7 @@ var edit = function edit(props) {
     });
   }
 
+  var TEMPLATE = [['powerful-blocks/star-rating']];
   var allowedBlocks = ['powerful-blocks/star-rating'];
   var classes = Object(_helper__WEBPACK_IMPORTED_MODULE_5__["genClass"])(attributes, 'edit');
   var blockAttr = Object(_helper__WEBPACK_IMPORTED_MODULE_5__["blockAttributes"])(attributes, 'edit');
@@ -31000,6 +31004,8 @@ var edit = function edit(props) {
   }, true === showRatings && 'before-content' === ratingsPosition && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-testimonial--rating"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(InnerBlocks, {
+    templateLock: "all",
+    template: TEMPLATE,
     allowedBlocks: allowedBlocks
   })), true === showContent && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText, {
     tagName: "div",
@@ -31016,6 +31022,8 @@ var edit = function edit(props) {
   }), true === showRatings && 'after-content' === ratingsPosition && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-testimonial--rating"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(InnerBlocks, {
+    templateLock: "all",
+    template: TEMPLATE,
     allowedBlocks: allowedBlocks
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-testimonial--details image-position-".concat(imagePosition)
@@ -31069,6 +31077,8 @@ var edit = function edit(props) {
   }), true === showRatings && 'after-info' === ratingsPosition && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "pb-testimonial--rating"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(InnerBlocks, {
+    templateLock: "all",
+    template: TEMPLATE,
     allowedBlocks: allowedBlocks
   })))))));
 };

@@ -31,6 +31,9 @@ const edit = ( props ) => {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
+	const TEMPLATE = [
+		[ 'powerful-blocks/counter' ]	
+	];
 	const allowedBlocks = [ 'powerful-blocks/counter' ];
 
 	setTimeout( function () {
@@ -69,6 +72,8 @@ const edit = ( props ) => {
 					<div className="pb-fun-factor--body">
 						<InnerBlocks
 							allowedBlocks={ allowedBlocks }
+							templateLock="all"
+							template={ TEMPLATE }
 						/>
 						<RichText
 							tagName="h3"
