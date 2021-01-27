@@ -1,4 +1,4 @@
-.ib-block-control__image {
+.pb-block-control--image {
 	background-repeat: no-repeat;
     background-position: center;
 	background-size: cover;
@@ -8,13 +8,20 @@
 	.components-responsive-wrapper__content {
 		max-width: fit-content;
 	}
-	.ib-block-control__image-actions {
+	.pb-block-control--image-actions {
 		position: absolute;
 		top: 0;
 		right: 0;
-		background-color: #fff;
+		background-color: rgba( 0, 0, 0, 0.5);
+		button {
+			box-shadow: none;
+			color: #fff;
+			&:first-child {
+				border-right: 1px solid #666;
+			}
+		}
 	}
-	.ib-block-control__image-size {
+	.pb-block-control--image__size {
 		margin-top: 10px;
 		select {
 			text-transform: capitalize;

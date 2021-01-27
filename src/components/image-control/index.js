@@ -88,7 +88,7 @@ const ImageControl = ( props ) => {
 	}
 
 	return (
-		<BaseControl label={ props.label } className="ib-block-control__image">
+		<BaseControl label={ props.label } className="pb-block-control--image">
 			<MediaUploadCheck>
 				<MediaUpload
 					title={ props.label }
@@ -122,7 +122,7 @@ const ImageControl = ( props ) => {
 				/>
 			</MediaUploadCheck>
 			{ !! imageId && (
-				<div className="ib-block-control__image-actions components-button-group">
+				<div className="pb-block-control--image-actions components-button-group">
 					{ image && (
 						<MediaUploadCheck>
 							<MediaUpload
@@ -140,7 +140,6 @@ const ImageControl = ( props ) => {
 						<Button
 							onClick={ onRemoveImage }
 							icon="trash"
-							isDestructive
 						/>
 					</MediaUploadCheck>
 				</div>
@@ -148,7 +147,7 @@ const ImageControl = ( props ) => {
 			{ !! enableImageSizes && !! imageId && image && (
 				<SelectControl
 					label={ labels.imageSize }
-					className="ib-block-control__image-size"
+					className="pb-block-control--image__size"
 					value={ imageSize }
 					options={ getImageSizes() }
 					onChange={ onSizeChange }
