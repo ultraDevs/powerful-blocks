@@ -14,6 +14,7 @@ import * as accordion from './blocks/accordion';
 import * as funFactor from './blocks/fun-factor';
 import * as counter from './blocks/counter';
 import * as blockWrapper from './blocks/block-wrapper';
+import * as animatedHeadlines from './blocks/animated-headlines';
 
 
 const category = 'powerful-blocks';
@@ -54,7 +55,8 @@ const registerPowerfulBlocks = () => {
 		accordion,
 		funFactor,
 		counter,
-		blockWrapper
+		blockWrapper,
+		animatedHeadlines
 	].forEach( registerBlock );
 };
 

@@ -2,6 +2,7 @@ import '../blocks/alert-box/frontend';
 import '../blocks/accordion/frontend';
 import '../blocks/fun-factor/frontend';
 import '../blocks/counter/frontend';
+import '../blocks/animated-headlines/frontend';
 
 jQuery( function($){
 

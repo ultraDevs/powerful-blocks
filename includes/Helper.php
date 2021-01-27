@@ -91,6 +91,11 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'animated-headlines'  => array(
+				'title'  => __( 'Animated Headlines', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );
