@@ -38,13 +38,21 @@ const ColorPickerControl = ( props ) => {
 		<BaseControl
 			label={ props.label }
 			help={ props.help }
-			className="ib-block-control__color-picker"
+			className="pb-block-control--color-picker"
 		>
 			<Dropdown
-				className="ib-block-control__color-picker-dropdown"
-				contentClassName="ib-block-control__color-picker-inner"
+				className="pb-block-control--color-picker-dropdown"
+				contentClassName="pb-block-control--color-picker-inner"
 				renderToggle={ ( { isOpen, onToggle } ) => (
 					<Fragment>
+						<Button
+							aria-expanded={ isOpen }
+							onClick={ onToggle }
+							aria-label={ props.label }
+							className="pb-block-control--color-picker-value"
+						>
+							<span style={ { backgroundColor: color } }></span>
+						</Button>
 						{ color && (
 							<Tooltip text={ __( 'Reset', 'powerful-blocks' ) }>
 								<Button
@@ -55,20 +63,12 @@ const ColorPickerControl = ( props ) => {
 										'Reset',
 										'powerful-blocks'
 									) }
-									className="ib-block-control__color-picker-reset"
+									className="pb-block-control--color-picker-reset"
 								>
 									<Dashicon icon="image-rotate" />
 								</Button>
 							</Tooltip>
 						) }
-						<Button
-							aria-expanded={ isOpen }
-							onClick={ onToggle }
-							aria-label={ props.label }
-							className="ib-block-control__color-picker-value"
-						>
-							<span style={ { backgroundColor: color } }></span>
-						</Button>
 					</Fragment>
 				) }
 				renderContent={ () => (
