@@ -346,9 +346,15 @@
 				height: 15px;
 				width: 15px;
 			}
+			&:hover {
+				color: #5820e5;
+			}
 			&.is-primary {
 				box-shadow: inset 0 0 0 1px #ddd;
 				background: #5820e5;
+				&:hover {
+					color: #fff;
+				}
 			}
 		}
     }
