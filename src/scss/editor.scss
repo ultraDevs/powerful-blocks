@@ -326,3 +326,30 @@
 		width: 250px !important;
 	}
 }
+
+.pb-control--btn-group {
+	margin-top: 15px;
+	margin-bottom: 30px !important;
+	.components-base-control__field {
+		display: flex;
+		flex-direction: row !important;
+	}
+    .components-base-control__label {
+        margin-bottom: 2px;
+		margin-top: 10px;
+		margin-right: 0px !important;
+    }
+    .pb-control--btn-group__w {
+		.components-button {
+			box-shadow: inset 0 0 0 1px #ccc;
+			svg {
+				height: 15px;
+				width: 15px;
+			}
+			&.is-primary {
+				box-shadow: inset 0 0 0 1px #ddd;
+				background: #5820e5;
+			}
+		}
+    }
+}

@@ -1,0 +1,53 @@
+
+.pb-tabs-wrapper {
+	&.pb-tabs-vertical {
+		.pb-tabs--tabs,
+		.pb-tabs--pills {
+			.pb-tabs-btn--add-new {
+				margin-top: 10px;
+			}
+		}
+	}
+	.pb-tabs--tabs,
+	.pb-tabs--pills {
+		.pb-tabs--w {
+			position: relative;
+			display: flex;
+		}
+		.pb-tabs-btn--add-new {
+			margin-left: 10px;
+			background: #f7f7f7;
+			padding: 6px;
+			border: 1px solid #eee;
+			height: auto;
+			border-bottom-color: transparent;
+			border-radius: 100px;
+			height: 38px;
+			width: 38px;
+			svg {
+				margin: 0px !important;
+			}
+		}
+		.pb-tabs-btn--delete {
+			position: absolute;
+			top: -5px;
+			right: 0;
+			display: flex;
+			background: #ddd;
+			height: 15px;
+			width: 15px;
+			border-radius: 100px;
+			padding: 5px;
+			justify-content: center;
+			transition: .3s opacity, .3s background-color;
+			span {
+				font-size: 12px;
+				color: red;
+				margin: 0 !important;
+				padding: 0;
+				height: 12px;
+				width: 12px;
+			}
+		}
+	}
+}

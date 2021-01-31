@@ -3,6 +3,7 @@ import '../blocks/accordion/frontend';
 import '../blocks/fun-factor/frontend';
 import '../blocks/counter/frontend';
 import '../blocks/animated-headlines/frontend';
+import '../blocks/tabs/frontend';
 
 jQuery( function($){
 

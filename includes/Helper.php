@@ -96,6 +96,11 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'tabs'  => array(
+				'title'  => __( 'Tabs', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );
