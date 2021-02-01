@@ -324,6 +324,15 @@ const Inspector = ( props ) => {
 										if ( "normal" === tab.name ) {
 											tabout = (
 												<>
+													{ 'pills' === tabsType && (
+														<ColorPickerControl
+															label={ __( 'Background Color', 'powerful-blocks' ) }
+															value={ titleBGColor }
+															onChange={ ( titleBGColor ) => {
+																setAttributes( { titleBGColor } );
+															} }
+														/>
+													)}
 													<ColorPickerControl
 														label={ __( 'Color', 'powerful-blocks' ) }
 														value={ titleColor }
@@ -336,6 +345,15 @@ const Inspector = ( props ) => {
 										} else if ( "hover" === tab.name ) {
 											tabout = (
 												<>
+													{ 'pills' === tabsType && (
+														<ColorPickerControl
+															label={ __( 'Background Color', 'powerful-blocks' ) }
+															value={ hoverTitleBGColor }
+															onChange={ ( hoverTitleBGColor ) => {
+																setAttributes( { hoverTitleBGColor } );
+															} }
+														/>
+													)}
 													<ColorPickerControl
 														label={ __( 'Color', 'powerful-blocks' ) }
 														value={ hoverTitleColor }
@@ -348,6 +366,15 @@ const Inspector = ( props ) => {
 										} else if ( "active" === tab.name ) {
 											tabout = (
 												<>
+													{ 'pills' === tabsType && (
+														<ColorPickerControl
+															label={ __( 'Background Color', 'powerful-blocks' ) }
+															value={ activeTitleBGColor }
+															onChange={ ( activeTitleBGColor ) => {
+																setAttributes( { activeTitleBGColor } );
+															} }
+														/>
+													)}
 													<ColorPickerControl
 														label={ __( 'Color', 'powerful-blocks' ) }
 														value={ activeTitleColor }
