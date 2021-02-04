@@ -8,7 +8,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "appsero/client": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "ultraDevs\\PB\\": "includes/"

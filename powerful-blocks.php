@@ -125,6 +125,7 @@ final class PowerfulBlocks {
 			add_action( 'wp_head', array( $assets_manager, 'get_block_css' ) );
 
 		}
+		$this->appsero_init_tracker_powerful_blocks();
 
 	}
 
@@ -185,5 +186,38 @@ final class PowerfulBlocks {
 		return $links;
 
 	}
+
+
+	/**
+	 * Initialize the plugin tracker
+	 *
+	 * @return void
+	 */
+	public function appsero_init_tracker_powerful_blocks() {
+
+		if ( ! class_exists( 'Appsero\Client' ) ) {
+			require_once __DIR__ . '/vendor/appsero/src/Client.php';
+		}
+
+		$client = new Appsero\Client( '5f221920-4f40-4349-ae25-b49335675128', 'Powerful Blocks for Gutenberg', __FILE__ );
+
+		// Active insights.
+		$client->insights()->init();
+
+		// Active automatic updater.
+		$client->updater();
+
+		// Active license page and checker.
+		$args = array(
+			'type'       => 'options',
+			'menu_title' => 'Powerful Blocks for Gutenberg',
+			'page_title' => 'Powerful Blocks for Gutenberg Settings',
+			'menu_slug'  => 'powerful-blocks',
+		);
+		$client->license()->add_settings_page( $args );
+
+	}
+
+
 }
 PowerfulBlocks::run();
