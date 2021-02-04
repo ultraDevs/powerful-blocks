@@ -20,7 +20,7 @@ const attributes = {
 
 	animationType: {
 		type: 'string',
-		default: 'type',
+		default: 'clip',
 	},
 
 	textTag: {

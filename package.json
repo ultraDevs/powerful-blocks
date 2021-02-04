@@ -49,6 +49,7 @@
         "postcss": "7.0.13",
         "postcss-color-function": "^4.1.0",
         "postcss-loader": "^3.0.0",
+        "react-transition-group": "^4.4.1",
         "rtlcss-webpack-plugin": "^4.0.3",
         "sass-loader": "^8.0.0",
         "style-loader": "^0.19.1",
