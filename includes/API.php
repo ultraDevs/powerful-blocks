@@ -44,7 +44,7 @@ class API {
 					},
 					'args'                => array(),
 				),
-			),
+			)
 		);
 
 		register_rest_route(
@@ -55,7 +55,7 @@ class API {
 					'methods'  => 'POST',
 					'callback' => array( $this, 'block_status' ),
 				),
-			),
+			)
 		);
 	}
 

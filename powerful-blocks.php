@@ -217,7 +217,5 @@ final class PowerfulBlocks {
 		$client->license()->add_settings_page( $args );
 
 	}
-
-
 }
 PowerfulBlocks::run();

@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 	var pkg = grunt.file.readJSON('package.json');
+	const pluginName = pkg.name;
+	const buildPath = 'build/' + pluginName + '/';
 
 	grunt.initConfig({
 		pkg: pkg,
@@ -21,7 +23,7 @@ module.exports = function(grunt) {
                     type: 'wp-plugin',
                     updateTimestamp: true,
                     potHeaders: {
-                        'report-msgid-bugs-to': 'https://www.ultradevs.com/contact',
+                        'report-msgid-bugs-to': 'https://www.powerfulblocks.com/contact',
                         'language-team': 'LANGUAGE <EMAIL@ADDRESS>',
                         poedit: true,
                         'x-poedit-keywordslist': true
@@ -122,21 +124,86 @@ module.exports = function(grunt) {
 				},
 			},
 		},
+
+		copy: {
+            main: {
+                expand: true,
+                src: [
+					'**',
+					'!.gitignore',
+					'!.gitattributes',
+					'!.editorconfig',
+					'!.jshintrc',
+					'!.stylelintrc',
+					'!*.sh',
+					'!*.map',
+					'!*.zip',
+                    '!Gruntfile.js',
+                    '!package.json',
+					'!readme.md',
+					'!codesniffer.ruleset.xml',
+					'!ruleset.xml',
+                    '!composer.json',
+                    '!composer.lock',
+                    '!package-lock.json',
+                    '!phpcs.xml.dist',
+                    '!phpcs.xml',
+                    '!node_modules/**',
+                    '!.git/**',
+                    '!bin/**',
+					'!src/**',
+					'!.dev/**',
+					'!build/**',
+					'!assets/*.scss',
+					'!assets/**/*.map',
+					'!*~',
+					'!cmnd.txt',
+					'!yarn.lock',
+                ],
+                dest: buildPath
+            }
+		},
+
+		compress: {
+            main: {
+                options: {
+                    archive: pluginName + '.zip',
+                    mode: 'zip'
+                },
+                files: [
+                    {
+						cwd: 'build/',
+						expand: true,
+                        src: [
+                            '**'
+                        ]
+                    }
+                ]
+			},
+		},
+
+		clean: {
+            main: [ 'build' ],
+            zip: [ '*.zip' ]
+        },
 		
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-wp-i18n');
-	grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
+	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-contrib-sass' );
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-autoprefixer' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	grunt.loadNpmTasks( 'grunt-contrib-clean' );
+	grunt.loadNpmTasks( 'grunt-contrib-compress' );
+	grunt.loadNpmTasks( 'grunt-wp-i18n' );
+	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 
     grunt.registerTask( 'i18n', [ 'makepot' ] );
 	grunt.registerTask( 'readme', [ 'wp_readme_to_markdown' ] );
-	grunt.registerTask('default', [
+	grunt.registerTask( 'default', [
 		'jshint',
 		'uglify:dev',
 		'uglify:dist',
@@ -145,6 +212,12 @@ module.exports = function(grunt) {
 		'makepot',
 		'watch',
 		'readme'
+	]);
+	grunt.registerTask('release', [
+		'clean:zip',
+		'copy:main',
+		'compress:main',
+		'clean:main'
 	]);
 
 };
