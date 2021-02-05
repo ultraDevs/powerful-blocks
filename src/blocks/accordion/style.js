@@ -61,12 +61,10 @@ const Styles = ( props ) => {
 		titlePaddingTablet,
 		titlePaddingMobile,
 
-
 		iconSizeUnitType,
 		iconSize,
 		iconSizeTablet,
 		iconSizeMobile,
-
 
 		itemsGapUnitType,
 		itemsGap,
@@ -107,22 +105,15 @@ const Styles = ( props ) => {
 				'background-color': contentBackgroundColor
 					? contentBackgroundColor
 					: undefined,
-				padding:
-					contentPadding.top +
-					' ' +
-					contentPadding.right +
-					' ' +
-					contentPadding.bottom +
-					' ' +
-					contentPadding.left,
-				margin:
-					contentMargin.top +
-					' ' +
-					contentMargin.right +
-					' ' +
-					contentMargin.bottom +
-					' ' +
-					contentMargin.left,
+				'padding-top': contentPadding.top ? contentPadding.top : undefined,
+				'padding-right': contentPadding.right ? contentPadding.right : undefined,
+				'padding-bottom': contentPadding.bottom ? contentPadding.bottom : undefined,
+				'padding-left': contentPadding.left ? contentPadding.left : undefined,
+				'margin-top': contentMargin.top ? contentMargin.top : undefined,
+				'margin-right': contentMargin.right ? contentMargin.right : undefined,
+				'margin-bottom': contentMargin.bottom ? contentMargin.bottom : undefined,
+				'margin-left': contentMargin.left ? contentMargin.left : undefined,
+
 				color: contentColor ? contentColor : undefined,
 				'text-align': contentTextAlign ? contentTextAlign : undefined,
 				'font-family': contentFontFamily
@@ -162,14 +153,11 @@ const Styles = ( props ) => {
 				'background-color': titleBackgroundColor
 					? titleBackgroundColor
 					: undefined,
-				padding:
-					titlePadding.top +
-					' ' +
-					titlePadding.right +
-					' ' +
-					titlePadding.bottom +
-					' ' +
-					titlePadding.left,
+				'padding-top': titlePadding.top ? titlePadding.top : undefined,
+				'padding-right': titlePadding.right ? titlePadding.right : undefined,
+				'padding-bottom': titlePadding.bottom ? titlePadding.bottom : undefined,
+				'padding-left': titlePadding.left ? titlePadding.left : undefined,
+	
 			},
 			'.pb-accordion-header:hover': {
 				'background-color': hoverTitleBackgroundColor
@@ -237,35 +225,22 @@ const Styles = ( props ) => {
 					? titleTextDecoration
 					: undefined,
 				'text-align': titleTextAlign ? titleTextAlign : undefined,
-				margin:
-					titleMargin.top +
-					' ' +
-					titleMargin.right +
-					' ' +
-					titleMargin.bottom +
-					' ' +
-					titleMargin.left,
+				'margin-top': titleMargin.top ? titleMargin.top : undefined,
+				'margin-right': titleMargin.right ? titleMargin.right : undefined,
+				'margin-bottom': titleMargin.bottom ? titleMargin.bottom : undefined,
+				'margin-left': titleMargin.left ? titleMargin.left : undefined,
+	
 			},
 			'.pb-accordion-toggle-icon' : {
 				'background-color': toggleIconBackgroundColor ? toggleIconBackgroundColor : undefined,
 				color: toggleIconColor ? toggleIconColor : undefined,
 				'font-size': toggleIconSize ? toggleIconSize + toggleIconSizeUnitType : undefined,
-				padding:
-					toggleIconPadding.top +
-					' ' +
-					toggleIconPadding.right +
-					' ' +
-					toggleIconPadding.bottom +
-					' ' +
-					toggleIconPadding.left,
-				'border-radius':
-					toggleIconBorderRadius.top +
-					' ' +
-					toggleIconBorderRadius.right +
-					' ' +
-					toggleIconBorderRadius.bottom +
-					' ' +
-					toggleIconBorderRadius.left,
+				'padding-top': toggleIconPadding.top ? toggleIconPadding.top : undefined,
+				'padding-right': toggleIconPadding.right ? toggleIconPadding.right : undefined,
+				'padding-bottom': toggleIconPadding.bottom ? toggleIconPadding.bottom : undefined,
+				'padding-left': toggleIconPadding.left ? toggleIconPadding.left : undefined,
+	
+				'border-radius': toggleIconBorderRadius ? ( toggleIconBorderRadius.top ? toggleIconBorderRadius.top : '0px' ) + ' ' + ( toggleIconBorderRadius.right ? toggleIconBorderRadius.right : '0px') + ' ' + ( toggleIconBorderRadius.bottom ? toggleIconBorderRadius.bottom : '0px' ) + ' ' + ( toggleIconBorderRadius.left ? toggleIconBorderRadius.left : '0px' ) : undefined,
 			},
 			'.pb-accordion-header:hover .pb-accordion-toggle-icon' : {
 				'background-color': hoverToggleIconBackgroundColor ? hoverToggleIconBackgroundColor : undefined,
@@ -277,9 +252,6 @@ const Styles = ( props ) => {
 			},
 		},
 		tablet: {
-			'.pb-accordion-wrapper': {
-				
-			},
 			'.pb-accordion-item' : {
 				'margin-bottom': itemsGapTablet ? itemsGapTablet + itemsGapUnitType : undefined,
 			},
@@ -287,35 +259,25 @@ const Styles = ( props ) => {
 				'font-size': contentFontSizeTablet
 					? contentFontSizeTablet + contentFontSizeType
 					: undefined,
-				padding:
-					contentPaddingTablet.top +
-					' ' +
-					contentPaddingTablet.right +
-					' ' +
-					contentPaddingTablet.bottom +
-					' ' +
-					contentPaddingTablet.left,
-				margin:
-					contentMarginTablet.top +
-					' ' +
-					contentMarginTablet.right +
-					' ' +
-					contentMarginTablet.bottom +
-					' ' +
-					contentMarginTablet.left,
+				'padding-top': contentPaddingTablet.top ? contentPaddingTablet.top : undefined,
+				'padding-right': contentPaddingTablet.right ? contentPaddingTablet.right : undefined,
+				'padding-bottom': contentPaddingTablet.bottom ? contentPaddingTablet.bottom : undefined,
+				'padding-left': contentPaddingTablet.left ? contentPaddingTablet.left : undefined,
+
+				'margin-top': contentMarginTablet.top ? contentMarginTablet.top : undefined,
+				'margin-right': contentMarginTablet.right ? contentMarginTablet.right : undefined,
+				'margin-bottom': contentMarginTablet.bottom ? contentMarginTablet.bottom : undefined,
+				'margin-left': contentMarginTablet.left ? contentMarginTablet.left : undefined,
+	
 			},
 			'.pb-accordion-icon' : {
 				'font-size': iconSizeTablet ? iconSizeTablet + iconSizeUnitType : undefined,
 			},
 			'.pb-accordion-header' : {
-				padding: 
-					titlePaddingTablet.top +
-					' ' +
-					titlePaddingTablet.right +
-					' ' +
-					titlePaddingTablet.bottom +
-					' ' +
-					titlePaddingTablet.left,
+				'padding-top': titlePaddingTablet.top ? titlePaddingTablet.top : undefined,
+				'padding-right': titlePaddingTablet.right ? titlePaddingTablet.right : undefined,
+				'padding-bottom': titlePaddingTablet.bottom ? titlePaddingTablet.bottom : undefined,
+				'padding-left': titlePaddingTablet.left ? titlePaddingTablet.left : undefined,	
 			},
 			'.pb-accordion-title': {
 				'font-size': titleFontSizeTablet
@@ -329,32 +291,24 @@ const Styles = ( props ) => {
 					titleMarginTablet.bottom +
 					' ' +
 					titleMarginTablet.left,
+				'margin-top': titleMarginTablet.top ? titleMarginTablet.top : undefined,
+				'margin-right': titleMarginTablet.right ? titleMarginTablet.right : undefined,
+				'margin-bottom': titleMarginTablet.bottom ? titleMarginTablet.bottom : undefined,
+				'margin-left': titleMarginTablet.left ? titleMarginTablet.left : undefined,
+	
 			},
 			'.pb-accordion-toggle-icon' : {
 				'font-size': toggleIconSizeTablet ? toggleIconSizeTablet + toggleIconSizeUnitType : undefined,
-				padding:
-					toggleIconPaddingTablet.top +
-					' ' +
-					toggleIconPaddingTablet.right +
-					' ' +
-					toggleIconPaddingTablet.bottom +
-					' ' +
-					toggleIconPaddingTablet.left,
-				'border-radius':
-					toggleIconBorderRadiusTablet.top +
-					' ' +
-					toggleIconBorderRadiusTablet.right +
-					' ' +
-					toggleIconBorderRadiusTablet.bottom +
-					' ' +
-					toggleIconBorderRadiusTablet.left,
+				'padding-top': toggleIconPaddingTablet.top ? toggleIconPaddingTablet.top : undefined,
+				'padding-right': toggleIconPaddingTablet.right ? toggleIconPaddingTablet.right : undefined,
+				'padding-bottom': toggleIconPaddingTablet.bottom ? toggleIconPaddingTablet.bottom : undefined,
+				'padding-left': toggleIconPaddingTablet.left ? toggleIconPaddingTablet.left : undefined,
+
+				'border-radius': toggleIconBorderRadiusTablet ? ( toggleIconBorderRadiusTablet.top ? toggleIconBorderRadiusTablet.top : '0px' ) + ' ' + ( toggleIconBorderRadiusTablet.right ? toggleIconBorderRadiusTablet.right : '0px') + ' ' + ( toggleIconBorderRadiusTablet.bottom ? toggleIconBorderRadiusTablet.bottom : '0px' ) + ' ' + ( toggleIconBorderRadiusTablet.left ? toggleIconBorderRadiusTablet.left : '0px' ) : undefined,
 			},
 			
 		},
 		mobile: {
-			'.pb-accordion-wrapper': {
-				
-			},
 			'.pb-accordion-item' : {
 				'margin-bottom': itemsGapMobile ? itemsGapMobile + itemsGapUnitType : undefined,
 			},
@@ -362,68 +316,43 @@ const Styles = ( props ) => {
 				'font-size': contentFontSizeMobile
 					? contentFontSizeMobile + contentFontSizeType
 					: undefined,
-				padding:
-					contentPaddingMobile.top +
-					' ' +
-					contentPaddingMobile.right +
-					' ' +
-					contentPaddingMobile.bottom +
-					' ' +
-					contentPaddingMobile.left,
-				margin:
-					contentMarginMobile.top +
-					' ' +
-					contentMarginMobile.right +
-					' ' +
-					contentMarginMobile.bottom +
-					' ' +
-					contentMarginMobile.left,
+				'padding-top': contentPaddingMobile.top ? contentPaddingMobile.top : undefined,
+				'padding-right': contentPaddingMobile.right ? contentPaddingMobile.right : undefined,
+				'padding-bottom': contentPaddingMobile.bottom ? contentPaddingMobile.bottom : undefined,
+				'padding-left': contentPaddingMobile.left ? contentPaddingMobile.left : undefined,
+				'margin-top': contentMarginMobile.top ? contentMarginMobile.top : undefined,
+				'margin-right': contentMarginMobile.right ? contentMarginMobile.right : undefined,
+				'margin-bottom': contentMarginMobile.bottom ? contentMarginMobile.bottom : undefined,
+				'margin-left': contentMarginMobile.left ? contentMarginMobile.left : undefined,
+	
 			},
 			'.pb-accordion-icon' : {
 				'font-size': iconSizeMobile ? iconSizeMobile + iconSizeUnitType : undefined,
 			},
 			'.pb-accordion-header' : {
-				padding:
-					titlePaddingMobile.top +
-					' ' +
-					titlePaddingMobile.right +
-					' ' +
-					titlePaddingMobile.bottom +
-					' ' +
-					titlePaddingMobile.left,
+					'padding-top': titlePaddingMobile.top ? titlePaddingMobile.top : undefined,
+					'padding-right': titlePaddingMobile.right ? titlePaddingMobile.right : undefined,
+					'padding-bottom': titlePaddingMobile.bottom ? titlePaddingMobile.bottom : undefined,
+					'padding-left': titlePaddingMobile.left ? titlePaddingMobile.left : undefined,	
 			},
 			'.pb-accordion-title': {
 				'font-size': titleFontSizeMobile
 					? titleFontSizeMobile + titleFontSizeType
 					: undefined,
-				margin:
-					titleMarginMobile.top +
-					' ' +
-					titleMarginMobile.right +
-					' ' +
-					titleMarginMobile.bottom +
-					' ' +
-					titleMarginMobile.left,
+				'margin-top': titleMarginMobile.top ? titleMarginMobile.top : undefined,
+				'margin-right': titleMarginMobile.right ? titleMarginMobile.right : undefined,
+				'margin-bottom': titleMarginMobile.bottom ? titleMarginMobile.bottom : undefined,
+				'margin-left': titleMarginMobile.left ? titleMarginMobile.left : undefined,
+	
 				
 			},
 			'.pb-accordion-toggle-icon' : {
 				'font-size': toggleIconSizeMobile ? toggleIconSizeMobile + toggleIconSizeUnitType : undefined,
-				padding:
-					toggleIconPaddingMobile.top +
-					' ' +
-					toggleIconPaddingMobile.right +
-					' ' +
-					toggleIconPaddingMobile.bottom +
-					' ' +
-					toggleIconPaddingMobile.left,
-				'border-radius':
-					toggleIconBorderRadiusMobile.top +
-					' ' +
-					toggleIconBorderRadiusMobile.right +
-					' ' +
-					toggleIconBorderRadiusMobile.bottom +
-					' ' +
-					toggleIconBorderRadiusMobile.left,
+				'padding-top': toggleIconPaddingMobile.top ? toggleIconPaddingMobile.top : undefined,
+				'padding-right': toggleIconPaddingMobile.right ? toggleIconPaddingMobile.right : undefined,
+				'padding-bottom': toggleIconPaddingMobile.bottom ? toggleIconPaddingMobile.bottom : undefined,
+				'padding-left': toggleIconPaddingMobile.left ? toggleIconPaddingMobile.left : undefined,
+				'border-radius': toggleIconBorderRadiusMobile ? ( toggleIconBorderRadiusMobile.top ? toggleIconBorderRadiusMobile.top : '0px' ) + ' ' + ( toggleIconBorderRadiusMobile.right ? toggleIconBorderRadiusMobile.right : '0px') + ' ' + ( toggleIconBorderRadiusMobile.bottom ? toggleIconBorderRadiusMobile.bottom : '0px' ) + ' ' + ( toggleIconBorderRadiusMobile.left ? toggleIconBorderRadiusMobile.left : '0px' ) : undefined,
 			},
 		},
 	};

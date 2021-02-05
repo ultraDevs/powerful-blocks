@@ -8,25 +8,16 @@
 			align-items: center;
 			justify-content: space-between;
 			cursor: pointer;
-			// &.pb-active {
-			// 	.pb-accordion-toggle-icon--open {
-			// 		display: none;
-			// 	}
-			// 	.pb-accordion-toggle-icon--close {
-			// 		display: block !important;
-			// 	}
-			// }
 			.pb-accordion-icon {
 				margin: 0 5px 0 0px;
 
 			}
 			.pb-accordion-title {
 				flex-grow: 1;
+				margin: 0;
 			}
 			.pb-accordion-toggle-icon {
-				// margin-right: 10px;
 				.pb-accordion-toggle-icon--close {
-					// display: none;
 				}
 			}
 		}
