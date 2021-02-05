@@ -53,22 +53,11 @@ const Styles = ( props ) => {
 			'.pb-alert-box': {
 				
 				'text-align': textAlign ? textAlign : undefined,
-				padding:
-					abPadding.top +
-					' ' +
-					abPadding.right +
-					' ' +
-					abPadding.bottom +
-					' ' +
-					abPadding.left,
-				'border-radius':
-					abBorderRadius.top +
-					' ' +
-					abBorderRadius.right +
-					' ' +
-					abBorderRadius.bottom +
-					' ' +
-					abBorderRadius.left,
+				'padding-top': abPadding.top ? abPadding.top : undefined,
+				'padding-right': abPadding.right ? abPadding.right : undefined,
+				'padding-bottom': abPadding.bottom ? abPadding.bottom : undefined,
+				'padding-left': abPadding.left ? abPadding.left : undefined,
+				'border-radius': abBorderRadius ? ( abBorderRadius.top ? abBorderRadius.top : '0px' ) + ' ' + ( abBorderRadius.right ? abBorderRadius.right : '0px') + ' ' + ( abBorderRadius.bottom ? abBorderRadius.bottom : '0px' ) + ' ' + ( abBorderRadius.left ? abBorderRadius.left : '0px' ) : undefined,
 			},
 			'.pb-alert-box__title': {
 				'font-size': titleFontSize ? titleFontSize + titleFontSizeType : undefined,
@@ -126,23 +115,11 @@ const Styles = ( props ) => {
 		},
 		tablet: {
 			'.pb-alert-box-wrapper': {
-				padding:
-					abPaddingTablet.top +
-					' ' +
-					abPaddingTablet.right +
-					' ' +
-					abPaddingTablet.bottom +
-					' ' +
-					abPaddingTablet.left,
-				'border-radius':
-					abBorderRadiusTablet.top +
-					' ' +
-					abBorderRadiusTablet.right +
-					' ' +
-					abBorderRadiusTablet.bottom +
-					' ' +
-					abBorderRadiusTablet.left,
-				
+				'padding-top': abPaddingTablet.top ? abPaddingTablet.top : undefined,
+				'padding-right': abPaddingTablet.right ? abPaddingTablet.right : undefined,
+				'padding-bottom': abPaddingTablet.bottom ? abPaddingTablet.bottom : undefined,
+				'padding-left': abPaddingTablet.left ? abPaddingTablet.left : undefined,
+				'border-radius': abBorderRadiusTablet ? ( abBorderRadiusTablet.top ? abBorderRadiusTablet.top : '0px' ) + ' ' + ( abBorderRadiusTablet.right ? abBorderRadiusTablet.right : '0px') + ' ' + ( abBorderRadiusTablet.bottom ? abBorderRadiusTablet.bottom : '0px' ) + ' ' + ( abBorderRadiusTablet.left ? abBorderRadiusTablet.left : '0px' ) : undefined,
 			},
 			'.pb-alert-box__title': {
 				'font-size': titleFontSizeTablet
@@ -157,23 +134,11 @@ const Styles = ( props ) => {
 		},
 		mobile: {
 			'.pb-alert-box-wrapper': {
-				padding:
-					abPaddingMobile.top +
-					' ' +
-					abPaddingMobile.right +
-					' ' +
-					abPaddingMobile.bottom +
-					' ' +
-					abPaddingMobile.left,
-				'border-radius':
-					abBorderRadiusMobile.top +
-					' ' +
-					abBorderRadiusMobile.right +
-					' ' +
-					abBorderRadiusMobile.bottom +
-					' ' +
-					abBorderRadiusMobile.left,
-				
+				'padding-top': abPaddingMobile.top ? abPaddingMobile.top : undefined,
+				'padding-right': abPaddingMobile.right ? abPaddingMobile.right : undefined,
+				'padding-bottom': abPaddingMobile.bottom ? abPaddingMobile.bottom : undefined,
+				'padding-left': abPaddingMobile.left ? abPaddingMobile.left : undefined,
+				'border-radius': abBorderRadiusMobile ? ( abBorderRadiusMobile.top ? abBorderRadiusMobile.top : '0px' ) + ' ' + ( abBorderRadiusMobile.right ? abBorderRadiusMobile.right : '0px') + ' ' + ( abBorderRadiusMobile.bottom ? abBorderRadiusMobile.bottom : '0px' ) + ' ' + ( abBorderRadiusMobile.left ? abBorderRadiusMobile.left : '0px' ) : undefined,
 			},
 			'.pb-alert-box__title': {
 				'font-size': titleFontSizeMobile
