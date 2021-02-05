@@ -53,19 +53,19 @@ const advancedAttributes = {
 	},
 	hoverBackgroundImgPosition: {
 		type: "string",
-		default: "center center"
+		default: ""
 	},
 	hoverBackgroundImgSize: {
 		type: "string",
-		default: "cover"
+		default: ""
 	},
 	hoverBackgroundImgRepeat: {
 		type: "string",
-		default: "no-repeat"
+		default: ""
 	},
 	hoverBackgroundImgAttachment: {
 		type: "string",
-		default: "scroll"
+		default: ""
 	},
 
 	hoverBackgroundImgOverlayColor : {
@@ -101,47 +101,47 @@ const advancedAttributes = {
 	paddingTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	paddingMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
     },
     
     margin: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	marginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	marginMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
@@ -151,19 +151,15 @@ const advancedAttributes = {
 	},
 	shadowHOffset: {
 		type: 'number',
-		default: 0,
 	},
 	shadowVOffset: {
 		type: 'number',
-		default: 0,
 	},
 	shadowBlur: {
 		type: 'number',
-		default: 2,
 	},
 	shadowSpread: {
 		type: 'number',
-		default: 2,
 	},
 	shadowType: {
 		type: 'string',
@@ -176,19 +172,15 @@ const advancedAttributes = {
 	},
 	hoverShadowHOffset: {
 		type: 'number',
-		default: 0,
 	},
 	hoverShadowVOffset: {
 		type: 'number',
-		default: 0,
 	},
 	hoverShadowBlur: {
 		type: 'number',
-		default: 0,
 	},
 	hoverShadowSpread: {
 		type: 'number',
-		default: 0,
 	},
 	hoverShadowType: {
 		type: 'string',
@@ -224,30 +216,30 @@ const advancedAttributes = {
 	borderRadius: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
 	borderRadiusTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
 	borderRadiusMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
