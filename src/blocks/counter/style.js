@@ -80,13 +80,10 @@ const Styles = ( props ) => {
 				'text-decoration': numberTextDecoration
 					? numberTextDecoration
 					: undefined,
-				margin: numberMargin.top +
-				' ' +
-				numberMargin.right +
-				' ' +
-				numberMargin.bottom +
-				' ' +
-				numberMargin.left,
+				'margin-top': numberMargin.top ? numberMargin.top : undefined,
+				'margin-right': numberMargin.right ? numberMargin.right : undefined,
+				'margin-bottom': numberMargin.bottom ? numberMargin.bottom : undefined,
+				'margin-left': numberMargin.left ? numberMargin.left : undefined,
 				
 			},
 			'.pb-counter--prefix': {
@@ -113,13 +110,10 @@ const Styles = ( props ) => {
 				'text-decoration': suffpreTextDecoration
 					? suffpreTextDecoration
 					: undefined,
-				margin: suffpreMargin.top +
-				' ' +
-				suffpreMargin.right +
-				' ' +
-				suffpreMargin.bottom +
-				' ' +
-				suffpreMargin.left,
+				'margin-top': suffpreMargin.top ? suffpreMargin.top : undefined,
+				'margin-right': suffpreMargin.right ? suffpreMargin.right : undefined,
+				'margin-bottom': suffpreMargin.bottom ? suffpreMargin.bottom : undefined,
+				'margin-left': suffpreMargin.left ? suffpreMargin.left : undefined,
 			},
 			'.pb-counter--suffix': {
 				color: suffpreColor ? suffpreColor : undefined,
@@ -145,79 +139,59 @@ const Styles = ( props ) => {
 				'text-decoration': suffpreTextDecoration
 					? suffpreTextDecoration
 					: undefined,
-				margin: suffpreMargin.top +
-				' ' +
-				suffpreMargin.right +
-				' ' +
-				suffpreMargin.bottom +
-				' ' +
-				suffpreMargin.left,
+
+				'margin-top': suffpreMargin.top ? suffpreMargin.top : undefined,
+				'margin-right': suffpreMargin.right ? suffpreMargin.right : undefined,
+				'margin-bottom': suffpreMargin.bottom ? suffpreMargin.bottom : undefined,
+				'margin-left': suffpreMargin.left ? suffpreMargin.left : undefined,
 			}
 		},
 		tablet: {
 			
 			'.pb-counter' : {
-				margin: numberMarginTablet.top +
-				' ' +
-				numberMarginTablet.right +
-				' ' +
-				numberMarginTablet.bottom +
-				' ' +
-				numberMarginTablet.left,
+				
+				'margin-top': numberMarginTablet.top ? numberMarginTablet.top : undefined,
+				'margin-right': numberMarginTablet.right ? numberMarginTablet.right : undefined,
+				'margin-bottom': numberMarginTablet.bottom ? numberMarginTablet.bottom : undefined,
+				'margin-left': numberMarginTablet.left ? numberMarginTablet.left : undefined,
 				'font-size' : numberFontSizeTablet ? numberFontSizeTablet + numberFontSizeTablet : undefined,
 			},
 			'.pb-counter--prefix': {
 				'font-size' : suffpreFontSizeTablet ? suffpreFontSizeTablet + suffpreFontSizeType : undefined,
-				margin: suffpreMarginTablet.top +
-				' ' +
-				suffpreMarginTablet.right +
-				' ' +
-				suffpreMarginTablet.bottom +
-				' ' +
-				suffpreMarginTablet.left,
+				'margin-top': suffpreMarginTablet.top ? suffpreMarginTablet.top : undefined,
+				'margin-right': suffpreMarginTablet.right ? suffpreMarginTablet.right : undefined,
+				'margin-bottom': suffpreMarginTablet.bottom ? suffpreMarginTablet.bottom : undefined,
+				'margin-left': suffpreMarginTablet.left ? suffpreMarginTablet.left : undefined,
 			},
 			'.pb-counter--suffix': {
 				'font-size' : suffpreFontSizeTablet ? suffpreFontSizeTablet + suffpreFontSizeType : undefined,
-				margin: suffpreMarginTablet.top +
-				' ' +
-				suffpreMarginTablet.right +
-				' ' +
-				suffpreMarginTablet.bottom +
-				' ' +
-				suffpreMarginTablet.left,
+				'margin-top': suffpreMarginTablet.top ? suffpreMarginTablet.top : undefined,
+				'margin-right': suffpreMarginTablet.right ? suffpreMarginTablet.right : undefined,
+				'margin-bottom': suffpreMarginTablet.bottom ? suffpreMarginTablet.bottom : undefined,
+				'margin-left': suffpreMarginTablet.left ? suffpreMarginTablet.left : undefined,
 			}
 		},
 		mobile: {
 			'.pb-counter' : {
 				'font-size' : numberFontSizeMobile ? numberFontSizeMobile + numberFontSizeTablet : undefined,
-
-				margin: numberMarginMobile.top +
-				' ' +
-				numberMarginMobile.right +
-				' ' +
-				numberMarginMobile.bottom +
-				' ' +
-				numberMarginMobile.left,
+				'margin-top': numberMarginMobile.top ? numberMarginMobile.top : undefined,
+				'margin-right': numberMarginMobile.right ? numberMarginMobile.right : undefined,
+				'margin-bottom': numberMarginMobile.bottom ? numberMarginMobile.bottom : undefined,
+				'margin-left': numberMarginMobile.left ? numberMarginMobile.left : undefined,
 			},
 			'.pb-counter--prefix': {
 				'font-size' : suffpreFontSizeMobile ? suffpreFontSizeMobile + suffpreFontSizeType : undefined,
-				margin: suffpreMarginMobile.top +
-				' ' +
-				suffpreMarginMobile.right +
-				' ' +
-				suffpreMarginMobile.bottom +
-				' ' +
-				suffpreMarginMobile.left,
+				'margin-top': suffpreMarginMobile.top ? suffpreMarginMobile.top : undefined,
+				'margin-right': suffpreMarginMobile.right ? suffpreMarginMobile.right : undefined,
+				'margin-bottom': suffpreMarginMobile.bottom ? suffpreMarginMobile.bottom : undefined,
+				'margin-left': suffpreMarginMobile.left ? suffpreMarginMobile.left : undefined,
 			},
 			'.pb-counter--suffix': {
 				'font-size' : suffpreFontSizeMobile ? suffpreFontSizeMobile + suffpreFontSizeType : undefined,
-				margin: suffpreMarginMobile.top +
-				' ' +
-				suffpreMarginMobile.right +
-				' ' +
-				suffpreMarginMobile.bottom +
-				' ' +
-				suffpreMarginMobile.left,
+				'margin-top': suffpreMarginMobile.top ? suffpreMarginMobile.top : undefined,
+				'margin-right': suffpreMarginMobile.right ? suffpreMarginMobile.right : undefined,
+				'margin-bottom': suffpreMarginMobile.bottom ? suffpreMarginMobile.bottom : undefined,
+				'margin-left': suffpreMarginMobile.left ? suffpreMarginMobile.left : undefined,
 			}
 		},
 	};

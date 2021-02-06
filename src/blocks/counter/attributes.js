@@ -67,7 +67,7 @@ const attributes = {
 			top: '0px',
 			left: '0px',
 			right: '0px',
-			bottom: '0px',
+			bottom: '10px',
 		},
 	},
 	numberMarginMobile: {
@@ -76,7 +76,7 @@ const attributes = {
 			top: '0px',
 			left: '0px',
 			right: '0px',
-			bottom: '0px',
+			bottom: '10px',
 		},
 	},
 	
@@ -150,7 +150,7 @@ const attributes = {
 			top: '0px',
 			left: '0px',
 			right: '0px',
-			bottom: '0px',
+			bottom: '10px',
 		},
 	},
 	suffpreMarginMobile: {
@@ -159,7 +159,7 @@ const attributes = {
 			top: '0px',
 			left: '0px',
 			right: '0px',
-			bottom: '0px',
+			bottom: '10px',
 		},
 	},
 	
