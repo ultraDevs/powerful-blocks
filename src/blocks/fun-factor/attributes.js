@@ -235,19 +235,19 @@ const attributes = {
 	},
 	mShadowHOffset: {
 		type: 'number',
-		default: '0',
+		
 	},
 	mShadowVOffset: {
 		type: 'number',
-		default: '0',
+		
 	},
 	mShadowBlur: {
 		type: 'number',
-		default: '0',
+		
 	},
 	mShadowSpread: {
 		type: 'number',
-		default: '0',
+		
 	},
 	mShadowType: {
 		type: 'string',
@@ -260,19 +260,19 @@ const attributes = {
 	},
 	hoverMShadowHOffset: {
 		type: 'number',
-		default: '0',
+		
 	},
 	hoverMShadowVOffset: {
 		type: 'number',
-		default: '0',
+		
 	},
 	hoverMShadowBlur: {
 		type: 'number',
-		default: '0',
+		
 	},
 	hoverMShadowSpread: {
 		type: 'number',
-		default: '0',
+		
 	},
 	hoverMShadowType: {
 		type: 'string',
@@ -291,19 +291,19 @@ const attributes = {
 	numberBPaddingTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '10px',
+			left: '10px',
+			right: '10px',
+			bottom: '10px',
 		},
 	},
 	numberBPaddingMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '10px',
+			left: '10px',
+			right: '10px',
+			bottom: '10px',
 		},
 	},
 
@@ -331,7 +331,7 @@ const attributes = {
 			top: '0px',
 			left: '0px',
 			right: '0px',
-			bottom: '0px',
+			bottom: '10px',
 		},
 	},
 	titleMarginMobile: {
@@ -340,7 +340,7 @@ const attributes = {
 			top: '0px',
 			left: '0px',
 			right: '0px',
-			bottom: '0px',
+			bottom: '10px',
 		},
 	},
 
