@@ -120,28 +120,17 @@ const Styles = ( props ) => {
 			'.pb-testimonial-image img': {
 				height: imageSize ? imageSize + imageSizeType : undefined,
 				width: imageSize ? imageSize + imageSizeType : undefined,
-				'border-radius':
-					imageBorderRadius.top || 0 +
-					' ' +
-					imageBorderRadius.right || 0 +
-					' ' +
-					imageBorderRadius.bottom || 0 +
-					' ' +
-					imageBorderRadius.left || 0,
+				'border-radius': imageBorderRadius ? ( imageBorderRadius.top ? imageBorderRadius.top : '0px' ) + ' ' + ( imageBorderRadius.right ? imageBorderRadius.right : '0px') + ' ' + ( imageBorderRadius.bottom ? imageBorderRadius.bottom : '0px' ) + ' ' + ( imageBorderRadius.left ? imageBorderRadius.left : '0px' ) : undefined,
 				'border-width': imageBorderSize
 					? imageBorderSize + 'px'
 					: undefined,
 				'border-style': imageBorderStyle ? imageBorderStyle : undefined,
 				'border-color': imageBorderColor ? imageBorderColor : undefined,
-				margin:
-					imageMargin.top +
-					' ' +
-					imageMargin.right +
-					' ' +
-					imageMargin.bottom +
-					' ' +
-					imageMargin.left,
-				'box-shadow':
+				'margin-top': imageMargin.top ? imageMargin.top : undefined,
+				'margin-right': imageMargin.right ? imageMargin.right : undefined,
+				'margin-bottom': imageMargin.bottom ? imageMargin.bottom : undefined,
+				'margin-left': imageMargin.left ? imageMargin.left : undefined,
+				'box-shadow': imageShadowColor ? 
 					imageShadowHOffset +
 					'px ' +
 					imageShadowVOffset +
@@ -150,7 +139,7 @@ const Styles = ( props ) => {
 					'px ' +
 					imageShadowSpread +
 					'px ' +
-					imageShadowColor,
+					imageShadowColor : undefined,
 			},
 			'.pb-testimonial-info--name': {
 				color: nameColor ? nameColor + '!important' : undefined,
@@ -177,14 +166,10 @@ const Styles = ( props ) => {
 					? nameTextDecoration
 					: undefined,
 				'text-align': nameTextAlign ? nameTextAlign : undefined,
-				margin:
-					nameMargin.top +
-					' ' +
-					nameMargin.right +
-					' ' +
-					nameMargin.bottom +
-					' ' +
-					nameMargin.left,
+				'margin-top': nameMargin.top ? nameMargin.top : undefined,
+				'margin-right': nameMargin.right ? nameMargin.right : undefined,
+				'margin-bottom': nameMargin.bottom ? nameMargin.bottom : undefined,
+				'margin-left': nameMargin.left ? nameMargin.left : undefined,
 			},
 
 			'.pb-testimonial--content': {
@@ -219,30 +204,16 @@ const Styles = ( props ) => {
 				'background-color': contentBackgroundColor
 					? contentBackgroundColor
 					: undefined,
-				padding:
-					contentPadding.top +
-					' ' +
-					contentPadding.right +
-					' ' +
-					contentPadding.bottom +
-					' ' +
-					contentPadding.left,
-				margin:
-					contentMargin.top +
-					' ' +
-					contentMargin.right +
-					' ' +
-					contentMargin.bottom +
-					' ' +
-					contentMargin.left,
-				'border-radius':
-					contentBorderRadius.top +
-					' ' +
-					contentBorderRadius.right +
-					' ' +
-					contentBorderRadius.bottom +
-					' ' +
-					contentBorderRadius.left,
+				'margin-top': contentMargin.top ? contentMargin.top : undefined,
+				'margin-right': contentMargin.right ? contentMargin.right : undefined,
+				'margin-bottom': contentMargin.bottom ? contentMargin.bottom : undefined,
+				'margin-left': contentMargin.left ? contentMargin.left : undefined,
+				
+				'padding-top': contentPadding.top ? contentPadding.top : undefined,
+				'padding-right': contentPadding.right ? contentPadding.right : undefined,
+				'padding-bottom': contentPadding.bottom ? contentPadding.bottom : undefined,
+				'padding-left': contentPadding.left ? contentPadding.left : undefined,
+				'border-radius': contentBorderRadius ? ( contentBorderRadius.top ? contentBorderRadius.top : '0px' ) + ' ' + ( contentBorderRadius.right ? contentBorderRadius.right : '0px') + ' ' + ( contentBorderRadius.bottom ? contentBorderRadius.bottom : '0px' ) + ' ' + ( contentBorderRadius.left ? contentBorderRadius.left : '0px' ) : undefined,
 			},
 			'.pb-testimonial--conr:hover': {
 				'background-color': hoverContentBackgroundColor
@@ -282,14 +253,10 @@ const Styles = ( props ) => {
 					? titleTextDecoration
 					: undefined,
 				'text-align': titleTextAlign ? titleTextAlign : undefined,
-				margin:
-					titleMargin.top +
-					' ' +
-					titleMargin.right +
-					' ' +
-					titleMargin.bottom +
-					' ' +
-					titleMargin.left,
+				'margin-top': titleMargin.top ? titleMargin.top : undefined,
+				'margin-right': titleMargin.right ? titleMargin.right : undefined,
+				'margin-bottom': titleMargin.bottom ? titleMargin.bottom : undefined,
+				'margin-left': titleMargin.left ? titleMargin.left : undefined,
 			},
 			'.pb-testimonial--rating': {
 				'text-align': ratingsAlign ? ratingsAlign : undefined,
@@ -299,30 +266,20 @@ const Styles = ( props ) => {
 			'.pb-testimonial-image img': {
 				height: imageSizeTablet ? imageSizeTablet + 'px' : undefined,
 				width: imageSizeTablet ? imageSizeTablet + 'px' : undefined,
-				'border-radius': imageBorderRadiusTablet
-					? imageBorderRadiusTablet + 'px'
-					: undefined,
-				margin:
-					imageMarginTablet.top +
-					' ' +
-					imageMarginTablet.right +
-					' ' +
-					imageMarginTablet.bottom +
-					' ' +
-					imageMarginTablet.left,
+				'border-radius': imageBorderRadiusTablet ? ( imageBorderRadiusTablet.top ? imageBorderRadiusTablet.top : '0px' ) + ' ' + ( imageBorderRadiusTablet.right ? imageBorderRadiusTablet.right : '0px') + ' ' + ( imageBorderRadiusTablet.bottom ? imageBorderRadiusTablet.bottom : '0px' ) + ' ' + ( imageBorderRadiusTablet.left ? imageBorderRadiusTablet.left : '0px' ) : undefined,
+				'margin-top': imageMarginTablet.top ? imageMarginTablet.top : undefined,
+				'margin-right': imageMarginTablet.right ? imageMarginTablet.right : undefined,
+				'margin-bottom': imageMarginTablet.bottom ? imageMarginTablet.bottom : undefined,
+				'margin-left': imageMarginTablet.left ? imageMarginTablet.left : undefined,
 			},
 			'.pb-testimonial-info--name': {
 				'font-size': nameFontSizeTablet
 					? nameFontSizeTablet + nameFontSizeType
 					: undefined,
-				margin:
-					nameMarginTablet.top +
-					' ' +
-					nameMarginTablet.right +
-					' ' +
-					nameMarginTablet.bottom +
-					' ' +
-					nameMarginTablet.left,
+				'margin-top': nameMarginTablet.top ? nameMarginTablet.top : undefined,
+				'margin-right': nameMarginTablet.right ? nameMarginTablet.right : undefined,
+				'margin-bottom': nameMarginTablet.bottom ? nameMarginTablet.bottom : undefined,
+				'margin-left': nameMarginTablet.left ? nameMarginTablet.left : undefined,
 			},
 			'.pb-testimonial--content': {
 				'font-size': contentFontSizeTablet
@@ -330,43 +287,25 @@ const Styles = ( props ) => {
 					: undefined,
 			},
 			'.pb-testimonial--conr': {
-				padding:
-					contentPaddingTablet.top +
-					' ' +
-					contentPaddingTablet.right +
-					' ' +
-					contentPaddingTablet.bottom +
-					' ' +
-					contentPaddingTablet.left,
-				margin:
-					contentMarginTablet.top +
-					' ' +
-					contentMarginTablet.right +
-					' ' +
-					contentMarginTablet.bottom +
-					' ' +
-					contentMarginTablet.left,
-				'border-radius':
-					contentBorderRadiusTablet.top +
-					' ' +
-					contentBorderRadiusTablet.right +
-					' ' +
-					contentBorderRadiusTablet.bottom +
-					' ' +
-					contentBorderRadiusTablet.left,
+				'margin-top': contentMarginTablet.top ? contentMarginTablet.top : undefined,
+				'margin-right': contentMarginTablet.right ? contentMarginTablet.right : undefined,
+				'margin-bottom': contentMarginTablet.bottom ? contentMarginTablet.bottom : undefined,
+				'margin-left': contentMarginTablet.left ? contentMarginTablet.left : undefined,
+
+				'padding-top': contentPaddingTablet.top ? contentPaddingTablet.top : undefined,
+				'padding-right': contentPaddingTablet.right ? contentPaddingTablet.right : undefined,
+				'padding-bottom': contentPaddingTablet.bottom ? contentPaddingTablet.bottom : undefined,
+				'padding-left': contentPaddingTablet.left ? contentPaddingTablet.left : undefined,
+				'border-radius': contentBorderRadiusTablet ? ( contentBorderRadiusTablet.top ? contentBorderRadiusTablet.top : '0px' ) + ' ' + ( contentBorderRadiusTablet.right ? contentBorderRadiusTablet.right : '0px') + ' ' + ( contentBorderRadiusTablet.bottom ? contentBorderRadiusTablet.bottom : '0px' ) + ' ' + ( contentBorderRadiusTablet.left ? contentBorderRadiusTablet.left : '0px' ) : undefined,
 			},
 			'.pb-testimonial-info--title': {
 				'font-size': titleFontSizeTablet
 					? titleFontSizeTablet + titleFontSizeType
 					: undefined,
-				margin:
-					titleMarginTablet.top +
-					' ' +
-					titleMarginTablet.right +
-					' ' +
-					titleMarginTablet.bottom +
-					' ' +
-					titleMarginTablet.left,
+				'margin-top': titleMarginTablet.top ? titleMarginTablet.top : undefined,
+				'margin-right': titleMarginTablet.right ? titleMarginTablet.right : undefined,
+				'margin-bottom': titleMarginTablet.bottom ? titleMarginTablet.bottom : undefined,
+				'margin-left': titleMarginTablet.left ? titleMarginTablet.left : undefined,
 			},
 		},
 		mobile: {
@@ -374,30 +313,22 @@ const Styles = ( props ) => {
 			'.pb-testimonial-image img': {
 				height: imageSizeMobile ? imageSizeMobile + 'px' : undefined,
 				width: imageSizeMobile ? imageSizeMobile + 'px' : undefined,
-				'border-radius': imageBorderRadiusMobile
-					? imageBorderRadiusMobile + 'px'
-					: undefined,
-				margin:
-					imageMarginMobile.top +
-					' ' +
-					imageMarginMobile.right +
-					' ' +
-					imageMarginMobile.bottom +
-					' ' +
-					imageMarginMobile.left,
+				'border-radius': imageBorderRadiusMobile ? ( imageBorderRadiusMobile.top ? imageBorderRadiusMobile.top : '0px' ) + ' ' + ( imageBorderRadiusMobile.right ? imageBorderRadiusMobile.right : '0px') + ' ' + ( imageBorderRadiusMobile.bottom ? imageBorderRadiusMobile.bottom : '0px' ) + ' ' + ( imageBorderRadiusMobile.left ? imageBorderRadiusMobile.left : '0px' ) : undefined,
+				'margin-top': imageMarginMobile.top ? imageMarginMobile.top : undefined,
+				'margin-right': imageMarginMobile.right ? imageMarginMobile.right : undefined,
+				'margin-bottom': imageMarginMobile.bottom ? imageMarginMobile.bottom : undefined,
+				'margin-left': imageMarginMobile.left ? imageMarginMobile.left : undefined,
+				
 			},
 			'.pb-testimonial-info--name': {
 				'font-size': nameFontSizeMobile
 					? nameFontSizeMobile + nameFontSizeType
 					: undefined,
-				margin:
-					nameMarginMobile.top +
-					' ' +
-					nameMarginMobile.right +
-					' ' +
-					nameMarginMobile.bottom +
-					' ' +
-					nameMarginMobile.left,
+				'margin-top': nameMarginMobile.top ? nameMarginMobile.top : undefined,
+				'margin-right': nameMarginMobile.right ? nameMarginMobile.right : undefined,
+				'margin-bottom': nameMarginMobile.bottom ? nameMarginMobile.bottom : undefined,
+				'margin-left': nameMarginMobile.left ? nameMarginMobile.left : undefined,
+				
 			},
 			'.pb-testimonial--content': {
 				'font-size': contentFontSizeMobile
@@ -405,43 +336,25 @@ const Styles = ( props ) => {
 					: undefined,
 			},
 			'.pb-testimonial--conr': {
-				padding:
-					contentPaddingMobile.top +
-					' ' +
-					contentPaddingMobile.right +
-					' ' +
-					contentPaddingMobile.bottom +
-					' ' +
-					contentPaddingMobile.left,
-				margin:
-					contentMarginMobile.top +
-					' ' +
-					contentMarginMobile.right +
-					' ' +
-					contentMarginMobile.bottom +
-					' ' +
-					contentMarginMobile.left,
-				'border-radius':
-					contentBorderRadiusMobile.top +
-					' ' +
-					contentBorderRadiusMobile.right +
-					' ' +
-					contentBorderRadiusMobile.bottom +
-					' ' +
-					contentBorderRadiusMobile.left,
+				'margin-top': contentMarginMobile.top ? contentMarginMobile.top : undefined,
+				'margin-right': contentMarginMobile.right ? contentMarginMobile.right : undefined,
+				'margin-bottom': contentMarginMobile.bottom ? contentMarginMobile.bottom : undefined,
+				'margin-left': contentMarginMobile.left ? contentMarginMobile.left : undefined,
+				
+				'padding-top': contentPaddingMobile.top ? contentPaddingMobile.top : undefined,
+				'padding-right': contentPaddingMobile.right ? contentPaddingMobile.right : undefined,
+				'padding-bottom': contentPaddingMobile.bottom ? contentPaddingMobile.bottom : undefined,
+				'padding-left': contentPaddingMobile.left ? contentPaddingMobile.left : undefined,
+				'border-radius': contentBorderRadiusMobile ? ( contentBorderRadiusMobile.top ? contentBorderRadiusMobile.top : '0px' ) + ' ' + ( contentBorderRadiusMobile.right ? contentBorderRadiusMobile.right : '0px') + ' ' + ( contentBorderRadiusMobile.bottom ? contentBorderRadiusMobile.bottom : '0px' ) + ' ' + ( contentBorderRadiusMobile.left ? contentBorderRadiusMobile.left : '0px' ) : undefined,
 			},
 			'.pb-testimonial-info--title': {
 				'font-size': titleFontSizeMobile
 					? titleFontSizeMobile + titleFontSizeType
 					: undefined,
-				margin:
-					titleMarginMobile.top +
-					' ' +
-					titleMarginMobile.right +
-					' ' +
-					titleMarginMobile.bottom +
-					' ' +
-					titleMarginMobile.left,
+				'margin-top': titleMarginMobile.top ? titleMarginMobile.top : undefined,
+				'margin-right': titleMarginMobile.right ? titleMarginMobile.right : undefined,
+				'margin-bottom': titleMarginMobile.bottom ? titleMarginMobile.bottom : undefined,
+				'margin-left': titleMarginMobile.left ? titleMarginMobile.left : undefined,
 			},
 		},
 	};
@@ -554,33 +467,21 @@ const Styles = ( props ) => {
 			'background-color': contentBackgroundColor
 				? contentBackgroundColor
 				: '#6a4adc',
-			'border-radius':
-				contentBorderRadius.top +
-				' ' +
-				contentBorderRadius.right +
-				' ' +
-				contentBorderRadius.bottom +
-				' ' +
-				contentBorderRadius.left,
-			padding:
-				contentPadding.top ||
-				'40px' + ' ' + contentPadding.right ||
-				'40px' + ' ' + contentPadding.bottom ||
-				'40px' + ' ' + contentPadding.left ||
-				'40px',
+			'border-radius': contentBorderRadius ? ( contentBorderRadius.top ? contentBorderRadius.top : '0px' ) + ' ' + ( contentBorderRadius.right ? contentBorderRadius.right : '0px') + ' ' + ( contentBorderRadius.bottom ? contentBorderRadius.bottom : '0px' ) + ' ' + ( contentBorderRadius.left ? contentBorderRadius.left : '0px' ) : undefined,
+			'padding-top': contentPadding.top ? contentPadding.top : undefined,
+			'padding-right': contentPadding.right ? contentPadding.right : undefined,
+			'padding-bottom': contentPadding.bottom ? contentPadding.bottom : undefined,
+			'padding-left': contentPadding.left ? contentPadding.left : undefined,
+			
 		};
 		rules.desktop[ '.design-3 .pb-testimonial--content' ] = {
 			color: contentColor ? contentColor : '#fff',
 		};
 		rules.tablet[ '.design-3 .pb-testimonial--conr' ] = {
-			'border-radius': contentBorderRadiusTablet
-				? contentBorderRadiusTablet + 'px'
-				: '100px',
+			'border-radius': contentBorderRadiusTablet ? ( contentBorderRadiusTablet.top ? contentBorderRadiusTablet.top : '0px' ) + ' ' + ( contentBorderRadiusTablet.right ? contentBorderRadiusTablet.right : '0px') + ' ' + ( contentBorderRadiusTablet.bottom ? contentBorderRadiusTablet.bottom : '0px' ) + ' ' + ( contentBorderRadiusTablet.left ? contentBorderRadiusTablet.left : '0px' ) : '100px',
 		};
 		rules.mobile[ '.design-3 .pb-testimonial--conr' ] = {
-			'border-radius': contentBorderRadiusMobile
-				? contentBorderRadiusMobile + 'px'
-				: '100px',
+			'border-radius': contentBorderRadiusMobile ? ( contentBorderRadiusMobile.top ? contentBorderRadiusMobile.top : '0px' ) + ' ' + ( contentBorderRadiusMobile.right ? contentBorderRadiusMobile.right : '0px') + ' ' + ( contentBorderRadiusMobile.bottom ? contentBorderRadiusMobile.bottom : '0px' ) + ' ' + ( contentBorderRadiusMobile.left ? contentBorderRadiusMobile.left : '0px' ) : '100px',
 		};
 		rules.desktop[ '.design-2 .pb-testimonial-info--name' ] = {
 			color: nameColor ? nameColor : '#111',

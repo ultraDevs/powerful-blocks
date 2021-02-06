@@ -303,7 +303,7 @@ const attributes = {
 	imageMarginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
+			top: '10px',
 			left: '0px',
 			right: '10px',
 			bottom: '0px',
@@ -314,7 +314,7 @@ const attributes = {
 		default: {
 			top: '10px',
 			left: '0px',
-			right: '0px',
+			right: '10px',
 			bottom: '0px',
 		},
 	},
