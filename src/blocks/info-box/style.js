@@ -103,22 +103,15 @@ const Styles = ( props ) => {
 				'align-items': mValign ? mValign : undefined,
 			},
 			'.pb-info-box--m' : {
-				padding:
-				mPadding.top +
-				' ' +
-				mPadding.right +
-				' ' +
-				mPadding.bottom +
-				' ' +
-				mPadding.left,
-			margin:
-				mMargin.top +
-				' ' +
-				mMargin.right +
-				' ' +
-				mMargin.bottom +
-				' ' +
-				mMargin.left,
+				'margin-top': mMargin.top ? mMargin.top : undefined,
+				'margin-right': mMargin.right ? mMargin.right : undefined,
+				'margin-bottom': mMargin.bottom ? mMargin.bottom : undefined,
+				'margin-left': mMargin.left ? mMargin.left : undefined,
+
+				'padding-top': mPadding.top ? mPadding.top : undefined,
+				'padding-right': mPadding.right ? mPadding.right : undefined,
+				'padding-bottom': mPadding.bottom ? mPadding.bottom : undefined,
+				'padding-left': mPadding.left ? mPadding.left : undefined,
 			
 				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
 			},
@@ -140,14 +133,7 @@ const Styles = ( props ) => {
 				: undefined,
 			'border-style': mBorderStyle ? mBorderStyle : undefined,
 			'border-color': mBorderColor ? mBorderColor : undefined,
-			'border-radius':
-				mBorderRadius.top +
-				' ' +
-				mBorderRadius.right +
-				' ' +
-				mBorderRadius.bottom +
-				' ' +
-				mBorderRadius.left,
+			'border-radius': mBorderRadius ? ( mBorderRadius.top ? mBorderRadius.top : '0px' ) + ' ' + ( mBorderRadius.right ? mBorderRadius.right : '0px') + ' ' + ( mBorderRadius.bottom ? mBorderRadius.bottom : '0px' ) + ' ' + ( mBorderRadius.left ? mBorderRadius.left : '0px' ) : undefined,
 			},
 			'.pb-info-box--image img' : {
 				width: imgWidth ? imgWidth + imgWidthType : undefined,
@@ -161,19 +147,12 @@ const Styles = ( props ) => {
 				'px ' +
 				mShadowSpread +
 				'px ' + mShadowColor : undefined,
-			'border-width': mBorderSize
-				? mBorderSize + 'px'
-				: undefined,
-			'border-style': mBorderStyle ? mBorderStyle : undefined,
-			'border-color': mBorderColor ? mBorderColor : undefined,
-			'border-radius':
-				mBorderRadius.top +
-				' ' +
-				mBorderRadius.right +
-				' ' +
-				mBorderRadius.bottom +
-				' ' +
-				mBorderRadius.left,
+				'border-width': mBorderSize
+					? mBorderSize + 'px'
+					: undefined,
+				'border-style': mBorderStyle ? mBorderStyle : undefined,
+				'border-color': mBorderColor ? mBorderColor : undefined,
+				'border-radius': mBorderRadius ? ( mBorderRadius.top ? mBorderRadius.top : '0px' ) + ' ' + ( mBorderRadius.right ? mBorderRadius.right : '0px') + ' ' + ( mBorderRadius.bottom ? mBorderRadius.bottom : '0px' ) + ' ' + ( mBorderRadius.left ? mBorderRadius.left : '0px' ) : undefined,
 			},
 			'.pb-info-box--m:hover .pb-info-box--icon' : {
 				'box-shadow': hoverMShadowColor ? hoverMShadowType + ' ' +
@@ -208,24 +187,15 @@ const Styles = ( props ) => {
 				'border-color': hoverMBorderColor ? hoverMBorderColor : undefined,
 			},
 			'.pb-info-box--body' : {
-				padding: contentBPadding.top +
-				' ' +
-				contentBPadding.right +
-				' ' +
-				contentBPadding.bottom +
-				' ' +
-				contentBPadding.left,
+				'padding-top': contentBPadding.top ? contentBPadding.top : undefined,
+				'padding-right': contentBPadding.right ? contentBPadding.right : undefined,
+				'padding-bottom': contentBPadding.bottom ? contentBPadding.bottom : undefined,
+				'padding-left': contentBPadding.left ? contentBPadding.left : undefined,
 				'margin-top': mOffsetTop ? mOffsetTop + mOffsetType : undefined,
 
 			},
 			'.pb-info-box--body__title' : {
-				margin: titleMargin.top +
-				' ' +
-				titleMargin.right +
-				' ' +
-				titleMargin.bottom +
-				' ' +
-				titleMargin.left,
+				
 				color: titleColor ? titleColor + '!important' : undefined,
 				'font-size' : titleFontSize ? titleFontSize + titleFontSizeType : undefined,
 				'font-family': titleFontFamily
@@ -249,15 +219,16 @@ const Styles = ( props ) => {
 				'text-decoration': titleTextDecoration
 					? titleTextDecoration
 					: undefined,
+				'margin-top': titleMargin.top ? titleMargin.top : undefined,
+				'margin-right': titleMargin.right ? titleMargin.right : undefined,
+				'margin-bottom': titleMargin.bottom ? titleMargin.bottom : undefined,
+				'margin-left': titleMargin.left ? titleMargin.left : undefined,
 			},
 			'.pb-info-box--body__content' : {
-				margin: contentMargin.top +
-				' ' +
-				contentMargin.right +
-				' ' +
-				contentMargin.bottom +
-				' ' +
-				contentMargin.left,
+				'margin-top': contentMargin.top ? contentMargin.top : undefined,
+				'margin-right': contentMargin.right ? contentMargin.right : undefined,
+				'margin-bottom': contentMargin.bottom ? contentMargin.bottom : undefined,
+				'margin-left': contentMargin.left ? contentMargin.left : undefined,
 				
 			},
 			'.pb-info-box--body__content p' : {
@@ -290,77 +261,47 @@ const Styles = ( props ) => {
 		},
 		tablet: {
 			'.pb-info-box--m' : {
-				padding:
-				mPaddingTablet.top +
-				' ' +
-				mPaddingTablet.right +
-				' ' +
-				mPaddingTablet.bottom +
-				' ' +
-				mPaddingTablet.left,
-			margin:
-				mMarginTablet.top +
-				' ' +
-				mMarginTablet.right +
-				' ' +
-				mMarginTablet.bottom +
-				' ' +
-				mMarginTablet.left,
+				'margin-top': mMarginTablet.top ? mMarginTablet.top : undefined,
+				'margin-right': mMarginTablet.right ? mMarginTablet.right : undefined,
+				'margin-bottom': mMarginTablet.bottom ? mMarginTablet.bottom : undefined,
+				'margin-left': mMarginTablet.left ? mMarginTablet.left : undefined,
+				
+				'padding-top': mPaddingTablet.top ? mPaddingTablet.top : undefined,
+				'padding-right': mPaddingTablet.right ? mPaddingTablet.right : undefined,
+				'padding-bottom': mPaddingTablet.bottom ? mPaddingTablet.bottom : undefined,
+				'padding-left': mPaddingTablet.left ? mPaddingTablet.left : undefined,
 			
-			transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
+				transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
 			
 			},
 			'.pb-info-box--icon': {
-				'border-radius':
-				mBorderRadiusTablet.top +
-				' ' +
-				mBorderRadiusTablet.right +
-				' ' +
-				mBorderRadiusTablet.bottom +
-				' ' +
-				mBorderRadiusTablet.left,
+				'border-radius': mBorderRadiusTablet ? ( mBorderRadiusTablet.top ? mBorderRadiusTablet.top : '0px' ) + ' ' + ( mBorderRadiusTablet.right ? mBorderRadiusTablet.right : '0px') + ' ' + ( mBorderRadiusTablet.bottom ? mBorderRadiusTablet.bottom : '0px' ) + ' ' + ( mBorderRadiusTablet.left ? mBorderRadiusTablet.left : '0px' ) : undefined,
 			},
 			'.pb-info-box--image img' : {
 				width: imgWidthTablet ? imgWidthTablet + imgWidthType : undefined,
 				height: imgHeightTablet ? imgHeightTablet + imgHeightType : undefined,
-				'border-radius':
-				mBorderRadiusTablet.top +
-				' ' +
-				mBorderRadiusTablet.right +
-				' ' +
-				mBorderRadiusTablet.bottom +
-				' ' +
-				mBorderRadiusTablet.left,
+				'border-radius': mBorderRadiusTablet ? ( mBorderRadiusTablet.top ? mBorderRadiusTablet.top : '0px' ) + ' ' + ( mBorderRadiusTablet.right ? mBorderRadiusTablet.right : '0px') + ' ' + ( mBorderRadiusTablet.bottom ? mBorderRadiusTablet.bottom : '0px' ) + ' ' + ( mBorderRadiusTablet.left ? mBorderRadiusTablet.left : '0px' ) : undefined,
 			},
 			'.pb-info-box--body' : {
-				padding: contentBPaddingTablet.top +
-				' ' +
-				contentBPaddingTablet.right +
-				' ' +
-				contentBPaddingTablet.bottom +
-				' ' +
-				contentBPaddingTablet.left,
+				'padding-top': contentBPaddingTablet.top ? contentBPaddingTablet.top : undefined,
+				'padding-right': contentBPaddingTablet.right ? contentBPaddingTablet.right : undefined,
+				'padding-bottom': contentBPaddingTablet.bottom ? contentBPaddingTablet.bottom : undefined,
+				'padding-left': contentBPaddingTablet.left ? contentBPaddingTablet.left : undefined,
 				'margin-top': mOffsetTopTablet ? mOffsetTopTablet + mOffsetType : undefined,
 
 			},
 			'.pb-info-box--body__title' : {
-				margin: titleMarginTablet.top +
-				' ' +
-				titleMarginTablet.right +
-				' ' +
-				titleMarginTablet.bottom +
-				' ' +
-				titleMarginTablet.left,
+				'margin-top': titleMarginTablet.top ? titleMarginTablet.top : undefined,
+				'margin-right': titleMarginTablet.right ? titleMarginTablet.right : undefined,
+				'margin-bottom': titleMarginTablet.bottom ? titleMarginTablet.bottom : undefined,
+				'margin-left': titleMarginTablet.left ? titleMarginTablet.left : undefined,
 				'font-size' : titleFontSizeTablet ? titleFontSizeTablet + titleFontSizeType : undefined,
 			},
 			'.pb-info-box--body__content' : {
-				margin: contentMarginTablet.top +
-				' ' +
-				contentMarginTablet.right +
-				' ' +
-				contentMarginTablet.bottom +
-				' ' +
-				contentMarginTablet.left,
+				'margin-top': contentMarginTablet.top ? contentMarginTablet.top : undefined,
+				'margin-right': contentMarginTablet.right ? contentMarginTablet.right : undefined,
+				'margin-bottom': contentMarginTablet.bottom ? contentMarginTablet.bottom : undefined,
+				'margin-left': contentMarginTablet.left ? contentMarginTablet.left : undefined,
 			},
 			'.pb-info-box--body__content' : {
 				'font-size' : contentFontSizeTablet ? contentFontSizeTablet + contentFontSizeType : undefined,
@@ -369,77 +310,46 @@ const Styles = ( props ) => {
 		mobile: {
 			
 			'.pb-info-box--m' : {
-				padding:
-				mPaddingMobile.top +
-				' ' +
-				mPaddingMobile.right +
-				' ' +
-				mPaddingMobile.bottom +
-				' ' +
-				mPaddingMobile.left,
-			margin:
-				mMarginMobile.top +
-				' ' +
-				mMarginMobile.right +
-				' ' +
-				mMarginMobile.bottom +
-				' ' +
-				mMarginMobile.left,
-			
-			transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
+				'margin-top': mMarginMobile.top ? mMarginMobile.top : undefined,
+				'margin-right': mMarginMobile.right ? mMarginMobile.right : undefined,
+				'margin-bottom': mMarginMobile.bottom ? mMarginMobile.bottom : undefined,
+				'margin-left': mMarginMobile.left ? mMarginMobile.left : undefined,
+
+				'padding-top': mPaddingMobile.top ? mPaddingMobile.top : undefined,
+				'padding-right': mPaddingMobile.right ? mPaddingMobile.right : undefined,
+				'padding-bottom': mPaddingMobile.bottom ? mPaddingMobile.bottom : undefined,
+				'padding-left': mPaddingMobile.left ? mPaddingMobile.left : undefined,
+				transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
 			
 			},
 			'.pb-info-box--icon': {
-				'border-radius':
-				mBorderRadiusMobile.top +
-				' ' +
-				mBorderRadiusMobile.right +
-				' ' +
-				mBorderRadiusMobile.bottom +
-				' ' +
-				mBorderRadiusMobile.left,
+				'border-radius': mBorderRadiusMobile ? ( mBorderRadiusMobile.top ? mBorderRadiusMobile.top : '0px' ) + ' ' + ( mBorderRadiusMobile.right ? mBorderRadiusMobile.right : '0px') + ' ' + ( mBorderRadiusMobile.bottom ? mBorderRadiusMobile.bottom : '0px' ) + ' ' + ( mBorderRadiusMobile.left ? mBorderRadiusMobile.left : '0px' ) : undefined,
 			},
 			'.pb-info-box--image img' : {
 				width: imgWidthMobile ? imgWidthMobile + imgWidthType : undefined,
 				height: imgHeightMobile ? imgHeightMobile + imgHeightType : undefined,
-				'border-radius':
-				mBorderRadiusMobile.top +
-				' ' +
-				mBorderRadiusMobile.right +
-				' ' +
-				mBorderRadiusMobile.bottom +
-				' ' +
-				mBorderRadiusMobile.left,
+				'border-radius': mBorderRadiusMobile ? ( mBorderRadiusMobile.top ? mBorderRadiusMobile.top : '0px' ) + ' ' + ( mBorderRadiusMobile.right ? mBorderRadiusMobile.right : '0px') + ' ' + ( mBorderRadiusMobile.bottom ? mBorderRadiusMobile.bottom : '0px' ) + ' ' + ( mBorderRadiusMobile.left ? mBorderRadiusMobile.left : '0px' ) : undefined,
 			},
 			'.pb-info-box--body' : {
-				padding: contentBPaddingMobile.top +
-				' ' +
-				contentBPaddingMobile.right +
-				' ' +
-				contentBPaddingMobile.bottom +
-				' ' +
-				contentBPaddingMobile.left,
+				'padding-top': contentBPaddingMobile.top ? contentBPaddingMobile.top : undefined,
+				'padding-right': contentBPaddingMobile.right ? contentBPaddingMobile.right : undefined,
+				'padding-bottom': contentBPaddingMobile.bottom ? contentBPaddingMobile.bottom : undefined,
+				'padding-left': contentBPaddingMobile.left ? contentBPaddingMobile.left : undefined,
 				'margin-top': mOffsetTopMobile ? mOffsetTopMobile + mOffsetType : undefined,
 
 			},
 			'.pb-info-box--body__title' : {
-				margin: titleMarginMobile.top +
-				' ' +
-				titleMarginMobile.right +
-				' ' +
-				titleMarginMobile.bottom +
-				' ' +
-				titleMarginMobile.left,
+				'margin-top': titleMarginMobile.top ? titleMarginMobile.top : undefined,
+				'margin-right': titleMarginMobile.right ? titleMarginMobile.right : undefined,
+				'margin-bottom': titleMarginMobile.bottom ? titleMarginMobile.bottom : undefined,
+				'margin-left': titleMarginMobile.left ? titleMarginMobile.left : undefined,
 				'font-size' : titleFontSizeMobile ? titleFontSizeMobile + titleFontSizeType : undefined,
 			},
 			'.pb-info-box--body__content' : {
-				margin: contentMarginMobile.top +
-				' ' +
-				contentMarginMobile.right +
-				' ' +
-				contentMarginMobile.bottom +
-				' ' +
-				contentMarginMobile.left,
+				'margin-top': contentMarginMobile.top ? contentMarginMobile.top : undefined,
+				'margin-right': contentMarginMobile.right ? contentMarginMobile.right : undefined,
+				'margin-bottom': contentMarginMobile.bottom ? contentMarginMobile.bottom : undefined,
+				'margin-left': contentMarginMobile.left ? contentMarginMobile.left : undefined,
 			},
 			'.pb-info-box--body__content p' : {
 				
