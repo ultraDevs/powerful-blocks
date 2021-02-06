@@ -102,22 +102,12 @@ const Styles = ( props ) => {
 				'text-decoration': btnTextDecoration
 					? btnTextDecoration
 					: undefined,
-				padding:
-					btnPadding.top +
-					' ' +
-					btnPadding.right +
-					' ' +
-					btnPadding.bottom +
-					' ' +
-					btnPadding.left,
-				'border-radius':
-					btnBorderRadius.top +
-					' ' +
-					btnBorderRadius.right +
-					' ' +
-					btnBorderRadius.bottom +
-					' ' +
-					btnBorderRadius.left,
+				'padding-top': btnPadding.top ? btnPadding.top : undefined,
+				'padding-right': btnPadding.right ? btnPadding.right : undefined,
+				'padding-bottom': btnPadding.bottom ? btnPadding.bottom : undefined,
+				'padding-left': btnPadding.left ? btnPadding.left : undefined,
+				'border-radius': btnBorderRadius ? ( btnBorderRadius.top ? btnBorderRadius.top : '0px' ) + ' ' + ( btnBorderRadius.right ? btnBorderRadius.right : '0px') + ' ' + ( btnBorderRadius.bottom ? btnBorderRadius.bottom : '0px' ) + ' ' + ( btnBorderRadius.left ? btnBorderRadius.left : '0px' ) : undefined,
+				
 				'border-style': btnBorderStyle ? btnBorderStyle : undefined,
 				'border-width': btnBorderWidth
 					? btnBorderWidth + 'px'
