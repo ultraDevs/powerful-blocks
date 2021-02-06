@@ -79,13 +79,10 @@ const Styles = ( props ) => {
 				'text-decoration': animatedTextTextDecoration
 					? animatedTextTextDecoration
 					: undefined,
-				margin: animatedTextMargin.top +
-				' ' +
-				animatedTextMargin.right +
-				' ' +
-				animatedTextMargin.bottom +
-				' ' +
-				animatedTextMargin.left,
+				'margin-top': animatedTextMargin.top ? animatedTextMargin.top : undefined,
+				'margin-right': animatedTextMargin.right ? animatedTextMargin.right : undefined,
+				'margin-bottom': animatedTextMargin.bottom ? animatedTextMargin.bottom : undefined,
+				'margin-left': animatedTextMargin.left ? animatedTextMargin.left : undefined,
 				
 			},
 			'.animation-text--content:after' : {
@@ -115,13 +112,10 @@ const Styles = ( props ) => {
 				'text-decoration': suffpreTextDecoration
 					? suffpreTextDecoration
 					: undefined,
-				margin: suffpreMargin.top +
-				' ' +
-				suffpreMargin.right +
-				' ' +
-				suffpreMargin.bottom +
-				' ' +
-				suffpreMargin.left,
+				'margin-top': suffpreMargin.top ? suffpreMargin.top : undefined,
+				'margin-right': suffpreMargin.right ? suffpreMargin.right : undefined,
+				'margin-bottom': suffpreMargin.bottom ? suffpreMargin.bottom : undefined,
+				'margin-left': suffpreMargin.left ? suffpreMargin.left : undefined,
 			},
 			'.pb-animated-text--suffix': {
 				color: suffpreColor ? suffpreColor : undefined,
@@ -147,79 +141,57 @@ const Styles = ( props ) => {
 				'text-decoration': suffpreTextDecoration
 					? suffpreTextDecoration
 					: undefined,
-				margin: suffpreMargin.top +
-				' ' +
-				suffpreMargin.right +
-				' ' +
-				suffpreMargin.bottom +
-				' ' +
-				suffpreMargin.left,
+				'margin-top': suffpreMargin.top ? suffpreMargin.top : undefined,
+				'margin-right': suffpreMargin.right ? suffpreMargin.right : undefined,
+				'margin-bottom': suffpreMargin.bottom ? suffpreMargin.bottom : undefined,
+				'margin-left': suffpreMargin.left ? suffpreMargin.left : undefined,
 			}
 		},
 		tablet: {
 			
 			'.pb-animated-text' : {
-				margin: animatedTextMarginTablet.top +
-				' ' +
-				animatedTextMarginTablet.right +
-				' ' +
-				animatedTextMarginTablet.bottom +
-				' ' +
-				animatedTextMarginTablet.left,
+				'margin-top': animatedTextMarginTablet.top ? animatedTextMarginTablet.top : undefined,
+				'margin-right': animatedTextMarginTablet.right ? animatedTextMarginTablet.right : undefined,
+				'margin-bottom': animatedTextMarginTablet.bottom ? animatedTextMarginTablet.bottom : undefined,
+				'margin-left': animatedTextMarginTablet.left ? animatedTextMarginTablet.left : undefined,
 				'font-size' : animatedTextFontSizeTablet ? animatedTextFontSizeTablet + animatedTextFontSizeTablet : undefined,
 			},
 			'.pb-animated-text--prefix': {
 				'font-size' : suffpreFontSizeTablet ? suffpreFontSizeTablet + suffpreFontSizeType : undefined,
-				margin: suffpreMarginTablet.top +
-				' ' +
-				suffpreMarginTablet.right +
-				' ' +
-				suffpreMarginTablet.bottom +
-				' ' +
-				suffpreMarginTablet.left,
+				'margin-top': suffpreMarginTablet.top ? suffpreMarginTablet.top : undefined,
+				'margin-right': suffpreMarginTablet.right ? suffpreMarginTablet.right : undefined,
+				'margin-bottom': suffpreMarginTablet.bottom ? suffpreMarginTablet.bottom : undefined,
+				'margin-left': suffpreMarginTablet.left ? suffpreMarginTablet.left : undefined,
 			},
 			'.pb-animated-text--suffix': {
 				'font-size' : suffpreFontSizeTablet ? suffpreFontSizeTablet + suffpreFontSizeType : undefined,
-				margin: suffpreMarginTablet.top +
-				' ' +
-				suffpreMarginTablet.right +
-				' ' +
-				suffpreMarginTablet.bottom +
-				' ' +
-				suffpreMarginTablet.left,
+				'margin-top': suffpreMarginTablet.top ? suffpreMarginTablet.top : undefined,
+				'margin-right': suffpreMarginTablet.right ? suffpreMarginTablet.right : undefined,
+				'margin-bottom': suffpreMarginTablet.bottom ? suffpreMarginTablet.bottom : undefined,
+				'margin-left': suffpreMarginTablet.left ? suffpreMarginTablet.left : undefined,
 			}
 		},
 		mobile: {
 			'.pb-animated-text' : {
 				'font-size' : animatedTextFontSizeMobile ? animatedTextFontSizeMobile + animatedTextFontSizeTablet : undefined,
-
-				margin: animatedTextMarginMobile.top +
-				' ' +
-				animatedTextMarginMobile.right +
-				' ' +
-				animatedTextMarginMobile.bottom +
-				' ' +
-				animatedTextMarginMobile.left,
+				'margin-top': animatedTextMarginMobile.top ? animatedTextMarginMobile.top : undefined,
+				'margin-right': animatedTextMarginMobile.right ? animatedTextMarginMobile.right : undefined,
+				'margin-bottom': animatedTextMarginMobile.bottom ? animatedTextMarginMobile.bottom : undefined,
+				'margin-left': animatedTextMarginMobile.left ? animatedTextMarginMobile.left : undefined,
 			},
 			'.pb-animated-text--prefix': {
 				'font-size' : suffpreFontSizeMobile ? suffpreFontSizeMobile + suffpreFontSizeType : undefined,
-				margin: suffpreMarginMobile.top +
-				' ' +
-				suffpreMarginMobile.right +
-				' ' +
-				suffpreMarginMobile.bottom +
-				' ' +
-				suffpreMarginMobile.left,
+				'margin-top': suffpreMarginMobile.top ? suffpreMarginMobile.top : undefined,
+				'margin-right': suffpreMarginMobile.right ? suffpreMarginMobile.right : undefined,
+				'margin-bottom': suffpreMarginMobile.bottom ? suffpreMarginMobile.bottom : undefined,
+				'margin-left': suffpreMarginMobile.left ? suffpreMarginMobile.left : undefined,
 			},
 			'.pb-animated-text--suffix': {
 				'font-size' : suffpreFontSizeMobile ? suffpreFontSizeMobile + suffpreFontSizeType : undefined,
-				margin: suffpreMarginMobile.top +
-				' ' +
-				suffpreMarginMobile.right +
-				' ' +
-				suffpreMarginMobile.bottom +
-				' ' +
-				suffpreMarginMobile.left,
+				'margin-top': suffpreMarginMobile.top ? suffpreMarginMobile.top : undefined,
+				'margin-right': suffpreMarginMobile.right ? suffpreMarginMobile.right : undefined,
+				'margin-bottom': suffpreMarginMobile.bottom ? suffpreMarginMobile.bottom : undefined,
+				'margin-left': suffpreMarginMobile.left ? suffpreMarginMobile.left : undefined,
 			}
 		},
 	};

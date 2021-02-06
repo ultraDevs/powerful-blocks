@@ -63,8 +63,8 @@ const attributes = {
 		type: 'object',
 		default: {
 			top: '0px',
-			left: '0px',
-			right: '0px',
+			left: '5px',
+			right: '5px',
 			bottom: '0px',
 		},
 	},
@@ -72,8 +72,8 @@ const attributes = {
 		type: 'object',
 		default: {
 			top: '0px',
-			left: '0px',
-			right: '0px',
+			left: '5px',
+			right: '5px',
 			bottom: '0px',
 		},
 	},
@@ -135,28 +135,28 @@ const attributes = {
 	suffpreMargin: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	suffpreMarginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	suffpreMarginMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	
