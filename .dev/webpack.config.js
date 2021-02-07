@@ -20,6 +20,7 @@ module.exports = {
 		'pb-editor-common': path.resolve( process.cwd(), 'src/scss/editor.scss' ),
 		'pb-styles': path.resolve( process.cwd(), 'src/scss/styles.scss' ),
 		'pb-admin-styles': path.resolve( process.cwd(), 'src/scss/admin.scss' ),
+		'pb-twentytwenty': path.resolve( process.cwd(), 'src/scss/twentytwenty.scss' ),
 		// 'pb-block-styles': styleScss,
 		// 'pb-block-editor': editorScss,
 	},

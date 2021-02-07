@@ -71,6 +71,7 @@ class Assets_Manager {
 	 */
 	public function frontend_assets() {
 		$this->common_assets();
+		// wp_enqueue_style( 'pb-twentytwentyone', POWERFUL_BLOCKS_ASSETS . 'css/pb-twentytwenty.css', '', POWERFUL_BLOCKS_VERSION );
 
 	}
 
