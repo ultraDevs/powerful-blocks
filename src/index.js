@@ -2,6 +2,8 @@ import { registerBlockType } from '@wordpress/blocks';
 
 import './js/editor';
 import './helper/icons';
+import './templates/index';
+
 
 import * as testimonial from './blocks/testimonial';
 import * as alertBox from './blocks/alert-box';
@@ -17,6 +19,7 @@ import * as blockWrapper from './blocks/block-wrapper';
 import * as animatedHeadlines from './blocks/animated-headlines';
 import * as tab from './blocks/tabs/tab';
 import * as tabs from './blocks/tabs';
+import * as templates from './blocks/templates';
 
 
 const category = 'powerful-blocks';
@@ -60,7 +63,8 @@ const registerPowerfulBlocks = () => {
 		blockWrapper,
 		animatedHeadlines,
 		tab,
-		tabs
+		tabs,
+		templates,
 	].forEach( registerBlock );
 };
 

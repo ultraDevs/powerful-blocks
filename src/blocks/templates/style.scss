@@ -1,0 +1,109 @@
+
+.pb-templates-wrapper {
+	transition: all 0.3s ease-in-out;
+	position: relative;
+	background: #f7f7f7;
+    border: 1px solid #ddd;
+	padding: 40px;
+	text-align: center;
+	h3 {
+		color: #333;
+		margin: 0;
+	}
+	.pb-templates-open {
+		display: flex;
+		justify-content: center;
+		button {
+			font-size: 16px;
+			padding: 20px !important;
+			color: #111 !important;
+			border: 1px solid #ddd !important;
+			border-radius: 2px !important;
+			background-color: #ddd !important;
+			box-shadow: none !important;
+		}
+	}
+	
+}
+/** Templates **/
+.pb-templates-modal {
+	background: #f7f7f7;
+	width: 90%;
+    top: 60px;
+	transform: translate( -50%, 0);
+	border-radius: 5px;
+	border: 1px;
+	height: 90%;
+	// overflow: hidden;
+	.components-modal__content {
+		padding: 0;
+	}
+	.components-modal__header {
+		margin: 0;
+		padding: 10px 20px;
+		&:first-of-type {
+			display: none;
+		}
+	}
+	.pb-templates-content {
+		display: flex;
+		height: 90%;
+		// overflow: hidden;
+		.pb-templates-con--category {
+			background-color: #e6e6e6;
+			height: auto;
+			padding: 10px 20px;
+			color: #fff;
+			min-width: 250px;
+			overflow-y: scroll;
+			max-height: 100vh;
+			ul {
+				li {
+					color: rgba(0,0,0,0.5);
+					padding: 5px 0;
+					font-size: 15px;
+					font-weight: 500;
+					cursor: pointer;
+					border-right: 3px solid transparent;
+					transition: all 0.3s ease-in-out;
+					&:hover {
+						color: #111;
+						border-right: 3px solid #f30d55;
+					}
+					&.c-active {
+						color: #111;
+						border-right: 3px solid #f30d55;
+					}
+				}
+			}
+		}
+		.pb-templates-con--list {
+			flex: 1;
+			padding: 10px 15px;
+			display: flex;
+			flex-wrap: wrap;
+			height: 100%;
+			overflow-y: scroll;
+			.pb-templates-list-item {
+				width: 32.3%;
+				background: #f9f9f9;
+				margin: 0 5px 20px 5px;
+				box-shadow: 0 5px 30px -10px rgba(18, 63, 82, 0.30);
+				border-radius: 5px;
+				border: 1px solid #f9f9f9;
+				.pb-templates-list-item--preview {
+					img {
+						width: 100%;
+						border-radius: 5px 5px 0 0;
+					}
+				}
+				.pb-templates-list-item--info {
+					padding: 10px;
+					h3 {
+						margin: 0px;
+					}
+				}
+			}
+		}
+	}
+}

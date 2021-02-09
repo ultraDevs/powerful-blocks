@@ -359,3 +359,17 @@
 		}
     }
 }
+
+/** Toolbar **/
+.pb-template-toolbar {
+	button {
+		background: linear-gradient(to right, #f30d55 0%, #5820e5 100%);
+		padding: 10px 20px;
+		color: #fff;
+		border: 0px solid transparent;
+		cursor: pointer;
+		font-size: 15px;
+		border-radius: 2px;
+		outline: 0;
+	}
+}
