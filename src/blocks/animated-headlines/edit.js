@@ -33,11 +33,7 @@ const edit = ( props ) => {
 
 	const Tag = textTag;
 
-	// setInterval( function(){
-	// 	pbAnimatedHeadlines();
-	// }, 500 );
 	pbAnimatedHeadlines();
-
 
 	return (
 		<>
