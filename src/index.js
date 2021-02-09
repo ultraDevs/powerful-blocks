@@ -2,7 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 
 import './js/editor';
 import './helper/icons';
-import './templates/index';
+// import './templates/index';
 
 
 import * as testimonial from './blocks/testimonial';
@@ -19,7 +19,7 @@ import * as blockWrapper from './blocks/block-wrapper';
 import * as animatedHeadlines from './blocks/animated-headlines';
 import * as tab from './blocks/tabs/tab';
 import * as tabs from './blocks/tabs';
-import * as templates from './blocks/templates';
+// import * as templates from './blocks/templates';
 
 
 const category = 'powerful-blocks';
@@ -64,7 +64,7 @@ const registerPowerfulBlocks = () => {
 		animatedHeadlines,
 		tab,
 		tabs,
-		templates,
+		// templates,
 	].forEach( registerBlock );
 };
 
