@@ -7,6 +7,32 @@ import '../blocks/tabs/frontend';
 
 jQuery( function($){
 
+    // Animation
+    const AnimationWayPoints = ( el, animation, animationOut ) => {
+        el.waypoint( function( direction ) {
+            if ( direction === 'down' && !el.hasClass( 'pb__animated' ) && animation ) {
+                el.removeClass( 'pb-animation pb__animated_out pb__' + animationOut ).addClass( 'pb__animated' ).addClass( 'pb__' + animation )
+            } else if ( direction === 'up' && !el.hasClass( 'pb__animated_out' ) && animationOut ) {
+                el.removeClass('pb__animated pb__' + animation ).addClass( 'pb-animation pb__animated_out' ).addClass( 'pb__' + animationOut );
+            }
+        }, { offset: '80%' } );
+    }
+
+    const Animations = () => {
+        $('.pb-animation').each( function() {
+            let $this = $( this ),
+                settings = $this.data('pb-animation');
+            AnimationWayPoints( $this, settings.in, settings.out );
+        })
+    };
+
+    if( $('.pb-animation').length ) {
+        $( window ).load( Animations ),
+        $( document.body ).on( 'post-load', function() {
+            Animations();
+        });
+    }
+
     var linkData = $('[data-pb-link]');
     var lData = $( linkData[0]).data('pb-link');
     

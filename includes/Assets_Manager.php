@@ -54,6 +54,8 @@ class Assets_Manager {
 	 */
 	public function common_assets() {
 		wp_enqueue_style( 'pb-animatecss', POWERFUL_BLOCKS_ASSETS . 'vendor/animatecss/animate.min.css', '', POWERFUL_BLOCKS_VERSION );
+		wp_enqueue_script( 'pb-waypoints', POWERFUL_BLOCKS_ASSETS . 'vendor/js/jquery.waypoints.min.js', array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
+
 		/**
 		 * Font Awesome
 		 */

@@ -11,6 +11,7 @@ const {
     ButtonGroup,
     TabPanel,
     Dashicon,
+    TreeSelect,
 } = wp.components;
 const { __ } = wp.i18n;
 const { MediaUpload } = wp.blockEditor;
@@ -141,10 +142,214 @@ const Advanced = ( props ) => {
     let currentHbgTab = hoverBackgroundType || 'color';
     const [ hbgTab, sethbgTab ] = useState( currentHbgTab );
 
-    const ANIMATIONS = [
-        { value: '', label: __( 'None', 'powerful-blocks' ) },
-        { value: 'bounce', label: __( 'Bounce', 'powerful-blocks' ) },
-        { value: 'fadeIn', label: __( 'fadeIn', 'powerful-blocks' ) },
+    const ANIMATIONS_IN = [
+        {
+            name: 'Back',
+            id: 'back',
+            children: [
+                { name: 'Back In Down', id: 'backInDown' },
+                { name: 'Back In Left', id: 'backInLeft' },
+                { name: 'Back In Right', id: 'backInRight' },
+                { name: 'Back In Up', id: 'backInUp' },
+            ],
+        },
+        {
+            name: 'Bouncing',
+            id: 'bouncing',
+            children: [
+                { name: 'Bounce In', id: 'bounceIn' },
+                { name: 'Bounce In Down', id: 'bounceInDown' },
+                { name: 'Bounce In Left', id: 'bounceInDown' },
+                { name: 'Bounce In Right', id: 'bounceInRight' },
+                { name: 'Bounce In Up', id: 'bounceInUp' },
+            ],
+        },
+        {
+            name: 'Fading',
+            id: 'fading',
+            children: [
+                { name: 'Fade In', id: 'fadeIn' },
+                { name: 'Fade In Down', id: 'fadeInDown' },
+                { name: 'Fade In Down Big', id: 'fadeInDownBig' },
+                { name: 'Fade In Left', id: 'fadeInDownBig' },
+                { name: 'Fade In Left Big', id: 'fadeInLeftBig' },
+                { name: 'Fade In Right', id: 'fadeInRight' },
+                { name: 'Fade In Right Big', id: 'fadeInRightBig' },
+                { name: 'Fade In Up', id: 'fadeInUp' },
+                { name: 'Fade In Up Big', id: 'fadeInUpBig' },
+    
+                { name: 'Fade In Top Left', id: 'fadeInTopLeft' },
+                { name: 'Fade In Top Right', id: 'fadeInTopRight' },
+    
+                { name: 'Fade In Bottom Left', id: 'fadeInBottomLeft' },
+                { name: 'Fade In Bottom Right', id: 'fadeInBottomRight' },
+            ],
+        },
+        {
+            name: 'Flippers',
+            id: 'flippers',
+            children: [
+                { name: 'Flip', id: 'flip' },
+                { name: 'Flip In X', id: 'flipInX' },
+                { name: 'Flip In Y', id: 'flipInY' },
+            ],
+        },
+        {
+            name: 'Lightspeed',
+            id: 'lightspeed',
+            children: [
+                { name: 'Light Speed In Right', id: 'lightSpeedInRight' },
+                { name: 'Light Speed In Left', id: 'lightSpeedInLeft' },
+            ],
+        },
+        {
+            name: 'Rotating',
+            id: 'rotating',
+            children: [
+                { name: 'Rotate In', id: 'rotateIn' },
+                { name: 'Rotate In Down Left', id: 'rotateInDownLeft' },
+                { name: 'Rotate In Down Right', id: 'rotateInDownRight' },
+                { name: 'Rotate In Up Left', id: 'rotateInUpLeft' },
+                { name: 'Rotate In Up Right', id: 'rotateInUpRight' },
+            ],
+        },
+    
+        {
+            name: 'Specials',
+            id: 'specials',
+            children: [
+                { name: 'Hinge', id: 'hinge' },
+                { name: 'Jack In The Box', id: 'jackInTheBox' },
+                { name: 'Roll In', id: 'rollIn' },
+            ],
+        },
+    
+        {
+            name: 'Zooming',
+            id: 'zooming',
+            children: [
+                { name: 'Zoom In', id: 'zoomIn' },
+                { name: 'Zoom In Down', id: 'zoomInDown' },
+                { name: 'Zoom In Left', id: 'zoomInLeft' },
+                { name: 'Zoom In Right', id: 'zoomInRight' },
+                { name: 'Zoom In Up', id: 'zoomInUp' },
+            ],
+        },
+        {
+            name: 'Sliding',
+            id: 'sliding',
+            children: [
+                { name: 'Slide In Down', id: 'slideInDown' },
+                { name: 'Slide In Left', id: 'slideInLeft' },
+                { name: 'Slide In Right', id: 'slideInRight' },
+                { name: 'Slide In Up', id: 'slideInUp' },
+            ],
+        },
+    ];
+
+    const ANIMATIONS_OUT = [
+        {
+            name: 'Back',
+            id: 'back',
+            children: [
+                { name: 'Back Out Down', id: 'backOutDown' },
+                { name: 'Back Out Left', id: 'backOutLeft' },
+                { name: 'Back Out Right', id: 'backOutRight' },
+                { name: 'Back Out Up', id: 'backOutUp' },
+            ],
+        },
+        {
+            name: 'Bouncing',
+            id: 'bouncing',
+            children: [
+                { name: 'Bounce Out', id: 'bounceOut' },
+                { name: 'Bounce Out Down', id: 'bounceOutDown' },
+                { name: 'Bounce Out Left', id: 'bounceOutDown' },
+                { name: 'Bounce Out Right', id: 'bounceOutRight' },
+                { name: 'Bounce Out Up', id: 'bounceOutUp' },
+            ],
+        },
+        {
+            name: 'Fading',
+            id: 'fading',
+            children: [
+                { name: 'Fade Out', id: 'fadeOut' },
+                { name: 'Fade Out Down', id: 'fadeOutDown' },
+                { name: 'Fade Out Down Big', id: 'fadeOutDownBig' },
+                { name: 'Fade Out Left', id: 'fadeOutDownBig' },
+                { name: 'Fade Out Left Big', id: 'fadeOutLeftBig' },
+                { name: 'Fade Out Right', id: 'fadeOutRight' },
+                { name: 'Fade Out Right Big', id: 'fadeOutRightBig' },
+                { name: 'Fade Out Up', id: 'fadeOutUp' },
+                { name: 'Fade Out Up Big', id: 'fadeOutUpBig' },
+    
+                { name: 'Fade Out Top Left', id: 'fadeOutTopLeft' },
+                { name: 'Fade Out Top Right', id: 'fadeOutTopRight' },
+    
+                { name: 'Fade Out Bottom Left', id: 'fadeOutBottomLeft' },
+                { name: 'Fade Out Bottom Right', id: 'fadeOutBottomRight' },
+            ],
+        },
+        {
+            name: 'Flippers',
+            id: 'flippers',
+            children: [
+                { name: 'Flip', id: 'flip' },
+                { name: 'Flip Out X', id: 'flipOutX' },
+                { name: 'Flip Out Y', id: 'flipOutY' },
+            ],
+        },
+        {
+            name: 'Lightspeed',
+            id: 'lightspeed',
+            children: [
+                { name: 'Light Speed Out Right', id: 'lightSpeedOutRight' },
+                { name: 'Light Speed Out Left', id: 'lightSpeedOutLeft' },
+            ],
+        },
+        {
+            name: 'Rotating',
+            id: 'rotating',
+            children: [
+                { name: 'Rotate Out', id: 'rotateOut' },
+                { name: 'Rotate Out Down Left', id: 'rotateOutDownLeft' },
+                { name: 'Rotate Out Down Right', id: 'rotateOutDownRight' },
+                { name: 'Rotate Out Up Left', id: 'rotateOutUpLeft' },
+                { name: 'Rotate Out Up Right', id: 'rotateOutUpRight' },
+            ],
+        },
+    
+        {
+            name: 'Specials',
+            id: 'specials',
+            children: [
+                { name: 'Hinge', id: 'hinge' },
+                { name: 'Jack Out The Box', id: 'jackOutTheBox' },
+                { name: 'Roll Out', id: 'rollOut' },
+            ],
+        },
+    
+        {
+            name: 'Zooming',
+            id: 'zooming',
+            children: [
+                { name: 'Zoom Out', id: 'zoomOut' },
+                { name: 'Zoom Out Down', id: 'zoomOutDown' },
+                { name: 'Zoom Out Left', id: 'zoomOutLeft' },
+                { name: 'Zoom Out Right', id: 'zoomOutRight' },
+                { name: 'Zoom Out Up', id: 'zoomOutUp' },
+            ],
+        },
+        {
+            name: 'Sliding',
+            id: 'sliding',
+            children: [
+                { name: 'Slide Out Down', id: 'slideOutDown' },
+                { name: 'Slide Out Left', id: 'slideOutLeft' },
+                { name: 'Slide Out Right', id: 'slideOutRight' },
+                { name: 'Slide Out Up', id: 'slideOutUp' },
+            ],
+        },
     ];
 
     return (
@@ -758,15 +963,16 @@ const Advanced = ( props ) => {
 							if ( "in" === tab.name ) {
 								tabout = (
 									<>
-                                        <SelectControl
-                                            className = "pb-custom-select-control"
+                                        <TreeSelect
                                             label={ __( 'Animation', 'powerful-blocks' ) }
-                                            value={ inAnimation }
+                                            noOptionLabel={ __( 'No Animation', 'powerful-blocks' ) }
                                             onChange={ ( inAnimation ) => {
                                                 setAttributes( { inAnimation } ) }
                                             }
-                                            options={ ANIMATIONS }
+                                            selectedId={ inAnimation }
+                                            tree={ ANIMATIONS_IN }
                                         />
+
                                         <SelectControl
                                             className = "pb-custom-select-control"
                                             label={ __( 'Duration', 'powerful-blocks' ) }
@@ -862,14 +1068,14 @@ const Advanced = ( props ) => {
                                                 <UpgradePlanNotice />
                                             ) : (
                                                 <>
-                                                <SelectControl
-                                                    className = "pb-custom-select-control"
+                                                <TreeSelect
                                                     label={ __( 'Animation', 'powerful-blocks' ) }
-                                                    value={ outAnimation }
+                                                    noOptionLabel={ __( 'No Animation', 'powerful-blocks' ) }
                                                     onChange={ ( outAnimation ) => {
                                                         setAttributes( { outAnimation } ) }
                                                     }
-                                                    options={ ANIMATIONS }
+                                                    selectedId={ outAnimation }
+                                                    tree={ ANIMATIONS_OUT }
                                                 />
                                                 <SelectControl
                                                     className = "pb-custom-select-control"
