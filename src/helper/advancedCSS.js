@@ -182,32 +182,32 @@ const AdvancedCSS = ( attributes ) => {
 
 	if ( 'image' === backgroundType ) {
 		rules.desktop[ '> .pb-ab-bg--image' ] = {
-			'background': backgroundImg ? `url( ${ backgroundImg } )` : '',
-			'background-position': backgroundImgPosition ? backgroundImgPosition : '',
-			'background-repeat': backgroundImgRepeat ? backgroundImgRepeat : '',
-			'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : '',
-			'background-size': backgroundImgSize ? backgroundImgSize : '',
+			'background': backgroundImg ? `url( ${ backgroundImg } )` : undefined,
+			'background-position': backgroundImgPosition ? backgroundImgPosition : undefined,
+			'background-repeat': backgroundImgRepeat ? backgroundImgRepeat : undefined,
+			'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : undefined,
+			'background-size': backgroundImgSize ? backgroundImgSize : undefined,
 
 		};
 		
 		rules.desktop[ '> .pb-ab-bg--image:before' ] = {
-			background: backgroundImgOverlayColor ? backgroundImgOverlayColor : '',
-			opacity: backgroundOpacity ? ( backgroundOpacity / 100 ) : '',
+			background: backgroundImgOverlayColor ? backgroundImgOverlayColor : undefined,
+			opacity: backgroundOpacity ? ( backgroundOpacity / 100 ) : undefined,
 			'border-radius': borderRadius ? ( borderRadius.top ? borderRadius.top : '0px' ) + ' ' + ( borderRadius.right ? borderRadius.right : '0px') + ' ' + ( borderRadius.bottom ? borderRadius.bottom : '0px' ) + ' ' + ( borderRadius.left ? borderRadius.left : '0px' ) : undefined,
 		};
 		rules.desktop[ '> .pb-ab-bg--image:hover:before' ] = {
-			background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : '',
-			opacity: hoverBackgroundOpacity ? ( hoverBackgroundOpacity / 100 ) : '',
+			background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : undefined,
+			opacity: hoverBackgroundOpacity ? ( hoverBackgroundOpacity / 100 ) : undefined,
 			'border-radius': borderRadius ? ( borderRadius.top ? borderRadius.top : '0px' ) + ' ' + ( borderRadius.right ? borderRadius.right : '0px') + ' ' + ( borderRadius.bottom ? borderRadius.bottom : '0px' ) + ' ' + ( borderRadius.left ? borderRadius.left : '0px' ) : undefined,
 		};
 	}
 	if ( 'image' === hoverBackgroundType ) {
 		rules.desktop[ '> .pb-ab-bg--image:hover' ] = {
-			'background': hoverBackgroundImg ? `url( ${ hoverBackgroundImg } )` : '',
-			'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : '',
-			'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : '',
-			'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : '',
-			'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : '',
+			'background': hoverBackgroundImg ? `url( ${ hoverBackgroundImg } )` : undefined,
+			'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : undefined,
+			'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : undefined,
+			'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : undefined,
+			'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : undefined,
 
 		};
 	}
@@ -221,17 +221,17 @@ const AdvancedCSS = ( attributes ) => {
 
 	if ( 'custom' === blockWidth ) {
 		rules.desktop[ '> .pb-b-e--width' ] = {
-			width: blockCustomWidth + blockCustomWidthType,
+			width: blockCustomWidth ? blockCustomWidth + blockCustomWidthType : undefined,
 		};
 	}
 	if ( 'custom' === blockWidth ) {
 		rules.tablet[ '> .pb-b-e--width' ] = {
-			width: blockCustomWidthTablet + blockCustomWidthType,
+			width: blockCustomWidthTablet ? blockCustomWidthTablet + blockCustomWidthType : undefined,
 		};
 	}
 	if ( 'custom' === blockWidth ) {
 		rules.mobile[ '> .pb-b-e--width' ] = {
-			width: blockCustomWidthMobile + blockCustomWidthType,
+			width: blockCustomWidthMobile ? blockCustomWidthMobile + blockCustomWidthType : undefined,
 		};
     }
     
