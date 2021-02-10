@@ -18,3 +18,13 @@
 [data-pb-link] {
 	cursor: pointer;
 }
+.pb-animation {
+	visibility: hidden;
+}
+.pb-animation-out {
+	visibility: visible;
+}
+
+.pb__animated {
+	visibility: visible;
+}

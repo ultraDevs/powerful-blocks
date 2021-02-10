@@ -54,18 +54,17 @@ const AdvancedCSS = ( attributes ) => {
         borderRadius,
         borderRadiusTablet,
         borderRadiusMobile,
-        inAnimation,
+		
+		inAnimation,
         outAnimation,
         inAnimationDuration,
-        inAnimationDelay,
         outAnimationDuration,
-        outAnimationDelay,
-        inAnimationDirection,
         inAnimationDurationCustom,
-        inAnimationEasing,
-        outAnimationDirection,
         outAnimationDurationCustom,
-        outAnimationEasing,
+
+        animationDelay,
+        animationEasing,
+        animationEasingCustom,
 
 		blockHeightType,
         blockHeight,
@@ -133,7 +132,16 @@ const AdvancedCSS = ( attributes ) => {
 				hoverShadowSpread +
 				'px ' + hoverShadowColor : undefined,
 			},
-			
+			'> .pb-animation' : {
+				'animation-delay' : animationDelay ? animationDelay + 's' : undefined,
+				'animation-timing-function' : animationEasing ? 'custom' === animationEasing ? animationEasingCustom : animationEasing : undefined,
+			},
+			'> .pb-animation .pb__animated' : {
+				'animation-duration' : 'custom' === inAnimationDuration ? inAnimationDurationCustom + 's' : undefined,
+			},
+			'> .pb-animation .pb__animated_out' : {
+				'animation-duration' : 'custom' === outAnimationDuration ? outAnimationDurationCustom + 's' : undefined,
+			}
 		},
 		tablet: {
 			'> .pb-block-advanced--wrapper': {

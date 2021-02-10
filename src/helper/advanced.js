@@ -96,15 +96,13 @@ const Advanced = ( props ) => {
         inAnimation,
         outAnimation,
         inAnimationDuration,
-        inAnimationDelay,
         outAnimationDuration,
-        outAnimationDelay,
         inAnimationDurationCustom,
-        inAnimationEasing,
-        inAnimationEasingCustom,
-        outAnimationEasingCustom,
         outAnimationDurationCustom,
-        outAnimationEasing,
+
+        animationDelay,
+        animationEasing,
+        animationEasingCustom,
 
         blockHeightType,
         blockHeight,
@@ -159,7 +157,7 @@ const Advanced = ( props ) => {
             children: [
                 { name: 'Bounce In', id: 'bounceIn' },
                 { name: 'Bounce In Down', id: 'bounceInDown' },
-                { name: 'Bounce In Left', id: 'bounceInDown' },
+                { name: 'Bounce In Left', id: 'bounceInLeft' },
                 { name: 'Bounce In Right', id: 'bounceInRight' },
                 { name: 'Bounce In Up', id: 'bounceInUp' },
             ],
@@ -264,7 +262,7 @@ const Advanced = ( props ) => {
             children: [
                 { name: 'Bounce Out', id: 'bounceOut' },
                 { name: 'Bounce Out Down', id: 'bounceOutDown' },
-                { name: 'Bounce Out Left', id: 'bounceOutDown' },
+                { name: 'Bounce Out Left', id: 'bounceOutLeft' },
                 { name: 'Bounce Out Right', id: 'bounceOutRight' },
                 { name: 'Bounce Out Up', id: 'bounceOutUp' },
             ],
@@ -1010,54 +1008,7 @@ const Advanced = ( props ) => {
                                                 )
                                             ) : ''
                                         }
-                                        <RangeControl
-                                            label={ __(
-                                                'Animation Delay (s)',
-                                                'powerful-blocks'
-                                            ) }
-                                            value={ inAnimationDelay }
-                                            onChange={ ( inAnimationDelay ) =>
-                                                setAttributes( { inAnimationDelay } )
-                                            }
-                                            min={ 0 }
-                                            step={ .1 }
-                                            max={ 6 }
-                                        />
-                                        <SelectControl
-                                            className = "pb-custom-select-control"
-                                            label={ __( 'Easing', 'powerful-blocks' ) }
-                                            value={ inAnimationEasing }
-                                            onChange={ ( inAnimationEasing ) => {
-                                                setAttributes( { inAnimationEasing } ) }
-                                            }
-                                            options={ [
-                                                { value: '', label: __( 'Default', 'powerful-blocks' ) },
-                                                { value: 'linear', label: __( 'Linear', 'powerful-blocks' ) },
-                                                { value: 'ease', label: __( 'Ease', 'powerful-blocks' ) },
-                                                { value: 'ease-in', label: __( 'Ease In', 'powerful-blocks' ) },
-                                                { value: 'ease-out', label: __( 'Ease Out', 'powerful-blocks' ) },
-                                                { value: 'ease-in-out', label: __( 'Ease In Out', 'powerful-blocks' ) },
-                                                { value: 'custom', label: __( 'Custom', 'powerful-blocks' ) },
-                                            ] }
-                                        />
-                                        { 
-                                            'custom' === inAnimationEasing ? (
-                                                'free' === pType ? (
-                                                    <UpgradePlanNotice />
-                                                ) : (
-                                                    <TextControl
-                                                        label={ __(
-                                                            'Custom Easing',
-                                                            'powerful-blocks'
-                                                        ) }
-                                                        value={ inAnimationEasingCustom }
-                                                        onChange={ ( inAnimationEasingCustom ) => {
-                                                            setAttributes( { inAnimationEasingCustom } );
-                                                        } }
-                                                    />
-                                                )
-                                            ) : ''
-                                        }
+                                        
                                     </>
 								)
 							} else if ( "out" === tab.name ) {
@@ -1110,50 +1061,7 @@ const Advanced = ( props ) => {
                                                         />
                                                     ) : ''
                                                 }
-                                                <RangeControl
-                                                    label={ __(
-                                                        'Animation Delay (s)',
-                                                        'powerful-blocks'
-                                                    ) }
-                                                    value={ outAnimationDelay }
-                                                    onChange={ ( outAnimationDelay ) =>
-                                                        setAttributes( { outAnimationDelay } )
-                                                    }
-                                                    min={ 0 }
-                                                    step={ .1 }
-                                                    max={ 6 }
-                                                />
-                                                <SelectControl
-                                                    className = "pb-custom-select-control"
-                                                    label={ __( 'Easing', 'powerful-blocks' ) }
-                                                    value={ outAnimationEasing }
-                                                    onChange={ ( outAnimationEasing ) => {
-                                                        setAttributes( { outAnimationEasing } ) }
-                                                    }
-                                                    options={ [
-                                                        { value: '', label: __( 'Default', 'powerful-blocks' ) },
-                                                        { value: 'linear', label: __( 'Linear', 'powerful-blocks' ) },
-                                                        { value: 'ease', label: __( 'Ease', 'powerful-blocks' ) },
-                                                        { value: 'ease-in', label: __( 'Ease In', 'powerful-blocks' ) },
-                                                        { value: 'ease-out', label: __( 'Ease Out', 'powerful-blocks' ) },
-                                                        { value: 'ease-in-out', label: __( 'Ease In Out', 'powerful-blocks' ) },
-                                                        { value: 'custom', label: __( 'Custom', 'powerful-blocks' ) },
-                                                    ] }
-                                                />
-                                                { 
-                                                    'custom' === outAnimationEasing ? (
-                                                        <TextControl
-                                                            label={ __(
-                                                                'Custom Easing',
-                                                                'powerful-blocks'
-                                                            ) }
-                                                            value={ outAnimationEasingCustom }
-                                                            onChange={ ( outAnimationEasingCustom ) => {
-                                                                setAttributes( { outAnimationEasingCustom } );
-                                                            } }
-                                                        />
-                                                    ) : ''
-                                                }
+                                                
                                                 </>
                                             )
                                         }
@@ -1170,6 +1078,55 @@ const Advanced = ( props ) => {
 						}
 					}
 				</TabPanel>
+                <hr className="pb-hr" />
+                <RangeControl
+                    label={ __(
+                        'Animation Delay (s)',
+                        'powerful-blocks'
+                    ) }
+                    value={ animationDelay }
+                    onChange={ ( animationDelay ) =>
+                        setAttributes( { animationDelay } )
+                    }
+                    min={ 0 }
+                    step={ .1 }
+                    max={ 6 }
+                />
+                <SelectControl
+                    className = "pb-custom-select-control"
+                    label={ __( 'Easing', 'powerful-blocks' ) }
+                    value={ animationEasing }
+                    onChange={ ( animationEasing ) => {
+                        setAttributes( { animationEasing } ) }
+                    }
+                    options={ [
+                        { value: '', label: __( 'Default', 'powerful-blocks' ) },
+                        { value: 'linear', label: __( 'Linear', 'powerful-blocks' ) },
+                        { value: 'ease', label: __( 'Ease', 'powerful-blocks' ) },
+                        { value: 'ease-in', label: __( 'Ease In', 'powerful-blocks' ) },
+                        { value: 'ease-out', label: __( 'Ease Out', 'powerful-blocks' ) },
+                        { value: 'ease-in-out', label: __( 'Ease In Out', 'powerful-blocks' ) },
+                        { value: 'custom', label: __( 'Custom', 'powerful-blocks' ) },
+                    ] }
+                />
+                { 
+                    'custom' === animationEasing ? (
+                        'free' === pType ? (
+                            <UpgradePlanNotice />
+                        ) : (
+                            <TextControl
+                                label={ __(
+                                    'Custom Easing',
+                                    'powerful-blocks'
+                                ) }
+                                value={ animationEasingCustom }
+                                onChange={ ( animationEasingCustom ) => {
+                                    setAttributes( { animationEasingCustom } );
+                                } }
+                            />
+                        )
+                    ) : ''
+                }
             </PanelBody>
             <PanelBody title={ __( 'Positioning', 'powerful-blocks' ) } initialOpen={ false }>
                 <SelectControl

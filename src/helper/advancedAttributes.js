@@ -252,22 +252,11 @@ const advancedAttributes = {
 		type: 'string',
 		default: '',
 	},
-	inAnimationDelay: {
-		type: 'string',
-		default: '',
-	},
 	inAnimationDurationCustom: {
 		type: 'string',
 		default: '',
 	},
-	inAnimationEasing: {
-		type: 'string',
-		default: '',
-	},
-	inAnimationEasingCustom: {
-		type: 'string',
-		default: '',
-	},
+	
 
 	outAnimation: {
 		type: 'string',
@@ -277,19 +266,19 @@ const advancedAttributes = {
 		type: 'string',
 		default: '',
 	},
-	outAnimationDelay: {
-		type: 'string',
-		default: '',
-	},
 	outAnimationDurationCustom: {
 		type: 'string',
 		default: '',
 	},
-	outAnimationEasing: {
+	animationDelay: {
 		type: 'string',
 		default: '',
 	},
-	outAnimationEasingCustom: {
+	animationEasing: {
+		type: 'string',
+		default: '',
+	},
+	animationEasingCustom: {
 		type: 'string',
 		default: '',
 	},

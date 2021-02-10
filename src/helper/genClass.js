@@ -17,7 +17,11 @@ const genClass = ( attributes, type = 'edit' ) => {
 		inAnimation,
         outAnimation,
         inAnimationDuration,
-		outAnimationDuration,
+        outAnimationDuration,
+        
+        animationDelay,
+        animationEasing,
+        animationEasingCustom,
 		
 		CSSTransform,
 		
