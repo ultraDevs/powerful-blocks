@@ -5,46 +5,55 @@ jQuery(function($) {
     
     $(powerfulBlocksGradient).prependTo('body');
 
+    $('#pb-save-blocks').hide();
     $('.pb-tabs__content .pb-tabs__item').hide();
     $('.pb-tabs__content .pb-tabs__item:first').show();
     $('.pb-tabs__nav li:first').addClass('tabs__is-active');
-    $('.pb-tabs__nav a').click(function(e) {
-        window.location.hash = e.currentTarget.hash;
-        var $hash = e.currentTarget;
-        e.preventDefault();
 
+
+    function activateTab( tab ) {
+        
         $('.pb-tabs__nav li').removeClass('tabs__is-active');
-        $(this).parent().addClass('tabs__is-active');
+        $('.pb-tabs__nav li').find("a[href=\"" + tab +"\"").parent().addClass('tabs__is-active');
+
         $('.pb-tabs__content .pb-tabs__item').hide();
-        $($(this).attr('href')).show();
+        $('.pb-tabs__content').find(tab).show();
 
-        $('#toplevel_page_powerful-blocks .wp-submenu').find('a').filter(function(i, a) {
-            return $hash === a.hash;
-        }).parent().addClass('current').siblings().removeClass('current');
-    });
-
-    //
-
-    $('#toplevel_page_powerful-blocks > .wp-submenu a').on('click', function(e) {
-        if (!e.currentTarget.hash) {
-            return true;
+        if ( '#blocks' === $(_this).attr('href') ) {
+            $('#pb-save-blocks').show();
+        } else {
+            $('#pb-save-blocks').hide();
         }
-        e.preventDefault();
-        window.location.hash = e.currentTarget.hash;
-        var $hash = e.currentTarget;
 
-        $('.pb-tabs__nav li').find('a[href="' + window.location.hash + '"]').click();
         $('#toplevel_page_powerful-blocks .wp-submenu').find('a').filter(function(i, a) {
-            return window.location.hash === a.hash;
-        }).parent().addClass('current').siblings().removeClass('current');
-    });
-
-    if (window.location.hash) {
-        var $hash = window.location.hash;
-        $('.pb-tabs__nav li').find('a[href="' + window.location.hash + '"]').click();
-        $('#toplevel_page_powerful-blocks .wp-submenu').find('a').filter(function(i, a) {
-            return window.location.hash === a.hash;
+            return tab === a.hash;
         }).parent().addClass('current').siblings().removeClass('current');
     }
+
+    let _this = $( '.pb-tabs__nav' ),
+    tabs = _this.find('a');
+
+    tabs.on( 'click', function(e){
+        e.preventDefault();
+        let _this = $( this ),
+        tab = $( this ).attr('href');
+
+        activateTab( tab );
+    });
+
+    $('#toplevel_page_powerful-blocks > .wp-submenu a').on('click', function(e) {
+        e.preventDefault();
+        let _this = $( this ),
+        url = $( this ).attr('href'),
+        tab = url.substring(url.indexOf('#'));
+
+        activateTab( tab );
+    });
+
+    $(window).on('hashchange', function(e) {
+        e.preventDefault();
+        let pHash = window.location.hash;
+        activateTab( pHash );
+    });
 
 });

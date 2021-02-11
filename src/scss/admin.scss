@@ -1,3 +1,5 @@
+@import 'media';
+
 .pb-dashboard-form {
     padding-top: 10px;
     position: relative;
@@ -176,4 +178,86 @@
     left: calc(100% - 1.5em);
 }
 
-/*# sourceMappingURL=dashboard.css.map */
+/** **/
+.ud-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    .ud-col {
+        margin-right: 20px;
+        margin-bottom: 20px;
+        flex-basis: 31%;
+        // @media #{$small_mobile} {
+		// 	width: 100%;
+		// }
+        // @media #{$large_mobile} {
+		// 	width: 100%;
+		// }
+    }
+}
+/** Box **/
+.ud-box {
+    border: 1px solid #f7f7f7;
+    background: #f7f7f7;
+    box-shadow: 0 0px 11px 5px rgba( 0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    .ud-box-header {
+        h2 {
+            margin: 0 0 15px 0;
+        }
+    }
+    .ud-box-content {
+        p {
+            color: #555;
+            font-size: 15px;
+            line-height: 28px;
+        }
+        .ud-btn-lm {
+            background: #f30d55;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            border-radius: 5px;
+            margin-top: 0px;
+            display: inline-block;
+            &:first-child {
+                margin-right: 10px;
+            }
+            &:last-child {
+                background: #5820e5;
+            }
+        }
+        .ud-btns {
+            margin-top: 10px;
+        }
+    }
+}
+.ud-socials {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            svg {
+                fill: #f30d55;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+.ud-footer-c {
+    p {
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+
+    }
+}
+.appsero-license-section {
+    max-width: 100% !important;
+}
