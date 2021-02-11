@@ -6,9 +6,9 @@
  */
 
 /**
- * Plugin Name:       Powerful Blocks for Gutenberg
- * Plugin URI:        https://ultradevs.com/plugins/powerful-blocks
- * Description:       Powerful Blocks for WordPress Gutenberg.
+ * Plugin Name:       Powerful Blocks
+ * Plugin URI:        https://powerfulblocks.com
+ * Description:       Powerful Blocks is a Gutenberg Block Plugin With Awesome Blocks and Advanced Controls.
  * Version:           1.0.0
  * Author:            ultraDevs
  * Author URI:        https://ultradevs.com
