@@ -1,16 +1,17 @@
-const { RichText, InnerBlocks, MediaUpload } = wp.blockEditor;
 const { __ } = wp.i18n;
 const { 
-	TabPanel,
-    Tooltip,
-    Spinner,
-    SelectControl,
-	ExternalLink,
 	Modal,
 	Button,
 } = wp.components;
+const {
+    compose,
+} = wp.compose;
+
 import classnames from 'classnames';
-import { useState } from '@wordpress/element';
+
+const {
+    withDispatch,
+} = wp.data;
 
 const {
     parse,
@@ -32,6 +33,10 @@ const edit = ( props ) => {
 	const { attributes, setAttributes } = props;
 
 	const {
+		removeBlock
+	} = props;
+
+	const {
 		blockId,
 		showModal,
 	} = attributes;
@@ -44,7 +49,10 @@ const edit = ( props ) => {
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
     const openModal = () => setAttributes( { showModal: true } );
-	const closeModal = () => setAttributes( { showModal: false } );
+	const closeModal = () => {
+		setAttributes( { showModal: false } );
+		removeBlock( props.clientId );
+	};
 
 	let content = '<!-- wp:powerful-blocks/block-wrapper {"blockId":"37c04da05a9a43b2bbc21c9d545993f6","backgroundType":"gradient","gradientValue":"linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(24,169,231) 19%,rgb(155,81,224) 100%)","padding":{"top":"5em","left":"0em","right":"0em","bottom":"5em"},"blockWidth":"custom","blockCustomWidthType":"%","align":"full"} --><div class="wp-block-powerful-blocks-block-wrapper alignfull"><div id="pb-block-wrapper-37c04da05a9a43b2bbc21c9d545993f6"><div class="pb-block-wrapper pb-block-advanced--wrapper pb-b-e--width"><!-- wp:media-text {"mediaPosition":"right","mediaId":15,"mediaLink":"http://powerfulblocks.dev/home-page/portfolio_n/","mediaType":"image"} --><div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="http://powerfulblocks.dev/wp-content/uploads/2021/02/Portfolio_n.png" alt="" class="wp-image-15 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"textColor":"white"} --><h2 class="has-white-color has-text-color">Powerful Blocks For Gutenberg</h2><!-- /wp:heading --><!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"borderRadius":50,"style":{"color":{"gradient":"linear-gradient(279deg,rgb(29,149,219) 0%,rgb(198,21,192) 0%,rgb(155,81,224) 100%)"}},"textColor":"white","className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-background" href="" style="border-radius:50px;background:linear-gradient(279deg,rgb(29,149,219) 0%,rgb(198,21,192) 0%,rgb(155,81,224) 100%)" target="_blank" rel="noreferrer noopener">Free Download</a></div><!-- /wp:button --></div><!-- /wp:buttons --></div></div><!-- /wp:media-text --></div></div></div><!-- /wp:powerful-blocks/block-wrapper -->';
 
@@ -235,5 +243,18 @@ const edit = ( props ) => {
 		</>
 	);
 };
+export default compose( [
+    withDispatch( ( dispatch ) => {
+        const {
+            updateBlockAttributes,
+            removeBlock,
+            replaceInnerBlocks,
+        } = dispatch( 'core/block-editor' );
 
-export default edit;
+        return {
+            updateBlockAttributes,
+            removeBlock,
+            replaceInnerBlocks,
+        };
+    } ),
+] )( edit );

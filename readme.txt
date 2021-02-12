@@ -88,18 +88,9 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
 
-== Frequently Asked Questions ==
-
-= Is it possible to use without Gutenberg plugin? =
-
-No, You must install and active Gutenberg plugin to make this plugin work.
-
-
-
 == Screenshots ==
 
-1. Admin Page Widgets List
-2. Gutenberg Editor Widgets List
+
 
 == Changelog ==
 
