@@ -54,7 +54,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * Custom Easing
 * Custom Attributes
 * Wrapper Link
-* Prebuilt Templates and some more cool features coming soon InshAllah.
+* Prebuilt Templates and some more cool features are coming soon InshAllah!
 
 > 🚀  [Get The PRO Version](https://powerfulblocks.com/pricing)
 
