@@ -67,7 +67,7 @@ Buy Powerful Blocks Pro to support us :) InshAllah we will add more blocks soon 
 
 ### Need Help?
 
-[Free Support](https://wordpress.org/support/plugin/powerful-blocks/) | [Live Chat](https://web.facebook.com/hello.ultradevs) | [Documentation](https://docs.powerfulblocks.com/)  | [Video Tutorials](https://www.youtube.com/playlist?list=PL6-MOhUm73eiSSVHgAVnFFEvs6rO2sZyC)
+[Free Support](https://wordpress.org/support/plugin/powerful-blocks/) | [Live Chat](https://web.facebook.com/hello.ultradevs) | [Documentation](https://powerfulblocks.com/docs)  | [Video Tutorials](https://www.youtube.com/playlist?list=PL6-MOhUm73eiSSVHgAVnFFEvs6rO2sZyC)
 
 ### Join With US
 [Facebook - Community](https://web.facebook.com/groups/powerfulblocks/) | [Facebook - Page](https://web.facebook.com/hello.ultradevs) | [Youtube](https://www.youtube.com/channel/UCc2yL-QGQjscXpPx9Pp7J8w) | [Twitter](https://twitter.com/ultraDevsBD) | [Instagram](https://www.instagram.com/ultradevs/)
