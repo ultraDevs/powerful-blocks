@@ -1,9 +1,9 @@
-=== Powerful Blocks ===
+=== Powerful Blocks for Gutenberg ===
 Contributors: ultradevs
 Donate link: https://ultradevs.com/donate
-Tags: Gutenberg, Blocks, helpful blocks, essential blocks
+Tags: gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg,
 Requires at least: 5.3.2
-Tested up to:      5.4.1
+Tested up to:      5.6.1
 Stable tag:        1.0.0
 Requires PHP:      7.0.0
 License: GPLv2 or later
