@@ -59,7 +59,7 @@ class Assets_Manager {
 		/**
 		 * Font Awesome
 		 */
-		wp_enqueue_style( 'pb-font-awesome', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/font-awesome5.css', '', POWERFUL_BLOCKS_VERSION );
+		wp_enqueue_style( 'pb-font-awesome', POWERFUL_BLOCKS_ASSETS . 'vendor/font-awesome/css/all.min.css', '', POWERFUL_BLOCKS_VERSION );
 		wp_enqueue_script( 'pb-numerator', POWERFUL_BLOCKS_ASSETS . 'vendor/numerator/jquery-numerator.min.js', array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
 
 		wp_enqueue_style( 'pb-frontend', POWERFUL_BLOCKS_ASSETS . 'css/pb-styles.css', '', POWERFUL_BLOCKS_VERSION );
