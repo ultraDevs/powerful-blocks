@@ -41,9 +41,9 @@ class Assets_Manager {
 			'pb-admin',
 			'PBAdmin',
 			array(
-				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'nonce'   => wp_create_nonce( 'pb-save-ib-nonce' ),
-				'post_id' => $post->ID,
+				'ajaxurl'       => admin_url( 'admin-ajax.php' ),
+				'nonce'         => wp_create_nonce( 'pb-save-ib-nonce' ),
+				'post_id'       => $post->ID
 			)
 		);
 	}
@@ -115,6 +115,7 @@ class Assets_Manager {
 				'inactive_blocks' => $inactive_blocks,
 				'type'            => 'free',
 				'assets'          => POWERFUL_BLOCKS_ASSETS,
+				'templates_api' => 'https://powerfulblocks.dev/wp-json/powerful-blocks/v1/',
 			)
 		);
 

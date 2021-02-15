@@ -91,10 +91,14 @@
 				box-shadow: 0 5px 30px -10px rgba(18, 63, 82, 0.30);
 				border-radius: 5px;
 				border: 1px solid #f9f9f9;
+				cursor: pointer;
+				max-height: 250px;
 				.pb-templates-list-item--preview {
 					img {
 						width: 100%;
 						border-radius: 5px 5px 0 0;
+						max-width: 100%;
+						height: 200px;
 					}
 				}
 				.pb-templates-list-item--info {

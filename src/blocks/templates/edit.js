@@ -16,6 +16,9 @@ const {
 const {
     parse,
 } = wp.blocks;
+import apiFetch from '@wordpress/api-fetch';
+
+const { useState } = wp.element;
 
 const {
 	insertBlocks,
@@ -48,13 +51,13 @@ const edit = ( props ) => {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
-    const openModal = () => setAttributes( { showModal: true } );
+    const openModal = () => { 
+		setAttributes( { showModal: true } );
+	};
 	const closeModal = () => {
 		setAttributes( { showModal: false } );
 		removeBlock( props.clientId );
 	};
-
-	let content = '<!-- wp:powerful-blocks/block-wrapper {"blockId":"37c04da05a9a43b2bbc21c9d545993f6","backgroundType":"gradient","gradientValue":"linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(24,169,231) 19%,rgb(155,81,224) 100%)","padding":{"top":"5em","left":"0em","right":"0em","bottom":"5em"},"blockWidth":"custom","blockCustomWidthType":"%","align":"full"} --><div class="wp-block-powerful-blocks-block-wrapper alignfull"><div id="pb-block-wrapper-37c04da05a9a43b2bbc21c9d545993f6"><div class="pb-block-wrapper pb-block-advanced--wrapper pb-b-e--width"><!-- wp:media-text {"mediaPosition":"right","mediaId":15,"mediaLink":"http://powerfulblocks.dev/home-page/portfolio_n/","mediaType":"image"} --><div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="http://powerfulblocks.dev/wp-content/uploads/2021/02/Portfolio_n.png" alt="" class="wp-image-15 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"textColor":"white"} --><h2 class="has-white-color has-text-color">Powerful Blocks For Gutenberg</h2><!-- /wp:heading --><!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"borderRadius":50,"style":{"color":{"gradient":"linear-gradient(279deg,rgb(29,149,219) 0%,rgb(198,21,192) 0%,rgb(155,81,224) 100%)"}},"textColor":"white","className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-background" href="" style="border-radius:50px;background:linear-gradient(279deg,rgb(29,149,219) 0%,rgb(198,21,192) 0%,rgb(155,81,224) 100%)" target="_blank" rel="noreferrer noopener">Free Download</a></div><!-- /wp:button --></div><!-- /wp:buttons --></div></div><!-- /wp:media-text --></div></div></div><!-- /wp:powerful-blocks/block-wrapper -->';
 
 	const insertTemplate = ( content, replaceBlockId ) => {
 		const parsedBlocks = parse( content );
@@ -68,9 +71,60 @@ const edit = ( props ) => {
 		}
 	};
 
-	const addTemplate = () => {
+	let cTemplates = [];
+    const [ templates, updateTemplates ] = useState( cTemplates );
+
+	let cCategories = [];
+    const [ categories, updateCategories ] = useState( cCategories );
+	
+	let cCategory = '';
+    const [ ucCategory, updatecCategory ] = useState( cCategory );
+
+	const addTemplate = (content) => {
 		insertTemplate( content, props.clientId );
 		setAttributes({ showModal: false });
+	}
+
+	const onClickCategory = ( slug ) => {
+		updatecCategory( slug );
+		allTemplates( slug, 'sections' );
+	};
+
+	let allTemplates = ( category, type ) => {
+		apiFetch( {
+			url: `${ UDPB.templates_api }templates`,
+			method: 'POST',
+			data: { 
+				type: type,
+				category: category
+			},
+		})
+		.then( function(data) {
+			updateTemplates( data.templates);
+		})
+		.catch( function(error) {
+			console.log(error);
+		});
+	};
+	if ( 0 === templates.length ) {
+		allTemplates( ucCategory, 'sections' );
+	}
+
+	let allCategories = () => {
+		apiFetch( {
+			url: `${ UDPB.templates_api }template_categories`,
+			method: 'POST',
+			data: { type: 'sections' },
+		})
+		.then( function(data) {
+			updateCategories( data.categories );
+		})
+		.catch( function(error) {
+			console.log(error);
+		});
+	};
+	if ( 0 === categories.length ) {
+		allCategories();
 	}
 
 	return (
@@ -115,125 +169,43 @@ const edit = ( props ) => {
 							<div className="pb-templates-content">
 								<div className="pb-templates-con--category">
 									<ul>
-										<li className="c-active">All Categories</li>
-										<li>Hero</li>
-										<li>Features</li>
-										<li>Hero</li>
-										<li>Features</li>
-										<li>Hero</li>
-										<li>Features</li>
-										<li>Hero</li>
-										<li>Features</li>
-										<li>Hero</li>
-										<li>Features</li>
-										<li>Hero</li>
-										<li>Features</li>
-										<li>Hero</li>
-										<li>Features</li>
-										<li>Hero</li>
-										<li>Features</li>
+										{/* <li className="c-active">All Categories</li> */}
+										{
+											categories.map( ( category, key ) => {
+												return (
+													<li 
+														key={key}
+														onClick = { ( ) => {
+															onClickCategory( category.slug );
+														}}
+														className = { category.slug === ucCategory ? "c-active" : undefined }
+													>
+													{ category.name }
+													</li>
+												);
+											})
+										}
+										
 									</ul>
 								</div>
 								<div className="pb-templates-con--list">
-									<div className="pb-templates-list-item"
-										onClick = { () => { addTemplate(); }
-										}
-									>
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
-									<div className="pb-templates-list-item">
-										<div className="pb-templates-list-item--preview">
-											<img src="https://via.placeholder.com/300x200.png?text=Powerful+Blocks" />
-										</div>
-										<div className="pb-templates-list-item--info">
-											<h3>Template Name</h3>
-										</div>
-									</div>
+									
+									{ templates.map( ( template, key ) => {
+										return (
+											<div className="pb-templates-list-item"
+												onClick = { () => { addTemplate(template.content); }
+												}
+											>
+												<div className="pb-templates-list-item--preview">
+													<img src={ template.thumbnail } title={ template.title } alt={ template.title } />
+												</div>
+												<div className="pb-templates-list-item--info">
+													<h3>{ template.title }</h3>
+												</div>
+											</div>
+										);
+										})
+									}
 								</div>
 							</div>
 						</Modal>
