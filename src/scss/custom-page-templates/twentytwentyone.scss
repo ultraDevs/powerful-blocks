@@ -1,0 +1,22 @@
+.page-template-pb-header-transparent {
+    
+    header {
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        background-color: transparent;
+    }
+    .site-header {
+        // background-color: var(--header--color-background,var(--global--color-background));
+        max-width: none;
+        padding-left: calc(50% - var(--responsive--alignwide-width)/2);
+        padding-right: calc(50% - var(--responsive--alignwide-width)/2);
+        padding-bottom: var(--header--padding);
+        @media only screen and (min-width: 822px) {
+            padding-top: calc(1.4 * var(--global--spacing-vertical));
+        }
+    }
+    .site-main {
+        padding-top: 0px;
+    }
+}

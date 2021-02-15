@@ -97,8 +97,8 @@ final class PowerfulBlocks {
 		// $post_meta->register();
 
 		// Templater.
-		// $templater = new ultraDevs\PB\Admin\Templater();
-		// $templater->register();
+		$templater = new ultraDevs\PB\Admin\Templater();
+		$templater->register();
 
 		if ( is_admin() ) {
 

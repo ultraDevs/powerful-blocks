@@ -151,4 +151,26 @@ class Helper {
 		// Get Option.
 		update_option( $key, $value );
 	}
+
+	/**
+	 * Supported Themes
+	 *
+	 * @return array
+	 */
+	public function pb_supported_themes() {
+		return array(
+			'twentytwentyone',
+			'page-builder-framework',
+		);
+	}
+	/**
+	 * Multiple in_array
+	 *
+	 * @param array $needles needles.
+	 * @param array $haystack haystack.
+	 * @return boolean
+	 */
+	public function multiple_in_array( $needles, $haystack ) {
+		return (bool) array_intersect( $needles, $haystack );
+	}
 }

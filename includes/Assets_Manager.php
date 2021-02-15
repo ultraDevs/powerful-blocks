@@ -9,6 +9,7 @@
 namespace ultraDevs\PB;
 
 use ultraDevs\PB\Admin\Dashboard;
+use ultraDevs\PB\Helper;
 
 /**
  * Manage All Assets
@@ -73,7 +74,16 @@ class Assets_Manager {
 	 */
 	public function frontend_assets() {
 		$this->common_assets();
-		// wp_enqueue_style( 'pb-twentytwentyone', POWERFUL_BLOCKS_ASSETS . 'css/pb-twentytwenty.css', '', POWERFUL_BLOCKS_VERSION );
+		$supported_themes = Helper::pb_supported_themes();
+		$theme_name       = get_template();
+
+		$templates_classes = array(
+			'page-template-pb-header-transparent',
+		);
+
+		if ( \in_array( get_template(), $supported_themes ) && Helper::multiple_in_array( $templates_classes, get_body_class() ) ) {
+			wp_enqueue_style( 'pb-' . $theme_name, POWERFUL_BLOCKS_ASSETS . 'css/custom-page-templates/pb-' . $theme_name . '.css', '', POWERFUL_BLOCKS_VERSION );
+		}
 
 	}
 
