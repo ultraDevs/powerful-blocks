@@ -125,7 +125,7 @@ class Helper {
 	 * @param mixed  $value Option Value.
 	 */
 	public static function pb_add_option( $key, $value ) {
-		// Get Option.
+		// Add Option.
 		add_option( $key, $value );
 	}
 
@@ -142,14 +142,24 @@ class Helper {
 	}
 
 	/**
-	 * Save Option
+	 * Update Option
 	 *
 	 * @param string $key Option Key.
 	 * @param mixed  $value Option Value.
 	 */
 	public static function pb_update_option( $key, $value ) {
-		// Get Option.
+		// Update Option.
 		update_option( $key, $value );
+	}
+
+	/**
+	 * Delete Option
+	 *
+	 * @param string $key Option Key.
+	 */
+	public static function pb_delete_option( $key ) {
+		// Delete Option.
+		delete_option( $key );
 	}
 
 	/**
