@@ -20,10 +20,6 @@ module.exports = {
 		'pb-editor-common': path.resolve( process.cwd(), 'src/scss/editor.scss' ),
 		'pb-styles': path.resolve( process.cwd(), 'src/scss/styles.scss' ),
 		'pb-admin-styles': path.resolve( process.cwd(), 'src/scss/admin.scss' ),
-		'custom-page-templates/pb-twentytwentyone': path.resolve( process.cwd(), 'src/scss/custom-page-templates/twentytwentyone.scss' ),
-		'custom-page-templates/pb-page-builder-framework': path.resolve( process.cwd(), 'src/scss/custom-page-templates/page-builder-framework.scss' ),
-		// 'pb-block-styles': styleScss,
-		// 'pb-block-editor': editorScss,
 	},
 
 	output: {
