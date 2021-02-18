@@ -123,7 +123,7 @@ class Assets_Manager {
 			'UDPB',
 			array(
 				'inactive_blocks' => $inactive_blocks,
-				'type'            => 'free',
+				'type'            => Helper::pb_type(),
 				'assets'          => POWERFUL_BLOCKS_ASSETS,
 				'templates_api' => 'https://powerfulblocks.dev/wp-json/powerful-blocks/v1/',
 			)

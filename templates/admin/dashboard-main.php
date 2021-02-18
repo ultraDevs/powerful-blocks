@@ -38,4 +38,8 @@ defined('ABSPATH') || die();
 			?>
 		</div>
 	</form>
+	<?php
+	global $powerful_blocks_license;
+	echo $powerful_blocks_license->menu_output();
+	?>
 </div>

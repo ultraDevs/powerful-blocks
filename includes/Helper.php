@@ -163,6 +163,7 @@ class Helper {
 			'page-builder-framework',
 		);
 	}
+
 	/**
 	 * Multiple in_array
 	 *
@@ -172,5 +173,14 @@ class Helper {
 	 */
 	public function multiple_in_array( $needles, $haystack ) {
 		return (bool) array_intersect( $needles, $haystack );
+	}
+
+	/**
+	 * Type
+	 *
+	 * @return boolean
+	 */
+	public static function pb_type() {
+		return apply_filters( 'pb_type', 'free' );
 	}
 }

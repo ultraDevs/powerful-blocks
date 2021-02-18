@@ -44,6 +44,8 @@ final class PowerfulBlocks {
 	 */
 	public function __construct() {
 
+		$this->appsero_init_tracker_powerful_blocks();
+
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
@@ -129,8 +131,6 @@ final class PowerfulBlocks {
 			add_action( 'wp_head', array( $assets_manager, 'get_block_css' ) );
 
 		}
-		$this->appsero_init_tracker_powerful_blocks();
-
 	}
 
 	/**
@@ -211,15 +211,52 @@ final class PowerfulBlocks {
 		// Active automatic updater.
 		$client->updater();
 
-		// Active license page and checker.
-		$args = array(
-			'type'       => 'options',
-			'menu_title' => 'Powerful Blocks for Gutenberg',
-			'page_title' => 'Powerful Blocks for Gutenberg Settings',
-			'menu_slug'  => 'powerful-blocks',
-		);
-		$client->license()->add_settings_page( $args );
+		global $powerful_blocks_license;
+		$powerful_blocks_license = $client->license();
 
 	}
+
+	/**
+	 * Check license
+	 */
+	public function is_valid_lic() {
+		global $powerful_blocks_license;
+		return $powerful_blocks_license->is_valid();
+	}
+
+	/**
+	 * Check if pro version active
+	 */
+	public function is_pro_active() {
+		global $powerful_blocks_license;
+
+		$is_pro_plan = $powerful_blocks_license->is_valid_by( 'title', 'PB Pro Yearly' ) || $powerful_blocks_license->is_valid_by( 'title', 'PB Pro Lifetime' );
+
+		return $powerful_blocks_license->is_valid() && $is_pro_plan;
+	}
+
+	/**
+	 * Check if Ultimate version active
+	 */
+	public function is_ultimate_active() {
+		global $powerful_blocks_license;
+
+		$is_ultimate_plan = $powerful_blocks_license->is_valid_by( 'title', 'PB Ultimate Yearly' ) || $powerful_blocks_license->is_valid_by( 'title', 'PB Ultimate Lifetime' );
+
+		return $powerful_blocks_license->is_valid() && $is_ultimate_plan;
+	}
 }
-PowerfulBlocks::run();
+/**
+ * Check if powerful_blocks doesn't exist
+ */
+if ( ! function_exists( 'powerful_blocks' ) ) {
+	/**
+	 * Load Powerful Blocks
+	 *
+	 * @return PowerfulBlocks
+	 */
+	function powerful_blocks() {
+		return PowerfulBlocks::run();
+	}
+}
+powerful_blocks();
