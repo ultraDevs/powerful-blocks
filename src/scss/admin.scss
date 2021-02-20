@@ -36,6 +36,9 @@
 .pb-tabs__content {
     background: #fff;
     padding: 15px 25px;
+    .pb-tabs__item {
+        scroll-margin-top: 150px;
+    }
 }
 
 /** blocks **/
@@ -260,4 +263,8 @@
 }
 .appsero-license-section {
     max-width: 100% !important;
+}
+.toplevel_page_powerful-blocks img {
+    height: 20px;
+    width: 20px;
 }

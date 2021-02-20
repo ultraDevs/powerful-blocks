@@ -8,7 +8,7 @@
 /**
  * Plugin Name:       Powerful Blocks
  * Plugin URI:        https://powerfulblocks.com
- * Description:       Powerful Blocks is a Gutenberg Block Plugin With Awesome Blocks and Advanced Controls.
+ * Description:       Powerful Blocks is a Gutenberg Block Plugin With Awesome Blocks, Prebuilt Templates and Advanced Controls.
  * Version:           1.0.0
  * Author:            ultraDevs
  * Author URI:        https://ultradevs.com
@@ -52,6 +52,7 @@ final class PowerfulBlocks {
 		add_filter( 'block_categories', array( $this, 'register_block_category' ), 10, 2 );
 		add_action( 'init', array( $this, 'load_text_domain' ) );
 
+		do_action( 'powerfulblocks_loaded' );
 	}
 
 	/**
@@ -183,6 +184,10 @@ final class PowerfulBlocks {
 
 		$links[] = '<a href="' . admin_url( 'admin.php?page=' . POWERFUL_BLOCKS_MENU_SLUG ) . '">' . __( 'Settings', 'powerful-blocks' ) . '</a>';
 
+		if ( ! udpb_has_pro() ) {
+			$links[] = '<a target="_blank" href="https://powerfulblocks.com/pricing" style="color: #f30d55; font-weight: bold;">' . __( 'Get Pro', 'powerful-blocks' ) . '</a>';
+		}
+
 		return $links;
 
 	}
@@ -196,50 +201,21 @@ final class PowerfulBlocks {
 	public function appsero_init_tracker_powerful_blocks() {
 
 		if ( ! class_exists( 'Appsero\Client' ) ) {
-			require_once __DIR__ . '/vendor/appsero/src/Client.php';
+			require_once POWERFUL_BLOCKS_DIR_PATH . '/vendor/appsero/src/Client.php';
 		}
 
 		$client = new Appsero\Client( '5f221920-4f40-4349-ae25-b49335675128', 'Powerful Blocks for Gutenberg', __FILE__ );
 
+		$powerful_blocks_data = array(
+			'pro_installed' => udpb_has_pro() ? 'Yes' : 'No',
+			'pro_version'   => udpb_has_pro() ? POWERFUL_BLOCKS_PRO_VERSION : '',
+		);
 		// Active insights.
-		$client->insights()->init();
+		$client->insights()->add_extra( $powerful_blocks_data )->init();
 
 		// Active automatic updater.
 		$client->updater();
 
-		global $powerful_blocks_license;
-		$powerful_blocks_license = $client->license();
-
-	}
-
-	/**
-	 * Check license
-	 */
-	public function is_valid_lic() {
-		global $powerful_blocks_license;
-		return $powerful_blocks_license->is_valid();
-	}
-
-	/**
-	 * Check if pro version active
-	 */
-	public function is_pro_active() {
-		global $powerful_blocks_license;
-
-		$is_pro_plan = $powerful_blocks_license->is_valid_by( 'title', 'PB Pro Yearly' ) || $powerful_blocks_license->is_valid_by( 'title', 'PB Pro Lifetime' );
-
-		return $powerful_blocks_license->is_valid() && $is_pro_plan;
-	}
-
-	/**
-	 * Check if Ultimate version active
-	 */
-	public function is_ultimate_active() {
-		global $powerful_blocks_license;
-
-		$is_ultimate_plan = $powerful_blocks_license->is_valid_by( 'title', 'PB Ultimate Yearly' ) || $powerful_blocks_license->is_valid_by( 'title', 'PB Ultimate Lifetime' );
-
-		return $powerful_blocks_license->is_valid() && $is_ultimate_plan;
 	}
 }
 /**

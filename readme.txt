@@ -1,7 +1,7 @@
 === Powerful Blocks for Gutenberg ===
 Contributors: ultradevs
 Donate link: https://ultradevs.com/donate
-Tags: gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg,
+Tags: gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates
 Requires at least: 5.3.2
 Tested up to:      5.6.1
 Stable tag:        1.0.0
@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-[Powerful Blocks](https://powerfulblocks.com) is a Gutenberg Block Plugin With Awesome Blocks and Advanced Controls. It will help you to build pages easily without any custom code. We are trying to make Gutenberg more easier and awesome without blocks, features, and advanced controls.
+[Powerful Blocks](https://powerfulblocks.com) is a Gutenberg Block Plugin With Awesome Blocks, Prebuilt Templates and Advanced Controls. It will help you to build pages easily without any custom code. We are trying to make Gutenberg more easier and awesome with our blocks, features, Prebuilt Templates and advanced controls.
 
 ### Features
 * Simple UI
@@ -19,6 +19,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * Customizable
 * Responsive
 * Light Weight & Instant Loading
+* Prebuilt Templates 
+* Some more cool features are coming soon InshAllah!
 
 ### Advanced Controls
 * Background ( Color, Gradient, Image )
@@ -53,8 +55,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * Custom Animation Duration
 * Custom Easing
 * Custom Attributes
-* Wrapper Link
-* Prebuilt Templates and some more cool features are coming soon InshAllah!
+* Wrapper Link - Add **link** to any Block!
 
 > 🚀  [Get The PRO Version](https://powerfulblocks.com/pricing)
 

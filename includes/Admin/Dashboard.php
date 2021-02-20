@@ -29,7 +29,7 @@ class Dashboard {
 	 *
 	 * @var string
 	 */
-	public static $icon = POWERFUL_BLOCKS_ASSETS . 'images/ua_icon.svg';
+	public static $icon = POWERFUL_BLOCKS_ASSETS . 'images/pb.svg';
 
 	/**
 	 * Register

@@ -31,9 +31,9 @@ class Assets_Manager {
 	public function admin_assets( $hook ) {
 		global $post;
 
-		if ( 'toplevel_page_' . POWERFUL_BLOCKS_MENU_SLUG !== $hook || ! current_user_can( 'manage_options' ) ) {
-			return;
-		}
+		// if ( 'toplevel_page_' . POWERFUL_BLOCKS_MENU_SLUG !== $hook || ! current_user_can( 'manage_options' ) ) {
+		// 	return;
+		// }
 
 		wp_enqueue_style( 'pb-admin', POWERFUL_BLOCKS_ASSETS . 'css/pb-admin-styles.css', '', POWERFUL_BLOCKS_VERSION );
 		wp_enqueue_script( 'pb-admin', POWERFUL_BLOCKS_ASSETS . 'js/pb-admin.js', array( 'jquery', 'wp-util' ), POWERFUL_BLOCKS_VERSION, false );
@@ -42,9 +42,9 @@ class Assets_Manager {
 			'pb-admin',
 			'PBAdmin',
 			array(
-				'ajaxurl'       => admin_url( 'admin-ajax.php' ),
-				'nonce'         => wp_create_nonce( 'pb-save-ib-nonce' ),
-				'post_id'       => $post->ID
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+				'nonce'   => wp_create_nonce( 'pb-save-ib-nonce' ),
+				'post_id' => $post->ID
 			)
 		);
 	}
@@ -107,15 +107,19 @@ class Assets_Manager {
 		foreach ( Dashboard::inactive_blocks() as $block ) {
 			$inactive_blocks[] = $this->pb_block_name_u( $block );
 		}
+		$d_l_data = array(
+			'inactive_blocks' => $inactive_blocks,
+			'assets'          => POWERFUL_BLOCKS_ASSETS,
+			'templates_api' => 'https://powerfulblocks.com/wp-json/powerful-blocks/v1/',
+		);
+
+		if ( has_filter( 'pb_localize' ) ) {
+			$l_data = apply_filters( 'pb_localize', $d_l_data );
+		}
 		wp_localize_script(
 			'pb-block-editor',
 			'UDPB',
-			array(
-				'inactive_blocks' => $inactive_blocks,
-				'type'            => Helper::pb_type(),
-				'assets'          => POWERFUL_BLOCKS_ASSETS,
-				'templates_api' => 'https://powerfulblocks.dev/wp-json/powerful-blocks/v1/',
-			)
+			$l_data
 		);
 
 	}

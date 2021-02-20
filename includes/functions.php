@@ -108,3 +108,9 @@ function udpb_get_block_icon( $block ) {
 	return $icon;
 
 }
+/**
+ * Check if Pro Version Installed
+ */
+function udpb_has_pro() {
+	return defined( 'POWERFUL_BLOCKS_PRO_VERSION' );
+}

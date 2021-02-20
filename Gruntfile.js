@@ -205,7 +205,7 @@ module.exports = function(grunt) {
     grunt.registerTask( 'i18n', [ 'makepot' ] );
 	grunt.registerTask( 'readme', [ 'wp_readme_to_markdown' ] );
 	grunt.registerTask( 'default', [
-		'jshint',
+		// 'jshint',
 		'uglify:dev',
 		'uglify:dist',
 		'sass:dev',

@@ -33,16 +33,10 @@ jQuery( function($){
 			version="1.1"
 			width="24"
 			height="24"
-			viewBox="0 0 24 24"
+			viewBox="0 0 600 700"
 			className="pb-block-icon"
 		>
-			<G>
-				<Rect x="3" y="3" width="6" height="6"/>
-				<Circle cx="18" cy="18" r="3"/>
-				<Polygon points="12,8 8,14 16,14 	"/>
-				<Path d="M19,12h2c0-5-4-9-9-9v2C15.9,5,19,8.1,19,12z"/>
-				<Path d="M12,19c-3.9,0-7-3.1-7-7H3c0,5,4,9,9,9V19z"/>
-			</G>
+			<g xmlns="http://www.w3.org/2000/svg" ><path d="M210.23,0H36.36V55H210.23a106.59,106.59,0,0,1,0,213.18h-100v55h100c89.1,0,161.59-72.49,161.59-161.59S299.33,0,210.23,0Z"/><rect class="cls-1" x="109.5" y="171.59" width="52.27" height="159.09"/><rect class="cls-1" x="111.79" y="440.23" width="52.27" height="159.09"/><path class="cls-1" d="M374.11,437.73c0,89.11-72.49,161.59-161.59,161.59H164.06v-55h48.46a106.59,106.59,0,0,0,0-213.18h-100v-55h100A161.69,161.69,0,0,1,374.11,437.73Z"/><rect class="cls-1" width="55.01" height="693.45"/></g>
 		</SVG>
 	) });
 
