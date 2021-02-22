@@ -18,7 +18,7 @@ use ultraDevs\PB\Helper;
  * @package PowerfulBlocks
  * @since 1.0.0
  */
-class API {
+class API extends \WP_REST_Controller {
 
 	/**
 	 * Constructor
@@ -55,6 +55,26 @@ class API {
 					'methods'  => 'POST',
 					'callback' => array( $this, 'block_status' ),
 				),
+			)
+		);
+
+		register_rest_route(
+			'powerful-blocks/v1',
+			'/get_templates/',
+			array(
+				'methods'             => 'POST',
+				'callback'            => array( $this, 'get_templates_callback' ),
+				'permission_callback' => '__return_true',
+			)
+		);
+
+		register_rest_route(
+			'powerful-blocks/v1',
+			'/get_template_categories/',
+			array(
+				'methods'             => 'POST',
+				'callback'            => array( $this, 'get_template_categories_callback' ),
+				'permission_callback' => '__return_true',
 			)
 		);
 	}
@@ -125,5 +145,85 @@ class API {
 				);
 			}
 		}
+	}
+
+	/**
+	 * Get Templates
+	 *
+	 * @param array $req Request.
+	 *
+	 * @return array
+	 */
+	public function get_templates_callback( $req ) {
+
+		$params = $req->get_params();
+
+		$type     = sanitize_text_field( $params['type'] );
+		$category = empty( $params['category'] ) ? ' ' : sanitize_text_field( $params['category'] );
+
+		$url       = 'https://powerfulblocks.com/wp-json/powerful-blocks/v1/templates';
+		$url_w_q   = add_query_arg(
+			array(
+				'category' => trim( $category ),
+				'type'     => trim( $type ),
+			),
+			$url
+		);
+		$templates = get_transient( 'pb_templates', false );
+
+		if ( ! $templates ) {
+
+			$n_template_categories_b = wp_remote_get(
+				$url_w_q
+			);
+
+			if ( ! is_wp_error( $n_template_categories_b ) ) {
+				$template_categories_b = wp_remote_retrieve_body( $n_template_categories_b );
+				$template_categories_b = json_decode( $template_categories_b, true );
+
+				$templates = $template_categories_b;
+				set_transient( 'pb_templates', $templates, HOUR_IN_SECONDS );
+			}
+		}
+		return $templates;
+	}
+
+	/**
+	 * Get Template Categories
+	 *
+	 * @param array $req Request.
+	 *
+	 * @return array
+	 */
+	public function get_template_categories_callback( $req ) {
+
+		$params = $req->get_params();
+
+		$type     = sanitize_text_field( $params['type'] );
+
+		$url       = 'https://powerfulblocks.com/wp-json/powerful-blocks/v1/template_categories';
+		$url_w_q   = add_query_arg(
+			array(
+				'type'     => trim( $type ),
+			),
+			$url
+		);
+		$template_categories = get_transient( 'pb_template_categories', false );
+
+		if ( ! $template_categories ) {
+
+			$n_template_categories_b = wp_remote_get(
+				$url_w_q
+			);
+
+			if ( ! is_wp_error( $n_template_categories_b ) ) {
+				$template_categories_b = wp_remote_retrieve_body( $n_template_categories_b );
+				$template_categories_b = json_decode( $template_categories_b, true );
+
+				$template_categories = $template_categories_b;
+				set_transient( 'pb_template_categories', $template_categories, DAY_IN_SECONDS );
+			}
+		}
+		return $template_categories;
 	}
 }

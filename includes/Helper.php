@@ -191,6 +191,6 @@ class Helper {
 	 * @return boolean
 	 */
 	public static function pb_type() {
-		return apply_filters( 'pb_type', 'free' );
+		return apply_filters( 'pb_type', 'Free' );
 	}
 }

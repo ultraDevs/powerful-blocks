@@ -989,7 +989,7 @@ const Advanced = ( props ) => {
                                         />
                                         { 
                                             'custom' === inAnimationDuration ? (
-                                                'free' === pType ? (
+                                                'Free' === pType ? (
                                                     <UpgradePlanNotice />
                                                 ) : (
                                                     <RangeControl
@@ -1015,7 +1015,7 @@ const Advanced = ( props ) => {
 								tabout = (
 									<>
                                         { 
-                                            'free' === pType ? (
+                                            'Free' === pType ? (
                                                 <UpgradePlanNotice />
                                             ) : (
                                                 <>
@@ -1111,7 +1111,7 @@ const Advanced = ( props ) => {
                 />
                 { 
                     'custom' === animationEasing ? (
-                        'free' === pType ? (
+                        'Free' === pType ? (
                             <UpgradePlanNotice />
                         ) : (
                             <TextControl
@@ -1223,7 +1223,7 @@ const Advanced = ( props ) => {
                     { __( 'Note: Don\'t Add class and id attribute.', 'powerful-blocks' ) }
                 </p>
                 { 
-                    'free' === pType ? (
+                    'Free' === pType ? (
                         <UpgradePlanNotice />
                     ) : (
                         <TextControl
@@ -1239,7 +1239,7 @@ const Advanced = ( props ) => {
             </PanelBody>
             <PanelBody title={ __( 'Wrapper Link', 'powerful-blocks' ) } initialOpen={ false }>
                 { 
-                    'free' === pType ? (
+                    'Free' === pType ? (
                         <UpgradePlanNotice />
                     ) : (
                         <>

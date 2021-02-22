@@ -19,6 +19,8 @@ const {
 import apiFetch from '@wordpress/api-fetch';
 
 const { useState } = wp.element;
+import { pType } from '../../helper/lic';
+
 
 const {
 	insertBlocks,
@@ -92,7 +94,7 @@ const edit = ( props ) => {
 
 	let allTemplates = ( category, type ) => {
 		apiFetch( {
-			url: `${ UDPB.templates_api }templates`,
+			path: '/powerful-blocks/v1/get_templates',
 			method: 'POST',
 			data: { 
 				type: type,
@@ -100,7 +102,18 @@ const edit = ( props ) => {
 			},
 		})
 		.then( function(data) {
-			updateTemplates( data.templates);
+			const templates = data.templates;
+			const results = [];
+			templates.forEach( (template ) => {
+				if ( category.length ) {
+					if ( category === template.category ) {
+						results.push( template );
+					}
+				} else {
+					results.push( template );
+				}
+			});
+			updateTemplates( results );
 		})
 		.catch( function(error) {
 			console.log(error);
@@ -112,7 +125,7 @@ const edit = ( props ) => {
 
 	let allCategories = () => {
 		apiFetch( {
-			url: `${ UDPB.templates_api }template_categories`,
+			path: '/powerful-blocks/v1/get_template_categories',
 			method: 'POST',
 			data: { type: 'sections' },
 		})
@@ -181,6 +194,9 @@ const edit = ( props ) => {
 														className = { category.slug === ucCategory ? "c-active" : undefined }
 													>
 													{ category.name }
+													<span>
+														{ category.total }
+													</span>
 													</li>
 												);
 											})
@@ -193,12 +209,35 @@ const edit = ( props ) => {
 									{ templates.map( ( template, key ) => {
 										return (
 											<div className="pb-templates-list-item"
-												onClick = { () => { addTemplate(template.content); }
-												}
 											>
-												<div className="pb-templates-list-item--preview">
-													<img src={ template.thumbnail } title={ template.title } alt={ template.title } />
+												<div className="pb-template-item-wrapper">
+													{ true == template.pro && (
+														<div className="pb-template-pro-badge">Pro</div>
+													)}
+													<div className="pb-templates-list-item--img">
+														<img src={ template.thumbnail } title={ template.title } alt={ template.title } />
+													</div>
+													<div className="pb-template-links">
+														<div className="pb-template-preview">
+															<a className="pb-template-btn" href={ template.preview_url } target="_blank">Preview</a>
+														</div>
+														{ ( template.pro && 'Free' !== pType ) ? (
+															<div className="pb-template-get-pro">
+																<a className="pb-template-btn" href="https://powerfulblocks.com/pricing" target="_blank">Get Pro</a>
+															</div>
+														) : (
+															<div className="pb-template-import">
+																<div
+																onClick = { 
+																	() => { addTemplate(template.content); }
+																}
+																className="pb-template-btn"
+																>Import</div>
+															</div>
+														) }
+													</div>
 												</div>
+												
 												<div className="pb-templates-list-item--info">
 													<h3>{ template.title }</h3>
 												</div>
