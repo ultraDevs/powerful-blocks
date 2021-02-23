@@ -7,6 +7,7 @@ const attributes = {
 		type: 'string',
 		default: undefined,
 	},
+
 };
 
 const finalAttributes = { ...attributes, ...advancedAttributes };

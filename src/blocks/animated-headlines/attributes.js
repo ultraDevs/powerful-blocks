@@ -93,17 +93,17 @@ const attributes = {
 	},
 
 	animatedTextFontSize: {
-		type: 'animatedText',
+		type: 'number',
 		default: 18,
 	},
 
 	animatedTextFontSizeTablet: {
-		type: 'animatedText',
+		type: 'number',
 		default: 17,
 	},
 
 	animatedTextFontSizeMobile: {
-		type: 'animatedText',
+		type: 'number',
 		default: 16,
 	},
 	animatedTextFontWeight: {
@@ -119,11 +119,11 @@ const attributes = {
 		default: '',
 	},
 	animatedTextLetterSpacing: {
-		type: 'animatedText',
+		type: 'number',
 		default: '',
 	},
 	animatedTextLineHeight: {
-		type: 'animatedText',
+		type: 'number',
 		default: '',
 	},
 
@@ -175,17 +175,17 @@ const attributes = {
 	},
 
 	suffpreFontSize: {
-		type: 'animatedText',
+		type: 'number',
 		default: 18,
 	},
 
 	suffpreFontSizeTablet: {
-		type: 'animatedText',
+		type: 'number',
 		default: 17,
 	},
 
 	suffpreFontSizeMobile: {
-		type: 'animatedText',
+		type: 'number',
 		default: 16,
 	},
 	suffpreFontWeight: {
@@ -201,11 +201,11 @@ const attributes = {
 		default: '',
 	},
 	suffpreLetterSpacing: {
-		type: 'animatedText',
+		type: 'number',
 		default: '',
 	},
 	suffpreLineHeight: {
-		type: 'animatedText',
+		type: 'number',
 		default: '',
 	},
 

@@ -1,5 +1,6 @@
 
-const pType = UDPB.type ? UDPB.type : 'Free';
+const pType = 'Pro';
+// const pType = UDPB.type ? UDPB.type : 'Free';
 const UpgradePlanNotice = ( props ) => {
     return (
         <>

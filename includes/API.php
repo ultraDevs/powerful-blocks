@@ -212,9 +212,7 @@ class API extends \WP_REST_Controller {
 
 		if ( ! $template_categories ) {
 
-			$n_template_categories_b = wp_remote_get(
-				$url_w_q
-			);
+			$n_template_categories_b = wp_remote_get( $url_w_q );
 
 			if ( ! is_wp_error( $n_template_categories_b ) ) {
 				$template_categories_b = wp_remote_retrieve_body( $n_template_categories_b );

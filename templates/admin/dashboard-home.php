@@ -28,7 +28,7 @@
 			</div>
 			<div class="ud-box-content">
 				<p>Do you want to learn more about our blocks & features? Reading our documentation will help you to learn and solve your issue. We have documented and documenting almost everything! </p>
-				<a class="ud-btn-lm" href="https://powerfulblocks.com/docs" target="_blank">Read Documentation</a>
+				<a class="ud-btn-lm" href="https://docs.ultradevs.com/powerful-blocks" target="_blank">Read Documentation</a>
 			</div>
 		</div>
 	</div>

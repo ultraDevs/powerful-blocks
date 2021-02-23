@@ -3,7 +3,7 @@ Contributors: ultradevs
 Donate link: https://ultradevs.com/donate
 Tags: gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates
 Requires at least: 5.3.2
-Tested up to:      5.6.1
+Tested up to:      5.6.2
 Stable tag:        1.0.0
 Requires PHP:      7.0.0
 License: GPLv2 or later
@@ -68,7 +68,7 @@ Buy Powerful Blocks Pro to support us :) InshAllah we will add more blocks soon 
 
 ### Need Help?
 
-[Free Support](https://wordpress.org/support/plugin/powerful-blocks/) | [Live Chat](https://web.facebook.com/hello.ultradevs) | [Documentation](https://powerfulblocks.com/docs)  | [Video Tutorials](https://www.youtube.com/playlist?list=PL6-MOhUm73eiSSVHgAVnFFEvs6rO2sZyC)
+[Free Support](https://wordpress.org/support/plugin/powerful-blocks/) | [Live Chat](https://web.facebook.com/hello.ultradevs) | [Documentation](https://docs.ultradevs.com/powerful-blocks)  | [Video Tutorials](https://www.youtube.com/playlist?list=PL6-MOhUm73eiSSVHgAVnFFEvs6rO2sZyC)
 
 ### Join With US
 [Facebook - Community](https://web.facebook.com/groups/powerfulblocks/) | [Facebook - Page](https://web.facebook.com/hello.ultradevs) | [Youtube](https://www.youtube.com/channel/UCc2yL-QGQjscXpPx9Pp7J8w) | [Twitter](https://twitter.com/ultraDevsBD) | [Instagram](https://www.instagram.com/ultradevs/)

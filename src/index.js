@@ -20,6 +20,7 @@ import * as animatedHeadlines from './blocks/animated-headlines';
 import * as tab from './blocks/tabs/tab';
 import * as tabs from './blocks/tabs';
 import * as templates from './blocks/templates';
+import * as advancedTypography from './blocks/advanced-typography';
 
 
 const category = 'powerful-blocks';
@@ -65,6 +66,7 @@ const registerPowerfulBlocks = () => {
 		tab,
 		tabs,
 		templates,
+		advancedTypography,
 	].forEach( registerBlock );
 };
 

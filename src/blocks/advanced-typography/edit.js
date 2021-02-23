@@ -25,25 +25,27 @@ const edit = ( props ) => {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
+	// const allowedBlocks = [ 'core/heading', 'core/paragraph' ];
+
 
 	return (
 		<>
 			<Inspector { ...{ attributes, setAttributes } } />
 			<Styles { ...{ attributes } } />
-			<div id={ `pb-block-wrapper-${ blockId }` }>
+			<div id={ `pb-advanced-typography-${ blockId }` }>
 				<div className="pb-block-select">
-					Click here to open Wrapper Panel
+					Click here to open Editor Panel
 				</div>
 				<div
 					className={ classnames(
-						'pb-block-wrapper',
+						'pb-advanced-typography',
 						props.className,
 						...classes
 					) }
 					{ ... blockAttr }
 				>
-					
-					<InnerBlocks />
+					<InnerBlocks
+					/>
 				</div>
 			</div>
 		</>

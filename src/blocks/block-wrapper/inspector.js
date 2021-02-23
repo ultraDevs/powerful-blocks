@@ -10,7 +10,9 @@ const Inspector = ( props ) => {
 	return (
 		<InspectorControls>
 			<div className="pb-panel-head--tabs">
-				<Advanced { ...{ attributes, setAttributes } } />
+				<div className="pb-panel-head--tabs__controls">
+					<Advanced { ...{ attributes, setAttributes } } />
+				</div>
 			</div>
 		</InspectorControls>
 	);

@@ -6,9 +6,37 @@
     
 }
 .pb-typography-control--content {
+    select {
+        border-color: #ddd !important;
+    }
+    .css-11vcxb9-StyledField {
+        .components-button {
+            &:hover {
+                color: #f30d55;
+                &.is-primary {
+                    color: #fff;
+                }
+            }
+            &.is-primary {
+                background-color: #f30d55;
+                color: #fff;
+            }
+            &.is-secondary {
+                color: #f30d55;
+            }
+        }
+    }
     .css-c3bpo-BackdropUI {
         border: 1px solid #ccc !important;
     }
+    .css-1u6yfd4-Wrapper {
+		color: #f30d55;
+	}
+	.css-5p7d2w-ThumbWrapper {
+		height: 10px;
+		width: 10px;
+		margin-top: 10px;
+	}
     input[type='text'] {
         border-color: #ddd;
     }
