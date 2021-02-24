@@ -64,8 +64,6 @@ const FontFamilyPicker = ({
 
         }
 
-        console.log( link );
-
         wp.data.dispatch("core/editor").editPost({
             meta: {
                 _pb_fonts_attr: ba

@@ -101,6 +101,11 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
+			'advanced-typography'  => array(
+				'title'  => __( 'Advanced Typography', 'powerful-blocks' ),
+				'is_pro' => false,
+				'status' => 'active',
+			),
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );

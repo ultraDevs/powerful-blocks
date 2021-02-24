@@ -114,12 +114,12 @@ class Assets_Manager {
 		);
 
 		if ( has_filter( 'pb_localize' ) ) {
-			$l_data = apply_filters( 'pb_localize', $d_l_data );
+			$d_l_data = apply_filters( 'pb_localize', $d_l_data );
 		}
 		wp_localize_script(
 			'pb-block-editor',
 			'UDPB',
-			$l_data
+			$d_l_data
 		);
 
 	}

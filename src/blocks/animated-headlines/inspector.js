@@ -83,7 +83,7 @@ const Inspector = ( props ) => {
 
 
 	const onChangeAnimatedText = ( texts ) => {
-		console.log(texts);
+		// console.log(texts);
 	};
 
 

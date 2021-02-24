@@ -25,10 +25,7 @@ jQuery( function($){
             AnimationWayPoints( $this, settings.in, settings.out );
         })
     };
-    console.log('====================================');
-        console.log(222);
-        console.log('====================================');
-
+    
     if( $('.pb-animation').length ) {
         
         $( window ).load( Animations ),

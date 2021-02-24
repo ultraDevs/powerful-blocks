@@ -1,5 +1,5 @@
-=== Powerful Blocks for Gutenberg ===
-Contributors: ultradevs
+=== Powerful Blocks ===
+Contributors: ultradevs, mhimon
 Donate link: https://ultradevs.com/donate
 Tags: gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates
 Requires at least: 5.3.2
@@ -21,6 +21,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * Light Weight & Instant Loading
 * Prebuilt Templates 
 * Some more cool features are coming soon InshAllah!
+* **Wrapper Link - Add **link** to any Block! ( Pro )**
 
 ### Advanced Controls
 * Background ( Color, Gradient, Image )
@@ -37,6 +38,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 ### Blocks
 * [Accordion](https://powerfulblocks.com/block/accordion)
 * [Alert Box](https://powerfulblocks.com/block/alert-box)
+* [Advanced Typography](https://powerfulblocks.com/block/advanced-typography)
 * [Animated Headlines](https://powerfulblocks.com/block/animated-headlines)
 * [PB Block Wrapper](https://powerfulblocks.com/block/pb-block-wrapper)
 * [Click To Tweet](https://powerfulblocks.com/block/click-to-tweet)

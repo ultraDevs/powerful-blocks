@@ -1,9 +1,9 @@
-# Powerful Blocks for Gutenberg #
+# Powerful Blocks #
 **Contributors:** [ultradevs](https://profiles.wordpress.org/ultradevs)  
 **Donate link:** https://ultradevs.com/donate  
-**Tags:** gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg,  
+**Tags:** gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates  
 **Requires at least:** 5.3.2  
-**Tested up to:**      5.6.1  
+**Tested up to:**      5.6.2  
 **Stable tag:**        1.0.0  
 **Requires PHP:**      7.0.0  
 **License:** GPLv2 or later  
@@ -11,7 +11,7 @@
 
 ## Description ##
 
-[Powerful Blocks](https://powerfulblocks.com) is a Gutenberg Block Plugin With Awesome Blocks and Advanced Controls. It will help you to build pages easily without any custom code. We are trying to make Gutenberg more easier and awesome without blocks, features, and advanced controls.
+[Powerful Blocks](https://powerfulblocks.com) is a Gutenberg Block Plugin With Awesome Blocks, Prebuilt Templates and Advanced Controls. It will help you to build pages easily without any custom code. We are trying to make Gutenberg more easier and awesome with our blocks, features, Prebuilt Templates and advanced controls.
 
 ### Features
 * Simple UI
@@ -19,6 +19,9 @@
 * Customizable
 * Responsive
 * Light Weight & Instant Loading
+* Prebuilt Templates 
+* Some more cool features are coming soon InshAllah!
+* **Wrapper Link - Add **link** to any Block! ( Pro )**
 
 ### Advanced Controls
 * Background ( Color, Gradient, Image )
@@ -35,6 +38,7 @@
 ### Blocks
 * [Accordion](https://powerfulblocks.com/block/accordion)
 * [Alert Box](https://powerfulblocks.com/block/alert-box)
+* [Advanced Typography](https://powerfulblocks.com/block/advanced-typography)
 * [Animated Headlines](https://powerfulblocks.com/block/animated-headlines)
 * [PB Block Wrapper](https://powerfulblocks.com/block/pb-block-wrapper)
 * [Click To Tweet](https://powerfulblocks.com/block/click-to-tweet)
@@ -53,8 +57,7 @@
 * Custom Animation Duration
 * Custom Easing
 * Custom Attributes
-* Wrapper Link
-* Prebuilt Templates and some more cool features are coming soon InshAllah!
+* Wrapper Link - Add **link** to any Block!
 
 > 🚀  [Get The PRO Version](https://powerfulblocks.com/pricing)
 
@@ -67,7 +70,7 @@ Buy Powerful Blocks Pro to support us :) InshAllah we will add more blocks soon 
 
 ### Need Help?
 
-[Free Support](https://wordpress.org/support/plugin/powerful-blocks/) | [Live Chat](https://web.facebook.com/hello.ultradevs) | [Documentation](https://powerfulblocks.com/docs)  | [Video Tutorials](https://www.youtube.com/playlist?list=PL6-MOhUm73eiSSVHgAVnFFEvs6rO2sZyC)
+[Free Support](https://wordpress.org/support/plugin/powerful-blocks/) | [Live Chat](https://web.facebook.com/hello.ultradevs) | [Documentation](https://docs.ultradevs.com/powerful-blocks)  | [Video Tutorials](https://www.youtube.com/playlist?list=PL6-MOhUm73eiSSVHgAVnFFEvs6rO2sZyC)
 
 ### Join With US
 [Facebook - Community](https://web.facebook.com/groups/powerfulblocks/) | [Facebook - Page](https://web.facebook.com/hello.ultradevs) | [Youtube](https://www.youtube.com/channel/UCc2yL-QGQjscXpPx9Pp7J8w) | [Twitter](https://twitter.com/ultraDevsBD) | [Instagram](https://www.instagram.com/ultradevs/)
@@ -88,18 +91,9 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
 
-## Frequently Asked Questions ##
-
-### Is it possible to use without Gutenberg plugin? ###
-
-No, You must install and active Gutenberg plugin to make this plugin work.
-
-
-
 ## Screenshots ##
 
-1. Admin Page Widgets List
-2. Gutenberg Editor Widgets List
+
 
 ## Changelog ##
 
