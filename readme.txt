@@ -96,12 +96,13 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 == Screenshots ==
 
-
+1. Block List
+2. Prebuilt Templates
 
 == Changelog ==
 
 
 == Upgrade Notice ==
 
-= 1.0.0 - 27/11/2020 =
+= 1.0.0 - 26/02/2021 =
 * Initial Stable Release
