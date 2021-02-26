@@ -6,7 +6,7 @@
  */
 
 /**
- * Plugin Name:       Powerful Blocks
+ * Plugin Name:       Gutenberg Blocks - Powerful Blocks for Gutenberg
  * Plugin URI:        https://powerfulblocks.com
  * Description:       Powerful Blocks is a Gutenberg Block Plugin With Awesome Blocks, Prebuilt Templates and Advanced Controls.
  * Version:           1.0.0

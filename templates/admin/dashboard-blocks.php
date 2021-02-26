@@ -16,7 +16,7 @@ $inactive_blocks = self::inactive_blocks();
 		<?php
 		foreach ( $block_list as $key => $block ) {
 
-			if ( ! in_array( $key, $inactive_blocks)) {
+			if ( ! in_array( $key, $inactive_blocks ) ) {
 				$checked = 'checked="checked"';
 			} else {
 				$checked = '';

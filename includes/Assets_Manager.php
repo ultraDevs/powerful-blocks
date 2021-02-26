@@ -110,7 +110,7 @@ class Assets_Manager {
 		$d_l_data = array(
 			'inactive_blocks' => $inactive_blocks,
 			'assets'          => POWERFUL_BLOCKS_ASSETS,
-			'templates_api' => 'https://powerfulblocks.com/wp-json/powerful-blocks/v1/',
+			'templates_api'   => 'https://powerfulblocks.com/wp-json/powerful-blocks/v1/',
 		);
 
 		if ( has_filter( 'pb_localize' ) ) {
@@ -149,7 +149,7 @@ class Assets_Manager {
 
 		$css = get_post_meta( $post_id, '_pb_css', true );
 
-		echo '<style>' . $this->get_google_fonts( $css ) . '</style>';
+		echo '<style>' . trim( $this->get_google_fonts( $css ) ) . '</style>';
 	}
 
 	/**

@@ -101,7 +101,7 @@ class Dashboard {
 	 */
 	public static function inactive_blocks() {
 		$inactive_blocks = Helper::pb_get_option( '__pb_inactive_blocks', array() );
-		return $inactive_blocks;
+		return $inactive_blocks ? $inactive_blocks : array();
 	}
 
 

@@ -1,5 +1,5 @@
-# Powerful Blocks #
-**Contributors:** [ultradevs](https://profiles.wordpress.org/ultradevs)  
+# Gutenberg Blocks - Powerful Blocks for Gutenberg #
+**Contributors:** [ultradevs](https://profiles.wordpress.org/ultradevs), [mhimon](https://profiles.wordpress.org/mhimon)  
 **Donate link:** https://ultradevs.com/donate  
 **Tags:** gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates  
 **Requires at least:** 5.3.2  
@@ -21,7 +21,7 @@
 * Light Weight & Instant Loading
 * Prebuilt Templates 
 * Some more cool features are coming soon InshAllah!
-* **Wrapper Link - Add **link** to any Block! ( Pro )**
+* Wrapper Link - **Add **link** to any Block! ( Pro )**
 
 ### Advanced Controls
 * Background ( Color, Gradient, Image )
@@ -58,6 +58,9 @@
 * Custom Easing
 * Custom Attributes
 * Wrapper Link - Add **link** to any Block!
+* Custom Page Templates ( Transparent Header, No Header & Footer )
+
+Custom Page Templates Supported Theme : Twenty Twenty-One
 
 > 🚀  [Get The PRO Version](https://powerfulblocks.com/pricing)
 

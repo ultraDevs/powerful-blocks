@@ -1,0 +1,21 @@
+{
+	"exclude": [
+		"appsero.json",
+		"note.md",
+		".babelrc",
+		".jshintrc",
+		".gitignore",
+		"Gruntfile.js",
+		"babel.config.js",
+		"package.json",
+		"package-lock.json",
+		"composer.json",
+		"composer.lock",
+		"cmnd.txt",
+		"readme.md",
+		"yarn.lock",
+		".dev",
+		".git",
+		"src"
+	]
+}

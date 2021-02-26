@@ -47,13 +47,6 @@ jQuery(function($) {
         activateTab( tab );
     });
 
-    $('#toplevel_page_powerful-blocks > .wp-submenu a[href*=#]').on( 'click', function(e) {
-        e.preventDefault();
-        let _this = $( this ),
-        url = $( this ).attr('href'),
-        tab = url.substring(url.indexOf('#'));
-        activateTab( tab );
-    });
 
     $(window).on('hashchange', function(e) {
         e.preventDefault();
