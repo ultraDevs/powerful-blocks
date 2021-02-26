@@ -4,7 +4,7 @@
 **Tags:** gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates  
 **Requires at least:** 5.3.2  
 **Tested up to:**      5.6.2  
-**Stable tag:**        1.0.0  
+**Stable tag:**        1.0.1  
 **Requires PHP:**      7.0.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
@@ -21,7 +21,7 @@
 * Light Weight & Instant Loading
 * Prebuilt Templates 
 * Some more cool features are coming soon InshAllah!
-* Wrapper Link - **Add **link** to any Block! ( Pro )**
+* Wrapper Link - **Add link to any Block! ( Pro )**
 
 ### Advanced Controls
 * Background ( Color, Gradient, Image )
@@ -60,7 +60,7 @@
 * Wrapper Link - Add **link** to any Block!
 * Custom Page Templates ( Transparent Header, No Header & Footer )
 
-Custom Page Templates Supported Theme : Twenty Twenty-One
+Custom Page Templates Supported Theme : Twenty Twenty One
 
 > 🚀  [Get The PRO Version](https://powerfulblocks.com/pricing)
 
@@ -103,6 +103,10 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 
 ## Upgrade Notice ##
+
+### 1.0.1 ###
+* Fix: Admin Page CSS & JS Loading
+* Added: Spinner - Templates Block
 
 ### 1.0.0 - 26/02/2021 ###
 * Initial Stable Release
