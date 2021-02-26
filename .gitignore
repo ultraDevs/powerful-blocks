@@ -32,7 +32,7 @@ node_modules/
 /vendor/
 
 /assets/**/*.map
-*.assets.php
+*.asset.php
 
 .map
 

@@ -2,6 +2,7 @@ const { __ } = wp.i18n;
 const { 
 	Modal,
 	Button,
+	Spinner,
 } = wp.components;
 const {
     compose,
@@ -116,7 +117,7 @@ const edit = ( props ) => {
 			updateTemplates( results );
 		})
 		.catch( function(error) {
-			console.log(error);
+			// console.log(error);
 		});
 	};
 	if ( 0 === templates.length ) {
@@ -133,7 +134,7 @@ const edit = ( props ) => {
 			updateCategories( data.categories );
 		})
 		.catch( function(error) {
-			console.log(error);
+			// console.log(error);
 		});
 	};
 	if ( 0 === categories.length ) {
@@ -182,8 +183,7 @@ const edit = ( props ) => {
 							<div className="pb-templates-content">
 								<div className="pb-templates-con--category">
 									<ul>
-										{/* <li className="c-active">All Categories</li> */}
-										{
+										{ categories.length ? 
 											categories.map( ( category, key ) => {
 												return (
 													<li 
@@ -199,14 +199,17 @@ const edit = ( props ) => {
 													</span>
 													</li>
 												);
-											})
+											} )
+											:
+											<Spinner />
 										}
 										
 									</ul>
 								</div>
 								<div className="pb-templates-con--list">
 									
-									{ templates.map( ( template, key ) => {
+									{ templates.length ?
+										templates.map( ( template, key ) => {
 										return (
 											<div className="pb-templates-list-item"
 											>
@@ -244,6 +247,8 @@ const edit = ( props ) => {
 											</div>
 										);
 										})
+										:
+										<Spinner />
 									}
 								</div>
 							</div>
