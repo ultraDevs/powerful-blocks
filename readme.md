@@ -21,7 +21,7 @@
 * Light Weight & Instant Loading
 * Prebuilt Templates 
 * Some more cool features are coming soon InshAllah!
-* Wrapper Link - **Add **link** to any Block! ( Pro )**
+* Wrapper Link - **Add link to any Block! ( Pro )**
 
 ### Advanced Controls
 * Background ( Color, Gradient, Image )
@@ -60,7 +60,7 @@
 * Wrapper Link - Add **link** to any Block!
 * Custom Page Templates ( Transparent Header, No Header & Footer )
 
-Custom Page Templates Supported Theme : Twenty Twenty-One
+Custom Page Templates Supported Theme : Twenty Twenty One
 
 > 🚀  [Get The PRO Version](https://powerfulblocks.com/pricing)
 
