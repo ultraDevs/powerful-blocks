@@ -32,10 +32,9 @@ node_modules/
 /vendor/
 
 /assets/**/*.map
-assets/**/*.assets.php
+*.assets.php
 
 .map
 
 /dist
-/assets
 /powerful-blocks.zip
