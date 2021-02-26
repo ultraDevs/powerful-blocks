@@ -204,7 +204,7 @@ final class PowerfulBlocks {
 			require_once POWERFUL_BLOCKS_DIR_PATH . '/vendor/appsero/src/Client.php';
 		}
 
-		$client = new Appsero\Client( '5f221920-4f40-4349-ae25-b49335675128', 'Powerful Blocks for Gutenberg', __FILE__ );
+		$client = new Appsero\Client( '212f7849-a379-41d7-901e-5d512a25e63c', 'Powerful Blocks for Gutenberg', __FILE__ );
 
 		$powerful_blocks_data = array(
 			'pro_installed' => udpb_has_pro() ? 'Yes' : 'No',
