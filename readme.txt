@@ -116,6 +116,7 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 = 1.0.2 =
 * Fixes: Block Control, Templates, Default Accordion Item
+* Added: Badge in Icon Box Block
 
 = 1.0.1 =
 * Fix: Admin Page CSS & JS Loading

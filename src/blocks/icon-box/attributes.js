@@ -338,6 +338,136 @@ const attributes = {
 	},
 
 
+	badgeText: {
+		type: 'string',
+	},
+	badgeColor: {
+		type: 'string',
+		default: '#fff',
+	},
+	badgeBackgroundColor: {
+		type: 'string',
+		default: '#ff0000',
+	},
+
+	badgePositionV: {
+		type: 'string',
+		default: 'top',
+	},
+	badgePositionH: {
+		type: 'string',
+		default: 'right',
+	},
+	
+	badgePadding: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '5px',
+			right: '5px',
+			bottom: '0px',
+		},
+	},
+	badgePaddingTablet: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '5px',
+			right: '5px',
+			bottom: '0px',
+		},
+	},
+	badgePaddingMobile: {
+		type: 'object',
+		default: {
+			top: '0px',
+			left: '5px',
+			right: '5px',
+			bottom: '0px',
+		},
+	},
+	
+	badgeBorderRadius: {
+		type: 'object',
+		default: {
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
+		},
+	},
+	
+	badgeBorderRadiusTablet: {
+		type: 'object',
+		default: {
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
+		},
+	},
+	
+	badgeBorderRadiusMobile: {
+		type: 'object',
+		default: {
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
+		},
+	},
+	
+	badgeFontSize: {
+		type: 'number',
+		default: 15,
+	},
+	
+	badgeFontSizeTablet: {
+		type: 'number',
+		default: 15,
+	},
+	
+	badgeFontSizeMobile: {
+		type: 'number',
+		default: 14,
+	},
+	
+	badgeFontFamily: {
+		type: 'string',
+		default: '',
+	},
+	
+	badgeFontSizeType: {
+		type: 'string',
+		default: 'px',
+	},
+	badgeFontStyle: {
+		type: 'string',
+		default: 'normal',
+	},
+	
+	badgeFontWeight: {
+		type: 'string',
+		default: 'normal',
+	},
+	badgeTextTransform: {
+		type: 'string',
+		default: '',
+	},
+	badgeTextDecoration: {
+		type: 'string',
+		default: '',
+	},
+	badgeLetterSpacing: {
+		type: 'number',
+		default: '',
+	},
+	badgeLineHeight: {
+		type: 'number',
+		default: '',
+	},
+
+
 	preset: {
 		type: 'string',
 		default: 'design-1',

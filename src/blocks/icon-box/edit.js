@@ -16,6 +16,7 @@ const edit = ( props ) => {
 		blockId,
 		icon,
 		title,
+		badgeText,
 		preset,
 	} = attributes;
 
@@ -41,6 +42,13 @@ const edit = ( props ) => {
 					) }
 					{ ... blockAttr }
 				>
+					{ badgeText ? (
+						<>
+							<div className="pb-icon-box--badge">
+								{ badgeText }
+							</div>
+						</>
+					) : '' }
 					<div className="pb-icon-box--m">
 						<IconBox icon={ icon } iconClass = 'pb-icon-box--icon' />
 					</div>

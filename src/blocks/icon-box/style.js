@@ -64,6 +64,28 @@ const Styles = ( props ) => {
 		titleTextDecoration,
 		titleLetterSpacing,
 		titleLineHeight,
+
+		badgeColor,
+		badgeBackgroundColor,
+		badgePositionV,
+		badgePositionH,
+		badgePadding,
+		badgePaddingTablet,
+		badgePaddingMobile,
+		badgeBorderRadius,
+		badgeBorderRadiusTablet,
+		badgeBorderRadiusMobile,
+		badgeFontSize,
+		badgeFontSizeTablet,
+		badgeFontSizeMobile,
+		badgeFontFamily,
+		badgeFontSizeType,
+		badgeFontStyle,
+		badgeFontWeight,
+		badgeTextTransform,
+		badgeTextDecoration,
+		badgeLetterSpacing,
+		badgeLineHeight,
 		
 		preset,
 
@@ -89,6 +111,42 @@ const Styles = ( props ) => {
 				'padding-bottom': mPadding.bottom ? mPadding.bottom : undefined,
 				'padding-left': mPadding.left ? mPadding.left : undefined,
 				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
+			},
+			'.pb-icon-box--badge' : {
+				'position': 'absolute',
+				'top': 'top' === badgePositionV ? '0px' : undefined,
+				'bottom': 'bottom' === badgePositionV ? '0px' : undefined,
+				'right': 'right' === badgePositionH ? '0px' : undefined,
+				'left': 'left' === badgePositionH ? '0px' : undefined,
+				color: badgeColor ? badgeColor : undefined,
+				background: badgeBackgroundColor ? badgeBackgroundColor : undefined,
+				'padding-top': badgePadding.top ? badgePadding.top : undefined,
+				'padding-right': badgePadding.right ? badgePadding.right : undefined,
+				'padding-bottom': badgePadding.bottom ? badgePadding.bottom : undefined,
+				'padding-left': badgePadding.left ? badgePadding.left : undefined,
+				'border-radius': badgeBorderRadius ? ( badgeBorderRadius.top ? badgeBorderRadius.top : '0px' ) + ' ' + ( badgeBorderRadius.right ? badgeBorderRadius.right : '0px') + ' ' + ( badgeBorderRadius.bottom ? badgeBorderRadius.bottom : '0px' ) + ' ' + ( badgeBorderRadius.left ? badgeBorderRadius.left : '0px' ) : undefined,
+
+				'font-size' : badgeFontSize ? badgeFontSize + badgeFontSizeType : undefined,
+				'font-family': badgeFontFamily
+					? badgeFontFamily : undefined,
+				'font-weight': badgeFontWeight
+					? badgeFontWeight : undefined,
+				'font-style': badgeFontStyle
+					? badgeFontStyle
+					: undefined,
+				'letter-spacing': badgeLetterSpacing
+					? badgeLetterSpacing + 'px'
+					: undefined,
+				'line-height': badgeLineHeight
+					? badgeLineHeight + 'px'
+					: undefined,
+				'text-transform': badgeTextTransform
+					? badgeTextTransform
+					: undefined,
+				'text-decoration': badgeTextDecoration
+					? badgeTextDecoration
+					: undefined,
+
 			},
 			'.pb-icon-box--icon' : {
 				color: iconColor ? iconColor : undefined,
@@ -180,6 +238,15 @@ const Styles = ( props ) => {
 				'padding-left': mPaddingTablet.left ? mPaddingTablet.left : undefined,
 				transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
 			},
+			'.pb-icon-box--badge' : {
+				'padding-top': badgePaddingTablet.top ? badgePaddingTablet.top : undefined,
+				'padding-right': badgePaddingTablet.right ? badgePaddingTablet.right : undefined,
+				'padding-bottom': badgePaddingTablet.bottom ? badgePaddingTablet.bottom : undefined,
+				'padding-left': badgePaddingTablet.left ? badgePaddingTablet.left : undefined,
+				'border-radius': badgeBorderRadius ? ( badgeBorderRadius.top ? badgeBorderRadius.top : '0px' ) + ' ' + ( badgeBorderRadiusTablet.right ? badgeBorderRadiusTablet.right : '0px') + ' ' + ( badgeBorderRadiusTablet.bottom ? badgeBorderRadiusTablet.bottom : '0px' ) + ' ' + ( badgeBorderRadiusTablet.left ? badgeBorderRadiusTablet.left : '0px' ) : undefined,
+				'font-size' : badgeFontSizeTablet ? badgeFontSizeTablet + badgeFontSizeType : undefined,
+
+			},
 			'.pb-icon-box--icon' : {
 				'border-radius': mBorderRadiusTablet ? ( mBorderRadiusTablet.top ? mBorderRadiusTablet.top : '0px' ) + ' ' + ( mBorderRadiusTablet.right ? mBorderRadiusTablet.right : '0px') + ' ' + ( mBorderRadiusTablet.bottom ? mBorderRadiusTablet.bottom : '0px' ) + ' ' + ( mBorderRadiusTablet.left ? mBorderRadiusTablet.left : '0px' ) : undefined,
 			},
@@ -217,7 +284,15 @@ const Styles = ( props ) => {
 				transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
 			
 			},
+			'.pb-icon-box--badge' : {
+				'padding-top': badgePaddingMobile.top ? badgePaddingMobile.top : undefined,
+				'padding-right': badgePaddingMobile.right ? badgePaddingMobile.right : undefined,
+				'padding-bottom': badgePaddingMobile.bottom ? badgePaddingMobile.bottom : undefined,
+				'padding-left': badgePaddingMobile.left ? badgePaddingMobile.left : undefined,
+				'border-radius': badgeBorderRadiusMobile ? ( badgeBorderRadiusMobile.top ? badgeBorderRadiusMobile.top : '0px' ) + ' ' + ( badgeBorderRadiusMobile.right ? badgeBorderRadiusMobile.right : '0px') + ' ' + ( badgeBorderRadiusMobile.bottom ? badgeBorderRadiusMobile.bottom : '0px' ) + ' ' + ( badgeBorderRadiusMobile.left ? badgeBorderRadiusMobile.left : '0px' ) : undefined,
+				'font-size' : badgeFontSizeMobile ? badgeFontSizeMobile + badgeFontSizeType : undefined,
 
+			},
 			'.pb-icon-box--icon' : {
 				'border-radius': mBorderRadiusMobile ? ( mBorderRadiusMobile.top ? mBorderRadiusMobile.top : '0px' ) + ' ' + ( mBorderRadiusMobile.right ? mBorderRadiusMobile.right : '0px') + ' ' + ( mBorderRadiusMobile.bottom ? mBorderRadiusMobile.bottom : '0px' ) + ' ' + ( mBorderRadiusMobile.left ? mBorderRadiusMobile.left : '0px' ) : undefined,
 			},

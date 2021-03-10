@@ -2,6 +2,7 @@ const { InspectorControls } = wp.blockEditor;
 const {
 	PanelBody,
 	TextControl,
+	SelectControl,
 	RangeControl,
 	Button,
 	ButtonGroup,
@@ -11,6 +12,8 @@ const { __ } = wp.i18n;
 
 const { useState } = wp.element;
 import classnames from 'classnames';
+
+import { pType, UpgradePlanNotice } from '../../helper/lic';
 
 
 import {
@@ -90,6 +93,30 @@ const Inspector = ( props ) => {
 		titleTextDecoration,
 		titleLetterSpacing,
 		titleLineHeight,
+
+
+		badgeText,
+		badgeBackgroundColor,
+		badgePositionV,
+		badgePositionH,
+		badgeColor,
+		badgePadding,
+		badgePaddingTablet,
+		badgePaddingMobile,
+		badgeBorderRadius,
+		badgeBorderRadiusTablet,
+		badgeBorderRadiusMobile,
+		badgeFontSize,
+		badgeFontSizeTablet,
+		badgeFontSizeMobile,
+		badgeFontFamily,
+		badgeFontSizeType,
+		badgeFontStyle,
+		badgeFontWeight,
+		badgeTextTransform,
+		badgeTextDecoration,
+		badgeLetterSpacing,
+		badgeLineHeight,
 		
 		preset,
 	} = attributes;
@@ -182,6 +209,25 @@ const Inspector = ( props ) => {
 								} }
 							/>
 
+						</PanelBody>
+
+						<PanelBody
+							title={ __( 'Badge', 'powerful-blocks' ) }
+							initialOpen={ false }
+						>
+							{ 
+								'Free' === pType ? (
+									<UpgradePlanNotice />
+								) : (
+									<TextControl
+										label={ __( 'Badge Text', 'powerful-blocks' ) }
+										value={ badgeText }
+										onChange={ ( badgeText ) => {
+											setAttributes( { badgeText } );
+										} }
+									/>
+								)
+							}
 						</PanelBody>
 						
 					</>
@@ -449,6 +495,112 @@ const Inspector = ( props ) => {
 								setAttributes = { props.setAttributes }
 							/>
 
+						</PanelBody>
+						<PanelBody
+							title={ __( 'Badge', 'powerful-blocks' ) }
+							initialOpen={ false }
+						>
+							{ 
+								'Free' === pType ? (
+									<UpgradePlanNotice />
+								) : (
+									<>
+										<ColorPickerControl
+											label={ __( 'Background Color', 'powerful-blocks' ) }
+											value={ badgeBackgroundColor }
+											onChange={ ( badgeBackgroundColor ) => {
+												setAttributes( { badgeBackgroundColor } );
+											} }
+										/>
+										<ColorPickerControl
+											label={ __( 'Color', 'powerful-blocks' ) }
+											value={ badgeColor }
+											onChange={ ( badgeColor ) => {
+												setAttributes( { badgeColor } );
+											} }
+										/>
+										<SelectControl
+											className = "pb-custom-select-control"
+											label={ __( 'Vertical Align', 'powerful-blocks' ) }
+											value={ badgePositionV }
+											onChange={ ( badgePositionV ) => {
+												setAttributes( { badgePositionV } );
+											} }
+											options={ [
+												{ value: 'top', label: 'Top' },
+												{ value: 'bottom', label: 'Bottom' },
+											] }
+										/>
+										<SelectControl
+											className = "pb-custom-select-control"
+											label={ __( 'Horizontal Align', 'powerful-blocks' ) }
+											value={ badgePositionH }
+											onChange={ ( badgePositionH ) => {
+												setAttributes( { badgePositionH } );
+											} }
+											options={ [
+												{ value: 'left', label: 'Left' },
+												{ value: 'right', label: 'Right' },
+											] }
+										/>
+										<ResponsiveBoxControl
+											label={ __( 'Padding', 'powerful-blocks' ) }
+											value={ {
+												desktop: badgePadding,
+												tablet: badgePaddingTablet,
+												mobile: badgePaddingMobile,
+											} }
+											onChange={ ( value, device ) => {
+												if ( 'desktop' === device ) {
+													setAttributes( { badgePadding: value } );
+												}
+												if ( 'tablet' === device ) {
+													setAttributes( { badgePaddingTablet: value } );
+												}
+												if ( 'mobile' === device ) {
+													setAttributes( { badgePaddingMobile: value } );
+												}
+											} }
+										/>
+										<TypographyControl
+											label = { __( 'Typography', 'powerful-blocks' ) }
+											fontFamily = { { value: badgeFontFamily, name: 'badgeFontFamily' } }
+											sizeType = {
+												{ value: badgeFontSizeType, name: 'badgeFontSizeType' }
+											}
+											fontSize = { { value: badgeFontSize, name: 'badgeFontSize' } }
+											fontSizeTablet = { { value: badgeFontSizeTablet, name: 'badgeFontSizeTablet' } }
+											fontSizeMobile = { { value: badgeFontSizeMobile, name: 'badgeFontSizeMobile' } }
+											fontStyle = { { value: badgeFontStyle, name: 'badgeFontStyle' } }
+											fontWeight = { { value: badgeFontWeight, name: 'badgeFontWeight' } }
+											lineHeight = { { value: badgeLineHeight, name: 'badgeLineHeight' } }
+											letterSpacing = { { value: badgeLetterSpacing, name: 'badgeLetterSpacing' } }
+											textTransform = { { value: badgeTextTransform, name: 'badgeTextTransform' } }
+											textDecoration = { { value: badgeTextDecoration, name: 'badgeTextDecoration' } }
+											setAttributes = { props.setAttributes }
+										/>
+										<ResponsiveBoxControl
+											label={ __( 'Border Radius', 'powerful-blocks' ) }
+											value={ {
+												desktop: badgeBorderRadius,
+												tablet: badgeBorderRadiusTablet,
+												mobile: badgeBorderRadiusMobile,
+											} }
+											onChange={ ( value, device ) => {
+												if ( 'desktop' === device ) {
+													setAttributes( { badgeBorderRadius: value } );
+												}
+												if ( 'tablet' === device ) {
+													setAttributes( { badgeBorderRadiusTablet: value } );
+												}
+												if ( 'mobile' === device ) {
+													setAttributes( { badgeBorderRadiusMobile: value } );
+												}
+											} }
+										/>
+									</>
+								)
+							}
 						</PanelBody>
 					</>
 				) }

@@ -9,7 +9,7 @@ const save = ( { attributes, className } ) => {
 		blockId,
 		icon,
 		title,
-
+		badgeText,
 	} = attributes;
 
 	const classes = genClass( attributes, 'save'  );
@@ -26,6 +26,13 @@ const save = ( { attributes, className } ) => {
 					) }
 					{ ... blockAttr }
 				>
+					{ badgeText ? (
+						<>
+							<div className="pb-icon-box--badge">
+								{ badgeText }
+							</div>
+						</>
+					) : '' }
 					<div className="pb-icon-box--m">
 						<IconBox icon={ icon } iconClass = 'pb-icon-box--icon' />
 					</div>
