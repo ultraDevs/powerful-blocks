@@ -156,7 +156,7 @@ module.exports = function(grunt) {
 					'!build/**',
 					'!assets/*.scss',
 					'!assets/**/*.map',
-					'!assets/**/*.assets.php',
+					'!assets/**/*.asset.php',
 					'!*~',
 					'!cmnd.txt',
 					'!yarn.lock',
@@ -215,6 +215,8 @@ module.exports = function(grunt) {
 		'readme'
 	]);
 	grunt.registerTask('release', [
+		'makepot',
+		'readme',
 		'clean:zip',
 		'copy:main',
 		'compress:main',

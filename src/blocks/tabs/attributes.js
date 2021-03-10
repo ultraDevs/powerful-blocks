@@ -144,28 +144,28 @@ const attributes = {
 	contentMargin: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	contentMarginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	contentMarginMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	contentPadding: {
@@ -199,29 +199,29 @@ const attributes = {
 	contentBorderRadius: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
 	contentBorderRadiusTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	contentBorderRadiusMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 };

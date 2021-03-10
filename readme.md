@@ -30,26 +30,26 @@
 * On Scroll Animation ( In and Out )
 * Positioning ( Custom Width, Height, z-index etc )
 * Responsive ( Hide on Desktop, Tablet or Mobile )
-* Custom Class, ID
+* Custom Class, ID, Attributes
 * More coming soon InshAllah.
 
-## You will be able to add these advanced controls to any block by using our ** PB Block Wrapper ** Easily!
+## You will be able to add these advanced controls to any block by using our *PB Block Wrapper* Easily!
 
 ### Blocks
-* [Accordion](https://powerfulblocks.com/block/accordion)
-* [Alert Box](https://powerfulblocks.com/block/alert-box)
-* [Advanced Typography](https://powerfulblocks.com/block/advanced-typography)
-* [Animated Headlines](https://powerfulblocks.com/block/animated-headlines)
-* [PB Block Wrapper](https://powerfulblocks.com/block/pb-block-wrapper)
-* [Click To Tweet](https://powerfulblocks.com/block/click-to-tweet)
-* [Counter](https://powerfulblocks.com/block/counter)
-* [Fun Factor](https://powerfulblocks.com/block/fun-factor)
-* [Icon Box](https://powerfulblocks.com/block/icon-box)
-* [Info Box](https://powerfulblocks.com/block/info-box)
-* [PB Spacer](https://powerfulblocks.com/block/pb-spacer)
-* [Star Rating](https://powerfulblocks.com/block/star-rating)
-* [Tabs](https://powerfulblocks.com/block/tabs)
-* [Testimonial](https://powerfulblocks.com/block/testimonial)
+* [Accordion](https://powerfulblocks.com/blocks/accordion)
+* [Alert Box](https://powerfulblocks.com/blocks/alert-box)
+* [Advanced Typography](https://powerfulblocks.com/blocks/advanced-typography)
+* [Animated Headlines](https://powerfulblocks.com/blocks/animated-headlines)
+* [PB Block Wrapper](https://powerfulblocks.com/blocks/pb-block-wrapper)
+* [Click To Tweet](https://powerfulblocks.com/blocks/click-to-tweet)
+* [Counter](https://powerfulblocks.com/blocks/counter)
+* [Fun Factor](https://powerfulblocks.com/blocks/fun-factor)
+* [Icon Box](https://powerfulblocks.com/blocks/icon-box)
+* [Info Box](https://powerfulblocks.com/blocks/info-box)
+* [PB Spacer](https://powerfulblocks.com/blocks/pb-spacer)
+* [Star Rating](https://powerfulblocks.com/blocks/star-rating)
+* [Tabs](https://powerfulblocks.com/blocks/tabs)
+* [Testimonial](https://powerfulblocks.com/blocks/testimonial)
 
 
 ### Pro
@@ -60,16 +60,16 @@
 * Wrapper Link - Add **link** to any Block!
 * Custom Page Templates ( Transparent Header, No Header & Footer )
 
-Custom Page Templates Supported Theme : Twenty Twenty One
+Custom Page Templates Supported Theme : Twenty Twenty One, Page Builder Framework **( Pro )**
 
-> 🚀  [Get The PRO Version](https://powerfulblocks.com/pricing)
+> 🚀 [Get The PRO Version](https://powerfulblocks.com/pricing)
 
 
-Made With Love By [ultraDevs](https://ultradevs.com)
+Made With Love By [ultraDevs](https://ultradevs.com) ❤️
 
 ### You can ask for any type of custom block [Here](https://powerfulblocks.com/custom-block)
 
-Buy Powerful Blocks Pro to support us :) InshAllah we will add more blocks soon <3
+InshAllah we will add more blocks soon ❤️
 
 ### Need Help?
 
@@ -101,8 +101,8 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 ## Changelog ##
 
-
-## Upgrade Notice ##
+### 1.0.2 ###
+* Fix: Block Control, Templates
 
 ### 1.0.1 ###
 * Fix: Admin Page CSS & JS Loading

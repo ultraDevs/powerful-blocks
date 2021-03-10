@@ -90,56 +90,56 @@ const attributes = {
 	mPadding: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	mPaddingTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	mPaddingMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
     },
     
     mMargin: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	mMarginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	mMarginMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
@@ -172,30 +172,30 @@ const attributes = {
 	mBorderRadius: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
 	mBorderRadiusTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
 	mBorderRadiusMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
@@ -205,27 +205,27 @@ const attributes = {
 	},
 	mOffsetTop: {
 		type: 'number',
-		default: 0,
+		default: '',
 	},
 	mOffsetTopTablet: {
 		type: 'number',
-		default: 0,
+		default: '',
 	},
 	mOffsetTopMobile: {
 		type: 'number',
-		default: 0,
+		default: '',
 	},
 	mOffsetLeft: {
 		type: 'number',
-		default: 0,
+		default: '',
 	},
 	mOffsetLeftTablet: {
 		type: 'number',
-		default: 0,
+		default: '',
 	},
 	mOffsetLeftMobile: {
 		type: 'number',
-		default: 0,
+		default: '',
 	},
 
 
@@ -319,27 +319,27 @@ const attributes = {
 	titleMargin: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
+			top: '',
+			left: '',
+			right: '',
 			bottom: '10px',
 		},
 	},
 	titleMarginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
+			top: '',
+			left: '',
+			right: '',
 			bottom: '10px',
 		},
 	},
 	titleMarginMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
+			top: '',
+			left: '',
+			right: '',
 			bottom: '10px',
 		},
 	},

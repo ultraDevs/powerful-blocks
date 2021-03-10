@@ -21,7 +21,6 @@ const attributes = {
 		type: 'array',
 		default: [
 			{
-				isDefault: true,
 				icon: 'fas fa-plus',
 				enableIcon: true,
 				'title': __( 'PB Accordion #1', 'powerful-blocks' ),
@@ -32,7 +31,6 @@ const attributes = {
 				),
 			},
 			{
-				isDefault: false,
 				icon: 'fas fa-plus',
 				enableIcon: false,
 				'title': __( 'PB Accordion #2', 'powerful-blocks' ),
@@ -43,7 +41,6 @@ const attributes = {
 				),
 			},
 			{
-				isDefault: false,
 				icon: 'fas fa-plus',
 				enableIcon: false,
 				'title': __( 'PB Accordion #3', 'powerful-blocks' ),
@@ -54,6 +51,11 @@ const attributes = {
 				),
 			}
 		],
+	},
+
+	activeItem: {
+		type: 'string',
+		default: 'item-0',
 	},
 
 	toggleIcon: {
@@ -314,7 +316,7 @@ const attributes = {
 		type: 'object',
 		default: {
 			top: '',
-			left: '0px',
+			left: '',
 			right: '',
 			bottom: '10px',
 		},
@@ -323,7 +325,7 @@ const attributes = {
 		type: 'object',
 		default: {
 			top: '',
-			left: '0px',
+			left: '',
 			right: '',
 			bottom: '10px',
 		},

@@ -284,7 +284,7 @@ const Inspector = ( props ) => {
 										let nAccordions = [
 											...accordions,
 											{
-												isDefault: true,
+												isDefault: false,
 												icon: '',
 												'title': `PB Accordion #${key}`,
 												contentType: 'content',
@@ -573,7 +573,7 @@ const Inspector = ( props ) => {
 								sizeOnTablet = { { value: itemsGapTablet, name: 'itemsGapTablet' } }
 								sizeOnMobile = { { value: itemsGapMobile, name: 'itemsGapMobile' } }
 								min={ 0 }
-								max={ 500 }
+								max={ 100 }
 								setAttributes = { setAttributes }
 							/>
 

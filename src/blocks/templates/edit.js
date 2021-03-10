@@ -224,7 +224,7 @@ const edit = ( props ) => {
 														<div className="pb-template-preview">
 															<a className="pb-template-btn" href={ template.preview_url } target="_blank">Preview</a>
 														</div>
-														{ ( template.pro && 'Free' !== pType ) ? (
+														{ ( template.pro && 'Free' === pType ) ? (
 															<div className="pb-template-get-pro">
 																<a className="pb-template-btn" href="https://powerfulblocks.com/pricing" target="_blank">Get Pro</a>
 															</div>

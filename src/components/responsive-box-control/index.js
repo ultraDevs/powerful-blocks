@@ -50,8 +50,8 @@ const ResponsiveBoxControl = ( props ) => {
 				<BaseBoxControl
 					label={ props.label }
 					value={ props.value.desktop }
-					onChange={ ( value ) => {
-						props.onChange( value, device );
+					onChange={ ( Dvalue ) => {
+						props.onChange( Dvalue, device );
 					} }
 				/>
 			) }
@@ -59,8 +59,8 @@ const ResponsiveBoxControl = ( props ) => {
 				<BaseBoxControl
 					label={ props.label }
 					value={ props.value.tablet }
-					onChange={ ( value ) => {
-						props.onChange( value, device );
+					onChange={ ( Tvalue ) => {
+						props.onChange( Tvalue, device );
 					} }
 				/>
 			) }
@@ -68,8 +68,8 @@ const ResponsiveBoxControl = ( props ) => {
 				<BaseBoxControl
 					label={ props.label }
 					value={ props.value.mobile }
-					onChange={ ( value ) => {
-						props.onChange( value, device );
+					onChange={ ( Mvalue ) => {
+						props.onChange( Mvalue, device );
 					} }
 				/>
 			) }

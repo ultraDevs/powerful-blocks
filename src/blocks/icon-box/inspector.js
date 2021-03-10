@@ -228,8 +228,8 @@ const Inspector = ( props ) => {
 								sizeOnDesktop = { { value: mOffsetTop, name: 'mOffsetTop' } }
 								sizeOnTablet = { { value: mOffsetTopTablet, name: 'mOffsetTopTablet' } }
 								sizeOnMobile = { { value: mOffsetTopMobile, name: 'mOffsetTopMobile' } }
-								min={ -1000 }
-								max={ 1000 }
+								min={ -100 }
+								max={ 100 }
 								allowReset = { false }
 								setAttributes = { setAttributes }
 							/>

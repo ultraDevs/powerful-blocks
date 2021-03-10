@@ -10,6 +10,7 @@ const save = ( { attributes, className } ) => {
 	const {
 		blockId,
 		accordions,
+		activeItem,
 		titleTag,
 		toggleIcon,
 		toggleOpenIcon,
@@ -43,7 +44,12 @@ const save = ( { attributes, className } ) => {
 				{
 					accordions.map( ( accordion, key ) => (
 						<div className="pb-accordion-item">
-							<div className="pb-accordion-header">
+							<div className={
+								classnames(
+									"pb-accordion-header",
+									`item-${key}` == activeItem ? 'pb-active' : '',
+								)
+							}>
 							{ true === accordion.enableIcon ? (
 								<IconBox icon={ accordion.icon } iconClass = 'pb-accordion-icon' />
 							) : '' }
@@ -63,7 +69,12 @@ const save = ( { attributes, className } ) => {
 									) : ''
 								}
 							</div>
-							<div className="pb-accordion-content">
+							<div className={
+								classnames(
+									"pb-accordion-content",
+									`item-${key}` == activeItem ? 'pb-active' : '',
+								)
+							}>
 								<RichText.Content
 									tagName="div"
 									className="pb-accordion-content--w"

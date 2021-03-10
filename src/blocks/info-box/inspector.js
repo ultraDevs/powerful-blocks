@@ -338,7 +338,7 @@ const Inspector = ( props ) => {
 										sizeOnTablet = { { value: imgHeightTablet, name: 'imgHeightTablet' } }
 										sizeOnMobile = { { value: imgHeightMobile, name: 'imgHeightMobile' } }
 										min={ 0 }
-										max={ 1000 }
+										max={ 300 }
 										setAttributes = { setAttributes }
 									/>
 									<ResponsiveRangeControl
@@ -350,7 +350,7 @@ const Inspector = ( props ) => {
 										sizeOnTablet = { { value: imgWidthTablet, name: 'imgWidthTablet' } }
 										sizeOnMobile = { { value: imgWidthMobile, name: 'imgWidthMobile' } }
 										min={ 0 }
-										max={ 1000 }
+										max={ 300 }
 										setAttributes = { setAttributes }
 									/>
 								</>
@@ -391,8 +391,8 @@ const Inspector = ( props ) => {
 								sizeOnDesktop = { { value: mOffsetTop, name: 'mOffsetTop' } }
 								sizeOnTablet = { { value: mOffsetTopTablet, name: 'mOffsetTopTablet' } }
 								sizeOnMobile = { { value: mOffsetTopMobile, name: 'mOffsetTopMobile' } }
-								min={ -1000 }
-								max={ 1000 }
+								min={ -100 }
+								max={ 100 }
 								setAttributes = { setAttributes }
 								allowReset = { false }
 							/>
@@ -404,8 +404,8 @@ const Inspector = ( props ) => {
 								sizeOnDesktop = { { value: mOffsetLeft, name: 'mOffsetLeft' } }
 								sizeOnTablet = { { value: mOffsetLeftTablet, name: 'mOffsetLeftTablet' } }
 								sizeOnMobile = { { value: mOffsetLeftMobile, name: 'mOffsetLeftMobile' } }
-								min={ -1000 }
-								max={ 1000 }
+								min={ -100 }
+								max={ 100 }
 								setAttributes = { setAttributes }
 								allowReset = { false }
 							/>

@@ -87,10 +87,10 @@ const attributes = {
 	boxSpace: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
@@ -102,20 +102,20 @@ const attributes = {
 	padding: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
 	borderRadius: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 

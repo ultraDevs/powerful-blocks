@@ -19,9 +19,9 @@ const attributes = {
 	contentMargin: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '00px',
-			right: '0px',
+			top: '',
+			left: '',
+			right: '',
 			bottom: '10px',
 		},
 	},

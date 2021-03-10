@@ -27,6 +27,7 @@ const ResponsiveRangeControl = ( props ) => {
 	const sizeOnMobile = props.sizeOnMobile;
 	const setAttributes = props.setAttributes;
 
+
 	// Size Types.
 	let sizeTypes;
 	if ( 'sizeTypes' in props ) {
@@ -85,8 +86,8 @@ const ResponsiveRangeControl = ( props ) => {
 				{ 'desktop' === device && (
 					<BaseRangeControl
 						value={ sizeOnDesktop.value }
-						onChange={ ( value ) => {
-							setAttributes( { [sizeOnDesktop.name]: value });
+						onChange={ ( Dvalue ) => {
+							setAttributes( { [sizeOnDesktop.name]: Dvalue });
 						} }
 						min = { props.min }
 						max = { props.max }
@@ -96,8 +97,8 @@ const ResponsiveRangeControl = ( props ) => {
 				{ 'tablet' === device && (
 					<BaseRangeControl
 						value={ sizeOnTablet.value }
-						onChange={ ( sizeOnTablet ) => {
-							setAttributes( { [sizeOnTablet.name] : sizeOnTablet });
+						onChange={ ( sizeOnTabletV ) => {
+							setAttributes( { [sizeOnTablet.name] : sizeOnTabletV });
 						} }
 						min = { props.min }
 						max = { props.max }
@@ -107,8 +108,8 @@ const ResponsiveRangeControl = ( props ) => {
 				{ 'mobile' === device && (
 					<BaseRangeControl
 						value={ sizeOnMobile.value }
-						onChange={ ( sizeOnMobile ) => {
-							setAttributes( { [sizeOnMobile.name] : sizeOnMobile });
+						onChange={ ( sizeOnMobileV ) => {
+							setAttributes( { [sizeOnMobile.name] : sizeOnMobileV });
 						} }
 						min = { props.min }
 						max = { props.max }

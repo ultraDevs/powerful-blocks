@@ -18,7 +18,7 @@ const edit = ( props ) => {
 	const {
 		blockId,
 		accordions,
-
+		activeItem,
 		titleTag,
 		toggleIcon,
 		toggleOpenIcon,
@@ -76,6 +76,7 @@ const edit = ( props ) => {
 								}
 								onClick = { () => {
 									`pb-a-${key}` === atab ? setATab( '' ) : setATab( `pb-a-${key}`);
+									setAttributes( { activeItem: `item-${key}` } )
 								}}
 							>
 							{ true === accordion.enableIcon ? (
@@ -97,6 +98,7 @@ const edit = ( props ) => {
 									onChange={ ( title ) => {
 										updateAccordion( title, key, 'title' );
 									} }
+
 								/>
 								{
 									true === toggleIcon ? (

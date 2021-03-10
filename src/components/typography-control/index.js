@@ -142,7 +142,7 @@ const TypographyControl = ( props ) => {
                             sizeOnTablet = { { value: fontSizeTablet.value, name: fontSizeTablet.name } }
                             sizeOnMobile = { { value: fontSizeMobile.value, name: fontSizeMobile.name } }
                             min={ 0 }
-                            max={ 500 }
+                            max={ 100 }
                             setAttributes = { setAttributes }
                         />
                         <RangeControl

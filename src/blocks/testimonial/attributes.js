@@ -102,27 +102,27 @@ const attributes = {
 	contentMargin: {
 		type: 'object',
 		default: {
-			top: '0px',
+			top: '',
 			left: '00px',
-			right: '0px',
+			right: '',
 			bottom: '10px',
 		},
 	},
 	contentMarginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
+			top: '',
 			left: '00px',
-			right: '0px',
+			right: '',
 			bottom: '10px',
 		},
 	},
 	contentMarginMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
+			top: '',
 			left: '00px',
-			right: '0px',
+			right: '',
 			bottom: '10px',
 		},
 	},
@@ -157,29 +157,29 @@ const attributes = {
 	contentBorderRadius: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
 	contentBorderRadiusTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	contentBorderRadiusMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
@@ -295,27 +295,27 @@ const attributes = {
 		type: 'object',
 		default: {
 			top: '10px',
-			left: '0px',
+			left: '',
 			right: '10px',
-			bottom: '0px',
+			bottom: '',
 		},
 	},
 	imageMarginTablet: {
 		type: 'object',
 		default: {
 			top: '10px',
-			left: '0px',
+			left: '',
 			right: '10px',
-			bottom: '0px',
+			bottom: '',
 		},
 	},
 	imageMarginMobile: {
 		type: 'object',
 		default: {
 			top: '10px',
-			left: '0px',
+			left: '',
 			right: '10px',
-			bottom: '0px',
+			bottom: '',
 		},
 	},
 
@@ -391,28 +391,28 @@ const attributes = {
 	nameMargin: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	nameMarginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	nameMarginMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 
@@ -487,28 +487,28 @@ const attributes = {
 	titleMargin: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	titleMarginTablet: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 	titleMarginMobile: {
 		type: 'object',
 		default: {
-			top: '0px',
-			left: '0px',
-			right: '0px',
-			bottom: '0px',
+			top: '',
+			left: '',
+			right: '',
+			bottom: '',
 		},
 	},
 

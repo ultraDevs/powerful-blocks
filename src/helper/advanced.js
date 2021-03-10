@@ -1152,7 +1152,7 @@ const Advanced = ( props ) => {
                         sizeOnTablet = { { value: blockCustomWidthTablet, name: 'blockCustomWidthTablet' } }
                         sizeOnMobile = { { value: blockCustomWidthMobile, name: 'blockCustomWidthMobile' } }
                         min={ 0 }
-                        max={ 2000 }
+                        max={ 1200 }
                         setAttributes = { setAttributes }
                     />
                 ) }

@@ -89,7 +89,7 @@ const Inspector = ( props ) => {
 								sizeOnTablet = { { value: sHeightTablet, name: 'sHeightTablet' } }
 								sizeOnMobile = { { value: sHeightMobile, name: 'sHeightMobile' } }
 								min={ 0 }
-								max={ 1000 }
+								max={ 100 }
 								setAttributes = { setAttributes }
 								allowReset = { false }
 							/>
