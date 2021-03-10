@@ -399,15 +399,15 @@ const attributes = {
 
 	toggleIconBackgroundColor: {
 		type: 'string',
-		default: '#ccc',
+		default: 'transparent',
 	},
 	activeToggleIconBackgroundColor: {
 		type: 'string',
-		default: '#333',
+		default: 'transparent',
 	},
 	hoverToggleIconBackgroundColor: {
 		type: 'string',
-		default: '#333',
+		default: 'transparent',
 	},
 
 	toggleIconColor: {

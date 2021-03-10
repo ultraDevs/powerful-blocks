@@ -211,8 +211,8 @@ module.exports = function(grunt) {
 		'sass:dev',
 		'sass:dist',
 		'makepot',
-		'watch',
-		'readme'
+		'readme',
+		// 'watch'
 	]);
 	grunt.registerTask('release', [
 		'makepot',

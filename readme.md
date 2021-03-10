@@ -3,7 +3,7 @@
 **Donate link:** https://ultradevs.com/donate  
 **Tags:** gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates  
 **Requires at least:** 5.3.2  
-**Tested up to:**      5.6.2  
+**Tested up to:**      5.7  
 **Stable tag:**        1.0.1  
 **Requires PHP:**      7.0.0  
 **License:** GPLv2 or later  
@@ -58,7 +58,7 @@
 * Custom Easing
 * Custom Attributes
 * Wrapper Link - Add **link** to any Block!
-* Custom Page Templates ( Transparent Header, No Header & Footer )
+* Custom Page Templates ( Transparent Header, Transparent Header Light, No Header & Footer )
 
 Custom Page Templates Supported Theme : Twenty Twenty One, Page Builder Framework **( Pro )**
 
@@ -98,11 +98,24 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 1. Block List
 2. Prebuilt Templates
+3. Info Box
+4. Info Box
+5. Icon Box
+6. Icon Box
+7. Testimonial
+8. Testimonial
+9. Testimonial
+10. Accordion
+11. Accordion
+12. Fun Factor
+13. Fun Factor
+14. Alert Box
+15. Alert Box with close button and hide after x time
 
 ## Changelog ##
 
 ### 1.0.2 ###
-* Fix: Block Control, Templates
+* Fixes: Block Control, Templates, Default Accordion Item
 
 ### 1.0.1 ###
 * Fix: Admin Page CSS & JS Loading
