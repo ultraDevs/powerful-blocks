@@ -61,6 +61,10 @@ const edit = ( props ) => {
         return props.block.innerBlocks;
 	}
 
+	const css = `.editor-styles-wrapper [data-block="${ props.clientId }"] .pb-tabs-content .block-editor-block-list__layout [data-tab="${ currentTab }"] {
+		display: block;
+	}`;
+
 	const onChangeLabel = ( value, i ) => {
 
 		const {
@@ -143,6 +147,7 @@ const edit = ( props ) => {
 		<>
 			<Inspector { ...{ attributes, setAttributes } } />
 			<Styles { ...{ attributes } } />
+			<style>{css}</style>
 			<div id={ `pb-tabs-${ blockId }` }>
 				<div
 					className={ classnames(

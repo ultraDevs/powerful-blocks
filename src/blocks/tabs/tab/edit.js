@@ -13,7 +13,8 @@ const edit = ( props ) => {
 
 	const {
 		blockId,
-		slug
+		slug,
+		currentTab
 	} = attributes;
 
 	const {

@@ -115,7 +115,11 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 ## Changelog ##
 
 ### 1.0.2 ###
-* Fixes: Block Control, Templates, Default Accordion Item
+* Fix: Range Control
+* Fix: Templates
+* Fix: Default Accordion Item
+* Fix Multiple Tabs tab issue
+* New: Badge in Icon Box Block
 
 ### 1.0.1 ###
 * Fix: Admin Page CSS & JS Loading
