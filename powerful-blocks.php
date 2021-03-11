@@ -9,7 +9,7 @@
  * Plugin Name:       Gutenberg Blocks - Powerful Blocks for Gutenberg
  * Plugin URI:        https://powerfulblocks.com
  * Description:       Powerful Blocks is a Gutenberg Block Plugin With Awesome Blocks, Prebuilt Templates and Advanced Controls.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            ultraDevs
  * Author URI:        https://ultradevs.com
  * License:           GPL v2 or later
