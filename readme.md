@@ -4,7 +4,7 @@
 **Tags:** gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates  
 **Requires at least:** 5.3.2  
 **Tested up to:**      5.7  
-**Stable tag:**        1.0.1  
+**Stable tag:**        1.0.2  
 **Requires PHP:**      7.0.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
@@ -98,8 +98,8 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 1. Block List
 2. Prebuilt Templates
-3. Info Box
-4. Info Box
+3. Controls
+4. Custom Page Templates
 5. Icon Box
 6. Icon Box
 7. Testimonial
@@ -111,10 +111,12 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 13. Fun Factor
 14. Alert Box
 15. Alert Box with close button and hide after x time
+16. Info Box
+17. Info Box
 
 ## Changelog ##
 
-### 1.0.2 ###
+### 1.0.2 - 11/03/2021 ###
 * Fix: Range Control
 * Fix: Templates
 * Fix: Default Accordion Item
