@@ -98,8 +98,8 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 1. Block List
 2. Prebuilt Templates
-3. Info Box
-4. Info Box
+3. Controls
+4. Custom Page Templates
 5. Icon Box
 6. Icon Box
 7. Testimonial
@@ -111,6 +111,8 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 13. Fun Factor
 14. Alert Box
 15. Alert Box with close button and hide after x time
+16. Info Box
+17. Info Box
 
 == Changelog ==
 
