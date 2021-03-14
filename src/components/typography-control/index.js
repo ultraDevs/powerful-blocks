@@ -19,8 +19,15 @@ import FontFamilyPicker from './fontPicker';
 
 const WEIGHTS = [
     { label: __( 'Default', 'powerful-blocks' ), value: "" },
-    { label: __( 'Normal', 'powerful-blocks' ), value: "normal" },
-    { label: __('Bold', 'powerful-blocks' ), value: "bold" },
+    { label: __( '100', 'powerful-blocks' ), value: "100" },
+    { label: __( '200', 'powerful-blocks' ), value: "200" },
+    { label: __( '300', 'powerful-blocks' ), value: "300" },
+    { label: __( '400', 'powerful-blocks' ), value: "400" },
+    { label: __( '500', 'powerful-blocks' ), value: "500" },
+    { label: __( '600', 'powerful-blocks' ), value: "600" },
+    { label: __( '700', 'powerful-blocks' ), value: "700" },
+    { label: __( '800', 'powerful-blocks' ), value: "800" },
+    { label: __( '900', 'powerful-blocks' ), value: "900" },
 ];
 
 const STYLES = [

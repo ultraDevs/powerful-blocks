@@ -25,7 +25,6 @@ const FontFamilyPicker = ({
     const id = `inspector-pb-font-family-${instanceId}`;
     const fonts = [
         { value: "", label: __("Default") },
-        { value: "Arial", label: "Arial" },
         { value: "Helvetica", label: "Helvetica" },
         { value: "Times New Roman", label: "Times New Roman" },
         { value: "Georgia", label: "Georgia" }
