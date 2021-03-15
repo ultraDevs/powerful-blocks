@@ -78,6 +78,7 @@ const AdvancedCSS = ( attributes ) => {
         blockCustomWidthMobile,
         blockzIndex,
 	} = attributes;
+
 	
     let rules = {
 		desktop: {

@@ -391,28 +391,28 @@ const attributes = {
 	nameMargin: {
 		type: 'object',
 		default: {
-			top: '',
-			left: '',
-			right: '',
-			bottom: '',
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '5px',
 		},
 	},
 	nameMarginTablet: {
 		type: 'object',
 		default: {
-			top: '',
-			left: '',
-			right: '',
-			bottom: '',
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '5px',
 		},
 	},
 	nameMarginMobile: {
 		type: 'object',
 		default: {
-			top: '',
-			left: '',
-			right: '',
-			bottom: '',
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '5px',
 		},
 	},
 
@@ -487,28 +487,28 @@ const attributes = {
 	titleMargin: {
 		type: 'object',
 		default: {
-			top: '',
-			left: '',
-			right: '',
-			bottom: '',
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
 		},
 	},
 	titleMarginTablet: {
 		type: 'object',
 		default: {
-			top: '',
-			left: '',
-			right: '',
-			bottom: '',
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
 		},
 	},
 	titleMarginMobile: {
 		type: 'object',
 		default: {
-			top: '',
-			left: '',
-			right: '',
-			bottom: '',
+			top: '0px',
+			left: '0px',
+			right: '0px',
+			bottom: '0px',
 		},
 	},
 
