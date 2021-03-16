@@ -8,3 +8,4 @@ export { default as TypographyControl } from './typography-control';
 export { default as ShadowControl } from './shadow-control';
 export { default as BorderControl } from './border-control';
 export { default as IconPickerControl } from './icon-picker-control';
+export { default as DimensionsControl } from './dimensions-control';

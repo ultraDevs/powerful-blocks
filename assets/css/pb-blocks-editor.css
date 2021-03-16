@@ -254,6 +254,45 @@
   .pb-icon-picker .components-base-control__field .rfipbtn__button {
     display: none; }
 
+.pb-dimensions-control .pb-dimension-c-header {
+  margin-bottom: 10px; }
+
+.pb-dimensions-control .pb-dimension-input-group {
+  display: flex;
+  text-align: center; }
+  .pb-dimensions-control .pb-dimension-input-group span {
+    width: 20%; }
+    .pb-dimensions-control .pb-dimension-input-group span:first-child input {
+      border-radius: 4px 0px 0px 4px !important; }
+    .pb-dimensions-control .pb-dimension-input-group span input {
+      background-color: #fff;
+      border: 1px solid #f7f7f7;
+      color: #111;
+      border-radius: 0px !important; }
+    .pb-dimensions-control .pb-dimension-input-group span span {
+      text-transform: uppercase;
+      font-size: 10px;
+      color: #333; }
+    .pb-dimensions-control .pb-dimension-input-group span button {
+      color: #111;
+      background-color: #fff;
+      margin-left: 0px;
+      border-radius: 0px 4px 4px 0px !important;
+      border: 1px solid #f7f7f7;
+      font-size: 14px;
+      padding: 0 15px;
+      line-height: 2;
+      width: auto;
+      height: auto;
+      outline: none !important;
+      box-shadow: none !important; }
+      .pb-dimensions-control .pb-dimension-input-group span button.components-button.is-primary {
+        background-color: #999;
+        color: #fff; }
+        .pb-dimensions-control .pb-dimension-input-group span button.components-button.is-primary:hover {
+          background-color: #999;
+          color: #fff; }
+
 /** Alert Box **/
 .wp-block-powerful-blocks-alert-box {
   background-color: #d6efee;
@@ -375,6 +414,9 @@
   text-align: center;
   background-color: #f7f7f7;
   cursor: pointer; }
+
+.pb-default-wrap {
+  margin: 20px; }
 
 
 /*# sourceMappingURL=pb-blocks-editor.css.map*/

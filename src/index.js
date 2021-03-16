@@ -21,6 +21,7 @@ import * as tab from './blocks/tabs/tab';
 import * as tabs from './blocks/tabs';
 import * as templates from './blocks/templates';
 import * as advancedTypography from './blocks/advanced-typography';
+import * as defaultBlock from './blocks/default';
 
 
 const category = 'powerful-blocks';
@@ -67,6 +68,7 @@ const registerPowerfulBlocks = () => {
 		tabs,
 		templates,
 		advancedTypography,
+		defaultBlock,
 	].forEach( registerBlock );
 };
 

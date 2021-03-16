@@ -24,7 +24,8 @@ import {
 	AlignmentControl,
 	TypographyControl,
 	BorderControl,
-	ShadowControl
+	ShadowControl,
+	DimensionsControl
 } from '../../components';
 
 import Advanced from '../../helper/advanced';
@@ -34,12 +35,18 @@ const Inspector = ( props ) => {
 	const { attributes, setAttributes } = props;
 
 	const {
-		
+		rPadding,
+		contentColor
 	} = attributes;
 
 	let currentTab = 'content';
 	const [ tab, setTab ] = useState( currentTab );
 
+	// setAttributes({
+	// 	[rPadding.xs.top]: 100
+	// });
+	console.log('Attr');
+	console.log(rPadding);
 
 	return (
 		<InspectorControls>
@@ -92,7 +99,32 @@ const Inspector = ( props ) => {
 				{ 'content' === tab && (
 					<>
 						<PanelBody title={ __( 'Settings', 'powerful-blocks' ) } initialOpen = { open }>
-							
+							<DimensionsControl
+								label={ __( 'Padding', 'powerful-blocks' ) }
+								value = { rPadding }
+								onChange = { ( rPadding ) => {
+									setAttributes({ rPadding });
+								}}
+							/>
+							{/* <ResponsiveBoxControl
+								label={ __( 'Margin', 'powerful-blocks' ) }
+								value={ {
+									desktop: rPadding.md,
+									tablet: rPadding.sm,
+									mobile: rPadding.xs,
+								} }
+								onChange={ ( value, device ) => {
+									if ( 'desktop' === device ) {
+										setAttributes( { [rPadding.md]: {value} } );
+									}
+									if ( 'tablet' === device ) {
+										setAttributes( { [rPadding.sm]: {value} } );
+									}
+									if ( 'mobile' === device ) {
+										setAttributes( { [rPadding.xs]: {value} } );
+									}
+								} }
+							/> */}
 						</PanelBody>
 						<PanelBody
 							title={ __( 'Image', 'powerful-blocks' ) }

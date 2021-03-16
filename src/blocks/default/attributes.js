@@ -13,6 +13,31 @@ const attributes = {
 		type: 'string',
 		default: '#333',
 	},
+
+
+	rPadding: {
+		type: 'object',
+		default: {
+			xs: {
+				top: 5,
+				right: 0,
+				bottom: 0,
+				left: 0,
+			},
+			sm: {
+				top: 10,
+				right: 0,
+				bottom: 0,
+				left: 0,
+			},
+			md: {
+				top: 15,
+				right: 0,
+				bottom: 0,
+				left: 0,
+			}
+		}
+	},
 	
 
 
