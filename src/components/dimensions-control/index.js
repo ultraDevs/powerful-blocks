@@ -11,9 +11,39 @@ class DimensionsControl extends Component {
 
 	label = this.props.label;
 	value = this.props.value;
-	device = this.props.device;
+	device = 'md';
 
 	side = [ 'top', 'right', 'bottom', 'left' ];
+
+	state = {
+		top: 0,
+		right: 0,
+		bottom: 0,
+		left: 0,
+		device: this.device,
+		isLinked: false,
+	}
+
+	// state = {
+	// 	top: this.value[this.device].top || 0,
+	// 	right: this.value[this.device].right || 0,
+	// 	bottom: this.value[this.device].bottom || 0,
+	// 	left: this.value[this.device].left || 0,
+	// 	isLinked: false,
+	// };
+
+
+
+	getValue = ( s ) => {
+		// console.log( this.state.top );
+		let value = this.props.value;
+		const device = this.state.device;
+		return Object.keys( value ).length > 0 ? value[device][s] ? value[device][s] : "" : "";
+		// return this.state[s];
+		// return this.value[this.device][s];
+	}
+
+	// device = this.state.device || 'sm';
 
 	defineProperty = ( object, property, value ) => {
 		return (
@@ -29,29 +59,21 @@ class DimensionsControl extends Component {
 			);
 	}
 
-	state = {
-		top: this.value[this.device].top || 0,
-		right: this.value[this.device].right || 0,
-		bottom: this.value[this.device].bottom || 0,
-		left: this.value[this.device].left || 0,
-		isLinked: false,
-	}
 
 	onInputChange = ( value, s ) => {
 		let newValue = this.defineProperty( {}, s, parseInt( value ) );
 		newValue = Object.assign( {}, this.value[this.state.device], newValue );
 		let p = Object.assign( {}, this.value, this.defineProperty( {}, this.state.device, newValue ) );
+		// console.log(p);
 		this.setState( { [s]: parseInt( value ) || 0 }, () => {
-			this.props.onChange( p );
+			
 		} );
+		this.props.onChange( p );
 
 	}
 
 	onDeviceChange = ( device ) => {
-		this.setState( { device }, () => {
-			// console.log( this.state.device );
-
-		});
+		this.setState( { device: device });
 	}
 
 	onLinkedButtonClick = () => {
@@ -59,13 +81,14 @@ class DimensionsControl extends Component {
 	}
 
 
-	getValue = ( s ) => {
-		// return Object.keys( this.value ).length > 0 ? this.value[this.device][s] ? this.value[this.device][s] : "" : ""; 
-		return this.state[s];
-	}
+	
 
 	render() {
-		const device = this.state.device;
+		// console.log(device);
+		const { isLinked, device } = this.state;
+
+		
+
 		return(
 			<>
 				<div className="pb-dimensions-control">

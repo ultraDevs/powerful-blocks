@@ -15,7 +15,6 @@ const { __ } = wp.i18n;
 const { useState } = wp.element;
 import classnames from 'classnames';
 
-
 import {
 	ResponsiveRangeControl,
 	ResponsiveBoxControl,
@@ -45,8 +44,8 @@ const Inspector = ( props ) => {
 	// setAttributes({
 	// 	[rPadding.xs.top]: 100
 	// });
-	console.log('Attr');
-	console.log(rPadding);
+	// console.log('Attr');
+	// console.log(rPadding);
 
 	return (
 		<InspectorControls>
@@ -105,6 +104,7 @@ const Inspector = ( props ) => {
 								onChange = { ( rPadding ) => {
 									setAttributes({ rPadding });
 								}}
+								// setdevice = 'md'
 							/>
 							{/* <ResponsiveBoxControl
 								label={ __( 'Margin', 'powerful-blocks' ) }

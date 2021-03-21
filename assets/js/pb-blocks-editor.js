@@ -27342,10 +27342,10 @@ var Inspector = function Inspector(props) {
       setTab = _useState2[1]; // setAttributes({
   // 	[rPadding.xs.top]: 100
   // });
+  // console.log('Attr');
+  // console.log(rPadding);
 
 
-  console.log('Attr');
-  console.log(rPadding);
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "pb-panel-head--tabs"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ButtonGroup, {
@@ -27380,7 +27380,8 @@ var Inspector = function Inspector(props) {
       setAttributes({
         rPadding: rPadding
       });
-    }
+    } // setdevice = 'md'
+
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
     title: __('Image', 'powerful-blocks'),
     initialOpen: false
@@ -38327,9 +38328,26 @@ var DimensionsControl = /*#__PURE__*/function (_Component) {
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "value", _this.props.value);
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "device", _this.props.device);
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "device", 'md');
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "side", ['top', 'right', 'bottom', 'left']);
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "state", {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      device: _this.device,
+      isLinked: false
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "getValue", function (s) {
+      // console.log( this.state.top );
+      var value = _this.props.value;
+      var device = _this.state.device;
+      return Object.keys(value).length > 0 ? value[device][s] ? value[device][s] : "" : ""; // return this.state[s];
+      // return this.value[this.device][s];
+    });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "defineProperty", function (object, property, value) {
       return property in object ? Object.defineProperty(object, property, {
@@ -38340,29 +38358,20 @@ var DimensionsControl = /*#__PURE__*/function (_Component) {
       }) : object[property] = value, object;
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "state", {
-      top: _this.value[_this.device].top || 0,
-      right: _this.value[_this.device].right || 0,
-      bottom: _this.value[_this.device].bottom || 0,
-      left: _this.value[_this.device].left || 0,
-      isLinked: false
-    });
-
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "onInputChange", function (value, s) {
       var newValue = _this.defineProperty({}, s, parseInt(value));
 
       newValue = Object.assign({}, _this.value[_this.state.device], newValue);
-      var p = Object.assign({}, _this.value, _this.defineProperty({}, _this.state.device, newValue));
+      var p = Object.assign({}, _this.value, _this.defineProperty({}, _this.state.device, newValue)); // console.log(p);
 
-      _this.setState(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()({}, s, parseInt(value) || 0), function () {
-        _this.props.onChange(p);
-      });
+      _this.setState(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()({}, s, parseInt(value) || 0), function () {});
+
+      _this.props.onChange(p);
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "onDeviceChange", function (device) {
       _this.setState({
         device: device
-      }, function () {// console.log( this.state.device );
       });
     });
 
@@ -38370,11 +38379,6 @@ var DimensionsControl = /*#__PURE__*/function (_Component) {
       _this.setState({
         isLinked: !_this.state.isLinked
       });
-    });
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "getValue", function (s) {
-      // return Object.keys( this.value ).length > 0 ? this.value[this.device][s] ? this.value[this.device][s] : "" : ""; 
-      return _this.state[s];
     });
 
     return _this;
@@ -38385,7 +38389,10 @@ var DimensionsControl = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var device = this.state.device;
+      // console.log(device);
+      var _this$state = this.state,
+          isLinked = _this$state.isLinked,
+          device = _this$state.device;
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])("div", {
         className: "pb-dimensions-control"
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])("div", {
@@ -55156,6 +55163,7 @@ var _wp$components = wp.components,
     Polygon = _wp$components.Polygon,
     Rect = _wp$components.Rect,
     Circle = _wp$components.Circle;
+window.pbDevice = 'md';
 jQuery(function ($) {
   wp.data.subscribe(function () {
     var isSavingPost = wp.data.select("core/editor").isSavingPost();

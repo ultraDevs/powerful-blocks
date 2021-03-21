@@ -1,6 +1,8 @@
 const { updateCategory } = wp.blocks;
 const { SVG, G, Path, Polygon, Rect, Circle } = wp.components;
 
+window.pbDevice = 'md';
+
 jQuery( function($){
 	
 	
