@@ -53408,28 +53408,28 @@ var advancedAttributes = {
   padding: {
     type: 'object',
     default: {
-      top: '',
+      top: '10px',
       left: '',
       right: '',
-      bottom: ''
+      bottom: '10px'
     }
   },
   paddingTablet: {
     type: 'object',
     default: {
-      top: '',
+      top: '10px',
       left: '',
       right: '',
-      bottom: ''
+      bottom: '10px'
     }
   },
   paddingMobile: {
     type: 'object',
     default: {
-      top: '',
+      top: '10px',
       left: '',
       right: '',
-      bottom: ''
+      bottom: '10px'
     }
   },
   margin: {
@@ -53829,14 +53829,9 @@ var AdvancedCSS = function AdvancedCSS(attributes) {
       'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : undefined,
       'background-size': backgroundImgSize ? backgroundImgSize : undefined
     };
-    rules.desktop['> .pb-ab-bg--image:before'] = {
+    rules.desktop['> .pb-ab-bg--image::before'] = {
       background: backgroundImgOverlayColor ? backgroundImgOverlayColor : undefined,
       opacity: backgroundOpacity ? backgroundOpacity / 100 : undefined,
-      'border-radius': borderRadius ? (borderRadius.top ? borderRadius.top : '0px') + ' ' + (borderRadius.right ? borderRadius.right : '0px') + ' ' + (borderRadius.bottom ? borderRadius.bottom : '0px') + ' ' + (borderRadius.left ? borderRadius.left : '0px') : undefined
-    };
-    rules.desktop['> .pb-ab-bg--image:hover:before'] = {
-      background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : undefined,
-      opacity: hoverBackgroundOpacity ? hoverBackgroundOpacity / 100 : undefined,
       'border-radius': borderRadius ? (borderRadius.top ? borderRadius.top : '0px') + ' ' + (borderRadius.right ? borderRadius.right : '0px') + ' ' + (borderRadius.bottom ? borderRadius.bottom : '0px') + ' ' + (borderRadius.left ? borderRadius.left : '0px') : undefined
     };
   }
@@ -53848,6 +53843,11 @@ var AdvancedCSS = function AdvancedCSS(attributes) {
       'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : undefined,
       'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : undefined,
       'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : undefined
+    };
+    rules.desktop['> .pb-ab-bg--image:hover::before'] = {
+      background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : undefined,
+      opacity: hoverBackgroundOpacity ? hoverBackgroundOpacity / 100 : undefined,
+      'border-radius': borderRadius ? (borderRadius.top ? borderRadius.top : '0px') + ' ' + (borderRadius.right ? borderRadius.right : '0px') + ' ' + (borderRadius.bottom ? borderRadius.bottom : '0px') + ' ' + (borderRadius.left ? borderRadius.left : '0px') : undefined
     };
   }
 

@@ -1,7 +1,7 @@
 const { updateCategory } = wp.blocks;
 const { SVG, G, Path, Polygon, Rect, Circle } = wp.components;
 
-jQuery( function($){
+jQuery( function($) {
 	
 	
 	wp.data.subscribe( function () {

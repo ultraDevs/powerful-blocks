@@ -92,28 +92,28 @@ const advancedAttributes = {
 	padding: {
 		type: 'object',
 		default: {
-			top: '',
+			top: '10px',
 			left: '',
 			right: '',
-			bottom: '',
+			bottom: '10px',
 		},
 	},
 	paddingTablet: {
 		type: 'object',
 		default: {
-			top: '',
+			top: '10px',
 			left: '',
 			right: '',
-			bottom: '',
+			bottom: '10px',
 		},
 	},
 	paddingMobile: {
 		type: 'object',
 		default: {
-			top: '',
+			top: '10px',
 			left: '',
 			right: '',
-			bottom: '',
+			bottom: '10px',
 		},
     },
     

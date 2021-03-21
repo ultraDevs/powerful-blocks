@@ -119,6 +119,7 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 ### 1.0.3 - 12/03/2021 ###
 * Update: Google Fonts
 * Fix: Tab
+* Fix: Background Opacity
 
 ### 1.0.2 - 11/03/2021 ###
 * Fix: Range Control
