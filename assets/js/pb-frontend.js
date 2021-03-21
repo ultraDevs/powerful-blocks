@@ -494,8 +494,6 @@ jQuery(function ($) {
 jQuery(function ($) {
   window['pbTabs'] = function () {
     $('.pb-tabs-wrapper').each(function () {
-      // $('.pb-tabs-content > div').hide();
-      // $('.pb-tabs-content > div:first-of-type').show();
       var _this = $(this),
           activeTab = _this.attr('data-a-tab'),
           tabs = _this.find('.pb-tabs--tabs'),
@@ -504,11 +502,13 @@ jQuery(function ($) {
 
       contents.find("[data-tab=\"" + activeTab + "\"").addClass('pb-tab-active');
       tabsItem.on('click', function (e) {
+        e.preventDefault();
+        $(this).addClass('mh');
         var $this = $(this),
             tab = $this.attr('data-tab');
         tabsItem.removeClass('pb-tab-active');
-        contents.find('div').removeClass('pb-tab-active');
         $this.addClass('pb-tab-active');
+        contents.find('div').removeClass('pb-tab-active');
         contents.find("[data-tab=\"" + tab + "\"").addClass('pb-tab-active');
       });
     });
