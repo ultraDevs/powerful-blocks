@@ -4,6 +4,7 @@ import '../blocks/fun-factor/frontend';
 import '../blocks/counter/frontend';
 import '../blocks/animated-headlines/frontend';
 import '../blocks/tabs/frontend';
+import '../blocks/content-toggle/frontend';
 
 jQuery( function($){
 

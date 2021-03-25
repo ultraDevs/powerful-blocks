@@ -1,0 +1,86 @@
+.pb-content-toggle-wrapper {
+	transition: all 0.3s ease-in-out;
+	position: relative;
+
+	.pb-content-toggle-switch-wrapper {
+		display: flex;
+		justify-content: center;
+		.pb-toggle-primary-label,
+		.pb-toggle-secondary-label {
+			cursor: pointer;
+		}
+		.pb-toggle-switch-w {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #ccc;
+			transition: all .4s;
+
+			&::before {
+				position: absolute;
+				content: "";
+				height: 1em;
+				width: 1em;
+				left: 0.16em;
+				bottom: 0.15em;
+				background-color: white;
+				transition: transform .4s;
+			}
+		}
+
+		.pb-toggle-switch-label {
+			position: relative;
+			display: inline-block;
+			font-size: 1em;
+			width: 2.31em;
+			height: 1.29em;
+		}
+
+		.pb-content-toggle-switch {
+			display: inline-block;
+			font-size: 26px;
+			line-height: 1;
+			margin: 0 15px;
+			overflow: hidden;
+			transition: all .4s;
+			&.pb-toggle-round {
+				border-radius: 100px;
+				.pb-toggle-switch-w {
+					&::before {
+						border-radius: 100px;
+					}
+				}
+			}
+
+			input {
+				visibility: hidden;
+			}
+
+			&.pb-toggle-switch-on {
+				.pb-toggle-switch-w {
+					&::before {
+						transform: translateX(1em);
+					}
+				}
+			}
+
+			&:checked+.pb-toggle-switch-w:before {
+				transform: translateX(1em);
+			}
+		}
+	}
+	.pb-content-toggle-contents {
+		[data-toggle] {
+			display: none;
+		}
+		.pb-toggle-active {
+			display: block;
+		}
+	}
+	.pb-toggle-wrapper {
+		transition: 0.2s ease-in all;
+	}
+}

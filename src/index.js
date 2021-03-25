@@ -21,6 +21,8 @@ import * as tab from './blocks/tabs/tab';
 import * as tabs from './blocks/tabs';
 import * as templates from './blocks/templates';
 import * as advancedTypography from './blocks/advanced-typography';
+import * as toggler from './blocks/content-toggle/toggler';
+import * as contentToggle from './blocks/content-toggle';
 
 
 const category = 'powerful-blocks';
@@ -67,6 +69,8 @@ const registerPowerfulBlocks = () => {
 		tabs,
 		templates,
 		advancedTypography,
+		toggler,
+		contentToggle,
 	].forEach( registerBlock );
 };
 

@@ -101,7 +101,7 @@ class Assets_Manager {
 		wp_enqueue_style( 'pb-block-editor', POWERFUL_BLOCKS_ASSETS . 'css/pb-blocks-editor.css', array( 'wp-edit-blocks' ), POWERFUL_BLOCKS_VERSION );
 		wp_enqueue_style( 'pb-block-editor-common', POWERFUL_BLOCKS_ASSETS . 'css/pb-editor-common.css', array( 'wp-edit-blocks' ), POWERFUL_BLOCKS_VERSION );
 		wp_enqueue_script( 'pb-block-editor', POWERFUL_BLOCKS_ASSETS . 'js/pb-blocks-editor.js', array( 'wp-blocks', 'wp-components', 'wp-compose', 'wp-i18n', 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-polyfill', 'wp-editor', 'wp-api-fetch' ), POWERFUL_BLOCKS_VERSION, true );
-		wp_enqueue_script( 'pb-frontend-e', POWERFUL_BLOCKS_ASSETS . 'js/pb-frontend.js', array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
+		wp_enqueue_script( 'pb-frontend-e', POWERFUL_BLOCKS_ASSETS . 'js/pb-frontend.js', is_admin() ? array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-api', 'wp-editor' ) : array( 'jquery' ), POWERFUL_BLOCKS_VERSION, false );
 
 		$inactive_blocks = array();
 		foreach ( Dashboard::inactive_blocks() as $block ) {
