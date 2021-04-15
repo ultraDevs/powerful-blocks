@@ -186,7 +186,7 @@ const Inspector = ( props ) => {
 						{ __( 'Advanced', 'powerful-blocks' ) }
 					</Button>
 				</ButtonGroup>
-				<div className="pb-panel-head--tabs__controls">
+				<div className="pb-panel-head--tabs__controls pb-custom-control-styles">
 				{ 'content' === tab && (
 					<>
 						<PanelBody title={ __( 'Settings', 'powerful-blocks' ) } initialOpen = { open }>

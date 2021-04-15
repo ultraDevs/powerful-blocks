@@ -1,5 +1,6 @@
-export const renderStyle = ( css, selectorPrefix ) => {
-	const blockId = selectorPrefix.replace( '#', '' );
+export const renderStyle = ( css, selectorPrefix, blockName = null ) => {
+
+	const blockId = selectorPrefix.replace( '#', '' ).replace( '.', '' );
 	const breakpoints = {
 		tablet: 976,
 		mobile: 767,
@@ -7,6 +8,14 @@ export const renderStyle = ( css, selectorPrefix ) => {
 
 	if ( 'undefined' === typeof css.desktop ) {
 		throw new Error( 'Parser: Invalid CSS.' );
+	}
+
+	let sTag = 'p';
+
+	if ( 'core/paragraph' === blockName ) {
+		sTag = ' p';
+	} else if ( 'core/heading' === blockName ) {
+		sTag = ' .pb-c-heading';
 	}
 
 	let parsedStyle = '';
@@ -24,8 +33,14 @@ export const renderStyle = ( css, selectorPrefix ) => {
 				return;
 			}
 			parsedStyle += selectorPrefix;
-			if ( 'selector' !== selector ) {
-				parsedStyle += ' ' + selector;
+
+			if ( 'typoSelector' === selector ) {
+				parsedStyle += sTag;
+			}
+			else {
+				if ( 'selector' !== selector ) {
+					parsedStyle += ' ' + selector;
+				}
 			}
 			parsedStyle += ' { ';
 			let properties = css[ device ][ selector ];

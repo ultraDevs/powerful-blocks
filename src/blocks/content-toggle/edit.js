@@ -43,9 +43,9 @@ const edit = ( props ) => {
 		blockId,
 		activeItem,
 		primaryLabel,
-		primaryLabelBGColor,
+		primarySwitchBGColor,
 		secondaryLabel,
-		secondaryLabelBGColor,
+		secondarySwitchBGColor,
 		labelColor,
 		hoverLabelColor,
 		activeLabelColor,
@@ -74,10 +74,6 @@ const edit = ( props ) => {
         const result = toggles.map( ( toggleData ) => [ 'powerful-blocks/toggler', toggleData ] );
 
         return result;
-	}
-	
-	const getToggles = () => {
-        return props.block.innerBlocks;
 	}
 
 	const css = `.editor-styles-wrapper [data-block="${ props.clientId }"] .pb-content-toggle-contents .block-editor-block-list__layout [data-toggle="${ activeItem }"] {

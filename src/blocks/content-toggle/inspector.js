@@ -33,9 +33,9 @@ const Inspector = ( props ) => {
 	const {
 		activeItem,
 		primaryLabel,
-		primaryLabelBGColor,
+		primarySwitchBGColor,
 		secondaryLabel,
-		secondaryLabelBGColor,
+		secondarySwitchBGColor,
 		labelColor,
 		hoverLabelColor,
 		activeLabelColor,
@@ -53,6 +53,11 @@ const Inspector = ( props ) => {
 		switchAlign,
 		switchPosition,
 		switchStyle,
+		switchSize,
+		switchSizeTablet,
+		switchSizeMobile,
+		switchSizeType,
+		labelPosition,
 	} = attributes;
 
 	let currentTab = 'content';
@@ -106,10 +111,23 @@ const Inspector = ( props ) => {
 						{ __( 'Advanced', 'powerful-blocks' ) }
 					</Button>
 				</ButtonGroup>
-				<div className="pb-panel-head--tabs__controls">
+				<div className="pb-panel-head--tabs__controls pb-custom-control-styles">
 				{ 'content' === tab && (
 					<>
 						<PanelBody title={ __( 'Settings', 'powerful-blocks' ) }>
+							<SelectControl
+								className = "pb-custom-select-control"
+								label={ __( 'Label Position', 'powerful-blocks' ) }
+								value={ labelPosition }
+								onChange={ ( labelPosition ) => {
+									setAttributes( { labelPosition } ) }
+								}
+								options={ [
+									{ value: "flex-start", label: __( "Top", "powerful-blocks" ) },
+									{ value: "center", label: __( "Middle", "powerful-blocks"  ) },
+									{ value: "flex-end", label: __( "Bottom", "powerful-blocks"  ) },
+								] }
+							/>
 							<AlignmentControl
 								label={ __( 'Switch Alignment', 'powerful-blocks' ) }
 								type="flex"
@@ -168,18 +186,18 @@ const Inspector = ( props ) => {
 				{ 'style' === tab && (
 					<>
 					<PanelBody
-							title={ __( 'Content', 'powerful-blocks' ) }
+							title={ __( 'Switch', 'powerful-blocks' ) }
 						>
 							<TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
 								tabs={ [
 									{
-										name: "normal",
-										title: __( 'Normal', 'powerful-blocks' ),
+										name: "primary",
+										title: __( 'Primary', 'powerful-blocks' ),
 										className: "pb-panel-inspect--tab",
 									},
 									{
-										name: "hover",
-										title: __( 'Hover', 'powerful-blocks' ),
+										name: "secondary",
+										title: __( 'Secondary', 'powerful-blocks' ),
 										className: "pb-panel-inspect--tab",
 									},
 								] }>
@@ -187,26 +205,26 @@ const Inspector = ( props ) => {
 									( tab ) => {
 										let tabout
 
-										if ( "normal" === tab.name ) {
+										if ( "primary" === tab.name ) {
 											tabout = (
 												<>
 													<ColorPickerControl
 														label={ __( 'Background Color', 'powerful-blocks' ) }
-														value={ contentBackgroundColor }
-														onChange={ ( contentBackgroundColor ) => {
-															setAttributes( { contentBackgroundColor } );
+														value={ primarySwitchBGColor }
+														onChange={ ( primarySwitchBGColor ) => {
+															setAttributes( { primarySwitchBGColor } );
 														} }
 													/>
 												</>
 											)
-										} else if ( "hover" === tab.name ) {
+										} else if ( "secondary" === tab.name ) {
 											tabout = (
 												<>
 													<ColorPickerControl
 														label={ __( 'Background Color', 'powerful-blocks' ) }
-														value={ hoverContentBackgroundColor }
-														onChange={ ( hoverContentBackgroundColor ) => {
-															setAttributes( { hoverContentBackgroundColor } );
+														value={ secondarySwitchBGColor }
+														onChange={ ( secondarySwitchBGColor ) => {
+															setAttributes( { secondarySwitchBGColor } );
 														} }
 													/>
 												</>
@@ -223,68 +241,21 @@ const Inspector = ( props ) => {
 								}
 							</TabPanel>
 
-							
-							<ResponsiveBoxControl
-								label={ __( 'Margin', 'powerful-blocks' ) }
-								value={ {
-									desktop: contentMargin,
-									tablet: contentMarginTablet,
-									mobile: contentMarginMobile,
-								} }
-								onChange={ ( value, device ) => {
-									if ( 'desktop' === device ) {
-										setAttributes( { contentMargin: value } );
-									}
-									if ( 'tablet' === device ) {
-										setAttributes( { contentMarginTablet: value } );
-									}
-									if ( 'mobile' === device ) {
-										setAttributes( { contentMarginMobile: value } );
-									}
-								} }
-							/>
-							<ResponsiveBoxControl
-								label={ __( 'Padding', 'powerful-blocks' ) }
-								value={ {
-									desktop: contentPadding,
-									tablet: contentPaddingTablet,
-									mobile: contentPaddingMobile,
-								} }
-								onChange={ ( value, device ) => {
-									if ( 'desktop' === device ) {
-										setAttributes( { contentPadding: value } );
-									}
-									if ( 'tablet' === device ) {
-										setAttributes( { contentPaddingTablet: value } );
-									}
-									if ( 'mobile' === device ) {
-										setAttributes( { contentPaddingMobile: value } );
-									}
-								} }
-							/>
-
-							<ResponsiveBoxControl
-								label={ __( 'Border Radius', 'powerful-blocks' ) }
-								value={ {
-									desktop: contentBorderRadius,
-									tablet: contentBorderRadiusTablet,
-									mobile: contentBorderRadiusMobile,
-								} }
-								onChange={ ( value, device ) => {
-									if ( 'desktop' === device ) {
-										setAttributes( { contentBorderRadius: value } );
-									}
-									if ( 'tablet' === device ) {
-										setAttributes( { contentBorderRadiusTablet: value } );
-									}
-									if ( 'mobile' === device ) {
-										setAttributes( { contentBorderRadiusMobile: value } );
-									}
-								} }
+							<ResponsiveRangeControl
+								label={ __( 'Size', 'powerful-blocks' ) }
+								sizeType = {
+									{ value: switchSizeType, name: 'switchSizeType' }
+								}
+								sizeOnDesktop = { { value: switchSize, name: 'switchSize' } }
+								sizeOnTablet = { { value: switchSizeTablet.value, name: 'switchSizeTablet' } }
+								sizeOnMobile = { { value: switchSizeMobile.value, name: 'switchSizeMobile' } }
+								min={ 0 }
+								max={ 50 }
+								setAttributes = { setAttributes }
 							/>
 						</PanelBody>
 						<PanelBody
-							title={ __( 'Title', 'powerful-blocks' ) }
+							title={ __( 'Label', 'powerful-blocks' ) }
 							initialOpen={ false }
 						>
 							<TabPanel className="pb-panel-inspect--tabs" activeClass="pb-pi-tab--active"
@@ -312,20 +283,11 @@ const Inspector = ( props ) => {
 										if ( "normal" === tab.name ) {
 											tabout = (
 												<>
-													{ 'pills' === tabsType && (
-														<ColorPickerControl
-															label={ __( 'Background Color', 'powerful-blocks' ) }
-															value={ titleBGColor }
-															onChange={ ( titleBGColor ) => {
-																setAttributes( { titleBGColor } );
-															} }
-														/>
-													)}
 													<ColorPickerControl
 														label={ __( 'Color', 'powerful-blocks' ) }
-														value={ titleColor }
-														onChange={ ( titleColor ) => {
-															setAttributes( { titleColor } );
+														value={ labelColor }
+														onChange={ ( labelColor ) => {
+															setAttributes( { labelColor } );
 														} }
 													/>
 												</>
@@ -333,20 +295,11 @@ const Inspector = ( props ) => {
 										} else if ( "hover" === tab.name ) {
 											tabout = (
 												<>
-													{ 'pills' === tabsType && (
-														<ColorPickerControl
-															label={ __( 'Background Color', 'powerful-blocks' ) }
-															value={ hoverTitleBGColor }
-															onChange={ ( hoverTitleBGColor ) => {
-																setAttributes( { hoverTitleBGColor } );
-															} }
-														/>
-													)}
 													<ColorPickerControl
 														label={ __( 'Color', 'powerful-blocks' ) }
-														value={ hoverTitleColor }
-														onChange={ ( hoverTitleColor ) => {
-															setAttributes( { hoverTitleColor } );
+														value={ hoverLabelColor }
+														onChange={ ( hoverLabelColor ) => {
+															setAttributes( { hoverLabelColor } );
 														} }
 													/>
 												</>
@@ -354,20 +307,11 @@ const Inspector = ( props ) => {
 										} else if ( "active" === tab.name ) {
 											tabout = (
 												<>
-													{ 'pills' === tabsType && (
-														<ColorPickerControl
-															label={ __( 'Background Color', 'powerful-blocks' ) }
-															value={ activeTitleBGColor }
-															onChange={ ( activeTitleBGColor ) => {
-																setAttributes( { activeTitleBGColor } );
-															} }
-														/>
-													)}
 													<ColorPickerControl
 														label={ __( 'Color', 'powerful-blocks' ) }
-														value={ activeTitleColor }
-														onChange={ ( activeTitleColor ) => {
-															setAttributes( { activeTitleColor } );
+														value={ activeLabelColor }
+														onChange={ ( activeLabelColor ) => {
+															setAttributes( { activeLabelColor } );
 														} }
 													/>
 												</>
@@ -384,31 +328,22 @@ const Inspector = ( props ) => {
 								}
 							</TabPanel>
 							
-							<AlignmentControl
-								label={ __( 'Alignment', 'powerful-blocks' ) }
-								type="text"
-								value={ titleTextAlign }
-								onChange={ ( titleTextAlign ) => {
-									setAttributes( { titleTextAlign } );
-								} }
-							/>
-							
 
 							<TypographyControl
 								label = { __( 'Typography', 'powerful-blocks' ) }
-								fontFamily = { { value: titleFontFamily, name: 'titleFontFamily' } }
+								fontFamily = { { value: labelFontFamily, name: 'labelFontFamily' } }
 								sizeType = {
-									{ value: titleFontSizeType, name: 'titleFontSizeType' }
+									{ value: labelFontSizeType, name: 'labelFontSizeType' }
 								}
-								fontSize = { { value: titleFontSize, name: 'titleFontSize' } }
-								fontSizeTablet = { { value: titleFontSizeTablet, name: 'titleFontSizeTablet' } }
-								fontSizeMobile = { { value: titleFontSizeMobile, name: 'titleFontSizeMobile' } }
-								fontStyle = { { value: titleFontStyle, name: 'titleFontStyle' } }
-								fontWeight = { { value: titleFontWeight, name: 'titleFontWeight' } }
-								lineHeight = { { value: titleLineHeight, name: 'titleLineHeight' } }
-								letterSpacing = { { value: titleLetterSpacing, name: 'titleLetterSpacing' } }
-								textTransform = { { value: titleTextTransform, name: 'titleTextTransform' } }
-								textDecoration = { { value: titleTextDecoration, name: 'titleTextDecoration' } }
+								fontSize = { { value: labelFontSize, name: 'labelFontSize' } }
+								fontSizeTablet = { { value: labelFontSizeTablet, name: 'labelFontSizeTablet' } }
+								fontSizeMobile = { { value: labelFontSizeMobile, name: 'labelFontSizeMobile' } }
+								fontStyle = { { value: labelFontStyle, name: 'labelFontStyle' } }
+								fontWeight = { { value: labelFontWeight, name: 'labelFontWeight' } }
+								lineHeight = { { value: labelLineHeight, name: 'labelLineHeight' } }
+								letterSpacing = { { value: labelLetterSpacing, name: 'labelLetterSpacing' } }
+								textTransform = { { value: labelTextTransform, name: 'labelTextTransform' } }
+								textDecoration = { { value: labelTextDecoration, name: 'labelTextDecoration' } }
 								setAttributes = { props.setAttributes }
 							/>
 						</PanelBody>

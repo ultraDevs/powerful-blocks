@@ -23,7 +23,6 @@ jQuery( function($){
     window['pbContentToggle'] = () => {
         if ( $('.pb-content-toggle-wrapper').length ) {
             $('.pb-content-toggle-wrapper').each( function() {
-                console.log('rrr');
                 let _this = $( this),
                     toggle = _this.attr('data-a-switch'),
                     toggleSwitchW = _this.find('.pb-content-toggle-switch'),

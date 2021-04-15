@@ -158,6 +158,10 @@ const attributes = {
 		type: 'string',
 		default: '',
 	},
+	contentFontFamily: {
+		type: 'string',
+		default: '',
+	},
 	contentFontSize: {
 		type: 'number',
 		default: 20,

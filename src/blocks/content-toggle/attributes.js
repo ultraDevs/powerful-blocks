@@ -31,7 +31,7 @@ const attributes = {
 		type: 'string',
 		default: __( 'Primary', 'powerful-blocks' ),
 	},
-	primaryLabelBGColor: {
+	primarySwitchBGColor: {
 		type: 'string',
 		default: '#f30d55',
 	},
@@ -41,7 +41,7 @@ const attributes = {
 		default: __( 'Secondary', 'powerful-blocks' ),
 	},
 
-	secondaryLabelBGColor: {
+	secondarySwitchBGColor: {
 		type: 'string',
 		default: '#5820e5',
 	},
@@ -123,222 +123,30 @@ const attributes = {
 		default: 'rectangle',
 	},
 
-
-
-
-	// currentTab: {
-	// 	type: 'string',
-	// 	default: 'tab-1',
-	// },
-
-	// tabs: {
-	// 	type: 'array',
-	// 	default: [
-	// 		{
-	// 			'slug' : 'tab-1',
-	// 			'title': 'Tab 1',
-	// 		},
-	// 		{
-	// 			'slug' : 'tab-2',
-	// 			'title': 'Tab 2',
-	// 		},
-	// 	]
-	// },
-
-	// tabsType: {
-	// 	type: 'string',
-	// 	default: 'tabs',
-	// },
-
+	switchSize: {
+		type: 'number',
+		default: 18,
+	},
 	
-	// tabsVAlign: {
-	// 	type: 'string',
-	// 	default: 'horizontal',
-	// },
-
-	// titleColor: {
-	// 	type: 'string',
-	// 	default: '#6D7680',
-	// },
-	// hoverTitleColor: {
-	// 	type: 'string',
-	// 	default: '#6D7680',
-	// },
-	// activeTitleColor: {
-	// 	type: 'string',
-	// 	default: '#6D7680',
-	// },
-
-	// titleBGColor: {
-	// 	type: 'string',
-	// 	default: '#fff',
-	// },
-	// hoverTitleBGColor: {
-	// 	type: 'string',
-	// 	default: '#eee',
-	// },
-	// activeTitleBGColor: {
-	// 	type: 'string',
-	// 	default: '#eee',
-	// },
-
-	// titleTextAlign: {
-	// 	type: 'string',
-	// 	default: 'left',
-	// },
-
-	// titleFontSize: {
-	// 	type: 'number',
-	// 	default: 18,
-	// },
-
-	// titleFontSizeTablet: {
-	// 	type: 'number',
-	// 	default: 17,
-	// },
-
-	// titleFontSizeMobile: {
-	// 	type: 'number',
-	// 	default: 16,
-	// },
-
-	// titleFontFamily: {
-	// 	type: 'string',
-	// 	default: '',
-	// },
-
-	// titleFontSizeType: {
-	// 	type: 'string',
-	// 	default: 'px',
-	// },
-	// titleFontStyle: {
-	// 	type: 'string',
-	// 	default: 'normal',
-	// },
-
-	// titleFontWeight: {
-	// 	type: 'string',
-	// 	default: 'normal',
-	// },
-	// titleTextTransform: {
-	// 	type: 'string',
-	// 	default: '',
-	// },
-	// titleTextDecoration: {
-	// 	type: 'string',
-	// 	default: '',
-	// },
-	// titleLetterSpacing: {
-	// 	type: 'number',
-	// 	default: '',
-	// },
-	// titleLineHeight: {
-	// 	type: 'number',
-	// 	default: '',
-	// },
+	switchSizeTablet: {
+		type: 'number',
+		default: 17,
+	},
 	
-	// contentBackgroundColor: {
-	// 	type: 'string',
-	// 	default: '',
-	// },
-	// hoverContentBackgroundColor: {
-	// 	type: 'string',
-	// 	default: '',
-	// },
+	switchSizeMobile: {
+		type: 'number',
+		default: 16,
+	},
+	
+	switchSizeType: {
+		type: 'string',
+		default: 'px',
+	},
 
-	// contentColor: {
-	// 	type: 'string',
-	// 	default: '#6D7680',
-	// },
-	// hoverContentColor: {
-	// 	type: 'string',
-	// 	default: '#222',
-	// },
-
-
-	// contentMargin: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '',
-	// 		left: '',
-	// 		right: '',
-	// 		bottom: '',
-	// 	},
-	// },
-	// contentMarginTablet: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '',
-	// 		left: '',
-	// 		right: '',
-	// 		bottom: '',
-	// 	},
-	// },
-	// contentMarginMobile: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '',
-	// 		left: '',
-	// 		right: '',
-	// 		bottom: '',
-	// 	},
-	// },
-	// contentPadding: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '10px',
-	// 		left: '10px',
-	// 		right: '10px',
-	// 		bottom: '10px',
-	// 	},
-	// },
-	// contentPaddingTablet: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '10px',
-	// 		left: '10px',
-	// 		right: '10px',
-	// 		bottom: '10px',
-	// 	},
-	// },
-	// contentPaddingMobile: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '10px',
-	// 		left: '10px',
-	// 		right: '10px',
-	// 		bottom: '10px',
-	// 	},
-	// },
-
-	// contentBorderRadius: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '',
-	// 		left: '',
-	// 		right: '',
-	// 		bottom: '',
-	// 	},
-	// },
-
-	// contentBorderRadiusTablet: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '',
-	// 		left: '',
-	// 		right: '',
-	// 		bottom: '',
-	// 	},
-	// },
-	// contentBorderRadiusMobile: {
-	// 	type: 'object',
-	// 	default: {
-	// 		top: '',
-	// 		left: '',
-	// 		right: '',
-	// 		bottom: '',
-	// 	},
-	// },
+	labelPosition: {
+		type: 'string',
+		default: 'center',
+	},
 };
 
 const finalAttributes = { ...attributes, ...advancedAttributes };

@@ -1,5 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 
+import './controls/index';
 import './js/editor';
 import './helper/icons';
 import './templates/index';

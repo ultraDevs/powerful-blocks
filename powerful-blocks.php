@@ -80,6 +80,9 @@ final class PowerfulBlocks {
 	 */
 	public function init() {
 
+		// Blocks Helper Class.
+		$blocks_helper = new ultraDevs\PB\Blocks_Helper();
+
 		// Helper Class.
 		$helper = new ultraDevs\PB\Helper();
 
@@ -126,7 +129,8 @@ final class PowerfulBlocks {
 			// Frontend Assets.
 			add_action( 'wp_enqueue_scripts', array( $assets_manager, 'frontend_assets' ) );
 			add_action( 'wp_head', array( $assets_manager, 'get_block_css' ) );
-
+			// Block Render.
+			add_filter( 'render_block', array( $blocks_helper, 'block_render' ), 10, 2 );
 		}
 	}
 

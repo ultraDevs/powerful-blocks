@@ -22,7 +22,8 @@ jQuery( function($){
     const Animations = () => {
         $('.pb-animation').each( function() {
             let $this = $( this ),
-                settings = $this.data('pb-animation');
+                el = $this.closest('[data-pb-animation'),
+                settings = el.data('pb-animation');
             AnimationWayPoints( $this, settings.in, settings.out );
         })
     };
