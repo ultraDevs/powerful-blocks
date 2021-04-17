@@ -33,7 +33,7 @@ class Blocks_Helper {
 
 		$custom_attributes = null;
 
-		$pb_animations = json_encode(
+		$pb_animations = wp_json_encode(
 			array(
 				'in'  => $attributes['inAnimation'] ? $attributes['inAnimation'] : '',
 				'out' => $attributes['outAnimation'] ? $attributes['outAnimation'] : '',
@@ -52,7 +52,7 @@ class Blocks_Helper {
 			}
 		}
 
-		$wrapper_link = json_encode(
+		$wrapper_link = wp_json_encode(
 			array(
 				'id'         => $attributes['blockId'] ? $attributes['blockId'] : 'pb-wl-r',
 				'addLink'    => $attributes['addWLink'] ? $attributes['addWLink'] : false,
@@ -66,16 +66,16 @@ class Blocks_Helper {
 			$custom_attributes .= ' id=' . esc_attr( $attributes['customID'] ) . ' ';
 		}
 
-		// if ( $attributes['customClass'] ) {
-		// 	$custom_attributes .= 'class=' . esc_attr( $attributes['customClass'] ) . ' ';
-		// }
-
 		if ( true === $attributes['addWLink'] ) {
 			$custom_attributes .= 'data-pb-link=' . $wrapper_link . ' ';
 		}
 
 		if ( $pb_animations ) {
 			$custom_attributes .= 'data-pb-animation=' . $pb_animations . '';
+		}
+
+		if ( 'core/heading' === $block['blockName'] ) {
+			$custom_attributes .= ' class=pb-c-heading' . ' ';
 		}
 
 		$u_content  = '<div class="powerful-blocks-s" id="pb-wrap-' . esc_attr( $attributes['blockId'] ) . '">';

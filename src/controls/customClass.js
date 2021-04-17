@@ -62,7 +62,7 @@ const withClientIdClassName = createHigherOrderComponent( ( BlockListBlock ) => 
 wp.hooks.addFilter( 'editor.BlockListBlock', 'powerful-blocks/with-client-id-class-name', withClientIdClassName );
 
 
-const setExtraPropsToBlockType = ( props, blockType, attributes) => {
+const setExtraPropsToBlockType = ( props, blockType, attributes ) => {
 
     const {
         blockId,
@@ -103,7 +103,6 @@ const setExtraPropsToBlockType = ( props, blockType, attributes) => {
             hideOnTablet ? 'pb-hide-t' : '',
             hideOnMobile ? 'pb-hide-m' : '',
             blockWidth ? 'pb-b-e--width' : '',
-            'core/heading' === props.name ? 'pb-c-heading' : undefined,
             'image' === backgroundType ? 'pb-ab-bg--image' : '',
             true === enableCondition ? 'pb-block-conditions' : '',
             '' !== inAnimation ? 'edit' === type ? `pb-animation pb__animated pb__${inAnimation}` : 'pb-animation' : '',
@@ -120,7 +119,6 @@ const setExtraPropsToBlockType = ( props, blockType, attributes) => {
             hideOnTablet ? 'pb-hide-t' : '',
             hideOnMobile ? 'pb-hide-m' : '',
             blockWidth ? 'pb-b-e--width' : '',
-            'core/heading' === props.name ? 'pb-c-heading' : undefined,
             'image' === backgroundType ? 'pb-ab-bg--image' : '',
             true === enableCondition ? 'pb-block-conditions' : '',
             '' !== inAnimation ? 'edit' === type ? `pb-animation pb__animated pb__${inAnimation}` : 'pb-animation' : '',
@@ -131,7 +129,6 @@ const setExtraPropsToBlockType = ( props, blockType, attributes) => {
         ),
     });
 
-    return props;
 };
 wp.hooks.addFilter(
     'blocks.getSaveContent.extraProps',

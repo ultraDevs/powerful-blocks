@@ -357,7 +357,7 @@ const Styles = ( props ) => {
 	if ( 'core/heading' === props.name ) {
 		rules.desktop[ '.pb-c-heading' ] = {
 			'font-family': pbFontFamily
-				? pbFontFamily
+				? pbFontFamily + '!important'
 				: undefined,
 			'font-size': pbFontSize
 				? pbFontSize + pbFontSizeType
