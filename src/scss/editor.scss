@@ -114,6 +114,15 @@
 	.components-form-token-field__input-container {
 		border: 1px solid #ddd;
 	}
+	.components-dropdown {
+		button {
+			border: 1px solid #f2f2f2;
+			padding: 0 5px !important;
+			span {
+				margin: 0 !important;
+			}
+		}
+	}
 }
 
 
