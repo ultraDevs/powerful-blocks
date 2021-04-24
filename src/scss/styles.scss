@@ -43,3 +43,10 @@
 .pb-block-c-wrapper {
 	transition: 0.3s;
 }
+.pb-c-heading {
+	@for $i from 1 through 6 {
+		h#{7 - $i} {
+			margin: 0;
+		}
+	}
+}

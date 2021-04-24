@@ -100,11 +100,11 @@ const Styles = ( props ) => {
 
 	const sTag = 'p';
 
-	const typoSelector = `.pb-block-c-wrapper ${sTag}`;
+	const typoSelector = ` > .pb-block-c-wrapper ${sTag}`;
 
 	let rules = {
 		desktop: {
-            '.pb-block-c-wrapper' : {
+            ' > .pb-block-c-wrapper' : {
 				background: 'image' !== backgroundType ? pbBackgroundColor : gradientValue,
 				background: 'image' !== backgroundType ? 'color' === backgroundType ? pbBackgroundColor : gradientValue : '',
 				'padding-top': padding.top ? padding.top : undefined,
@@ -138,7 +138,7 @@ const Styles = ( props ) => {
 				'z-index': blockzIndex ? blockzIndex : undefined,
 				height: blockHeight ? blockHeight + blockHeightType : undefined,
 			},
-			'.pb-block-c-wrapper:hover': {
+			' > .pb-block-c-wrapper:hover': {
 				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
 				'border-width': hoverBorderSize
 					? hoverBorderSize + 'px'
@@ -167,7 +167,7 @@ const Styles = ( props ) => {
 			},
 		},
 		tablet: {
-			'.pb-block-c-wrapper': {
+			' > .pb-block-c-wrapper': {
 				'padding-top': paddingTablet.top ? paddingTablet.top : undefined,
 				'padding-right': paddingTablet.right ? paddingTablet.right : undefined,
 				'padding-bottom': paddingTablet.bottom ? paddingTablet.bottom : undefined,
@@ -177,14 +177,14 @@ const Styles = ( props ) => {
 				'margin-right': marginTablet.right ? marginTablet.right : undefined,
 				'margin-bottom': marginTablet.bottom ? marginTablet.bottom : undefined,
 				'margin-left': marginTablet.left ? marginTablet.left : undefined,
-				'border-radius': borderRadiusTablet ? ( borderRadiusTablet.top ? borderRadiusTablet.top : '' ) + ' ' + ( borderRadiusTablet.right ? borderRadiusTablet.right : '') + ' ' + ( borderRadiusTablet.bottom ? borderRadiusTablet.bottom : '' ) + ' ' + ( borderRadiusTablet.left ? borderRadiusTablet.left : '' ) : undefined,
+				'border-radius': '' !== borderRadiusTablet ? ( borderRadiusTablet.top ? borderRadiusTablet.top : '0px' ) + ' ' + ( borderRadiusTablet.right ? borderRadiusTablet.right : '0px') + ' ' + ( borderRadiusTablet.bottom ? borderRadiusTablet.bottom : '0px' ) + ' ' + ( borderRadiusTablet.left ? borderRadiusTablet.left : '0px' ) : undefined,
 
 				height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined,
 			},
 			
 		},
 		mobile: {
-			'.pb-block-c-wrapper': {
+			' > .pb-block-c-wrapper': {
 				'padding-top': paddingMobile.top ? paddingMobile.top : undefined,
 				'padding-right': paddingMobile.right ? paddingMobile.right : undefined,
 				'padding-bottom': paddingMobile.bottom ? paddingMobile.bottom : undefined,
@@ -194,7 +194,7 @@ const Styles = ( props ) => {
 				'margin-right': marginMobile.right ? marginMobile.right : undefined,
 				'margin-bottom': marginMobile.bottom ? marginMobile.bottom : undefined,
 				'margin-left': marginMobile.left ? marginMobile.left : undefined,
-				'border-radius': borderRadiusMobile ? ( borderRadiusMobile.top ? borderRadiusMobile.top : '' ) + ' ' + ( borderRadiusMobile.right ? borderRadiusMobile.right : '') + ' ' + ( borderRadiusMobile.bottom ? borderRadiusMobile.bottom : '' ) + ' ' + ( borderRadiusMobile.left ? borderRadiusMobile.left : '' ) : undefined,
+				'border-radius': '' !== borderRadiusMobile ? ( borderRadiusMobile.top ? borderRadiusMobile.top : '0px' ) + ' ' + ( borderRadiusMobile.right ? borderRadiusMobile.right : '0px') + ' ' + ( borderRadiusMobile.bottom ? borderRadiusMobile.bottom : '0px' ) + ' ' + ( borderRadiusMobile.left ? borderRadiusMobile.left : '0px' ) : undefined,
 
 				height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined,
 			},
@@ -202,8 +202,8 @@ const Styles = ( props ) => {
 		},
 	};
 
-	if ( 'core/paragraph' === props.name || 'core/preformatted' === props.name || 'core/verse' === props.name ) {
-		rules.desktop[ '.pb-block-c-wrapper' ] = {
+	if ( 'core/paragraph' === props.name || 'core/preformatted' === props.name || 'core/verse' === props.name || 'core/heading' === props.name ) {
+		rules.desktop[ ' > .pb-c-typo' ] = {
 			'font-family': pbFontFamily
 				? pbFontFamily
 				: undefined,
@@ -229,19 +229,19 @@ const Styles = ( props ) => {
 				? pbTextDecoration
 				: undefined,
 		};
-		rules.tablet[ '.pb-block-c-wrapper' ] = {
+		rules.tablet[ ' > .pb-c-typo' ] = {
 			'font-size': pbFontSizeTablet
 				? pbFontSizeTablet + pbFontSizeType
 				: undefined,
 		};
-		rules.mobile[ '.pb-block-c-wrapper' ] = {
+		rules.mobile[ ' > .pb-c-typo' ] = {
 			'font-size': pbFontSizeMobile
 				? pbFontSizeMobile + pbFontSizeType
 				: undefined,
 		};
 	}
 	if ( 'core/list' === props.name ) {
-		rules.desktop[ '.pb-block-c-wrapper li' ] = {
+		rules.desktop[ ' > .pb-c-typo li' ] = {
 			'font-family': pbFontFamily
 				? pbFontFamily
 				: undefined,
@@ -267,19 +267,19 @@ const Styles = ( props ) => {
 				? pbTextDecoration
 				: undefined,
 		};
-		rules.tablet[ '.pb-block-c-wrapper li' ] = {
+		rules.tablet[ ' > .pb-c-typo li' ] = {
 			'font-size': pbFontSizeTablet
 				? pbFontSizeTablet + pbFontSizeType
 				: undefined,
 		};
-		rules.mobile[ '.pb-block-c-wrapper li' ] = {
+		rules.mobile[ ' > .pb-c-typo li' ] = {
 			'font-size': pbFontSizeMobile
 				? pbFontSizeMobile + pbFontSizeType
 				: undefined,
 		};
 	}
 	if ( 'core/quote' === props.name ) {
-		rules.desktop[ '.pb-block-c-wrapper p' ] = {
+		rules.desktop[ ' > .pb-c-typo p' ] = {
 			'font-family': pbFontFamily
 				? pbFontFamily
 				: undefined,
@@ -305,19 +305,19 @@ const Styles = ( props ) => {
 				? pbTextDecoration
 				: undefined,
 		};
-		rules.tablet[ '.pb-block-c-wrapper p' ] = {
+		rules.tablet[ ' > .pb-c-typo p' ] = {
 			'font-size': pbFontSizeTablet
 				? pbFontSizeTablet + pbFontSizeType
 				: undefined,
 		};
-		rules.mobile[ '.pb-block-c-wrapper p' ] = {
+		rules.mobile[ ' > .pb-c-typo p' ] = {
 			'font-size': pbFontSizeMobile
 				? pbFontSizeMobile + pbFontSizeType
 				: undefined,
 		};
 	}
 	if ( 'core/code' === props.name ) {
-		rules.desktop[ '.pb-block-c-wrapper code' ] = {
+		rules.desktop[ ' > .pb-c-typo code' ] = {
 			'font-family': pbFontFamily
 				? pbFontFamily
 				: undefined,
@@ -343,50 +343,12 @@ const Styles = ( props ) => {
 				? pbTextDecoration
 				: undefined,
 		};
-		rules.tablet[ '.pb-block-c-wrapper code' ] = {
+		rules.tablet[ ' > .pb-c-typo code' ] = {
 			'font-size': pbFontSizeTablet
 				? pbFontSizeTablet + pbFontSizeType
 				: undefined,
 		};
-		rules.mobile[ '.pb-block-c-wrapper code' ] = {
-			'font-size': pbFontSizeMobile
-				? pbFontSizeMobile + pbFontSizeType
-				: undefined,
-		};
-	}
-	if ( 'core/heading' === props.name ) {
-		rules.desktop[ '.pb-c-heading' ] = {
-			'font-family': pbFontFamily
-				? pbFontFamily + '!important'
-				: undefined,
-			'font-size': pbFontSize
-				? pbFontSize + pbFontSizeType
-				: undefined,
-			'font-weight': pbFontWeight
-				? pbFontWeight + '!important'
-				: undefined,
-			'font-style': pbFontStyle
-				? pbFontStyle
-				: undefined,
-			'letter-spacing': pbLetterSpacing
-				? pbLetterSpacing + 'px'
-				: undefined,
-			'line-height': pbLineHeight
-				? pbLineHeight + 'px'
-				: undefined,
-			'text-transform': pbTextTransform
-				? pbTextTransform
-				: undefined,
-			'text-decoration': pbTextDecoration
-				? pbTextDecoration
-				: undefined,
-		};
-		rules.tablet[ '.pb-c-heading' ] = {
-			'font-size': pbFontSizeTablet
-				? pbFontSizeTablet + pbFontSizeType
-				: undefined,
-		};
-		rules.mobile[ '.pb-c-heading' ] = {
+		rules.mobile[ ' > .pb-c-typo code' ] = {
 			'font-size': pbFontSizeMobile
 				? pbFontSizeMobile + pbFontSizeType
 				: undefined,

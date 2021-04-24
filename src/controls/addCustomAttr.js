@@ -1,5 +1,5 @@
 function addCustomAttr( settings, name ) {
-    if ( typeof settings.attributes !== 'undefined') {
+    if ( typeof settings.attributes !== 'undefined' && name.includes("core/")) {
         settings.attributes = Object.assign( settings.attributes, {
             blockId: {
                 type: 'string',

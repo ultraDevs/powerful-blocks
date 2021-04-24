@@ -74,15 +74,41 @@ class Blocks_Helper {
 			$custom_attributes .= 'data-pb-animation=' . $pb_animations . '';
 		}
 
-		if ( 'core/heading' === $block['blockName'] ) {
-			$custom_attributes .= ' class=pb-c-heading' . ' ';
-		}
+		$typo_blocks = array(
+			'core/paragraph',
+			'core/heading',
+			'core/list',
+			'core/quote',
+			'core/code',
+			'core/preformatted',
+			'core/verse'
+		);
 
-		$u_content  = '<div class="powerful-blocks-s" id="pb-wrap-' . esc_attr( $attributes['blockId'] ) . '">';
-		$u_content .= '<div ' . esc_attr( $custom_attributes ) . '>';
-		$u_content .= $content;
-		$u_content .= '</div>';
-		$u_content .= '</div>';
+		if ( false !== strpos( $block['blockName'], 'core/' ) ) {
+
+			$u_content  = '<div class="powerful-blocks-s" id="pb-wrap-' . esc_attr( $attributes['blockId'] ) . '">';
+			$u_content .= '<div class="' . classNames(
+				'pb-block-c-wrapper',
+				$attributes['hideOnDesktop'] ? 'pb-hide-d' : '',
+				$attributes['hideOnTablet'] ? 'pb-hide-t' : '',
+				$attributes['hideOnMobile'] ? 'pb-hide-m' : '',
+				$attributes['blockWidth'] ? 'pb-b-e--width' : '',
+				'image' === $attributes['backgroundType'] ? 'pb-ab-bg--image' : '',
+				true === $attributes['enableCondition'] ? 'pb-block-conditions' : '',
+				$attributes['inAnimation'] ? 'edit' === $type ? "pb-animation pb__animated pb__{$attributes['inAnimation']}" : 'pb-animation' : '',
+				$attributes['outAnimation'] ? 'edit' === $type ? '' === $attributes['inAnimation'] ? "pb-animation pb__animated_out pb__out_{$attributes['outAnimation']}" : "pb-animation pb__animated_out pb__out_{$attributes['outAnimation']}" : 'pb-animation-out' : '',
+				$attributes['inAnimationDuration'] ? "pb-anim-dur__{$attributes['inAnimationDuration']}" : '',
+				$attributes['outAnimationDuration'] ? "pb-anim-out-dur__{$attributes['outAnimationDuration']}" : '',
+				true === $attributes['CSSTransform'] ? 'pb-c-css-transform' : '',
+				in_array( $block['blockName'], $typo_blocks ) ? 'pb-c-typo' : '',
+				$attributes['customClass'],
+			) . '" ' . esc_attr( $custom_attributes ) . '>';
+			$u_content .= $content;
+			$u_content .= '</div>';
+			$u_content .= '</div>';
+		} else {
+			$u_content .= $content;
+		}
 		return $u_content;
 	}
 }

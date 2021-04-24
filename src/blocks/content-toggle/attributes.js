@@ -1,7 +1,5 @@
 import { __ } from '@wordpress/i18n';
 
-import advancedAttributes from '../../helper/advancedAttributes';
-
 const attributes = {
 	blockId: {
 		type: 'string',
@@ -111,7 +109,7 @@ const attributes = {
 
 	switchAlign: {
 		type: 'string',
-		default: 'flex-start',
+		default: 'center',
 	},
 	switchPosition: {
 		type: 'string',
@@ -147,7 +145,7 @@ const attributes = {
 		type: 'string',
 		default: 'center',
 	},
+	
 };
 
-const finalAttributes = { ...attributes, ...advancedAttributes };
-export default finalAttributes;
+export default attributes;

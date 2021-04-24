@@ -16,7 +16,7 @@ import * as pbSpacer from './blocks/spacer';
 import * as accordion from './blocks/accordion';
 import * as funFactor from './blocks/fun-factor';
 import * as counter from './blocks/counter';
-// import * as blockWrapper from './blocks/block-wrapper';
+import * as blockWrapper from './blocks/block-wrapper';
 import * as animatedHeadlines from './blocks/animated-headlines';
 import * as tab from './blocks/tabs/tab';
 import * as tabs from './blocks/tabs';
@@ -64,7 +64,7 @@ const registerPowerfulBlocks = () => {
 		accordion,
 		funFactor,
 		counter,
-		// blockWrapper,
+		blockWrapper,
 		animatedHeadlines,
 		tab,
 		tabs,
