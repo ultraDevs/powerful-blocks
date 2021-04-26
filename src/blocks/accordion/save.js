@@ -2,7 +2,6 @@ const { RichText } = wp.blockEditor;
 const { __ } = wp.i18n;
 import classnames from 'classnames';
 
-import { genClass, blockAttributes } from '../../helper';
 import IconBox from "../../helper/iconbox.js";
 
 
@@ -19,9 +18,6 @@ const save = ( { attributes, className } ) => {
 		toggleSpeed,
 	} = attributes;
 
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
-
 	const settings = JSON.stringify({
 		type: accordionType ? accordionType : '',
 		speed: toggleSpeed ? toggleSpeed : '',
@@ -34,10 +30,8 @@ const save = ( { attributes, className } ) => {
 					className={ classnames(
 						className,
 						'pb-accordion-wrapper',
-						...classes
 					) }					
-					{ ...blockAttr }
-				data-settings = {
+					data-settings = {
 						settings ? settings : undefined
 					}
 				>

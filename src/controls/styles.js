@@ -95,23 +95,122 @@ const Styles = ( props ) => {
 
 	} = attributes;
 
-
 	const selectorPrefix = `#pb-wrap-${ blockId }`;
 
 	const sTag = 'p';
 
 	const typoSelector = ` > .pb-block-c-wrapper ${sTag}`;
 
+	let { fontsPropertiesDesktop, fontsPropertiesTable, fontsPropertiesMobile } = {};
+
+	const typo_blocks = [
+		'core/paragraph',
+		'core/heading',
+		'core/list',
+		'core/quote',
+		'core/code',
+		'core/preformatted',
+		'core/verse'
+	];
+
+	if ( typo_blocks.includes( props.name ) ) {
+		fontsPropertiesDesktop = {
+			'font-family': pbFontFamily
+				? `"${pbFontFamily}" !important`
+				: undefined,
+			'font-size': pbFontSize
+				? pbFontSize + pbFontSizeType
+				: undefined,
+			'font-weight': pbFontWeight
+				? pbFontWeight + '!important'
+				: undefined,
+			'font-style': pbFontStyle
+				? pbFontStyle
+				: undefined,
+			'letter-spacing': pbLetterSpacing
+				? pbLetterSpacing + 'px'
+				: undefined,
+			'line-height': pbLineHeight
+				? pbLineHeight + 'px'
+				: undefined,
+			'text-transform': pbTextTransform
+				? pbTextTransform
+				: undefined,
+			'text-decoration': pbTextDecoration
+				? pbTextDecoration
+				: undefined,
+		};
+	
+		fontsPropertiesTable = {
+			'font-size': pbFontSizeTablet
+				? pbFontSizeTablet + pbFontSizeType
+				: undefined,
+		};
+		fontsPropertiesMobile = {
+			'font-size': pbFontSizeMobile
+				? pbFontSizeMobile + pbFontSizeType
+				: undefined,
+		};
+	}
+
+	let { backGroundProperties, backgroundHoverProperties } = {};
+
+	if ( 'image' === backgroundType ) {
+		backGroundProperties = {
+			'background': backgroundImg ? `url( ${ backgroundImg } )` : undefined,
+			'background-position': backgroundImgPosition ? backgroundImgPosition : undefined,
+			'background-repeat': backgroundImgRepeat ? backgroundImgRepeat : undefined,
+			'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : undefined,
+			'background-size': backgroundImgSize ? backgroundImgSize : undefined,
+		};
+	} else {
+		backGroundProperties = {
+			background: 'color' === backgroundType ? pbBackgroundColor : gradientValue
+		};
+	}
+	if ( 'image' === hoverBackgroundType ) {
+		backgroundHoverProperties = {
+			'background': hoverBackgroundImg ? `url( ${ hoverBackgroundImg } )` : undefined,
+			'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : undefined,
+			'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : undefined,
+			'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : undefined,
+			'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : undefined,
+		};
+	} else {
+		backgroundHoverProperties = {
+			background: 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue
+		};
+	}
+
+	let { widthPropertiesDesktop, widthPropertiesTablet, widthPropertiesMobile } = {};
+
+	if ( 'inline' === blockWidth ) {
+		widthPropertiesDesktop = {
+			display: 'inline-block',
+		};
+	}
+
+	if ( 'custom' === blockWidth ) {
+		widthPropertiesDesktop = {
+			width: blockCustomWidth ? blockCustomWidth + blockCustomWidthType : undefined,
+		};
+		widthPropertiesTablet = {
+			width: blockCustomWidthTablet ? blockCustomWidthTablet + blockCustomWidthType : undefined,
+		};
+		widthPropertiesMobile = {
+			width: blockCustomWidthMobile ? blockCustomWidthMobile + blockCustomWidthType : undefined,
+		};
+	}
+
+
 	let rules = {
 		desktop: {
             ' > .pb-block-c-wrapper' : {
-				background: 'image' !== backgroundType ? pbBackgroundColor : gradientValue,
-				background: 'image' !== backgroundType ? 'color' === backgroundType ? pbBackgroundColor : gradientValue : '',
+				...backGroundProperties,
 				'padding-top': padding.top ? padding.top : undefined,
 				'padding-right': padding.right ? padding.right : undefined,
 				'padding-bottom': padding.bottom ? padding.bottom : undefined,
 				'padding-left': padding.left ? padding.left : undefined,
-
 				'margin-top': margin.top ? margin.top : undefined,
 				'margin-right': margin.right ? margin.right : undefined,
 				'margin-bottom': margin.bottom ? margin.bottom : undefined,
@@ -137,9 +236,11 @@ const Styles = ( props ) => {
 
 				'z-index': blockzIndex ? blockzIndex : undefined,
 				height: blockHeight ? blockHeight + blockHeightType : undefined,
+				...fontsPropertiesDesktop,
+				... widthPropertiesDesktop,
 			},
 			' > .pb-block-c-wrapper:hover': {
-				background: 'image' !== hoverBackgroundType ? 'color' === hoverBackgroundType ? hoverBackgroundColor : hoverGradientValue : '',
+				... backgroundHoverProperties,
 				'border-width': hoverBorderSize
 					? hoverBorderSize + 'px'
 					: undefined,
@@ -180,6 +281,8 @@ const Styles = ( props ) => {
 				'border-radius': '' !== borderRadiusTablet ? ( borderRadiusTablet.top ? borderRadiusTablet.top : '0px' ) + ' ' + ( borderRadiusTablet.right ? borderRadiusTablet.right : '0px') + ' ' + ( borderRadiusTablet.bottom ? borderRadiusTablet.bottom : '0px' ) + ' ' + ( borderRadiusTablet.left ? borderRadiusTablet.left : '0px' ) : undefined,
 
 				height: blockHeightTablet ? blockHeightTablet + blockHeightType : undefined,
+				...fontsPropertiesTable,
+				widthPropertiesTablet,
 			},
 			
 		},
@@ -197,174 +300,16 @@ const Styles = ( props ) => {
 				'border-radius': '' !== borderRadiusMobile ? ( borderRadiusMobile.top ? borderRadiusMobile.top : '0px' ) + ' ' + ( borderRadiusMobile.right ? borderRadiusMobile.right : '0px') + ' ' + ( borderRadiusMobile.bottom ? borderRadiusMobile.bottom : '0px' ) + ' ' + ( borderRadiusMobile.left ? borderRadiusMobile.left : '0px' ) : undefined,
 
 				height: blockHeightMobile ? blockHeightMobile + blockHeightType : undefined,
+				...fontsPropertiesMobile,
+				widthPropertiesMobile,
 			},
 			
 		},
 	};
 
-	if ( 'core/paragraph' === props.name || 'core/preformatted' === props.name || 'core/verse' === props.name || 'core/heading' === props.name ) {
-		rules.desktop[ ' > .pb-c-typo' ] = {
-			'font-family': pbFontFamily
-				? pbFontFamily
-				: undefined,
-			'font-size': pbFontSize
-				? pbFontSize + pbFontSizeType
-				: undefined,
-			'font-weight': pbFontWeight
-				? pbFontWeight + '!important'
-				: undefined,
-			'font-style': pbFontStyle
-				? pbFontStyle
-				: undefined,
-			'letter-spacing': pbLetterSpacing
-				? pbLetterSpacing + 'px'
-				: undefined,
-			'line-height': pbLineHeight
-				? pbLineHeight + 'px'
-				: undefined,
-			'text-transform': pbTextTransform
-				? pbTextTransform
-				: undefined,
-			'text-decoration': pbTextDecoration
-				? pbTextDecoration
-				: undefined,
-		};
-		rules.tablet[ ' > .pb-c-typo' ] = {
-			'font-size': pbFontSizeTablet
-				? pbFontSizeTablet + pbFontSizeType
-				: undefined,
-		};
-		rules.mobile[ ' > .pb-c-typo' ] = {
-			'font-size': pbFontSizeMobile
-				? pbFontSizeMobile + pbFontSizeType
-				: undefined,
-		};
-	}
-	if ( 'core/list' === props.name ) {
-		rules.desktop[ ' > .pb-c-typo li' ] = {
-			'font-family': pbFontFamily
-				? pbFontFamily
-				: undefined,
-			'font-size': pbFontSize
-				? pbFontSize + pbFontSizeType
-				: undefined,
-			'font-weight': pbFontWeight
-				? pbFontWeight + '!important'
-				: undefined,
-			'font-style': pbFontStyle
-				? pbFontStyle
-				: undefined,
-			'letter-spacing': pbLetterSpacing
-				? pbLetterSpacing + 'px'
-				: undefined,
-			'line-height': pbLineHeight
-				? pbLineHeight + 'px'
-				: undefined,
-			'text-transform': pbTextTransform
-				? pbTextTransform
-				: undefined,
-			'text-decoration': pbTextDecoration
-				? pbTextDecoration
-				: undefined,
-		};
-		rules.tablet[ ' > .pb-c-typo li' ] = {
-			'font-size': pbFontSizeTablet
-				? pbFontSizeTablet + pbFontSizeType
-				: undefined,
-		};
-		rules.mobile[ ' > .pb-c-typo li' ] = {
-			'font-size': pbFontSizeMobile
-				? pbFontSizeMobile + pbFontSizeType
-				: undefined,
-		};
-	}
-	if ( 'core/quote' === props.name ) {
-		rules.desktop[ ' > .pb-c-typo p' ] = {
-			'font-family': pbFontFamily
-				? pbFontFamily
-				: undefined,
-			'font-size': pbFontSize
-				? pbFontSize + pbFontSizeType
-				: undefined,
-			'font-weight': pbFontWeight
-				? pbFontWeight + '!important'
-				: undefined,
-			'font-style': pbFontStyle
-				? pbFontStyle
-				: undefined,
-			'letter-spacing': pbLetterSpacing
-				? pbLetterSpacing + 'px'
-				: undefined,
-			'line-height': pbLineHeight
-				? pbLineHeight + 'px'
-				: undefined,
-			'text-transform': pbTextTransform
-				? pbTextTransform
-				: undefined,
-			'text-decoration': pbTextDecoration
-				? pbTextDecoration
-				: undefined,
-		};
-		rules.tablet[ ' > .pb-c-typo p' ] = {
-			'font-size': pbFontSizeTablet
-				? pbFontSizeTablet + pbFontSizeType
-				: undefined,
-		};
-		rules.mobile[ ' > .pb-c-typo p' ] = {
-			'font-size': pbFontSizeMobile
-				? pbFontSizeMobile + pbFontSizeType
-				: undefined,
-		};
-	}
-	if ( 'core/code' === props.name ) {
-		rules.desktop[ ' > .pb-c-typo code' ] = {
-			'font-family': pbFontFamily
-				? pbFontFamily
-				: undefined,
-			'font-size': pbFontSize
-				? pbFontSize + pbFontSizeType
-				: undefined,
-			'font-weight': pbFontWeight
-				? pbFontWeight + '!important'
-				: undefined,
-			'font-style': pbFontStyle
-				? pbFontStyle
-				: undefined,
-			'letter-spacing': pbLetterSpacing
-				? pbLetterSpacing + 'px'
-				: undefined,
-			'line-height': pbLineHeight
-				? pbLineHeight + 'px'
-				: undefined,
-			'text-transform': pbTextTransform
-				? pbTextTransform
-				: undefined,
-			'text-decoration': pbTextDecoration
-				? pbTextDecoration
-				: undefined,
-		};
-		rules.tablet[ ' > .pb-c-typo code' ] = {
-			'font-size': pbFontSizeTablet
-				? pbFontSizeTablet + pbFontSizeType
-				: undefined,
-		};
-		rules.mobile[ ' > .pb-c-typo code' ] = {
-			'font-size': pbFontSizeMobile
-				? pbFontSizeMobile + pbFontSizeType
-				: undefined,
-		};
-	}
-
 	if ( 'image' === backgroundType ) {
-		rules.desktop[ '.pb-ab-bg--image' ] = {
-			'background': backgroundImg ? `url( ${ backgroundImg } )` : undefined,
-			'background-position': backgroundImgPosition ? backgroundImgPosition : undefined,
-			'background-repeat': backgroundImgRepeat ? backgroundImgRepeat : undefined,
-			'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : undefined,
-			'background-size': backgroundImgSize ? backgroundImgSize : undefined,
-		};
 		
-		rules.desktop[ '.pb-ab-bg--image::before' ] = {
+		rules.desktop[ ' > .pb-block-c-wrapper::before' ] = {
 			background: backgroundImgOverlayColor ? backgroundImgOverlayColor : undefined,
 			opacity: backgroundOpacity ? ( backgroundOpacity / 100 ) : undefined,
 			'border-radius': borderRadius ? ( borderRadius.top ? borderRadius.top : '0px' ) + ' ' + ( borderRadius.right ? borderRadius.right : '0px') + ' ' + ( borderRadius.bottom ? borderRadius.bottom : '0px' ) + ' ' + ( borderRadius.left ? borderRadius.left : '0px' ) : undefined,
@@ -372,42 +317,12 @@ const Styles = ( props ) => {
 		
 	}
 	if ( 'image' === hoverBackgroundType ) {
-		rules.desktop[ '.pb-ab-bg--image:hover' ] = {
-			'background': hoverBackgroundImg ? `url( ${ hoverBackgroundImg } )` : undefined,
-			'background-position': hoverBackgroundImgPosition ? hoverBackgroundImgPosition : undefined,
-			'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : undefined,
-			'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : undefined,
-			'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : undefined,
-		};
-		rules.desktop[ '.pb-ab-bg--image:hover::before' ] = {
+		rules.desktop[ ' > .pb-block-c-wrapper:hover::before' ] = {
 			background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : undefined,
 			opacity: hoverBackgroundOpacity ? ( hoverBackgroundOpacity / 100 ) : undefined,
 			'border-radius': borderRadius ? ( borderRadius.top ? borderRadius.top : '0px' ) + ' ' + ( borderRadius.right ? borderRadius.right : '0px') + ' ' + ( borderRadius.bottom ? borderRadius.bottom : '0px' ) + ' ' + ( borderRadius.left ? borderRadius.left : '0px' ) : undefined,
 		};
 	}
-
-	if ( 'inline' === blockWidth ) {
-		rules.desktop[ '.pb-b-e--width' ] = {
-			display: 'inline-block',
-			margin: 'auto',
-		};
-	}
-
-	if ( 'custom' === blockWidth ) {
-		rules.desktop[ '.pb-b-e--width' ] = {
-			width: blockCustomWidth ? blockCustomWidth + blockCustomWidthType : undefined,
-		};
-	}
-	if ( 'custom' === blockWidth ) {
-		rules.tablet[ '.pb-b-e--width' ] = {
-			width: blockCustomWidthTablet ? blockCustomWidthTablet + blockCustomWidthType : undefined,
-		};
-	}
-	if ( 'custom' === blockWidth ) {
-		rules.mobile[ '.pb-b-e--width' ] = {
-			width: blockCustomWidthMobile ? blockCustomWidthMobile + blockCustomWidthType : undefined,
-		};
-    }
 
 	return renderStyle( rules, selectorPrefix, props.name );
 };

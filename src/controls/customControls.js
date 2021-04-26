@@ -135,7 +135,7 @@ const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
 
             addWLink,
             wrapperLink,
-            pbWrapperLinkNewTab,
+            wrapperLinkNewTab,
             wrapperLinkNofollow,
 
             pbFontSize,
@@ -1267,11 +1267,7 @@ const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
                                     setAttributes( { customID } );
                                 } }
                             />
-                        </PanelBody>
-                        <PanelBody title={ __( 'Attributes', 'powerful-blocks' ) } initialOpen={ false }>
-                            <p className="pb-control--helper__txt">
-                                { __( "Example: name|value, name|value. \n \n Note: Don't Add class and id attribute.", 'powerful-blocks' ) }
-                            </p>
+                            
                             { 
                                 'Free' === pType ? (
                                     <UpgradePlanNotice />
@@ -1282,10 +1278,13 @@ const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
                                         onChange={ ( customAttributes ) => {
                                             setAttributes( { customAttributes } );
                                         } }
+                                        placeHolder={ __( 'name|value, name|value', 'powerful-blocks' ) }
                                     />
                                 )
                             }
-                            
+                            <p className="pb-control--helper__txt">
+                                { __( "Example: name|value, name|value. \n \n Note: Don't Add class and id attribute.", 'powerful-blocks' ) }
+                            </p>
                         </PanelBody>
                         <PanelBody title={ __( 'Wrapper Link', 'powerful-blocks' ) } initialOpen={ false }>
                             { 
@@ -1311,9 +1310,9 @@ const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
                                         />
                                         <ToggleControl
                                             label={ __( 'Open in new window', 'powerful-blocks' ) }
-                                            checked={ pbWrapperLinkNewTab }
+                                            checked={ wrapperLinkNewTab }
                                             onChange={ ( value ) => {
-                                                setAttributes( { pbWrapperLinkNewTab: value } );
+                                                setAttributes( { wrapperLinkNewTab: value } );
                                             }}
                                         />
                                         <ToggleControl
