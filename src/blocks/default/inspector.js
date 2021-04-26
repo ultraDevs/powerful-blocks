@@ -27,8 +27,6 @@ import {
 	ShadowControl
 } from '../../components';
 
-import Advanced from '../../helper/advanced';
-
 
 const Inspector = ( props ) => {
 	const { attributes, setAttributes } = props;
@@ -43,74 +41,16 @@ const Inspector = ( props ) => {
 
 	return (
 		<InspectorControls>
-			<div className="pb-panel-head--tabs">
-				<ButtonGroup className="pb-panel-head--tabs__wrapper">
-					<Button
-						onClick = { () => {
-							setTab('content');
-						}}
-						className = {
-							classnames(
-								"pb-panel-head--tab",
-								'content' === tab ? 'pb-ph-tab--active' : '',
-							)
-						}
-						icon="edit"
-					>
-						{ __( 'Content', 'powerful-blocks' ) }
-					</Button>
-					<Button
-						onClick = { () => {
-							setTab('style');
-						}}
-						className = {
-							classnames(
-								"pb-panel-head--tab",
-								'style' === tab ? 'pb-ph-tab--active' : '',
-							)
-						}
-						icon="color-picker"
-					>
-						{ __( 'Style', 'powerful-blocks' ) }
-					</Button>
-					<Button
-						onClick = { () => {
-							setTab('advanced');
-						}}
-						className = {
-							classnames(
-								"pb-panel-head--tab",
-								'advanced' === tab ? 'pb-ph-tab--active' : '',
-							)
-						}
-						icon="admin-generic"
-					>
-						{ __( 'Advanced', 'powerful-blocks' ) }
-					</Button>
-				</ButtonGroup>
-				<div className="pb-panel-head--tabs__controls pb-custom-control-styles">
-				{ 'content' === tab && (
-					<>
-						<PanelBody title={ __( 'Settings', 'powerful-blocks' ) } initialOpen = { open }>
-							
-						</PanelBody>
-						<PanelBody
-							title={ __( 'Image', 'powerful-blocks' ) }
-							initialOpen={ false }
-						>
-							
-						</PanelBody>
-					</>
-				) }
-				{ 'style' === tab && (
-					<>
+			<div className="pb-custom-control-styles">
+				<PanelBody title={ __( 'Settings', 'powerful-blocks' ) } initialOpen = { open }>
 						
-					</>
-				) }
-				{ 'advanced' === tab && (
-					<Advanced { ...{ attributes, setAttributes } } />
-				) }
-				</div>
+				</PanelBody>
+				<PanelBody
+					title={ __( 'Image', 'powerful-blocks' ) }
+					initialOpen={ false }
+				>
+					
+				</PanelBody>
 			</div>
 		</InspectorControls>
 	);
