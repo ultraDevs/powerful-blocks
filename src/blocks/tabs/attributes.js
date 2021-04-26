@@ -1,7 +1,5 @@
 import { __ } from '@wordpress/i18n';
 
-import advancedAttributes from '../../helper/advancedAttributes';
-
 const attributes = {
 	blockId: {
 		type: 'string',
@@ -226,5 +224,4 @@ const attributes = {
 	},
 };
 
-const finalAttributes = { ...attributes, ...advancedAttributes };
-export default finalAttributes;
+export default attributes;

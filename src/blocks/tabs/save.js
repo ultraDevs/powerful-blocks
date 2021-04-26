@@ -2,7 +2,6 @@ const { RichText, InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n;
 import classnames from 'classnames';
 
-import { genClass, blockAttributes } from '../../helper';
 
 const save = ( { attributes, className } ) => {
 	const {
@@ -10,12 +9,8 @@ const save = ( { attributes, className } ) => {
 		tabs,
 		currentTab,
 		tabsType,
-		tabsAlign,
 		tabsVAlign,
 	} = attributes;
-
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
 
 	const allowedBlocks = [ 'powerful-blocks/tab' ];
 
@@ -27,9 +22,7 @@ const save = ( { attributes, className } ) => {
 						className,
 						'pb-tabs-wrapper',
 						tabsVAlign ? `pb-tabs-${tabsVAlign}` : undefined,
-						...classes
 					) }					
-					{ ...blockAttr }
 					data-a-tab = { currentTab ? currentTab : undefined }
 				>
 					<div
