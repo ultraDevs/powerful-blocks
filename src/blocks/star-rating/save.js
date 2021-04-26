@@ -1,4 +1,3 @@
-import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,8 +7,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 import classnames from 'classnames';
-import { genClass, blockAttributes } from '../../helper';
-
 
 const save = ( props ) => {
 	const { attributes } = props;
@@ -19,26 +16,11 @@ const save = ( props ) => {
 		stars,
 		rating,
 		color,
-		backgroundType,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
-		
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-        wrapperLinkNofollow,
 	} = attributes;
 
 	const fullStar = Math.floor( rating );
 	const halfStar = rating % 1 === 0 ? 0 : 1;
 	const emptyStar = stars - ( fullStar + halfStar );
-
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
 
 	return (
 		<div>
@@ -47,21 +29,19 @@ const save = ( props ) => {
 					className={ classnames(
 						props.className,
 						'pb-star-rating-wrapper',
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					<div className="pb-star-rating--icon">
 						{ fullStar
 							? [
 									...Array( fullStar ).keys(),
-							  ].map( ( item, index ) => (
+							].map( ( item, index ) => (
 									<FontAwesomeIcon
 										key={ index }
 										icon={ faStarFull }
 										color={ color }
 									/>
-							  ) )
+							) )
 							: null }
 						{ halfStar ? (
 							<FontAwesomeIcon
@@ -72,13 +52,13 @@ const save = ( props ) => {
 						{ emptyStar
 							? [
 									...Array( emptyStar ).keys(),
-							  ].map( ( item, index ) => (
+							].map( ( item, index ) => (
 									<FontAwesomeIcon
 										key={ index }
 										icon={ faStarEmpty }
 										color={ color }
 									/>
-							  ) )
+							) )
 							: null }
 					</div>
 				</div>
