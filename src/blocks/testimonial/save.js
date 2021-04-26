@@ -1,7 +1,6 @@
 import { RichText, InnerBlocks } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
-import { genClass, blockAttributes } from '../../helper';
 
 const save = ( { attributes, className } ) => {
 	const {
@@ -19,22 +18,9 @@ const save = ( { attributes, className } ) => {
 		showRatings,
 		ratingsPosition,
 		preset,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
 		displayBubble,
-		
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-        wrapperLinkNofollow,
+		bubbleSize,
 	} = attributes;
-
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
 
 	return (
 		<div>
@@ -46,11 +32,11 @@ const save = ( { attributes, className } ) => {
 						'pb-testimonial-client-info-position',
 						preset,
 						true === displayBubble ? 'pb-t-bubble' : '',
-						...classes
 					) }
-					{ ... blockAttr }
 				>
-					<div className="pb-testimonial--conr">
+					<div 
+						className="pb-testimonial--conr"
+					>
 						{ true === showRatings &&
 							'before-content' === ratingsPosition && (
 								<div className="pb-testimonial--rating">
