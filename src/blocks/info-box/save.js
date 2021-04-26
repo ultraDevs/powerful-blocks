@@ -2,7 +2,6 @@ const { RichText, InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n;
 import classnames from 'classnames';
 import IconBox from "../../helper/iconbox.js";
-import { genClass, blockAttributes } from '../../helper';
 
 const save = ( { attributes, className } ) => {
 	const {
@@ -15,10 +14,6 @@ const save = ( { attributes, className } ) => {
 		mPosition,
 	} = attributes;
 
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
-
-
 	return (
 		<div>
 			<div id={ `pb-info-box-${ blockId }` }>
@@ -27,9 +22,7 @@ const save = ( { attributes, className } ) => {
 						className,
 						'pb-info-box-wrapper',
 						mPosition ? `pb-info-box-${mPosition}` : '',
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					<div className="pb-info-box--m">
 						{ 'icon' === mType ? (
