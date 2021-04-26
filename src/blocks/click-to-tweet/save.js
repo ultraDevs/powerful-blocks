@@ -1,7 +1,6 @@
 import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
-import { genClass, blockAttributes } from '../../helper';
 
 const save = ( props ) => {
 	const { attributes } = props;
@@ -14,9 +13,6 @@ const save = ( props ) => {
 		btnText,
 	} = attributes;
 
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
-
 	const tweetUrl = `https://twitter.com/share?&text=${ encodeURIComponent(
 		tweet
 	) }&url=${ url }&via=${ via ? via : '' }`;
@@ -28,9 +24,7 @@ const save = ( props ) => {
 					className={ classnames(
 						props.className,
 						'pb-click-to-tweet-wrapper',
-						...classes
 					) }					
-					{ ...blockAttr }
 				>
 					{ ! RichText.isEmpty( tweet ) && (
 						<RichText.Content
