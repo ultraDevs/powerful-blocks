@@ -5,8 +5,6 @@ import classnames from 'classnames';
 
 import Inspector from './inspector';
 
-import { genClass, blockAttributes } from '../../helper';
-
 
 import './editor.scss';
 import Styles from './style';
@@ -22,9 +20,6 @@ const edit = ( props ) => {
 		suffixText,
 		animatedText,
 	} = attributes;
-
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
@@ -44,9 +39,7 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-animated-text-wrapper',
 						props.className,
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					<Tag className={ `pb-animated-txt ${animationType}`} >
 						{ prefixText ? (
