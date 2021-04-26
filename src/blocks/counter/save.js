@@ -1,6 +1,5 @@
 const { __ } = wp.i18n;
 import classnames from 'classnames';
-import { genClass, blockAttributes } from '../../helper';
 
 const save = ( { attributes, className, clientId } ) => {
 	const {
@@ -17,9 +16,6 @@ const save = ( { attributes, className, clientId } ) => {
 		preset,
 	} = attributes;
 
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
-
 
 	return (
 		<div>
@@ -28,9 +24,7 @@ const save = ( { attributes, className, clientId } ) => {
 				className={ classnames(
 					className,
 					'pb-counter-wrapper',
-					...classes
 				) }
-				{ ... blockAttr }
 			>
 				{ numberPrefix && (
 					<span className="pb-counter--prefix">
