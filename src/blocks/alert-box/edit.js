@@ -4,7 +4,6 @@ import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
 import Inspector from './inspector';
 import Styles from './style';
-import { genClass, blockAttributes } from '../../helper';
 
 const edit = ( props ) => {
 	const { attributes, setAttributes, isSelected } = props;
@@ -25,9 +24,6 @@ const edit = ( props ) => {
 		id: `pb-alert-box-${ attributes.blockId }`,
 	};
 
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
-
 	return (
 		<>
 			{ isSelected && <Inspector { ...{ attributes, setAttributes } } /> }
@@ -36,9 +32,7 @@ const edit = ( props ) => {
 				<div
 					className={ classnames(
 						'pb-alert-box-wrapper',
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					<div
 						className={ classnames( 'pb-alert-box', props.className ) }

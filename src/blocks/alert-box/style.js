@@ -46,9 +46,6 @@ const Styles = ( props ) => {
 
 	let rules = {
 		desktop: {
-			'.pb-alert-box-wrapper': {
-				
-			},
 			'.pb-alert-box': {
 				
 				'text-align': textAlign ? textAlign : undefined,
