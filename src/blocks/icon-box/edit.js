@@ -3,7 +3,6 @@ const { __ } = wp.i18n;
 import classnames from 'classnames';
 
 import Inspector from './inspector';
-import { genClass, blockAttributes } from '../../helper';
 
 import './editor.scss';
 import Styles from './style';
@@ -20,9 +19,6 @@ const edit = ( props ) => {
 		preset,
 	} = attributes;
 
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
-
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
@@ -38,9 +34,7 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-icon-box-wrapper',
 						props.className,
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					{ badgeText ? (
 						<>

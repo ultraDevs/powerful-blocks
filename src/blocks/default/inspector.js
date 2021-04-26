@@ -35,10 +35,6 @@ const Inspector = ( props ) => {
 		
 	} = attributes;
 
-	let currentTab = 'content';
-	const [ tab, setTab ] = useState( currentTab );
-
-
 	return (
 		<InspectorControls>
 			<div className="pb-custom-control-styles">

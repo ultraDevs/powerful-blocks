@@ -2,7 +2,6 @@ const { RichText } = wp.blockEditor;
 const { __ } = wp.i18n;
 import classnames from 'classnames';
 import IconBox from "../../helper/iconbox.js";
-import { genClass, blockAttributes } from '../../helper';
 
 const save = ( { attributes, className } ) => {
 	const {
@@ -12,8 +11,6 @@ const save = ( { attributes, className } ) => {
 		badgeText,
 	} = attributes;
 
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
 
 	return (
 		<div>
@@ -22,9 +19,7 @@ const save = ( { attributes, className } ) => {
 					className={ classnames(
 						className,
 						'pb-icon-box-wrapper',
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					{ badgeText ? (
 						<>
