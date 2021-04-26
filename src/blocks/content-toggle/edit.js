@@ -1,4 +1,4 @@
-const { RichText, InnerBlocks, MediaUpload } = wp.blockEditor;
+const { RichText, InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n;
 const {
     compose,
@@ -9,21 +9,9 @@ const {
     withDispatch,
 } = wp.data;
 
-const { createBlock } = wp.blocks;
-const {
-    applyFilters,
-} = wp.hooks;
-
 import classnames from 'classnames';
 
 import Inspector from './inspector';
-
-import { genClass, blockAttributes } from '../../helper';
-const {
-    Button,
-	Tooltip,
-	Dashicon,
-} = wp.components;
 
 import './editor.scss';
 import Styles from './style';
@@ -43,31 +31,11 @@ const edit = ( props ) => {
 		blockId,
 		activeItem,
 		primaryLabel,
-		primarySwitchBGColor,
 		secondaryLabel,
-		secondarySwitchBGColor,
-		labelColor,
-		hoverLabelColor,
-		activeLabelColor,
-		labelFontSize,
-		labelFontSizeTablet,
-		labelFontSizeMobile,
-		labelFontFamily,
-		labelFontSizeType,
-		labelFontStyle,
-		labelFontWeight,
-		labelTextTransform,
-		labelTextDecoration,
-		labelLetterSpacing,
-		labelLineHeight,
-		switchAlign,
 		switchStyle,
 		switchPosition,
 		toggles,
 	} = attributes;
-
-	const classes = genClass( attributes, 'edit' );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	const getTogglesTemplate = () => {
 
@@ -85,12 +53,6 @@ const edit = ( props ) => {
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
 	}
 	const allowedBlocks = [ 'powerful-blocks/toggler' ];
-
-    // setInterval( function(){
-			
-	// 	pbContentToggle();
-
-	// }, 500 );
 	
 	pbContentToggle();
 
@@ -141,9 +103,6 @@ const edit = ( props ) => {
 							<input
 								className="pb-toggle-switch"
 								type="checkbox"
-								// onChange={ () => {
-								// 	setAttributes({ activeItem: 'primary' === activeItem ? 'secondary' : 'primary' })
-								// } }
 							/>
 						) }
 						<span className="pb-toggle-switch-w"></span>
@@ -187,32 +146,12 @@ const edit = ( props ) => {
 						'pb-content-toggle-wrapper',
 						props.className,
 						// activeItem ? `pb-content-toggle-${activeItem}` : undefined,
-						...classes
 					) }
-					{ ... blockAttr }
 					data-a-switch = { activeItem ? activeItem : undefined }
 				>
 					{ ( 'before' === switchPosition || 'beforeAfter' === switchPosition ) && 
 						Switcher()
 					}
-					{/* <div className="pb-content-toggle-contents">
-						<div
-							className="pb-toggle-primary-content"
-							style={{
-								display: 'primary' === activeItem ? 'block' : 'none'
-							}}
-						>
-							Primary
-						</div>
-						<div 
-							className="pb-toggle-secondary-content"
-							style={{
-								display: 'secondary' === activeItem ? 'block' : 'none'
-							}}
-						>
-							Secondary
-						</div>
-					</div> */}
 					<div 
 						className="pb-content-toggle-contents"
 					>
@@ -262,4 +201,3 @@ export default compose( [
         };
     } ),
 ] )( edit );
-// export default edit;

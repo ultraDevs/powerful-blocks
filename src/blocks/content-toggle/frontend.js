@@ -1,23 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function(event) {
-// 	let toggles = document.querySelectorAll('.pb-content-toggle-wrapper');
-//     if ( ! toggles ) return;
-
-//     for (let i = 0; i < toggles.length; i++) {
-//         let toggle = toggles[i];
-//         let toggleSwitchW = toggle.querySelector('.pb-content-toggle-switch'),
-//             toggleSwitch = toggle.querySelector('.pb-toggle-switch'),
-//             primaryLabel = toggle.querySelector('.pb-toggle-primary-label'),
-//             secondaryLabel = toggle.querySelector('.pb-toggle-secondary-label'),
-//             primaryContent = toggle.querySelector('.pb-toggle-primary-content'),
-//             secondaryContent = toggle.querySelector('.pb-toggle-secondary-content');
-        
-//             primaryContent.addEventListener( 'click', (e) => {
-//             console.log(e);
-//         });
-//     }
-// });
-
-
 jQuery( function($){
     
     window['pbContentToggle'] = () => {
@@ -30,11 +10,9 @@ jQuery( function($){
                     label = _this.find('.pb-toggle-label'),
                     primaryLabel = _this.find('.pb-toggle-primary-label'),
                     secondaryLabel = _this.find('.pb-toggle-secondary-label'),
-                    // primaryContent = _this.find("[data-toggle=\"" + toggle +"\""),
                     contents = _this.find('.pb-content-toggle-contents'),
                     secondaryContent = _this.find('.pb-toggle-secondary-content');
                     
-                // contents.find('div').removeClass( 'pb-toggle-active' );
 
                 contents.find("[data-toggle=\"" + toggle +"\"]").addClass('pb-toggle-active');
                 

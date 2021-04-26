@@ -2,8 +2,6 @@ const { RichText, InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n;
 import classnames from 'classnames';
 
-import { genClass, blockAttributes } from '../../helper';
-
 const save = ( { attributes, className } ) => {
 	const {
 		blockId,
@@ -14,9 +12,6 @@ const save = ( { attributes, className } ) => {
 		switchStyle,
 		switchPosition
 	} = attributes;
-
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
 
 	const allowedBlocks = [ 'powerful-blocks/toggler' ];
 
@@ -83,9 +78,7 @@ const save = ( { attributes, className } ) => {
 						className,
 						'pb-content-toggle-wrapper',
 						activeItem ? `pb-content-toggle-${activeItem}` : undefined,
-						...classes
 					) }					
-					{ ...blockAttr }
 					data-a-switch = { activeItem ? activeItem : undefined }
 				>
 					{ ( 'before' === switchPosition || 'beforeAfter' === switchPosition ) && 
@@ -96,67 +89,9 @@ const save = ( { attributes, className } ) => {
 					>
 						<InnerBlocks.Content allowedBlocks={ allowedBlocks } />
 					</div>
-					{/* <div className="pb-content-toggle-contents">
-						<div
-							className="pb-toggle-primary-content"
-							style={{
-								display: 'primary' === activeItem ? 'block' : 'none'
-							}}
-						>
-							Primary
-						</div>
-						<div 
-							className="pb-toggle-secondary-content"
-							style={{
-								display: 'secondary' === activeItem ? 'block' : 'none'
-							}}
-						>
-							Secondary
-						</div>
-					</div> */}
 					{ ( 'after' === switchPosition || 'beforeAfter' === switchPosition ) && 
 						Switcher()
 					}
-					{/* <div
-						className = {
-							classnames(
-								`pb-content-toggle--${tabsType}`,
-							)
-						}
-					>
-					{
-						tabs.map( ( tab, key ) => {
-							const tabActive = currentTab === tab.slug;
-						
-							return (
-								<>
-									<RichText.Content
-										className={
-											classnames(
-												'pb-content-toggle--item',
-												tabActive ? 'pb-tab-active' : undefined,
-											)
-										}
-										tagName="a"
-										value={ tab.title }
-										href={ `#${ tab.slug }` }
-										data-tab={ tab.slug }
-									/>
-								</>
-							);
-						})
-						
-					}
-					</div>
-					<div 
-						className={ classnames(
-								"pb-content-toggle-content",
-							)
-						}
-					>
-						<InnerBlocks.Content allowedBlocks={ allowedBlocks } />
-					</div> */}
-
 				</div>
 			</div>
 		</div>
