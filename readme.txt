@@ -38,7 +38,6 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 ### Blocks
 * [Accordion](https://powerfulblocks.com/blocks/accordion)
 * [Alert Box](https://powerfulblocks.com/blocks/alert-box)
-* [Advanced Typography](https://powerfulblocks.com/blocks/advanced-typography)
 * [Animated Headlines](https://powerfulblocks.com/blocks/animated-headlines)
 * [PB Block Wrapper](https://powerfulblocks.com/blocks/pb-block-wrapper)
 * [Click To Tweet](https://powerfulblocks.com/blocks/click-to-tweet)
@@ -116,15 +115,16 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 == Changelog ==
 
-= 1.0.3 - 15/04/2021 =
+= 1.0.3 - 26/04/2021 =
 * Update: Google Fonts
 * Fix: Tab
 * Fix: Background Opacity
-* Add: Advanced controls for all blocks including core blocks!
+* Add: Advanced controls for core blocks!
 * Add: 1k+ Google Fonts
 * Add: Content Toggle Block ( Pro )
 * Update: Block Control Panel
 * Remove: Advanced Control Tab
+* Update: Block Fixes
 
 = 1.0.2 - 11/03/2021 =
 * Fix: Range Control
