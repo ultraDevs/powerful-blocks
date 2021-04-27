@@ -10,15 +10,11 @@ const {
 } = wp.data;
 
 const { createBlock } = wp.blocks;
-const {
-    applyFilters,
-} = wp.hooks;
 
 import classnames from 'classnames';
 
 import Inspector from './inspector';
 
-import { genClass, blockAttributes } from '../../helper';
 const {
     Button,
 	Tooltip,
@@ -46,9 +42,6 @@ const edit = ( props ) => {
 		tabsType,
 		tabsVAlign,
 	} = attributes;
-
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	const getTabsTemplate = () => {
 
@@ -138,9 +131,6 @@ const edit = ( props ) => {
 	}
 	const allowedBlocks = [ 'powerful-blocks/tab' ];
 
-    // setInterval( function(){
-	// 	pbTabs();
-	// }, 500 );
 	pbTabs();
 
 	return (
@@ -154,9 +144,7 @@ const edit = ( props ) => {
 						'pb-tabs-wrapper',
 						props.className,
 						tabsVAlign ? `pb-tabs-${tabsVAlign}` : undefined,
-						...classes
 					) }
-					{ ... blockAttr }
 					data-a-tab = { currentTab ? currentTab : undefined }
 				>
 					<div

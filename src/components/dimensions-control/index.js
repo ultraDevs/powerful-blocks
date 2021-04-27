@@ -87,8 +87,6 @@ class DimensionsControl extends Component {
 		// console.log(device);
 		const { isLinked, device } = this.state;
 
-		
-
 		return(
 			<>
 				<div className="pb-dimensions-control">

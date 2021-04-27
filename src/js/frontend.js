@@ -4,6 +4,7 @@ import '../blocks/fun-factor/frontend';
 import '../blocks/counter/frontend';
 import '../blocks/animated-headlines/frontend';
 import '../blocks/tabs/frontend';
+import '../blocks/content-toggle/frontend';
 
 jQuery( function($){
 
@@ -21,7 +22,8 @@ jQuery( function($){
     const Animations = () => {
         $('.pb-animation').each( function() {
             let $this = $( this ),
-                settings = $this.data('pb-animation');
+                el = $this.closest('[data-pb-animation'),
+                settings = el.data('pb-animation');
             AnimationWayPoints( $this, settings.in, settings.out );
         })
     };

@@ -2,8 +2,6 @@ const { __ } = wp.i18n;
 import classnames from 'classnames';
 
 import Inspector from './inspector';
-import { genClass, blockAttributes } from '../../helper';
-
 
 import './editor.scss';
 import Styles from './style';
@@ -24,9 +22,6 @@ const edit = ( props ) => {
 		rounding,
 		preset,
 	} = attributes;
-
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
@@ -50,9 +45,7 @@ const edit = ( props ) => {
 				<div
 					className={ classnames(
 						'pb-counter-wrapper',
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					{ numberPrefix && (
 						<span className="pb-counter--prefix">

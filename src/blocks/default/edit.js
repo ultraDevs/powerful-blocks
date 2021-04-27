@@ -5,9 +5,6 @@ import classnames from 'classnames';
 
 import Inspector from './inspector';
 
-import { genClass, blockAttributes } from '../../helper';
-
-
 import './editor.scss';
 import Styles from './style';
 
@@ -17,9 +14,6 @@ const edit = ( props ) => {
 	const {
 		blockId,
 	} = attributes;
-
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
@@ -35,9 +29,7 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-default-wrapper',
 						props.className,
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					<h3>Default</h3>
 				</div>

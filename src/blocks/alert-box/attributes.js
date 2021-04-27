@@ -1,5 +1,4 @@
 import { __ } from '@wordpress/i18n';
-import advancedAttributes from '../../helper/advancedAttributes';
 
 const attributes = {
 	blockId: {
@@ -158,6 +157,10 @@ const attributes = {
 		type: 'string',
 		default: '',
 	},
+	contentFontFamily: {
+		type: 'string',
+		default: '',
+	},
 	contentFontSize: {
 		type: 'number',
 		default: 20,
@@ -201,5 +204,4 @@ const attributes = {
 		default: '',
 	},
 };
-const finalAttributes = { ...attributes, ...advancedAttributes };
-export default finalAttributes;
+export default attributes;

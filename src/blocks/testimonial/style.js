@@ -1,5 +1,4 @@
 import { renderStyle } from '../../helper/utils';
-import AdvancedCSS from '../../helper/advancedCSS';
 
 const Styles = ( props ) => {
 	const attributes = props.attributes;
@@ -109,7 +108,7 @@ const Styles = ( props ) => {
 
 	const selectorPrefix = `#pb-testimonial-${ blockId }`;
 
-	const lrBubbleSize = bubbleSize + 4;
+	const lrBubbleSize = ( Number( bubbleSize) + 7 );
 
 	let rules = {
 		desktop: {
@@ -214,6 +213,7 @@ const Styles = ( props ) => {
 				'padding-bottom': contentPadding.bottom ? contentPadding.bottom : undefined,
 				'padding-left': contentPadding.left ? contentPadding.left : undefined,
 				'border-radius': contentBorderRadius ? ( contentBorderRadius.top ? contentBorderRadius.top : '0px' ) + ' ' + ( contentBorderRadius.right ? contentBorderRadius.right : '0px') + ' ' + ( contentBorderRadius.bottom ? contentBorderRadius.bottom : '0px' ) + ' ' + ( contentBorderRadius.left ? contentBorderRadius.left : '0px' ) : undefined,
+				'--bubble-size': bubbleSize ? bubbleSize + 'px' : '15px'
 			},
 			'.pb-testimonial--conr:hover': {
 				'background-color': hoverContentBackgroundColor
@@ -492,18 +492,7 @@ const Styles = ( props ) => {
 	}
 
 
-	const advancedRules = AdvancedCSS( attributes );
-
-	let keys = [...new Set([...Object.keys(rules),...Object.keys(advancedRules)])]
-	let  finalRules = {}
-	let merged = keys.forEach(key=>{
-		finalRules[key] = {
-			...rules[key],
-			...advancedRules[key]
-		}
-	});
-
-	const styles = renderStyle( finalRules, selectorPrefix );
+	const styles = renderStyle( rules, selectorPrefix );
 	return styles;
 };
 export default Styles;

@@ -188,19 +188,14 @@ const AdvancedCSS = ( attributes ) => {
 			'background-repeat': backgroundImgRepeat ? backgroundImgRepeat : undefined,
 			'background-attachment': backgroundImgAttachment ? backgroundImgAttachment : undefined,
 			'background-size': backgroundImgSize ? backgroundImgSize : undefined,
-
 		};
 		
-		rules.desktop[ '> .pb-ab-bg--image:before' ] = {
+		rules.desktop[ '> .pb-ab-bg--image::before' ] = {
 			background: backgroundImgOverlayColor ? backgroundImgOverlayColor : undefined,
 			opacity: backgroundOpacity ? ( backgroundOpacity / 100 ) : undefined,
 			'border-radius': borderRadius ? ( borderRadius.top ? borderRadius.top : '0px' ) + ' ' + ( borderRadius.right ? borderRadius.right : '0px') + ' ' + ( borderRadius.bottom ? borderRadius.bottom : '0px' ) + ' ' + ( borderRadius.left ? borderRadius.left : '0px' ) : undefined,
 		};
-		rules.desktop[ '> .pb-ab-bg--image:hover:before' ] = {
-			background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : undefined,
-			opacity: hoverBackgroundOpacity ? ( hoverBackgroundOpacity / 100 ) : undefined,
-			'border-radius': borderRadius ? ( borderRadius.top ? borderRadius.top : '0px' ) + ' ' + ( borderRadius.right ? borderRadius.right : '0px') + ' ' + ( borderRadius.bottom ? borderRadius.bottom : '0px' ) + ' ' + ( borderRadius.left ? borderRadius.left : '0px' ) : undefined,
-		};
+		
 	}
 	if ( 'image' === hoverBackgroundType ) {
 		rules.desktop[ '> .pb-ab-bg--image:hover' ] = {
@@ -209,7 +204,11 @@ const AdvancedCSS = ( attributes ) => {
 			'background-repeat': hoverBackgroundImgRepeat ? hoverBackgroundImgRepeat : undefined,
 			'background-attachment': hoverBackgroundImgAttachment ? hoverBackgroundImgAttachment : undefined,
 			'background-size': hoverBackgroundImgSize ? hoverBackgroundImgSize : undefined,
-
+		};
+		rules.desktop[ '> .pb-ab-bg--image:hover::before' ] = {
+			background: hoverBackgroundImgOverlayColor ? hoverBackgroundImgOverlayColor : undefined,
+			opacity: hoverBackgroundOpacity ? ( hoverBackgroundOpacity / 100 ) : undefined,
+			'border-radius': borderRadius ? ( borderRadius.top ? borderRadius.top : '0px' ) + ' ' + ( borderRadius.right ? borderRadius.right : '0px') + ' ' + ( borderRadius.bottom ? borderRadius.bottom : '0px' ) + ' ' + ( borderRadius.left ? borderRadius.left : '0px' ) : undefined,
 		};
 	}
 

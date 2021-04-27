@@ -1,5 +1,4 @@
 import { renderStyle } from '../../helper/utils';
-import AdvancedCSS from '../../helper/advancedCSS';
 
 const Styles = ( props ) => {
 	const attributes = props.attributes;
@@ -113,7 +112,7 @@ const Styles = ( props ) => {
 				'padding-bottom': mPadding.bottom ? mPadding.bottom : undefined,
 				'padding-left': mPadding.left ? mPadding.left : undefined,
 			
-				transform: `translate( ${ mOffsetLeft + mOffsetType },${ mOffsetTop+ mOffsetType })`
+				transform: `translate( ${ mOffsetLeft ? mOffsetLeft + mOffsetType : 0 },${ mOffsetTop ? mOffsetTop + mOffsetType : 0 + mOffsetType })`
 			},
 			'.pb-info-box--icon' : {
 				color: iconColor ? iconColor : undefined,
@@ -271,7 +270,7 @@ const Styles = ( props ) => {
 				'padding-bottom': mPaddingTablet.bottom ? mPaddingTablet.bottom : undefined,
 				'padding-left': mPaddingTablet.left ? mPaddingTablet.left : undefined,
 			
-				transform: `translate( ${ mOffsetLeftTablet + mOffsetType },${ mOffsetTopTablet + mOffsetType })`
+				transform: `translate( ${ mOffsetLeftTablet ? mOffsetLeftTablet + mOffsetType : 0 + mOffsetType },${ mOffsetTopTablet ? mOffsetTopTablet + mOffsetType : 0 + mOffsetType })`
 			
 			},
 			'.pb-info-box--icon': {
@@ -319,7 +318,7 @@ const Styles = ( props ) => {
 				'padding-right': mPaddingMobile.right ? mPaddingMobile.right : undefined,
 				'padding-bottom': mPaddingMobile.bottom ? mPaddingMobile.bottom : undefined,
 				'padding-left': mPaddingMobile.left ? mPaddingMobile.left : undefined,
-				transform: `translate( ${ mOffsetLeftMobile + mOffsetType },${ mOffsetTopMobile + mOffsetType })`
+				transform: `translate( ${ mOffsetLeftMobile ? mOffsetLeftMobile + mOffsetType : 0 + mOffsetType },${ mOffsetTopMobile ? mOffsetTopMobile + mOffsetType : 0 + mOffsetType })`
 			
 			},
 			'.pb-info-box--icon': {
@@ -358,18 +357,7 @@ const Styles = ( props ) => {
 		},
 	};
 
-	const advancedRules = AdvancedCSS( attributes );
-
-	let keys = [...new Set([...Object.keys(rules),...Object.keys(advancedRules)])]
-	let  finalRules = {}
-	let merged = keys.forEach(key=>{
-		finalRules[key] = {
-			...rules[key],
-			...advancedRules[key]
-		}
-	});
-
-	const styles = renderStyle( finalRules, selectorPrefix );
+	const styles = renderStyle( rules, selectorPrefix );
 	return styles;
 };
 export default Styles;

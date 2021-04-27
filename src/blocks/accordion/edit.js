@@ -5,7 +5,6 @@ const { useState } = wp.element;
 
 import Inspector from './inspector';
 
-import { genClass, blockAttributes } from '../../helper';
 import IconBox from "../../helper/iconbox.js";
 
 
@@ -27,9 +26,6 @@ const edit = ( props ) => {
 		toggleSpeed,
 
 	} = attributes;
-
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
@@ -58,9 +54,7 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-accordion-wrapper',
 						props.className,
-						...classes
 					) }
-					{ ... blockAttr }
 					data-settings = {
 						settings ? settings : undefined
 					}

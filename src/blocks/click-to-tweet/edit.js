@@ -5,7 +5,6 @@ import { withSelect } from '@wordpress/data';
 
 import Inspector from './inspector';
 import classnames from 'classnames';
-import { genClass, blockAttributes } from '../../helper';
 
 import './editor.scss';
 import Styles from './style';
@@ -19,9 +18,6 @@ const edit = ( props ) => {
 		url,
 		btnText,
 	} = attributes;
-
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
@@ -41,9 +37,7 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-click-to-tweet-wrapper',
 						props.className,
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					<RichText
 						className="pb-click-to-tweet--text"

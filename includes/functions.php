@@ -11,7 +11,7 @@
  * @param string $block Block Name.
  */
 function udpb_get_demo_link( $block ) {
-	return $block;
+	return 'https://powerfulblocks.com/blocks/' . $block;
 }
 
 /**
@@ -79,22 +79,7 @@ function udpb_get_block_icon( $block ) {
 			</svg>';
 			break;
 		case 'animated-headlines':
-			$icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="pb-block-icon">
-			<g>
-				<g>
-					<path d="M450.783,207.165v14.042c-15.256-12.252-34.607-19.607-55.652-19.607c-49.099,0-89.043,39.945-89.043,89.043    s39.945,89.043,89.043,89.043c21.045,0,40.396-7.355,55.652-19.607v14.042h33.391V207.165H450.783z M395.13,346.295    c-30.687,0-55.652-24.966-55.652-55.652c0-30.688,24.966-55.652,55.652-55.652s55.652,24.966,55.652,55.652    C450.783,321.33,425.817,346.295,395.13,346.295z"/>
-				</g>
-			</g>
-			<g>
-				<g>
-					<rect y="413.074" width="512" height="33.391"/>
-				</g>
-			</g>
-			<g>
-				<g>
-					<path d="M166.957,65.534L31.18,374.121h36.479l46.526-105.739h105.543l46.526,105.739h36.479L166.957,65.534z M128.877,234.991    l38.079-86.545l38.079,86.545H128.877z"/>
-				</g>
-			</g>
+			$icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="pb-block-icon"><g><g><path d="M450.783,207.165v14.042c-15.256-12.252-34.607-19.607-55.652-19.607c-49.099,0-89.043,39.945-89.043,89.043    s39.945,89.043,89.043,89.043c21.045,0,40.396-7.355,55.652-19.607v14.042h33.391V207.165H450.783z M395.13,346.295    c-30.687,0-55.652-24.966-55.652-55.652c0-30.688,24.966-55.652,55.652-55.652s55.652,24.966,55.652,55.652    C450.783,321.33,425.817,346.295,395.13,346.295z"/></g></g><g><g><rect y="413.074" width="512" height="33.391"/></g></g><g><g><path d="M166.957,65.534L31.18,374.121h36.479l46.526-105.739h105.543l46.526,105.739h36.479L166.957,65.534z M128.877,234.991    l38.079-86.545l38.079,86.545H128.877z"/></g></g>
 			</svg>';
 			break;
 		case 'tabs':
@@ -117,4 +102,55 @@ function udpb_get_block_icon( $block ) {
  */
 function udpb_has_pro() {
 	return defined( 'POWERFUL_BLOCKS_PRO_VERSION' );
+}
+/**
+ * Classnames php
+ *
+ * @author Chris Stroud
+ * @link https://github.com/cstro/classnames-php
+ */
+if ( !function_exists( 'classNames' ) ) {
+	function classNames() {
+		$args = func_get_args();
+
+		$data = array_reduce($args, function ($carry, $arg) {
+			if (is_array($arg)) {
+				return array_merge($carry, $arg);
+			}
+
+			$carry[] = $arg;
+			return $carry;
+		}, []);
+
+		$classes = array_map(function ($key, $value) {
+			$condition = $value;
+			$return = $key;
+
+			if (is_int($key)) {
+				$condition = null;
+				$return = $value;
+			}
+
+			$isArray = is_array($return);
+			$isObject = is_object($return);
+			$isStringableType = !$isArray && !$isObject;
+
+			$isStringableObject = $isObject && method_exists($return, '__toString');
+
+			if (!$isStringableType && !$isStringableObject) {
+				return null;
+			}
+
+			if ($condition === null) {
+				return $return;
+			}
+
+			return $condition ? $return : null;
+
+		}, array_keys($data), array_values($data));
+
+		$classes = array_filter($classes);
+
+		return implode(' ', $classes);
+	}
 }

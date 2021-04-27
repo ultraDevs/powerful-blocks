@@ -44,75 +44,88 @@
 			}
 		}
 	}
-	.pb-panel-head--tabs__controls {
-		.css-1u6yfd4-Wrapper {
-			color: #f30d55;
-		}
-		.css-5p7d2w-ThumbWrapper {
-			height: 10px;
-			width: 10px;
-			margin-top: 10px;
-		}
-		
-		.css-c3bpo-BackdropUI {
-			border: 1px solid #ccc !important;
-		}
-		.css-11vcxb9-StyledField {
-			.components-button {
-				&:hover {
-					color: $main;
-					&.is-primary {
-						color: #fff;
-					}
-				}
+	
+}
+
+.pb-custom-control-styles {
+	.css-1u6yfd4-Wrapper {
+		color: #f30d55;
+	}
+	.css-5p7d2w-ThumbWrapper {
+		height: 10px;
+		width: 10px;
+		margin-top: 10px;
+	}
+	
+	.css-c3bpo-BackdropUI {
+		border: 1px solid #ccc !important;
+	}
+	.css-11vcxb9-StyledField {
+		.components-button {
+			&:hover {
+				color: $main;
 				&.is-primary {
-					background-color: $main;
 					color: #fff;
 				}
 			}
-		} 
-		
-		.css-1s295sp-Item {
-			button {
-				border: 1px solid $main;
-				box-shadow: none;
-				outline: none;
-				color: $main;
+			&.is-primary {
+				background-color: $main;
+				color: #fff;
 			}
 		}
-		.components-form-toggle .components-form-toggle__track {
-			border-color: $main;
-		}
-		.components-form-toggle.is-checked .components-form-toggle__track {
-			background-color: $main;
-			border-color: $main;
-		}
-		.components-form-toggle .components-form-toggle__thumb {
-			background-color: $main;
-			border-color: $main;
-		}
-		.components-form-toggle.is-checked .components-form-toggle__thumb {
-			background-color: #fff;
-		}
-		.components-form-toggle .components-form-toggle__input:focus+.components-form-toggle__track {
+	} 
+	
+	.css-1s295sp-Item {
+		button {
+			border: 1px solid $main;
 			box-shadow: none;
 			outline: none;
+			color: $main;
 		}
-		.css-11vcxb9-StyledField {
-			flex-direction: row-reverse;
-			justify-content: space-between;
-		}
-		input[type='text'] {
-			border-color: #ddd;
-		}
-		textarea {
-			border: 1px solid #ddd;
-		}
-		.components-form-token-field__input-container {
-			border: 1px solid #ddd;
+	}
+	.components-form-toggle .components-form-toggle__track {
+		border-color: $main;
+	}
+	.components-form-toggle.is-checked .components-form-toggle__track {
+		background-color: $main;
+		border-color: $main;
+	}
+	.components-form-toggle .components-form-toggle__thumb {
+		background-color: $main;
+		border-color: $main;
+	}
+	.components-form-toggle.is-checked .components-form-toggle__thumb {
+		background-color: #fff;
+	}
+	.components-form-toggle .components-form-toggle__input:focus+.components-form-toggle__track {
+		box-shadow: none;
+		outline: none;
+	}
+	.css-11vcxb9-StyledField {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+	input[type='text'] {
+		border-color: #ddd;
+	}
+	textarea {
+		border: 1px solid #ddd;
+	}
+	.components-form-token-field__input-container {
+		border: 1px solid #ddd;
+	}
+	.components-dropdown {
+		button {
+			border: 1px solid #f2f2f2;
+			padding: 0 5px !important;
+			span {
+				margin: 0 !important;
+			}
 		}
 	}
 }
+
+
 .pb-panel-inspect--tabs {
 	// display: flex;
 	// justify-content: flex-start;

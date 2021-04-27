@@ -1,6 +1,5 @@
 import { RichText } from '@wordpress/block-editor';
 import classnames from 'classnames';
-import { genClass, blockAttributes } from '../../helper';
 
 const save = ( { attributes, className } ) => {
 	const { 
@@ -10,9 +9,6 @@ const save = ( { attributes, className } ) => {
 		displayType,
 		hideAfterTime,
 	} = attributes;
-
-	const classes = genClass( attributes, 'save'  );
-	const blockAttr = blockAttributes( attributes, 'save' );
 
 	const settings = {
 		time: 'hideAfterTime' === displayType ? hideAfterTime : 0,
@@ -26,9 +22,7 @@ const save = ( { attributes, className } ) => {
 					className={ classnames(
 						className,
 						'pb-alert-box-wrapper',
-						...classes
 					) }					
-					{ ...blockAttr }
 				>
 					<div
 						className={ classnames( className, 'pb-alert-box' ) }

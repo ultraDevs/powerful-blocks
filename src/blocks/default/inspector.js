@@ -12,7 +12,6 @@ const {
 } = wp.components;
 const { __ } = wp.i18n;
 
-const { useState } = wp.element;
 import classnames from 'classnames';
 
 import {
@@ -24,10 +23,9 @@ import {
 	TypographyControl,
 	BorderControl,
 	ShadowControl,
-	DimensionsControl
+	DimensionsControl,
+	PBBoxControl
 } from '../../components';
-
-import Advanced from '../../helper/advanced';
 
 
 const Inspector = ( props ) => {
@@ -35,114 +33,59 @@ const Inspector = ( props ) => {
 
 	const {
 		rPadding,
-		contentColor
+		contentColor,
+		contentMargin
 	} = attributes;
-
-	let currentTab = 'content';
-	const [ tab, setTab ] = useState( currentTab );
-
-	// setAttributes({
-	// 	[rPadding.xs.top]: 100
-	// });
-	// console.log('Attr');
-	// console.log(rPadding);
 
 	return (
 		<InspectorControls>
-			<div className="pb-panel-head--tabs">
-				<ButtonGroup className="pb-panel-head--tabs__wrapper">
-					<Button
-						onClick = { () => {
-							setTab('content');
+			<div className="pb-custom-control-styles">
+				<PanelBody title={ __( 'Settings', 'powerful-blocks' ) } initialOpen = { open }>
+					<DimensionsControl
+						label={ __( 'Padding', 'powerful-blocks' ) }
+						value = { rPadding }
+						onChange = { ( rPadding ) => {
+							setAttributes({ rPadding });
 						}}
-						className = {
-							classnames(
-								"pb-panel-head--tab",
-								'content' === tab ? 'pb-ph-tab--active' : '',
-							)
+						// setdevice = 'md'
+					/>
+					<PBBoxControl
+						label={ __( 'Margin', 'powerful-blocks' ) }
+						value={ contentMargin }
+						min = { 0 }
+						max = { 100 }
+						onChange={
+							( contentMargin ) => {
+								setAttributes( {contentMargin});
+							}
 						}
-						icon="edit"
-					>
-						{ __( 'Content', 'powerful-blocks' ) }
-					</Button>
-					<Button
-						onClick = { () => {
-							setTab('style');
-						}}
-						className = {
-							classnames(
-								"pb-panel-head--tab",
-								'style' === tab ? 'pb-ph-tab--active' : '',
-							)
-						}
-						icon="color-picker"
-					>
-						{ __( 'Style', 'powerful-blocks' ) }
-					</Button>
-					<Button
-						onClick = { () => {
-							setTab('advanced');
-						}}
-						className = {
-							classnames(
-								"pb-panel-head--tab",
-								'advanced' === tab ? 'pb-ph-tab--active' : '',
-							)
-						}
-						icon="admin-generic"
-					>
-						{ __( 'Advanced', 'powerful-blocks' ) }
-					</Button>
-				</ButtonGroup>
-				<div className="pb-panel-head--tabs__controls">
-				{ 'content' === tab && (
-					<>
-						<PanelBody title={ __( 'Settings', 'powerful-blocks' ) } initialOpen = { open }>
-							<DimensionsControl
-								label={ __( 'Padding', 'powerful-blocks' ) }
-								value = { rPadding }
-								onChange = { ( rPadding ) => {
-									setAttributes({ rPadding });
-								}}
-								// setdevice = 'md'
-							/>
-							{/* <ResponsiveBoxControl
-								label={ __( 'Margin', 'powerful-blocks' ) }
-								value={ {
-									desktop: rPadding.md,
-									tablet: rPadding.sm,
-									mobile: rPadding.xs,
-								} }
-								onChange={ ( value, device ) => {
-									if ( 'desktop' === device ) {
-										setAttributes( { [rPadding.md]: {value} } );
-									}
-									if ( 'tablet' === device ) {
-										setAttributes( { [rPadding.sm]: {value} } );
-									}
-									if ( 'mobile' === device ) {
-										setAttributes( { [rPadding.xs]: {value} } );
-									}
-								} }
-							/> */}
-						</PanelBody>
-						<PanelBody
-							title={ __( 'Image', 'powerful-blocks' ) }
-							initialOpen={ false }
-						>
-							
-						</PanelBody>
-					</>
-				) }
-				{ 'style' === tab && (
-					<>
-						
-					</>
-				) }
-				{ 'advanced' === tab && (
-					<Advanced { ...{ attributes, setAttributes } } />
-				) }
-				</div>
+					/>
+					{/* <ResponsiveBoxControl
+						label={ __( 'Margin', 'powerful-blocks' ) }
+						value={ {
+							desktop: rPadding.md,
+							tablet: rPadding.sm,
+							mobile: rPadding.xs,
+						} }
+						onChange={ ( value, device ) => {
+							if ( 'desktop' === device ) {
+								setAttributes( { [rPadding.md]: {value} } );
+							}
+							if ( 'tablet' === device ) {
+								setAttributes( { [rPadding.sm]: {value} } );
+							}
+							if ( 'mobile' === device ) {
+								setAttributes( { [rPadding.xs]: {value} } );
+							}
+						} }
+					/> */}
+				</PanelBody>
+				<PanelBody
+					title={ __( 'Image', 'powerful-blocks' ) }
+					initialOpen={ false }
+				>
+					
+				</PanelBody>
 			</div>
 		</InspectorControls>
 	);

@@ -4,7 +4,6 @@ const blockAttr = ( attributes, type = 'edit' ) => {
     const {
         blockId,
 		customAttributes,
-
 		enableCondition,
 
 		inAnimation,

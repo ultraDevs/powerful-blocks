@@ -86,11 +86,6 @@ class Helper {
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'block-wrapper'  => array(
-				'title'  => __( 'PB Block Wrapper', 'powerful-blocks' ),
-				'is_pro' => false,
-				'status' => 'active',
-			),
 			'animated-headlines'  => array(
 				'title'  => __( 'Animated Headlines', 'powerful-blocks' ),
 				'is_pro' => false,
@@ -100,12 +95,7 @@ class Helper {
 				'title'  => __( 'Tabs', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
-			),
-			'advanced-typography'  => array(
-				'title'  => __( 'Advanced Typography', 'powerful-blocks' ),
-				'is_pro' => false,
-				'status' => 'active',
-			),
+			)
 		);
 
 		uksort( self::$blocks, array( __CLASS__, 'pb_custom_sort' ) );

@@ -1,5 +1,7 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
+const { useState } = wp.element;
+
 const {
 	SelectControl,
 	RangeControl,
@@ -68,23 +70,44 @@ const TypographyControl = ( props ) => {
     const textDecoration = props.textDecoration;
     const setAttributes = props.setAttributes;
 
+    const currentFontWeight = WEIGHTS || [];
+    const [ fontWeights, setFontWeight ] = useState( currentFontWeight );
+
+
 
     const onFontChange = ( value ) => {
 		// const { fontFamily, fontWeight } = props.attributes;
 
 		setAttributes({ [fontFamily.name]: value });
 
+        // setFontWeight( FONTS[value].weight );
+
+        // fontsWeights = FONTS[fontFamily.value].weight;
+
 		if (
 			typeof FONTS[value] !== "undefined" &&
 			typeof FONTS[value].weight !== "undefined"
 		) {
-			if (
-				fontWeight.value &&
-				Object.values(FONTS[fontFamily.value].weight).indexOf(fontWeight) < 0
-			) {
-				setAttributes({ [fontWeight.name]: "" });
-			}
+			// if (
+			// 	fontWeight.value &&
+			// 	Object.values(FONTS[value].weight).indexOf(fontWeight) < 0
+			// ) {
+			// 	setAttributes({ [fontWeight.name]: "" });
+			// }
+            let newFontWeight = [];
+            if ( FONTS[value].weight ) {
+                FONTS[value].weight.forEach((weight) => {
+                    const newWeigh = {
+                        label: weight,
+                        value: weight,
+                    }
+                    newFontWeight.push( newWeigh );
+                });
+            }
+
+            setFontWeight(newFontWeight);
 		}
+        
 
 		// onClose();
 	};
@@ -126,7 +149,7 @@ const TypographyControl = ( props ) => {
                             onChange={ ( value ) => {
                                 setAttributes( { [ fontWeight.name] : value } );
                             } }
-                            options={ WEIGHTS }
+                            options={ fontWeights }
                         />
                         <SelectControl
                             className = "pb-custom-select-control"
@@ -176,7 +199,7 @@ const TypographyControl = ( props ) => {
                             }
                             min={ 0 }
                             step={ 1 }
-                            max={ 100 }
+                            max={ 20 }
                         />
                         <BaseControl 
                             label={ __(

@@ -1,7 +1,5 @@
 import { __ } from '@wordpress/i18n';
 
-import advancedAttributes from '../../helper/advancedAttributes';
-
 const attributes = {
 	blockId: {
 		type: 'string',
@@ -139,8 +137,8 @@ const attributes = {
 		type: 'object',
 		default: {
 			top: '',
-			left: '',
-			right: '',
+			left: '10px',
+			right: '10px',
 			bottom: '10px',
 		},
 	},
@@ -148,8 +146,8 @@ const attributes = {
 		type: 'object',
 		default: {
 			top: '',
-			left: '',
-			right: '',
+			left: '10px',
+			right: '10px',
 			bottom: '10px',
 		},
 	},
@@ -157,8 +155,8 @@ const attributes = {
 		type: 'object',
 		default: {
 			top: '',
-			left: '',
-			right: '',
+			left: '10px',
+			right: '10px',
 			bottom: '10px',
 		},
 	},
@@ -218,5 +216,4 @@ const attributes = {
 	},
 };
 
-const finalAttributes = { ...attributes, ...advancedAttributes };
-export default finalAttributes;
+export default attributes;

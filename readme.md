@@ -4,7 +4,7 @@
 **Tags:** gutenberg, blocks, helpful blocks, essential blocks, powerful blocks, addons for gutenberg, templates  
 **Requires at least:** 5.3.2  
 **Tested up to:**      5.7  
-**Stable tag:**        1.0.2  
+**Stable tag:**        1.0.3  
 **Requires PHP:**      7.0.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
@@ -20,8 +20,8 @@
 * Responsive
 * Light Weight & Instant Loading
 * Prebuilt Templates 
-* Some more cool features are coming soon InshAllah!
 * Wrapper Link - **Add link to any Block! ( Pro )**
+* Some more cool features are coming soon InshAllah!
 
 ### Advanced Controls
 * Background ( Color, Gradient, Image )
@@ -115,6 +115,16 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 17. Info Box
 
 ## Changelog ##
+
+### 1.0.3 - 15/04/2021 ###
+* Update: Google Fonts
+* Fix: Tab
+* Fix: Background Opacity
+* Add: Advanced controls for all blocks including core blocks!
+* Add: 1k+ Google Fonts
+* Add: Content Toggle Block ( Pro )
+* Update: Block Control Panel
+* Remove: Advanced Control Tab
 
 ### 1.0.2 - 11/03/2021 ###
 * Fix: Range Control

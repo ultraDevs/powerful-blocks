@@ -1,10 +1,8 @@
-const { RichText, InnerBlocks, MediaUpload } = wp.blockEditor;
+const { RichText } = wp.blockEditor;
 const { __ } = wp.i18n;
-const { Button } = wp.components;
 import classnames from 'classnames';
 
 import Inspector from './inspector';
-import { genClass, blockAttributes } from '../../helper';
 
 
 import './editor.scss';
@@ -25,9 +23,6 @@ const edit = ( props ) => {
 		preset,
 	} = attributes;
 
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
-
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
 		setAttributes( { blockId: clientId.replace( /-/g, '' ) } );
@@ -44,9 +39,7 @@ const edit = ( props ) => {
 						'pb-info-box-wrapper',
 						mPosition ? `pb-info-box-${mPosition}` : '',
 						props.className,
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					<div className="pb-info-box--m">
 						{ 'icon' === mType ? (

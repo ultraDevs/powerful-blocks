@@ -1,7 +1,5 @@
 import { __ } from '@wordpress/i18n';
 
-import advancedAttributes from '../../helper/advancedAttributes';
-
 const attributes = {
 	blockId: {
 		type: 'string',
@@ -319,7 +317,7 @@ const attributes = {
 	titleMargin: {
 		type: 'object',
 		default: {
-			top: '',
+			top: '0px',
 			left: '',
 			right: '',
 			bottom: '10px',
@@ -328,7 +326,7 @@ const attributes = {
 	titleMarginTablet: {
 		type: 'object',
 		default: {
-			top: '',
+			top: '0px',
 			left: '',
 			right: '',
 			bottom: '10px',
@@ -337,7 +335,7 @@ const attributes = {
 	titleMarginMobile: {
 		type: 'object',
 		default: {
-			top: '',
+			top: '0px',
 			left: '',
 			right: '',
 			bottom: '10px',
@@ -401,5 +399,4 @@ const attributes = {
 	},
 };
 
-const finalAttributes = { ...attributes, ...advancedAttributes };
-export default finalAttributes;
+export default attributes;

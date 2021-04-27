@@ -30,8 +30,6 @@ const {
 
 import Inspector from './inspector';
 
-import { genClass, blockAttributes } from '../../helper';
-
 
 import './editor.scss';
 
@@ -47,8 +45,6 @@ const edit = ( props ) => {
 		showModal,
 	} = attributes;
 
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	if ( props.isSelected && ! props.blockId ) {
 		const clientId = props.clientId;
@@ -117,7 +113,6 @@ const edit = ( props ) => {
 			updateTemplates( results );
 		})
 		.catch( function(error) {
-			// console.log(error);
 		});
 	};
 	if ( 0 === templates.length ) {
@@ -134,7 +129,6 @@ const edit = ( props ) => {
 			updateCategories( data.categories );
 		})
 		.catch( function(error) {
-			// console.log(error);
 		});
 	};
 	if ( 0 === categories.length ) {
@@ -149,9 +143,7 @@ const edit = ( props ) => {
 					className={ classnames(
 						'pb-templates-wrapper',
 						props.className,
-						...classes
 					) }
-					{ ... blockAttr }
 				>
 					<h3>Insert Powerful Blocks Templates</h3>
 					<div className="pb-templates-open">

@@ -4,8 +4,6 @@ const { Button } = wp.components;
 import classnames from 'classnames';
 
 import Inspector from './inspector';
-import { genClass, blockAttributes } from '../../helper';
-
 
 import './editor.scss';
 import Styles from './style';
@@ -15,7 +13,6 @@ const edit = ( props ) => {
 
 	const {
 		blockId,
-		backgroundType,
 		content,
 		imageData,
 		name,
@@ -28,18 +25,8 @@ const edit = ( props ) => {
 		showRatings,
 		ratingsPosition,
 		preset,
-		hideOnDesktop,
-        hideOnTablet,
-		hideOnMobile,
-		blockWidth,
-		customClass,
-		customID,
 		displayBubble,
-
-		addWLink,
-        wrapperLink,
-        wrapperLinkNewTab,
-        wrapperLinkNofollow,
+		bubbleSize
 	} = attributes;
 
 	if ( props.isSelected && ! props.blockId ) {
@@ -50,9 +37,6 @@ const edit = ( props ) => {
 		[ 'powerful-blocks/star-rating' ]	
 	];
 	const allowedBlocks = [ 'powerful-blocks/star-rating' ];
-
-	const classes = genClass( attributes, 'edit'  );
-	const blockAttr = blockAttributes( attributes, 'edit' );
 
 	return (
 		<>
@@ -66,11 +50,11 @@ const edit = ( props ) => {
 						'pb-testimonial-client-info-position',
 						preset,
 						true === displayBubble ? 'pb-t-bubble' : '',
-						...classes
 					) }
-					{ ... blockAttr }
 				>
-					<div className="pb-testimonial--conr">
+					<div 
+						className="pb-testimonial--conr"
+					>
 						{ true === showRatings &&
 							'before-content' === ratingsPosition && (
 								<div className="pb-testimonial--rating">

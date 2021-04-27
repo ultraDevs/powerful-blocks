@@ -28,3 +28,25 @@
 .pb__animated {
 	visibility: visible;
 }
+
+.pb-ab-bg--image:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.powerful-blocks-s {
+	position: relative;
+}
+.pb-block-c-wrapper {
+	transition: 0.3s;
+}
+.pb-c-heading {
+	@for $i from 1 through 6 {
+		h#{7 - $i} {
+			margin: 0;
+		}
+	}
+}
