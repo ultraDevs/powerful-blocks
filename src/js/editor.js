@@ -5,7 +5,6 @@ window.pbDevice = 'md';
 
 jQuery( function($) {
 	
-	
 	wp.data.subscribe( function () {
 		var isSavingPost = wp.data.select("core/editor").isSavingPost();
 		var isAutosavingPost = wp.data.select("core/editor").isAutosavingPost();

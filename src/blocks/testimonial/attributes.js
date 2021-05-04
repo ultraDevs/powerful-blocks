@@ -264,19 +264,19 @@ const attributes = {
 	},
 	imageShadowHOffset: {
 		type: 'number',
-		default: '0',
+		default: 0,
 	},
 	imageShadowVOffset: {
 		type: 'number',
-		default: '0',
+		default: 0,
 	},
 	imageShadowBlur: {
 		type: 'number',
-		default: '0',
+		default: 0,
 	},
 	imageShadowSpread: {
 		type: 'number',
-		default: '0',
+		default: 0,
 	},
 
 	imageShowContent: {
@@ -543,7 +543,7 @@ const attributes = {
 	},
 	bubbleSize: {
 		type: 'number',
-		default: '15',
+		default: 15,
 	},
 	bubbleColor: {
 		type: 'string',

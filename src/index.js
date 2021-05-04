@@ -16,14 +16,13 @@ import * as pbSpacer from './blocks/spacer';
 import * as accordion from './blocks/accordion';
 import * as funFactor from './blocks/fun-factor';
 import * as counter from './blocks/counter';
-import * as blockWrapper from './blocks/block-wrapper';
 import * as animatedHeadlines from './blocks/animated-headlines';
 import * as tab from './blocks/tabs/tab';
 import * as tabs from './blocks/tabs';
 import * as templates from './blocks/templates';
-import * as defaultBlock from './blocks/default';
-import * as toggler from './blocks/content-toggle/toggler';
-import * as contentToggle from './blocks/content-toggle';
+// import * as defaultBlock from './blocks/default';
+// import * as toggler from './blocks/content-toggle/toggler';
+// import * as contentToggle from './blocks/content-toggle';
 
 
 const category = 'powerful-blocks';
@@ -64,15 +63,14 @@ const registerPowerfulBlocks = () => {
 		accordion,
 		funFactor,
 		counter,
-		blockWrapper,
 		animatedHeadlines,
 		tab,
 		tabs,
 		templates,
-		defaultBlock,
+		// defaultBlock,
 		// advancedTypography,
-		toggler,
-		contentToggle,
+		// toggler,
+		// contentToggle,
 	].forEach( registerBlock );
 };
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://www.powerfulblocks.com/contact\n"
-"POT-Creation-Date: 2021-03-10 09:13:12+00:00\n"
+"POT-Creation-Date: 2021-05-04 02:33:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Dashboard - Powerful Blocks"
 msgstr ""
 
-#: includes/Admin/Dashboard.php:47 powerful-blocks.php:160
+#: includes/Admin/Dashboard.php:47 powerful-blocks.php:164
 msgid "Powerful Blocks"
 msgstr ""
 
@@ -77,26 +77,26 @@ msgid "Counter"
 msgstr ""
 
 #: includes/Helper.php:90
-msgid "PB Block Wrapper"
-msgstr ""
-
-#: includes/Helper.php:95
 msgid "Animated Headlines"
 msgstr ""
 
-#: includes/Helper.php:100
+#: includes/Helper.php:95
 msgid "Tabs"
 msgstr ""
 
-#: includes/Helper.php:105
-msgid "Advanced Typography"
+#: includes/Helper.php:100
+msgid "Block Wrapper"
 msgstr ""
 
-#: powerful-blocks.php:185
+#: includes/Helper.php:105
+msgid "Content Toggle"
+msgstr ""
+
+#: powerful-blocks.php:189
 msgid "Settings"
 msgstr ""
 
-#: powerful-blocks.php:188
+#: powerful-blocks.php:192
 msgid "Get Pro"
 msgstr ""
 

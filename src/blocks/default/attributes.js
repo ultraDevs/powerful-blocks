@@ -37,7 +37,10 @@ const attributes = {
 		}
 	},
 	
-
+	contentMarginType: {
+		type: 'string',
+		default: 'px',
+	},
 
 	contentMargin: {
 		type: 'object',

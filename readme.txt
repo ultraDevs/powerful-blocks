@@ -33,7 +33,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * Custom Class, ID, Attributes
 * More coming soon InshAllah.
 
-## You will be able to add these advanced controls to any block by using our *PB Block Wrapper* Easily!
+## You will be able to add these advanced controls to any block by using our *PB Block Wrapper* Easily! ( Pro )
 
 ### Blocks
 * [Accordion](https://powerfulblocks.com/blocks/accordion)
@@ -56,6 +56,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * Custom Animation Duration
 * Custom Easing
 * Custom Attributes
+* PB Block Wrapper
 * Wrapper Link - Add **link** to any Block!
 * Custom Page Templates ( Transparent Header, Transparent Header Light, No Header & Footer )
 
@@ -115,7 +116,7 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 == Changelog ==
 
-= 1.0.3 - 26/04/2021 =
+= 1.0.3 - 04/05/2021 =
 * Update: Google Fonts
 * Fix: Tab
 * Fix: Background Opacity

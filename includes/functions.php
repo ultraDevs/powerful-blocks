@@ -86,9 +86,8 @@ function udpb_get_block_icon( $block ) {
 			$icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="pb-block-icon">
 			<path xmlns="http://www.w3.org/2000/svg" d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"/></svg>';
 			break;
-		case 'advanced-typography':
-			$icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="pb-block-icon">
-			<path xmlns="http://www.w3.org/2000/svg" d="M432 32a16 16 0 0 1 16 16v96a16 16 0 0 1-16 16h-32a16 16 0 0 1-16-16v-32H264v304h40a16 16 0 0 1 16 16v32a16 16 0 0 1-16 16H144a16 16 0 0 1-16-16v-32a16 16 0 0 1 16-16h40V112H64v32a16 16 0 0 1-16 16H16a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16z"/></svg>';
+		case 'content-toggle':
+			$icon = '<svg class="pb-block-icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 576 512"><path xmlns="http://www.w3.org/2000/svg" d="M384 64H192C86 64 0 150 0 256s86 192 192 192h192c106 0 192-86 192-192S490 64 384 64zm0 320c-70.8 0-128-57.3-128-128 0-70.8 57.3-128 128-128 70.8 0 128 57.3 128 128 0 70.8-57.3 128-128 128z"/></svg>';
 			break;
 		default:
 			$icon = '';

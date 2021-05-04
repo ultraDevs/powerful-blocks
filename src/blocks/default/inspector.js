@@ -34,7 +34,8 @@ const Inspector = ( props ) => {
 	const {
 		rPadding,
 		contentColor,
-		contentMargin
+		contentMargin,
+		contentMarginType
 	} = attributes;
 
 	return (
@@ -52,11 +53,15 @@ const Inspector = ( props ) => {
 					<PBBoxControl
 						label={ __( 'Margin', 'powerful-blocks' ) }
 						value={ contentMargin }
-						min = { 0 }
-						max = { 100 }
+						sizeType={ contentMarginType }
 						onChange={
 							( contentMargin ) => {
 								setAttributes( {contentMargin});
+							}
+						}
+						onUnitTypeChange = {
+							(newType) => {
+								setAttributes( {contentMarginType: newType});
 							}
 						}
 					/>

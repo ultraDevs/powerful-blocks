@@ -33,12 +33,11 @@
 * Custom Class, ID, Attributes
 * More coming soon InshAllah.
 
-## You will be able to add these advanced controls to any block by using our *PB Block Wrapper* Easily!
+## You will be able to add these advanced controls to any block by using our *PB Block Wrapper* Easily! ( Pro )
 
 ### Blocks
 * [Accordion](https://powerfulblocks.com/blocks/accordion)
 * [Alert Box](https://powerfulblocks.com/blocks/alert-box)
-* [Advanced Typography](https://powerfulblocks.com/blocks/advanced-typography)
 * [Animated Headlines](https://powerfulblocks.com/blocks/animated-headlines)
 * [PB Block Wrapper](https://powerfulblocks.com/blocks/pb-block-wrapper)
 * [Click To Tweet](https://powerfulblocks.com/blocks/click-to-tweet)
@@ -57,6 +56,7 @@
 * Custom Animation Duration
 * Custom Easing
 * Custom Attributes
+* PB Block Wrapper
 * Wrapper Link - Add **link** to any Block!
 * Custom Page Templates ( Transparent Header, Transparent Header Light, No Header & Footer )
 
@@ -116,15 +116,16 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 ## Changelog ##
 
-### 1.0.3 - 15/04/2021 ###
+### 1.0.3 - 04/05/2021 ###
 * Update: Google Fonts
 * Fix: Tab
 * Fix: Background Opacity
-* Add: Advanced controls for all blocks including core blocks!
+* Add: Advanced controls for core blocks!
 * Add: 1k+ Google Fonts
 * Add: Content Toggle Block ( Pro )
 * Update: Block Control Panel
 * Remove: Advanced Control Tab
+* Update: Block Fixes
 
 ### 1.0.2 - 11/03/2021 ###
 * Fix: Range Control

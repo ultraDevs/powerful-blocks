@@ -1,0 +1,30 @@
+.pb-control-size--types {
+    button {
+        box-shadow: none;
+        height: auto;
+        padding: 0 5px;
+        color: #333;
+        &.is-primary {
+            background: transparent;
+            color: #111;
+            box-shadow: none;
+            font-weight: 800;
+        }
+    }
+    .components-button {
+        box-shadow: none;
+        height: auto;
+        padding: 0 2px;
+        display: inline-block;
+        outline: none;
+        &.is-primary {
+            box-shadow: none;
+            background: transparent !important;
+            color: #111 !important;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none !important;
+        }
+    }
+}

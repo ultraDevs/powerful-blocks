@@ -1,6 +1,10 @@
 .pb-box-control {
-	.pb-dimension-c-header {
-		margin-bottom: 10px;
+	margin-top: 10px;
+	.pb-box-c-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 5px;
 	}
 	.pb-box-input-group {
 		display: flex;

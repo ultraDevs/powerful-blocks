@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
 import './editor.scss';
+import UnitControl from '../unit-control';
 
 class PBBoxControl extends Component {
 
 	label = this.props.label;
 	value = this.props.value;
-	min = this.props.min || 0;
-	max = this.props.max || 500;
+	min = this.props.min;
+	max = this.props.max;
+	sizeType = this.props.sizeType || 'px';
+	sizeTypes = this.props.sizeTypes;
 
 	state = {
 		top: this.value.top || 0,
@@ -25,6 +28,7 @@ class PBBoxControl extends Component {
 			left,
 			isLinked
 		} = this.state;
+
 		let {
 			value
 		} = e.target;
@@ -61,6 +65,13 @@ class PBBoxControl extends Component {
 				<div className="pb-box-control">
 					<div className="pb-box-c-header">
 						<label for="input">{ this.label }</label>
+						<UnitControl
+							sizeType={ this.sizeType }
+							sizeTypes={ this.sizeTypes }
+							onClick={
+								( newType ) => this.props.onUnitTypeChange( newType )
+							}
+						/>
 					</div>
 					<div className="pb-box-input-group">
 						<span>

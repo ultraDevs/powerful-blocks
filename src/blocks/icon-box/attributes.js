@@ -17,7 +17,7 @@ const attributes = {
 	},
 	iconSize: {
 		type: 'number',
-		default: '60',
+		default: 60,
 	},
 	iconColor: {
 		type: 'string',

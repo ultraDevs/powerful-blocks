@@ -8,7 +8,7 @@ import './editor.scss';
 const BaseBoxControl = ( props ) => {
 	return (
 		<__experimentalBoxControl
-			// label={ props.label }
+			label={ props.label }
 			values={ props.value }
 			onChange={ props.onChange }
 		/>

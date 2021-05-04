@@ -199,7 +199,7 @@ class API extends \WP_REST_Controller {
 
 		$params = $req->get_params();
 
-		$type     = sanitize_text_field( $params['type'] );
+		$type = sanitize_text_field( $params['type'] );
 
 		$url       = 'https://powerfulblocks.com/wp-json/powerful-blocks/v1/template_categories';
 		$url_w_q   = add_query_arg(

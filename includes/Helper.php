@@ -36,65 +36,75 @@ class Helper {
 	 */
 	public static function block_list() {
 		self::$blocks = array(
-			'accordion'  => array(
+			'accordion'          => array(
 				'title'  => __( 'Accordion', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'alert-box'  => array(
+			'alert-box'          => array(
 				'title'  => __( 'Alert Box', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'click-to-tweet'  => array(
+			'click-to-tweet'     => array(
 				'title'  => __( 'Click To Tweet', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'star-rating'  => array(
+			'star-rating'        => array(
 				'title'  => __( 'Star Rating', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'testimonial'  => array(
+			'testimonial'        => array(
 				'title'  => __( 'Testimonial', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'info-box'  => array(
+			'info-box'           => array(
 				'title'  => __( 'Info Box', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'icon-box'  => array(
+			'icon-box'           => array(
 				'title'  => __( 'Icon Box', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'pb-spacer'  => array(
+			'pb-spacer'          => array(
 				'title'  => __( 'PB Spacer', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'fun-factor'  => array(
+			'fun-factor'         => array(
 				'title'  => __( 'Fun Factor', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'counter'  => array(
+			'counter'            => array(
 				'title'  => __( 'Counter', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'animated-headlines'  => array(
+			'animated-headlines' => array(
 				'title'  => __( 'Animated Headlines', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
 			),
-			'tabs'  => array(
+			'tabs'               => array(
 				'title'  => __( 'Tabs', 'powerful-blocks' ),
 				'is_pro' => false,
 				'status' => 'active',
+			),
+			'block-wrapper'      => array(
+				'title'  => __( 'Block Wrapper', 'powerful-blocks' ),
+				'is_pro' => true,
+				'status' => 'inactive',
+			),
+			'content-toggle'      => array(
+				'title'  => __( 'Content Toggle', 'powerful-blocks' ),
+				'is_pro' => true,
+				'status' => 'inactive',
 			)
 		);
 
