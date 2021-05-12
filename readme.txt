@@ -35,6 +35,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 ## You will be able to add these advanced controls to any block by using our *PB Block Wrapper* Easily! ( Pro )
 
+## Advanced Custom Controls For Core Blocks 🔥🔥🔥
+[youtube https://www.youtube.com/watch?v=ZxbjCMixtXE]
+[More Video Tutorials](https://www.youtube.com/playlist?list=PL6-MOhUm73eiSSVHgAVnFFEvs6rO2sZyC)
+
+
 ### Blocks
 * [Accordion](https://powerfulblocks.com/blocks/accordion)
 * [Alert Box](https://powerfulblocks.com/blocks/alert-box)
