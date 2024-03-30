@@ -44,7 +44,7 @@ class Assets_Manager {
 			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'nonce'   => wp_create_nonce( 'pb-save-ib-nonce' ),
-				'post_id' => $post->ID
+				'post_id' => isset( $post->ID ) ? $post->ID : 0,
 			)
 		);
 	}
